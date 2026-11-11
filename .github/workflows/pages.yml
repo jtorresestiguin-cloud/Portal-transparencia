@@ -1,0 +1,51 @@
+name: Valida i publica el portal
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Valida dades i regenera catàleg (DCAT-AP, CSV, Data Package, OpenAPI)
+        run: node scripts/build-catalog.mjs
+
+  deploy:
+    needs: validate
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - id: pages
+        uses: actions/configure-pages@v5
+      - name: Genera el catàleg amb la URL pública definitiva
+        run: node scripts/build-catalog.mjs
+        env:
+          BASE_URL: ${{ steps.pages.outputs.base_url }}
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+      - id: deployment
+        uses: actions/deploy-pages@v4

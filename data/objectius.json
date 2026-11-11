@@ -1,0 +1,94 @@
+{
+  "generat": "2026-11-11",
+  "avis": "Dades d'exemple generades sintèticament per al prototip. No són xifres oficials.",
+  "dades": [
+    {
+      "id": "OE1",
+      "eix": "sostenibilitat",
+      "objectiu": "Desconcentrar fluxos: augmentar la quota de visites fora dels 5 punts més visitats",
+      "indicador": "Quota de visites fora d'espais de màxima afluència (%)",
+      "valor_base": 18,
+      "valor_actual": 23.4,
+      "valor_objectiu": 28,
+      "any_objectiu": 2027,
+      "unitat": "%"
+    },
+    {
+      "id": "OE2",
+      "eix": "sostenibilitat",
+      "objectiu": "Reduir la petjada de carboni de les operacions pròpies",
+      "indicador": "Emissions abast 1+2 (tCO₂e)",
+      "valor_base": 2140,
+      "valor_actual": 1630,
+      "valor_objectiu": 1070,
+      "any_objectiu": 2030,
+      "unitat": "tCO₂e"
+    },
+    {
+      "id": "OE3",
+      "eix": "valor",
+      "objectiu": "Atreure congressos internacionals d'alt valor",
+      "indicador": "Congressos internacionals captats (ICCA)",
+      "valor_base": 142,
+      "valor_actual": 168,
+      "valor_objectiu": 180,
+      "any_objectiu": 2027,
+      "unitat": "congressos"
+    },
+    {
+      "id": "OE4",
+      "eix": "valor",
+      "objectiu": "Augmentar la despesa mitjana per visitant",
+      "indicador": "Despesa mitjana diària per turista (€)",
+      "valor_base": 182,
+      "valor_actual": 204,
+      "valor_objectiu": 215,
+      "any_objectiu": 2027,
+      "unitat": "€"
+    },
+    {
+      "id": "OE5",
+      "eix": "ciutadania",
+      "objectiu": "Millorar la percepció ciutadana del turisme",
+      "indicador": "Residents que consideren el turisme beneficiós (%)",
+      "valor_base": 59,
+      "valor_actual": 63,
+      "valor_objectiu": 70,
+      "any_objectiu": 2028,
+      "unitat": "%"
+    },
+    {
+      "id": "OE6",
+      "eix": "ciutadania",
+      "objectiu": "Retornar valor als barris amb el programa de territori",
+      "indicador": "Districtes amb projectes actius",
+      "valor_base": 4,
+      "valor_actual": 9,
+      "valor_objectiu": 10,
+      "any_objectiu": 2026,
+      "unitat": "districtes"
+    },
+    {
+      "id": "OE7",
+      "eix": "governanca",
+      "objectiu": "Obrir les dades: publicar conjunts reutilitzables",
+      "indicador": "Conjunts de dades publicats en format obert",
+      "valor_base": 3,
+      "valor_actual": 16,
+      "valor_objectiu": 25,
+      "any_objectiu": 2027,
+      "unitat": "conjunts"
+    },
+    {
+      "id": "OE8",
+      "eix": "governanca",
+      "objectiu": "Reduir el termini mitjà de resposta del dret d'accés",
+      "indicador": "Dies mitjans de resolució",
+      "valor_base": 24,
+      "valor_actual": 16.8,
+      "valor_objectiu": 12,
+      "any_objectiu": 2027,
+      "unitat": "dies"
+    }
+  ]
+}

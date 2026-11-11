@@ -1,0 +1,43 @@
+id,bloc,article,titol,seccio,estat,periodicitat,conjunt_dades,darrera_actualitzacio
+INS-01,institucional,art. 9.1.a,"Funcions, competències i normativa aplicable",institucio,publicat,quan_canvii,,2026-10-23
+INS-02,institucional,art. 9.1.b,Estructura organitzativa i organigrama,institucio,publicat,quan_canvii,,2026-10-01
+INS-03,institucional,art. 9.1.c,Òrgans de govern: composició i funcions,institucio,publicat,quan_canvii,,2026-09-14
+INS-04,institucional,art. 9.1.d,Ens dependents i participats,institucio,publicat,anual,,2026-10-09
+INS-05,institucional,art. 9.1.e,Ubicació i horaris d'oficines,activitat,publicat,quan_canvii,oficines-informacio,2026-09-28
+INS-06,institucional,art. 9.1.f,Inventari d'ens i entitats vinculades,institucio,parcial,anual,,2026-11-05
+INS-07,institucional,art. 9.1.g,"Alts càrrecs: identificació, perfil i trajectòria",bon-govern,publicat,quan_canvii,alts-carrecs,2026-11-04
+INS-08,institucional,art. 11.1.b,Retribucions d'alts càrrecs i personal directiu,bon-govern,publicat,anual,alts-carrecs,2026-10-29
+INS-09,institucional,art. 9.1.i,Relació de llocs de treball i plantilla,personal,publicat,anual,plantilla,2026-11-07
+INS-10,institucional,art. 9.1.j,Taules retributives del personal,personal,publicat,anual,retribucions,2026-09-06
+INS-11,institucional,art. 9.1.l,Processos de selecció i provisió de llocs,personal,parcial,continua,,2026-09-02
+INS-12,institucional,art. 11.1.c,Declaracions d'activitats i béns,bon-govern,parcial,anual,alts-carrecs,2026-08-31
+INS-13,institucional,art. 55,Agenda pública dels alts càrrecs,bon-govern,publicat,setmanal,agenda,2026-10-08
+INS-14,institucional,art. 55,Registre de regals institucionals,bon-govern,publicat,trimestral,regals,2026-09-26
+ECO-01,economica,art. 11.1.a,Pressupost i execució trimestral,economia,publicat,trimestral,pressupost,2026-09-26
+ECO-02,economica,art. 11.1.c,Comptes anuals i informes d'auditoria,economia,publicat,anual,,2026-08-29
+ECO-03,economica,art. 11.1.d,Informes de control financer i de la Sindicatura,economia,parcial,quan_canvii,,2026-10-16
+ECO-04,economica,art. 11.1.e,Període mitjà de pagament a proveïdors,economia,publicat,mensual,,2026-09-16
+ECO-05,economica,art. 11.1.f,Endeutament i estabilitat pressupostària,economia,publicat,trimestral,,2026-09-12
+ECO-06,economica,art. 11.1.g,Inventari de béns i drets (patrimoni),economia,pendent,anual,,
+CON-01,contractacio,art. 13.1.a,Perfil de contractant i licitacions en curs,contractacio,publicat,continua,,2026-09-15
+CON-02,contractacio,art. 13.1.b,"Contractes adjudicats: objecte, import, adjudicatari",contractacio,publicat,continua,contractes,2026-09-15
+CON-03,contractacio,art. 13.1.c,Contractes menors (relació trimestral),contractacio,publicat,trimestral,contractes,2026-10-09
+CON-04,contractacio,art. 13.1.d,"Modificacions, pròrrogues i resolucions",contractacio,publicat,continua,contractes,2026-09-27
+CON-05,contractacio,art. 13.1.e,Estadístiques de contractació per procediment,contractacio,publicat,anual,contractes,2026-11-01
+CON-06,contractacio,art. 13.1.f,Composició de les meses de contractació,contractacio,parcial,continua,,2026-09-08
+CNV-01,convenis,art. 14.1,Relació de convenis vigents i signats,subvencions,publicat,trimestral,convenis,2026-10-01
+CNV-02,convenis,art. 14.2,Text íntegre dels convenis,subvencions,parcial,trimestral,convenis,2026-08-31
+SUB-01,subvencions,art. 15.1.a,Línies i bases reguladores de subvencions,subvencions,publicat,anual,,2026-10-26
+SUB-02,subvencions,art. 15.1.c,Subvencions i ajuts atorgats amb beneficiaris,subvencions,publicat,trimestral,subvencions,2026-10-17
+SUB-03,subvencions,art. 15.1.d,Justificació i control de subvencions,subvencions,parcial,anual,subvencions,2026-09-30
+PLA-01,planificacio,art. 12,Plans i programes anuals i plurianuals,activitat,publicat,anual,objectius,2026-09-07
+PLA-02,planificacio,art. 12,Grau de compliment i indicadors dels plans,activitat,publicat,semestral,objectius,2026-11-10
+PLA-03,planificacio,art. 11.1.i,Estadístiques i dades d'activitat (indicadors turístics),activitat,publicat,mensual,indicadors-turisme,2026-09-10
+PLA-04,planificacio,art. 12,Cartes de serveis i avaluació de la qualitat,activitat,pendent,anual,,
+DAC-01,dret_acces,art. 18,Procediment per exercir el dret d'accés,dret-acces,publicat,quan_canvii,,2026-09-12
+DAC-02,dret_acces,art. 14.4,Estadístiques de sol·licituds i resolucions,dret-acces,publicat,trimestral,dret-acces,2026-09-29
+DAC-03,dret_acces,art. 8.1.m,Resolucions estimatòries de la GAIP,dret-acces,parcial,continua,,2026-10-16
+NOR-01,normativa,art. 10.1,"Estatuts, reglaments i instruccions interpretatives",institucio,publicat,quan_canvii,,2026-09-02
+NOR-02,normativa,art. 10.1.c,Codi ètic i de conducta,bon-govern,publicat,quan_canvii,,2026-10-20
+NOR-03,normativa,art. 10.1.f,Canal intern d'informació (Llei 2/2023) i mesures antifrau,bon-govern,publicat,quan_canvii,,2026-10-27
+DAT-01,dades_obertes,art. 17,Catàleg de dades obertes reutilitzables (DCAT-AP),dades-obertes,publicat,continua,,2026-10-21

@@ -1,0 +1,73 @@
+{
+  "generat": "2026-11-11",
+  "avis": "Dades d'exemple generades sintèticament per al prototip. No són xifres oficials.",
+  "unitat": "EUR bruts anuals",
+  "dades": [
+    {
+      "lloc": "direccio_general",
+      "organ": "Direcció General",
+      "tipus_vinculacio": "alta_direccio",
+      "retribucio_fixa": 128500,
+      "retribucio_variable_maxima": 0,
+      "data_nomenament": "2023-03-01",
+      "declaracio_interessos": true,
+      "declaracio_patrimonial": true,
+      "compatibilitat": "no_consta_activitat"
+    },
+    {
+      "lloc": "direccio_promocio",
+      "organ": "Direcció de Promoció i Màrqueting",
+      "tipus_vinculacio": "personal_directiu",
+      "retribucio_fixa": 98200,
+      "retribucio_variable_maxima": 0,
+      "data_nomenament": "2021-09-15",
+      "declaracio_interessos": true,
+      "declaracio_patrimonial": false,
+      "compatibilitat": "no_consta_activitat"
+    },
+    {
+      "lloc": "direccio_convention_bureau",
+      "organ": "Direcció del Barcelona Convention Bureau",
+      "tipus_vinculacio": "personal_directiu",
+      "retribucio_fixa": 92400,
+      "retribucio_variable_maxima": 0,
+      "data_nomenament": "2020-02-01",
+      "declaracio_interessos": true,
+      "declaracio_patrimonial": false,
+      "compatibilitat": "docencia_autoritzada"
+    },
+    {
+      "lloc": "direccio_productes",
+      "organ": "Direcció de Productes Turístics",
+      "tipus_vinculacio": "personal_directiu",
+      "retribucio_fixa": 95800,
+      "retribucio_variable_maxima": 0,
+      "data_nomenament": "2022-05-09",
+      "declaracio_interessos": true,
+      "declaracio_patrimonial": false,
+      "compatibilitat": "no_consta_activitat"
+    },
+    {
+      "lloc": "direccio_economica",
+      "organ": "Direcció Economicofinancera i de Serveis Generals",
+      "tipus_vinculacio": "personal_directiu",
+      "retribucio_fixa": 94100,
+      "retribucio_variable_maxima": 0,
+      "data_nomenament": "2019-11-04",
+      "declaracio_interessos": true,
+      "declaracio_patrimonial": false,
+      "compatibilitat": "no_consta_activitat"
+    },
+    {
+      "lloc": "direccio_sostenibilitat",
+      "organ": "Direcció de Turisme Sostenible i Territori",
+      "tipus_vinculacio": "personal_directiu",
+      "retribucio_fixa": 89600,
+      "retribucio_variable_maxima": 0,
+      "data_nomenament": "2024-01-08",
+      "declaracio_interessos": true,
+      "declaracio_patrimonial": false,
+      "compatibilitat": "no_consta_activitat"
+    }
+  ]
+}

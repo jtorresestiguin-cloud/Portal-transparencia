@@ -1,0 +1,5118 @@
+{
+  "generat": "2026-11-11",
+  "avis": "Dades d'exemple generades sintèticament per al prototip. No són xifres oficials.",
+  "dades": [
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "direccio",
+      "sexe": "dona",
+      "franja_edat": "30-39",
+      "tipus_relacio": "indefinit",
+      "efectius": 1
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "direccio",
+      "sexe": "dona",
+      "franja_edat": "40-49",
+      "tipus_relacio": "indefinit",
+      "efectius": 1
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "direccio",
+      "sexe": "dona",
+      "franja_edat": "50-59",
+      "tipus_relacio": "indefinit",
+      "efectius": 1
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "direccio",
+      "sexe": "home",
+      "franja_edat": "<30",
+      "tipus_relacio": "indefinit",
+      "efectius": 1
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "direccio",
+      "sexe": "home",
+      "franja_edat": "30-39",
+      "tipus_relacio": "indefinit",
+      "efectius": 1
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "direccio",
+      "sexe": "home",
+      "franja_edat": "40-49",
+      "tipus_relacio": "indefinit",
+      "efectius": 1
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "direccio",
+      "sexe": "home",
+      "franja_edat": "50-59",
+      "tipus_relacio": "indefinit",
+      "efectius": 1
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "comandament",
+      "sexe": "dona",
+      "franja_edat": "<30",
+      "tipus_relacio": "indefinit",
+      "efectius": 2
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "comandament",
+      "sexe": "dona",
+      "franja_edat": "30-39",
+      "tipus_relacio": "indefinit",
+      "efectius": 4
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "comandament",
+      "sexe": "dona",
+      "franja_edat": "40-49",
+      "tipus_relacio": "indefinit",
+      "efectius": 4
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "comandament",
+      "sexe": "dona",
+      "franja_edat": "50-59",
+      "tipus_relacio": "indefinit",
+      "efectius": 3
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "comandament",
+      "sexe": "dona",
+      "franja_edat": ">=60",
+      "tipus_relacio": "indefinit",
+      "efectius": 1
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "comandament",
+      "sexe": "home",
+      "franja_edat": "<30",
+      "tipus_relacio": "indefinit",
+      "efectius": 2
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "comandament",
+      "sexe": "home",
+      "franja_edat": "30-39",
+      "tipus_relacio": "indefinit",
+      "efectius": 3
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "comandament",
+      "sexe": "home",
+      "franja_edat": "40-49",
+      "tipus_relacio": "indefinit",
+      "efectius": 3
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "comandament",
+      "sexe": "home",
+      "franja_edat": "50-59",
+      "tipus_relacio": "indefinit",
+      "efectius": 2
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "comandament",
+      "sexe": "home",
+      "franja_edat": ">=60",
+      "tipus_relacio": "indefinit",
+      "efectius": 1
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "tecnic_superior",
+      "sexe": "dona",
+      "franja_edat": "<30",
+      "tipus_relacio": "indefinit",
+      "efectius": 6
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "tecnic_superior",
+      "sexe": "dona",
+      "franja_edat": "30-39",
+      "tipus_relacio": "indefinit",
+      "efectius": 9
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "tecnic_superior",
+      "sexe": "dona",
+      "franja_edat": "30-39",
+      "tipus_relacio": "temporal",
+      "efectius": 1
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "tecnic_superior",
+      "sexe": "dona",
+      "franja_edat": "40-49",
+      "tipus_relacio": "indefinit",
+      "efectius": 10
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "tecnic_superior",
+      "sexe": "dona",
+      "franja_edat": "40-49",
+      "tipus_relacio": "temporal",
+      "efectius": 1
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "tecnic_superior",
+      "sexe": "dona",
+      "franja_edat": "50-59",
+      "tipus_relacio": "indefinit",
+      "efectius": 7
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "tecnic_superior",
+      "sexe": "dona",
+      "franja_edat": ">=60",
+      "tipus_relacio": "indefinit",
+      "efectius": 3
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "tecnic_superior",
+      "sexe": "home",
+      "franja_edat": "<30",
+      "tipus_relacio": "indefinit",
+      "efectius": 3
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "tecnic_superior",
+      "sexe": "home",
+      "franja_edat": "30-39",
+      "tipus_relacio": "indefinit",
+      "efectius": 6
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "tecnic_superior",
+      "sexe": "home",
+      "franja_edat": "40-49",
+      "tipus_relacio": "indefinit",
+      "efectius": 6
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "tecnic_superior",
+      "sexe": "home",
+      "franja_edat": "50-59",
+      "tipus_relacio": "indefinit",
+      "efectius": 4
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "tecnic_superior",
+      "sexe": "home",
+      "franja_edat": ">=60",
+      "tipus_relacio": "indefinit",
+      "efectius": 1
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "tecnic",
+      "sexe": "dona",
+      "franja_edat": "<30",
+      "tipus_relacio": "indefinit",
+      "efectius": 4
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "tecnic",
+      "sexe": "dona",
+      "franja_edat": "30-39",
+      "tipus_relacio": "indefinit",
+      "efectius": 8
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "tecnic",
+      "sexe": "dona",
+      "franja_edat": "40-49",
+      "tipus_relacio": "indefinit",
+      "efectius": 8
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "tecnic",
+      "sexe": "dona",
+      "franja_edat": "50-59",
+      "tipus_relacio": "indefinit",
+      "efectius": 6
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "tecnic",
+      "sexe": "dona",
+      "franja_edat": ">=60",
+      "tipus_relacio": "indefinit",
+      "efectius": 2
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "tecnic",
+      "sexe": "home",
+      "franja_edat": "<30",
+      "tipus_relacio": "indefinit",
+      "efectius": 3
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "tecnic",
+      "sexe": "home",
+      "franja_edat": "30-39",
+      "tipus_relacio": "indefinit",
+      "efectius": 6
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "tecnic",
+      "sexe": "home",
+      "franja_edat": "40-49",
+      "tipus_relacio": "indefinit",
+      "efectius": 6
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "tecnic",
+      "sexe": "home",
+      "franja_edat": "50-59",
+      "tipus_relacio": "indefinit",
+      "efectius": 4
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "tecnic",
+      "sexe": "home",
+      "franja_edat": ">=60",
+      "tipus_relacio": "indefinit",
+      "efectius": 1
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "administratiu",
+      "sexe": "dona",
+      "franja_edat": "<30",
+      "tipus_relacio": "indefinit",
+      "efectius": 3
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "administratiu",
+      "sexe": "dona",
+      "franja_edat": "30-39",
+      "tipus_relacio": "indefinit",
+      "efectius": 6
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "administratiu",
+      "sexe": "dona",
+      "franja_edat": "40-49",
+      "tipus_relacio": "indefinit",
+      "efectius": 6
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "administratiu",
+      "sexe": "dona",
+      "franja_edat": "50-59",
+      "tipus_relacio": "indefinit",
+      "efectius": 4
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "administratiu",
+      "sexe": "dona",
+      "franja_edat": ">=60",
+      "tipus_relacio": "indefinit",
+      "efectius": 1
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "administratiu",
+      "sexe": "home",
+      "franja_edat": "<30",
+      "tipus_relacio": "indefinit",
+      "efectius": 1
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "administratiu",
+      "sexe": "home",
+      "franja_edat": "30-39",
+      "tipus_relacio": "indefinit",
+      "efectius": 2
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "administratiu",
+      "sexe": "home",
+      "franja_edat": "40-49",
+      "tipus_relacio": "indefinit",
+      "efectius": 2
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "administratiu",
+      "sexe": "home",
+      "franja_edat": "50-59",
+      "tipus_relacio": "indefinit",
+      "efectius": 2
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "administratiu",
+      "sexe": "home",
+      "franja_edat": ">=60",
+      "tipus_relacio": "indefinit",
+      "efectius": 1
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "dona",
+      "franja_edat": "<30",
+      "tipus_relacio": "indefinit",
+      "efectius": 5
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "dona",
+      "franja_edat": "<30",
+      "tipus_relacio": "temporal",
+      "efectius": 2
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "dona",
+      "franja_edat": "<30",
+      "tipus_relacio": "fix_discontinu",
+      "efectius": 1
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "dona",
+      "franja_edat": "30-39",
+      "tipus_relacio": "indefinit",
+      "efectius": 8
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "dona",
+      "franja_edat": "30-39",
+      "tipus_relacio": "temporal",
+      "efectius": 3
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "dona",
+      "franja_edat": "30-39",
+      "tipus_relacio": "fix_discontinu",
+      "efectius": 2
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "dona",
+      "franja_edat": "40-49",
+      "tipus_relacio": "indefinit",
+      "efectius": 9
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "dona",
+      "franja_edat": "40-49",
+      "tipus_relacio": "temporal",
+      "efectius": 3
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "dona",
+      "franja_edat": "40-49",
+      "tipus_relacio": "fix_discontinu",
+      "efectius": 2
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "dona",
+      "franja_edat": "50-59",
+      "tipus_relacio": "indefinit",
+      "efectius": 6
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "dona",
+      "franja_edat": "50-59",
+      "tipus_relacio": "temporal",
+      "efectius": 2
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "dona",
+      "franja_edat": "50-59",
+      "tipus_relacio": "fix_discontinu",
+      "efectius": 1
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "dona",
+      "franja_edat": ">=60",
+      "tipus_relacio": "indefinit",
+      "efectius": 2
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "dona",
+      "franja_edat": ">=60",
+      "tipus_relacio": "temporal",
+      "efectius": 1
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "home",
+      "franja_edat": "<30",
+      "tipus_relacio": "indefinit",
+      "efectius": 2
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "home",
+      "franja_edat": "<30",
+      "tipus_relacio": "temporal",
+      "efectius": 1
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "home",
+      "franja_edat": "<30",
+      "tipus_relacio": "fix_discontinu",
+      "efectius": 1
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "home",
+      "franja_edat": "30-39",
+      "tipus_relacio": "indefinit",
+      "efectius": 4
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "home",
+      "franja_edat": "30-39",
+      "tipus_relacio": "temporal",
+      "efectius": 1
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "home",
+      "franja_edat": "30-39",
+      "tipus_relacio": "fix_discontinu",
+      "efectius": 1
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "home",
+      "franja_edat": "40-49",
+      "tipus_relacio": "indefinit",
+      "efectius": 4
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "home",
+      "franja_edat": "40-49",
+      "tipus_relacio": "temporal",
+      "efectius": 2
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "home",
+      "franja_edat": "40-49",
+      "tipus_relacio": "fix_discontinu",
+      "efectius": 1
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "home",
+      "franja_edat": "50-59",
+      "tipus_relacio": "indefinit",
+      "efectius": 3
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "home",
+      "franja_edat": "50-59",
+      "tipus_relacio": "temporal",
+      "efectius": 1
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "home",
+      "franja_edat": "50-59",
+      "tipus_relacio": "fix_discontinu",
+      "efectius": 1
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "home",
+      "franja_edat": ">=60",
+      "tipus_relacio": "indefinit",
+      "efectius": 2
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "operacions",
+      "sexe": "dona",
+      "franja_edat": "<30",
+      "tipus_relacio": "indefinit",
+      "efectius": 2
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "operacions",
+      "sexe": "dona",
+      "franja_edat": "<30",
+      "tipus_relacio": "temporal",
+      "efectius": 1
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "operacions",
+      "sexe": "dona",
+      "franja_edat": "30-39",
+      "tipus_relacio": "indefinit",
+      "efectius": 3
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "operacions",
+      "sexe": "dona",
+      "franja_edat": "30-39",
+      "tipus_relacio": "temporal",
+      "efectius": 1
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "operacions",
+      "sexe": "dona",
+      "franja_edat": "40-49",
+      "tipus_relacio": "indefinit",
+      "efectius": 4
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "operacions",
+      "sexe": "dona",
+      "franja_edat": "40-49",
+      "tipus_relacio": "temporal",
+      "efectius": 1
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "operacions",
+      "sexe": "dona",
+      "franja_edat": "50-59",
+      "tipus_relacio": "indefinit",
+      "efectius": 2
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "operacions",
+      "sexe": "dona",
+      "franja_edat": "50-59",
+      "tipus_relacio": "temporal",
+      "efectius": 1
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "operacions",
+      "sexe": "dona",
+      "franja_edat": ">=60",
+      "tipus_relacio": "indefinit",
+      "efectius": 1
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "operacions",
+      "sexe": "home",
+      "franja_edat": "<30",
+      "tipus_relacio": "indefinit",
+      "efectius": 3
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "operacions",
+      "sexe": "home",
+      "franja_edat": "<30",
+      "tipus_relacio": "temporal",
+      "efectius": 1
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "operacions",
+      "sexe": "home",
+      "franja_edat": "30-39",
+      "tipus_relacio": "indefinit",
+      "efectius": 5
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "operacions",
+      "sexe": "home",
+      "franja_edat": "30-39",
+      "tipus_relacio": "temporal",
+      "efectius": 1
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "operacions",
+      "sexe": "home",
+      "franja_edat": "40-49",
+      "tipus_relacio": "indefinit",
+      "efectius": 5
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "operacions",
+      "sexe": "home",
+      "franja_edat": "40-49",
+      "tipus_relacio": "temporal",
+      "efectius": 2
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "operacions",
+      "sexe": "home",
+      "franja_edat": "50-59",
+      "tipus_relacio": "indefinit",
+      "efectius": 4
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "operacions",
+      "sexe": "home",
+      "franja_edat": "50-59",
+      "tipus_relacio": "temporal",
+      "efectius": 1
+    },
+    {
+      "any": 2021,
+      "data_referencia": "2021-12-31",
+      "categoria": "operacions",
+      "sexe": "home",
+      "franja_edat": ">=60",
+      "tipus_relacio": "indefinit",
+      "efectius": 2
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "direccio",
+      "sexe": "dona",
+      "franja_edat": "30-39",
+      "tipus_relacio": "indefinit",
+      "efectius": 1
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "direccio",
+      "sexe": "dona",
+      "franja_edat": "40-49",
+      "tipus_relacio": "indefinit",
+      "efectius": 1
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "direccio",
+      "sexe": "dona",
+      "franja_edat": "50-59",
+      "tipus_relacio": "indefinit",
+      "efectius": 1
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "direccio",
+      "sexe": "home",
+      "franja_edat": "<30",
+      "tipus_relacio": "indefinit",
+      "efectius": 1
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "direccio",
+      "sexe": "home",
+      "franja_edat": "30-39",
+      "tipus_relacio": "indefinit",
+      "efectius": 1
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "direccio",
+      "sexe": "home",
+      "franja_edat": "40-49",
+      "tipus_relacio": "indefinit",
+      "efectius": 1
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "direccio",
+      "sexe": "home",
+      "franja_edat": "50-59",
+      "tipus_relacio": "indefinit",
+      "efectius": 1
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "comandament",
+      "sexe": "dona",
+      "franja_edat": "<30",
+      "tipus_relacio": "indefinit",
+      "efectius": 2
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "comandament",
+      "sexe": "dona",
+      "franja_edat": "30-39",
+      "tipus_relacio": "indefinit",
+      "efectius": 4
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "comandament",
+      "sexe": "dona",
+      "franja_edat": "40-49",
+      "tipus_relacio": "indefinit",
+      "efectius": 4
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "comandament",
+      "sexe": "dona",
+      "franja_edat": "50-59",
+      "tipus_relacio": "indefinit",
+      "efectius": 3
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "comandament",
+      "sexe": "dona",
+      "franja_edat": ">=60",
+      "tipus_relacio": "indefinit",
+      "efectius": 1
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "comandament",
+      "sexe": "home",
+      "franja_edat": "<30",
+      "tipus_relacio": "indefinit",
+      "efectius": 2
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "comandament",
+      "sexe": "home",
+      "franja_edat": "30-39",
+      "tipus_relacio": "indefinit",
+      "efectius": 3
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "comandament",
+      "sexe": "home",
+      "franja_edat": "40-49",
+      "tipus_relacio": "indefinit",
+      "efectius": 4
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "comandament",
+      "sexe": "home",
+      "franja_edat": "50-59",
+      "tipus_relacio": "indefinit",
+      "efectius": 2
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "comandament",
+      "sexe": "home",
+      "franja_edat": ">=60",
+      "tipus_relacio": "indefinit",
+      "efectius": 1
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "tecnic_superior",
+      "sexe": "dona",
+      "franja_edat": "<30",
+      "tipus_relacio": "indefinit",
+      "efectius": 7
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "tecnic_superior",
+      "sexe": "dona",
+      "franja_edat": "30-39",
+      "tipus_relacio": "indefinit",
+      "efectius": 10
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "tecnic_superior",
+      "sexe": "dona",
+      "franja_edat": "30-39",
+      "tipus_relacio": "temporal",
+      "efectius": 1
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "tecnic_superior",
+      "sexe": "dona",
+      "franja_edat": "40-49",
+      "tipus_relacio": "indefinit",
+      "efectius": 11
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "tecnic_superior",
+      "sexe": "dona",
+      "franja_edat": "40-49",
+      "tipus_relacio": "temporal",
+      "efectius": 1
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "tecnic_superior",
+      "sexe": "dona",
+      "franja_edat": "50-59",
+      "tipus_relacio": "indefinit",
+      "efectius": 8
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "tecnic_superior",
+      "sexe": "dona",
+      "franja_edat": ">=60",
+      "tipus_relacio": "indefinit",
+      "efectius": 3
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "tecnic_superior",
+      "sexe": "home",
+      "franja_edat": "<30",
+      "tipus_relacio": "indefinit",
+      "efectius": 4
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "tecnic_superior",
+      "sexe": "home",
+      "franja_edat": "30-39",
+      "tipus_relacio": "indefinit",
+      "efectius": 6
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "tecnic_superior",
+      "sexe": "home",
+      "franja_edat": "40-49",
+      "tipus_relacio": "indefinit",
+      "efectius": 7
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "tecnic_superior",
+      "sexe": "home",
+      "franja_edat": "50-59",
+      "tipus_relacio": "indefinit",
+      "efectius": 5
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "tecnic_superior",
+      "sexe": "home",
+      "franja_edat": ">=60",
+      "tipus_relacio": "indefinit",
+      "efectius": 2
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "tecnic",
+      "sexe": "dona",
+      "franja_edat": "<30",
+      "tipus_relacio": "indefinit",
+      "efectius": 5
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "tecnic",
+      "sexe": "dona",
+      "franja_edat": "30-39",
+      "tipus_relacio": "indefinit",
+      "efectius": 9
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "tecnic",
+      "sexe": "dona",
+      "franja_edat": "40-49",
+      "tipus_relacio": "indefinit",
+      "efectius": 9
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "tecnic",
+      "sexe": "dona",
+      "franja_edat": "40-49",
+      "tipus_relacio": "temporal",
+      "efectius": 1
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "tecnic",
+      "sexe": "dona",
+      "franja_edat": "50-59",
+      "tipus_relacio": "indefinit",
+      "efectius": 7
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "tecnic",
+      "sexe": "dona",
+      "franja_edat": ">=60",
+      "tipus_relacio": "indefinit",
+      "efectius": 2
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "tecnic",
+      "sexe": "home",
+      "franja_edat": "<30",
+      "tipus_relacio": "indefinit",
+      "efectius": 4
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "tecnic",
+      "sexe": "home",
+      "franja_edat": "30-39",
+      "tipus_relacio": "indefinit",
+      "efectius": 6
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "tecnic",
+      "sexe": "home",
+      "franja_edat": "40-49",
+      "tipus_relacio": "indefinit",
+      "efectius": 7
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "tecnic",
+      "sexe": "home",
+      "franja_edat": "50-59",
+      "tipus_relacio": "indefinit",
+      "efectius": 5
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "tecnic",
+      "sexe": "home",
+      "franja_edat": ">=60",
+      "tipus_relacio": "indefinit",
+      "efectius": 2
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "administratiu",
+      "sexe": "dona",
+      "franja_edat": "<30",
+      "tipus_relacio": "indefinit",
+      "efectius": 4
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "administratiu",
+      "sexe": "dona",
+      "franja_edat": "30-39",
+      "tipus_relacio": "indefinit",
+      "efectius": 6
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "administratiu",
+      "sexe": "dona",
+      "franja_edat": "40-49",
+      "tipus_relacio": "indefinit",
+      "efectius": 7
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "administratiu",
+      "sexe": "dona",
+      "franja_edat": "50-59",
+      "tipus_relacio": "indefinit",
+      "efectius": 5
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "administratiu",
+      "sexe": "dona",
+      "franja_edat": ">=60",
+      "tipus_relacio": "indefinit",
+      "efectius": 2
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "administratiu",
+      "sexe": "home",
+      "franja_edat": "<30",
+      "tipus_relacio": "indefinit",
+      "efectius": 1
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "administratiu",
+      "sexe": "home",
+      "franja_edat": "30-39",
+      "tipus_relacio": "indefinit",
+      "efectius": 2
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "administratiu",
+      "sexe": "home",
+      "franja_edat": "40-49",
+      "tipus_relacio": "indefinit",
+      "efectius": 2
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "administratiu",
+      "sexe": "home",
+      "franja_edat": "50-59",
+      "tipus_relacio": "indefinit",
+      "efectius": 2
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "administratiu",
+      "sexe": "home",
+      "franja_edat": ">=60",
+      "tipus_relacio": "indefinit",
+      "efectius": 1
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "dona",
+      "franja_edat": "<30",
+      "tipus_relacio": "indefinit",
+      "efectius": 6
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "dona",
+      "franja_edat": "<30",
+      "tipus_relacio": "temporal",
+      "efectius": 2
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "dona",
+      "franja_edat": "<30",
+      "tipus_relacio": "fix_discontinu",
+      "efectius": 1
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "dona",
+      "franja_edat": "30-39",
+      "tipus_relacio": "indefinit",
+      "efectius": 9
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "dona",
+      "franja_edat": "30-39",
+      "tipus_relacio": "temporal",
+      "efectius": 4
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "dona",
+      "franja_edat": "30-39",
+      "tipus_relacio": "fix_discontinu",
+      "efectius": 2
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "dona",
+      "franja_edat": "40-49",
+      "tipus_relacio": "indefinit",
+      "efectius": 10
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "dona",
+      "franja_edat": "40-49",
+      "tipus_relacio": "temporal",
+      "efectius": 4
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "dona",
+      "franja_edat": "40-49",
+      "tipus_relacio": "fix_discontinu",
+      "efectius": 3
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "dona",
+      "franja_edat": "50-59",
+      "tipus_relacio": "indefinit",
+      "efectius": 6
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "dona",
+      "franja_edat": "50-59",
+      "tipus_relacio": "temporal",
+      "efectius": 3
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "dona",
+      "franja_edat": "50-59",
+      "tipus_relacio": "fix_discontinu",
+      "efectius": 2
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "dona",
+      "franja_edat": ">=60",
+      "tipus_relacio": "indefinit",
+      "efectius": 2
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "dona",
+      "franja_edat": ">=60",
+      "tipus_relacio": "temporal",
+      "efectius": 1
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "dona",
+      "franja_edat": ">=60",
+      "tipus_relacio": "fix_discontinu",
+      "efectius": 1
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "home",
+      "franja_edat": "<30",
+      "tipus_relacio": "indefinit",
+      "efectius": 2
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "home",
+      "franja_edat": "<30",
+      "tipus_relacio": "temporal",
+      "efectius": 1
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "home",
+      "franja_edat": "<30",
+      "tipus_relacio": "fix_discontinu",
+      "efectius": 1
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "home",
+      "franja_edat": "30-39",
+      "tipus_relacio": "indefinit",
+      "efectius": 5
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "home",
+      "franja_edat": "30-39",
+      "tipus_relacio": "temporal",
+      "efectius": 2
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "home",
+      "franja_edat": "30-39",
+      "tipus_relacio": "fix_discontinu",
+      "efectius": 1
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "home",
+      "franja_edat": "40-49",
+      "tipus_relacio": "indefinit",
+      "efectius": 5
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "home",
+      "franja_edat": "40-49",
+      "tipus_relacio": "temporal",
+      "efectius": 2
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "home",
+      "franja_edat": "40-49",
+      "tipus_relacio": "fix_discontinu",
+      "efectius": 1
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "home",
+      "franja_edat": "50-59",
+      "tipus_relacio": "indefinit",
+      "efectius": 4
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "home",
+      "franja_edat": "50-59",
+      "tipus_relacio": "temporal",
+      "efectius": 1
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "home",
+      "franja_edat": "50-59",
+      "tipus_relacio": "fix_discontinu",
+      "efectius": 1
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "home",
+      "franja_edat": ">=60",
+      "tipus_relacio": "indefinit",
+      "efectius": 2
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "operacions",
+      "sexe": "dona",
+      "franja_edat": "<30",
+      "tipus_relacio": "indefinit",
+      "efectius": 2
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "operacions",
+      "sexe": "dona",
+      "franja_edat": "<30",
+      "tipus_relacio": "temporal",
+      "efectius": 1
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "operacions",
+      "sexe": "dona",
+      "franja_edat": "30-39",
+      "tipus_relacio": "indefinit",
+      "efectius": 4
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "operacions",
+      "sexe": "dona",
+      "franja_edat": "30-39",
+      "tipus_relacio": "temporal",
+      "efectius": 1
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "operacions",
+      "sexe": "dona",
+      "franja_edat": "40-49",
+      "tipus_relacio": "indefinit",
+      "efectius": 4
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "operacions",
+      "sexe": "dona",
+      "franja_edat": "40-49",
+      "tipus_relacio": "temporal",
+      "efectius": 1
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "operacions",
+      "sexe": "dona",
+      "franja_edat": "50-59",
+      "tipus_relacio": "indefinit",
+      "efectius": 2
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "operacions",
+      "sexe": "dona",
+      "franja_edat": "50-59",
+      "tipus_relacio": "temporal",
+      "efectius": 1
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "operacions",
+      "sexe": "dona",
+      "franja_edat": ">=60",
+      "tipus_relacio": "indefinit",
+      "efectius": 1
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "operacions",
+      "sexe": "home",
+      "franja_edat": "<30",
+      "tipus_relacio": "indefinit",
+      "efectius": 3
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "operacions",
+      "sexe": "home",
+      "franja_edat": "<30",
+      "tipus_relacio": "temporal",
+      "efectius": 1
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "operacions",
+      "sexe": "home",
+      "franja_edat": "30-39",
+      "tipus_relacio": "indefinit",
+      "efectius": 5
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "operacions",
+      "sexe": "home",
+      "franja_edat": "30-39",
+      "tipus_relacio": "temporal",
+      "efectius": 2
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "operacions",
+      "sexe": "home",
+      "franja_edat": "40-49",
+      "tipus_relacio": "indefinit",
+      "efectius": 6
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "operacions",
+      "sexe": "home",
+      "franja_edat": "40-49",
+      "tipus_relacio": "temporal",
+      "efectius": 2
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "operacions",
+      "sexe": "home",
+      "franja_edat": "50-59",
+      "tipus_relacio": "indefinit",
+      "efectius": 4
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "operacions",
+      "sexe": "home",
+      "franja_edat": "50-59",
+      "tipus_relacio": "temporal",
+      "efectius": 1
+    },
+    {
+      "any": 2022,
+      "data_referencia": "2022-12-31",
+      "categoria": "operacions",
+      "sexe": "home",
+      "franja_edat": ">=60",
+      "tipus_relacio": "indefinit",
+      "efectius": 2
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "direccio",
+      "sexe": "dona",
+      "franja_edat": "<30",
+      "tipus_relacio": "indefinit",
+      "efectius": 1
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "direccio",
+      "sexe": "dona",
+      "franja_edat": "30-39",
+      "tipus_relacio": "indefinit",
+      "efectius": 1
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "direccio",
+      "sexe": "dona",
+      "franja_edat": "40-49",
+      "tipus_relacio": "indefinit",
+      "efectius": 1
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "direccio",
+      "sexe": "dona",
+      "franja_edat": "50-59",
+      "tipus_relacio": "indefinit",
+      "efectius": 1
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "direccio",
+      "sexe": "home",
+      "franja_edat": "<30",
+      "tipus_relacio": "indefinit",
+      "efectius": 1
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "direccio",
+      "sexe": "home",
+      "franja_edat": "30-39",
+      "tipus_relacio": "indefinit",
+      "efectius": 1
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "direccio",
+      "sexe": "home",
+      "franja_edat": "40-49",
+      "tipus_relacio": "indefinit",
+      "efectius": 1
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "direccio",
+      "sexe": "home",
+      "franja_edat": "50-59",
+      "tipus_relacio": "indefinit",
+      "efectius": 1
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "comandament",
+      "sexe": "dona",
+      "franja_edat": "<30",
+      "tipus_relacio": "indefinit",
+      "efectius": 3
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "comandament",
+      "sexe": "dona",
+      "franja_edat": "30-39",
+      "tipus_relacio": "indefinit",
+      "efectius": 4
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "comandament",
+      "sexe": "dona",
+      "franja_edat": "40-49",
+      "tipus_relacio": "indefinit",
+      "efectius": 5
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "comandament",
+      "sexe": "dona",
+      "franja_edat": "50-59",
+      "tipus_relacio": "indefinit",
+      "efectius": 3
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "comandament",
+      "sexe": "dona",
+      "franja_edat": ">=60",
+      "tipus_relacio": "indefinit",
+      "efectius": 1
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "comandament",
+      "sexe": "home",
+      "franja_edat": "<30",
+      "tipus_relacio": "indefinit",
+      "efectius": 2
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "comandament",
+      "sexe": "home",
+      "franja_edat": "30-39",
+      "tipus_relacio": "indefinit",
+      "efectius": 3
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "comandament",
+      "sexe": "home",
+      "franja_edat": "40-49",
+      "tipus_relacio": "indefinit",
+      "efectius": 4
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "comandament",
+      "sexe": "home",
+      "franja_edat": "50-59",
+      "tipus_relacio": "indefinit",
+      "efectius": 2
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "comandament",
+      "sexe": "home",
+      "franja_edat": ">=60",
+      "tipus_relacio": "indefinit",
+      "efectius": 1
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "tecnic_superior",
+      "sexe": "dona",
+      "franja_edat": "<30",
+      "tipus_relacio": "indefinit",
+      "efectius": 7
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "tecnic_superior",
+      "sexe": "dona",
+      "franja_edat": "30-39",
+      "tipus_relacio": "indefinit",
+      "efectius": 10
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "tecnic_superior",
+      "sexe": "dona",
+      "franja_edat": "30-39",
+      "tipus_relacio": "temporal",
+      "efectius": 1
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "tecnic_superior",
+      "sexe": "dona",
+      "franja_edat": "40-49",
+      "tipus_relacio": "indefinit",
+      "efectius": 12
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "tecnic_superior",
+      "sexe": "dona",
+      "franja_edat": "40-49",
+      "tipus_relacio": "temporal",
+      "efectius": 1
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "tecnic_superior",
+      "sexe": "dona",
+      "franja_edat": "50-59",
+      "tipus_relacio": "indefinit",
+      "efectius": 8
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "tecnic_superior",
+      "sexe": "dona",
+      "franja_edat": ">=60",
+      "tipus_relacio": "indefinit",
+      "efectius": 3
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "tecnic_superior",
+      "sexe": "home",
+      "franja_edat": "<30",
+      "tipus_relacio": "indefinit",
+      "efectius": 4
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "tecnic_superior",
+      "sexe": "home",
+      "franja_edat": "30-39",
+      "tipus_relacio": "indefinit",
+      "efectius": 6
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "tecnic_superior",
+      "sexe": "home",
+      "franja_edat": "40-49",
+      "tipus_relacio": "indefinit",
+      "efectius": 7
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "tecnic_superior",
+      "sexe": "home",
+      "franja_edat": "50-59",
+      "tipus_relacio": "indefinit",
+      "efectius": 5
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "tecnic_superior",
+      "sexe": "home",
+      "franja_edat": ">=60",
+      "tipus_relacio": "indefinit",
+      "efectius": 2
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "tecnic",
+      "sexe": "dona",
+      "franja_edat": "<30",
+      "tipus_relacio": "indefinit",
+      "efectius": 6
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "tecnic",
+      "sexe": "dona",
+      "franja_edat": "30-39",
+      "tipus_relacio": "indefinit",
+      "efectius": 9
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "tecnic",
+      "sexe": "dona",
+      "franja_edat": "40-49",
+      "tipus_relacio": "indefinit",
+      "efectius": 10
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "tecnic",
+      "sexe": "dona",
+      "franja_edat": "40-49",
+      "tipus_relacio": "temporal",
+      "efectius": 1
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "tecnic",
+      "sexe": "dona",
+      "franja_edat": "50-59",
+      "tipus_relacio": "indefinit",
+      "efectius": 7
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "tecnic",
+      "sexe": "dona",
+      "franja_edat": ">=60",
+      "tipus_relacio": "indefinit",
+      "efectius": 2
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "tecnic",
+      "sexe": "home",
+      "franja_edat": "<30",
+      "tipus_relacio": "indefinit",
+      "efectius": 4
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "tecnic",
+      "sexe": "home",
+      "franja_edat": "30-39",
+      "tipus_relacio": "indefinit",
+      "efectius": 7
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "tecnic",
+      "sexe": "home",
+      "franja_edat": "40-49",
+      "tipus_relacio": "indefinit",
+      "efectius": 8
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "tecnic",
+      "sexe": "home",
+      "franja_edat": "50-59",
+      "tipus_relacio": "indefinit",
+      "efectius": 5
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "tecnic",
+      "sexe": "home",
+      "franja_edat": ">=60",
+      "tipus_relacio": "indefinit",
+      "efectius": 2
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "administratiu",
+      "sexe": "dona",
+      "franja_edat": "<30",
+      "tipus_relacio": "indefinit",
+      "efectius": 4
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "administratiu",
+      "sexe": "dona",
+      "franja_edat": "30-39",
+      "tipus_relacio": "indefinit",
+      "efectius": 6
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "administratiu",
+      "sexe": "dona",
+      "franja_edat": "40-49",
+      "tipus_relacio": "indefinit",
+      "efectius": 7
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "administratiu",
+      "sexe": "dona",
+      "franja_edat": "50-59",
+      "tipus_relacio": "indefinit",
+      "efectius": 5
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "administratiu",
+      "sexe": "dona",
+      "franja_edat": ">=60",
+      "tipus_relacio": "indefinit",
+      "efectius": 2
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "administratiu",
+      "sexe": "home",
+      "franja_edat": "<30",
+      "tipus_relacio": "indefinit",
+      "efectius": 1
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "administratiu",
+      "sexe": "home",
+      "franja_edat": "30-39",
+      "tipus_relacio": "indefinit",
+      "efectius": 2
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "administratiu",
+      "sexe": "home",
+      "franja_edat": "40-49",
+      "tipus_relacio": "indefinit",
+      "efectius": 2
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "administratiu",
+      "sexe": "home",
+      "franja_edat": "50-59",
+      "tipus_relacio": "indefinit",
+      "efectius": 2
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "administratiu",
+      "sexe": "home",
+      "franja_edat": ">=60",
+      "tipus_relacio": "indefinit",
+      "efectius": 1
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "dona",
+      "franja_edat": "<30",
+      "tipus_relacio": "indefinit",
+      "efectius": 7
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "dona",
+      "franja_edat": "<30",
+      "tipus_relacio": "temporal",
+      "efectius": 1
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "dona",
+      "franja_edat": "<30",
+      "tipus_relacio": "fix_discontinu",
+      "efectius": 1
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "dona",
+      "franja_edat": "30-39",
+      "tipus_relacio": "indefinit",
+      "efectius": 12
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "dona",
+      "franja_edat": "30-39",
+      "tipus_relacio": "temporal",
+      "efectius": 2
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "dona",
+      "franja_edat": "30-39",
+      "tipus_relacio": "fix_discontinu",
+      "efectius": 2
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "dona",
+      "franja_edat": "40-49",
+      "tipus_relacio": "indefinit",
+      "efectius": 12
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "dona",
+      "franja_edat": "40-49",
+      "tipus_relacio": "temporal",
+      "efectius": 2
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "dona",
+      "franja_edat": "40-49",
+      "tipus_relacio": "fix_discontinu",
+      "efectius": 3
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "dona",
+      "franja_edat": "50-59",
+      "tipus_relacio": "indefinit",
+      "efectius": 9
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "dona",
+      "franja_edat": "50-59",
+      "tipus_relacio": "temporal",
+      "efectius": 1
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "dona",
+      "franja_edat": "50-59",
+      "tipus_relacio": "fix_discontinu",
+      "efectius": 2
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "dona",
+      "franja_edat": ">=60",
+      "tipus_relacio": "indefinit",
+      "efectius": 3
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "dona",
+      "franja_edat": ">=60",
+      "tipus_relacio": "fix_discontinu",
+      "efectius": 1
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "home",
+      "franja_edat": "<30",
+      "tipus_relacio": "indefinit",
+      "efectius": 3
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "home",
+      "franja_edat": "<30",
+      "tipus_relacio": "temporal",
+      "efectius": 1
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "home",
+      "franja_edat": "<30",
+      "tipus_relacio": "fix_discontinu",
+      "efectius": 1
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "home",
+      "franja_edat": "30-39",
+      "tipus_relacio": "indefinit",
+      "efectius": 6
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "home",
+      "franja_edat": "30-39",
+      "tipus_relacio": "temporal",
+      "efectius": 1
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "home",
+      "franja_edat": "30-39",
+      "tipus_relacio": "fix_discontinu",
+      "efectius": 1
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "home",
+      "franja_edat": "40-49",
+      "tipus_relacio": "indefinit",
+      "efectius": 7
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "home",
+      "franja_edat": "40-49",
+      "tipus_relacio": "temporal",
+      "efectius": 1
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "home",
+      "franja_edat": "40-49",
+      "tipus_relacio": "fix_discontinu",
+      "efectius": 1
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "home",
+      "franja_edat": "50-59",
+      "tipus_relacio": "indefinit",
+      "efectius": 4
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "home",
+      "franja_edat": "50-59",
+      "tipus_relacio": "temporal",
+      "efectius": 1
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "home",
+      "franja_edat": "50-59",
+      "tipus_relacio": "fix_discontinu",
+      "efectius": 1
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "home",
+      "franja_edat": ">=60",
+      "tipus_relacio": "indefinit",
+      "efectius": 2
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "operacions",
+      "sexe": "dona",
+      "franja_edat": "<30",
+      "tipus_relacio": "indefinit",
+      "efectius": 3
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "operacions",
+      "sexe": "dona",
+      "franja_edat": "30-39",
+      "tipus_relacio": "indefinit",
+      "efectius": 4
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "operacions",
+      "sexe": "dona",
+      "franja_edat": "30-39",
+      "tipus_relacio": "temporal",
+      "efectius": 1
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "operacions",
+      "sexe": "dona",
+      "franja_edat": "40-49",
+      "tipus_relacio": "indefinit",
+      "efectius": 5
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "operacions",
+      "sexe": "dona",
+      "franja_edat": "40-49",
+      "tipus_relacio": "temporal",
+      "efectius": 1
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "operacions",
+      "sexe": "dona",
+      "franja_edat": "50-59",
+      "tipus_relacio": "indefinit",
+      "efectius": 4
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "operacions",
+      "sexe": "dona",
+      "franja_edat": ">=60",
+      "tipus_relacio": "indefinit",
+      "efectius": 1
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "operacions",
+      "sexe": "home",
+      "franja_edat": "<30",
+      "tipus_relacio": "indefinit",
+      "efectius": 4
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "operacions",
+      "sexe": "home",
+      "franja_edat": "30-39",
+      "tipus_relacio": "indefinit",
+      "efectius": 6
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "operacions",
+      "sexe": "home",
+      "franja_edat": "30-39",
+      "tipus_relacio": "temporal",
+      "efectius": 1
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "operacions",
+      "sexe": "home",
+      "franja_edat": "40-49",
+      "tipus_relacio": "indefinit",
+      "efectius": 7
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "operacions",
+      "sexe": "home",
+      "franja_edat": "40-49",
+      "tipus_relacio": "temporal",
+      "efectius": 1
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "operacions",
+      "sexe": "home",
+      "franja_edat": "50-59",
+      "tipus_relacio": "indefinit",
+      "efectius": 4
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "operacions",
+      "sexe": "home",
+      "franja_edat": "50-59",
+      "tipus_relacio": "temporal",
+      "efectius": 1
+    },
+    {
+      "any": 2023,
+      "data_referencia": "2023-12-31",
+      "categoria": "operacions",
+      "sexe": "home",
+      "franja_edat": ">=60",
+      "tipus_relacio": "indefinit",
+      "efectius": 2
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "direccio",
+      "sexe": "dona",
+      "franja_edat": "<30",
+      "tipus_relacio": "indefinit",
+      "efectius": 1
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "direccio",
+      "sexe": "dona",
+      "franja_edat": "30-39",
+      "tipus_relacio": "indefinit",
+      "efectius": 1
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "direccio",
+      "sexe": "dona",
+      "franja_edat": "40-49",
+      "tipus_relacio": "indefinit",
+      "efectius": 1
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "direccio",
+      "sexe": "dona",
+      "franja_edat": "50-59",
+      "tipus_relacio": "indefinit",
+      "efectius": 1
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "direccio",
+      "sexe": "home",
+      "franja_edat": "<30",
+      "tipus_relacio": "indefinit",
+      "efectius": 1
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "direccio",
+      "sexe": "home",
+      "franja_edat": "30-39",
+      "tipus_relacio": "indefinit",
+      "efectius": 1
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "direccio",
+      "sexe": "home",
+      "franja_edat": "40-49",
+      "tipus_relacio": "indefinit",
+      "efectius": 1
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "direccio",
+      "sexe": "home",
+      "franja_edat": "50-59",
+      "tipus_relacio": "indefinit",
+      "efectius": 1
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "comandament",
+      "sexe": "dona",
+      "franja_edat": "<30",
+      "tipus_relacio": "indefinit",
+      "efectius": 3
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "comandament",
+      "sexe": "dona",
+      "franja_edat": "30-39",
+      "tipus_relacio": "indefinit",
+      "efectius": 4
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "comandament",
+      "sexe": "dona",
+      "franja_edat": "40-49",
+      "tipus_relacio": "indefinit",
+      "efectius": 5
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "comandament",
+      "sexe": "dona",
+      "franja_edat": "50-59",
+      "tipus_relacio": "indefinit",
+      "efectius": 3
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "comandament",
+      "sexe": "dona",
+      "franja_edat": ">=60",
+      "tipus_relacio": "indefinit",
+      "efectius": 1
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "comandament",
+      "sexe": "home",
+      "franja_edat": "<30",
+      "tipus_relacio": "indefinit",
+      "efectius": 2
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "comandament",
+      "sexe": "home",
+      "franja_edat": "30-39",
+      "tipus_relacio": "indefinit",
+      "efectius": 4
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "comandament",
+      "sexe": "home",
+      "franja_edat": "40-49",
+      "tipus_relacio": "indefinit",
+      "efectius": 4
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "comandament",
+      "sexe": "home",
+      "franja_edat": "50-59",
+      "tipus_relacio": "indefinit",
+      "efectius": 3
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "comandament",
+      "sexe": "home",
+      "franja_edat": ">=60",
+      "tipus_relacio": "indefinit",
+      "efectius": 1
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "tecnic_superior",
+      "sexe": "dona",
+      "franja_edat": "<30",
+      "tipus_relacio": "indefinit",
+      "efectius": 7
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "tecnic_superior",
+      "sexe": "dona",
+      "franja_edat": "30-39",
+      "tipus_relacio": "indefinit",
+      "efectius": 11
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "tecnic_superior",
+      "sexe": "dona",
+      "franja_edat": "30-39",
+      "tipus_relacio": "temporal",
+      "efectius": 1
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "tecnic_superior",
+      "sexe": "dona",
+      "franja_edat": "40-49",
+      "tipus_relacio": "indefinit",
+      "efectius": 12
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "tecnic_superior",
+      "sexe": "dona",
+      "franja_edat": "40-49",
+      "tipus_relacio": "temporal",
+      "efectius": 1
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "tecnic_superior",
+      "sexe": "dona",
+      "franja_edat": "50-59",
+      "tipus_relacio": "indefinit",
+      "efectius": 9
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "tecnic_superior",
+      "sexe": "dona",
+      "franja_edat": ">=60",
+      "tipus_relacio": "indefinit",
+      "efectius": 3
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "tecnic_superior",
+      "sexe": "home",
+      "franja_edat": "<30",
+      "tipus_relacio": "indefinit",
+      "efectius": 4
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "tecnic_superior",
+      "sexe": "home",
+      "franja_edat": "30-39",
+      "tipus_relacio": "indefinit",
+      "efectius": 6
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "tecnic_superior",
+      "sexe": "home",
+      "franja_edat": "40-49",
+      "tipus_relacio": "indefinit",
+      "efectius": 7
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "tecnic_superior",
+      "sexe": "home",
+      "franja_edat": "50-59",
+      "tipus_relacio": "indefinit",
+      "efectius": 5
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "tecnic_superior",
+      "sexe": "home",
+      "franja_edat": ">=60",
+      "tipus_relacio": "indefinit",
+      "efectius": 2
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "tecnic",
+      "sexe": "dona",
+      "franja_edat": "<30",
+      "tipus_relacio": "indefinit",
+      "efectius": 6
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "tecnic",
+      "sexe": "dona",
+      "franja_edat": "30-39",
+      "tipus_relacio": "indefinit",
+      "efectius": 9
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "tecnic",
+      "sexe": "dona",
+      "franja_edat": "30-39",
+      "tipus_relacio": "temporal",
+      "efectius": 1
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "tecnic",
+      "sexe": "dona",
+      "franja_edat": "40-49",
+      "tipus_relacio": "indefinit",
+      "efectius": 10
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "tecnic",
+      "sexe": "dona",
+      "franja_edat": "40-49",
+      "tipus_relacio": "temporal",
+      "efectius": 1
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "tecnic",
+      "sexe": "dona",
+      "franja_edat": "50-59",
+      "tipus_relacio": "indefinit",
+      "efectius": 8
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "tecnic",
+      "sexe": "dona",
+      "franja_edat": ">=60",
+      "tipus_relacio": "indefinit",
+      "efectius": 3
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "tecnic",
+      "sexe": "home",
+      "franja_edat": "<30",
+      "tipus_relacio": "indefinit",
+      "efectius": 4
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "tecnic",
+      "sexe": "home",
+      "franja_edat": "30-39",
+      "tipus_relacio": "indefinit",
+      "efectius": 7
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "tecnic",
+      "sexe": "home",
+      "franja_edat": "40-49",
+      "tipus_relacio": "indefinit",
+      "efectius": 8
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "tecnic",
+      "sexe": "home",
+      "franja_edat": "50-59",
+      "tipus_relacio": "indefinit",
+      "efectius": 5
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "tecnic",
+      "sexe": "home",
+      "franja_edat": ">=60",
+      "tipus_relacio": "indefinit",
+      "efectius": 2
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "administratiu",
+      "sexe": "dona",
+      "franja_edat": "<30",
+      "tipus_relacio": "indefinit",
+      "efectius": 4
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "administratiu",
+      "sexe": "dona",
+      "franja_edat": "30-39",
+      "tipus_relacio": "indefinit",
+      "efectius": 7
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "administratiu",
+      "sexe": "dona",
+      "franja_edat": "40-49",
+      "tipus_relacio": "indefinit",
+      "efectius": 8
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "administratiu",
+      "sexe": "dona",
+      "franja_edat": "50-59",
+      "tipus_relacio": "indefinit",
+      "efectius": 5
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "administratiu",
+      "sexe": "dona",
+      "franja_edat": ">=60",
+      "tipus_relacio": "indefinit",
+      "efectius": 2
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "administratiu",
+      "sexe": "home",
+      "franja_edat": "<30",
+      "tipus_relacio": "indefinit",
+      "efectius": 1
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "administratiu",
+      "sexe": "home",
+      "franja_edat": "30-39",
+      "tipus_relacio": "indefinit",
+      "efectius": 2
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "administratiu",
+      "sexe": "home",
+      "franja_edat": "40-49",
+      "tipus_relacio": "indefinit",
+      "efectius": 3
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "administratiu",
+      "sexe": "home",
+      "franja_edat": "50-59",
+      "tipus_relacio": "indefinit",
+      "efectius": 2
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "administratiu",
+      "sexe": "home",
+      "franja_edat": ">=60",
+      "tipus_relacio": "indefinit",
+      "efectius": 1
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "dona",
+      "franja_edat": "<30",
+      "tipus_relacio": "indefinit",
+      "efectius": 7
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "dona",
+      "franja_edat": "<30",
+      "tipus_relacio": "temporal",
+      "efectius": 1
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "dona",
+      "franja_edat": "<30",
+      "tipus_relacio": "fix_discontinu",
+      "efectius": 2
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "dona",
+      "franja_edat": "30-39",
+      "tipus_relacio": "indefinit",
+      "efectius": 12
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "dona",
+      "franja_edat": "30-39",
+      "tipus_relacio": "temporal",
+      "efectius": 2
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "dona",
+      "franja_edat": "30-39",
+      "tipus_relacio": "fix_discontinu",
+      "efectius": 2
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "dona",
+      "franja_edat": "40-49",
+      "tipus_relacio": "indefinit",
+      "efectius": 13
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "dona",
+      "franja_edat": "40-49",
+      "tipus_relacio": "temporal",
+      "efectius": 2
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "dona",
+      "franja_edat": "40-49",
+      "tipus_relacio": "fix_discontinu",
+      "efectius": 3
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "dona",
+      "franja_edat": "50-59",
+      "tipus_relacio": "indefinit",
+      "efectius": 9
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "dona",
+      "franja_edat": "50-59",
+      "tipus_relacio": "temporal",
+      "efectius": 1
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "dona",
+      "franja_edat": "50-59",
+      "tipus_relacio": "fix_discontinu",
+      "efectius": 2
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "dona",
+      "franja_edat": ">=60",
+      "tipus_relacio": "indefinit",
+      "efectius": 3
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "dona",
+      "franja_edat": ">=60",
+      "tipus_relacio": "fix_discontinu",
+      "efectius": 1
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "home",
+      "franja_edat": "<30",
+      "tipus_relacio": "indefinit",
+      "efectius": 3
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "home",
+      "franja_edat": "<30",
+      "tipus_relacio": "temporal",
+      "efectius": 1
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "home",
+      "franja_edat": "<30",
+      "tipus_relacio": "fix_discontinu",
+      "efectius": 1
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "home",
+      "franja_edat": "30-39",
+      "tipus_relacio": "indefinit",
+      "efectius": 6
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "home",
+      "franja_edat": "30-39",
+      "tipus_relacio": "temporal",
+      "efectius": 1
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "home",
+      "franja_edat": "30-39",
+      "tipus_relacio": "fix_discontinu",
+      "efectius": 1
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "home",
+      "franja_edat": "40-49",
+      "tipus_relacio": "indefinit",
+      "efectius": 7
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "home",
+      "franja_edat": "40-49",
+      "tipus_relacio": "temporal",
+      "efectius": 1
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "home",
+      "franja_edat": "40-49",
+      "tipus_relacio": "fix_discontinu",
+      "efectius": 1
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "home",
+      "franja_edat": "50-59",
+      "tipus_relacio": "indefinit",
+      "efectius": 4
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "home",
+      "franja_edat": "50-59",
+      "tipus_relacio": "temporal",
+      "efectius": 1
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "home",
+      "franja_edat": "50-59",
+      "tipus_relacio": "fix_discontinu",
+      "efectius": 1
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "home",
+      "franja_edat": ">=60",
+      "tipus_relacio": "indefinit",
+      "efectius": 2
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "operacions",
+      "sexe": "dona",
+      "franja_edat": "<30",
+      "tipus_relacio": "indefinit",
+      "efectius": 3
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "operacions",
+      "sexe": "dona",
+      "franja_edat": "30-39",
+      "tipus_relacio": "indefinit",
+      "efectius": 4
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "operacions",
+      "sexe": "dona",
+      "franja_edat": "30-39",
+      "tipus_relacio": "temporal",
+      "efectius": 1
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "operacions",
+      "sexe": "dona",
+      "franja_edat": "40-49",
+      "tipus_relacio": "indefinit",
+      "efectius": 5
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "operacions",
+      "sexe": "dona",
+      "franja_edat": "40-49",
+      "tipus_relacio": "temporal",
+      "efectius": 1
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "operacions",
+      "sexe": "dona",
+      "franja_edat": "50-59",
+      "tipus_relacio": "indefinit",
+      "efectius": 4
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "operacions",
+      "sexe": "dona",
+      "franja_edat": ">=60",
+      "tipus_relacio": "indefinit",
+      "efectius": 1
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "operacions",
+      "sexe": "home",
+      "franja_edat": "<30",
+      "tipus_relacio": "indefinit",
+      "efectius": 4
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "operacions",
+      "sexe": "home",
+      "franja_edat": "30-39",
+      "tipus_relacio": "indefinit",
+      "efectius": 6
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "operacions",
+      "sexe": "home",
+      "franja_edat": "30-39",
+      "tipus_relacio": "temporal",
+      "efectius": 1
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "operacions",
+      "sexe": "home",
+      "franja_edat": "40-49",
+      "tipus_relacio": "indefinit",
+      "efectius": 7
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "operacions",
+      "sexe": "home",
+      "franja_edat": "40-49",
+      "tipus_relacio": "temporal",
+      "efectius": 1
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "operacions",
+      "sexe": "home",
+      "franja_edat": "50-59",
+      "tipus_relacio": "indefinit",
+      "efectius": 4
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "operacions",
+      "sexe": "home",
+      "franja_edat": "50-59",
+      "tipus_relacio": "temporal",
+      "efectius": 1
+    },
+    {
+      "any": 2024,
+      "data_referencia": "2024-12-31",
+      "categoria": "operacions",
+      "sexe": "home",
+      "franja_edat": ">=60",
+      "tipus_relacio": "indefinit",
+      "efectius": 2
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "direccio",
+      "sexe": "dona",
+      "franja_edat": "<30",
+      "tipus_relacio": "indefinit",
+      "efectius": 1
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "direccio",
+      "sexe": "dona",
+      "franja_edat": "30-39",
+      "tipus_relacio": "indefinit",
+      "efectius": 1
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "direccio",
+      "sexe": "dona",
+      "franja_edat": "40-49",
+      "tipus_relacio": "indefinit",
+      "efectius": 1
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "direccio",
+      "sexe": "dona",
+      "franja_edat": "50-59",
+      "tipus_relacio": "indefinit",
+      "efectius": 1
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "direccio",
+      "sexe": "home",
+      "franja_edat": "<30",
+      "tipus_relacio": "indefinit",
+      "efectius": 1
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "direccio",
+      "sexe": "home",
+      "franja_edat": "30-39",
+      "tipus_relacio": "indefinit",
+      "efectius": 1
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "direccio",
+      "sexe": "home",
+      "franja_edat": "40-49",
+      "tipus_relacio": "indefinit",
+      "efectius": 2
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "direccio",
+      "sexe": "home",
+      "franja_edat": "50-59",
+      "tipus_relacio": "indefinit",
+      "efectius": 1
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "comandament",
+      "sexe": "dona",
+      "franja_edat": "<30",
+      "tipus_relacio": "indefinit",
+      "efectius": 3
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "comandament",
+      "sexe": "dona",
+      "franja_edat": "30-39",
+      "tipus_relacio": "indefinit",
+      "efectius": 5
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "comandament",
+      "sexe": "dona",
+      "franja_edat": "40-49",
+      "tipus_relacio": "indefinit",
+      "efectius": 5
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "comandament",
+      "sexe": "dona",
+      "franja_edat": "50-59",
+      "tipus_relacio": "indefinit",
+      "efectius": 3
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "comandament",
+      "sexe": "dona",
+      "franja_edat": ">=60",
+      "tipus_relacio": "indefinit",
+      "efectius": 1
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "comandament",
+      "sexe": "home",
+      "franja_edat": "<30",
+      "tipus_relacio": "indefinit",
+      "efectius": 2
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "comandament",
+      "sexe": "home",
+      "franja_edat": "30-39",
+      "tipus_relacio": "indefinit",
+      "efectius": 4
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "comandament",
+      "sexe": "home",
+      "franja_edat": "40-49",
+      "tipus_relacio": "indefinit",
+      "efectius": 4
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "comandament",
+      "sexe": "home",
+      "franja_edat": "50-59",
+      "tipus_relacio": "indefinit",
+      "efectius": 3
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "comandament",
+      "sexe": "home",
+      "franja_edat": ">=60",
+      "tipus_relacio": "indefinit",
+      "efectius": 1
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "tecnic_superior",
+      "sexe": "dona",
+      "franja_edat": "<30",
+      "tipus_relacio": "indefinit",
+      "efectius": 8
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "tecnic_superior",
+      "sexe": "dona",
+      "franja_edat": "30-39",
+      "tipus_relacio": "indefinit",
+      "efectius": 12
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "tecnic_superior",
+      "sexe": "dona",
+      "franja_edat": "30-39",
+      "tipus_relacio": "temporal",
+      "efectius": 1
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "tecnic_superior",
+      "sexe": "dona",
+      "franja_edat": "40-49",
+      "tipus_relacio": "indefinit",
+      "efectius": 13
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "tecnic_superior",
+      "sexe": "dona",
+      "franja_edat": "40-49",
+      "tipus_relacio": "temporal",
+      "efectius": 1
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "tecnic_superior",
+      "sexe": "dona",
+      "franja_edat": "50-59",
+      "tipus_relacio": "indefinit",
+      "efectius": 9
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "tecnic_superior",
+      "sexe": "dona",
+      "franja_edat": "50-59",
+      "tipus_relacio": "temporal",
+      "efectius": 1
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "tecnic_superior",
+      "sexe": "dona",
+      "franja_edat": ">=60",
+      "tipus_relacio": "indefinit",
+      "efectius": 3
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "tecnic_superior",
+      "sexe": "home",
+      "franja_edat": "<30",
+      "tipus_relacio": "indefinit",
+      "efectius": 4
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "tecnic_superior",
+      "sexe": "home",
+      "franja_edat": "30-39",
+      "tipus_relacio": "indefinit",
+      "efectius": 7
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "tecnic_superior",
+      "sexe": "home",
+      "franja_edat": "40-49",
+      "tipus_relacio": "indefinit",
+      "efectius": 8
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "tecnic_superior",
+      "sexe": "home",
+      "franja_edat": "50-59",
+      "tipus_relacio": "indefinit",
+      "efectius": 5
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "tecnic_superior",
+      "sexe": "home",
+      "franja_edat": ">=60",
+      "tipus_relacio": "indefinit",
+      "efectius": 2
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "tecnic",
+      "sexe": "dona",
+      "franja_edat": "<30",
+      "tipus_relacio": "indefinit",
+      "efectius": 6
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "tecnic",
+      "sexe": "dona",
+      "franja_edat": "30-39",
+      "tipus_relacio": "indefinit",
+      "efectius": 9
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "tecnic",
+      "sexe": "dona",
+      "franja_edat": "30-39",
+      "tipus_relacio": "temporal",
+      "efectius": 1
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "tecnic",
+      "sexe": "dona",
+      "franja_edat": "40-49",
+      "tipus_relacio": "indefinit",
+      "efectius": 10
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "tecnic",
+      "sexe": "dona",
+      "franja_edat": "40-49",
+      "tipus_relacio": "temporal",
+      "efectius": 1
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "tecnic",
+      "sexe": "dona",
+      "franja_edat": "50-59",
+      "tipus_relacio": "indefinit",
+      "efectius": 8
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "tecnic",
+      "sexe": "dona",
+      "franja_edat": ">=60",
+      "tipus_relacio": "indefinit",
+      "efectius": 3
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "tecnic",
+      "sexe": "home",
+      "franja_edat": "<30",
+      "tipus_relacio": "indefinit",
+      "efectius": 4
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "tecnic",
+      "sexe": "home",
+      "franja_edat": "30-39",
+      "tipus_relacio": "indefinit",
+      "efectius": 7
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "tecnic",
+      "sexe": "home",
+      "franja_edat": "40-49",
+      "tipus_relacio": "indefinit",
+      "efectius": 8
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "tecnic",
+      "sexe": "home",
+      "franja_edat": "50-59",
+      "tipus_relacio": "indefinit",
+      "efectius": 5
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "tecnic",
+      "sexe": "home",
+      "franja_edat": ">=60",
+      "tipus_relacio": "indefinit",
+      "efectius": 2
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "administratiu",
+      "sexe": "dona",
+      "franja_edat": "<30",
+      "tipus_relacio": "indefinit",
+      "efectius": 4
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "administratiu",
+      "sexe": "dona",
+      "franja_edat": "30-39",
+      "tipus_relacio": "indefinit",
+      "efectius": 7
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "administratiu",
+      "sexe": "dona",
+      "franja_edat": "40-49",
+      "tipus_relacio": "indefinit",
+      "efectius": 8
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "administratiu",
+      "sexe": "dona",
+      "franja_edat": "50-59",
+      "tipus_relacio": "indefinit",
+      "efectius": 5
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "administratiu",
+      "sexe": "dona",
+      "franja_edat": ">=60",
+      "tipus_relacio": "indefinit",
+      "efectius": 2
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "administratiu",
+      "sexe": "home",
+      "franja_edat": "<30",
+      "tipus_relacio": "indefinit",
+      "efectius": 1
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "administratiu",
+      "sexe": "home",
+      "franja_edat": "30-39",
+      "tipus_relacio": "indefinit",
+      "efectius": 2
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "administratiu",
+      "sexe": "home",
+      "franja_edat": "40-49",
+      "tipus_relacio": "indefinit",
+      "efectius": 2
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "administratiu",
+      "sexe": "home",
+      "franja_edat": "50-59",
+      "tipus_relacio": "indefinit",
+      "efectius": 2
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "administratiu",
+      "sexe": "home",
+      "franja_edat": ">=60",
+      "tipus_relacio": "indefinit",
+      "efectius": 1
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "dona",
+      "franja_edat": "<30",
+      "tipus_relacio": "indefinit",
+      "efectius": 7
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "dona",
+      "franja_edat": "<30",
+      "tipus_relacio": "temporal",
+      "efectius": 1
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "dona",
+      "franja_edat": "<30",
+      "tipus_relacio": "fix_discontinu",
+      "efectius": 1
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "dona",
+      "franja_edat": "30-39",
+      "tipus_relacio": "indefinit",
+      "efectius": 12
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "dona",
+      "franja_edat": "30-39",
+      "tipus_relacio": "temporal",
+      "efectius": 2
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "dona",
+      "franja_edat": "30-39",
+      "tipus_relacio": "fix_discontinu",
+      "efectius": 2
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "dona",
+      "franja_edat": "40-49",
+      "tipus_relacio": "indefinit",
+      "efectius": 13
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "dona",
+      "franja_edat": "40-49",
+      "tipus_relacio": "temporal",
+      "efectius": 2
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "dona",
+      "franja_edat": "40-49",
+      "tipus_relacio": "fix_discontinu",
+      "efectius": 3
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "dona",
+      "franja_edat": "50-59",
+      "tipus_relacio": "indefinit",
+      "efectius": 9
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "dona",
+      "franja_edat": "50-59",
+      "tipus_relacio": "temporal",
+      "efectius": 1
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "dona",
+      "franja_edat": "50-59",
+      "tipus_relacio": "fix_discontinu",
+      "efectius": 2
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "dona",
+      "franja_edat": ">=60",
+      "tipus_relacio": "indefinit",
+      "efectius": 3
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "dona",
+      "franja_edat": ">=60",
+      "tipus_relacio": "fix_discontinu",
+      "efectius": 1
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "home",
+      "franja_edat": "<30",
+      "tipus_relacio": "indefinit",
+      "efectius": 3
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "home",
+      "franja_edat": "<30",
+      "tipus_relacio": "temporal",
+      "efectius": 1
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "home",
+      "franja_edat": "<30",
+      "tipus_relacio": "fix_discontinu",
+      "efectius": 1
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "home",
+      "franja_edat": "30-39",
+      "tipus_relacio": "indefinit",
+      "efectius": 6
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "home",
+      "franja_edat": "30-39",
+      "tipus_relacio": "temporal",
+      "efectius": 1
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "home",
+      "franja_edat": "30-39",
+      "tipus_relacio": "fix_discontinu",
+      "efectius": 1
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "home",
+      "franja_edat": "40-49",
+      "tipus_relacio": "indefinit",
+      "efectius": 7
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "home",
+      "franja_edat": "40-49",
+      "tipus_relacio": "temporal",
+      "efectius": 1
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "home",
+      "franja_edat": "40-49",
+      "tipus_relacio": "fix_discontinu",
+      "efectius": 1
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "home",
+      "franja_edat": "50-59",
+      "tipus_relacio": "indefinit",
+      "efectius": 4
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "home",
+      "franja_edat": "50-59",
+      "tipus_relacio": "temporal",
+      "efectius": 1
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "home",
+      "franja_edat": "50-59",
+      "tipus_relacio": "fix_discontinu",
+      "efectius": 1
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "home",
+      "franja_edat": ">=60",
+      "tipus_relacio": "indefinit",
+      "efectius": 2
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "operacions",
+      "sexe": "dona",
+      "franja_edat": "<30",
+      "tipus_relacio": "indefinit",
+      "efectius": 3
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "operacions",
+      "sexe": "dona",
+      "franja_edat": "30-39",
+      "tipus_relacio": "indefinit",
+      "efectius": 4
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "operacions",
+      "sexe": "dona",
+      "franja_edat": "30-39",
+      "tipus_relacio": "temporal",
+      "efectius": 1
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "operacions",
+      "sexe": "dona",
+      "franja_edat": "40-49",
+      "tipus_relacio": "indefinit",
+      "efectius": 5
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "operacions",
+      "sexe": "dona",
+      "franja_edat": "40-49",
+      "tipus_relacio": "temporal",
+      "efectius": 1
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "operacions",
+      "sexe": "dona",
+      "franja_edat": "50-59",
+      "tipus_relacio": "indefinit",
+      "efectius": 4
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "operacions",
+      "sexe": "dona",
+      "franja_edat": ">=60",
+      "tipus_relacio": "indefinit",
+      "efectius": 1
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "operacions",
+      "sexe": "home",
+      "franja_edat": "<30",
+      "tipus_relacio": "indefinit",
+      "efectius": 4
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "operacions",
+      "sexe": "home",
+      "franja_edat": "30-39",
+      "tipus_relacio": "indefinit",
+      "efectius": 6
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "operacions",
+      "sexe": "home",
+      "franja_edat": "30-39",
+      "tipus_relacio": "temporal",
+      "efectius": 1
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "operacions",
+      "sexe": "home",
+      "franja_edat": "40-49",
+      "tipus_relacio": "indefinit",
+      "efectius": 7
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "operacions",
+      "sexe": "home",
+      "franja_edat": "40-49",
+      "tipus_relacio": "temporal",
+      "efectius": 1
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "operacions",
+      "sexe": "home",
+      "franja_edat": "50-59",
+      "tipus_relacio": "indefinit",
+      "efectius": 4
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "operacions",
+      "sexe": "home",
+      "franja_edat": "50-59",
+      "tipus_relacio": "temporal",
+      "efectius": 1
+    },
+    {
+      "any": 2025,
+      "data_referencia": "2025-12-31",
+      "categoria": "operacions",
+      "sexe": "home",
+      "franja_edat": ">=60",
+      "tipus_relacio": "indefinit",
+      "efectius": 2
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "direccio",
+      "sexe": "dona",
+      "franja_edat": "<30",
+      "tipus_relacio": "indefinit",
+      "efectius": 1
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "direccio",
+      "sexe": "dona",
+      "franja_edat": "30-39",
+      "tipus_relacio": "indefinit",
+      "efectius": 1
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "direccio",
+      "sexe": "dona",
+      "franja_edat": "40-49",
+      "tipus_relacio": "indefinit",
+      "efectius": 1
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "direccio",
+      "sexe": "dona",
+      "franja_edat": "50-59",
+      "tipus_relacio": "indefinit",
+      "efectius": 1
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "direccio",
+      "sexe": "home",
+      "franja_edat": "<30",
+      "tipus_relacio": "indefinit",
+      "efectius": 1
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "direccio",
+      "sexe": "home",
+      "franja_edat": "30-39",
+      "tipus_relacio": "indefinit",
+      "efectius": 1
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "direccio",
+      "sexe": "home",
+      "franja_edat": "40-49",
+      "tipus_relacio": "indefinit",
+      "efectius": 1
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "direccio",
+      "sexe": "home",
+      "franja_edat": "50-59",
+      "tipus_relacio": "indefinit",
+      "efectius": 1
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "comandament",
+      "sexe": "dona",
+      "franja_edat": "<30",
+      "tipus_relacio": "indefinit",
+      "efectius": 3
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "comandament",
+      "sexe": "dona",
+      "franja_edat": "30-39",
+      "tipus_relacio": "indefinit",
+      "efectius": 5
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "comandament",
+      "sexe": "dona",
+      "franja_edat": "40-49",
+      "tipus_relacio": "indefinit",
+      "efectius": 5
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "comandament",
+      "sexe": "dona",
+      "franja_edat": "50-59",
+      "tipus_relacio": "indefinit",
+      "efectius": 3
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "comandament",
+      "sexe": "dona",
+      "franja_edat": ">=60",
+      "tipus_relacio": "indefinit",
+      "efectius": 1
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "comandament",
+      "sexe": "home",
+      "franja_edat": "<30",
+      "tipus_relacio": "indefinit",
+      "efectius": 2
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "comandament",
+      "sexe": "home",
+      "franja_edat": "30-39",
+      "tipus_relacio": "indefinit",
+      "efectius": 4
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "comandament",
+      "sexe": "home",
+      "franja_edat": "40-49",
+      "tipus_relacio": "indefinit",
+      "efectius": 4
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "comandament",
+      "sexe": "home",
+      "franja_edat": "50-59",
+      "tipus_relacio": "indefinit",
+      "efectius": 3
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "comandament",
+      "sexe": "home",
+      "franja_edat": ">=60",
+      "tipus_relacio": "indefinit",
+      "efectius": 1
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "tecnic_superior",
+      "sexe": "dona",
+      "franja_edat": "<30",
+      "tipus_relacio": "indefinit",
+      "efectius": 8
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "tecnic_superior",
+      "sexe": "dona",
+      "franja_edat": "30-39",
+      "tipus_relacio": "indefinit",
+      "efectius": 12
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "tecnic_superior",
+      "sexe": "dona",
+      "franja_edat": "30-39",
+      "tipus_relacio": "temporal",
+      "efectius": 1
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "tecnic_superior",
+      "sexe": "dona",
+      "franja_edat": "40-49",
+      "tipus_relacio": "indefinit",
+      "efectius": 13
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "tecnic_superior",
+      "sexe": "dona",
+      "franja_edat": "40-49",
+      "tipus_relacio": "temporal",
+      "efectius": 1
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "tecnic_superior",
+      "sexe": "dona",
+      "franja_edat": "50-59",
+      "tipus_relacio": "indefinit",
+      "efectius": 9
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "tecnic_superior",
+      "sexe": "dona",
+      "franja_edat": "50-59",
+      "tipus_relacio": "temporal",
+      "efectius": 1
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "tecnic_superior",
+      "sexe": "dona",
+      "franja_edat": ">=60",
+      "tipus_relacio": "indefinit",
+      "efectius": 3
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "tecnic_superior",
+      "sexe": "home",
+      "franja_edat": "<30",
+      "tipus_relacio": "indefinit",
+      "efectius": 4
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "tecnic_superior",
+      "sexe": "home",
+      "franja_edat": "30-39",
+      "tipus_relacio": "indefinit",
+      "efectius": 7
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "tecnic_superior",
+      "sexe": "home",
+      "franja_edat": "40-49",
+      "tipus_relacio": "indefinit",
+      "efectius": 8
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "tecnic_superior",
+      "sexe": "home",
+      "franja_edat": "50-59",
+      "tipus_relacio": "indefinit",
+      "efectius": 5
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "tecnic_superior",
+      "sexe": "home",
+      "franja_edat": ">=60",
+      "tipus_relacio": "indefinit",
+      "efectius": 2
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "tecnic",
+      "sexe": "dona",
+      "franja_edat": "<30",
+      "tipus_relacio": "indefinit",
+      "efectius": 6
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "tecnic",
+      "sexe": "dona",
+      "franja_edat": "30-39",
+      "tipus_relacio": "indefinit",
+      "efectius": 10
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "tecnic",
+      "sexe": "dona",
+      "franja_edat": "30-39",
+      "tipus_relacio": "temporal",
+      "efectius": 1
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "tecnic",
+      "sexe": "dona",
+      "franja_edat": "40-49",
+      "tipus_relacio": "indefinit",
+      "efectius": 11
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "tecnic",
+      "sexe": "dona",
+      "franja_edat": "40-49",
+      "tipus_relacio": "temporal",
+      "efectius": 1
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "tecnic",
+      "sexe": "dona",
+      "franja_edat": "50-59",
+      "tipus_relacio": "indefinit",
+      "efectius": 8
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "tecnic",
+      "sexe": "dona",
+      "franja_edat": ">=60",
+      "tipus_relacio": "indefinit",
+      "efectius": 3
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "tecnic",
+      "sexe": "home",
+      "franja_edat": "<30",
+      "tipus_relacio": "indefinit",
+      "efectius": 4
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "tecnic",
+      "sexe": "home",
+      "franja_edat": "30-39",
+      "tipus_relacio": "indefinit",
+      "efectius": 7
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "tecnic",
+      "sexe": "home",
+      "franja_edat": "40-49",
+      "tipus_relacio": "indefinit",
+      "efectius": 8
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "tecnic",
+      "sexe": "home",
+      "franja_edat": "50-59",
+      "tipus_relacio": "indefinit",
+      "efectius": 5
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "tecnic",
+      "sexe": "home",
+      "franja_edat": ">=60",
+      "tipus_relacio": "indefinit",
+      "efectius": 2
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "administratiu",
+      "sexe": "dona",
+      "franja_edat": "<30",
+      "tipus_relacio": "indefinit",
+      "efectius": 4
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "administratiu",
+      "sexe": "dona",
+      "franja_edat": "30-39",
+      "tipus_relacio": "indefinit",
+      "efectius": 7
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "administratiu",
+      "sexe": "dona",
+      "franja_edat": "40-49",
+      "tipus_relacio": "indefinit",
+      "efectius": 8
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "administratiu",
+      "sexe": "dona",
+      "franja_edat": "50-59",
+      "tipus_relacio": "indefinit",
+      "efectius": 5
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "administratiu",
+      "sexe": "dona",
+      "franja_edat": ">=60",
+      "tipus_relacio": "indefinit",
+      "efectius": 2
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "administratiu",
+      "sexe": "home",
+      "franja_edat": "<30",
+      "tipus_relacio": "indefinit",
+      "efectius": 1
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "administratiu",
+      "sexe": "home",
+      "franja_edat": "30-39",
+      "tipus_relacio": "indefinit",
+      "efectius": 2
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "administratiu",
+      "sexe": "home",
+      "franja_edat": "40-49",
+      "tipus_relacio": "indefinit",
+      "efectius": 2
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "administratiu",
+      "sexe": "home",
+      "franja_edat": "50-59",
+      "tipus_relacio": "indefinit",
+      "efectius": 2
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "administratiu",
+      "sexe": "home",
+      "franja_edat": ">=60",
+      "tipus_relacio": "indefinit",
+      "efectius": 1
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "dona",
+      "franja_edat": "<30",
+      "tipus_relacio": "indefinit",
+      "efectius": 7
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "dona",
+      "franja_edat": "<30",
+      "tipus_relacio": "temporal",
+      "efectius": 1
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "dona",
+      "franja_edat": "<30",
+      "tipus_relacio": "fix_discontinu",
+      "efectius": 2
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "dona",
+      "franja_edat": "30-39",
+      "tipus_relacio": "indefinit",
+      "efectius": 13
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "dona",
+      "franja_edat": "30-39",
+      "tipus_relacio": "temporal",
+      "efectius": 2
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "dona",
+      "franja_edat": "30-39",
+      "tipus_relacio": "fix_discontinu",
+      "efectius": 3
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "dona",
+      "franja_edat": "40-49",
+      "tipus_relacio": "indefinit",
+      "efectius": 15
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "dona",
+      "franja_edat": "40-49",
+      "tipus_relacio": "temporal",
+      "efectius": 2
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "dona",
+      "franja_edat": "40-49",
+      "tipus_relacio": "fix_discontinu",
+      "efectius": 3
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "dona",
+      "franja_edat": "50-59",
+      "tipus_relacio": "indefinit",
+      "efectius": 9
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "dona",
+      "franja_edat": "50-59",
+      "tipus_relacio": "temporal",
+      "efectius": 2
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "dona",
+      "franja_edat": "50-59",
+      "tipus_relacio": "fix_discontinu",
+      "efectius": 2
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "dona",
+      "franja_edat": ">=60",
+      "tipus_relacio": "indefinit",
+      "efectius": 3
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "dona",
+      "franja_edat": ">=60",
+      "tipus_relacio": "temporal",
+      "efectius": 1
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "dona",
+      "franja_edat": ">=60",
+      "tipus_relacio": "fix_discontinu",
+      "efectius": 1
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "home",
+      "franja_edat": "<30",
+      "tipus_relacio": "indefinit",
+      "efectius": 3
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "home",
+      "franja_edat": "<30",
+      "tipus_relacio": "temporal",
+      "efectius": 1
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "home",
+      "franja_edat": "<30",
+      "tipus_relacio": "fix_discontinu",
+      "efectius": 1
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "home",
+      "franja_edat": "30-39",
+      "tipus_relacio": "indefinit",
+      "efectius": 6
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "home",
+      "franja_edat": "30-39",
+      "tipus_relacio": "temporal",
+      "efectius": 1
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "home",
+      "franja_edat": "30-39",
+      "tipus_relacio": "fix_discontinu",
+      "efectius": 1
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "home",
+      "franja_edat": "40-49",
+      "tipus_relacio": "indefinit",
+      "efectius": 7
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "home",
+      "franja_edat": "40-49",
+      "tipus_relacio": "temporal",
+      "efectius": 1
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "home",
+      "franja_edat": "40-49",
+      "tipus_relacio": "fix_discontinu",
+      "efectius": 1
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "home",
+      "franja_edat": "50-59",
+      "tipus_relacio": "indefinit",
+      "efectius": 4
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "home",
+      "franja_edat": "50-59",
+      "tipus_relacio": "temporal",
+      "efectius": 1
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "home",
+      "franja_edat": "50-59",
+      "tipus_relacio": "fix_discontinu",
+      "efectius": 1
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "informacio_turistica",
+      "sexe": "home",
+      "franja_edat": ">=60",
+      "tipus_relacio": "indefinit",
+      "efectius": 2
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "operacions",
+      "sexe": "dona",
+      "franja_edat": "<30",
+      "tipus_relacio": "indefinit",
+      "efectius": 3
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "operacions",
+      "sexe": "dona",
+      "franja_edat": "30-39",
+      "tipus_relacio": "indefinit",
+      "efectius": 4
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "operacions",
+      "sexe": "dona",
+      "franja_edat": "30-39",
+      "tipus_relacio": "temporal",
+      "efectius": 1
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "operacions",
+      "sexe": "dona",
+      "franja_edat": "40-49",
+      "tipus_relacio": "indefinit",
+      "efectius": 5
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "operacions",
+      "sexe": "dona",
+      "franja_edat": "40-49",
+      "tipus_relacio": "temporal",
+      "efectius": 1
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "operacions",
+      "sexe": "dona",
+      "franja_edat": "50-59",
+      "tipus_relacio": "indefinit",
+      "efectius": 4
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "operacions",
+      "sexe": "dona",
+      "franja_edat": ">=60",
+      "tipus_relacio": "indefinit",
+      "efectius": 1
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "operacions",
+      "sexe": "home",
+      "franja_edat": "<30",
+      "tipus_relacio": "indefinit",
+      "efectius": 4
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "operacions",
+      "sexe": "home",
+      "franja_edat": "30-39",
+      "tipus_relacio": "indefinit",
+      "efectius": 6
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "operacions",
+      "sexe": "home",
+      "franja_edat": "30-39",
+      "tipus_relacio": "temporal",
+      "efectius": 1
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "operacions",
+      "sexe": "home",
+      "franja_edat": "40-49",
+      "tipus_relacio": "indefinit",
+      "efectius": 7
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "operacions",
+      "sexe": "home",
+      "franja_edat": "40-49",
+      "tipus_relacio": "temporal",
+      "efectius": 1
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "operacions",
+      "sexe": "home",
+      "franja_edat": "50-59",
+      "tipus_relacio": "indefinit",
+      "efectius": 4
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "operacions",
+      "sexe": "home",
+      "franja_edat": "50-59",
+      "tipus_relacio": "temporal",
+      "efectius": 1
+    },
+    {
+      "any": 2026,
+      "data_referencia": "2026-12-31",
+      "categoria": "operacions",
+      "sexe": "home",
+      "franja_edat": ">=60",
+      "tipus_relacio": "indefinit",
+      "efectius": 2
+    }
+  ]
+}

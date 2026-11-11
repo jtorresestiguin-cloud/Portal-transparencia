@@ -1,0 +1,189 @@
+{
+  "generat": "2026-11-11",
+  "avis": "Dades d'exemple generades sintèticament per al prototip. No són xifres oficials.",
+  "unitat": "EUR",
+  "dades": [
+    {
+      "data": "2026-09-22",
+      "carrec": "direccio_productes",
+      "descripcio": "Entrades a esdeveniment cultural",
+      "valor_estimat": 184.56,
+      "destinacio": "fons_patrimonial"
+    },
+    {
+      "data": "2026-09-15",
+      "carrec": "direccio_general",
+      "descripcio": "Llibre institucional",
+      "valor_estimat": 45.9,
+      "destinacio": "fons_patrimonial"
+    },
+    {
+      "data": "2026-08-10",
+      "carrec": "direccio_promocio",
+      "descripcio": "Entrades a esdeveniment cultural",
+      "valor_estimat": 101.79,
+      "destinacio": "fons_patrimonial"
+    },
+    {
+      "data": "2026-07-28",
+      "carrec": "direccio_promocio",
+      "descripcio": "Llibre institucional",
+      "valor_estimat": 45.71,
+      "destinacio": "retornat"
+    },
+    {
+      "data": "2026-05-24",
+      "carrec": "direccio_convention_bureau",
+      "descripcio": "Producte gastronòmic",
+      "valor_estimat": 74.94,
+      "destinacio": "fons_patrimonial"
+    },
+    {
+      "data": "2026-04-22",
+      "carrec": "direccio_general",
+      "descripcio": "Peça d'artesania",
+      "valor_estimat": 39.96,
+      "destinacio": "fons_patrimonial"
+    },
+    {
+      "data": "2026-04-15",
+      "carrec": "direccio_productes",
+      "descripcio": "Llibre institucional",
+      "valor_estimat": 58.02,
+      "destinacio": "donacio_entitat_social"
+    },
+    {
+      "data": "2026-03-28",
+      "carrec": "direccio_productes",
+      "descripcio": "Producte gastronòmic",
+      "valor_estimat": 166.12,
+      "destinacio": "fons_patrimonial"
+    },
+    {
+      "data": "2026-01-09",
+      "carrec": "direccio_convention_bureau",
+      "descripcio": "Llibre institucional",
+      "valor_estimat": 112.57,
+      "destinacio": "fons_patrimonial"
+    },
+    {
+      "data": "2025-12-10",
+      "carrec": "direccio_sostenibilitat",
+      "descripcio": "Entrades a esdeveniment cultural",
+      "valor_estimat": 107.56,
+      "destinacio": "fons_patrimonial"
+    },
+    {
+      "data": "2025-09-20",
+      "carrec": "direccio_economica",
+      "descripcio": "Obsequi protocol·lari d'una delegació estrangera",
+      "valor_estimat": 208.08,
+      "destinacio": "retornat"
+    },
+    {
+      "data": "2025-06-28",
+      "carrec": "direccio_sostenibilitat",
+      "descripcio": "Producte gastronòmic",
+      "valor_estimat": 59.63,
+      "destinacio": "donacio_entitat_social"
+    },
+    {
+      "data": "2025-06-14",
+      "carrec": "direccio_productes",
+      "descripcio": "Peça d'artesania",
+      "valor_estimat": 90.62,
+      "destinacio": "fons_patrimonial"
+    },
+    {
+      "data": "2025-06-07",
+      "carrec": "direccio_productes",
+      "descripcio": "Producte gastronòmic",
+      "valor_estimat": 132.3,
+      "destinacio": "fons_patrimonial"
+    },
+    {
+      "data": "2025-06-03",
+      "carrec": "direccio_convention_bureau",
+      "descripcio": "Producte gastronòmic",
+      "valor_estimat": 35.68,
+      "destinacio": "donacio_entitat_social"
+    },
+    {
+      "data": "2025-05-22",
+      "carrec": "direccio_general",
+      "descripcio": "Llibre institucional",
+      "valor_estimat": 89.78,
+      "destinacio": "fons_patrimonial"
+    },
+    {
+      "data": "2025-04-04",
+      "carrec": "direccio_general",
+      "descripcio": "Entrades a esdeveniment cultural",
+      "valor_estimat": 162.23,
+      "destinacio": "fons_patrimonial"
+    },
+    {
+      "data": "2025-02-08",
+      "carrec": "direccio_general",
+      "descripcio": "Llibre institucional",
+      "valor_estimat": 105.05,
+      "destinacio": "retornat"
+    },
+    {
+      "data": "2025-01-14",
+      "carrec": "direccio_productes",
+      "descripcio": "Entrades a esdeveniment cultural",
+      "valor_estimat": 97.13,
+      "destinacio": "donacio_entitat_social"
+    },
+    {
+      "data": "2024-10-23",
+      "carrec": "direccio_general",
+      "descripcio": "Obsequi protocol·lari d'una delegació estrangera",
+      "valor_estimat": 193.55,
+      "destinacio": "fons_patrimonial"
+    },
+    {
+      "data": "2024-10-22",
+      "carrec": "direccio_productes",
+      "descripcio": "Peça d'artesania",
+      "valor_estimat": 221.29,
+      "destinacio": "fons_patrimonial"
+    },
+    {
+      "data": "2024-08-22",
+      "carrec": "direccio_general",
+      "descripcio": "Obsequi protocol·lari d'una delegació estrangera",
+      "valor_estimat": 37.59,
+      "destinacio": "fons_patrimonial"
+    },
+    {
+      "data": "2024-07-25",
+      "carrec": "direccio_sostenibilitat",
+      "descripcio": "Obsequi protocol·lari d'una delegació estrangera",
+      "valor_estimat": 185.71,
+      "destinacio": "retornat"
+    },
+    {
+      "data": "2024-06-24",
+      "carrec": "direccio_general",
+      "descripcio": "Producte gastronòmic",
+      "valor_estimat": 135.54,
+      "destinacio": "fons_patrimonial"
+    },
+    {
+      "data": "2024-04-22",
+      "carrec": "direccio_productes",
+      "descripcio": "Entrades a esdeveniment cultural",
+      "valor_estimat": 229.64,
+      "destinacio": "fons_patrimonial"
+    },
+    {
+      "data": "2024-01-17",
+      "carrec": "direccio_promocio",
+      "descripcio": "Peça d'artesania",
+      "valor_estimat": 92.11,
+      "destinacio": "fons_patrimonial"
+    }
+  ]
+}

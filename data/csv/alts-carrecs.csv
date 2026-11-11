@@ -1,0 +1,7 @@
+lloc,organ,tipus_vinculacio,retribucio_fixa,retribucio_variable_maxima,data_nomenament,declaracio_interessos,declaracio_patrimonial,compatibilitat
+direccio_general,Direcció General,alta_direccio,128500,0,2023-03-01,true,true,no_consta_activitat
+direccio_promocio,Direcció de Promoció i Màrqueting,personal_directiu,98200,0,2021-09-15,true,false,no_consta_activitat
+direccio_convention_bureau,Direcció del Barcelona Convention Bureau,personal_directiu,92400,0,2020-02-01,true,false,docencia_autoritzada
+direccio_productes,Direcció de Productes Turístics,personal_directiu,95800,0,2022-05-09,true,false,no_consta_activitat
+direccio_economica,Direcció Economicofinancera i de Serveis Generals,personal_directiu,94100,0,2019-11-04,true,false,no_consta_activitat
+direccio_sostenibilitat,Direcció de Turisme Sostenible i Territori,personal_directiu,89600,0,2024-01-08,true,false,no_consta_activitat

@@ -1,0 +1,194 @@
+{
+  "api": "v1",
+  "base": "https://jtorresestiguin-cloud.github.io/portal-transparencia",
+  "actualitzat": "2026-11-11",
+  "cataleg": {
+    "jsonld": "https://jtorresestiguin-cloud.github.io/portal-transparencia/data/catalog.jsonld",
+    "rdf": "https://jtorresestiguin-cloud.github.io/portal-transparencia/data/catalog.rdf",
+    "turtle": "https://jtorresestiguin-cloud.github.io/portal-transparencia/data/catalog.ttl",
+    "datapackage": "https://jtorresestiguin-cloud.github.io/portal-transparencia/datapackage.json",
+    "openapi": "https://jtorresestiguin-cloud.github.io/portal-transparencia/api/openapi.json"
+  },
+  "conjunts": [
+    {
+      "id": "pressupost",
+      "titol": {
+        "ca": "Pressupost i execució pressupostària",
+        "es": "Presupuesto y ejecución presupuestaria",
+        "en": "Budget and budget execution"
+      },
+      "registres": 156,
+      "json": "https://jtorresestiguin-cloud.github.io/portal-transparencia/data/pressupost.json",
+      "csv": "https://jtorresestiguin-cloud.github.io/portal-transparencia/data/csv/pressupost.csv",
+      "esquema": "https://jtorresestiguin-cloud.github.io/portal-transparencia/datapackage.json#pressupost"
+    },
+    {
+      "id": "contractes",
+      "titol": {
+        "ca": "Contractes adjudicats",
+        "es": "Contratos adjudicados",
+        "en": "Awarded contracts"
+      },
+      "registres": 296,
+      "json": "https://jtorresestiguin-cloud.github.io/portal-transparencia/data/contractes.json",
+      "csv": "https://jtorresestiguin-cloud.github.io/portal-transparencia/data/csv/contractes.csv",
+      "esquema": "https://jtorresestiguin-cloud.github.io/portal-transparencia/datapackage.json#contractes"
+    },
+    {
+      "id": "subvencions",
+      "titol": {
+        "ca": "Subvencions i ajuts atorgats",
+        "es": "Subvenciones y ayudas concedidas",
+        "en": "Grants awarded"
+      },
+      "registres": 89,
+      "json": "https://jtorresestiguin-cloud.github.io/portal-transparencia/data/subvencions.json",
+      "csv": "https://jtorresestiguin-cloud.github.io/portal-transparencia/data/csv/subvencions.csv",
+      "esquema": "https://jtorresestiguin-cloud.github.io/portal-transparencia/datapackage.json#subvencions"
+    },
+    {
+      "id": "convenis",
+      "titol": {
+        "ca": "Convenis de col·laboració",
+        "es": "Convenios de colaboración",
+        "en": "Collaboration agreements"
+      },
+      "registres": 41,
+      "json": "https://jtorresestiguin-cloud.github.io/portal-transparencia/data/convenis.json",
+      "csv": "https://jtorresestiguin-cloud.github.io/portal-transparencia/data/csv/convenis.csv",
+      "esquema": "https://jtorresestiguin-cloud.github.io/portal-transparencia/datapackage.json#convenis"
+    },
+    {
+      "id": "plantilla",
+      "titol": {
+        "ca": "Plantilla de personal",
+        "es": "Plantilla de personal",
+        "en": "Workforce"
+      },
+      "registres": 568,
+      "json": "https://jtorresestiguin-cloud.github.io/portal-transparencia/data/plantilla.json",
+      "csv": "https://jtorresestiguin-cloud.github.io/portal-transparencia/data/csv/plantilla.csv",
+      "esquema": "https://jtorresestiguin-cloud.github.io/portal-transparencia/datapackage.json#plantilla"
+    },
+    {
+      "id": "retribucions",
+      "titol": {
+        "ca": "Taules retributives i bretxa salarial",
+        "es": "Tablas retributivas y brecha salarial",
+        "en": "Pay scales and gender pay gap"
+      },
+      "registres": 35,
+      "json": "https://jtorresestiguin-cloud.github.io/portal-transparencia/data/retribucions.json",
+      "csv": "https://jtorresestiguin-cloud.github.io/portal-transparencia/data/csv/retribucions.csv",
+      "esquema": "https://jtorresestiguin-cloud.github.io/portal-transparencia/datapackage.json#retribucions"
+    },
+    {
+      "id": "alts-carrecs",
+      "titol": {
+        "ca": "Alts càrrecs i personal directiu",
+        "es": "Altos cargos y personal directivo",
+        "en": "Senior officials"
+      },
+      "registres": 6,
+      "json": "https://jtorresestiguin-cloud.github.io/portal-transparencia/data/alts-carrecs.json",
+      "csv": "https://jtorresestiguin-cloud.github.io/portal-transparencia/data/csv/alts-carrecs.csv",
+      "esquema": "https://jtorresestiguin-cloud.github.io/portal-transparencia/datapackage.json#alts-carrecs"
+    },
+    {
+      "id": "agenda",
+      "titol": {
+        "ca": "Agenda institucional",
+        "es": "Agenda institucional",
+        "en": "Official diary"
+      },
+      "registres": 113,
+      "json": "https://jtorresestiguin-cloud.github.io/portal-transparencia/data/agenda.json",
+      "csv": "https://jtorresestiguin-cloud.github.io/portal-transparencia/data/csv/agenda.csv",
+      "esquema": "https://jtorresestiguin-cloud.github.io/portal-transparencia/datapackage.json#agenda"
+    },
+    {
+      "id": "regals",
+      "titol": {
+        "ca": "Registre de regals institucionals",
+        "es": "Registro de regalos institucionales",
+        "en": "Register of gifts"
+      },
+      "registres": 26,
+      "json": "https://jtorresestiguin-cloud.github.io/portal-transparencia/data/regals.json",
+      "csv": "https://jtorresestiguin-cloud.github.io/portal-transparencia/data/csv/regals.csv",
+      "esquema": "https://jtorresestiguin-cloud.github.io/portal-transparencia/datapackage.json#regals"
+    },
+    {
+      "id": "indicadors-turisme",
+      "titol": {
+        "ca": "Indicadors turístics mensuals de Barcelona",
+        "es": "Indicadores turísticos mensuales de Barcelona",
+        "en": "Monthly tourism indicators for Barcelona"
+      },
+      "registres": 93,
+      "json": "https://jtorresestiguin-cloud.github.io/portal-transparencia/data/indicadors-turisme.json",
+      "csv": "https://jtorresestiguin-cloud.github.io/portal-transparencia/data/csv/indicadors-turisme.csv",
+      "esquema": "https://jtorresestiguin-cloud.github.io/portal-transparencia/datapackage.json#indicadors-turisme"
+    },
+    {
+      "id": "mercats-origen",
+      "titol": {
+        "ca": "Mercats d'origen dels turistes",
+        "es": "Mercados de origen de los turistas",
+        "en": "Source markets"
+      },
+      "registres": 65,
+      "json": "https://jtorresestiguin-cloud.github.io/portal-transparencia/data/mercats-origen.json",
+      "csv": "https://jtorresestiguin-cloud.github.io/portal-transparencia/data/csv/mercats-origen.csv",
+      "esquema": "https://jtorresestiguin-cloud.github.io/portal-transparencia/datapackage.json#mercats-origen"
+    },
+    {
+      "id": "oficines-informacio",
+      "titol": {
+        "ca": "Oficines i punts d'informació turística",
+        "es": "Oficinas y puntos de información turística",
+        "en": "Tourist information offices"
+      },
+      "registres": 9,
+      "json": "https://jtorresestiguin-cloud.github.io/portal-transparencia/data/oficines-informacio.json",
+      "csv": "https://jtorresestiguin-cloud.github.io/portal-transparencia/data/csv/oficines-informacio.csv",
+      "esquema": "https://jtorresestiguin-cloud.github.io/portal-transparencia/datapackage.json#oficines-informacio"
+    },
+    {
+      "id": "dret-acces",
+      "titol": {
+        "ca": "Sol·licituds d'accés a la informació pública",
+        "es": "Solicitudes de acceso a la información pública",
+        "en": "Freedom of information requests"
+      },
+      "registres": 240,
+      "json": "https://jtorresestiguin-cloud.github.io/portal-transparencia/data/dret-acces.json",
+      "csv": "https://jtorresestiguin-cloud.github.io/portal-transparencia/data/csv/dret-acces.csv",
+      "esquema": "https://jtorresestiguin-cloud.github.io/portal-transparencia/datapackage.json#dret-acces"
+    },
+    {
+      "id": "objectius",
+      "titol": {
+        "ca": "Objectius estratègics i grau de compliment",
+        "es": "Objetivos estratégicos y grado de cumplimiento",
+        "en": "Strategic objectives and progress"
+      },
+      "registres": 8,
+      "json": "https://jtorresestiguin-cloud.github.io/portal-transparencia/data/objectius.json",
+      "csv": "https://jtorresestiguin-cloud.github.io/portal-transparencia/data/csv/objectius.csv",
+      "esquema": "https://jtorresestiguin-cloud.github.io/portal-transparencia/datapackage.json#objectius"
+    },
+    {
+      "id": "obligacions",
+      "titol": {
+        "ca": "Compliment de les obligacions de publicitat activa",
+        "es": "Cumplimiento de las obligaciones de publicidad activa",
+        "en": "Proactive disclosure compliance"
+      },
+      "registres": 42,
+      "json": "https://jtorresestiguin-cloud.github.io/portal-transparencia/data/obligacions.json",
+      "csv": "https://jtorresestiguin-cloud.github.io/portal-transparencia/data/csv/obligacions.csv",
+      "esquema": "https://jtorresestiguin-cloud.github.io/portal-transparencia/datapackage.json#obligacions"
+    }
+  ]
+}

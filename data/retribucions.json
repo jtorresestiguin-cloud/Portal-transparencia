@@ -1,0 +1,287 @@
+{
+  "generat": "2026-11-11",
+  "avis": "Dades d'exemple generades sintèticament per al prototip. No són xifres oficials.",
+  "unitat": "EUR bruts anuals",
+  "dades": [
+    {
+      "any": 2022,
+      "categoria": "direccio",
+      "retribucio_minima": 78000,
+      "retribucio_maxima": 112000,
+      "retribucio_mitjana_dones": 82700.93,
+      "retribucio_mitjana_homes": 87002.85
+    },
+    {
+      "any": 2022,
+      "categoria": "comandament",
+      "retribucio_minima": 56000,
+      "retribucio_maxima": 76000,
+      "retribucio_mitjana_dones": 58373.93,
+      "retribucio_mitjana_homes": 58396.16
+    },
+    {
+      "any": 2022,
+      "categoria": "tecnic_superior",
+      "retribucio_minima": 41000,
+      "retribucio_maxima": 55000,
+      "retribucio_mitjana_dones": 48321.01,
+      "retribucio_mitjana_homes": 49606.52
+    },
+    {
+      "any": 2022,
+      "categoria": "tecnic",
+      "retribucio_minima": 33000,
+      "retribucio_maxima": 42000,
+      "retribucio_mitjana_dones": 38737.5,
+      "retribucio_mitjana_homes": 39490.28
+    },
+    {
+      "any": 2022,
+      "categoria": "administratiu",
+      "retribucio_minima": 27000,
+      "retribucio_maxima": 34000,
+      "retribucio_mitjana_dones": 27527.72,
+      "retribucio_mitjana_homes": 27626.61
+    },
+    {
+      "any": 2022,
+      "categoria": "informacio_turistica",
+      "retribucio_minima": 24500,
+      "retribucio_maxima": 31000,
+      "retribucio_mitjana_dones": 29455.62,
+      "retribucio_mitjana_homes": 30240.9
+    },
+    {
+      "any": 2022,
+      "categoria": "operacions",
+      "retribucio_minima": 23500,
+      "retribucio_maxima": 30500,
+      "retribucio_mitjana_dones": 23235.85,
+      "retribucio_mitjana_homes": 24129.96
+    },
+    {
+      "any": 2023,
+      "categoria": "direccio",
+      "retribucio_minima": 79950,
+      "retribucio_maxima": 114800,
+      "retribucio_mitjana_dones": 94182.82,
+      "retribucio_mitjana_homes": 96804.42
+    },
+    {
+      "any": 2023,
+      "categoria": "comandament",
+      "retribucio_minima": 57400,
+      "retribucio_maxima": 77900,
+      "retribucio_mitjana_dones": 76355.59,
+      "retribucio_mitjana_homes": 77592.14
+    },
+    {
+      "any": 2023,
+      "categoria": "tecnic_superior",
+      "retribucio_minima": 42025,
+      "retribucio_maxima": 56375,
+      "retribucio_mitjana_dones": 42287.71,
+      "retribucio_mitjana_homes": 43304.51
+    },
+    {
+      "any": 2023,
+      "categoria": "tecnic",
+      "retribucio_minima": 33825,
+      "retribucio_maxima": 43050,
+      "retribucio_mitjana_dones": 37653.36,
+      "retribucio_mitjana_homes": 39019.04
+    },
+    {
+      "any": 2023,
+      "categoria": "administratiu",
+      "retribucio_minima": 27675,
+      "retribucio_maxima": 34850,
+      "retribucio_mitjana_dones": 33370.18,
+      "retribucio_mitjana_homes": 34009.54
+    },
+    {
+      "any": 2023,
+      "categoria": "informacio_turistica",
+      "retribucio_minima": 25112.5,
+      "retribucio_maxima": 31775,
+      "retribucio_mitjana_dones": 30589.11,
+      "retribucio_mitjana_homes": 31355.41
+    },
+    {
+      "any": 2023,
+      "categoria": "operacions",
+      "retribucio_minima": 24087.5,
+      "retribucio_maxima": 31262.5,
+      "retribucio_mitjana_dones": 27201.51,
+      "retribucio_mitjana_homes": 28144.76
+    },
+    {
+      "any": 2024,
+      "categoria": "direccio",
+      "retribucio_minima": 81510,
+      "retribucio_maxima": 117040,
+      "retribucio_mitjana_dones": 89864.18,
+      "retribucio_mitjana_homes": 94475.3
+    },
+    {
+      "any": 2024,
+      "categoria": "comandament",
+      "retribucio_minima": 58520,
+      "retribucio_maxima": 79420,
+      "retribucio_mitjana_dones": 58757.13,
+      "retribucio_mitjana_homes": 60383.77
+    },
+    {
+      "any": 2024,
+      "categoria": "tecnic_superior",
+      "retribucio_minima": 42845,
+      "retribucio_maxima": 57475,
+      "retribucio_mitjana_dones": 43911.36,
+      "retribucio_mitjana_homes": 44255
+    },
+    {
+      "any": 2024,
+      "categoria": "tecnic",
+      "retribucio_minima": 34485,
+      "retribucio_maxima": 43890,
+      "retribucio_mitjana_dones": 34836.14,
+      "retribucio_mitjana_homes": 35559.61
+    },
+    {
+      "any": 2024,
+      "categoria": "administratiu",
+      "retribucio_minima": 28215,
+      "retribucio_maxima": 35530,
+      "retribucio_mitjana_dones": 34575.41,
+      "retribucio_mitjana_homes": 35882.76
+    },
+    {
+      "any": 2024,
+      "categoria": "informacio_turistica",
+      "retribucio_minima": 25602.5,
+      "retribucio_maxima": 32395,
+      "retribucio_mitjana_dones": 30468.54,
+      "retribucio_mitjana_homes": 30524.13
+    },
+    {
+      "any": 2024,
+      "categoria": "operacions",
+      "retribucio_minima": 24557.5,
+      "retribucio_maxima": 31872.5,
+      "retribucio_mitjana_dones": 27847.59,
+      "retribucio_mitjana_homes": 27591.28
+    },
+    {
+      "any": 2025,
+      "categoria": "direccio",
+      "retribucio_minima": 83460,
+      "retribucio_maxima": 119840,
+      "retribucio_mitjana_dones": 113144.78,
+      "retribucio_mitjana_homes": 116542.5
+    },
+    {
+      "any": 2025,
+      "categoria": "comandament",
+      "retribucio_minima": 59920,
+      "retribucio_maxima": 81320,
+      "retribucio_mitjana_dones": 71818.53,
+      "retribucio_mitjana_homes": 71274.29
+    },
+    {
+      "any": 2025,
+      "categoria": "tecnic_superior",
+      "retribucio_minima": 43870,
+      "retribucio_maxima": 58850,
+      "retribucio_mitjana_dones": 47902.24,
+      "retribucio_mitjana_homes": 49521.49
+    },
+    {
+      "any": 2025,
+      "categoria": "tecnic",
+      "retribucio_minima": 35310,
+      "retribucio_maxima": 44940,
+      "retribucio_mitjana_dones": 44301.39,
+      "retribucio_mitjana_homes": 45177.32
+    },
+    {
+      "any": 2025,
+      "categoria": "administratiu",
+      "retribucio_minima": 28890,
+      "retribucio_maxima": 36380,
+      "retribucio_mitjana_dones": 30441.35,
+      "retribucio_mitjana_homes": 30371.74
+    },
+    {
+      "any": 2025,
+      "categoria": "informacio_turistica",
+      "retribucio_minima": 26215,
+      "retribucio_maxima": 33170,
+      "retribucio_mitjana_dones": 32053.15,
+      "retribucio_mitjana_homes": 31981.39
+    },
+    {
+      "any": 2025,
+      "categoria": "operacions",
+      "retribucio_minima": 25145,
+      "retribucio_maxima": 32635,
+      "retribucio_mitjana_dones": 27119.22,
+      "retribucio_mitjana_homes": 27280.82
+    },
+    {
+      "any": 2026,
+      "categoria": "direccio",
+      "retribucio_minima": 85020,
+      "retribucio_maxima": 122080,
+      "retribucio_mitjana_dones": 107851.45,
+      "retribucio_mitjana_homes": 113498.41
+    },
+    {
+      "any": 2026,
+      "categoria": "comandament",
+      "retribucio_minima": 61040,
+      "retribucio_maxima": 82840,
+      "retribucio_mitjana_dones": 79291.08,
+      "retribucio_mitjana_homes": 80477.03
+    },
+    {
+      "any": 2026,
+      "categoria": "tecnic_superior",
+      "retribucio_minima": 44690,
+      "retribucio_maxima": 59950,
+      "retribucio_mitjana_dones": 51181.38,
+      "retribucio_mitjana_homes": 51031.35
+    },
+    {
+      "any": 2026,
+      "categoria": "tecnic",
+      "retribucio_minima": 35970,
+      "retribucio_maxima": 45780,
+      "retribucio_mitjana_dones": 37241.47,
+      "retribucio_mitjana_homes": 38919.15
+    },
+    {
+      "any": 2026,
+      "categoria": "administratiu",
+      "retribucio_minima": 29430,
+      "retribucio_maxima": 37060,
+      "retribucio_mitjana_dones": 37086.39,
+      "retribucio_mitjana_homes": 36986.15
+    },
+    {
+      "any": 2026,
+      "categoria": "informacio_turistica",
+      "retribucio_minima": 26705,
+      "retribucio_maxima": 33790,
+      "retribucio_mitjana_dones": 32603.97,
+      "retribucio_mitjana_homes": 33341.25
+    },
+    {
+      "any": 2026,
+      "categoria": "operacions",
+      "retribucio_minima": 25615,
+      "retribucio_maxima": 33245,
+      "retribucio_mitjana_dones": 25565.25,
+      "retribucio_mitjana_homes": 26424.1
+    }
+  ]
+}

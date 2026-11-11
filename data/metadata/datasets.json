@@ -1,0 +1,314 @@
+{
+  "cataleg": {
+    "id": "https://transparencia.turismedebarcelona.example/dades",
+    "titol": { "ca": "Catàleg de dades obertes del Consorci de Turisme de Barcelona", "es": "Catálogo de datos abiertos del Consorci de Turisme de Barcelona", "en": "Open data catalogue of the Barcelona Tourism Consortium" },
+    "descripcio": { "ca": "Conjunts de dades de transparència i d'activitat turística publicats en formats oberts i reutilitzables.", "es": "Conjuntos de datos de transparencia y de actividad turística publicados en formatos abiertos y reutilizables.", "en": "Transparency and tourism activity datasets published in open, reusable formats." },
+    "publicador": { "nom": "Consorci de Turisme de Barcelona", "uri": "https://transparencia.turismedebarcelona.example/#organitzacio", "dir3": "PENDENT-DIR3" },
+    "contacte": "mailto:transparencia@example.org",
+    "llicencia": "https://creativecommons.org/licenses/by/4.0/",
+    "idiomes": ["ca", "es", "en"],
+    "espai": "https://www.geonames.org/3128760",
+    "espai_nti": "http://datos.gob.es/recurso/sector-publico/territorio/Provincia/Barcelona"
+  },
+  "conjunts": [
+    {
+      "id": "pressupost",
+      "seccio": "economia",
+      "titol": { "ca": "Pressupost i execució pressupostària", "es": "Presupuesto y ejecución presupuestaria", "en": "Budget and budget execution" },
+      "descripcio": { "ca": "Pressupost inicial, definitiu i executat per any, tipus (ingrés/despesa), capítol econòmic i programa.", "es": "Presupuesto inicial, definitivo y ejecutado por año, tipo (ingreso/gasto), capítulo económico y programa.", "en": "Initial, final and executed budget by year, type (revenue/expense), economic chapter and programme." },
+      "paraules_clau": ["pressupost", "execució", "ingressos", "despeses", "capítol"],
+      "tema_eu": "GOVE", "tema_nti": "sector-publico",
+      "periodicitat": "QUARTERLY", "temporal": ["2021-01-01", "2026-12-31"],
+      "camps": [
+        { "nom": "any", "tipus": "integer", "descripcio": "Exercici pressupostari" },
+        { "nom": "tipus", "tipus": "string", "descripcio": "ingres | despesa" },
+        { "nom": "capitol", "tipus": "string", "descripcio": "Capítol de la classificació econòmica", "llista": "capitol_ingres|capitol_despesa" },
+        { "nom": "programa", "tipus": "string", "descripcio": "Programa de despesa (buit en ingressos)", "llista": "programa" },
+        { "nom": "inicial", "tipus": "number", "descripcio": "Crèdit/previsió inicial (EUR)" },
+        { "nom": "definitiu", "tipus": "number", "descripcio": "Crèdit/previsió definitiva després de modificacions (EUR)" },
+        { "nom": "executat", "tipus": "number", "descripcio": "Obligacions reconegudes / drets reconeguts (EUR)" },
+        { "nom": "estat", "tipus": "string", "descripcio": "liquidat | en_execucio" }
+      ]
+    },
+    {
+      "id": "contractes",
+      "seccio": "contractacio",
+      "titol": { "ca": "Contractes adjudicats", "es": "Contratos adjudicados", "en": "Awarded contracts" },
+      "descripcio": { "ca": "Relació de contractes adjudicats, inclosos els menors, amb procediment, CPV, imports, licitadors i adjudicatari. Alineat amb els camps de la PSCP i OCDS.", "es": "Relación de contratos adjudicados, incluidos los menores, con procedimiento, CPV, importes, licitadores y adjudicatario. Alineado con los campos de la PSCP y OCDS.", "en": "Awarded contracts, including minor contracts, with procedure, CPV, amounts, bidders and supplier. Aligned with PSCP and OCDS fields." },
+      "paraules_clau": ["contractació", "licitació", "adjudicació", "contractes menors", "CPV", "OCDS"],
+      "tema_eu": "GOVE", "tema_nti": "sector-publico",
+      "periodicitat": "CONT", "temporal": ["2022-01-01", "2026-12-31"],
+      "camps": [
+        { "nom": "id", "tipus": "string", "descripcio": "Identificador únic del contracte" },
+        { "nom": "expedient", "tipus": "string", "descripcio": "Número d'expedient" },
+        { "nom": "objecte", "tipus": "string", "descripcio": "Objecte del contracte" },
+        { "nom": "tipus", "tipus": "string", "descripcio": "Tipus de contracte", "llista": "tipus_contracte" },
+        { "nom": "procediment", "tipus": "string", "descripcio": "Procediment d'adjudicació", "llista": "procediment" },
+        { "nom": "cpv", "tipus": "string", "descripcio": "Codi CPV principal (Reglament CE 213/2008)", "llista": "cpv" },
+        { "nom": "programa", "tipus": "string", "descripcio": "Programa pressupostari", "llista": "programa" },
+        { "nom": "data_adjudicacio", "tipus": "date", "descripcio": "Data d'adjudicació (ISO 8601)" },
+        { "nom": "data_formalitzacio", "tipus": "date", "descripcio": "Data de formalització (buit en menors)" },
+        { "nom": "durada_mesos", "tipus": "integer", "descripcio": "Durada inicial en mesos" },
+        { "nom": "pressupost_licitacio_sense_iva", "tipus": "number", "descripcio": "Pressupost base de licitació sense IVA (EUR)" },
+        { "nom": "import_adjudicacio_sense_iva", "tipus": "number", "descripcio": "Import d'adjudicació sense IVA (EUR)" },
+        { "nom": "import_adjudicacio_amb_iva", "tipus": "number", "descripcio": "Import d'adjudicació amb IVA (EUR)" },
+        { "nom": "nombre_licitadors", "tipus": "integer", "descripcio": "Nombre d'ofertes rebudes" },
+        { "nom": "adjudicatari", "tipus": "string", "descripcio": "Raó social de l'adjudicatari" },
+        { "nom": "adjudicatari_nif", "tipus": "string", "descripcio": "NIF de l'adjudicatari" },
+        { "nom": "adjudicatari_pime", "tipus": "boolean", "descripcio": "L'adjudicatari és PIME" },
+        { "nom": "clausules_socials", "tipus": "boolean", "descripcio": "Inclou clàusules socials" },
+        { "nom": "clausules_ambientals", "tipus": "boolean", "descripcio": "Inclou clàusules ambientals" },
+        { "nom": "lots", "tipus": "integer", "descripcio": "Nombre de lots" },
+        { "nom": "modificat", "tipus": "boolean", "descripcio": "El contracte ha estat modificat" },
+        { "nom": "enllac_pscp", "tipus": "string", "format": "uri", "descripcio": "Enllaç a la Plataforma de Serveis de Contractació Pública" }
+      ]
+    },
+    {
+      "id": "subvencions",
+      "seccio": "subvencions",
+      "titol": { "ca": "Subvencions i ajuts atorgats", "es": "Subvenciones y ayudas concedidas", "en": "Grants awarded" },
+      "descripcio": { "ca": "Subvencions atorgades per línia, modalitat, beneficiari, districte i estat de justificació, amb referència BDNS.", "es": "Subvenciones concedidas por línea, modalidad, beneficiario, distrito y estado de justificación, con referencia BDNS.", "en": "Grants awarded by line, modality, beneficiary, district and accounting status, with BDNS reference." },
+      "paraules_clau": ["subvencions", "ajuts", "BDNS", "beneficiaris"],
+      "tema_eu": "GOVE", "tema_nti": "sector-publico",
+      "periodicitat": "QUARTERLY", "temporal": ["2022-01-01", "2026-12-31"],
+      "camps": [
+        { "nom": "id", "tipus": "string", "descripcio": "Identificador" },
+        { "nom": "any", "tipus": "integer", "descripcio": "Exercici" },
+        { "nom": "linia", "tipus": "string", "descripcio": "Línia de subvenció", "llista": "linia_subvencio" },
+        { "nom": "modalitat", "tipus": "string", "descripcio": "Modalitat de concessió", "llista": "modalitat_subvencio" },
+        { "nom": "beneficiari", "tipus": "string", "descripcio": "Entitat beneficiària" },
+        { "nom": "beneficiari_nif", "tipus": "string", "descripcio": "NIF de la beneficiària" },
+        { "nom": "districte", "tipus": "string", "descripcio": "Districte de Barcelona (buit si és d'àmbit ciutat)" },
+        { "nom": "import_sollicitat", "tipus": "number", "descripcio": "Import sol·licitat (EUR)" },
+        { "nom": "import_atorgat", "tipus": "number", "descripcio": "Import atorgat (EUR)" },
+        { "nom": "data_concessio", "tipus": "date", "descripcio": "Data de concessió" },
+        { "nom": "estat_justificacio", "tipus": "string", "descripcio": "Estat de justificació", "llista": "estat_justificacio" },
+        { "nom": "bdns", "tipus": "string", "descripcio": "Codi a la Base de Dades Nacional de Subvencions" }
+      ]
+    },
+    {
+      "id": "convenis",
+      "seccio": "subvencions",
+      "titol": { "ca": "Convenis de col·laboració", "es": "Convenios de colaboración", "en": "Collaboration agreements" },
+      "descripcio": { "ca": "Convenis signats amb objecte, part signant, vigència i obligacions econòmiques.", "es": "Convenios firmados con objeto, parte firmante, vigencia y obligaciones económicas.", "en": "Signed agreements with purpose, counterparty, term and financial obligations." },
+      "paraules_clau": ["convenis", "col·laboració", "patrocini"],
+      "tema_eu": "GOVE", "tema_nti": "sector-publico",
+      "periodicitat": "QUARTERLY", "temporal": ["2022-01-01", "2026-12-31"],
+      "camps": [
+        { "nom": "id", "tipus": "string", "descripcio": "Identificador" },
+        { "nom": "objecte", "tipus": "string", "descripcio": "Objecte del conveni" },
+        { "nom": "tipus_part", "tipus": "string", "descripcio": "Naturalesa de l'altra part", "llista": "tipus_part" },
+        { "nom": "part_signant", "tipus": "string", "descripcio": "Entitat signant" },
+        { "nom": "data_signatura", "tipus": "date", "descripcio": "Data de signatura" },
+        { "nom": "data_fi", "tipus": "date", "descripcio": "Data de finalització" },
+        { "nom": "durada_mesos", "tipus": "integer", "descripcio": "Durada en mesos" },
+        { "nom": "obligacions_economiques_ctb", "tipus": "number", "descripcio": "Obligacions econòmiques del Consorci (EUR)" },
+        { "nom": "aportacio_altra_part", "tipus": "number", "descripcio": "Aportació de l'altra part (EUR)" }
+      ]
+    },
+    {
+      "id": "plantilla",
+      "seccio": "personal",
+      "titol": { "ca": "Plantilla de personal", "es": "Plantilla de personal", "en": "Workforce" },
+      "descripcio": { "ca": "Efectius a 31 de desembre per categoria, sexe, franja d'edat i tipus de relació laboral.", "es": "Efectivos a 31 de diciembre por categoría, sexo, franja de edad y tipo de relación laboral.", "en": "Headcount at 31 December by category, sex, age band and contract type." },
+      "paraules_clau": ["personal", "plantilla", "gènere", "ocupació"],
+      "tema_eu": "GOVE", "tema_nti": "sector-publico",
+      "periodicitat": "ANNUAL", "temporal": ["2021-01-01", "2026-12-31"],
+      "camps": [
+        { "nom": "any", "tipus": "integer", "descripcio": "Any" },
+        { "nom": "data_referencia", "tipus": "date", "descripcio": "Data de referència" },
+        { "nom": "categoria", "tipus": "string", "descripcio": "Categoria professional", "llista": "categoria" },
+        { "nom": "sexe", "tipus": "string", "descripcio": "Sexe", "llista": "sexe" },
+        { "nom": "franja_edat", "tipus": "string", "descripcio": "Franja d'edat" },
+        { "nom": "tipus_relacio", "tipus": "string", "descripcio": "Tipus de relació laboral", "llista": "tipus_relacio" },
+        { "nom": "efectius", "tipus": "integer", "descripcio": "Nombre de persones" }
+      ]
+    },
+    {
+      "id": "retribucions",
+      "seccio": "personal",
+      "titol": { "ca": "Taules retributives i bretxa salarial", "es": "Tablas retributivas y brecha salarial", "en": "Pay scales and gender pay gap" },
+      "descripcio": { "ca": "Retribució bruta anual mínima, màxima i mitjana per sexe i categoria professional.", "es": "Retribución bruta anual mínima, máxima y media por sexo y categoría profesional.", "en": "Minimum, maximum and average gross annual pay by sex and category." },
+      "paraules_clau": ["retribucions", "salaris", "bretxa salarial", "igualtat"],
+      "tema_eu": "GOVE", "tema_nti": "sector-publico",
+      "periodicitat": "ANNUAL", "temporal": ["2022-01-01", "2026-12-31"],
+      "camps": [
+        { "nom": "any", "tipus": "integer", "descripcio": "Any" },
+        { "nom": "categoria", "tipus": "string", "descripcio": "Categoria professional", "llista": "categoria" },
+        { "nom": "retribucio_minima", "tipus": "number", "descripcio": "Retribució bruta anual mínima de la banda (EUR)" },
+        { "nom": "retribucio_maxima", "tipus": "number", "descripcio": "Retribució bruta anual màxima de la banda (EUR)" },
+        { "nom": "retribucio_mitjana_dones", "tipus": "number", "descripcio": "Retribució mitjana de les dones (EUR)" },
+        { "nom": "retribucio_mitjana_homes", "tipus": "number", "descripcio": "Retribució mitjana dels homes (EUR)" }
+      ]
+    },
+    {
+      "id": "alts-carrecs",
+      "seccio": "bon-govern",
+      "titol": { "ca": "Alts càrrecs i personal directiu", "es": "Altos cargos y personal directivo", "en": "Senior officials" },
+      "descripcio": { "ca": "Llocs directius, retribucions, data de nomenament i estat de les declaracions.", "es": "Puestos directivos, retribuciones, fecha de nombramiento y estado de las declaraciones.", "en": "Senior positions, pay, appointment date and declaration status." },
+      "paraules_clau": ["alts càrrecs", "retribucions", "declaracions", "bon govern"],
+      "tema_eu": "GOVE", "tema_nti": "sector-publico",
+      "periodicitat": "ANNUAL", "temporal": ["2026-01-01", "2026-12-31"],
+      "camps": [
+        { "nom": "lloc", "tipus": "string", "descripcio": "Codi del lloc", "llista": "lloc" },
+        { "nom": "organ", "tipus": "string", "descripcio": "Òrgan o unitat" },
+        { "nom": "tipus_vinculacio", "tipus": "string", "descripcio": "alta_direccio | personal_directiu" },
+        { "nom": "retribucio_fixa", "tipus": "number", "descripcio": "Retribució fixa bruta anual (EUR)" },
+        { "nom": "retribucio_variable_maxima", "tipus": "number", "descripcio": "Retribució variable màxima (EUR)" },
+        { "nom": "data_nomenament", "tipus": "date", "descripcio": "Data de nomenament" },
+        { "nom": "declaracio_interessos", "tipus": "boolean", "descripcio": "Declaració d'interessos publicada" },
+        { "nom": "declaracio_patrimonial", "tipus": "boolean", "descripcio": "Declaració patrimonial publicada" },
+        { "nom": "compatibilitat", "tipus": "string", "descripcio": "Situació de compatibilitat" }
+      ]
+    },
+    {
+      "id": "agenda",
+      "seccio": "bon-govern",
+      "titol": { "ca": "Agenda institucional", "es": "Agenda institucional", "en": "Official diary" },
+      "descripcio": { "ca": "Activitats públiques de la direcció, amb indicació de reunions amb grups d'interès inscrits al registre.", "es": "Actividades públicas de la dirección, con indicación de reuniones con grupos de interés inscritos en el registro.", "en": "Public activities of senior management, flagging meetings with registered lobby groups." },
+      "paraules_clau": ["agenda", "grups d'interès", "lobbies", "reunions"],
+      "tema_eu": "GOVE", "tema_nti": "sector-publico",
+      "periodicitat": "WEEKLY", "temporal": ["2025-11-01", "2026-11-30"],
+      "camps": [
+        { "nom": "data", "tipus": "date", "descripcio": "Data" },
+        { "nom": "carrec", "tipus": "string", "descripcio": "Lloc directiu", "llista": "lloc" },
+        { "nom": "tipus", "tipus": "string", "descripcio": "Tipus d'activitat", "llista": "tipus_agenda" },
+        { "nom": "activitat", "tipus": "string", "descripcio": "Descripció" },
+        { "nom": "grup_interes_registrat", "tipus": "boolean", "descripcio": "Reunió amb grup d'interès registrat" },
+        { "nom": "codi_registre_gi", "tipus": "string", "descripcio": "Codi al Registre de grups d'interès" },
+        { "nom": "lloc_activitat", "tipus": "string", "descripcio": "Ciutat" }
+      ]
+    },
+    {
+      "id": "regals",
+      "seccio": "bon-govern",
+      "titol": { "ca": "Registre de regals institucionals", "es": "Registro de regalos institucionales", "en": "Register of gifts" },
+      "descripcio": { "ca": "Obsequis rebuts per la direcció, valor estimat i destinació.", "es": "Obsequios recibidos por la dirección, valor estimado y destino.", "en": "Gifts received by senior management, estimated value and destination." },
+      "paraules_clau": ["regals", "integritat", "codi ètic"],
+      "tema_eu": "GOVE", "tema_nti": "sector-publico",
+      "periodicitat": "QUARTERLY", "temporal": ["2024-01-01", "2026-12-31"],
+      "camps": [
+        { "nom": "data", "tipus": "date", "descripcio": "Data" },
+        { "nom": "carrec", "tipus": "string", "descripcio": "Lloc directiu", "llista": "lloc" },
+        { "nom": "descripcio", "tipus": "string", "descripcio": "Descripció de l'obsequi" },
+        { "nom": "valor_estimat", "tipus": "number", "descripcio": "Valor estimat (EUR)" },
+        { "nom": "destinacio", "tipus": "string", "descripcio": "Destinació", "llista": "destinacio_regal" }
+      ]
+    },
+    {
+      "id": "indicadors-turisme",
+      "seccio": "activitat",
+      "titol": { "ca": "Indicadors turístics mensuals de Barcelona", "es": "Indicadores turísticos mensuales de Barcelona", "en": "Monthly tourism indicators for Barcelona" },
+      "descripcio": { "ca": "Sèrie mensual de pernoctacions i turistes hotelers, ocupació, preu mitjà, passatgers aeroportuaris, creueristes i ús de serveis del Consorci.", "es": "Serie mensual de pernoctaciones y turistas hoteleros, ocupación, precio medio, pasajeros aeroportuarios, cruceristas y uso de servicios del Consorci.", "en": "Monthly series of hotel nights and guests, occupancy, average rate, airport passengers, cruise passengers and use of Consortium services." },
+      "paraules_clau": ["turisme", "pernoctacions", "ocupació hotelera", "creuers", "aeroport", "estadística"],
+      "tema_eu": "ECON", "tema_nti": "turismo",
+      "periodicitat": "MONTHLY", "temporal": ["2019-01-01", "2026-09-30"],
+      "camps": [
+        { "nom": "periode", "tipus": "yearmonth", "descripcio": "Període (AAAA-MM)" },
+        { "nom": "any", "tipus": "integer", "descripcio": "Any" },
+        { "nom": "mes", "tipus": "integer", "descripcio": "Mes" },
+        { "nom": "pernoctacions_hoteleres", "tipus": "integer", "descripcio": "Pernoctacions en establiments hotelers" },
+        { "nom": "turistes_hotelers", "tipus": "integer", "descripcio": "Turistes allotjats en hotels" },
+        { "nom": "ocupacio_hotelera_pct", "tipus": "number", "descripcio": "Ocupació hotelera per habitacions (%)" },
+        { "nom": "preu_mitja_habitacio_eur", "tipus": "number", "descripcio": "Preu mitjà per habitació ocupada, ADR (EUR)" },
+        { "nom": "passatgers_aeroport", "tipus": "integer", "descripcio": "Passatgers a l'aeroport" },
+        { "nom": "creueristes", "tipus": "integer", "descripcio": "Passatgers de creuers" },
+        { "nom": "consultes_oficines_informacio", "tipus": "integer", "descripcio": "Consultes ateses a les oficines d'informació" },
+        { "nom": "vendes_targeta_turistica", "tipus": "integer", "descripcio": "Targetes turístiques venudes" },
+        { "nom": "usuaris_bus_turistic", "tipus": "integer", "descripcio": "Usuaris del bus turístic" }
+      ]
+    },
+    {
+      "id": "mercats-origen",
+      "seccio": "activitat",
+      "titol": { "ca": "Mercats d'origen dels turistes", "es": "Mercados de origen de los turistas", "en": "Source markets" },
+      "descripcio": { "ca": "Quota de turistes allotjats per país o regió d'origen.", "es": "Cuota de turistas alojados por país o región de origen.", "en": "Share of hotel guests by country or region of origin." },
+      "paraules_clau": ["mercats", "procedència", "turistes internacionals"],
+      "tema_eu": "ECON", "tema_nti": "turismo",
+      "periodicitat": "ANNUAL", "temporal": ["2019-01-01", "2025-12-31"],
+      "camps": [
+        { "nom": "any", "tipus": "integer", "descripcio": "Any" },
+        { "nom": "mercat", "tipus": "string", "descripcio": "Codi ISO 3166-1 alfa-2 o agregat", "llista": "mercat" },
+        { "nom": "quota_pct", "tipus": "number", "descripcio": "Quota sobre el total (%)" }
+      ]
+    },
+    {
+      "id": "oficines-informacio",
+      "seccio": "activitat",
+      "titol": { "ca": "Oficines i punts d'informació turística", "es": "Oficinas y puntos de información turística", "en": "Tourist information offices" },
+      "descripcio": { "ca": "Ubicació georeferenciada (WGS84), districte, accessibilitat i visites anuals de les oficines d'informació.", "es": "Ubicación georreferenciada (WGS84), distrito, accesibilidad y visitas anuales de las oficinas de información.", "en": "Geo-referenced location (WGS84), district, accessibility and annual visits of information offices." },
+      "paraules_clau": ["oficines de turisme", "geolocalització", "atenció al visitant"],
+      "tema_eu": "ECON", "tema_nti": "turismo",
+      "periodicitat": "ANNUAL", "temporal": ["2025-01-01", "2025-12-31"],
+      "camps": [
+        { "nom": "id", "tipus": "string", "descripcio": "Identificador" },
+        { "nom": "nom", "tipus": "string", "descripcio": "Nom" },
+        { "nom": "districte", "tipus": "string", "descripcio": "Districte" },
+        { "nom": "lat", "tipus": "number", "descripcio": "Latitud WGS84" },
+        { "nom": "lon", "tipus": "number", "descripcio": "Longitud WGS84" },
+        { "nom": "visites_2025", "tipus": "integer", "descripcio": "Visites ateses el 2025" },
+        { "nom": "accessible", "tipus": "boolean", "descripcio": "Accés adaptat per a persones amb mobilitat reduïda" }
+      ]
+    },
+    {
+      "id": "dret-acces",
+      "seccio": "dret-acces",
+      "titol": { "ca": "Sol·licituds d'accés a la informació pública", "es": "Solicitudes de acceso a la información pública", "en": "Freedom of information requests" },
+      "descripcio": { "ca": "Sol·licituds rebudes, tema, canal, tipus de sol·licitant, sentit de la resolució i termini de resposta.", "es": "Solicitudes recibidas, tema, canal, tipo de solicitante, sentido de la resolución y plazo de respuesta.", "en": "Requests received, topic, channel, requester type, outcome and response time." },
+      "paraules_clau": ["dret d'accés", "sol·licituds", "GAIP", "resolucions"],
+      "tema_eu": "GOVE", "tema_nti": "sector-publico",
+      "periodicitat": "QUARTERLY", "temporal": ["2021-01-01", "2026-12-31"],
+      "camps": [
+        { "nom": "id", "tipus": "string", "descripcio": "Identificador anonimitzat" },
+        { "nom": "data_entrada", "tipus": "date", "descripcio": "Data d'entrada" },
+        { "nom": "canal", "tipus": "string", "descripcio": "Canal", "llista": "canal" },
+        { "nom": "tipus_sollicitant", "tipus": "string", "descripcio": "Tipus de sol·licitant", "llista": "tipus_sollicitant" },
+        { "nom": "tema", "tipus": "string", "descripcio": "Tema", "llista": "tema_dai" },
+        { "nom": "sentit_resolucio", "tipus": "string", "descripcio": "Sentit de la resolució", "llista": "sentit_resolucio" },
+        { "nom": "data_resolucio", "tipus": "date", "descripcio": "Data de resolució" },
+        { "nom": "dies_resolucio", "tipus": "integer", "descripcio": "Dies naturals fins a la resolució" },
+        { "nom": "reclamacio_gaip", "tipus": "boolean", "descripcio": "S'ha presentat reclamació a la GAIP" }
+      ]
+    },
+    {
+      "id": "objectius",
+      "seccio": "activitat",
+      "titol": { "ca": "Objectius estratègics i grau de compliment", "es": "Objetivos estratégicos y grado de cumplimiento", "en": "Strategic objectives and progress" },
+      "descripcio": { "ca": "Objectius del pla d'actuació amb indicador, valor de base, valor actual i fita.", "es": "Objetivos del plan de actuación con indicador, valor base, valor actual y meta.", "en": "Action plan objectives with indicator, baseline, current value and target." },
+      "paraules_clau": ["planificació", "objectius", "indicadors", "rendició de comptes"],
+      "tema_eu": "GOVE", "tema_nti": "sector-publico",
+      "periodicitat": "BIANNUAL", "temporal": ["2024-01-01", "2030-12-31"],
+      "camps": [
+        { "nom": "id", "tipus": "string", "descripcio": "Identificador" },
+        { "nom": "eix", "tipus": "string", "descripcio": "Eix estratègic", "llista": "eix" },
+        { "nom": "objectiu", "tipus": "string", "descripcio": "Objectiu" },
+        { "nom": "indicador", "tipus": "string", "descripcio": "Indicador de seguiment" },
+        { "nom": "valor_base", "tipus": "number", "descripcio": "Valor de base" },
+        { "nom": "valor_actual", "tipus": "number", "descripcio": "Valor actual" },
+        { "nom": "valor_objectiu", "tipus": "number", "descripcio": "Valor fita" },
+        { "nom": "any_objectiu", "tipus": "integer", "descripcio": "Any de la fita" },
+        { "nom": "unitat", "tipus": "string", "descripcio": "Unitat de mesura" }
+      ]
+    },
+    {
+      "id": "obligacions",
+      "seccio": "compliment",
+      "titol": { "ca": "Compliment de les obligacions de publicitat activa", "es": "Cumplimiento de las obligaciones de publicidad activa", "en": "Proactive disclosure compliance" },
+      "descripcio": { "ca": "Autoavaluació de cada obligació de la Llei 19/2014: estat de publicació, periodicitat, data d'actualització i conjunt de dades associat.", "es": "Autoevaluación de cada obligación de la Ley 19/2014: estado de publicación, periodicidad, fecha de actualización y conjunto de datos asociado.", "en": "Self-assessment of each obligation under Catalan Law 19/2014: status, frequency, last update and linked dataset." },
+      "paraules_clau": ["transparència", "publicitat activa", "Llei 19/2014", "compliment"],
+      "tema_eu": "GOVE", "tema_nti": "sector-publico",
+      "periodicitat": "MONTHLY", "temporal": ["2026-01-01", "2026-12-31"],
+      "camps": [
+        { "nom": "id", "tipus": "string", "descripcio": "Identificador de l'obligació" },
+        { "nom": "bloc", "tipus": "string", "descripcio": "Bloc temàtic", "llista": "bloc_obligacio" },
+        { "nom": "article", "tipus": "string", "descripcio": "Article de la Llei 19/2014" },
+        { "nom": "titol", "tipus": "string", "descripcio": "Obligació" },
+        { "nom": "seccio", "tipus": "string", "descripcio": "Secció del portal on es publica" },
+        { "nom": "estat", "tipus": "string", "descripcio": "Estat", "llista": "estat_obligacio" },
+        { "nom": "periodicitat", "tipus": "string", "descripcio": "Periodicitat d'actualització", "llista": "periodicitat" },
+        { "nom": "conjunt_dades", "tipus": "string", "descripcio": "Conjunt de dades associat" },
+        { "nom": "darrera_actualitzacio", "tipus": "date", "descripcio": "Darrera actualització" }
+      ]
+    }
+  ]
+}

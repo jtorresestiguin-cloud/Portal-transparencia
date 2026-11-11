@@ -1,0 +1,15 @@
+{
+  "name": "portal-transparencia-turisme-barcelona",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Portal de transparència i dades obertes del Consorci de Turisme de Barcelona (prototip).",
+  "type": "module",
+  "license": "SEE LICENSE IN README.md",
+  "scripts": {
+    "start": "node scripts/serve.mjs 8080",
+    "data": "node scripts/generate-data.mjs",
+    "build": "node scripts/build-catalog.mjs",
+    "test": "node scripts/build-catalog.mjs && node scripts/smoke-test.mjs"
+  },
+  "engines": { "node": ">=18" }
+}
