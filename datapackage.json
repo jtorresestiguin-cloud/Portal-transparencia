@@ -3,9 +3,9 @@
   "name": "consorci-turisme-barcelona-transparencia",
   "title": "Catàleg de dades obertes del Consorci de Turisme de Barcelona",
   "description": "Conjunts de dades de transparència i d'activitat turística publicats en formats oberts i reutilitzables.",
-  "homepage": "https://jtorresestiguin-cloud.github.io/portal-transparencia/",
-  "version": "2026.11.11",
-  "created": "2026-11-11T00:00:00Z",
+  "homepage": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/",
+  "version": "2026.11.12",
+  "created": "2026-11-12T00:00:00Z",
   "licenses": [
     {
       "name": "CC-BY-4.0",
@@ -70,7 +70,7 @@
                 "6"
               ]
             },
-            "rdfType": "https://jtorresestiguin-cloud.github.io/portal-transparencia/data/codelists.json#capitol_ingres"
+            "rdfType": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/codelists.json#capitol_ingres"
           },
           {
             "name": "programa",
@@ -86,7 +86,7 @@
                 "P6"
               ]
             },
-            "rdfType": "https://jtorresestiguin-cloud.github.io/portal-transparencia/data/codelists.json#programa"
+            "rdfType": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/codelists.json#programa"
           },
           {
             "name": "inicial",
@@ -157,7 +157,7 @@
                 "obres"
               ]
             },
-            "rdfType": "https://jtorresestiguin-cloud.github.io/portal-transparencia/data/codelists.json#tipus_contracte"
+            "rdfType": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/codelists.json#tipus_contracte"
           },
           {
             "name": "procediment",
@@ -173,7 +173,7 @@
                 "basat_acord_marc"
               ]
             },
-            "rdfType": "https://jtorresestiguin-cloud.github.io/portal-transparencia/data/codelists.json#procediment"
+            "rdfType": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/codelists.json#procediment"
           },
           {
             "name": "cpv",
@@ -201,7 +201,7 @@
                 "92312000"
               ]
             },
-            "rdfType": "https://jtorresestiguin-cloud.github.io/portal-transparencia/data/codelists.json#cpv"
+            "rdfType": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/codelists.json#cpv"
           },
           {
             "name": "programa",
@@ -217,7 +217,7 @@
                 "P6"
               ]
             },
-            "rdfType": "https://jtorresestiguin-cloud.github.io/portal-transparencia/data/codelists.json#programa"
+            "rdfType": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/codelists.json#programa"
           },
           {
             "name": "data_adjudicacio",
@@ -365,7 +365,7 @@
                 "L4"
               ]
             },
-            "rdfType": "https://jtorresestiguin-cloud.github.io/portal-transparencia/data/codelists.json#linia_subvencio"
+            "rdfType": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/codelists.json#linia_subvencio"
           },
           {
             "name": "modalitat",
@@ -378,7 +378,7 @@
                 "nominativa"
               ]
             },
-            "rdfType": "https://jtorresestiguin-cloud.github.io/portal-transparencia/data/codelists.json#modalitat_subvencio"
+            "rdfType": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/codelists.json#modalitat_subvencio"
           },
           {
             "name": "beneficiari",
@@ -422,7 +422,7 @@
                 "pendent"
               ]
             },
-            "rdfType": "https://jtorresestiguin-cloud.github.io/portal-transparencia/data/codelists.json#estat_justificacio"
+            "rdfType": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/codelists.json#estat_justificacio"
           },
           {
             "name": "bdns",
@@ -476,7 +476,7 @@
                 "internacional"
               ]
             },
-            "rdfType": "https://jtorresestiguin-cloud.github.io/portal-transparencia/data/codelists.json#tipus_part"
+            "rdfType": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/codelists.json#tipus_part"
           },
           {
             "name": "part_signant",
@@ -557,7 +557,7 @@
                 "operacions"
               ]
             },
-            "rdfType": "https://jtorresestiguin-cloud.github.io/portal-transparencia/data/codelists.json#categoria"
+            "rdfType": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/codelists.json#categoria"
           },
           {
             "name": "sexe",
@@ -569,7 +569,7 @@
                 "home"
               ]
             },
-            "rdfType": "https://jtorresestiguin-cloud.github.io/portal-transparencia/data/codelists.json#sexe"
+            "rdfType": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/codelists.json#sexe"
           },
           {
             "name": "franja_edat",
@@ -587,7 +587,7 @@
                 "fix_discontinu"
               ]
             },
-            "rdfType": "https://jtorresestiguin-cloud.github.io/portal-transparencia/data/codelists.json#tipus_relacio"
+            "rdfType": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/codelists.json#tipus_relacio"
           },
           {
             "name": "efectius",
@@ -637,7 +637,7 @@
                 "operacions"
               ]
             },
-            "rdfType": "https://jtorresestiguin-cloud.github.io/portal-transparencia/data/codelists.json#categoria"
+            "rdfType": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/codelists.json#categoria"
           },
           {
             "name": "retribucio_minima",
@@ -696,7 +696,7 @@
                 "direccio_sostenibilitat"
               ]
             },
-            "rdfType": "https://jtorresestiguin-cloud.github.io/portal-transparencia/data/codelists.json#lloc"
+            "rdfType": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/codelists.json#lloc"
           },
           {
             "name": "organ",
@@ -792,7 +792,7 @@
                 "direccio_sostenibilitat"
               ]
             },
-            "rdfType": "https://jtorresestiguin-cloud.github.io/portal-transparencia/data/codelists.json#lloc"
+            "rdfType": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/codelists.json#lloc"
           },
           {
             "name": "tipus",
@@ -807,7 +807,7 @@
                 "organ"
               ]
             },
-            "rdfType": "https://jtorresestiguin-cloud.github.io/portal-transparencia/data/codelists.json#tipus_agenda"
+            "rdfType": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/codelists.json#tipus_agenda"
           },
           {
             "name": "activitat",
@@ -877,7 +877,7 @@
                 "direccio_sostenibilitat"
               ]
             },
-            "rdfType": "https://jtorresestiguin-cloud.github.io/portal-transparencia/data/codelists.json#lloc"
+            "rdfType": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/codelists.json#lloc"
           },
           {
             "name": "descripcio",
@@ -900,7 +900,7 @@
                 "donacio_entitat_social"
               ]
             },
-            "rdfType": "https://jtorresestiguin-cloud.github.io/portal-transparencia/data/codelists.json#destinacio_regal"
+            "rdfType": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/codelists.json#destinacio_regal"
           }
         ],
         "missingValues": [
@@ -1034,7 +1034,7 @@
                 "ALTRES"
               ]
             },
-            "rdfType": "https://jtorresestiguin-cloud.github.io/portal-transparencia/data/codelists.json#mercat"
+            "rdfType": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/codelists.json#mercat"
           },
           {
             "name": "quota_pct",
@@ -1150,7 +1150,7 @@
                 "presencial"
               ]
             },
-            "rdfType": "https://jtorresestiguin-cloud.github.io/portal-transparencia/data/codelists.json#canal"
+            "rdfType": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/codelists.json#canal"
           },
           {
             "name": "tipus_sollicitant",
@@ -1165,7 +1165,7 @@
                 "grup_politic"
               ]
             },
-            "rdfType": "https://jtorresestiguin-cloud.github.io/portal-transparencia/data/codelists.json#tipus_sollicitant"
+            "rdfType": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/codelists.json#tipus_sollicitant"
           },
           {
             "name": "tema",
@@ -1182,7 +1182,7 @@
                 "altres"
               ]
             },
-            "rdfType": "https://jtorresestiguin-cloud.github.io/portal-transparencia/data/codelists.json#tema_dai"
+            "rdfType": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/codelists.json#tema_dai"
           },
           {
             "name": "sentit_resolucio",
@@ -1198,7 +1198,7 @@
                 "en_tramit"
               ]
             },
-            "rdfType": "https://jtorresestiguin-cloud.github.io/portal-transparencia/data/codelists.json#sentit_resolucio"
+            "rdfType": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/codelists.json#sentit_resolucio"
           },
           {
             "name": "data_resolucio",
@@ -1262,7 +1262,7 @@
                 "governanca"
               ]
             },
-            "rdfType": "https://jtorresestiguin-cloud.github.io/portal-transparencia/data/codelists.json#eix"
+            "rdfType": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/codelists.json#eix"
           },
           {
             "name": "objectiu",
@@ -1345,7 +1345,7 @@
                 "dades_obertes"
               ]
             },
-            "rdfType": "https://jtorresestiguin-cloud.github.io/portal-transparencia/data/codelists.json#bloc_obligacio"
+            "rdfType": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/codelists.json#bloc_obligacio"
           },
           {
             "name": "article",
@@ -1373,7 +1373,7 @@
                 "pendent"
               ]
             },
-            "rdfType": "https://jtorresestiguin-cloud.github.io/portal-transparencia/data/codelists.json#estat_obligacio"
+            "rdfType": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/codelists.json#estat_obligacio"
           },
           {
             "name": "periodicitat",
@@ -1390,7 +1390,7 @@
                 "quan_canvii"
               ]
             },
-            "rdfType": "https://jtorresestiguin-cloud.github.io/portal-transparencia/data/codelists.json#periodicitat"
+            "rdfType": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/codelists.json#periodicitat"
           },
           {
             "name": "conjunt_dades",

@@ -26,7 +26,7 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
-const BASE = (process.env.BASE_URL || 'https://jtorresestiguin-cloud.github.io/portal-transparencia').replace(/\/$/, '');
+const BASE = (process.env.BASE_URL || 'https://jtorresestiguin-cloud.github.io/Portal-transparencia').replace(/\/$/, '');
 const TODAY = process.env.BUILD_DATE || new Date().toISOString().slice(0, 10);
 
 const readJSON = (p) => JSON.parse(readFileSync(join(ROOT, p), 'utf8'));

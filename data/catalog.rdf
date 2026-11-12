@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcat="http://www.w3.org/ns/dcat#" xmlns:dct="http://purl.org/dc/terms/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:vcard="http://www.w3.org/2006/vcard/ns#" xmlns:time="http://www.w3.org/2006/time#">
-  <dcat:Catalog rdf:about="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/catalog">
+  <dcat:Catalog rdf:about="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/catalog">
     <dct:title xml:lang="ca">Catàleg de dades obertes del Consorci de Turisme de Barcelona</dct:title>
     <dct:title xml:lang="es">Catálogo de datos abiertos del Consorci de Turisme de Barcelona</dct:title>
     <dct:title xml:lang="en">Open data catalogue of the Barcelona Tourism Consortium</dct:title>
     <dct:description xml:lang="ca">Conjunts de dades de transparència i d'activitat turística publicats en formats oberts i reutilitzables.</dct:description>
     <dct:description xml:lang="es">Conjuntos de datos de transparencia y de actividad turística publicados en formatos abiertos y reutilizables.</dct:description>
     <dct:description xml:lang="en">Transparency and tourism activity datasets published in open, reusable formats.</dct:description>
-    <dct:publisher rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/#organitzacio"/>
+    <dct:publisher rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#organitzacio"/>
     <dct:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
     <dct:language rdf:resource="http://publications.europa.eu/resource/authority/language/CAT"/>
     <dct:language rdf:resource="http://publications.europa.eu/resource/authority/language/SPA"/>
     <dct:language rdf:resource="http://publications.europa.eu/resource/authority/language/ENG"/>
     <dct:spatial rdf:resource="http://datos.gob.es/recurso/sector-publico/territorio/Provincia/Barcelona"/>
     <dct:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-01-15</dct:issued>
-    <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-11-11</dct:modified>
-    <foaf:homepage rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/"/>
+    <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-11-12</dct:modified>
+    <foaf:homepage rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/"/>
     <dcat:themeTaxonomy rdf:resource="http://datos.gob.es/kos/sector-publico/sector/"/>
     <dcat:dataset>
-      <dcat:Dataset rdf:about="https://jtorresestiguin-cloud.github.io/portal-transparencia/#/dades-obertes/pressupost">
-        <dct:identifier>https://jtorresestiguin-cloud.github.io/portal-transparencia/#/dades-obertes/pressupost</dct:identifier>
+      <dcat:Dataset rdf:about="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/dades-obertes/pressupost">
+        <dct:identifier>https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/dades-obertes/pressupost</dct:identifier>
         <dct:title xml:lang="ca">Pressupost i execució pressupostària</dct:title>
         <dct:title xml:lang="es">Presupuesto y ejecución presupuestaria</dct:title>
         <dct:title xml:lang="en">Budget and budget execution</dct:title>
@@ -33,7 +33,7 @@
         <dcat:keyword xml:lang="ca">capítol</dcat:keyword>
         <dcat:theme rdf:resource="http://datos.gob.es/kos/sector-publico/sector/sector-publico"/>
         <dcat:theme rdf:resource="http://publications.europa.eu/resource/authority/data-theme/GOVE"/>
-        <dct:publisher rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/#organitzacio"/>
+        <dct:publisher rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#organitzacio"/>
         <dct:accrualPeriodicity rdf:resource="http://publications.europa.eu/resource/authority/frequency/QUARTERLY"/>
         <dct:spatial rdf:resource="http://datos.gob.es/recurso/sector-publico/territorio/Provincia/Barcelona"/>
         <dct:temporal><dct:PeriodOfTime><dcat:startDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-01-01</dcat:startDate><dcat:endDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-12-31</dcat:endDate></dct:PeriodOfTime></dct:temporal>
@@ -41,22 +41,22 @@
         <dct:language>es</dct:language>
         <dct:language>en</dct:language>
         <dct:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
-        <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-11-11</dct:modified>
-        <dcat:landingPage rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/#/economia"/>
+        <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-11-12</dct:modified>
+        <dcat:landingPage rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/economia"/>
         <dcat:distribution>
-          <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/csv/pressupost.csv">
+          <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/pressupost.csv">
             <dct:title xml:lang="ca">Pressupost i execució pressupostària (CSV)</dct:title>
-            <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/csv/pressupost.csv"/>
-            <dcat:downloadURL rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/csv/pressupost.csv"/>
+            <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/pressupost.csv"/>
+            <dcat:downloadURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/pressupost.csv"/>
             <dct:format><dct:IMT><rdf:value>text/csv</rdf:value><rdfs:label xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">CSV</rdfs:label></dct:IMT></dct:format>
             <dcat:byteSize rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">9460</dcat:byteSize>
           </dcat:Distribution>
         </dcat:distribution>
         <dcat:distribution>
-          <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/pressupost.json">
+          <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/pressupost.json">
             <dct:title xml:lang="ca">Pressupost i execució pressupostària (JSON)</dct:title>
-            <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/pressupost.json"/>
-            <dcat:downloadURL rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/pressupost.json"/>
+            <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/pressupost.json"/>
+            <dcat:downloadURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/pressupost.json"/>
             <dct:format><dct:IMT><rdf:value>application/json</rdf:value><rdfs:label xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">JSON</rdfs:label></dct:IMT></dct:format>
             <dcat:byteSize rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">34456</dcat:byteSize>
           </dcat:Distribution>
@@ -64,8 +64,8 @@
       </dcat:Dataset>
     </dcat:dataset>
     <dcat:dataset>
-      <dcat:Dataset rdf:about="https://jtorresestiguin-cloud.github.io/portal-transparencia/#/dades-obertes/contractes">
-        <dct:identifier>https://jtorresestiguin-cloud.github.io/portal-transparencia/#/dades-obertes/contractes</dct:identifier>
+      <dcat:Dataset rdf:about="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/dades-obertes/contractes">
+        <dct:identifier>https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/dades-obertes/contractes</dct:identifier>
         <dct:title xml:lang="ca">Contractes adjudicats</dct:title>
         <dct:title xml:lang="es">Contratos adjudicados</dct:title>
         <dct:title xml:lang="en">Awarded contracts</dct:title>
@@ -80,7 +80,7 @@
         <dcat:keyword xml:lang="ca">OCDS</dcat:keyword>
         <dcat:theme rdf:resource="http://datos.gob.es/kos/sector-publico/sector/sector-publico"/>
         <dcat:theme rdf:resource="http://publications.europa.eu/resource/authority/data-theme/GOVE"/>
-        <dct:publisher rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/#organitzacio"/>
+        <dct:publisher rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#organitzacio"/>
         <dct:accrualPeriodicity rdf:resource="http://publications.europa.eu/resource/authority/frequency/CONT"/>
         <dct:spatial rdf:resource="http://datos.gob.es/recurso/sector-publico/territorio/Provincia/Barcelona"/>
         <dct:temporal><dct:PeriodOfTime><dcat:startDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-01-01</dcat:startDate><dcat:endDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-12-31</dcat:endDate></dct:PeriodOfTime></dct:temporal>
@@ -88,22 +88,22 @@
         <dct:language>es</dct:language>
         <dct:language>en</dct:language>
         <dct:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
-        <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-11-11</dct:modified>
-        <dcat:landingPage rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/#/contractacio"/>
+        <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-11-12</dct:modified>
+        <dcat:landingPage rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/contractacio"/>
         <dcat:distribution>
-          <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/csv/contractes.csv">
+          <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/contractes.csv">
             <dct:title xml:lang="ca">Contractes adjudicats (CSV)</dct:title>
-            <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/csv/contractes.csv"/>
-            <dcat:downloadURL rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/csv/contractes.csv"/>
+            <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/contractes.csv"/>
+            <dcat:downloadURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/contractes.csv"/>
             <dct:format><dct:IMT><rdf:value>text/csv</rdf:value><rdfs:label xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">CSV</rdfs:label></dct:IMT></dct:format>
             <dcat:byteSize rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">84717</dcat:byteSize>
           </dcat:Distribution>
         </dcat:distribution>
         <dcat:distribution>
-          <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/contractes.json">
+          <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/contractes.json">
             <dct:title xml:lang="ca">Contractes adjudicats (JSON)</dct:title>
-            <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/contractes.json"/>
-            <dcat:downloadURL rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/contractes.json"/>
+            <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/contractes.json"/>
+            <dcat:downloadURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/contractes.json"/>
             <dct:format><dct:IMT><rdf:value>application/json</rdf:value><rdfs:label xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">JSON</rdfs:label></dct:IMT></dct:format>
             <dcat:byteSize rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">254336</dcat:byteSize>
           </dcat:Distribution>
@@ -111,8 +111,8 @@
       </dcat:Dataset>
     </dcat:dataset>
     <dcat:dataset>
-      <dcat:Dataset rdf:about="https://jtorresestiguin-cloud.github.io/portal-transparencia/#/dades-obertes/subvencions">
-        <dct:identifier>https://jtorresestiguin-cloud.github.io/portal-transparencia/#/dades-obertes/subvencions</dct:identifier>
+      <dcat:Dataset rdf:about="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/dades-obertes/subvencions">
+        <dct:identifier>https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/dades-obertes/subvencions</dct:identifier>
         <dct:title xml:lang="ca">Subvencions i ajuts atorgats</dct:title>
         <dct:title xml:lang="es">Subvenciones y ayudas concedidas</dct:title>
         <dct:title xml:lang="en">Grants awarded</dct:title>
@@ -125,7 +125,7 @@
         <dcat:keyword xml:lang="ca">beneficiaris</dcat:keyword>
         <dcat:theme rdf:resource="http://datos.gob.es/kos/sector-publico/sector/sector-publico"/>
         <dcat:theme rdf:resource="http://publications.europa.eu/resource/authority/data-theme/GOVE"/>
-        <dct:publisher rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/#organitzacio"/>
+        <dct:publisher rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#organitzacio"/>
         <dct:accrualPeriodicity rdf:resource="http://publications.europa.eu/resource/authority/frequency/QUARTERLY"/>
         <dct:spatial rdf:resource="http://datos.gob.es/recurso/sector-publico/territorio/Provincia/Barcelona"/>
         <dct:temporal><dct:PeriodOfTime><dcat:startDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-01-01</dcat:startDate><dcat:endDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-12-31</dcat:endDate></dct:PeriodOfTime></dct:temporal>
@@ -133,22 +133,22 @@
         <dct:language>es</dct:language>
         <dct:language>en</dct:language>
         <dct:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
-        <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-11-11</dct:modified>
-        <dcat:landingPage rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/#/subvencions"/>
+        <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-11-12</dct:modified>
+        <dcat:landingPage rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/subvencions"/>
         <dcat:distribution>
-          <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/csv/subvencions.csv">
+          <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/subvencions.csv">
             <dct:title xml:lang="ca">Subvencions i ajuts atorgats (CSV)</dct:title>
-            <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/csv/subvencions.csv"/>
-            <dcat:downloadURL rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/csv/subvencions.csv"/>
+            <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/subvencions.csv"/>
+            <dcat:downloadURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/subvencions.csv"/>
             <dct:format><dct:IMT><rdf:value>text/csv</rdf:value><rdfs:label xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">CSV</rdfs:label></dct:IMT></dct:format>
             <dcat:byteSize rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">12602</dcat:byteSize>
           </dcat:Distribution>
         </dcat:distribution>
         <dcat:distribution>
-          <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/subvencions.json">
+          <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/subvencions.json">
             <dct:title xml:lang="ca">Subvencions i ajuts atorgats (JSON)</dct:title>
-            <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/subvencions.json"/>
-            <dcat:downloadURL rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/subvencions.json"/>
+            <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/subvencions.json"/>
+            <dcat:downloadURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/subvencions.json"/>
             <dct:format><dct:IMT><rdf:value>application/json</rdf:value><rdfs:label xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">JSON</rdfs:label></dct:IMT></dct:format>
             <dcat:byteSize rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">37810</dcat:byteSize>
           </dcat:Distribution>
@@ -156,8 +156,8 @@
       </dcat:Dataset>
     </dcat:dataset>
     <dcat:dataset>
-      <dcat:Dataset rdf:about="https://jtorresestiguin-cloud.github.io/portal-transparencia/#/dades-obertes/convenis">
-        <dct:identifier>https://jtorresestiguin-cloud.github.io/portal-transparencia/#/dades-obertes/convenis</dct:identifier>
+      <dcat:Dataset rdf:about="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/dades-obertes/convenis">
+        <dct:identifier>https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/dades-obertes/convenis</dct:identifier>
         <dct:title xml:lang="ca">Convenis de col·laboració</dct:title>
         <dct:title xml:lang="es">Convenios de colaboración</dct:title>
         <dct:title xml:lang="en">Collaboration agreements</dct:title>
@@ -169,7 +169,7 @@
         <dcat:keyword xml:lang="ca">patrocini</dcat:keyword>
         <dcat:theme rdf:resource="http://datos.gob.es/kos/sector-publico/sector/sector-publico"/>
         <dcat:theme rdf:resource="http://publications.europa.eu/resource/authority/data-theme/GOVE"/>
-        <dct:publisher rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/#organitzacio"/>
+        <dct:publisher rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#organitzacio"/>
         <dct:accrualPeriodicity rdf:resource="http://publications.europa.eu/resource/authority/frequency/QUARTERLY"/>
         <dct:spatial rdf:resource="http://datos.gob.es/recurso/sector-publico/territorio/Provincia/Barcelona"/>
         <dct:temporal><dct:PeriodOfTime><dcat:startDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-01-01</dcat:startDate><dcat:endDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-12-31</dcat:endDate></dct:PeriodOfTime></dct:temporal>
@@ -177,22 +177,22 @@
         <dct:language>es</dct:language>
         <dct:language>en</dct:language>
         <dct:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
-        <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-11-11</dct:modified>
-        <dcat:landingPage rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/#/subvencions"/>
+        <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-11-12</dct:modified>
+        <dcat:landingPage rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/subvencions"/>
         <dcat:distribution>
-          <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/csv/convenis.csv">
+          <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/convenis.csv">
             <dct:title xml:lang="ca">Convenis de col·laboració (CSV)</dct:title>
-            <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/csv/convenis.csv"/>
-            <dcat:downloadURL rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/csv/convenis.csv"/>
+            <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/convenis.csv"/>
+            <dcat:downloadURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/convenis.csv"/>
             <dct:format><dct:IMT><rdf:value>text/csv</rdf:value><rdfs:label xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">CSV</rdfs:label></dct:IMT></dct:format>
             <dcat:byteSize rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">6360</dcat:byteSize>
           </dcat:Distribution>
         </dcat:distribution>
         <dcat:distribution>
-          <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/convenis.json">
+          <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/convenis.json">
             <dct:title xml:lang="ca">Convenis de col·laboració (JSON)</dct:title>
-            <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/convenis.json"/>
-            <dcat:downloadURL rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/convenis.json"/>
+            <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/convenis.json"/>
+            <dcat:downloadURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/convenis.json"/>
             <dct:format><dct:IMT><rdf:value>application/json</rdf:value><rdfs:label xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">JSON</rdfs:label></dct:IMT></dct:format>
             <dcat:byteSize rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">15954</dcat:byteSize>
           </dcat:Distribution>
@@ -200,8 +200,8 @@
       </dcat:Dataset>
     </dcat:dataset>
     <dcat:dataset>
-      <dcat:Dataset rdf:about="https://jtorresestiguin-cloud.github.io/portal-transparencia/#/dades-obertes/plantilla">
-        <dct:identifier>https://jtorresestiguin-cloud.github.io/portal-transparencia/#/dades-obertes/plantilla</dct:identifier>
+      <dcat:Dataset rdf:about="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/dades-obertes/plantilla">
+        <dct:identifier>https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/dades-obertes/plantilla</dct:identifier>
         <dct:title xml:lang="ca">Plantilla de personal</dct:title>
         <dct:title xml:lang="es">Plantilla de personal</dct:title>
         <dct:title xml:lang="en">Workforce</dct:title>
@@ -214,7 +214,7 @@
         <dcat:keyword xml:lang="ca">ocupació</dcat:keyword>
         <dcat:theme rdf:resource="http://datos.gob.es/kos/sector-publico/sector/sector-publico"/>
         <dcat:theme rdf:resource="http://publications.europa.eu/resource/authority/data-theme/GOVE"/>
-        <dct:publisher rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/#organitzacio"/>
+        <dct:publisher rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#organitzacio"/>
         <dct:accrualPeriodicity rdf:resource="http://publications.europa.eu/resource/authority/frequency/ANNUAL"/>
         <dct:spatial rdf:resource="http://datos.gob.es/recurso/sector-publico/territorio/Provincia/Barcelona"/>
         <dct:temporal><dct:PeriodOfTime><dcat:startDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-01-01</dcat:startDate><dcat:endDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-12-31</dcat:endDate></dct:PeriodOfTime></dct:temporal>
@@ -222,22 +222,22 @@
         <dct:language>es</dct:language>
         <dct:language>en</dct:language>
         <dct:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
-        <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-11-11</dct:modified>
-        <dcat:landingPage rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/#/personal"/>
+        <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-11-12</dct:modified>
+        <dcat:landingPage rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/personal"/>
         <dcat:distribution>
-          <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/csv/plantilla.csv">
+          <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/plantilla.csv">
             <dct:title xml:lang="ca">Plantilla de personal (CSV)</dct:title>
-            <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/csv/plantilla.csv"/>
-            <dcat:downloadURL rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/csv/plantilla.csv"/>
+            <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/plantilla.csv"/>
+            <dcat:downloadURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/plantilla.csv"/>
             <dct:format><dct:IMT><rdf:value>text/csv</rdf:value><rdfs:label xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">CSV</rdfs:label></dct:IMT></dct:format>
             <dcat:byteSize rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">30806</dcat:byteSize>
           </dcat:Distribution>
         </dcat:distribution>
         <dcat:distribution>
-          <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/plantilla.json">
+          <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/plantilla.json">
             <dct:title xml:lang="ca">Plantilla de personal (JSON)</dct:title>
-            <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/plantilla.json"/>
-            <dcat:downloadURL rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/plantilla.json"/>
+            <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/plantilla.json"/>
+            <dcat:downloadURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/plantilla.json"/>
             <dct:format><dct:IMT><rdf:value>application/json</rdf:value><rdfs:label xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">JSON</rdfs:label></dct:IMT></dct:format>
             <dcat:byteSize rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">122326</dcat:byteSize>
           </dcat:Distribution>
@@ -245,8 +245,8 @@
       </dcat:Dataset>
     </dcat:dataset>
     <dcat:dataset>
-      <dcat:Dataset rdf:about="https://jtorresestiguin-cloud.github.io/portal-transparencia/#/dades-obertes/retribucions">
-        <dct:identifier>https://jtorresestiguin-cloud.github.io/portal-transparencia/#/dades-obertes/retribucions</dct:identifier>
+      <dcat:Dataset rdf:about="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/dades-obertes/retribucions">
+        <dct:identifier>https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/dades-obertes/retribucions</dct:identifier>
         <dct:title xml:lang="ca">Taules retributives i bretxa salarial</dct:title>
         <dct:title xml:lang="es">Tablas retributivas y brecha salarial</dct:title>
         <dct:title xml:lang="en">Pay scales and gender pay gap</dct:title>
@@ -259,7 +259,7 @@
         <dcat:keyword xml:lang="ca">igualtat</dcat:keyword>
         <dcat:theme rdf:resource="http://datos.gob.es/kos/sector-publico/sector/sector-publico"/>
         <dcat:theme rdf:resource="http://publications.europa.eu/resource/authority/data-theme/GOVE"/>
-        <dct:publisher rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/#organitzacio"/>
+        <dct:publisher rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#organitzacio"/>
         <dct:accrualPeriodicity rdf:resource="http://publications.europa.eu/resource/authority/frequency/ANNUAL"/>
         <dct:spatial rdf:resource="http://datos.gob.es/recurso/sector-publico/territorio/Provincia/Barcelona"/>
         <dct:temporal><dct:PeriodOfTime><dcat:startDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-01-01</dcat:startDate><dcat:endDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-12-31</dcat:endDate></dct:PeriodOfTime></dct:temporal>
@@ -267,22 +267,22 @@
         <dct:language>es</dct:language>
         <dct:language>en</dct:language>
         <dct:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
-        <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-11-11</dct:modified>
-        <dcat:landingPage rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/#/personal"/>
+        <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-11-12</dct:modified>
+        <dcat:landingPage rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/personal"/>
         <dcat:distribution>
-          <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/csv/retribucions.csv">
+          <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/retribucions.csv">
             <dct:title xml:lang="ca">Taules retributives i bretxa salarial (CSV)</dct:title>
-            <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/csv/retribucions.csv"/>
-            <dcat:downloadURL rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/csv/retribucions.csv"/>
+            <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/retribucions.csv"/>
+            <dcat:downloadURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/retribucions.csv"/>
             <dct:format><dct:IMT><rdf:value>text/csv</rdf:value><rdfs:label xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">CSV</rdfs:label></dct:IMT></dct:format>
             <dcat:byteSize rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1824</dcat:byteSize>
           </dcat:Distribution>
         </dcat:distribution>
         <dcat:distribution>
-          <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/retribucions.json">
+          <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/retribucions.json">
             <dct:title xml:lang="ca">Taules retributives i bretxa salarial (JSON)</dct:title>
-            <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/retribucions.json"/>
-            <dcat:downloadURL rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/retribucions.json"/>
+            <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/retribucions.json"/>
+            <dcat:downloadURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/retribucions.json"/>
             <dct:format><dct:IMT><rdf:value>application/json</rdf:value><rdfs:label xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">JSON</rdfs:label></dct:IMT></dct:format>
             <dcat:byteSize rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">7953</dcat:byteSize>
           </dcat:Distribution>
@@ -290,8 +290,8 @@
       </dcat:Dataset>
     </dcat:dataset>
     <dcat:dataset>
-      <dcat:Dataset rdf:about="https://jtorresestiguin-cloud.github.io/portal-transparencia/#/dades-obertes/alts-carrecs">
-        <dct:identifier>https://jtorresestiguin-cloud.github.io/portal-transparencia/#/dades-obertes/alts-carrecs</dct:identifier>
+      <dcat:Dataset rdf:about="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/dades-obertes/alts-carrecs">
+        <dct:identifier>https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/dades-obertes/alts-carrecs</dct:identifier>
         <dct:title xml:lang="ca">Alts càrrecs i personal directiu</dct:title>
         <dct:title xml:lang="es">Altos cargos y personal directivo</dct:title>
         <dct:title xml:lang="en">Senior officials</dct:title>
@@ -304,7 +304,7 @@
         <dcat:keyword xml:lang="ca">bon govern</dcat:keyword>
         <dcat:theme rdf:resource="http://datos.gob.es/kos/sector-publico/sector/sector-publico"/>
         <dcat:theme rdf:resource="http://publications.europa.eu/resource/authority/data-theme/GOVE"/>
-        <dct:publisher rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/#organitzacio"/>
+        <dct:publisher rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#organitzacio"/>
         <dct:accrualPeriodicity rdf:resource="http://publications.europa.eu/resource/authority/frequency/ANNUAL"/>
         <dct:spatial rdf:resource="http://datos.gob.es/recurso/sector-publico/territorio/Provincia/Barcelona"/>
         <dct:temporal><dct:PeriodOfTime><dcat:startDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-01-01</dcat:startDate><dcat:endDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-12-31</dcat:endDate></dct:PeriodOfTime></dct:temporal>
@@ -312,22 +312,22 @@
         <dct:language>es</dct:language>
         <dct:language>en</dct:language>
         <dct:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
-        <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-11-11</dct:modified>
-        <dcat:landingPage rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/#/bon-govern"/>
+        <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-11-12</dct:modified>
+        <dcat:landingPage rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/bon-govern"/>
         <dcat:distribution>
-          <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/csv/alts-carrecs.csv">
+          <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/alts-carrecs.csv">
             <dct:title xml:lang="ca">Alts càrrecs i personal directiu (CSV)</dct:title>
-            <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/csv/alts-carrecs.csv"/>
-            <dcat:downloadURL rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/csv/alts-carrecs.csv"/>
+            <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/alts-carrecs.csv"/>
+            <dcat:downloadURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/alts-carrecs.csv"/>
             <dct:format><dct:IMT><rdf:value>text/csv</rdf:value><rdfs:label xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">CSV</rdfs:label></dct:IMT></dct:format>
             <dcat:byteSize rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">909</dcat:byteSize>
           </dcat:Distribution>
         </dcat:distribution>
         <dcat:distribution>
-          <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/alts-carrecs.json">
+          <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/alts-carrecs.json">
             <dct:title xml:lang="ca">Alts càrrecs i personal directiu (JSON)</dct:title>
-            <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/alts-carrecs.json"/>
-            <dcat:downloadURL rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/alts-carrecs.json"/>
+            <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/alts-carrecs.json"/>
+            <dcat:downloadURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/alts-carrecs.json"/>
             <dct:format><dct:IMT><rdf:value>application/json</rdf:value><rdfs:label xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">JSON</rdfs:label></dct:IMT></dct:format>
             <dcat:byteSize rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2484</dcat:byteSize>
           </dcat:Distribution>
@@ -335,8 +335,8 @@
       </dcat:Dataset>
     </dcat:dataset>
     <dcat:dataset>
-      <dcat:Dataset rdf:about="https://jtorresestiguin-cloud.github.io/portal-transparencia/#/dades-obertes/agenda">
-        <dct:identifier>https://jtorresestiguin-cloud.github.io/portal-transparencia/#/dades-obertes/agenda</dct:identifier>
+      <dcat:Dataset rdf:about="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/dades-obertes/agenda">
+        <dct:identifier>https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/dades-obertes/agenda</dct:identifier>
         <dct:title xml:lang="ca">Agenda institucional</dct:title>
         <dct:title xml:lang="es">Agenda institucional</dct:title>
         <dct:title xml:lang="en">Official diary</dct:title>
@@ -349,7 +349,7 @@
         <dcat:keyword xml:lang="ca">reunions</dcat:keyword>
         <dcat:theme rdf:resource="http://datos.gob.es/kos/sector-publico/sector/sector-publico"/>
         <dcat:theme rdf:resource="http://publications.europa.eu/resource/authority/data-theme/GOVE"/>
-        <dct:publisher rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/#organitzacio"/>
+        <dct:publisher rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#organitzacio"/>
         <dct:accrualPeriodicity rdf:resource="http://publications.europa.eu/resource/authority/frequency/WEEKLY"/>
         <dct:spatial rdf:resource="http://datos.gob.es/recurso/sector-publico/territorio/Provincia/Barcelona"/>
         <dct:temporal><dct:PeriodOfTime><dcat:startDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-11-01</dcat:startDate><dcat:endDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-11-30</dcat:endDate></dct:PeriodOfTime></dct:temporal>
@@ -357,22 +357,22 @@
         <dct:language>es</dct:language>
         <dct:language>en</dct:language>
         <dct:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
-        <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-11-11</dct:modified>
-        <dcat:landingPage rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/#/bon-govern"/>
+        <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-11-12</dct:modified>
+        <dcat:landingPage rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/bon-govern"/>
         <dcat:distribution>
-          <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/csv/agenda.csv">
+          <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/agenda.csv">
             <dct:title xml:lang="ca">Agenda institucional (CSV)</dct:title>
-            <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/csv/agenda.csv"/>
-            <dcat:downloadURL rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/csv/agenda.csv"/>
+            <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/agenda.csv"/>
+            <dcat:downloadURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/agenda.csv"/>
             <dct:format><dct:IMT><rdf:value>text/csv</rdf:value><rdfs:label xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">CSV</rdfs:label></dct:IMT></dct:format>
             <dcat:byteSize rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">11301</dcat:byteSize>
           </dcat:Distribution>
         </dcat:distribution>
         <dcat:distribution>
-          <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/agenda.json">
+          <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/agenda.json">
             <dct:title xml:lang="ca">Agenda institucional (JSON)</dct:title>
-            <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/agenda.json"/>
-            <dcat:downloadURL rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/agenda.json"/>
+            <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/agenda.json"/>
+            <dcat:downloadURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/agenda.json"/>
             <dct:format><dct:IMT><rdf:value>application/json</rdf:value><rdfs:label xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">JSON</rdfs:label></dct:IMT></dct:format>
             <dcat:byteSize rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">31426</dcat:byteSize>
           </dcat:Distribution>
@@ -380,8 +380,8 @@
       </dcat:Dataset>
     </dcat:dataset>
     <dcat:dataset>
-      <dcat:Dataset rdf:about="https://jtorresestiguin-cloud.github.io/portal-transparencia/#/dades-obertes/regals">
-        <dct:identifier>https://jtorresestiguin-cloud.github.io/portal-transparencia/#/dades-obertes/regals</dct:identifier>
+      <dcat:Dataset rdf:about="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/dades-obertes/regals">
+        <dct:identifier>https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/dades-obertes/regals</dct:identifier>
         <dct:title xml:lang="ca">Registre de regals institucionals</dct:title>
         <dct:title xml:lang="es">Registro de regalos institucionales</dct:title>
         <dct:title xml:lang="en">Register of gifts</dct:title>
@@ -393,7 +393,7 @@
         <dcat:keyword xml:lang="ca">codi ètic</dcat:keyword>
         <dcat:theme rdf:resource="http://datos.gob.es/kos/sector-publico/sector/sector-publico"/>
         <dcat:theme rdf:resource="http://publications.europa.eu/resource/authority/data-theme/GOVE"/>
-        <dct:publisher rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/#organitzacio"/>
+        <dct:publisher rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#organitzacio"/>
         <dct:accrualPeriodicity rdf:resource="http://publications.europa.eu/resource/authority/frequency/QUARTERLY"/>
         <dct:spatial rdf:resource="http://datos.gob.es/recurso/sector-publico/territorio/Provincia/Barcelona"/>
         <dct:temporal><dct:PeriodOfTime><dcat:startDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-01-01</dcat:startDate><dcat:endDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-12-31</dcat:endDate></dct:PeriodOfTime></dct:temporal>
@@ -401,22 +401,22 @@
         <dct:language>es</dct:language>
         <dct:language>en</dct:language>
         <dct:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
-        <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-11-11</dct:modified>
-        <dcat:landingPage rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/#/bon-govern"/>
+        <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-11-12</dct:modified>
+        <dcat:landingPage rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/bon-govern"/>
         <dcat:distribution>
-          <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/csv/regals.csv">
+          <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/regals.csv">
             <dct:title xml:lang="ca">Registre de regals institucionals (CSV)</dct:title>
-            <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/csv/regals.csv"/>
-            <dcat:downloadURL rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/csv/regals.csv"/>
+            <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/regals.csv"/>
+            <dcat:downloadURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/regals.csv"/>
             <dct:format><dct:IMT><rdf:value>text/csv</rdf:value><rdfs:label xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">CSV</rdfs:label></dct:IMT></dct:format>
             <dcat:byteSize rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2209</dcat:byteSize>
           </dcat:Distribution>
         </dcat:distribution>
         <dcat:distribution>
-          <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/regals.json">
+          <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/regals.json">
             <dct:title xml:lang="ca">Registre de regals institucionals (JSON)</dct:title>
-            <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/regals.json"/>
-            <dcat:downloadURL rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/regals.json"/>
+            <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/regals.json"/>
+            <dcat:downloadURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/regals.json"/>
             <dct:format><dct:IMT><rdf:value>application/json</rdf:value><rdfs:label xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">JSON</rdfs:label></dct:IMT></dct:format>
             <dcat:byteSize rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">5364</dcat:byteSize>
           </dcat:Distribution>
@@ -424,8 +424,8 @@
       </dcat:Dataset>
     </dcat:dataset>
     <dcat:dataset>
-      <dcat:Dataset rdf:about="https://jtorresestiguin-cloud.github.io/portal-transparencia/#/dades-obertes/indicadors-turisme">
-        <dct:identifier>https://jtorresestiguin-cloud.github.io/portal-transparencia/#/dades-obertes/indicadors-turisme</dct:identifier>
+      <dcat:Dataset rdf:about="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/dades-obertes/indicadors-turisme">
+        <dct:identifier>https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/dades-obertes/indicadors-turisme</dct:identifier>
         <dct:title xml:lang="ca">Indicadors turístics mensuals de Barcelona</dct:title>
         <dct:title xml:lang="es">Indicadores turísticos mensuales de Barcelona</dct:title>
         <dct:title xml:lang="en">Monthly tourism indicators for Barcelona</dct:title>
@@ -440,7 +440,7 @@
         <dcat:keyword xml:lang="ca">estadística</dcat:keyword>
         <dcat:theme rdf:resource="http://datos.gob.es/kos/sector-publico/sector/turismo"/>
         <dcat:theme rdf:resource="http://publications.europa.eu/resource/authority/data-theme/ECON"/>
-        <dct:publisher rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/#organitzacio"/>
+        <dct:publisher rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#organitzacio"/>
         <dct:accrualPeriodicity rdf:resource="http://publications.europa.eu/resource/authority/frequency/MONTHLY"/>
         <dct:spatial rdf:resource="http://datos.gob.es/recurso/sector-publico/territorio/Provincia/Barcelona"/>
         <dct:temporal><dct:PeriodOfTime><dcat:startDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-01-01</dcat:startDate><dcat:endDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-09-30</dcat:endDate></dct:PeriodOfTime></dct:temporal>
@@ -448,22 +448,22 @@
         <dct:language>es</dct:language>
         <dct:language>en</dct:language>
         <dct:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
-        <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-11-11</dct:modified>
-        <dcat:landingPage rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/#/activitat"/>
+        <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-11-12</dct:modified>
+        <dcat:landingPage rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/activitat"/>
         <dcat:distribution>
-          <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/csv/indicadors-turisme.csv">
+          <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/indicadors-turisme.csv">
             <dct:title xml:lang="ca">Indicadors turístics mensuals de Barcelona (CSV)</dct:title>
-            <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/csv/indicadors-turisme.csv"/>
-            <dcat:downloadURL rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/csv/indicadors-turisme.csv"/>
+            <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/indicadors-turisme.csv"/>
+            <dcat:downloadURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/indicadors-turisme.csv"/>
             <dct:format><dct:IMT><rdf:value>text/csv</rdf:value><rdfs:label xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">CSV</rdfs:label></dct:IMT></dct:format>
             <dcat:byteSize rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">7341</dcat:byteSize>
           </dcat:Distribution>
         </dcat:distribution>
         <dcat:distribution>
-          <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/indicadors-turisme.json">
+          <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/indicadors-turisme.json">
             <dct:title xml:lang="ca">Indicadors turístics mensuals de Barcelona (JSON)</dct:title>
-            <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/indicadors-turisme.json"/>
-            <dcat:downloadURL rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/indicadors-turisme.json"/>
+            <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/indicadors-turisme.json"/>
+            <dcat:downloadURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/indicadors-turisme.json"/>
             <dct:format><dct:IMT><rdf:value>application/json</rdf:value><rdfs:label xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">JSON</rdfs:label></dct:IMT></dct:format>
             <dcat:byteSize rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">39479</dcat:byteSize>
           </dcat:Distribution>
@@ -471,8 +471,8 @@
       </dcat:Dataset>
     </dcat:dataset>
     <dcat:dataset>
-      <dcat:Dataset rdf:about="https://jtorresestiguin-cloud.github.io/portal-transparencia/#/dades-obertes/mercats-origen">
-        <dct:identifier>https://jtorresestiguin-cloud.github.io/portal-transparencia/#/dades-obertes/mercats-origen</dct:identifier>
+      <dcat:Dataset rdf:about="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/dades-obertes/mercats-origen">
+        <dct:identifier>https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/dades-obertes/mercats-origen</dct:identifier>
         <dct:title xml:lang="ca">Mercats d'origen dels turistes</dct:title>
         <dct:title xml:lang="es">Mercados de origen de los turistas</dct:title>
         <dct:title xml:lang="en">Source markets</dct:title>
@@ -484,7 +484,7 @@
         <dcat:keyword xml:lang="ca">turistes internacionals</dcat:keyword>
         <dcat:theme rdf:resource="http://datos.gob.es/kos/sector-publico/sector/turismo"/>
         <dcat:theme rdf:resource="http://publications.europa.eu/resource/authority/data-theme/ECON"/>
-        <dct:publisher rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/#organitzacio"/>
+        <dct:publisher rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#organitzacio"/>
         <dct:accrualPeriodicity rdf:resource="http://publications.europa.eu/resource/authority/frequency/ANNUAL"/>
         <dct:spatial rdf:resource="http://datos.gob.es/recurso/sector-publico/territorio/Provincia/Barcelona"/>
         <dct:temporal><dct:PeriodOfTime><dcat:startDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-01-01</dcat:startDate><dcat:endDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-12-31</dcat:endDate></dct:PeriodOfTime></dct:temporal>
@@ -492,22 +492,22 @@
         <dct:language>es</dct:language>
         <dct:language>en</dct:language>
         <dct:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
-        <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-11-11</dct:modified>
-        <dcat:landingPage rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/#/activitat"/>
+        <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-11-12</dct:modified>
+        <dcat:landingPage rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/activitat"/>
         <dcat:distribution>
-          <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/csv/mercats-origen.csv">
+          <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/mercats-origen.csv">
             <dct:title xml:lang="ca">Mercats d'origen dels turistes (CSV)</dct:title>
-            <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/csv/mercats-origen.csv"/>
-            <dcat:downloadURL rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/csv/mercats-origen.csv"/>
+            <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/mercats-origen.csv"/>
+            <dcat:downloadURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/mercats-origen.csv"/>
             <dct:format><dct:IMT><rdf:value>text/csv</rdf:value><rdfs:label xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">CSV</rdfs:label></dct:IMT></dct:format>
             <dcat:byteSize rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1020</dcat:byteSize>
           </dcat:Distribution>
         </dcat:distribution>
         <dcat:distribution>
-          <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/mercats-origen.json">
+          <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/mercats-origen.json">
             <dct:title xml:lang="ca">Mercats d'origen dels turistes (JSON)</dct:title>
-            <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/mercats-origen.json"/>
-            <dcat:downloadURL rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/mercats-origen.json"/>
+            <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/mercats-origen.json"/>
+            <dcat:downloadURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/mercats-origen.json"/>
             <dct:format><dct:IMT><rdf:value>application/json</rdf:value><rdfs:label xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">JSON</rdfs:label></dct:IMT></dct:format>
             <dcat:byteSize rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">5358</dcat:byteSize>
           </dcat:Distribution>
@@ -515,8 +515,8 @@
       </dcat:Dataset>
     </dcat:dataset>
     <dcat:dataset>
-      <dcat:Dataset rdf:about="https://jtorresestiguin-cloud.github.io/portal-transparencia/#/dades-obertes/oficines-informacio">
-        <dct:identifier>https://jtorresestiguin-cloud.github.io/portal-transparencia/#/dades-obertes/oficines-informacio</dct:identifier>
+      <dcat:Dataset rdf:about="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/dades-obertes/oficines-informacio">
+        <dct:identifier>https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/dades-obertes/oficines-informacio</dct:identifier>
         <dct:title xml:lang="ca">Oficines i punts d'informació turística</dct:title>
         <dct:title xml:lang="es">Oficinas y puntos de información turística</dct:title>
         <dct:title xml:lang="en">Tourist information offices</dct:title>
@@ -528,7 +528,7 @@
         <dcat:keyword xml:lang="ca">atenció al visitant</dcat:keyword>
         <dcat:theme rdf:resource="http://datos.gob.es/kos/sector-publico/sector/turismo"/>
         <dcat:theme rdf:resource="http://publications.europa.eu/resource/authority/data-theme/ECON"/>
-        <dct:publisher rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/#organitzacio"/>
+        <dct:publisher rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#organitzacio"/>
         <dct:accrualPeriodicity rdf:resource="http://publications.europa.eu/resource/authority/frequency/ANNUAL"/>
         <dct:spatial rdf:resource="http://datos.gob.es/recurso/sector-publico/territorio/Provincia/Barcelona"/>
         <dct:temporal><dct:PeriodOfTime><dcat:startDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-01-01</dcat:startDate><dcat:endDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-12-31</dcat:endDate></dct:PeriodOfTime></dct:temporal>
@@ -536,22 +536,22 @@
         <dct:language>es</dct:language>
         <dct:language>en</dct:language>
         <dct:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
-        <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-11-11</dct:modified>
-        <dcat:landingPage rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/#/activitat"/>
+        <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-11-12</dct:modified>
+        <dcat:landingPage rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/activitat"/>
         <dcat:distribution>
-          <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/csv/oficines-informacio.csv">
+          <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/oficines-informacio.csv">
             <dct:title xml:lang="ca">Oficines i punts d'informació turística (CSV)</dct:title>
-            <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/csv/oficines-informacio.csv"/>
-            <dcat:downloadURL rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/csv/oficines-informacio.csv"/>
+            <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/oficines-informacio.csv"/>
+            <dcat:downloadURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/oficines-informacio.csv"/>
             <dct:format><dct:IMT><rdf:value>text/csv</rdf:value><rdfs:label xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">CSV</rdfs:label></dct:IMT></dct:format>
             <dcat:byteSize rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">716</dcat:byteSize>
           </dcat:Distribution>
         </dcat:distribution>
         <dcat:distribution>
-          <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/oficines-informacio.json">
+          <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/oficines-informacio.json">
             <dct:title xml:lang="ca">Oficines i punts d'informació turística (JSON)</dct:title>
-            <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/oficines-informacio.json"/>
-            <dcat:downloadURL rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/oficines-informacio.json"/>
+            <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/oficines-informacio.json"/>
+            <dcat:downloadURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/oficines-informacio.json"/>
             <dct:format><dct:IMT><rdf:value>application/json</rdf:value><rdfs:label xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">JSON</rdfs:label></dct:IMT></dct:format>
             <dcat:byteSize rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2105</dcat:byteSize>
           </dcat:Distribution>
@@ -559,8 +559,8 @@
       </dcat:Dataset>
     </dcat:dataset>
     <dcat:dataset>
-      <dcat:Dataset rdf:about="https://jtorresestiguin-cloud.github.io/portal-transparencia/#/dades-obertes/dret-acces">
-        <dct:identifier>https://jtorresestiguin-cloud.github.io/portal-transparencia/#/dades-obertes/dret-acces</dct:identifier>
+      <dcat:Dataset rdf:about="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/dades-obertes/dret-acces">
+        <dct:identifier>https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/dades-obertes/dret-acces</dct:identifier>
         <dct:title xml:lang="ca">Sol·licituds d'accés a la informació pública</dct:title>
         <dct:title xml:lang="es">Solicitudes de acceso a la información pública</dct:title>
         <dct:title xml:lang="en">Freedom of information requests</dct:title>
@@ -573,7 +573,7 @@
         <dcat:keyword xml:lang="ca">resolucions</dcat:keyword>
         <dcat:theme rdf:resource="http://datos.gob.es/kos/sector-publico/sector/sector-publico"/>
         <dcat:theme rdf:resource="http://publications.europa.eu/resource/authority/data-theme/GOVE"/>
-        <dct:publisher rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/#organitzacio"/>
+        <dct:publisher rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#organitzacio"/>
         <dct:accrualPeriodicity rdf:resource="http://publications.europa.eu/resource/authority/frequency/QUARTERLY"/>
         <dct:spatial rdf:resource="http://datos.gob.es/recurso/sector-publico/territorio/Provincia/Barcelona"/>
         <dct:temporal><dct:PeriodOfTime><dcat:startDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-01-01</dcat:startDate><dcat:endDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-12-31</dcat:endDate></dct:PeriodOfTime></dct:temporal>
@@ -581,22 +581,22 @@
         <dct:language>es</dct:language>
         <dct:language>en</dct:language>
         <dct:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
-        <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-11-11</dct:modified>
-        <dcat:landingPage rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/#/dret-acces"/>
+        <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-11-12</dct:modified>
+        <dcat:landingPage rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/dret-acces"/>
         <dcat:distribution>
-          <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/csv/dret-acces.csv">
+          <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/dret-acces.csv">
             <dct:title xml:lang="ca">Sol·licituds d'accés a la informació pública (CSV)</dct:title>
-            <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/csv/dret-acces.csv"/>
-            <dcat:downloadURL rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/csv/dret-acces.csv"/>
+            <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/dret-acces.csv"/>
+            <dcat:downloadURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/dret-acces.csv"/>
             <dct:format><dct:IMT><rdf:value>text/csv</rdf:value><rdfs:label xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">CSV</rdfs:label></dct:IMT></dct:format>
             <dcat:byteSize rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">24203</dcat:byteSize>
           </dcat:Distribution>
         </dcat:distribution>
         <dcat:distribution>
-          <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/dret-acces.json">
+          <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/dret-acces.json">
             <dct:title xml:lang="ca">Sol·licituds d'accés a la informació pública (JSON)</dct:title>
-            <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/dret-acces.json"/>
-            <dcat:downloadURL rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/dret-acces.json"/>
+            <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/dret-acces.json"/>
+            <dcat:downloadURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/dret-acces.json"/>
             <dct:format><dct:IMT><rdf:value>application/json</rdf:value><rdfs:label xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">JSON</rdfs:label></dct:IMT></dct:format>
             <dcat:byteSize rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">77797</dcat:byteSize>
           </dcat:Distribution>
@@ -604,8 +604,8 @@
       </dcat:Dataset>
     </dcat:dataset>
     <dcat:dataset>
-      <dcat:Dataset rdf:about="https://jtorresestiguin-cloud.github.io/portal-transparencia/#/dades-obertes/objectius">
-        <dct:identifier>https://jtorresestiguin-cloud.github.io/portal-transparencia/#/dades-obertes/objectius</dct:identifier>
+      <dcat:Dataset rdf:about="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/dades-obertes/objectius">
+        <dct:identifier>https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/dades-obertes/objectius</dct:identifier>
         <dct:title xml:lang="ca">Objectius estratègics i grau de compliment</dct:title>
         <dct:title xml:lang="es">Objetivos estratégicos y grado de cumplimiento</dct:title>
         <dct:title xml:lang="en">Strategic objectives and progress</dct:title>
@@ -618,7 +618,7 @@
         <dcat:keyword xml:lang="ca">rendició de comptes</dcat:keyword>
         <dcat:theme rdf:resource="http://datos.gob.es/kos/sector-publico/sector/sector-publico"/>
         <dcat:theme rdf:resource="http://publications.europa.eu/resource/authority/data-theme/GOVE"/>
-        <dct:publisher rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/#organitzacio"/>
+        <dct:publisher rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#organitzacio"/>
         <dct:accrualPeriodicity rdf:resource="http://publications.europa.eu/resource/authority/frequency/BIANNUAL"/>
         <dct:spatial rdf:resource="http://datos.gob.es/recurso/sector-publico/territorio/Provincia/Barcelona"/>
         <dct:temporal><dct:PeriodOfTime><dcat:startDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-01-01</dcat:startDate><dcat:endDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2030-12-31</dcat:endDate></dct:PeriodOfTime></dct:temporal>
@@ -626,22 +626,22 @@
         <dct:language>es</dct:language>
         <dct:language>en</dct:language>
         <dct:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
-        <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-11-11</dct:modified>
-        <dcat:landingPage rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/#/activitat"/>
+        <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-11-12</dct:modified>
+        <dcat:landingPage rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/activitat"/>
         <dcat:distribution>
-          <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/csv/objectius.csv">
+          <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/objectius.csv">
             <dct:title xml:lang="ca">Objectius estratègics i grau de compliment (CSV)</dct:title>
-            <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/csv/objectius.csv"/>
-            <dcat:downloadURL rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/csv/objectius.csv"/>
+            <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/objectius.csv"/>
+            <dcat:downloadURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/objectius.csv"/>
             <dct:format><dct:IMT><rdf:value>text/csv</rdf:value><rdfs:label xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">CSV</rdfs:label></dct:IMT></dct:format>
             <dcat:byteSize rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1147</dcat:byteSize>
           </dcat:Distribution>
         </dcat:distribution>
         <dcat:distribution>
-          <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/objectius.json">
+          <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/objectius.json">
             <dct:title xml:lang="ca">Objectius estratègics i grau de compliment (JSON)</dct:title>
-            <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/objectius.json"/>
-            <dcat:downloadURL rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/objectius.json"/>
+            <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/objectius.json"/>
+            <dcat:downloadURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/objectius.json"/>
             <dct:format><dct:IMT><rdf:value>application/json</rdf:value><rdfs:label xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">JSON</rdfs:label></dct:IMT></dct:format>
             <dcat:byteSize rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2772</dcat:byteSize>
           </dcat:Distribution>
@@ -649,8 +649,8 @@
       </dcat:Dataset>
     </dcat:dataset>
     <dcat:dataset>
-      <dcat:Dataset rdf:about="https://jtorresestiguin-cloud.github.io/portal-transparencia/#/dades-obertes/obligacions">
-        <dct:identifier>https://jtorresestiguin-cloud.github.io/portal-transparencia/#/dades-obertes/obligacions</dct:identifier>
+      <dcat:Dataset rdf:about="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/dades-obertes/obligacions">
+        <dct:identifier>https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/dades-obertes/obligacions</dct:identifier>
         <dct:title xml:lang="ca">Compliment de les obligacions de publicitat activa</dct:title>
         <dct:title xml:lang="es">Cumplimiento de las obligaciones de publicidad activa</dct:title>
         <dct:title xml:lang="en">Proactive disclosure compliance</dct:title>
@@ -663,7 +663,7 @@
         <dcat:keyword xml:lang="ca">compliment</dcat:keyword>
         <dcat:theme rdf:resource="http://datos.gob.es/kos/sector-publico/sector/sector-publico"/>
         <dcat:theme rdf:resource="http://publications.europa.eu/resource/authority/data-theme/GOVE"/>
-        <dct:publisher rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/#organitzacio"/>
+        <dct:publisher rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#organitzacio"/>
         <dct:accrualPeriodicity rdf:resource="http://publications.europa.eu/resource/authority/frequency/MONTHLY"/>
         <dct:spatial rdf:resource="http://datos.gob.es/recurso/sector-publico/territorio/Provincia/Barcelona"/>
         <dct:temporal><dct:PeriodOfTime><dcat:startDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-01-01</dcat:startDate><dcat:endDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-12-31</dcat:endDate></dct:PeriodOfTime></dct:temporal>
@@ -671,22 +671,22 @@
         <dct:language>es</dct:language>
         <dct:language>en</dct:language>
         <dct:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
-        <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-11-11</dct:modified>
-        <dcat:landingPage rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/#/compliment"/>
+        <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-11-12</dct:modified>
+        <dcat:landingPage rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/compliment"/>
         <dcat:distribution>
-          <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/csv/obligacions.csv">
+          <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/obligacions.csv">
             <dct:title xml:lang="ca">Compliment de les obligacions de publicitat activa (CSV)</dct:title>
-            <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/csv/obligacions.csv"/>
-            <dcat:downloadURL rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/csv/obligacions.csv"/>
+            <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/obligacions.csv"/>
+            <dcat:downloadURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/obligacions.csv"/>
             <dct:format><dct:IMT><rdf:value>text/csv</rdf:value><rdfs:label xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">CSV</rdfs:label></dct:IMT></dct:format>
             <dcat:byteSize rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">5076</dcat:byteSize>
           </dcat:Distribution>
         </dcat:distribution>
         <dcat:distribution>
-          <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/obligacions.json">
+          <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/obligacions.json">
             <dct:title xml:lang="ca">Compliment de les obligacions de publicitat activa (JSON)</dct:title>
-            <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/obligacions.json"/>
-            <dcat:downloadURL rdf:resource="https://jtorresestiguin-cloud.github.io/portal-transparencia/data/obligacions.json"/>
+            <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/obligacions.json"/>
+            <dcat:downloadURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/obligacions.json"/>
             <dct:format><dct:IMT><rdf:value>application/json</rdf:value><rdfs:label xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">JSON</rdfs:label></dct:IMT></dct:format>
             <dcat:byteSize rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">13817</dcat:byteSize>
           </dcat:Distribution>
@@ -694,5 +694,5 @@
       </dcat:Dataset>
     </dcat:dataset>
   </dcat:Catalog>
-  <foaf:Agent rdf:about="https://jtorresestiguin-cloud.github.io/portal-transparencia/#organitzacio"><foaf:name>Consorci de Turisme de Barcelona</foaf:name><dct:identifier>PENDENT-DIR3</dct:identifier></foaf:Agent>
+  <foaf:Agent rdf:about="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#organitzacio"><foaf:name>Consorci de Turisme de Barcelona</foaf:name><dct:identifier>PENDENT-DIR3</dct:identifier></foaf:Agent>
 </rdf:RDF>
