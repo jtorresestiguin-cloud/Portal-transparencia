@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Retrato ilustrado de ejemplo">
+<title>Retrato ilustrado de ejemplo (no es una fotografía)</title>
+<rect width="200" height="200" fill="#e6f1f2"/><path d="M56 74c-4 22-2 40 4 50h80c6-10 8-28 4-50-6-22-24-34-44-34S62 52 56 74z" fill="#a5764b"/>
+<path d="M30 200c4-36 32-56 70-56s66 20 70 56z" fill="#6d5a3a"/>
+<path d="M86 146l14 22 14-22-14-6z" fill="#e9e4d8"/>
+<rect x="88" y="120" width="24" height="28" rx="10" fill="#c18a63"/>
+<ellipse cx="100" cy="94" rx="36" ry="42" fill="#c18a63"/>
+<ellipse cx="64" cy="98" rx="6" ry="9" fill="#c18a63"/><ellipse cx="136" cy="98" rx="6" ry="9" fill="#c18a63"/>
+<path d="M60 90c-2-30 16-48 40-48s42 18 40 48c-14-14-26-20-40-20-10 0-20 4-26 10-4-4-8-4-14 10z" fill="#a5764b"/>
+<ellipse cx="86" cy="96" rx="3.6" ry="4.2" fill="#2a2522"/><ellipse cx="114" cy="96" rx="3.6" ry="4.2" fill="#2a2522"/>
+<path d="M79 86q7-4 14 0M107 86q7-4 14 0" stroke="#a5764b" stroke-width="3" fill="none" stroke-linecap="round"/>
+<path d="M100 100q-3 10 2 12" stroke="#00000033" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+<path d="M88 118q12 8 24 0" stroke="#8a4b3c" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+
+</svg>

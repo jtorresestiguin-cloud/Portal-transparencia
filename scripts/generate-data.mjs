@@ -214,7 +214,7 @@ const cargos = CORP.map(([id, nombre, tipo, cargo, grupo, jgl, areas, ded]) => (
   id, nombre, tipo_cargo: tipo, cargo, areas: areas || 'Sin delegación', grupo_municipal: grupo, junta_gobierno: jgl, dedicacion: ded,
   retribucion_anual: ded === 'exclusiva' ? 31500 : ded === 'parcial' ? 12600 : 0,
   indemnizaciones_anuales: ded === 'ninguna' ? r2((jgl ? 22 : 11) * (jgl ? 90 : 70)) : 0,
-  fecha_nombramiento: tipo === 'concejalia' ? '2023-06-17' : '2023-06-23', foto: '', email: `${id.toLowerCase()}@example.org`,
+  fecha_nombramiento: tipo === 'concejalia' ? '2023-06-17' : '2023-06-23', foto: `assets/img/cargos/${id}.svg`, // retratos ilustrados: scripts/avatars.mjs email: `${id.toLowerCase()}@example.org`,
   cv_url: '', declaracion_bienes_url: '#', declaracion_actividades_url: '#',
 }));
 save('grupos-municipales', 'manual', GRUPOS);

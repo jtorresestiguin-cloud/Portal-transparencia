@@ -1,12 +1,12 @@
 id,nombre,tipo_cargo,cargo,areas,grupo_municipal,junta_gobierno,dedicacion,retribucion_anual,indemnizaciones_anuales,fecha_nombramiento,foto,email,cv_url,declaracion_bienes_url,declaracion_actividades_url
-C01,Benito Pérez,alcaldia,Alcalde,"Presidencia, Hacienda, Personal y Policía Local",EPL,true,exclusiva,31500,0,2023-06-23,,c01@example.org,,#,#
-C02,Laura Ejemplo Ferrer,teniente_alcaldia,1.ª Teniente de Alcalde,"Urbanismo, Obras y Servicios",EPL,true,parcial,12600,0,2023-06-23,,c02@example.org,,#,#
-C03,Vicent Ejemplo Sanchis,teniente_alcaldia,2.º Teniente de Alcalde,"Agricultura, Medio Ambiente y Participación",AV,true,ninguna,0,1980,2023-06-23,,c03@example.org,,#,#
-C04,Marta Ejemplo Gil,teniente_alcaldia,3.ª Teniente de Alcalde,"Bienestar Social, Igualdad y Educación",EPL,true,ninguna,0,1980,2023-06-23,,c04@example.org,,#,#
-C05,Josep Ejemplo Martí,concejalia,Concejal,"Cultura, Fiestas y Deportes",EPL,false,ninguna,0,770,2023-06-17,,c05@example.org,,#,#
-C06,Amparo Ejemplo Navarro,concejalia,Concejala,Juventud y Comercio,EPL,false,ninguna,0,770,2023-06-17,,c06@example.org,,#,#
-C07,Pau Ejemplo Climent,concejalia,Concejal,Transparencia y Nuevas Tecnologías,AV,false,ninguna,0,770,2023-06-17,,c07@example.org,,#,#
-C08,Rosa Ejemplo García,concejalia,Concejala,Sin delegación,CDM,false,ninguna,0,770,2023-06-17,,c08@example.org,,#,#
-C09,Andrés Ejemplo López,concejalia,Concejal,Sin delegación,CDM,false,ninguna,0,770,2023-06-17,,c09@example.org,,#,#
-C10,Núria Ejemplo Ruiz,concejalia,Concejala,Sin delegación,CDM,false,ninguna,0,770,2023-06-17,,c10@example.org,,#,#
-C11,Toni Ejemplo Bosch,concejalia,Concejal,Sin delegación,CDM,false,ninguna,0,770,2023-06-17,,c11@example.org,,#,#
+C01,Benito Pérez,alcaldia,Alcalde,"Presidencia, Hacienda, Personal y Policía Local",EPL,true,exclusiva,31500,0,2023-06-23,assets/img/cargos/C01.svg,c01@example.org,,#,#
+C02,Laura Ejemplo Ferrer,teniente_alcaldia,1.ª Teniente de Alcalde,"Urbanismo, Obras y Servicios",EPL,true,parcial,12600,0,2023-06-23,assets/img/cargos/C02.svg,c02@example.org,,#,#
+C03,Vicent Ejemplo Sanchis,teniente_alcaldia,2.º Teniente de Alcalde,"Agricultura, Medio Ambiente y Participación",AV,true,ninguna,0,1980,2023-06-23,assets/img/cargos/C03.svg,c03@example.org,,#,#
+C04,Marta Ejemplo Gil,teniente_alcaldia,3.ª Teniente de Alcalde,"Bienestar Social, Igualdad y Educación",EPL,true,ninguna,0,1980,2023-06-23,assets/img/cargos/C04.svg,c04@example.org,,#,#
+C05,Josep Ejemplo Martí,concejalia,Concejal,"Cultura, Fiestas y Deportes",EPL,false,ninguna,0,770,2023-06-17,assets/img/cargos/C05.svg,c05@example.org,,#,#
+C06,Amparo Ejemplo Navarro,concejalia,Concejala,Juventud y Comercio,EPL,false,ninguna,0,770,2023-06-17,assets/img/cargos/C06.svg,c06@example.org,,#,#
+C07,Pau Ejemplo Climent,concejalia,Concejal,Transparencia y Nuevas Tecnologías,AV,false,ninguna,0,770,2023-06-17,assets/img/cargos/C07.svg,c07@example.org,,#,#
+C08,Rosa Ejemplo García,concejalia,Concejala,Sin delegación,CDM,false,ninguna,0,770,2023-06-17,assets/img/cargos/C08.svg,c08@example.org,,#,#
+C09,Andrés Ejemplo López,concejalia,Concejal,Sin delegación,CDM,false,ninguna,0,770,2023-06-17,assets/img/cargos/C09.svg,c09@example.org,,#,#
+C10,Núria Ejemplo Ruiz,concejalia,Concejala,Sin delegación,CDM,false,ninguna,0,770,2023-06-17,assets/img/cargos/C10.svg,c10@example.org,,#,#
+C11,Toni Ejemplo Bosch,concejalia,Concejal,Sin delegación,CDM,false,ninguna,0,770,2023-06-17,assets/img/cargos/C11.svg,c11@example.org,,#,#
