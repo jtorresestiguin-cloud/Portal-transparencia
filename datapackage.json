@@ -121,7 +121,7 @@
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "bytes": 88581,
+      "bytes": 88669,
       "sources": [
         {
           "title": "Plataforma de Contratación del Sector Público",
@@ -740,7 +740,7 @@
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "bytes": 4761,
+      "bytes": 4762,
       "sources": [
         {
           "title": "Recursos Humanos"
@@ -973,7 +973,7 @@
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "bytes": 1568,
+      "bytes": 1614,
       "sources": [
         {
           "title": "Secretaría General"

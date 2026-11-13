@@ -352,7 +352,7 @@
             "@id": "http://www.iana.org/assignments/media-types/text/csv"
           },
           "dcat:byteSize": {
-            "@value": "88581",
+            "@value": "88669",
             "@type": "xsd:nonNegativeInteger"
           },
           "dct:license": {
@@ -375,7 +375,7 @@
             "@id": "http://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
           },
           "dcat:byteSize": {
-            "@value": "465840",
+            "@value": "466320",
             "@type": "xsd:nonNegativeInteger"
           },
           "dct:license": {
@@ -398,7 +398,7 @@
             "@id": "http://www.iana.org/assignments/media-types/application/json"
           },
           "dcat:byteSize": {
-            "@value": "251737",
+            "@value": "252818",
             "@type": "xsd:nonNegativeInteger"
           },
           "dct:license": {
@@ -1319,7 +1319,7 @@
             "@id": "http://www.iana.org/assignments/media-types/text/csv"
           },
           "dcat:byteSize": {
-            "@value": "4761",
+            "@value": "4762",
             "@type": "xsd:nonNegativeInteger"
           },
           "dct:license": {
@@ -1342,7 +1342,7 @@
             "@id": "http://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
           },
           "dcat:byteSize": {
-            "@value": "53292",
+            "@value": "53316",
             "@type": "xsd:nonNegativeInteger"
           },
           "dct:license": {
@@ -1365,7 +1365,7 @@
             "@id": "http://www.iana.org/assignments/media-types/application/json"
           },
           "dcat:byteSize": {
-            "@value": "18966",
+            "@value": "18979",
             "@type": "xsd:nonNegativeInteger"
           },
           "dct:license": {
@@ -1959,7 +1959,7 @@
             "@id": "http://www.iana.org/assignments/media-types/text/csv"
           },
           "dcat:byteSize": {
-            "@value": "1568",
+            "@value": "1614",
             "@type": "xsd:nonNegativeInteger"
           },
           "dct:license": {
@@ -1982,7 +1982,7 @@
             "@id": "http://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
           },
           "dcat:byteSize": {
-            "@value": "11972",
+            "@value": "12018",
             "@type": "xsd:nonNegativeInteger"
           },
           "dct:license": {
@@ -2005,7 +2005,7 @@
             "@id": "http://www.iana.org/assignments/media-types/application/json"
           },
           "dcat:byteSize": {
-            "@value": "3435",
+            "@value": "3481",
             "@type": "xsd:nonNegativeInteger"
           },
           "dct:license": {

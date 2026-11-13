@@ -1,5 +1,5 @@
 id,titulo,tipo,fecha_aprobacion,fecha_publicacion,boletin,url,vigente
-NOR-001,Ordenanza fiscal reguladora del Impuesto sobre Bienes Inmuebles,ordenanza_fiscal,2021-07-05,2021-08-04,BOP n.º 168,#,true
+NOR-001,Ordenanza fiscal reguladora del Impuesto sobre Bienes Inmuebles,ordenanza_fiscal,2021-07-05,2021-08-04,BOP n.º 168,archivos/normativa/2026/r-trans-y-part-bx8m.pdf,true
 NOR-002,Ordenanza fiscal del Impuesto sobre Vehículos de Tracción Mecánica,ordenanza_fiscal,2016-05-18,2016-06-09,BOP n.º 64,#,true
 NOR-003,"Ordenanza fiscal del Impuesto sobre Construcciones, Instalaciones y Obras",ordenanza_fiscal,2021-08-11,2021-08-21,BOP n.º 146,#,true
 NOR-004,Ordenanza fiscal de la tasa de recogida de residuos,ordenanza_fiscal,2014-06-04,2014-07-01,BOP n.º 184,#,true

@@ -1,4 +1,6 @@
 id,expediente,objeto,tipo,procedimiento,estado,cpv,organo,fecha_adjudicacion,fecha_formalizacion,duracion_meses,presupuesto_base_sin_iva,importe_adjudicacion_sin_iva,importe_adjudicacion_con_iva,numero_ofertas,adjudicatario,adjudicatario_nif,adjudicatario_pyme,url,fuente
+CON-mwewhk9f,,,,,,,,,,,,,,,,,false,,manual
+CON-mwet7036,,,,,,,,,,,,,,,,,false,,manual
 EJ-2026-0346,2026/2046,Licencias de software de gestión,1,6,ADJ,48000000,Alcaldía,2026-10-25,,7,12256.79,11466.65,13874.65,2,"Servicios Mestral Ejemplo, SL",B99001266,true,https://contrataciondelsectorpublico.gob.es,ejemplo
 EJ-2026-0349,2026/2347,Mantenimiento del alumbrado público,2,6,ADJ,50232100,Alcaldía,2026-10-18,,4,6794.98,6143.85,7434.06,3,"Instalaciones Rajola Ejemplo, SL",B99003587,true,https://contrataciondelsectorpublico.gob.es,ejemplo
 EJ-2026-0359,2026/1844,Servicio de soporte informático,2,6,ADJ,72000000,Alcaldía,2026-10-17,,3,6633.07,6259.85,7574.42,3,"Limpiezas Mediterrània Ejemplo, SL",B99001688,false,https://contrataciondelsectorpublico.gob.es,ejemplo
