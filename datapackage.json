@@ -12,7 +12,7 @@
   ],
   "contributors": [
     {
-      "title": "Ayuntamiento de Ejemplo",
+      "title": "Ayuntamiento de Vicentorres",
       "role": "publisher"
     }
   ],
@@ -559,7 +559,7 @@
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "bytes": 2720,
+      "bytes": 2561,
       "sources": [
         {
           "title": "Secretaría General"
@@ -973,7 +973,7 @@
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "bytes": 1468,
+      "bytes": 1568,
       "sources": [
         {
           "title": "Secretaría General"

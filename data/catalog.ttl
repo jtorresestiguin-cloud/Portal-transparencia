@@ -27,7 +27,7 @@
     <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/datos/solicitudes-acceso>,
     <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/datos/obligaciones> .
 
-<http://datos.gob.es/recurso/sector-publico/org/Organismo/L00000000> a foaf:Agent ; foaf:name "Ayuntamiento de Ejemplo" ; dct:identifier "L00000000" .
+<http://datos.gob.es/recurso/sector-publico/org/Organismo/L00000000> a foaf:Agent ; foaf:name "Ayuntamiento de Vicentorres" ; dct:identifier "L00000000" .
 
 <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/datos/presupuesto> a dcat:Dataset ;
   dct:identifier "presupuesto" ;

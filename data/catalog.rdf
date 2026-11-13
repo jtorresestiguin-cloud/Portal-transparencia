@@ -471,5 +471,5 @@
       </dcat:Dataset>
     </dcat:dataset>
   </dcat:Catalog>
-  <foaf:Agent rdf:about="http://datos.gob.es/recurso/sector-publico/org/Organismo/L00000000"><foaf:name>Ayuntamiento de Ejemplo</foaf:name><dct:identifier>L00000000</dct:identifier></foaf:Agent>
+  <foaf:Agent rdf:about="http://datos.gob.es/recurso/sector-publico/org/Organismo/L00000000"><foaf:name>Ayuntamiento de Vicentorres</foaf:name><dct:identifier>L00000000</dct:identifier></foaf:Agent>
 </rdf:RDF>

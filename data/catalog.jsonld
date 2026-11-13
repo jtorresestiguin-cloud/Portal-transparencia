@@ -39,7 +39,7 @@
   "dct:publisher": {
     "@id": "http://datos.gob.es/recurso/sector-publico/org/Organismo/L00000000",
     "@type": "foaf:Agent",
-    "foaf:name": "Ayuntamiento de Ejemplo",
+    "foaf:name": "Ayuntamiento de Vicentorres",
     "dct:identifier": "L00000000"
   },
   "dct:language": [
@@ -884,7 +884,7 @@
             "@id": "http://www.iana.org/assignments/media-types/text/csv"
           },
           "dcat:byteSize": {
-            "@value": "2720",
+            "@value": "2561",
             "@type": "xsd:nonNegativeInteger"
           },
           "dct:license": {
@@ -907,7 +907,7 @@
             "@id": "http://www.iana.org/assignments/media-types/application/json"
           },
           "dcat:byteSize": {
-            "@value": "8612",
+            "@value": "8138",
             "@type": "xsd:nonNegativeInteger"
           },
           "dct:license": {
@@ -1706,7 +1706,7 @@
             "@id": "http://www.iana.org/assignments/media-types/text/csv"
           },
           "dcat:byteSize": {
-            "@value": "1468",
+            "@value": "1568",
             "@type": "xsd:nonNegativeInteger"
           },
           "dct:license": {
@@ -1729,7 +1729,7 @@
             "@id": "http://www.iana.org/assignments/media-types/application/json"
           },
           "dcat:byteSize": {
-            "@value": "3323",
+            "@value": "3435",
             "@type": "xsd:nonNegativeInteger"
           },
           "dct:license": {

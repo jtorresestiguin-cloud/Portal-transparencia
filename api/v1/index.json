@@ -3,7 +3,7 @@
   "base": "https://jtorresestiguin-cloud.github.io/Portal-transparencia",
   "actualizado": "2026-11-13",
   "entidad": {
-    "nombre": "Ayuntamiento de Ejemplo",
+    "nombre": "Ayuntamiento de Vicentorres",
     "nif": "P0000000X",
     "dir3": "L00000000"
   },
@@ -87,7 +87,7 @@
         "va": "Càrrecs electes i personal directiu",
         "en": "Elected officials and senior staff"
       },
-      "registros": 18,
+      "registros": 17,
       "fuente": "manual",
       "actualizado": "2026-11-13",
       "json": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/cargos.json",

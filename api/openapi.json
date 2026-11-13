@@ -1,7 +1,7 @@
 {
   "openapi": "3.1.0",
   "info": {
-    "title": "API de datos abiertos — Ayuntamiento de Ejemplo",
+    "title": "API de datos abiertos — Ayuntamiento de Vicentorres",
     "version": "1.0.0",
     "description": "API REST estática de solo lectura. Cada conjunto se ofrece en JSON (con metadatos) y CSV.",
     "license": {
