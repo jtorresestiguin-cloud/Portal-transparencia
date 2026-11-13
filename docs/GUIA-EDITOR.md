@@ -83,6 +83,15 @@ Junto a cada campo de enlace (documentos de una página, foto y declaraciones de
 
 En el portal, cada documento se puede **ver** (se abre en una pestaña nueva) o **descargar**.
 
+## Corporación, grupos municipales y Junta de Gobierno
+
+- **Datos → Grupos municipales:** nombre, siglas, color, **logotipo** (botón «Subir imagen»), portavoz, si forma parte del equipo de gobierno y web.
+- **Datos → Cargos electos:** cada concejal tiene su **grupo municipal** (desplegable) y la casilla **Miembro de la Junta de Gobierno Local**.
+- En la página *Cargos electos*:
+  - el componente **Junta de Gobierno Local** muestra la presidencia y las tenencias de alcaldía con sus delegaciones;
+  - el componente **Corporación por grupos** muestra la composición del Pleno (hemiciclo), el equipo de gobierno y la oposición, y las fichas agrupadas por grupo con su logotipo y portavoz.
+  Ambos componentes se pueden añadir a cualquier página desde la paleta.
+
 ## Entidad
 
 Nombre en los tres idiomas, NIF, DIR3, dirección, sede electrónica, escudo y **colores corporativos** (se aplican a todo el portal). Junto a los colores se muestra su **contraste WCAG** sobre blanco: el color principal necesita al menos 4,5:1 (si no, la publicación se bloquea); el secundario avisa si no sirve para texto. También los identificadores del órgano para la Plataforma de Contratación y la BDNS y el **modo de publicación por defecto**.

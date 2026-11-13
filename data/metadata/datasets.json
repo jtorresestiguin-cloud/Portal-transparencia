@@ -502,9 +502,9 @@
     "en": "Elected officials and senior staff"
    },
    "descripcion": {
-    "es": "Identificación, perfil, dedicación, retribuciones y declaraciones de bienes y actividades.",
-    "va": "Identificació, perfil, dedicació, retribucions i declaracions de béns i activitats.",
-    "en": "Identity, profile, dedication, pay and declarations of assets and activities."
+    "es": "Corporación municipal (Pleno) y Junta de Gobierno Local: identificación, grupo municipal, delegaciones, dedicación, retribuciones y declaraciones de bienes y actividades.",
+    "va": "Corporació municipal (Ple) i Junta de Govern Local: identificació, grup municipal, delegacions, dedicació, retribucions i declaracions de béns i activitats.",
+    "en": "Council (Plenary) and Local Government Board: identity, political group, portfolios, dedication, pay and declarations."
    },
    "palabras_clave": [
     "cargos electos",
@@ -551,9 +551,18 @@
      "descripcion": "Áreas o delegaciones"
     },
     {
-     "nombre": "grupo_politico",
+     "nombre": "grupo_municipal",
      "tipo": "string",
-     "descripcion": "Grupo político"
+     "descripcion": "Grupo municipal",
+     "referencia": {
+      "conjunto": "grupos-municipales",
+      "campo": "nombre"
+     }
+    },
+    {
+     "nombre": "junta_gobierno",
+     "tipo": "boolean",
+     "descripcion": "Miembro de la Junta de Gobierno Local"
     },
     {
      "nombre": "dedicacion",
@@ -579,7 +588,7 @@
     {
      "nombre": "foto",
      "tipo": "string",
-     "descripcion": "Fotografía (URL)",
+     "descripcion": "Fotografía",
      "formato": "uri"
     },
     {
@@ -611,6 +620,91 @@
     "va": "Secretaria General",
     "en": "General Secretariat"
    }
+  },
+  {
+   "id": "grupos-municipales",
+   "pagina": "cargos",
+   "titulo": {
+    "es": "Grupos municipales",
+    "va": "Grups municipals",
+    "en": "Political groups"
+   },
+   "descripcion": {
+    "es": "Grupos políticos constituidos en el Pleno: denominación, siglas, logotipo, portavoz y pertenencia al equipo de gobierno.",
+    "va": "Grups polítics constituïts en el Ple: denominació, sigles, logotip, portaveu i pertinença a l’equip de govern.",
+    "en": "Political groups in the council: name, acronym, logo, spokesperson and whether they are in government."
+   },
+   "palabras_clave": [
+    "grupos municipales",
+    "partidos",
+    "corporación",
+    "pleno"
+   ],
+   "tema_eu": "GOVE",
+   "tema_nti": "sector-publico",
+   "periodicidad": "ANNUAL",
+   "temporal": [
+    "2023-06-17",
+    "2027-06-30"
+   ],
+   "fuente": {
+    "tipo": "manual",
+    "nombre": "Secretaría General"
+   },
+   "responsable": {
+    "es": "Secretaría General",
+    "va": "Secretaria General",
+    "en": "General Secretariat"
+   },
+   "campos": [
+    {
+     "nombre": "id",
+     "tipo": "string",
+     "descripcion": "Identificador"
+    },
+    {
+     "nombre": "nombre",
+     "tipo": "string",
+     "descripcion": "Denominación del grupo"
+    },
+    {
+     "nombre": "siglas",
+     "tipo": "string",
+     "descripcion": "Siglas"
+    },
+    {
+     "nombre": "color",
+     "tipo": "string",
+     "descripcion": "Color identificativo",
+     "formato": "color"
+    },
+    {
+     "nombre": "logo",
+     "tipo": "string",
+     "descripcion": "Logotipo",
+     "formato": "uri"
+    },
+    {
+     "nombre": "portavoz_id",
+     "tipo": "string",
+     "descripcion": "Portavoz",
+     "referencia": {
+      "conjunto": "cargos",
+      "campo": "nombre"
+     }
+    },
+    {
+     "nombre": "en_gobierno",
+     "tipo": "boolean",
+     "descripcion": "Forma parte del equipo de gobierno"
+    },
+    {
+     "nombre": "web",
+     "tipo": "string",
+     "descripcion": "Web del grupo",
+     "formato": "uri"
+    }
+   ]
   },
   {
    "id": "agenda",

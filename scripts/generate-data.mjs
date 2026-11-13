@@ -36,7 +36,10 @@ const iso = (y, m, d) => `${y}-${pad(m)}-${pad(d)}`;
 const addDays = (s, n) => { const d = new Date(s + 'T00:00:00Z'); d.setUTCDate(d.getUTCDate() + n); return d.toISOString().slice(0, 10); };
 const HOY = '2026-11-13';
 
+// --solo=cargos,grupos-municipales → escribe solo esos conjuntos (no toca el resto)
+const SOLO = (process.argv.find((a) => a.startsWith('--solo=')) || '').slice(7).split(',').filter(Boolean);
 function save(name, fuente, datos, extra = {}) {
+  if (SOLO.length && !SOLO.includes(name)) return;
   writeFileSync(join(DATA, `${name}.json`), JSON.stringify({
     generado: HOY, fuente, ejemplo: true,
     aviso: 'Datos de ejemplo generados sintéticamente. No son cifras oficiales.', ...extra, datos,
@@ -183,27 +186,38 @@ for (let i = 0; i < 26; i++) {
 convenios.sort((a, b) => b.fecha_firma.localeCompare(a.fecha_firma));
 save('convenios', 'ejemplo', convenios, { unidad: 'EUR' });
 
-// 6. CARGOS -------------------------------------------------------------------
-const NOMBRES = ['Laura', 'Vicent', 'Marta', 'Josep', 'Amparo', 'Javier', 'Elena', 'Pau', 'Rosa', 'Andrés', 'Núria', 'Carlos', 'Isabel', 'Miguel', 'Lucía', 'Toni', 'Carmen'];
-const cargos = [];
-const GRUPOS = ['Grupo Municipal A', 'Grupo Municipal B', 'Grupo Municipal C', 'Grupo Municipal D'];
-const AREAS_DEL = ['Hacienda y Personal', 'Urbanismo y Obras', 'Servicios Sociales e Igualdad', 'Cultura y Fiestas', 'Deportes y Juventud', 'Educación', 'Medio Ambiente', 'Comercio y Empleo', 'Seguridad Ciudadana', 'Participación y Transparencia'];
-for (let i = 0; i < 17; i++) {
-  const gob = i < 9;
-  const tipo = i === 0 ? 'alcaldia' : i < 4 ? 'teniente_alcaldia' : 'concejalia';
-  const ded = i === 0 ? 'exclusiva' : gob && i < 5 ? 'exclusiva' : gob && i < 8 ? 'parcial' : 'ninguna';
-  cargos.push({
-    id: `C${pad(i + 1)}`, nombre: `${NOMBRES[i]} Ejemplo ${pick(['García', 'Martí', 'Ferrer', 'López', 'Navarro', 'Sanchis', 'Gil', 'Ruiz'])}`,
-    tipo_cargo: tipo, cargo: i === 0 ? 'Alcalde/sa' : i < 4 ? `${i}.ª Tenencia de Alcaldía` : 'Concejal/a',
-    areas: gob ? (i === 0 ? 'Presidencia y Policía Local' : AREAS_DEL[i - 1]) : 'Sin delegación',
-    grupo_politico: gob ? (i < 6 ? GRUPOS[0] : GRUPOS[1]) : (i < 14 ? GRUPOS[2] : GRUPOS[3]),
-    dedicacion: ded, retribucion_anual: ded === 'exclusiva' ? (i === 0 ? 46800 : 36400) : ded === 'parcial' ? 18200 : 0,
-    indemnizaciones_anuales: ded === 'ninguna' ? r2(int(10, 24) * 150) : 0,
-    fecha_nombramiento: i < 4 ? '2023-06-17' : '2023-06-28', foto: '', email: `cargo${i + 1}@example.org`,
-    cv_url: '', declaracion_bienes_url: '#', declaracion_actividades_url: '#',
-  });
-}
-cargos.push({ id: 'E01', nombre: 'Persona Ejemplo Eventual', tipo_cargo: 'eventual', cargo: 'Asesor/a de Alcaldía', areas: 'Gabinete de Alcaldía', grupo_politico: '', dedicacion: 'exclusiva', retribucion_anual: 32100, indemnizaciones_anuales: 0, fecha_nombramiento: '2023-07-03', foto: '', email: 'gabinete@example.org', cv_url: '', declaracion_bienes_url: '', declaracion_actividades_url: '' });
+// 6. CARGOS Y GRUPOS MUNICIPALES ----------------------------------------------
+// Simulación a escala de un municipio de unos 1.800 habitantes (como Riola): 11 concejales
+// (art. 179 LOREG), tres grupos municipales y una Junta de Gobierno Local con la Alcaldía y tres
+// tenencias (máximo un tercio del número legal de concejales, art. 23 LRBRL). Personas y grupos
+// ficticios; los logotipos son ilustraciones genéricas (assets/img/grupos/).
+const GRUPOS = [
+  { id: 'EPL', nombre: 'Esquerra Progressista Local', siglas: 'EPL', color: '#b3262e', logo: 'assets/img/grupos/epl.svg', portavoz_id: 'C02', en_gobierno: true, web: '' },
+  { id: 'CDM', nombre: 'Centre Democràtic Municipal', siglas: 'CDM', color: '#1f5fa8', logo: 'assets/img/grupos/cdm.svg', portavoz_id: 'C08', en_gobierno: false, web: '' },
+  { id: 'AV', nombre: 'Alternativa Veïnal', siglas: 'AV', color: '#2b7a4b', logo: 'assets/img/grupos/av.svg', portavoz_id: 'C03', en_gobierno: true, web: '' },
+];
+const CORP = [
+  // id, nombre, tipo, cargo, grupo, JGL, áreas, dedicación
+  ['C01', 'Benito Pérez', 'alcaldia', 'Alcalde', 'EPL', true, 'Presidencia, Hacienda, Personal y Policía Local', 'exclusiva'],
+  ['C02', 'Laura Ejemplo Ferrer', 'teniente_alcaldia', '1.ª Teniente de Alcalde', 'EPL', true, 'Urbanismo, Obras y Servicios', 'parcial'],
+  ['C03', 'Vicent Ejemplo Sanchis', 'teniente_alcaldia', '2.º Teniente de Alcalde', 'AV', true, 'Agricultura, Medio Ambiente y Participación', 'ninguna'],
+  ['C04', 'Marta Ejemplo Gil', 'teniente_alcaldia', '3.ª Teniente de Alcalde', 'EPL', true, 'Bienestar Social, Igualdad y Educación', 'ninguna'],
+  ['C05', 'Josep Ejemplo Martí', 'concejalia', 'Concejal', 'EPL', false, 'Cultura, Fiestas y Deportes', 'ninguna'],
+  ['C06', 'Amparo Ejemplo Navarro', 'concejalia', 'Concejala', 'EPL', false, 'Juventud y Comercio', 'ninguna'],
+  ['C07', 'Pau Ejemplo Climent', 'concejalia', 'Concejal', 'AV', false, 'Transparencia y Nuevas Tecnologías', 'ninguna'],
+  ['C08', 'Rosa Ejemplo García', 'concejalia', 'Concejala', 'CDM', false, '', 'ninguna'],
+  ['C09', 'Andrés Ejemplo López', 'concejalia', 'Concejal', 'CDM', false, '', 'ninguna'],
+  ['C10', 'Núria Ejemplo Ruiz', 'concejalia', 'Concejala', 'CDM', false, '', 'ninguna'],
+  ['C11', 'Toni Ejemplo Bosch', 'concejalia', 'Concejal', 'CDM', false, '', 'ninguna'],
+];
+const cargos = CORP.map(([id, nombre, tipo, cargo, grupo, jgl, areas, ded]) => ({
+  id, nombre, tipo_cargo: tipo, cargo, areas: areas || 'Sin delegación', grupo_municipal: grupo, junta_gobierno: jgl, dedicacion: ded,
+  retribucion_anual: ded === 'exclusiva' ? 31500 : ded === 'parcial' ? 12600 : 0,
+  indemnizaciones_anuales: ded === 'ninguna' ? r2((jgl ? 22 : 11) * (jgl ? 90 : 70)) : 0,
+  fecha_nombramiento: tipo === 'concejalia' ? '2023-06-17' : '2023-06-23', foto: '', email: `${id.toLowerCase()}@example.org`,
+  cv_url: '', declaracion_bienes_url: '#', declaracion_actividades_url: '#',
+}));
+save('grupos-municipales', 'manual', GRUPOS);
 save('cargos', 'manual', cargos, { unidad: 'EUR bruto anual' });
 
 // 7. AGENDA -------------------------------------------------------------------

@@ -68,8 +68,13 @@ await mob.close();
   const docs = await pg.evaluate(() => [...document.querySelectorAll('.doc-actions a')].map((a) => [a.target, a.hasAttribute('download')]));
   if (docs.length && !docs.some(([t]) => t === '_blank')) errs.push('los documentos no se abren en pestaña nueva');
   if (docs.length && !docs.some(([, d]) => d)) errs.push('los documentos no ofrecen descarga');
+  await pg.goto(`http://localhost:${PORT}/#/cargos`); await pg.waitForSelector('#main .view h1'); await pg.waitForTimeout(800);
+  if (!(await pg.locator('#junta-gobierno .jgl-item').count())) errs.push('falta la Junta de Gobierno Local');
+  if ((await pg.locator('.corp-group').count()) < 2) errs.push('la corporación no se agrupa por grupos municipales');
+  if (!(await pg.locator('.corp-group-head img.group-logo').count())) errs.push('faltan los logotipos de los grupos');
+  if (!(await pg.locator('.hemi-svg circle').count())) errs.push('falta la composición del Pleno');
   if (errs.length) fails++;
-  console.log(`${errs.length ? '✗' : '✓'} [funciones] flujos del presupuesto, Excel, PDF en pestaña nueva, ficheros .xlsx estáticos, documentos (ver/descargar)`);
+  console.log(`${errs.length ? '✗' : '✓'} [funciones] cargos (Junta de Gobierno, corporación por grupos con logotipos), flujos del presupuesto, Excel, PDF en pestaña nueva, ficheros .xlsx estáticos, documentos (ver/descargar)`);
   errs.forEach((e) => console.log('    ⚠ ' + e));
   await pg.close();
 }

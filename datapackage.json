@@ -553,13 +553,13 @@
     {
       "name": "cargos",
       "title": "Cargos electos y personal directivo",
-      "description": "Identificación, perfil, dedicación, retribuciones y declaraciones de bienes y actividades.",
+      "description": "Corporación municipal (Pleno) y Junta de Gobierno Local: identificación, grupo municipal, delegaciones, dedicación, retribuciones y declaraciones de bienes y actividades.",
       "path": "data/csv/cargos.csv",
       "profile": "tabular-data-resource",
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "bytes": 2561,
+      "bytes": 1723,
       "sources": [
         {
           "title": "Secretaría General"
@@ -602,9 +602,20 @@
             "description": "Áreas o delegaciones"
           },
           {
-            "name": "grupo_politico",
+            "name": "grupo_municipal",
             "type": "string",
-            "description": "Grupo político"
+            "description": "Grupo municipal"
+          },
+          {
+            "name": "junta_gobierno",
+            "type": "boolean",
+            "description": "Miembro de la Junta de Gobierno Local",
+            "trueValues": [
+              "true"
+            ],
+            "falseValues": [
+              "false"
+            ]
           },
           {
             "name": "dedicacion",
@@ -636,7 +647,7 @@
           {
             "name": "foto",
             "type": "string",
-            "description": "Fotografía (URL)",
+            "description": "Fotografía",
             "format": "uri"
           },
           {
@@ -660,6 +671,79 @@
             "name": "declaracion_actividades_url",
             "type": "string",
             "description": "Declaración de actividades",
+            "format": "uri"
+          }
+        ],
+        "primaryKey": "id",
+        "missingValues": [
+          ""
+        ]
+      }
+    },
+    {
+      "name": "grupos-municipales",
+      "title": "Grupos municipales",
+      "description": "Grupos políticos constituidos en el Pleno: denominación, siglas, logotipo, portavoz y pertenencia al equipo de gobierno.",
+      "path": "data/csv/grupos-municipales.csv",
+      "profile": "tabular-data-resource",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "bytes": 291,
+      "sources": [
+        {
+          "title": "Secretaría General"
+        }
+      ],
+      "schema": {
+        "fields": [
+          {
+            "name": "id",
+            "type": "string",
+            "description": "Identificador"
+          },
+          {
+            "name": "nombre",
+            "type": "string",
+            "description": "Denominación del grupo"
+          },
+          {
+            "name": "siglas",
+            "type": "string",
+            "description": "Siglas"
+          },
+          {
+            "name": "color",
+            "type": "string",
+            "description": "Color identificativo",
+            "format": "color"
+          },
+          {
+            "name": "logo",
+            "type": "string",
+            "description": "Logotipo",
+            "format": "uri"
+          },
+          {
+            "name": "portavoz_id",
+            "type": "string",
+            "description": "Portavoz"
+          },
+          {
+            "name": "en_gobierno",
+            "type": "boolean",
+            "description": "Forma parte del equipo de gobierno",
+            "trueValues": [
+              "true"
+            ],
+            "falseValues": [
+              "false"
+            ]
+          },
+          {
+            "name": "web",
+            "type": "string",
+            "description": "Web del grupo",
             "format": "uri"
           }
         ],

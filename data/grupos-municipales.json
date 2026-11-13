@@ -1,0 +1,38 @@
+{
+ "generado": "2026-11-13",
+ "fuente": "manual",
+ "ejemplo": true,
+ "aviso": "Datos de ejemplo generados sintéticamente. No son cifras oficiales.",
+ "datos": [
+  {
+   "id": "EPL",
+   "nombre": "Esquerra Progressista Local",
+   "siglas": "EPL",
+   "color": "#b3262e",
+   "logo": "assets/img/grupos/epl.svg",
+   "portavoz_id": "C02",
+   "en_gobierno": true,
+   "web": ""
+  },
+  {
+   "id": "CDM",
+   "nombre": "Centre Democràtic Municipal",
+   "siglas": "CDM",
+   "color": "#1f5fa8",
+   "logo": "assets/img/grupos/cdm.svg",
+   "portavoz_id": "C08",
+   "en_gobierno": false,
+   "web": ""
+  },
+  {
+   "id": "AV",
+   "nombre": "Alternativa Veïnal",
+   "siglas": "AV",
+   "color": "#2b7a4b",
+   "logo": "assets/img/grupos/av.svg",
+   "portavoz_id": "C03",
+   "en_gobierno": true,
+   "web": ""
+  }
+ ]
+}

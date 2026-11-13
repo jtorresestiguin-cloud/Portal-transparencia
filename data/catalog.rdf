@@ -216,9 +216,9 @@
         <dct:title xml:lang="es">Cargos electos y personal directivo</dct:title>
         <dct:title xml:lang="ca-valencia">Càrrecs electes i personal directiu</dct:title>
         <dct:title xml:lang="en">Elected officials and senior staff</dct:title>
-        <dct:description xml:lang="es">Identificación, perfil, dedicación, retribuciones y declaraciones de bienes y actividades.</dct:description>
-        <dct:description xml:lang="ca-valencia">Identificació, perfil, dedicació, retribucions i declaracions de béns i activitats.</dct:description>
-        <dct:description xml:lang="en">Identity, profile, dedication, pay and declarations of assets and activities.</dct:description>
+        <dct:description xml:lang="es">Corporación municipal (Pleno) y Junta de Gobierno Local: identificación, grupo municipal, delegaciones, dedicación, retribuciones y declaraciones de bienes y actividades.</dct:description>
+        <dct:description xml:lang="ca-valencia">Corporació municipal (Ple) i Junta de Govern Local: identificació, grup municipal, delegacions, dedicació, retribucions i declaracions de béns i activitats.</dct:description>
+        <dct:description xml:lang="en">Council (Plenary) and Local Government Board: identity, political group, portfolios, dedication, pay and declarations.</dct:description>
         <dcat:keyword xml:lang="es">cargos electos</dcat:keyword>
         <dcat:keyword xml:lang="es">retribuciones</dcat:keyword>
         <dcat:keyword xml:lang="es">declaraciones de bienes</dcat:keyword>
@@ -244,6 +244,45 @@
         <dcat:distribution>
           <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/cargos.json">
             <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/cargos.json"/>
+            <dct:format><dct:IMT><rdf:value>application/json</rdf:value><rdfs:label>JSON</rdfs:label></dct:IMT></dct:format>
+          </dcat:Distribution>
+        </dcat:distribution>
+      </dcat:Dataset>
+    </dcat:dataset>
+    <dcat:dataset>
+      <dcat:Dataset rdf:about="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/datos/grupos-municipales">
+        <dct:identifier>https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/datos/grupos-municipales</dct:identifier>
+        <dct:title xml:lang="es">Grupos municipales</dct:title>
+        <dct:title xml:lang="ca-valencia">Grups municipals</dct:title>
+        <dct:title xml:lang="en">Political groups</dct:title>
+        <dct:description xml:lang="es">Grupos políticos constituidos en el Pleno: denominación, siglas, logotipo, portavoz y pertenencia al equipo de gobierno.</dct:description>
+        <dct:description xml:lang="ca-valencia">Grups polítics constituïts en el Ple: denominació, sigles, logotip, portaveu i pertinença a l’equip de govern.</dct:description>
+        <dct:description xml:lang="en">Political groups in the council: name, acronym, logo, spokesperson and whether they are in government.</dct:description>
+        <dcat:keyword xml:lang="es">grupos municipales</dcat:keyword>
+        <dcat:keyword xml:lang="es">partidos</dcat:keyword>
+        <dcat:keyword xml:lang="es">corporación</dcat:keyword>
+        <dcat:keyword xml:lang="es">pleno</dcat:keyword>
+        <dcat:theme rdf:resource="http://datos.gob.es/kos/sector-publico/sector/sector-publico"/>
+        <dct:publisher rdf:resource="http://datos.gob.es/recurso/sector-publico/org/Organismo/L00000000"/>
+        <dct:accrualPeriodicity rdf:resource="http://publications.europa.eu/resource/authority/frequency/ANNUAL"/>
+        <dct:temporal><dct:PeriodOfTime><dcat:startDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-06-17</dcat:startDate><dcat:endDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2027-06-30</dcat:endDate></dct:PeriodOfTime></dct:temporal>
+        <dct:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
+        <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-11-13</dct:modified>
+        <dcat:distribution>
+          <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/grupos-municipales.csv">
+            <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/grupos-municipales.csv"/>
+            <dct:format><dct:IMT><rdf:value>text/csv</rdf:value><rdfs:label>CSV</rdfs:label></dct:IMT></dct:format>
+          </dcat:Distribution>
+        </dcat:distribution>
+        <dcat:distribution>
+          <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/grupos-municipales.xlsx">
+            <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/grupos-municipales.xlsx"/>
+            <dct:format><dct:IMT><rdf:value>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</rdf:value><rdfs:label>XLSX</rdfs:label></dct:IMT></dct:format>
+          </dcat:Distribution>
+        </dcat:distribution>
+        <dcat:distribution>
+          <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/grupos-municipales.json">
+            <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/grupos-municipales.json"/>
             <dct:format><dct:IMT><rdf:value>application/json</rdf:value><rdfs:label>JSON</rdfs:label></dct:IMT></dct:format>
           </dcat:Distribution>
         </dcat:distribution>

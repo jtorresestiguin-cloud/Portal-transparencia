@@ -701,3 +701,30 @@ pre { background: var(--surface-2); border: var(--border); border-radius: var(--
 .person-links li { display: flex; align-items: center; gap: var(--sp-2); }
 .person-dl { display: inline-flex; align-items: center; color: var(--muted); min-width: 24px; min-height: 24px; }
 .person-dl:hover { color: var(--ink); }
+
+/* Corporación municipal y Junta de Gobierno Local */
+.group-logo { border-radius: var(--r-sm); object-fit: contain; background: #fff; flex: none; vertical-align: middle; }
+.group-logo-txt { display: inline-grid; place-items: center; background: var(--g); color: #fff; font-weight: 800; letter-spacing: .02em; border-radius: var(--r-sm); line-height: 1; }
+.jgl-list { list-style: none; padding: 0; margin: var(--sp-4) 0 var(--sp-2); display: grid; gap: var(--sp-3); grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+.jgl-item { display: flex; gap: var(--sp-3); align-items: center; padding: var(--sp-3) var(--sp-4); background: var(--surface); border: var(--border); border-radius: var(--r-md); text-decoration: none; color: var(--ink); height: 100%; }
+.jgl-item:hover { border-color: var(--brand); }
+.jgl-list li:first-child .jgl-item { border-left: 4px solid var(--brand); }
+.jgl-body { display: flex; flex-direction: column; flex: 1; min-width: 0; }
+.jgl-role { font-size: var(--fs-meta); text-transform: uppercase; letter-spacing: .05em; color: var(--muted); font-weight: 700; }
+.jgl-name { font-weight: 700; } .jgl-areas { font-size: var(--fs-small); color: var(--ink-2); }
+.corp-summary { display: grid; gap: var(--sp-5); grid-template-columns: minmax(0, 1fr); align-items: center; margin: var(--sp-4) 0 var(--sp-6); }
+@media (min-width: 768px) { .corp-summary { grid-template-columns: minmax(220px, 2fr) minmax(0, 3fr); } }
+.hemi { margin: 0; text-align: center; } .hemi-svg { width: 100%; max-width: 340px; height: auto; } .hemi figcaption { font-size: var(--fs-small); color: var(--ink-2); }
+.corp-legend { list-style: none; padding: 0; margin: 0; display: grid; gap: var(--sp-2); }
+.corp-legend a { display: flex; align-items: center; gap: var(--sp-3); padding: var(--sp-2); border-radius: var(--r-sm); text-decoration: none; color: var(--ink); min-height: 44px; }
+.corp-legend a:hover { background: var(--surface-2); }
+.corp-leg-name { flex: 1; font-weight: 600; } .corp-leg-n { font-size: 1.25rem; font-weight: 800; font-variant-numeric: tabular-nums; }
+.tag { display: inline-block; font-size: var(--fs-meta); font-weight: 700; padding: 2px 8px; border-radius: var(--r-pill); white-space: nowrap; }
+.tag-gov { background: color-mix(in srgb, var(--ok) 14%, transparent); color: var(--ok); }
+.tag-opp { background: var(--surface-3); color: var(--ink-2); }
+.corp-group { margin: 0 0 var(--sp-6); scroll-margin-top: 90px; }
+.corp-group-head { display: flex; align-items: center; gap: var(--sp-3); flex-wrap: wrap; padding: 0 0 var(--sp-3); margin-bottom: var(--sp-4); border-bottom: 3px solid var(--g); }
+.corp-group-head > div { flex: 1; min-width: 200px; } .corp-group-head h3 { margin: 0; font-size: 1.25rem; } .corp-group-head p { margin: 2px 0 0; }
+.person-group { display: flex; align-items: center; gap: 6px; }
+.person-tags { margin: 4px 0 0; }
+.person { scroll-margin-top: 90px; } .person:focus { outline: 3px solid var(--focus, var(--brand)); outline-offset: 2px; }

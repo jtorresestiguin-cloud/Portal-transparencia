@@ -1,0 +1,4 @@
+id,nombre,siglas,color,logo,portavoz_id,en_gobierno,web
+EPL,Esquerra Progressista Local,EPL,#b3262e,assets/img/grupos/epl.svg,C02,true,
+CDM,Centre Democràtic Municipal,CDM,#1f5fa8,assets/img/grupos/cdm.svg,C08,false,
+AV,Alternativa Veïnal,AV,#2b7a4b,assets/img/grupos/av.svg,C03,true,

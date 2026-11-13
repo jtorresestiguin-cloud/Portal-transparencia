@@ -65,6 +65,56 @@ async function fieldFormatter(dsId, name) {
 // ---------------------------------------------------------------------------
 // Componentes
 // ---------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------- personas y grupos
+const initials = (n) => String(n).split(' ').filter(Boolean).slice(0, 2).map((x) => x[0]).join('').toUpperCase();
+const avatar = (c) => (c.foto ? `<img src="${esc(store.asset(c.foto))}" alt="" class="avatar">` : `<span class="avatar" aria-hidden="true">${esc(initials(c.nombre))}</span>`);
+const mdInline = (s) => esc(s).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+/** Logotipo del grupo o, si no tiene, distintivo con sus siglas y su color. */
+function groupBadge(g, size = 32) {
+  const alt = `${g.siglas || g.nombre}`;
+  return g.logo ? `<img class="group-logo" src="${esc(store.asset(g.logo))}" alt="${esc(tr(`Logotipo de ${alt}`, `Logotip de ${alt}`, `${alt} logo`))}" width="${size}" height="${size}" loading="lazy">`
+    : `<span class="group-logo group-logo-txt" style="--g:${esc(g.color || '#777')};width:${size}px;height:${size}px;font-size:${Math.max(9, Math.round(size / 3.2))}px" aria-hidden="true">${esc(String(g.siglas || g.nombre).slice(0, 4))}</span>`;
+}
+async function peopleCtx() {
+  const [cargos, grupos, agenda] = await Promise.all([store.rows('cargos'), store.rows('grupos-municipales').catch(() => []), store.rows('agenda').catch(() => [])]);
+  const byId = new Map(grupos.map((g) => [g.id, g]));
+  return { cargos, grupos, grupo: (id) => byId.get(id) || grupos.find((g) => g.nombre === id) || null, nAg: (id) => agenda.filter((a) => a.cargo_id === id).length };
+}
+function personCard(c, p, ctx, o = {}) {
+  const g = ctx.grupo(c.grupo_municipal);
+  const doc = (u, txt) => (u ? `<li><a href="${esc(store.asset(u))}" target="_blank" rel="noopener">${icon('file', 16)}${txt}<span class="sr-only"> (${esc(tr('se abre en una pestaña nueva', 's’obri en una pestanya nova', 'opens in a new tab'))})</span></a> <a class="person-dl" href="${esc(store.asset(u))}" download="${esc(fileName(u))}" title="${esc(tr('Descargar', 'Descarregar', 'Download'))}">${icon('download', 14)}<span class="sr-only">${esc(tr('Descargar', 'Descarregar', 'Download'))} ${txt}</span></a></li>` : '');
+  return `<li class="person card" id="cargo-${esc(c.id)}" tabindex="-1">
+    <div class="person-head">${avatar(c)}
+      <div><h4 class="person-name">${esc(c.nombre)}</h4><p class="person-role">${esc(c.cargo)}${o.portavoz ? ` · ${tr('Portavoz', 'Portaveu', 'Spokesperson')}` : ''}</p>
+      ${!o.hideGroup && (g || c.grupo_politico) ? `<p class="person-group">${g ? `${groupBadge(g, 18)} ${esc(g.nombre)}` : esc(c.grupo_politico)}</p>` : ''}
+      ${c.junta_gobierno ? `<p class="person-tags"><span class="tag tag-gov">${tr('Junta de Gobierno', 'Junta de Govern', 'Government Board')}</span></p>` : ''}</div></div>
+    ${p.mostrar_retribucion ? `<p class="person-pay"><span class="person-pay-value">${c.retribucion_anual ? fmt.eur(c.retribucion_anual) : tr('Sin retribución fija', 'Sense retribució fixa', 'No fixed salary')}</span><span class="person-pay-label">${c.retribucion_anual ? tr('brutos al año', "bruts a l'any", 'gross per year') : ''}${c.indemnizaciones_anuales ? `${c.retribucion_anual ? ' · ' : ''}${fmt.eur(c.indemnizaciones_anuales)} ${tr('en asistencias', 'en assistències', 'attendance fees')}` : ''}</span></p>` : ''}
+    <dl class="person-facts">
+      <div><dt>${tr('Responsabilidades', 'Responsabilitats', 'Responsibilities')}</dt><dd>${esc(c.areas || '—')}</dd></div>
+      <div><dt>${tr('Dedicación', 'Dedicació', 'Dedication')}</dt><dd>${label('dedicacion', c.dedicacion)}</dd></div>
+      <div><dt>${tr('En el cargo desde', 'En el càrrec des de', 'In office since')}</dt><dd>${fmt.full(c.fecha_nombramiento)}</dd></div>
+    </dl>
+    <ul class="person-links">${doc(c.declaracion_bienes_url, tr('Declaración de bienes', 'Declaració de béns', 'Assets declaration'))}${doc(c.declaracion_actividades_url, tr('Declaración de actividades', 'Declaració d’activitats', 'Activities declaration'))}${doc(c.cv_url, tr('Trayectoria', 'Trajectòria', 'Career'))}
+      ${ctx.nAg(c.id) ? `<li><a href="#/agenda?cargo_id=${encodeURIComponent(c.id)}">${icon('calendar', 16)}${tr('Agenda', 'Agenda', 'Diary')} (${ctx.nAg(c.id)})</a></li>` : ''}
+      ${c.email ? `<li><a href="mailto:${esc(c.email)}">${icon('mail', 16)}${tr('Contacto institucional', 'Contacte institucional', 'Official contact')}</a></li>` : ''}</ul>
+  </li>`;
+}
+/** Hemiciclo SVG: un punto por escaño, coloreado por grupo (de izquierda a derecha en el orden dado). */
+function hemicycle(seats, aria) {
+  const N = seats.length; if (!N) return '';
+  const rows = N <= 15 ? 1 : N <= 33 ? 2 : N <= 60 ? 3 : 4, R = 96, r0 = rows === 1 ? 96 : 50;
+  const radii = rows === 1 ? [R] : Array.from({ length: rows }, (_, i) => r0 + ((R - r0) * i) / (rows - 1));
+  const tot = radii.reduce((a, b) => a + b, 0);
+  let cnt = radii.map((r) => Math.max(1, Math.round((N * r) / tot)));
+  let diff = N - cnt.reduce((a, b) => a + b, 0); cnt[rows - 1] += diff;
+  const pts = [];
+  radii.forEach((r, i) => { const n = cnt[i]; for (let k = 0; k < n; k++) { const a = Math.PI - (n === 1 ? Math.PI / 2 : (Math.PI * k) / (n - 1)); pts.push({ a, x: 110 + r * Math.cos(a), y: 106 - r * Math.sin(a) }); } });
+  pts.sort((p1, p2) => p2.a - p1.a);
+  const dot = Math.min(12, ((Math.PI * Math.min(...radii)) / Math.max(1, cnt[0] - 1)) * 0.42, rows > 1 ? ((R - r0) / (rows - 1)) * 0.45 : 12);
+  return `<svg viewBox="-6 -10 232 130" class="hemi-svg" role="img" aria-label="${esc(aria)}">${pts.map((pt, i) => `<circle cx="${pt.x.toFixed(1)}" cy="${pt.y.toFixed(1)}" r="${dot.toFixed(1)}" fill="${esc(seats[i]?.color || '#999')}"><title>${esc(seats[i]?.nombre || '')}</title></circle>`).join('')}</svg>`;
+}
+
 export const BLOCKS = {
   texto: {
     nombre: L('Texto', 'Text', 'Text'), icono: 'text', grupo: 'contenido',
@@ -260,23 +310,53 @@ export const BLOCKS = {
     nuevo: () => ({ titulo: L('Corporación', 'Corporació', 'Council'), conjunto: 'cargos', mostrar_retribucion: true }),
     render: async (el, p) => {
       const data = store.applyFilter(await store.rows(p.conjunto || 'cargos'), p.filtro);
-      const agenda = await store.rows('agenda').catch(() => []);
-      const nAg = (id) => agenda.filter((a) => a.cargo_id === id).length;
-      const ini = (n) => String(n).split(' ').filter(Boolean).slice(0, 2).map((x) => x[0]).join('').toUpperCase();
-      const doc = (u, txt) => (u ? `<li><a href="${esc(store.asset(u))}" target="_blank" rel="noopener">${icon('file', 16)}${txt}<span class="sr-only"> (${esc(tr('se abre en una pestaña nueva', 's’obri en una pestanya nova', 'opens in a new tab'))})</span></a> <a class="person-dl" href="${esc(store.asset(u))}" download="${esc(fileName(u))}" title="${esc(tr('Descargar', 'Descarregar', 'Download'))}">${icon('download', 14)}<span class="sr-only">${esc(tr('Descargar', 'Descarregar', 'Download'))} ${txt}</span></a></li>` : '');
-      el.innerHTML = `<section>${blockTitle(p)}<ul class="people-grid">${data.map((c) => `<li class="person card">
-        <div class="person-head">${c.foto ? `<img src="${esc(store.asset(c.foto))}" alt="" class="avatar">` : `<span class="avatar" aria-hidden="true">${esc(ini(c.nombre))}</span>`}
-          <div><h3 class="person-name">${esc(c.nombre)}</h3><p class="person-role">${esc(c.cargo)}</p>${c.grupo_politico ? `<p class="person-group">${esc(c.grupo_politico)}</p>` : ''}</div></div>
-        ${p.mostrar_retribucion ? `<p class="person-pay"><span class="person-pay-value">${c.retribucion_anual ? fmt.eur(c.retribucion_anual) : tr('Sin retribución fija', 'Sense retribució fixa', 'No fixed salary')}</span><span class="person-pay-label">${c.retribucion_anual ? tr('brutos al año', "bruts a l'any", 'gross per year') : ''}${c.indemnizaciones_anuales ? ` · ${fmt.eur(c.indemnizaciones_anuales)} ${tr('en asistencias', 'en assistències', 'attendance fees')}` : ''}</span></p>` : ''}
-        <dl class="person-facts">
-          <div><dt>${tr('Responsabilidades', 'Responsabilitats', 'Responsibilities')}</dt><dd>${esc(c.areas || '—')}</dd></div>
-          <div><dt>${tr('Dedicación', 'Dedicació', 'Dedication')}</dt><dd>${label('dedicacion', c.dedicacion)}</dd></div>
-          <div><dt>${tr('En el cargo desde', 'En el càrrec des de', 'In office since')}</dt><dd>${fmt.full(c.fecha_nombramiento)}</dd></div>
-        </dl>
-        <ul class="person-links">${doc(c.declaracion_bienes_url, tr('Declaración de bienes', 'Declaració de béns', 'Assets declaration'))}${doc(c.declaracion_actividades_url, tr('Declaración de actividades', 'Declaració d’activitats', 'Activities declaration'))}${doc(c.cv_url, tr('Trayectoria', 'Trajectòria', 'Career'))}
-          ${nAg(c.id) ? `<li><a href="#/agenda?cargo_id=${encodeURIComponent(c.id)}">${icon('calendar', 16)}${tr('Agenda', 'Agenda', 'Diary')} (${nAg(c.id)})</a></li>` : ''}
-          ${c.email ? `<li><a href="mailto:${esc(c.email)}">${icon('mail', 16)}${tr('Contacto institucional', 'Contacte institucional', 'Official contact')}</a></li>` : ''}</ul>
-      </li>`).join('')}</ul></section>`;
+      const ctx = await peopleCtx();
+      el.innerHTML = `<section>${blockTitle(p)}${data.length ? `<ul class="people-grid">${data.map((c) => personCard(c, p, ctx)).join('')}</ul>` : `<p class="muted">${tr('No hay personas en este apartado.', 'No hi ha persones en aquest apartat.', 'Nobody in this section.')}</p>`}</section>`;
+    },
+  },
+  junta_gobierno: {
+    nombre: L('Junta de Gobierno Local', 'Junta de Govern Local', 'Local Government Board'), icono: 'briefcase', grupo: 'datos',
+    props: [{ clave: 'titulo', tipo: 'texto', etiqueta: L('Título', 'Títol', 'Title') }, { clave: 'texto', tipo: 'texto_largo', etiqueta: L('Explicación', 'Explicació', 'Explanation') }],
+    nuevo: () => ({ titulo: L('Junta de Gobierno Local', 'Junta de Govern Local', 'Local Government Board'), conjunto: 'cargos' }),
+    render: async (el, p) => {
+      const ctx = await peopleCtx();
+      const ord = { alcaldia: 0, teniente_alcaldia: 1, concejalia: 2 };
+      const mem = ctx.cargos.filter((c) => c.junta_gobierno === true).sort((a, b) => (ord[a.tipo_cargo] ?? 3) - (ord[b.tipo_cargo] ?? 3) || String(a.cargo).localeCompare(String(b.cargo), 'es', { numeric: true }));
+      const txt = pick(p.texto) || tr('Órgano que asiste a la Alcaldía en el gobierno del municipio y ejerce las competencias que le delegan la Alcaldía o el Pleno. La preside el alcalde o alcaldesa y la forman los concejales que nombra, hasta un tercio del número legal de miembros de la corporación.',
+        'Òrgan que assistix l’Alcaldia en el govern del municipi i exercix les competències que li deleguen l’Alcaldia o el Ple. La presidix l’alcalde o alcaldessa i la formen els regidors que nomena, fins a un terç del nombre legal de membres de la corporació.',
+        'Body that assists the Mayor in governing the municipality and exercises the powers delegated by the Mayor or the Council. It is chaired by the Mayor and made up of the councillors appointed, up to one third of the council members.');
+      el.innerHTML = `<section class="jgl" id="junta-gobierno">${blockTitle(p)}<p class="muted">${mdInline(txt)}</p>
+        ${mem.length ? `<ol class="jgl-list">${mem.map((c) => { const g = ctx.grupo(c.grupo_municipal); return `<li><a class="jgl-item" href="#cargo-${esc(c.id)}">
+          ${avatar(c)}<span class="jgl-body"><span class="jgl-role">${esc(c.tipo_cargo === 'alcaldia' ? tr('Presidencia', 'Presidència', 'Chair') : c.cargo)}</span><span class="jgl-name">${esc(c.nombre)}</span><span class="jgl-areas">${esc(c.areas || '')}</span></span>
+          ${g ? groupBadge(g, 28) : ''}</a></li>`; }).join('')}</ol>` : `<p class="muted">${tr('No se ha constituido Junta de Gobierno Local.', 'No s’ha constituït Junta de Govern Local.', 'No Local Government Board has been set up.')}</p>`}
+        <p class="muted small">${tr(`${mem.length} miembros · Pulsa una persona para ver su ficha completa.`, `${mem.length} membres · Prem una persona per a veure’n la fitxa completa.`, `${mem.length} members · Select a person to see their full profile.`)}</p></section>`;
+      el.querySelectorAll('.jgl-item').forEach((a) => a.addEventListener('click', (e) => { const t = document.getElementById(a.getAttribute('href').slice(1)); if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); t.focus({ preventScroll: true }); } }));
+    },
+  },
+  corporacion: {
+    nombre: L('Corporación por grupos', 'Corporació per grups', 'Council by group'), icono: 'users', grupo: 'datos',
+    props: [{ clave: 'titulo', tipo: 'texto', etiqueta: L('Título', 'Títol', 'Title') }, { clave: 'mostrar_retribucion', tipo: 'bool', etiqueta: L('Mostrar retribuciones', 'Mostrar retribucions', 'Show pay') }, { clave: 'mostrar_hemiciclo', tipo: 'bool', etiqueta: L('Mostrar la composición del Pleno', 'Mostrar la composició del Ple', 'Show seat chart') }],
+    nuevo: () => ({ titulo: L('Corporación municipal', 'Corporació municipal', 'Council'), conjunto: 'cargos', mostrar_retribucion: true, mostrar_hemiciclo: true }),
+    render: async (el, p) => {
+      const ctx = await peopleCtx();
+      const electos = ctx.cargos.filter((c) => ['alcaldia', 'teniente_alcaldia', 'concejalia'].includes(c.tipo_cargo));
+      const ord = { alcaldia: 0, teniente_alcaldia: 1, concejalia: 2 };
+      const groups = ctx.grupos.map((g) => ({ g, m: electos.filter((c) => c.grupo_municipal === g.id) })).filter((x) => x.m.length)
+        .sort((a, b) => Number(b.g.en_gobierno) - Number(a.g.en_gobierno) || b.m.length - a.m.length);
+      const sin = electos.filter((c) => !ctx.grupo(c.grupo_municipal));
+      if (sin.length) groups.push({ g: { id: '', nombre: tr('Concejales no adscritos', 'Regidors no adscrits', 'Unaffiliated councillors'), siglas: '—', color: '#7a7a7a' }, m: sin });
+      const N = electos.length, gov = groups.filter((x) => x.g.en_gobierno).reduce((a, x) => a + x.m.length, 0);
+      const seats = groups.flatMap((x) => x.m.map(() => x.g));
+      el.innerHTML = `<section class="corp" id="corporacion">${blockTitle(p)}
+        ${p.mostrar_hemiciclo !== false ? `<div class="corp-summary card">
+          <figure class="hemi">${hemicycle(seats, tr(`Composición del Pleno: ${N} concejales. ${groups.map((x) => `${x.g.nombre}: ${x.m.length}`).join('; ')}.`, `Composició del Ple: ${N} regidors. ${groups.map((x) => `${x.g.nombre}: ${x.m.length}`).join('; ')}.`, `Council: ${N} seats. ${groups.map((x) => `${x.g.nombre}: ${x.m.length}`).join('; ')}.`))}<figcaption><strong>${N}</strong> ${tr('concejales', 'regidors', 'councillors')}${gov ? ` · ${tr('equipo de gobierno', 'equip de govern', 'governing')}: <strong>${gov}</strong>` : ''} · ${tr('mayoría absoluta', 'majoria absoluta', 'absolute majority')}: ${Math.floor(N / 2) + 1}</figcaption></figure>
+          <ul class="corp-legend">${groups.map((x) => `<li><a href="#grupo-${esc(x.g.id || 'na')}">${groupBadge(x.g, 32)}<span class="corp-leg-name">${esc(x.g.nombre)}</span><span class="corp-leg-n">${x.m.length}</span>${x.g.id ? `<span class="tag ${x.g.en_gobierno ? 'tag-gov' : 'tag-opp'}">${x.g.en_gobierno ? tr('Gobierno', 'Govern', 'Government') : tr('Oposición', 'Oposició', 'Opposition')}</span>` : ''}</a></li>`).join('')}</ul></div>` : ''}
+        ${groups.map((x) => { const portavoz = ctx.cargos.find((c) => c.id === x.g.portavoz_id); return `<section class="corp-group" id="grupo-${esc(x.g.id || 'na')}" style="--g:${esc(x.g.color || '#777')}">
+          <header class="corp-group-head">${groupBadge(x.g, 56)}<div><h3>${esc(x.g.nombre)}${x.g.siglas && x.g.siglas !== '—' ? ` <span class="muted">(${esc(x.g.siglas)})</span>` : ''}</h3>
+            <p class="muted small">${x.m.length} ${x.m.length === 1 ? tr('concejal', 'regidor', 'councillor') : tr('concejales', 'regidors', 'councillors')}${portavoz ? ` · ${tr('Portavoz', 'Portaveu', 'Spokesperson')}: ${esc(portavoz.nombre)}` : ''}${x.g.web ? ` · <a href="${esc(x.g.web)}" target="_blank" rel="noopener">${tr('Web del grupo', 'Web del grup', 'Group website')}</a>` : ''}</p></div>
+            ${x.g.id ? `<span class="tag ${x.g.en_gobierno ? 'tag-gov' : 'tag-opp'}">${x.g.en_gobierno ? tr('Equipo de gobierno', 'Equip de govern', 'In government') : tr('Oposición', 'Oposició', 'Opposition')}</span>` : ''}</header>
+          <ul class="people-grid">${x.m.sort((a, b) => (ord[a.tipo_cargo] ?? 3) - (ord[b.tipo_cargo] ?? 3) || String(a.cargo).localeCompare(String(b.cargo), 'es', { numeric: true })).map((c) => personCard(c, p, ctx, { hideGroup: true, portavoz: c.id === x.g.portavoz_id })).join('')}</ul></section>`; }).join('')}
+      </section>`;
     },
   },
   mapa: {

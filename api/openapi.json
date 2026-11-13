@@ -345,6 +345,50 @@
         }
       }
     },
+    "/data/grupos-municipales.json": {
+      "get": {
+        "summary": "Grupos municipales (JSON)",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "generado": {
+                      "type": "string"
+                    },
+                    "fuente": {
+                      "type": "string"
+                    },
+                    "datos": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/GruposMunicipales"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/data/csv/grupos-municipales.csv": {
+      "get": {
+        "summary": "Grupos municipales (CSV)",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/csv": {}
+            }
+          }
+        }
+      }
+    },
     "/data/agenda.json": {
       "get": {
         "summary": "Agenda institucional (JSON)",
@@ -974,9 +1018,13 @@
             "type": "string",
             "description": "Áreas o delegaciones"
           },
-          "grupo_politico": {
+          "grupo_municipal": {
             "type": "string",
-            "description": "Grupo político"
+            "description": "Grupo municipal"
+          },
+          "junta_gobierno": {
+            "type": "boolean",
+            "description": "Miembro de la Junta de Gobierno Local"
           },
           "dedicacion": {
             "type": "string",
@@ -997,7 +1045,7 @@
           },
           "foto": {
             "type": "string",
-            "description": "Fotografía (URL)"
+            "description": "Fotografía"
           },
           "email": {
             "type": "string",
@@ -1014,6 +1062,43 @@
           "declaracion_actividades_url": {
             "type": "string",
             "description": "Declaración de actividades"
+          }
+        }
+      },
+      "GruposMunicipales": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Identificador"
+          },
+          "nombre": {
+            "type": "string",
+            "description": "Denominación del grupo"
+          },
+          "siglas": {
+            "type": "string",
+            "description": "Siglas"
+          },
+          "color": {
+            "type": "string",
+            "description": "Color identificativo"
+          },
+          "logo": {
+            "type": "string",
+            "description": "Logotipo"
+          },
+          "portavoz_id": {
+            "type": "string",
+            "description": "Portavoz"
+          },
+          "en_gobierno": {
+            "type": "boolean",
+            "description": "Forma parte del equipo de gobierno"
+          },
+          "web": {
+            "type": "string",
+            "description": "Web del grupo"
           }
         }
       },

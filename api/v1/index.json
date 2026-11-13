@@ -92,12 +92,26 @@
         "va": "Càrrecs electes i personal directiu",
         "en": "Elected officials and senior staff"
       },
-      "registros": 17,
+      "registros": 11,
       "fuente": "manual",
       "actualizado": "2026-11-13",
       "json": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/cargos.json",
       "csv": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/cargos.csv",
       "xlsx": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/cargos.xlsx"
+    },
+    {
+      "id": "grupos-municipales",
+      "titulo": {
+        "es": "Grupos municipales",
+        "va": "Grups municipals",
+        "en": "Political groups"
+      },
+      "registros": 3,
+      "fuente": "manual",
+      "actualizado": "2026-11-13",
+      "json": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/grupos-municipales.json",
+      "csv": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/grupos-municipales.csv",
+      "xlsx": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/grupos-municipales.xlsx"
     },
     {
       "id": "agenda",

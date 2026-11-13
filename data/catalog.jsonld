@@ -911,15 +911,15 @@
       "dct:description": [
         {
           "@language": "es",
-          "@value": "Identificación, perfil, dedicación, retribuciones y declaraciones de bienes y actividades."
+          "@value": "Corporación municipal (Pleno) y Junta de Gobierno Local: identificación, grupo municipal, delegaciones, dedicación, retribuciones y declaraciones de bienes y actividades."
         },
         {
           "@language": "ca-valencia",
-          "@value": "Identificació, perfil, dedicació, retribucions i declaracions de béns i activitats."
+          "@value": "Corporació municipal (Ple) i Junta de Govern Local: identificació, grup municipal, delegacions, dedicació, retribucions i declaracions de béns i activitats."
         },
         {
           "@language": "en",
-          "@value": "Identity, profile, dedication, pay and declarations of assets and activities."
+          "@value": "Council (Plenary) and Local Government Board: identity, political group, portfolios, dedication, pay and declarations."
         }
       ],
       "dcat:keyword": [
@@ -999,7 +999,7 @@
             "@id": "http://www.iana.org/assignments/media-types/text/csv"
           },
           "dcat:byteSize": {
-            "@value": "2561",
+            "@value": "1723",
             "@type": "xsd:nonNegativeInteger"
           },
           "dct:license": {
@@ -1022,7 +1022,7 @@
             "@id": "http://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
           },
           "dcat:byteSize": {
-            "@value": "21573",
+            "@value": "16638",
             "@type": "xsd:nonNegativeInteger"
           },
           "dct:license": {
@@ -1045,7 +1045,171 @@
             "@id": "http://www.iana.org/assignments/media-types/application/json"
           },
           "dcat:byteSize": {
-            "@value": "8138",
+            "@value": "5553",
+            "@type": "xsd:nonNegativeInteger"
+          },
+          "dct:license": {
+            "@id": "https://creativecommons.org/licenses/by/4.0/"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/datos/grupos-municipales",
+      "@type": "dcat:Dataset",
+      "dct:identifier": "grupos-municipales",
+      "dct:title": [
+        {
+          "@language": "es",
+          "@value": "Grupos municipales"
+        },
+        {
+          "@language": "ca-valencia",
+          "@value": "Grups municipals"
+        },
+        {
+          "@language": "en",
+          "@value": "Political groups"
+        }
+      ],
+      "dct:description": [
+        {
+          "@language": "es",
+          "@value": "Grupos políticos constituidos en el Pleno: denominación, siglas, logotipo, portavoz y pertenencia al equipo de gobierno."
+        },
+        {
+          "@language": "ca-valencia",
+          "@value": "Grups polítics constituïts en el Ple: denominació, sigles, logotip, portaveu i pertinença a l’equip de govern."
+        },
+        {
+          "@language": "en",
+          "@value": "Political groups in the council: name, acronym, logo, spokesperson and whether they are in government."
+        }
+      ],
+      "dcat:keyword": [
+        {
+          "@language": "es",
+          "@value": "grupos municipales"
+        },
+        {
+          "@language": "es",
+          "@value": "partidos"
+        },
+        {
+          "@language": "es",
+          "@value": "corporación"
+        },
+        {
+          "@language": "es",
+          "@value": "pleno"
+        }
+      ],
+      "dcat:theme": [
+        {
+          "@id": "http://publications.europa.eu/resource/authority/data-theme/GOVE"
+        },
+        {
+          "@id": "http://datos.gob.es/kos/sector-publico/sector/sector-publico"
+        }
+      ],
+      "dct:publisher": {
+        "@id": "http://datos.gob.es/recurso/sector-publico/org/Organismo/L00000000"
+      },
+      "dct:accrualPeriodicity": {
+        "@id": "http://publications.europa.eu/resource/authority/frequency/ANNUAL"
+      },
+      "dct:temporal": {
+        "@type": "dct:PeriodOfTime",
+        "dcat:startDate": {
+          "@value": "2023-06-17",
+          "@type": "xsd:date"
+        },
+        "dcat:endDate": {
+          "@value": "2027-06-30",
+          "@type": "xsd:date"
+        }
+      },
+      "dct:modified": {
+        "@value": "2026-11-13",
+        "@type": "xsd:date"
+      },
+      "dcat:contactPoint": {
+        "@type": "vcard:Organization",
+        "vcard:fn": "Unidad de Transparencia",
+        "vcard:hasEmail": {
+          "@id": "mailto:transparencia@example.org"
+        }
+      },
+      "dcat:landingPage": {
+        "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/cargos"
+      },
+      "dct:conformsTo": {
+        "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/datapackage.json#grupos-municipales"
+      },
+      "dcat:distribution": [
+        {
+          "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/grupos-municipales.csv",
+          "@type": "dcat:Distribution",
+          "dcat:accessURL": {
+            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/grupos-municipales.csv"
+          },
+          "dcat:downloadURL": {
+            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/grupos-municipales.csv"
+          },
+          "dct:format": {
+            "@id": "http://publications.europa.eu/resource/authority/file-type/CSV"
+          },
+          "dcat:mediaType": {
+            "@id": "http://www.iana.org/assignments/media-types/text/csv"
+          },
+          "dcat:byteSize": {
+            "@value": "291",
+            "@type": "xsd:nonNegativeInteger"
+          },
+          "dct:license": {
+            "@id": "https://creativecommons.org/licenses/by/4.0/"
+          }
+        },
+        {
+          "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/grupos-municipales.xlsx",
+          "@type": "dcat:Distribution",
+          "dcat:accessURL": {
+            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/grupos-municipales.xlsx"
+          },
+          "dcat:downloadURL": {
+            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/grupos-municipales.xlsx"
+          },
+          "dct:format": {
+            "@id": "http://publications.europa.eu/resource/authority/file-type/XLSX"
+          },
+          "dcat:mediaType": {
+            "@id": "http://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+          },
+          "dcat:byteSize": {
+            "@value": "7116",
+            "@type": "xsd:nonNegativeInteger"
+          },
+          "dct:license": {
+            "@id": "https://creativecommons.org/licenses/by/4.0/"
+          }
+        },
+        {
+          "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/grupos-municipales.json",
+          "@type": "dcat:Distribution",
+          "dcat:accessURL": {
+            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/grupos-municipales.json"
+          },
+          "dcat:downloadURL": {
+            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/grupos-municipales.json"
+          },
+          "dct:format": {
+            "@id": "http://publications.europa.eu/resource/authority/file-type/JSON"
+          },
+          "dcat:mediaType": {
+            "@id": "http://www.iana.org/assignments/media-types/application/json"
+          },
+          "dcat:byteSize": {
+            "@value": "799",
             "@type": "xsd:nonNegativeInteger"
           },
           "dct:license": {

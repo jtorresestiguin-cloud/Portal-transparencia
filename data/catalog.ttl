@@ -18,6 +18,7 @@
     <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/datos/subvenciones>,
     <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/datos/convenios>,
     <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/datos/cargos>,
+    <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/datos/grupos-municipales>,
     <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/datos/agenda>,
     <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/datos/plantilla>,
     <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/datos/pmp>,
@@ -127,7 +128,7 @@
 <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/datos/cargos> a dcat:Dataset ;
   dct:identifier "cargos" ;
   dct:title "Cargos electos y personal directivo"@es, "Càrrecs electes i personal directiu"@ca-valencia, "Elected officials and senior staff"@en ;
-  dct:description "Identificación, perfil, dedicación, retribuciones y declaraciones de bienes y actividades."@es, "Identificació, perfil, dedicació, retribucions i declaracions de béns i activitats."@ca-valencia, "Identity, profile, dedication, pay and declarations of assets and activities."@en ;
+  dct:description "Corporación municipal (Pleno) y Junta de Gobierno Local: identificación, grupo municipal, delegaciones, dedicación, retribuciones y declaraciones de bienes y actividades."@es, "Corporació municipal (Ple) i Junta de Govern Local: identificació, grup municipal, delegacions, dedicació, retribucions i declaracions de béns i activitats."@ca-valencia, "Council (Plenary) and Local Government Board: identity, political group, portfolios, dedication, pay and declarations."@en ;
   dcat:keyword "cargos electos"@es, "retribuciones"@es, "declaraciones de bienes"@es, "alcaldía"@es ;
   dcat:theme <http://publications.europa.eu/resource/authority/data-theme/GOVE>, <http://datos.gob.es/kos/sector-publico/sector/sector-publico> ;
   dct:publisher <http://datos.gob.es/recurso/sector-publico/org/Organismo/L00000000> ;
@@ -142,6 +143,25 @@
 <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/cargos.xlsx> a dcat:Distribution ; dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/cargos.xlsx> ; dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/cargos.xlsx> ; dct:format <http://publications.europa.eu/resource/authority/file-type/XLSX> ; dct:license <https://creativecommons.org/licenses/by/4.0/> .
 
 <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/cargos.json> a dcat:Distribution ; dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/cargos.json> ; dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/cargos.json> ; dct:format <http://publications.europa.eu/resource/authority/file-type/JSON> ; dct:license <https://creativecommons.org/licenses/by/4.0/> .
+
+<https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/datos/grupos-municipales> a dcat:Dataset ;
+  dct:identifier "grupos-municipales" ;
+  dct:title "Grupos municipales"@es, "Grups municipals"@ca-valencia, "Political groups"@en ;
+  dct:description "Grupos políticos constituidos en el Pleno: denominación, siglas, logotipo, portavoz y pertenencia al equipo de gobierno."@es, "Grups polítics constituïts en el Ple: denominació, sigles, logotip, portaveu i pertinença a l’equip de govern."@ca-valencia, "Political groups in the council: name, acronym, logo, spokesperson and whether they are in government."@en ;
+  dcat:keyword "grupos municipales"@es, "partidos"@es, "corporación"@es, "pleno"@es ;
+  dcat:theme <http://publications.europa.eu/resource/authority/data-theme/GOVE>, <http://datos.gob.es/kos/sector-publico/sector/sector-publico> ;
+  dct:publisher <http://datos.gob.es/recurso/sector-publico/org/Organismo/L00000000> ;
+  dct:accrualPeriodicity <http://publications.europa.eu/resource/authority/frequency/ANNUAL> ;
+  dct:temporal [ a dct:PeriodOfTime ; dcat:startDate "2023-06-17"^^xsd:date ; dcat:endDate "2027-06-30"^^xsd:date ] ;
+  dcat:contactPoint [ a vcard:Organization ; vcard:fn "Unidad de Transparencia" ; vcard:hasEmail <mailto:transparencia@example.org> ] ;
+  dcat:landingPage <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/cargos> ;
+  dcat:distribution <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/grupos-municipales.csv>, <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/grupos-municipales.xlsx>, <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/grupos-municipales.json> .
+
+<https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/grupos-municipales.csv> a dcat:Distribution ; dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/grupos-municipales.csv> ; dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/grupos-municipales.csv> ; dct:format <http://publications.europa.eu/resource/authority/file-type/CSV> ; dct:license <https://creativecommons.org/licenses/by/4.0/> .
+
+<https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/grupos-municipales.xlsx> a dcat:Distribution ; dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/grupos-municipales.xlsx> ; dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/grupos-municipales.xlsx> ; dct:format <http://publications.europa.eu/resource/authority/file-type/XLSX> ; dct:license <https://creativecommons.org/licenses/by/4.0/> .
+
+<https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/grupos-municipales.json> a dcat:Distribution ; dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/grupos-municipales.json> ; dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/grupos-municipales.json> ; dct:format <http://publications.europa.eu/resource/authority/file-type/JSON> ; dct:license <https://creativecommons.org/licenses/by/4.0/> .
 
 <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/datos/agenda> a dcat:Dataset ;
   dct:identifier "agenda" ;

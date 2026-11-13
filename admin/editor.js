@@ -587,6 +587,13 @@ async function openRecord(ds, path, redraw, readOnly = false) {
     if (c.lista) {
       const lists = c.lista.split('|');
       input = h(`<select><option value="">—</option>${lists.flatMap((l) => Object.keys(codelists[l] || {}).map((k) => `<option value="${esc(k)}"${String(v) === k ? ' selected' : ''}>${esc(label(l, k))}</option>`)).join('')}</select>`);
+    } else if (c.referencia) {
+      // Campo que apunta a otro conjunto (p. ej. grupo municipal del cargo): desplegable con sus registros
+      const refRows = (await load(`data/${c.referencia.conjunto}.json`).catch(() => ({ datos: [] }))).datos || [];
+      input = h(`<select><option value="">—</option>${refRows.map((x) => `<option value="${esc(x.id)}"${String(v) === String(x.id) ? ' selected' : ''}>${esc(x[c.referencia.campo] ?? x.id)}</option>`).join('')}${v && !refRows.some((x) => String(x.id) === String(v)) ? `<option value="${esc(v)}" selected>${esc(v)} (no existe)</option>` : ''}</select>`);
+      wrap.append(h(`<small class="ed-hint">Se gestiona en <button type="button" class="link-btn" data-goto-ds="${c.referencia.conjunto}">Datos → ${esc(c.referencia.conjunto)}</button></small>`));
+    } else if (c.formato === 'color') {
+      input = h(`<input type="color" value="${esc(/^#[0-9a-f]{6}$/i.test(v || '') ? v : '#777777')}">`);
     } else if (c.tipo === 'boolean') input = h(`<select><option value="true"${v === true ? ' selected' : ''}>Sí</option><option value="false"${v !== true ? ' selected' : ''}>No</option></select>`);
     else if (c.tipo === 'date') input = h(`<input type="date" value="${esc(v || '')}">`);
     else if (c.tipo === 'yearmonth') input = h(`<input type="month" value="${esc(v || '')}">`);
@@ -604,7 +611,8 @@ async function openRecord(ds, path, redraw, readOnly = false) {
       redraw(); check();
     });
     wrap.append(input);
-    if (c.formato === 'uri' || c.nombre === 'foto') A.attachUploader(S, input, { kind: ds.id === 'cargos' ? 'cargos' : ds.id, image: c.nombre === 'foto', toast });
+    if (c.formato === 'uri' || c.nombre === 'foto') A.attachUploader(S, input, { kind: ds.id === 'cargos' ? 'cargos' : ds.id, image: ['foto', 'logo'].includes(c.nombre), toast });
+    wrap.querySelector('[data-goto-ds]')?.addEventListener('click', (e) => { e.preventDefault(); go({ tipo: 'datos', id: e.currentTarget.dataset.gotoDs }); });
     form.appendChild(wrap);
   }
   check();

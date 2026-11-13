@@ -7,9 +7,9 @@
   "en": "Elected officials and senior staff"
  },
  "intro": {
-  "es": "Quién forma la corporación, qué responsabilidades tiene, cuánto cobra y sus declaraciones de bienes y actividades.",
-  "va": "Qui forma la corporació, quines responsabilitats té, quant cobra i les seues declaracions de béns i activitats.",
-  "en": "Who sits on the council, their responsibilities, pay and declarations."
+  "es": "Quién forma la corporación municipal y la Junta de Gobierno Local, a qué grupo pertenece cada concejal, qué responsabilidades tiene, cuánto cobra y sus declaraciones de bienes y actividades.",
+  "va": "Qui forma la corporació municipal i la Junta de Govern Local, a quin grup pertany cada regidor, quines responsabilitats té, quant cobra i les seues declaracions de béns i activitats.",
+  "en": "Who sits on the council and the Local Government Board, each councillor's political group, responsibilities, pay and declarations."
  },
  "bloques": [
   {
@@ -17,24 +17,34 @@
    "items": [
     {
      "etiqueta": {
-      "es": "Miembros de la corporación",
-      "va": "Membres de la corporació",
-      "en": "Council members"
+      "es": "Concejales",
+      "va": "Regidors",
+      "en": "Councillors"
      },
      "conjunto": "cargos",
      "operacion": "contar",
-     "filtro": "tipo_cargo!=eventual",
+     "filtro": "tipo_cargo!=eventual;tipo_cargo!=directivo",
      "formato": "entero"
     },
     {
      "etiqueta": {
-      "es": "Con dedicación exclusiva",
-      "va": "Amb dedicació exclusiva",
-      "en": "Full-time"
+      "es": "Grupos municipales",
+      "va": "Grups municipals",
+      "en": "Political groups"
+     },
+     "conjunto": "grupos-municipales",
+     "operacion": "contar",
+     "formato": "entero"
+    },
+    {
+     "etiqueta": {
+      "es": "Miembros de la Junta de Gobierno",
+      "va": "Membres de la Junta de Govern",
+      "en": "Government Board members"
      },
      "conjunto": "cargos",
      "operacion": "contar",
-     "filtro": "dedicacion=exclusiva",
+     "filtro": "junta_gobierno=true",
      "formato": "entero"
     },
     {
@@ -47,30 +57,28 @@
      "operacion": "sumar",
      "campo": "retribucion_anual",
      "formato": "euros"
-    },
-    {
-     "etiqueta": {
-      "es": "Asistencias e indemnizaciones",
-      "va": "Assistències i indemnitzacions",
-      "en": "Attendance fees"
-     },
-     "conjunto": "cargos",
-     "operacion": "sumar",
-     "campo": "indemnizaciones_anuales",
-     "formato": "euros"
     }
    ]
   },
   {
-   "tipo": "personas",
+   "tipo": "junta_gobierno",
    "titulo": {
-    "es": "Corporación municipal",
-    "va": "Corporació municipal",
-    "en": "Council members"
+    "es": "Junta de Gobierno Local",
+    "va": "Junta de Govern Local",
+    "en": "Local Government Board"
+   },
+   "conjunto": "cargos"
+  },
+  {
+   "tipo": "corporacion",
+   "titulo": {
+    "es": "Corporación municipal (Pleno)",
+    "va": "Corporació municipal (Ple)",
+    "en": "Council (Plenary)"
    },
    "conjunto": "cargos",
-   "filtro": "tipo_cargo!=eventual",
-   "mostrar_retribucion": true
+   "mostrar_retribucion": true,
+   "mostrar_hemiciclo": true
   },
   {
    "tipo": "personas",
