@@ -6,15 +6,29 @@ El editor está en `/admin/` del portal (por ejemplo, `https://…/Portal-transp
 
 ```
 ┌───────────────────────────────────────────────────────────────────────────┐
-│ Gestión de contenidos   Idioma de edición [ES]  Ver portal  Deshacer  Publicar (3) │
+│ Gestión   Idioma [ES]  Modo [Sencillo]  Vista previa  Ver portal  Deshacer  Revisar y publicar (3) │
 ├──────────────┬──────────────────────────────────────────┬────────────────┤
-│ Páginas      │  Título · Entradilla · Icono             │ Componentes    │
+│ Inicio       │  Título · Entradilla · Icono             │ Componentes    │
 │ Datos        │  ┌──────────── bloque ────────────┐ ↑↓⧉🗑 │  (paleta) o    │
 │ Entidad      │  │  vista previa real             │       │ Propiedades    │
 │ Fuentes      │  └────────────────────────────────┘       │ del bloque     │
 │ (árbol)      │              ＋                            │ seleccionado   │
 └──────────────┴──────────────────────────────────────────┴────────────────┘
 ```
+
+## Inicio de gestión
+
+Es la pantalla de entrada. Resume:
+
+- **Estado del portal:** índice de cumplimiento y obligaciones al día, pendientes de actualizar, incompletas y pendientes de publicar. El estado **se calcula solo**: obligación → página o conjunto de datos → periodicidad exigida → fecha de la última actualización (de la página, del conjunto, de sus registros o de la última sincronización). Si se supera el plazo, pasa a «pendiente de actualizar»; si la página no existe o el conjunto está vacío, a «pendiente».
+- **Pendiente de publicación:** cambios sin publicar y textos sin traducir.
+- **Fuentes automáticas:** última sincronización con la Plataforma de Contratación y la BDNS.
+- **Necesitan atención:** obligaciones vencidas, datos que superan su periodicidad, datos de ejemplo, traducciones que faltan, páginas sin responsable, documentos sin fecha y colores sin contraste suficiente. Cada aviso tiene un botón «Abrir».
+- **Primeros pasos** y **Historial de publicaciones** (con «Recuperar la versión anterior» de cualquier fichero, que se carga como borrador para revisarlo y publicarlo).
+
+## Modo sencillo y modo avanzado
+
+Selector **Modo** en la barra superior. El **sencillo** (por defecto) muestra solo lenguaje funcional: los componentes de datos incluyen un resumen («Muestra: suma de «Importe» de Contratos donde «Tipo de contrato» es «Obras» · 42 de 366 registros») y las condiciones se añaden con desplegables («en el año 2026», «es Obras»…). Los nombres técnicos de campo, el filtro en bruto y las opciones de detalle quedan en «Configuración avanzada». El **avanzado** lo muestra todo.
 
 ## Editar una página
 
@@ -41,11 +55,13 @@ El editor está en `/admin/` del portal (por ejemplo, `https://…/Portal-transp
 1. Pestaña **Datos** → conjunto (por ejemplo, *Cargos electos y personal directivo*).
 2. Pulsa una fila para editarla en el panel derecho, o **Nuevo registro**.
 3. Los campos con lista de códigos se eligen en un desplegable; las fechas e importes se validan.
-4. Los conjuntos con ⟳ (contratos, encargos, subvenciones) se actualizan solos; lo que añadas a mano se marca como «carga manual» y la sincronización lo conserva.
+4. Los conjuntos con ⟳ (contratos, encargos, subvenciones) se actualizan solos: sus registros importados se consultan pero no se editan (se corrigen en la fuente oficial). Lo que añadas a mano se marca como «carga manual» y la sincronización lo conserva.
+5. La tabla permite buscar, filtrar, ordenar por columna, paginar y seleccionar varios registros para eliminarlos.
+6. **Importar CSV** (conjuntos manuales): reconoce las columnas por nombre o descripción, convierte fechas DD/MM/AAAA, importes con coma decimal y valores de las listas, y muestra una **vista previa con la validación de cada fila** antes de añadir, sustituir o importar solo las filas válidas. Desde Excel: *Guardar como → CSV UTF-8*. **Exportar CSV** descarga el conjunto.
 
 ## Entidad
 
-Nombre en los tres idiomas, NIF, DIR3, dirección, sede electrónica, escudo y **colores corporativos** (se aplican a todo el portal). También los identificadores del órgano para la Plataforma de Contratación y la BDNS.
+Nombre en los tres idiomas, NIF, DIR3, dirección, sede electrónica, escudo y **colores corporativos** (se aplican a todo el portal). Junto a los colores se muestra su **contraste WCAG** sobre blanco: el color principal necesita al menos 4,5:1 (si no, la publicación se bloquea); el secundario avisa si no sirve para texto. También los identificadores del órgano para la Plataforma de Contratación y la BDNS y el **modo de publicación por defecto**.
 
 ## Portada y categorías
 
@@ -55,18 +71,43 @@ Nombre en los tres idiomas, NIF, DIR3, dirección, sede electrónica, escudo y *
 - **Documentos**: añade a cada documento su tipo (Acta, Informe…), fecha, formato y tamaño. Con «Agrupar por años», el último año queda visible y los anteriores en «Histórico».
 - **Buscador**: el vocabulario ciudadano («sueldos» → retribuciones) está en `content/sinonimos.json`.
 
-## Publicar
+## Revisar y publicar
 
-**Publicar** muestra los ficheros modificados y permite:
+**Revisar y publicar** sigue cuatro pasos:
 
-- **Publicar en GitHub:** crea un único commit en el repositorio; el portal se actualiza en 1–2 minutos. Necesita un *token de acceso de grano fino* de GitHub limitado al repositorio, con permiso **Contents: Read and write** (y **Actions: Read and write** para lanzar la sincronización desde la pestaña *Fuentes*). El token se guarda solo en el navegador.
-- **Descargar ficheros:** para entregarlos a quien mantenga el repositorio.
-- **Descartar:** todo o fichero a fichero.
+1. **Cambios preparados:** cada fichero con un resumen («Página «Contratos»: 2 bloques modificados», «Datos «Agenda»: 3 registros nuevos») y una tabla **antes / después**. Se puede descartar fichero a fichero.
+2. **Comprobaciones:** datos conformes al esquema (tipos, listas de valores, identificadores repetidos), enlaces internos y páginas inexistentes, configuración de los componentes de datos (conjuntos, campos y filtros que existan), traducciones, documentos sin fecha o sin enlace, contraste de colores y fuentes de datos. Los **errores bloquean** la publicación; los avisos no. Cada incidencia tiene un botón «Corregir».
+3. **Vista previa** del portal con los cambios sin publicar, en escritorio, tableta y móvil, y en modo oscuro (también con el botón «Vista previa» de la barra superior).
+4. **Publicar**, de dos maneras:
+   - **Enviar a revisión** (recomendado en producción): crea una rama y una *propuesta de cambios* (pull request) en GitHub con el resumen y el resultado de las comprobaciones. Al aprobarla y fusionarla, el portal se publica solo. El token necesita además *Pull requests: Read and write*.
+   - **Publicar directamente:** un único commit en la rama publicada; el portal se actualiza en 1–2 minutos.
+
+**Descargar ficheros** sigue disponible para entregarlos a quien mantenga el repositorio.
+
+### Conexión con GitHub y seguridad
+
+Token de grano fino limitado al repositorio con *Contents: Read and write* (y *Actions: Read and write* para lanzar la sincronización). Se guarda solo durante la sesión salvo que se marque «Recordar»; «Olvidar el token» lo borra del navegador.
+
+Para un despliegue en producción se recomienda:
+
+- sustituir el token personal por una **GitHub App u OAuth** con un pequeño servicio intermedio, para que nadie maneje tokens;
+- **proteger la rama publicada** (*Settings → Branches*): exigir pull request y aprobación, y dejar el editor en «Enviar a revisión».
+
+### Roles editoriales
+
+Con la revisión activada, los roles se apoyan en los permisos de GitHub:
+
+| Rol | Qué hace | Cómo se configura |
+|---|---|---|
+| Editor de contenido | Modifica páginas y datos manuales y envía a revisión | Colaborador con permiso *Write* (crea ramas, no puede fusionar en la rama protegida) |
+| Responsable de área | Valida los contenidos de su área | Revisor obligatorio por ruta (`CODEOWNERS`, p. ej. `data/presupuesto.json @intervencion`) |
+| Administrador de transparencia | Configuración, conjuntos de datos y obligaciones | Propietario de `config/`, `data/metadata/` y `data/obligaciones.json` en `CODEOWNERS` |
+| Publicador | Aprueba y fusiona: publica | *Maintain* o regla de protección que exija su aprobación |
 
 Los cambios se guardan como borrador en el navegador hasta que se publican; si se cierra la pestaña, al volver se ofrece recuperarlos. **Deshacer** (o Ctrl+Z) revierte el último cambio.
 
 ## Recomendaciones
 
 - Mantén el bloque *Obligaciones de la página* al final de cada página: muestra al ciudadano qué exige la ley y si se cumple.
-- Tras cambiar datos, revisa la pestaña *Índice de transparencia* del portal y actualiza en *Datos → Cumplimiento de las obligaciones* el estado y la fecha de las obligaciones afectadas.
+- El estado de las obligaciones se recalcula solo con las fechas de actualización. Solo hace falta anotar a mano en *Datos → Cumplimiento de las obligaciones* lo que no se puede deducir: si una obligación «no aplica», si está «incompleta» o la fecha de una publicación hecha fuera del portal.
 - No publiques datos personales de personas físicas fuera de los supuestos legales (altos cargos y cargos electos).

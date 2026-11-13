@@ -79,6 +79,7 @@
   },
   "github": {
     "repositorio": "jtorresestiguin-cloud/Portal-transparencia",
-    "rama": "main"
+    "rama": "main",
+    "publicacion": "directo"
   }
 }

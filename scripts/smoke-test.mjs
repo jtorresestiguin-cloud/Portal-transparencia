@@ -58,15 +58,36 @@ const ed = await browser.newPage({ viewport: { width: 1440, height: 900 } });
 const edErr = []; watch(ed, edErr);
 ed.on('dialog', (d) => d.dismiss());
 await ed.goto(`http://localhost:${PORT}/admin/`);
-await ed.waitForSelector('.ed-block', { timeout: 15000 }).catch(() => edErr.push('el editor no muestra bloques'));
-await ed.click('[data-page="subvenciones"]'); await ed.waitForTimeout(800);
-await ed.click('.ed-block[data-i="3"]'); await ed.waitForTimeout(400);
-await ed.click('[data-tab="datos"]'); await ed.click('[data-ds="cargos"]'); await ed.waitForTimeout(400); await ed.click('tr[data-r="0"]');
+// Inicio de gestión
+await ed.waitForSelector('.ed-dash', { timeout: 15000 }).catch(() => edErr.push('el editor no muestra el inicio de gestión'));
+if (!(await ed.locator('.ed-attention li, .ed-dash p').count())) edErr.push('el inicio no muestra avisos');
+// Páginas y bloques (modo sencillo: resumen guiado y condiciones)
+await ed.click('[data-tab="paginas"]'); await ed.waitForTimeout(300);
+await ed.click('[data-page="subvenciones"]'); await ed.waitForSelector('.ed-block', { timeout: 15000 }).catch(() => edErr.push('el editor no muestra bloques'));
+const dataBlock = await ed.evaluate(() => [...document.querySelectorAll('.ed-block')].findIndex((b) => /gr[aá]fico|tabla|cifras/i.test(b.querySelector('.ed-bname').textContent)));
+await ed.click(`.ed-block[data-i="${Math.max(0, dataBlock)}"]`); await ed.waitForTimeout(600);
+if (!(await ed.locator('#ed-props .ed-summary').count())) edErr.push('falta el resumen guiado del componente');
+if (await ed.locator('#ed-props .ed-field code').count()) edErr.push('el modo sencillo muestra nombres técnicos');
+// Datos: tabla, registro, importación CSV con validación
+await ed.click('[data-tab="datos"]'); await ed.click('[data-ds="cargos"]'); await ed.waitForTimeout(400); await ed.click('tr[data-r="0"] td:nth-child(2)');
+await ed.click('#d-imp'); await ed.setInputFiles('#csv-file', { name: 'cargos.csv', mimeType: 'text/csv', buffer: Buffer.from('nombre;cargo;fecha_nombramiento\nPersona de prueba;Concejal;01/02/2024\nOtra;Concejala;fecha mala\n') });
+await ed.waitForSelector('#csv-prev [data-mode]', { timeout: 5000 }).catch(() => edErr.push('la importación CSV no muestra la vista previa'));
+if (!(await ed.locator('#csv-prev .ed-chk-error').count())) edErr.push('la importación CSV no detecta la fecha errónea');
+await ed.click('#csv-prev [data-mode="valid"]'); await ed.waitForTimeout(300);
+// Revisar y publicar: cambios, comprobaciones y vista previa
+await ed.click('#ed-publish'); await ed.waitForSelector('#pub-checks .ed-checklist', { timeout: 15000 }).catch(() => edErr.push('no se ejecutan las comprobaciones previas'));
+if (!(await ed.locator('#pub-changes li').count())) edErr.push('no se resume el cambio');
+await ed.click('#pub-prev'); await ed.waitForTimeout(2500);
+const prevOk = await ed.evaluate(() => { const f = document.querySelector('.ed-prev-dlg iframe'); return !!f?.contentDocument?.querySelector('main h1'); });
+if (!prevOk) edErr.push('la vista previa no carga el portal');
+await ed.keyboard.press('Escape'); await ed.keyboard.press('Escape');
 await ed.click('[data-tab="entidad"]'); await ed.waitForTimeout(400);
+if (!(await ed.locator('#ent-cr .ed-chk').count())) edErr.push('falta la comprobación de contraste de colores');
+await ed.selectOption('#ed-mode', 'avanzado'); await ed.waitForTimeout(300);
 await ed.click('[data-tab="sync"]'); await ed.waitForTimeout(400);
 const nb = await ed.evaluate(() => document.querySelectorAll('.ed-block').length);
 if (edErr.length) fails++;
-console.log(`${edErr.length ? '✗' : '✓'} [editor] carga, edición de página, datos, entidad y fuentes`);
+console.log(`${edErr.length ? '✗' : '✓'} [editor] inicio, páginas (modo sencillo), datos e importación CSV, revisar y publicar, vista previa, contraste y fuentes`);
 edErr.forEach((e) => console.log('    ⚠ ' + e));
 void nb;
 await browser.close();

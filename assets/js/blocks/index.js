@@ -321,12 +321,12 @@ export const BLOCKS = {
     props: [{ clave: 'pagina', tipo: 'texto_simple', etiqueta: L('Página (vacío = actual)', 'Pàgina (buit = actual)', 'Page (empty = current)') }],
     nuevo: () => ({}),
     render: async (el, p, ctx) => {
-      const { isStale } = await import('./avanzados.js');
+      const C = await import('../compliance.js');
       const pages = p.lista || [p.pagina || ctx?.pageId];
-      const obl = (await store.rows('obligaciones')).filter((o) => pages.includes(o.pagina));
+      const obl = await C.obligaciones(pages);
       if (!obl.length) { el.innerHTML = ''; return; }
-      const state = (o) => (o.estado === 'publicado' && isStale(o) ? 'desactualizada' : o.estado);
-      const list = `<ul class="obl-list">${obl.map((o) => `<li>${statusBadge(state(o))}<span class="obl-title">${esc(o.titulo)}</span><span class="obl-meta">${o.ultima_actualizacion ? `${t('updated')}: ${fmt.date(o.ultima_actualizacion)} · ` : ''}${label('periodicidad', o.periodicidad)} · <abbr title="${esc(tr('Fundamento legal', 'Fonament legal', 'Legal basis'))}">${esc(o.norma)}, ${esc(o.articulo)}</abbr></span></li>`).join('')}</ul>`;
+      const state = (o) => o.estado_calc;
+      const list = `<ul class="obl-list">${obl.map((o) => `<li>${statusBadge(state(o))}<span class="obl-title">${esc(o.titulo)}</span><span class="obl-meta">${o.evidencia ? `${t('updated')}: ${fmt.date(o.evidencia)} · ` : ''}${label('periodicidad', o.periodicidad)} · <abbr title="${esc(tr('Fundamento legal', 'Fonament legal', 'Legal basis'))}">${esc(o.norma)}, ${esc(o.articulo)}</abbr></span></li>`).join('')}</ul>`;
       if (p.plano) { el.innerHTML = list; return; }
       const ok = obl.filter((o) => state(o) === 'publicado').length;
       el.innerHTML = `<details class="status-summary"><summary>${icon('check', 18)}<span>${tr(`Qué exige la ley en esta página: <strong>${ok} de ${obl.length}</strong> apartados disponibles y al día`, `Què exigeix la llei en aquesta pàgina: <strong>${ok} de ${obl.length}</strong> apartats disponibles i al dia`, `What the law requires here: <strong>${ok} of ${obl.length}</strong> items available and up to date`)}</span></summary>${list}

@@ -11,14 +11,29 @@
  * - Publicar: confirma los cambios en el repositorio de GitHub con un solo commit
  *   (o los descarga como ficheros si no se usa GitHub).
  *
+ * - Inicio: panel de gestión (estado, obligaciones calculadas, fuentes, avisos,
+ *   primeros pasos e historial) — ver gestion.js.
+ * - Modo sencillo / avanzado: el sencillo oculta nombres técnicos y filtros en bruto.
+ *
+ * Flujo: editar → revisar cambios → comprobaciones → vista previa → publicar
+ * (directamente o como propuesta de revisión en GitHub).
+ *
  * Todo cambio se guarda como borrador en el navegador hasta que se publica.
  */
 import { setLang, setCodelists, pick, label } from '../assets/js/i18n.js';
-import { h, esc, icon, ICONS, flushCharts, download, modal } from '../assets/js/ui.js';
+import { h, esc, icon, ICONS, flushCharts, download, modal, fmt } from '../assets/js/ui.js';
 import * as store from '../assets/js/store.js';
 import { BLOCKS, loadAdvanced, renderBlock } from '../assets/js/blocks/index.js';
+import * as G from './gestion.js';
 
-const S = { snap: new Map(), work: new Map(), orig: new Map(), dirty: new Set(), hist: [], lang: 'es', tab: 'paginas', view: null, sel: null, insertAt: null, rec: null };
+const S = { snap: new Map(), work: new Map(), orig: new Map(), dirty: new Set(), hist: [], lang: 'es', tab: 'inicio', view: null, sel: null, insertAt: null, rec: null, mode: 'simple', pick: new Set(), ds: null };
+try { S.mode = localStorage.getItem('ed-mode') || 'simple'; } catch { /* */ }
+const simple = () => S.mode === 'simple';
+// Propiedades que en modo sencillo se agrupan en «Configuración avanzada».
+const ADV_KEYS = new Set(['series', 'referencia', 'orden', 'descendente', 'por_pagina', 'limite', 'nivel', 'ancho', 'campo_titulo']);
+const isAdv = (p) => p.avanzado ?? (p.tipo === 'filtro' || ADV_KEYS.has(p.clave) || (p.clave === 'pagina' && p.tipo === 'texto_simple'));
+const OPS_TXT = { '=': 'es', '!=': 'no es', '>=': 'desde', '<=': 'hasta', '>': 'mayor que', '<': 'menor que' };
+const OP_TXT = { contar: 'Número de registros', sumar: 'Suma', media: 'Media', max: 'Máximo', min: 'Mínimo', ultimo: 'Último valor' };
 const LANGS = { es: 'ES', va: 'VA', en: 'EN' };
 const INDENT = (p) => (p.startsWith('config/') ? 2 : 1);
 const $ = (s, r = document) => r.querySelector(s);
@@ -94,6 +109,21 @@ async function buildForm(host, props, obj, onChange) {
   host.innerHTML = '';
   const m = await store.meta();
   const dsFields = (id) => m.conjuntos.find((d) => d.id === id)?.campos || [];
+  // Resumen guiado: «Muestra: suma de «Importe» de Contratos donde…»
+  if (props.some((p) => p.tipo === 'conjunto')) {
+    const sum = h('<p class="ed-summary" aria-live="polite"></p>');
+    host.appendChild(sum);
+    const upd = () => describeConfig(obj, m).then((t) => { sum.innerHTML = t; sum.hidden = !t; });
+    let deb; const later = () => { clearTimeout(deb); deb = setTimeout(upd, 200); };
+    host.addEventListener('input', later); host.addEventListener('change', later); host.addEventListener('ed-cond', later);
+    upd();
+  }
+  let advBox = null;
+  const target = (p) => {
+    if (!(simple() && isAdv(p))) return host;
+    if (!advBox) { const d = h('<details class="ed-adv"><summary>Configuración avanzada</summary><div></div></details>'); advBox = d.querySelector('div'); host._adv = d; }
+    return advBox;
+  };
   for (const p of props) {
     const wrap = h(`<label class="ed-field"><span>${esc(pick(p.etiqueta) || p.clave)}${['texto', 'texto_largo'].includes(p.tipo) ? missingTag(obj[p.clave]) : ''}</span></label>`);
     let input;
@@ -120,7 +150,7 @@ async function buildForm(host, props, obj, onChange) {
       case 'conjunto': input = h(`<select><option value="">—</option>${m.conjuntos.map((d) => `<option value="${d.id}"${d.id === v ? ' selected' : ''}>${esc(pick(d.titulo))}</option>`).join('')}</select>`); input.addEventListener('change', () => { obj[p.clave] = input.value; onChange(p.clave, true); }); break;
       case 'campo': {
         const fs = dsFields(obj.conjunto || 'cargos');
-        const opts = fs.flatMap((f) => [[f.nombre, `${f.descripcion} (${f.nombre})`], ...(p.permite_fecha && f.tipo === 'date' ? [[`${f.nombre}:anio`, `${f.descripcion} → por año`], [`${f.nombre}:mes`, `${f.descripcion} → por mes`]] : [])]);
+        const opts = fs.flatMap((f) => [[f.nombre, simple() ? f.descripcion : `${f.descripcion} (${f.nombre})`], ...(p.permite_fecha && f.tipo === 'date' ? [[`${f.nombre}:anio`, `${f.descripcion} → por año`], [`${f.nombre}:mes`, `${f.descripcion} → por mes`]] : [])]);
         input = h(`<select><option value="">—</option>${opts.map(([k, l]) => `<option value="${esc(k)}"${k === v ? ' selected' : ''}>${esc(l)}</option>`).join('')}</select>`);
         input.addEventListener('change', () => { obj[p.clave] = input.value || undefined; onChange(p.clave); });
         break;
@@ -139,6 +169,7 @@ async function buildForm(host, props, obj, onChange) {
         const count = async () => { if (!obj.conjunto) { info.textContent = ''; return; } const all = await store.rows(obj.conjunto); const n = store.applyFilter(all, fin.value).length; info.innerHTML = `<span class="ed-count-ok">${n}</span> de ${all.length} registros cumplen el filtro`; };
         fin.addEventListener('input', () => { obj[p.clave] = fin.value || undefined; onChange(p.clave); count(); });
         wrap.append(input, info); input = null; count();
+        if (simple()) host.appendChild(await guidedFilter(p, obj, onChange, dsFields, () => { fin.value = obj[p.clave] || ''; count(); host.dispatchEvent(new Event('ed-cond')); }));
         break;
       }
       case 'lista': {
@@ -170,15 +201,79 @@ async function buildForm(host, props, obj, onChange) {
     }
     if (input) wrap.append(input);
     if (p.ayuda) wrap.append(h(`<small class="ed-hint">${esc(pick(p.ayuda))}</small>`));
-    host.appendChild(wrap);
+    target(p).appendChild(wrap);
   }
+  if (host._adv) host.appendChild(host._adv);
+}
+
+/** Descripción en lenguaje natural de la configuración de un componente de datos. */
+async function describeConfig(obj, m) {
+  const ds = m.conjuntos.find((d) => d.id === obj.conjunto);
+  if (!ds) return obj.conjunto === undefined ? '' : '<strong>Elige un conjunto de datos.</strong>';
+  const fd = (n) => ds.campos.find((c) => c.nombre === String(n).split(':')[0]);
+  const fl = (n) => { const f = fd(n); const mod = String(n).split(':')[1]; return f ? `«${esc(f.descripcion)}»${mod === 'anio' ? ' por año' : mod === 'mes' ? ' por mes' : ''}` : `«${esc(n)}»`; };
+  const parts = [];
+  const op = obj.operacion;
+  const campo = obj.campo || obj.valor;
+  if (op) parts.push(`${OP_TXT[op] || op}${campo && op !== 'contar' ? ` de ${fl(campo)}` : ''} de <strong>${esc(pick(ds.titulo))}</strong>`);
+  else parts.push(`<strong>${esc(pick(ds.titulo))}</strong>`);
+  if (obj.agrupar) parts.push(`agrupado por ${fl(obj.agrupar)}`);
+  if (Array.isArray(obj.columnas) && obj.columnas.length) parts.push(`${obj.columnas.length} columnas`);
+  const conds = store.parseFilter(obj.filtro);
+  if (conds.length) parts.push(`donde ${conds.map((c) => `${fl(c.k)} ${OPS_TXT[c.op]} «${esc(store.valueLabel(fd(c.k), c.v))}»`).join(' y ')}`);
+  let n = '';
+  try { const all = await store.rows(ds.id); n = ` · <span class="ed-count-ok">${fmt.int(store.applyFilter(all, obj.filtro).length)}</span> de ${fmt.int(all.length)} registros`; } catch { /* */ }
+  return `Muestra: ${parts.join(', ')}${n}`;
+}
+
+/** Constructor de condiciones de filtro sin escribir expresiones (modo sencillo). */
+async function guidedFilter(p, obj, onChange, dsFields, synced) {
+  const box = h('<div class="ed-field ed-guided"><span>Condiciones (qué registros se tienen en cuenta)</span><div class="ed-conds"></div><div class="ed-cond-add"></div></div>');
+  const cl = await store.getJSON('data/codelists.json');
+  const conds = () => store.parseFilter(obj[p.clave]);
+  const save = (list) => { obj[p.clave] = list.map((c) => `${c.k}${c.op}${c.v}`).join(';') || undefined; onChange(p.clave); synced(); draw(); };
+  const draw = () => {
+    const fs = dsFields(obj.conjunto);
+    const fd = (n) => fs.find((f) => f.nombre === n);
+    const list = conds();
+    box.querySelector('.ed-conds').innerHTML = list.length ? list.map((c, i) => `<span class="ed-chip">«${esc(fd(c.k)?.descripcion || c.k)}» ${OPS_TXT[c.op]} «${esc(store.valueLabel(fd(c.k), c.v))}»<button type="button" class="ed-mini" data-rm="${i}" aria-label="Quitar condición">${icon('x', 12)}</button></span>`).join('') : '<span class="ed-hint">Sin condiciones: se tienen en cuenta todos los registros.</span>';
+    box.querySelectorAll('[data-rm]').forEach((b) => b.addEventListener('click', () => { const l = conds(); l.splice(Number(b.dataset.rm), 1); save(l); }));
+    const add = box.querySelector('.ed-cond-add');
+    if (!fs.length) { add.innerHTML = ''; return; }
+    add.innerHTML = `<select data-k aria-label="Campo"><option value="">Añadir condición…</option>${fs.filter((f) => f.nombre !== 'id').map((f) => `<option value="${f.nombre}">${esc(f.descripcion)}</option>`).join('')}</select><span data-rest></span>`;
+    add.querySelector('[data-k]').addEventListener('change', (e) => {
+      const f = fd(e.target.value); const rest = add.querySelector('[data-rest]');
+      if (!f) { rest.innerHTML = ''; return; }
+      const vals = f.lista ? f.lista.split('|').flatMap((l) => Object.keys(cl[l] || {}).map((k) => [k, label(l, k)])) : f.tipo === 'boolean' ? [['true', 'Sí'], ['false', 'No']] : null;
+      const ops = f.tipo === 'date' ? [['anio', 'en el año'], ['>=', 'desde'], ['<=', 'hasta']] : ['number', 'integer'].includes(f.tipo) ? [['>=', 'como mínimo'], ['<=', 'como máximo'], ['=', 'es'], ['!=', 'no es']] : [['=', 'es'], ['!=', 'no es']];
+      const years = Array.from({ length: 12 }, (_, i) => new Date().getFullYear() - i);
+      rest.innerHTML = `<select data-op aria-label="Operador">${ops.map(([k, t]) => `<option value="${k}">${t}</option>`).join('')}</select>
+        <span data-vbox>${vals ? `<select data-v aria-label="Valor">${vals.map(([k, t]) => `<option value="${esc(k)}">${esc(t)}</option>`).join('')}</select>` : f.tipo === 'date' ? `<select data-v aria-label="Año">${years.map((y) => `<option>${y}</option>`).join('')}</select>` : `<input data-v type="${['number', 'integer'].includes(f.tipo) ? 'number' : 'text'}" aria-label="Valor">`}</span>
+        <button type="button" class="btn-ghost" data-ok>Añadir</button>`;
+      rest.querySelector('[data-op]').addEventListener('change', (ev) => { if (f.tipo === 'date') rest.querySelector('[data-vbox]').innerHTML = ev.target.value === 'anio' ? `<select data-v aria-label="Año">${years.map((y) => `<option>${y}</option>`).join('')}</select>` : '<input data-v type="date" aria-label="Fecha">'; });
+      rest.querySelector('[data-ok]').addEventListener('click', () => {
+        const op = rest.querySelector('[data-op]').value, v = rest.querySelector('[data-v]').value;
+        if (v === '') return;
+        const l = conds();
+        if (op === 'anio') l.push({ k: f.nombre, op: '>=', v: `${v}-01-01` }, { k: f.nombre, op: '<=', v: `${v}-12-31` });
+        else l.push({ k: f.nombre, op, v });
+        save(l);
+      });
+    });
+  };
+  draw();
+  return box;
 }
 
 // ------------------------------------------------------------------ barra lateral
 async function renderSide() {
   const body = $('#ed-side-body');
   document.querySelectorAll('.ed-tabs [role="tab"]').forEach((b) => b.setAttribute('aria-selected', String(b.dataset.tab === S.tab)));
-  if (S.tab === 'paginas') {
+  if (S.tab === 'inicio') {
+    body.innerHTML = `<p class="ed-hint">Estado del portal, avisos que necesitan atención, fuentes automáticas e historial de publicaciones.</p><button type="button" class="ed-item" aria-current="true">${icon('home', 14)} Inicio de gestión</button>`;
+    S.view = { kind: 'dash' };
+    G.dashboard(CTX);
+  } else if (S.tab === 'paginas') {
     const portal = W('content/portal.json');
     const titles = Object.fromEntries(await Promise.all(portal.categorias.flatMap((c) => c.paginas).concat(['accesibilidad']).map(async (id) => [id, pick((await load(`content/paginas/${id}.json`)).titulo)])));
     body.innerHTML = `<ul class="ed-tree">${portal.categorias.map((c, ci) => `<li><div class="ed-cat">${icon(c.icono, 16)}<span>${esc(i18nVal(c.titulo))}</span><span class="ed-cat-actions">
@@ -225,11 +320,12 @@ async function renderPage() {
     <label class="ed-field"><span>Icono</span><select id="pg-i">${Object.keys(ICONS).map((k) => `<option${k === pg.icono ? ' selected' : ''}>${k}</option>`).join('')}</select></label></div>
     <label class="ed-field"><span>Entradilla (explicación breve, en lenguaje claro) ${missingTag(pg.intro)}</span><input type="text" id="pg-d" value="${esc(i18nVal(pg.intro))}"></label>
     <label class="ed-field"><span>Responsable de la información ${missingTag(pg.responsable)}</span><input type="text" id="pg-r" value="${esc(i18nVal(pg.responsable))}" placeholder="p. ej. Secretaría General"></label>
-    <p class="ed-hint">La fecha de actualización se pone sola al publicar cambios${pg.actualizado ? ` (ahora: ${esc(pg.actualizado)})` : ''}; la fuente se toma de los conjuntos de datos que usan los bloques. Dirección pública: <a href="../#/${pg.id}" target="_blank" rel="noopener">#/${pg.id}</a> · Arrastra componentes desde el panel derecho o pulsa <strong>+</strong> entre bloques.</p></section>`);
+    <p class="ed-hint">La fecha de actualización se pone sola al publicar cambios${pg.actualizado ? ` (ahora: ${esc(pg.actualizado)})` : ''}; la fuente se toma de los conjuntos de datos que usan los bloques. Dirección pública: <a href="../#/${pg.id}" target="_blank" rel="noopener">#/${pg.id}</a> · <button type="button" class="link-btn" id="pg-prev">Vista previa (escritorio, tableta y móvil)</button> · Arrastra componentes desde el panel derecho o pulsa <strong>+</strong> entre bloques.</p></section>`);
   head.querySelector('#pg-t').addEventListener('input', (e) => change(PATH(), (p) => setI18n(p, 'titulo', e.target.value)));
   head.querySelector('#pg-d').addEventListener('input', (e) => change(PATH(), (p) => setI18n(p, 'intro', e.target.value)));
   head.querySelector('#pg-r').addEventListener('input', (e) => change(PATH(), (p) => setI18n(p, 'responsable', e.target.value)));
   head.querySelector('#pg-i').addEventListener('change', (e) => change(PATH(), (p) => (p.icono = e.target.value)));
+  head.querySelector('#pg-prev').addEventListener('click', () => G.preview(CTX, pg.id));
   main.appendChild(head);
   const canvas = h('<div class="ed-canvas portal-preview"></div>');
   main.appendChild(canvas);
@@ -398,61 +494,103 @@ function openHome() {
 }
 
 // ------------------------------------------------------------------ datos
+const PAGE_SIZE = 100;
 async function openData(id) {
+  if (S.view?.kind !== 'data' || S.view.id !== id) { S.pick = new Set(); S.ds = { q: '', sort: null, desc: false, fv: '', page: 0 }; }
   S.view = { kind: 'data', id }; S.rec = null;
   const path = `data/${id}.json`;
   const env = await load(path);
   const ds = (await store.meta()).conjuntos.find((d) => d.id === id);
   renderSide();
   const auto = ['placsp', 'bdns'].includes(ds.fuente.tipo);
-  const cols = ds.campos.slice(0, 7);
+  const locked = (r) => auto && r.fuente !== 'manual';
+  const cols = ds.campos.filter((c) => !(simple() && c.nombre === 'id')).slice(0, 7);
+  const facet = ds.campos.find((c) => c.lista && c.nombre !== 'fuente');
+  const cl = await store.getJSON('data/codelists.json');
+  const facetVals = facet ? [...new Set(env.datos.map((r) => r[facet.nombre]).filter((v) => v !== null && v !== undefined && v !== ''))].sort() : [];
+  const st = S.ds;
   const main = $('#ed-main');
   main.innerHTML = `<div class="ed-data-head"><h1>${esc(pick(ds.titulo))}</h1>
-      <input type="search" id="dq" placeholder="Buscar…" class="ed-field" style="padding:7px 9px;border:1px solid var(--line-strong);border-radius:6px;min-width:220px">
-      <button type="button" class="btn" id="d-add">${icon('plus', 16)} Nuevo registro</button></div>
-    ${auto ? `<div class="callout callout-info">${icon('sync', 20)}<div><p><strong>Actualización automática desde ${esc(ds.fuente.nombre)}.</strong> La sincronización diaria sustituye los registros procedentes de la fuente; los que añadas aquí se marcan como «carga manual» y se conservan.</p></div></div>` : ''}
-    ${env.ejemplo ? `<div class="callout callout-advertencia">${icon('warn', 20)}<div><p>Este conjunto contiene <strong>datos de ejemplo</strong>. Al editar cualquier registro se marcará como dato manual; elimina los registros de ejemplo antes de publicar.</p></div></div>` : ''}
-    <p class="ed-hint" style="margin:10px 0">${env.datos.length} registros · Pulsa una fila para editarla en el panel derecho.</p>
-    <div class="ed-grid-wrap"><table class="ed-grid"><thead><tr>${cols.map((c) => `<th>${esc(c.descripcion)}</th>`).join('')}</tr></thead><tbody></tbody></table></div>`;
+      <div class="ed-data-tools">
+        <input type="search" id="dq" placeholder="Buscar…" aria-label="Buscar en los registros" value="${esc(st.q)}">
+        ${facet ? `<select id="dfv" aria-label="${esc(facet.descripcion)}"><option value="">${esc(facet.descripcion)}: todos</option>${facetVals.map((v) => `<option value="${esc(v)}"${String(v) === st.fv ? ' selected' : ''}>${esc(store.valueLabel(facet, v))}</option>`).join('')}</select>` : ''}
+        ${auto ? '' : `<button type="button" class="btn-ghost" id="d-imp">${icon('download', 16)} Importar CSV</button>`}
+        <button type="button" class="btn-ghost" id="d-exp">Exportar CSV</button>
+        <button type="button" class="btn" id="d-add">${icon('plus', 16)} Nuevo registro</button></div></div>
+    ${auto ? `<div class="callout callout-info">${icon('sync', 20)}<div><p><strong>Se actualiza solo desde ${esc(ds.fuente.nombre)}.</strong> Aquí puedes consultar y comprobar los registros importados (no se editan: se corrigen en la fuente oficial). Los que añadas a mano se marcan como «carga manual» y la sincronización los conserva.</p></div></div>` : ''}
+    ${env.ejemplo ? `<div class="callout callout-advertencia">${icon('warn', 20)}<div><p>Este conjunto contiene <strong>datos de ejemplo</strong>. Sustitúyelos por los reales (por ejemplo, con «Importar CSV» → «Sustituir todos los registros»).</p></div></div>` : ''}
+    <div class="ed-data-info"><p class="ed-hint" id="d-count"></p><div class="ed-bulk" id="d-bulk" hidden><span></span><button type="button" class="btn-ghost" id="d-bulk-del">${icon('trash', 14)} Eliminar seleccionados</button><button type="button" class="btn-ghost" id="d-bulk-none">Quitar selección</button></div></div>
+    <div class="ed-grid-wrap"><table class="ed-grid"><thead><tr><th class="ed-ck"><input type="checkbox" id="d-all" aria-label="Seleccionar los registros visibles"></th>${cols.map((c) => `<th aria-sort="${st.sort === c.nombre ? (st.desc ? 'descending' : 'ascending') : 'none'}"><button type="button" class="ed-sort" data-sort="${c.nombre}">${esc(c.descripcion)}${st.sort === c.nombre ? (st.desc ? ' ▼' : ' ▲') : ''}</button></th>`).join('')}</tr></thead><tbody></tbody></table></div>
+    <div class="ed-pager" id="d-pager"></div>`;
   const tbody = main.querySelector('tbody');
   const f = (c, v) => (c.lista ? store.valueLabel(c, v) : typeof v === 'boolean' ? (v ? 'Sí' : 'No') : v ?? '—');
+  let visible = [];
   const draw = () => {
-    const q = main.querySelector('#dq').value.toLowerCase();
-    tbody.innerHTML = W(path).datos.map((r, i) => [r, i]).filter(([r]) => !q || JSON.stringify(r).toLowerCase().includes(q)).slice(0, 500)
-      .map(([r, i]) => `<tr data-r="${i}" class="${S.rec === i ? 'sel' : ''}" tabindex="0">${cols.map((c) => `<td>${esc(f(c, r[c.nombre]))}</td>`).join('')}</tr>`).join('');
+    const q = st.q.toLowerCase();
+    let list = W(path).datos.map((r, i) => [r, i]).filter(([r]) => (!q || JSON.stringify(r).toLowerCase().includes(q)) && (!st.fv || String(r[facet.nombre]) === st.fv));
+    if (st.sort) list.sort(([a], [b]) => { const x = a[st.sort], y = b[st.sort]; const r = x === y ? 0 : x === null || x === undefined ? 1 : y === null || y === undefined ? -1 : typeof x === 'number' && typeof y === 'number' ? x - y : String(x).localeCompare(String(y), 'es'); return st.desc ? -r : r; });
+    const pages = Math.max(1, Math.ceil(list.length / PAGE_SIZE)); st.page = Math.min(st.page, pages - 1);
+    visible = list.slice(st.page * PAGE_SIZE, (st.page + 1) * PAGE_SIZE);
+    tbody.innerHTML = visible.map(([r, i]) => `<tr data-r="${i}" class="${S.rec === i ? 'sel' : ''}${locked(r) ? ' locked' : ''}" tabindex="0"><td class="ed-ck">${locked(r) ? `<span title="Procede de ${esc(ds.fuente.nombre)}">${icon('sync', 12)}</span>` : `<input type="checkbox" data-pick="${i}" aria-label="Seleccionar"${S.pick.has(i) ? ' checked' : ''}>`}</td>${cols.map((c) => `<td>${esc(f(c, r[c.nombre]))}</td>`).join('')}</tr>`).join('');
+    main.querySelector('#d-count').textContent = `${fmt.int(W(path).datos.length)} registros${list.length !== W(path).datos.length ? ` · ${fmt.int(list.length)} con los filtros` : ''}${auto ? ` · ${fmt.int(W(path).datos.filter((r) => !locked(r)).length)} de carga manual` : ''}`;
+    main.querySelector('#d-pager').innerHTML = pages > 1 ? `<button type="button" class="btn-ghost" data-pg="-1"${st.page === 0 ? ' disabled' : ''}>Anterior</button><span class="ed-hint">Página ${st.page + 1} de ${pages}</span><button type="button" class="btn-ghost" data-pg="1"${st.page >= pages - 1 ? ' disabled' : ''}>Siguiente</button>` : '';
+    const bulk = main.querySelector('#d-bulk'); bulk.hidden = !S.pick.size; bulk.querySelector('span').textContent = `${S.pick.size} seleccionado${S.pick.size === 1 ? '' : 's'}`;
   };
   draw();
-  main.querySelector('#dq').addEventListener('input', draw);
-  tbody.addEventListener('click', (e) => { const tr = e.target.closest('tr[data-r]'); if (tr) { S.rec = Number(tr.dataset.r); draw(); openRecord(ds, path, draw); } });
-  tbody.addEventListener('keydown', (e) => { const tr = e.target.closest('tr[data-r]'); if (tr && e.key === 'Enter') { S.rec = Number(tr.dataset.r); draw(); openRecord(ds, path, draw); } });
+  let deb; main.querySelector('#dq').addEventListener('input', (e) => { clearTimeout(deb); deb = setTimeout(() => { st.q = e.target.value; st.page = 0; draw(); }, 150); });
+  main.querySelector('#dfv')?.addEventListener('change', (e) => { st.fv = e.target.value; st.page = 0; draw(); });
+  main.querySelector('thead').addEventListener('click', (e) => { const b = e.target.closest('[data-sort]'); if (!b) return; if (st.sort === b.dataset.sort) st.desc = !st.desc; else { st.sort = b.dataset.sort; st.desc = false; } openData(id); });
+  main.querySelector('#d-all').addEventListener('change', (e) => { visible.forEach(([r, i]) => { if (!locked(r)) (e.target.checked ? S.pick.add(i) : S.pick.delete(i)); }); draw(); });
+  main.querySelector('#d-pager').addEventListener('click', (e) => { const b = e.target.closest('[data-pg]'); if (b) { st.page += Number(b.dataset.pg); draw(); } });
+  main.querySelector('#d-bulk-none').addEventListener('click', () => { S.pick.clear(); draw(); });
+  main.querySelector('#d-bulk-del').addEventListener('click', () => {
+    if (!confirm(`¿Eliminar ${S.pick.size} registro(s)?`)) return;
+    const del = new Set(S.pick); change(path, (e) => { e.datos = e.datos.filter((_, i) => !del.has(i)); }); S.pick.clear(); S.rec = null; openData(id); toast(`${del.size} registro(s) eliminados`);
+  });
+  const open = (tr) => { S.rec = Number(tr.dataset.r); draw(); openRecord(ds, path, draw, locked(W(path).datos[S.rec])); };
+  tbody.addEventListener('change', (e) => { const c = e.target.closest('[data-pick]'); if (c) { const i = Number(c.dataset.pick); c.checked ? S.pick.add(i) : S.pick.delete(i); draw(); } });
+  tbody.addEventListener('click', (e) => { if (e.target.closest('.ed-ck')) return; const tr = e.target.closest('tr[data-r]'); if (tr) open(tr); });
+  tbody.addEventListener('keydown', (e) => { const tr = e.target.closest('tr[data-r]'); if (tr && e.key === 'Enter') open(tr); });
+  main.querySelector('#d-imp')?.addEventListener('click', () => G.importCSV(CTX, ds, path));
+  main.querySelector('#d-exp').addEventListener('click', () => G.exportCSV(ds, W(path).datos));
   main.querySelector('#d-add').addEventListener('click', () => {
     const blank = Object.fromEntries(ds.campos.map((c) => [c.nombre, c.tipo === 'boolean' ? false : c.nombre === 'fuente' ? 'manual' : c.nombre === 'id' ? `${id.slice(0, 3).toUpperCase()}-${Date.now().toString(36)}` : null]));
     change(path, (e) => e.datos.unshift(blank));
-    S.rec = 0; draw(); openRecord(ds, path, draw);
+    S.pick = new Set([...S.pick].map((i) => i + 1));
+    S.rec = 0; st.page = 0; draw(); openRecord(ds, path, draw);
   });
-  $('#ed-props').innerHTML = `<h2>${icon('table', 18)} Registro</h2><p class="ed-hint">Selecciona un registro de la tabla o crea uno nuevo.</p>`;
+  $('#ed-props').innerHTML = `<h2>${icon('table', 18)} Registro</h2><p class="ed-hint">Selecciona un registro de la tabla o crea uno nuevo.${auto ? '' : ' Para cargas masivas, usa «Importar CSV»: verás una vista previa con la validación de cada fila antes de importar.'}</p>`;
+  void cl;
 }
-async function openRecord(ds, path, redraw) {
+async function openRecord(ds, path, redraw, readOnly = false) {
   const r = W(path).datos[S.rec];
   const panel = $('#ed-props');
   panel.classList.add('open');
-  panel.innerHTML = `<h2>${icon('edit', 18)} Registro</h2><form class="ed-form" onsubmit="return false"></form>
+  const codelists = await store.getJSON('data/codelists.json');
+  if (readOnly) {
+    panel.innerHTML = `<h2>${icon('sync', 18)} Registro importado</h2><div class="callout callout-info"><div><p>Procede de <strong>${esc(ds.fuente.nombre)}</strong>. Si hay un error, corrígelo en la fuente oficial: la próxima sincronización lo actualizará.</p></div></div>
+      <dl class="ed-ro">${ds.campos.map((c) => `<dt>${esc(c.descripcion)}${simple() ? '' : ` <code>${c.nombre}</code>`}</dt><dd>${c.formato === 'uri' && r[c.nombre] ? `<a href="${esc(r[c.nombre])}" target="_blank" rel="noopener">${esc(r[c.nombre])}</a>` : esc(store.valueLabel(c, r[c.nombre]))}</dd>`).join('')}</dl>
+      ${(() => { const e = G.validateRecord(ds, r, codelists); return e.length ? `<p class="ed-chk-error">⚠ ${esc(e.join(' · '))}</p>` : '<p class="ed-hint">✓ Conforme al esquema.</p>'; })()}`;
+    return;
+  }
+  panel.innerHTML = `<h2>${icon('edit', 18)} Registro</h2><p class="ed-rec-check" aria-live="polite"></p><form class="ed-form" onsubmit="return false"></form>
     <div style="display:flex;gap:6px;flex-wrap:wrap"><button type="button" class="btn-ghost" id="r-dup">${icon('copy', 14)} Duplicar</button><button type="button" class="btn-ghost" id="r-del">${icon('trash', 14)} Eliminar</button></div>`;
   const form = panel.querySelector('form');
+  const check = () => { const e = G.validateRecord(ds, W(path).datos[S.rec], codelists); panel.querySelector('.ed-rec-check').innerHTML = e.length ? `<span class="ed-chk-error">⚠ ${esc(e.join(' · '))}</span>` : ''; };
   for (const c of ds.campos) {
     const v = r[c.nombre];
-    const wrap = h(`<label class="ed-field"><span>${esc(c.descripcion)} <code>${c.nombre}</code></span></label>`);
+    const wrap = h(`<label class="ed-field"><span>${esc(c.descripcion)}${simple() ? '' : ` <code>${c.nombre}</code>`}</span></label>`);
     let input;
     if (c.lista) {
       const lists = c.lista.split('|');
-      const cl = await store.getJSON('data/codelists.json');
-      input = h(`<select><option value="">—</option>${lists.flatMap((l) => Object.keys(cl[l] || {}).map((k) => `<option value="${esc(k)}"${String(v) === k ? ' selected' : ''}>${esc(label(l, k))}</option>`)).join('')}</select>`);
+      input = h(`<select><option value="">—</option>${lists.flatMap((l) => Object.keys(codelists[l] || {}).map((k) => `<option value="${esc(k)}"${String(v) === k ? ' selected' : ''}>${esc(label(l, k))}</option>`)).join('')}</select>`);
     } else if (c.tipo === 'boolean') input = h(`<select><option value="true"${v === true ? ' selected' : ''}>Sí</option><option value="false"${v !== true ? ' selected' : ''}>No</option></select>`);
     else if (c.tipo === 'date') input = h(`<input type="date" value="${esc(v || '')}">`);
     else if (c.tipo === 'yearmonth') input = h(`<input type="month" value="${esc(v || '')}">`);
     else if (c.tipo === 'number' || c.tipo === 'integer') input = h(`<input type="number" step="${c.tipo === 'integer' ? 1 : 'any'}" value="${v ?? ''}">`);
     else if (c.formato === 'uri') input = h(`<input type="url" value="${esc(v || '')}" placeholder="https://…">`);
     else input = h(`<input type="text" value="${esc(v ?? '')}">`);
+    if (c.nombre === 'id' && simple()) { input.readOnly = true; wrap.append(h('<small class="ed-hint">Identificador interno (se asigna solo).</small>')); }
     input.addEventListener('input', () => {
       let nv = input.value;
       if (c.tipo === 'boolean') nv = nv === 'true';
@@ -460,14 +598,15 @@ async function openRecord(ds, path, redraw) {
       else if (c.tipo === 'integer') nv = nv === '' ? null : parseInt(nv, 10);
       else if (nv === '') nv = null;
       change(path, (e) => { e.datos[S.rec][c.nombre] = nv; if ('fuente' in e.datos[S.rec] && ['ejemplo'].includes(e.datos[S.rec].fuente)) e.datos[S.rec].fuente = 'manual'; });
-      redraw();
+      redraw(); check();
     });
     wrap.append(input);
     if (c.nombre === 'foto' && v) wrap.append(h(`<img src="${esc(v)}" alt="" style="width:64px;height:64px;border-radius:50%;object-fit:cover">`));
     form.appendChild(wrap);
   }
+  check();
   $('#r-dup').addEventListener('click', () => { change(path, (e) => e.datos.splice(S.rec + 1, 0, { ...clone(e.datos[S.rec]), ...(e.datos[S.rec].id ? { id: `${e.datos[S.rec].id}-copia` } : {}) })); S.rec++; redraw(); openRecord(ds, path, redraw); });
-  $('#r-del').addEventListener('click', () => { if (!confirm('¿Eliminar este registro?')) return; change(path, (e) => e.datos.splice(S.rec, 1)); S.rec = null; redraw(); panel.innerHTML = '<p class="ed-hint">Registro eliminado.</p>'; });
+  $('#r-del').addEventListener('click', () => { if (!confirm('¿Eliminar este registro?')) return; change(path, (e) => e.datos.splice(S.rec, 1)); S.rec = null; S.pick.clear(); redraw(); panel.innerHTML = '<p class="ed-hint">Registro eliminado.</p>'; });
 }
 
 // ------------------------------------------------------------------ entidad
@@ -484,12 +623,16 @@ async function openEntity() {
   main.innerHTML = `<section class="ed-card"><h2>Datos de la entidad</h2><div id="ent-a"></div></section>
     <section class="ed-card"><h2>Colores corporativos</h2><div id="ent-c"></div></section>
     <section class="ed-card"><h2>Plataforma de Contratación del Sector Público</h2><p class="ed-hint">Identificadores del órgano de contratación tal como aparecen en PLACSP (NIF o DIR3, separados por comas) y nombres alternativos.</p><div id="ent-p"></div></section>
+    <section class="ed-card"><h2>Publicación</h2><p class="ed-hint">Con «Enviar a revisión», cada publicación crea una propuesta en GitHub que una persona responsable aprueba. Combínalo con la protección de la rama publicada para separar quien edita de quien publica.</p><div id="ent-g"></div></section>
     <section class="ed-card"><h2>Base de Datos Nacional de Subvenciones</h2><p class="ed-hint">Identificadores del órgano concedente en la BDNS (separados por comas) o, si se desconocen, el nombre exacto del órgano.</p><div id="ent-b"></div></section>`;
   const save = () => { change('config/entidad.json', () => {}); applyColors(); };
   buildForm($('#ent-a'), ENTITY_FORM, cfg, save);
-  buildForm($('#ent-c'), [{ clave: 'principal', tipo: 'color', etiqueta: { es: 'Color principal' } }, { clave: 'secundario', tipo: 'color', etiqueta: { es: 'Color secundario' } }], cfg.colores, save);
+  const contrastBox = () => { const el = $('#ent-cr'); if (el) el.innerHTML = G.colorBox(cfg); };
+  buildForm($('#ent-c'), [{ clave: 'principal', tipo: 'color', etiqueta: { es: 'Color principal' }, ayuda: { es: 'Se usa en botones, enlaces y titulares: necesita un contraste mínimo de 4,5:1 sobre blanco.' } }, { clave: 'secundario', tipo: 'color', etiqueta: { es: 'Color secundario' }, ayuda: { es: 'Acento decorativo (líneas, detalles).' } }], cfg.colores, () => { save(); contrastBox(); }).then(() => { $('#ent-c').insertAdjacentHTML('beforeend', '<div id="ent-cr"></div>'); contrastBox(); });
   const csv = (obj, key) => ({ get: () => (obj[key] || []).join(', '), set: (v) => (obj[key] = v.split(',').map((x) => x.trim()).filter(Boolean)) });
   const listField = (host, label_, acc) => { const w = h(`<label class="ed-field"><span>${label_}</span><input type="text" value="${esc(acc.get())}"></label>`); w.querySelector('input').addEventListener('input', (e) => { acc.set(e.target.value); save(); }); host.appendChild(w); };
+  cfg.github = cfg.github || {};
+  buildForm($('#ent-g'), [{ clave: 'publicacion', tipo: 'select', etiqueta: { es: 'Modo de publicación por defecto' }, opciones: [['revision', { es: 'Enviar a revisión (recomendado)' }], ['directo', { es: 'Publicar directamente' }]] }, { clave: 'repositorio', tipo: 'texto_simple', etiqueta: { es: 'Repositorio (organización/nombre)' } }, { clave: 'rama', tipo: 'texto_simple', etiqueta: { es: 'Rama publicada' } }], cfg.github, save);
   const P = cfg.fuentes.placsp, B = cfg.fuentes.bdns;
   buildForm($('#ent-p'), [{ clave: 'activo', tipo: 'bool', etiqueta: { es: 'Sincronización activa' } }, { clave: 'desde', tipo: 'fecha', etiqueta: { es: 'Importar desde' } }], P, save).then(() => {
     listField($('#ent-p'), 'Identificadores del órgano (NIF, DIR3)', csv(P, 'identificadores_organo'));
@@ -535,7 +678,8 @@ function ghSettings() {
   let saved = {};
   try { saved = JSON.parse(localStorage.getItem('ed-gh') || sessionStorage.getItem('ed-gh') || '{}'); } catch { /* */ }
   const cfg = W('config/entidad.json');
-  return { repo: saved.repo || cfg?.github?.repositorio || '', branch: saved.branch || cfg?.github?.rama || 'main', token: saved.token || '' };
+  let remembered = false; try { remembered = !!localStorage.getItem('ed-gh'); } catch { /* */ }
+  return { repo: saved.repo || cfg?.github?.repositorio || '', branch: saved.branch || cfg?.github?.rama || 'main', token: saved.token || '', modo: saved.modo, remembered };
 }
 async function ghApi(gh, path, opts = {}) {
   const r = await fetch(`https://api.github.com${path}`, { ...opts, headers: { Authorization: `Bearer ${gh.token}`, Accept: 'application/vnd.github+json', 'X-GitHub-Api-Version': '2022-11-28', ...(opts.body ? { 'Content-Type': 'application/json' } : {}) } });
@@ -543,43 +687,97 @@ async function ghApi(gh, path, opts = {}) {
   return r.status === 204 ? null : r.json();
 }
 const serialize = (p) => JSON.stringify(W(p), null, INDENT(p)) + '\n';
-function openPublish() {
+/**
+ * Revisar y publicar: 1) cambios preparados (resumen y antes/después), 2) comprobaciones,
+ * 3) vista previa, 4) publicar directamente o enviar a revisión (rama + solicitud de cambios).
+ */
+async function openPublish() {
   const gh = ghSettings();
   const files = [...S.dirty];
-  const dlg = modal('Publicar cambios', `
-    <p>${files.length ? `Hay <strong>${files.length}</strong> fichero(s) modificado(s):` : 'No hay cambios pendientes.'}</p>
-    <ul class="ed-files">${files.map((f) => `<li><code>${esc(f)}</code><button type="button" class="ed-mini" data-revert="${esc(f)}" title="Descartar cambios de este fichero">${icon('x', 14)}</button></li>`).join('')}</ul>
-    <h3 style="margin-top:16px">Publicar en GitHub</h3>
-    <p class="muted small">Se crea un único commit con todos los cambios. El portal se vuelve a publicar automáticamente en 1–2 minutos. Necesitas un <a href="https://github.com/settings/personal-access-tokens/new" rel="noopener" target="_blank">token de acceso de grano fino</a> con permiso <em>Contents: Read and write</em> (y <em>Actions: Read and write</em> para lanzar la sincronización) limitado a este repositorio.</p>
-    <div class="ed-field"><span>Repositorio</span><input type="text" id="gh-repo" value="${esc(gh.repo)}" placeholder="organizacion/repositorio"></div>
-    <div class="ed-field"><span>Rama</span><input type="text" id="gh-branch" value="${esc(gh.branch)}"></div>
-    <div class="ed-field"><span>Token</span><input type="password" id="gh-token" value="${esc(gh.token)}" autocomplete="off"></div>
-    <label class="ed-field" style="display:flex;gap:6px;align-items:center"><input type="checkbox" id="gh-remember"> Recordar en este navegador (si no, solo durante la sesión)</label>
-    <div class="ed-field"><span>Descripción del cambio</span><input type="text" id="gh-msg" value="Actualización de contenidos del portal de transparencia"></div>
-    <div class="modal-actions"><button type="button" class="btn" id="gh-go"${files.length ? '' : ' disabled'}>Publicar en GitHub</button>
-      <button type="button" class="btn-ghost" id="dl-go"${files.length ? '' : ' disabled'}>Descargar ficheros</button>
-      <button type="button" class="btn-ghost" id="discard"${files.length ? '' : ' disabled'}>Descartar todo</button></div>
-    <p id="gh-status" class="muted small" role="status"></p>`);
-  dlg.querySelectorAll('[data-revert]').forEach((b) => b.addEventListener('click', () => { revert(b.dataset.revert); dlg.close(); openPublish(); }));
+  const cfg = W('config/entidad.json');
+  const modo = gh.modo || cfg?.github?.publicacion || 'directo';
+  const dlg = modal('Revisar y publicar', `
+    <ol class="ed-steps-head" aria-label="Pasos"><li>Cambios</li><li>Comprobaciones</li><li>Vista previa</li><li>Publicar</li></ol>
+    <section class="ed-pub-sec"><h3>1. Cambios preparados <span class="ed-hint">(${files.length})</span></h3>
+      ${files.length ? '<ul class="ed-changes" id="pub-changes"><li class="ed-hint">Calculando…</li></ul>' : '<p>No hay cambios pendientes.</p>'}</section>
+    ${files.length ? `<section class="ed-pub-sec"><h3>2. Comprobaciones</h3><div id="pub-checks"><p class="ed-hint">Comprobando datos, enlaces, traducciones y accesibilidad…</p></div></section>
+    <section class="ed-pub-sec"><h3>3. Vista previa</h3><p class="ed-hint">Revisa cómo quedará el portal con los cambios en escritorio, tableta y móvil.</p><button type="button" class="btn-ghost" id="pub-prev">${icon('eye', 16)} Abrir vista previa</button></section>` : ''}
+    <section class="ed-pub-sec"><h3>${files.length ? '4. ' : ''}Publicar</h3>
+      ${files.length ? `<fieldset class="ed-modes"><legend class="sr-only">Modo de publicación</legend>
+        <label><input type="radio" name="pub-mode" value="revision"${modo === 'revision' ? ' checked' : ''}> <span><strong>Enviar a revisión</strong> (recomendado): crea una propuesta de cambios en GitHub; una persona responsable la revisa y la aprueba, y entonces se publica. El token necesita además el permiso <em>Pull requests: Read and write</em>.</span></label>
+        <label><input type="radio" name="pub-mode" value="directo"${modo !== 'revision' ? ' checked' : ''}> <span><strong>Publicar directamente</strong>: los cambios se publican en 1–2 minutos.</span></label></fieldset>` : ''}
+      <details class="ed-conn"${gh.token ? '' : ' open'}><summary>Conexión con GitHub ${gh.token ? '· <span class="ed-count-ok">conectado</span>' : '· sin conectar'}</summary>
+        <p class="muted small">Necesitas un <a href="https://github.com/settings/personal-access-tokens/new" rel="noopener" target="_blank">token de acceso de grano fino</a> limitado a este repositorio, con <em>Contents: Read and write</em> (y <em>Actions: Read and write</em> para lanzar la sincronización). Por seguridad, el token se guarda solo durante esta sesión salvo que marques «Recordar».</p>
+        <div class="ed-field"><span>Repositorio</span><input type="text" id="gh-repo" value="${esc(gh.repo)}" placeholder="organizacion/repositorio"></div>
+        <div class="ed-field"><span>Rama publicada</span><input type="text" id="gh-branch" value="${esc(gh.branch)}"></div>
+        <div class="ed-field"><span>Token</span><input type="password" id="gh-token" value="${esc(gh.token)}" autocomplete="off"></div>
+        <label class="ed-field" style="display:flex;gap:6px;align-items:center"><input type="checkbox" id="gh-remember"${gh.remembered ? ' checked' : ''}> Recordar en este navegador (no recomendado en equipos compartidos)</label>
+        ${gh.token ? '<button type="button" class="link-btn" id="gh-forget">Olvidar el token en este navegador</button>' : ''}
+        <details class="ed-hint"><summary>Para un uso en producción</summary><p>El token personal es adecuado para entidades pequeñas. En producción se recomienda una GitHub App u OAuth con un pequeño servicio intermedio, de modo que nadie maneje tokens, y proteger la rama publicada para que solo se publique mediante revisión. Ver docs/GUIA-EDITOR.md.</p></details></details>
+      ${files.length ? `<div class="ed-field"><span>Descripción del cambio</span><input type="text" id="gh-msg" value="Actualización de contenidos del portal de transparencia"></div>` : ''}
+      <div class="modal-actions">${files.length ? '<button type="button" class="btn" id="gh-go" disabled>Comprobando…</button><button type="button" class="btn-ghost" id="dl-go">Descargar ficheros</button><button type="button" class="btn-ghost" id="discard">Descartar todo</button>' : '<button type="button" class="btn" id="gh-save">Guardar conexión</button>'}</div>
+      <p id="gh-status" class="muted small" role="status"></p></section>`);
+  dlg.classList.add('ed-pub-dlg');
+  const creds = () => ({ repo: dlg.querySelector('#gh-repo').value.trim(), branch: dlg.querySelector('#gh-branch').value.trim() || 'main', token: dlg.querySelector('#gh-token').value.trim(), modo: dlg.querySelector('[name="pub-mode"]:checked')?.value || modo });
+  const store_ = (s) => { try { const rem = dlg.querySelector('#gh-remember').checked; (rem ? localStorage : sessionStorage).setItem('ed-gh', JSON.stringify(s)); if (!rem) localStorage.removeItem('ed-gh'); } catch { /* */ } };
+  dlg.querySelector('#gh-forget')?.addEventListener('click', () => { try { localStorage.removeItem('ed-gh'); sessionStorage.removeItem('ed-gh'); } catch { /* */ } dlg.close(); toast('Token olvidado'); });
+  dlg.querySelector('#gh-save')?.addEventListener('click', () => { store_(creds()); dlg.close(); toast('Conexión guardada'); });
+  if (!files.length) return;
+  // 1. resumen de cambios
+  const list = dlg.querySelector('#pub-changes');
+  list.innerHTML = (await Promise.all(files.map(async (f) => {
+    const before = S.orig.get(f) === 'null' ? null : JSON.parse(S.orig.get(f));
+    const d = G.describeChange(f, before, W(f));
+    return `<li><div class="ed-ch-head"><strong>${esc(await G.fileLabel(f, W(f)))}</strong><span class="ed-hint">${esc(d.resumen.join(' · '))}</span><button type="button" class="ed-mini" data-revert="${esc(f)}" title="Descartar los cambios de este fichero" aria-label="Descartar los cambios de este fichero">${icon('x', 14)}</button></div>
+      ${d.detalle.length ? `<details><summary>Antes / después</summary><table class="ed-diff"><thead><tr><th>Dónde</th><th>Antes</th><th>Después</th></tr></thead><tbody>${d.detalle.map((x) => `<tr><td>${esc(x.ruta)}</td><td><del>${esc(x.antes)}</del></td><td><ins>${esc(x.despues)}</ins></td></tr>`).join('')}</tbody></table></details>` : ''}</li>`;
+  }))).join('');
+  list.querySelectorAll('[data-revert]').forEach((b) => b.addEventListener('click', () => { revert(b.dataset.revert); dlg.close(); openPublish(); }));
+  dlg.querySelector('#pub-prev').addEventListener('click', () => G.preview(CTX, S.view?.kind === 'page' ? S.view.id : ''));
   dlg.querySelector('#dl-go').addEventListener('click', () => files.forEach((f) => download(f.replace(/\//g, '__'), serialize(f), 'application/json')));
   dlg.querySelector('#discard').addEventListener('click', () => { if (confirm('¿Descartar todos los cambios no publicados?')) { files.forEach(revert); dlg.close(); } });
-  dlg.querySelector('#gh-go').addEventListener('click', async () => {
-    const s = { repo: dlg.querySelector('#gh-repo').value.trim(), branch: dlg.querySelector('#gh-branch').value.trim() || 'main', token: dlg.querySelector('#gh-token').value.trim() };
-    try { (dlg.querySelector('#gh-remember').checked ? localStorage : sessionStorage).setItem('ed-gh', JSON.stringify(s)); } catch { /* */ }
+  // 2. comprobaciones
+  const res = await G.runChecks(CTX, files);
+  const box = dlg.querySelector('#pub-checks');
+  box.innerHTML = `${G.checksHtml(res)}<p class="ed-hint">${res.errores ? `<strong class="ed-chk-error">${res.errores} error(es) impiden publicar.</strong> Corrígelos y vuelve a abrir «Revisar y publicar».` : res.avisos ? `${res.avisos} aviso(s): puedes publicar, pero conviene revisarlos.` : 'Todo correcto.'}</p>`;
+  box.querySelectorAll('[data-accion]').forEach((b) => b.addEventListener('click', () => { dlg.close(); go(JSON.parse(b.dataset.accion)); }));
+  const goBtn = dlg.querySelector('#gh-go');
+  const label_ = () => (creds().modo === 'revision' ? 'Enviar a revisión' : 'Publicar en GitHub');
+  goBtn.disabled = res.errores > 0; goBtn.textContent = res.errores ? 'Corrige los errores para publicar' : label_();
+  dlg.querySelectorAll('[name="pub-mode"]').forEach((r) => r.addEventListener('change', () => { if (!res.errores) goBtn.textContent = label_(); }));
+  goBtn.addEventListener('click', async () => {
+    const s = creds();
+    store_(s);
     const status = dlg.querySelector('#gh-status');
+    if (!s.repo || !s.token) { status.textContent = 'Indica el repositorio y el token en «Conexión con GitHub».'; dlg.querySelector('.ed-conn').open = true; return; }
+    const msg = dlg.querySelector('#gh-msg').value || 'Actualización de contenidos';
+    goBtn.disabled = true;
     try {
       status.textContent = 'Conectando con GitHub…';
       const ref = await ghApi(s, `/repos/${s.repo}/git/ref/heads/${encodeURIComponent(s.branch)}`);
       const base = await ghApi(s, `/repos/${s.repo}/git/commits/${ref.object.sha}`);
-      status.textContent = 'Creando commit…';
+      status.textContent = 'Preparando los cambios…';
       const tree = await ghApi(s, `/repos/${s.repo}/git/trees`, { method: 'POST', body: JSON.stringify({ base_tree: base.tree.sha, tree: files.map((f) => ({ path: f, mode: '100644', type: 'blob', content: serialize(f) })) }) });
-      const commit = await ghApi(s, `/repos/${s.repo}/git/commits`, { method: 'POST', body: JSON.stringify({ message: dlg.querySelector('#gh-msg').value || 'Actualización de contenidos', tree: tree.sha, parents: [ref.object.sha] }) });
-      await ghApi(s, `/repos/${s.repo}/git/refs/heads/${encodeURIComponent(s.branch)}`, { method: 'PATCH', body: JSON.stringify({ sha: commit.sha }) });
+      const commit = await ghApi(s, `/repos/${s.repo}/git/commits`, { method: 'POST', body: JSON.stringify({ message: msg, tree: tree.sha, parents: [ref.object.sha] }) });
+      let done;
+      if (s.modo === 'revision') {
+        const br = `revision/${new Date().toISOString().slice(0, 16).replace(/[-:T]/g, '')}-${Math.random().toString(36).slice(2, 6)}`;
+        await ghApi(s, `/repos/${s.repo}/git/refs`, { method: 'POST', body: JSON.stringify({ ref: `refs/heads/${br}`, sha: commit.sha }) });
+        const body = `## Cambios\n\n${(await Promise.all(files.map(async (f) => `- **${await G.fileLabel(f, W(f))}** (\`${f}\`): ${G.describeChange(f, S.orig.get(f) === 'null' ? null : JSON.parse(S.orig.get(f)), W(f)).resumen.join(', ')}`))).join('\n')}\n\n## Comprobaciones\n\n${res.grupos.map((gr) => `- ${gr.nivel === 'ok' ? '✅' : gr.nivel === 'aviso' ? '⚠️' : '❌'} ${gr.titulo}${gr.items.length ? `\n${gr.items.map((i) => `  - ${i.texto}`).join('\n')}` : ''}`).join('\n')}\n\nPropuesta enviada desde el editor del portal. Al aprobarla y fusionarla, el portal se publica automáticamente.`;
+        const pr = await ghApi(s, `/repos/${s.repo}/pulls`, { method: 'POST', body: JSON.stringify({ title: msg, head: br, base: s.branch, body }) });
+        done = `✓ Enviado a revisión: <a href="${esc(pr.html_url)}" target="_blank" rel="noopener">propuesta #${pr.number}</a>. Se publicará cuando la persona responsable la apruebe.`;
+        toast('Cambios enviados a revisión');
+      } else {
+        await ghApi(s, `/repos/${s.repo}/git/refs/heads/${encodeURIComponent(s.branch)}`, { method: 'PATCH', body: JSON.stringify({ sha: commit.sha }) });
+        done = `✓ Publicado (<a href="https://github.com/${esc(s.repo)}/commit/${commit.sha}" target="_blank" rel="noopener">${commit.sha.slice(0, 7)}</a>). El portal se actualizará en 1–2 minutos.`;
+        toast('Cambios publicados');
+      }
       files.forEach((f) => { S.orig.set(f, JSON.stringify(W(f))); S.dirty.delete(f); });
       saveDraft(); refreshCounters(); renderSide();
-      status.innerHTML = `✓ Publicado (<a href="https://github.com/${esc(s.repo)}/commit/${commit.sha}" target="_blank" rel="noopener">${commit.sha.slice(0, 7)}</a>). El portal se actualizará en 1–2 minutos.`;
-      toast('Cambios publicados');
-    } catch (e) { status.textContent = `✗ Error: ${e.message}`; }
+      status.innerHTML = done;
+    } catch (e) {
+      goBtn.disabled = false;
+      status.textContent = `✗ Error: ${e.message}${/40[34]/.test(e.message) ? ' · Revisa que el token tenga los permisos indicados para este repositorio.' : ''}`;
+    }
   });
 }
 function revert(path) {
@@ -589,6 +787,32 @@ function revert(path) {
 }
 
 // ------------------------------------------------------------------ arranque
+// ------------------------------------------------------------------ navegación entre secciones (desde el inicio y las comprobaciones)
+function go(a) {
+  if (!a) return;
+  if (a.tipo === 'abrir') {
+    const r = a.ruta || '';
+    if (r.startsWith('content/paginas/')) a = { tipo: 'pagina', id: r.slice(16).replace('.json', '') };
+    else if (r.startsWith('data/')) a = { tipo: 'datos', id: r.slice(5).replace('.json', '') };
+    else if (r === 'content/portal.json') { S.tab = 'paginas'; renderSide(); return openHome(); }
+    else a = { tipo: 'entidad' };
+  }
+  switch (a.tipo) {
+    case 'pagina': S.tab = 'paginas'; return openPage(a.id);
+    case 'datos': S.tab = 'datos'; return openData(a.id);
+    case 'entidad': case 'sync': case 'inicio': S.tab = a.tipo; return renderSide();
+    case 'publicar': return openPublish();
+    case 'preview': return G.preview(CTX, S.view?.kind === 'page' ? S.view.id : '');
+    default: return undefined;
+  }
+}
+async function restore(path, obj) {
+  try { await load(path); } catch { S.orig.set(path, 'null'); S.work.set(path, clone(obj)); S.snap.set(path, JSON.stringify(obj)); markDirty(path); refreshCounters(); return; }
+  change(path, (d) => { Object.keys(d).forEach((k) => delete d[k]); Object.assign(d, clone(obj)); });
+  rerender();
+}
+const CTX = { S, W, load, change, toast, ghSettings, ghApi, go, restore };
+
 function rerender() {
   renderSide();
   if (S.view?.kind === 'page' && S.work.has(PATH())) { renderPage(); S.sel !== null && W(PATH()).bloques[S.sel] ? selectBlock(S.sel) : showPalette(); }
@@ -610,12 +834,14 @@ async function init() {
     } else localStorage.removeItem('ed-draft');
   } catch { /* */ }
   $('#ed-edit-lang').addEventListener('change', (e) => { S.lang = e.target.value; setLang(S.lang); rerender(); });
+  $('#ed-mode').value = S.mode;
+  $('#ed-mode').addEventListener('change', (e) => { S.mode = e.target.value; try { localStorage.setItem('ed-mode', S.mode); } catch { /* */ } rerender(); toast(S.mode === 'simple' ? 'Modo sencillo: se ocultan los detalles técnicos' : 'Modo avanzado: se muestran nombres de campo, filtros y opciones técnicas'); });
+  $('#ed-preview').addEventListener('click', () => G.preview(CTX, S.view?.kind === 'page' ? S.view.id : ''));
   document.querySelectorAll('.ed-tabs [role="tab"]').forEach((b) => b.addEventListener('click', () => { S.tab = b.dataset.tab; renderSide(); }));
   $('#ed-undo').addEventListener('click', undo);
   $('#ed-publish').addEventListener('click', openPublish);
   document.addEventListener('keydown', (e) => { if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'z' && !/input|textarea/i.test(document.activeElement.tagName)) { e.preventDefault(); undo(); } });
   window.addEventListener('beforeunload', (e) => { if (S.dirty.size) { e.preventDefault(); e.returnValue = ''; } });
   await renderSide();
-  openPage(W('content/portal.json').categorias[0].paginas[0]);
 }
 init();

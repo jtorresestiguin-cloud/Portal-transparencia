@@ -26,7 +26,7 @@ Estructura habitual de los portales municipales: barra institucional, cabecera c
 
 La portada funciona como **directorio**: cada categoría es una caja con sus subapartados enlazados y su grado de cumplimiento.
 
-Portada orientada a tareas (buscador, preguntas frecuentes, datos destacados con fuente y fecha); **buscador** con autocompletado, sinónimos ciudadanos y resultados agrupados (`#/buscar?q=`); banda de **procedencia** (actualizado · fuente · responsable · descargas) en cada página; página *Sobre los datos*. Castellano, valenciano e inglés; modo oscuro; cada gráfico con vista de tabla y descarga CSV/SVG; filtros en la URL; diseño adaptable a móvil.
+Portada orientada a tareas en dos niveles: primero buscar, preguntas frecuentes, temas y cifras; después «Para profundizar», con *Explorar los datos* (actualizaciones, catálogo, API) y *Cumplimiento y metodología* (índice, fuentes, DCAT, OCDS); **buscador** con autocompletado, sinónimos ciudadanos y resultados agrupados (`#/buscar?q=`); banda de **procedencia** (actualizado · fuente · responsable · descargas) en cada página; página *Sobre los datos*. Castellano, valenciano e inglés; modo oscuro; cada gráfico con vista de tabla y descarga CSV/SVG; filtros en la URL; diseño adaptable a móvil.
 
 ### 2. Editor visual por componentes (`/admin/`)
 Al estilo de Adobe Experience Manager: las páginas se componen con **bloques** («cajitas») que se arrastran desde una paleta, se reordenan y se configuran en un panel de propiedades con **vista previa real**.
@@ -36,7 +36,9 @@ Al estilo de Adobe Experience Manager: las páginas se componen con **bloques** 
 - **Componentes avanzados:** explorador del presupuesto, explorador de contratación, índice de transparencia, catálogo de datos, solicitud de información.
 - **Datos:** formularios generados desde el esquema para dar de alta y modificar **altos cargos**, agenda, normativa, convenios, inmuebles, etc. (con listas desplegables de códigos y validación de tipos).
 - **Entidad:** nombre, NIF, DIR3, colores corporativos, escudo y configuración de fuentes automáticas.
-- **Publicar:** un solo commit en GitHub con todos los cambios (token de grano fino) o descarga de ficheros. Borrador automático en el navegador, deshacer y aviso de traducciones pendientes.
+- **Inicio de gestión:** estado del portal, obligaciones con estado **calculado automáticamente** (obligación → fuente → periodicidad → última actualización), fuentes automáticas, avisos que necesitan atención, primeros pasos e historial de publicaciones con recuperación de versiones anteriores.
+- **Modo sencillo / avanzado:** el sencillo usa solo lenguaje funcional, resume en una frase lo que muestra cada componente y construye los filtros con desplegables.
+- **Revisar y publicar:** resumen de cambios con antes/después, comprobaciones previas (esquemas, enlaces, traducciones, documentos, componentes, contraste WCAG, fuentes), vista previa en escritorio/tableta/móvil y publicación directa o **como propuesta de revisión** (pull request) para separar edición y publicación. Importación CSV con validación, borrador automático y deshacer.
 
 Guía de uso: [`docs/GUIA-EDITOR.md`](docs/GUIA-EDITOR.md). Rediseño UX, auditoría y pruebas: [`docs/REDISENO-UX.md`](docs/REDISENO-UX.md).
 

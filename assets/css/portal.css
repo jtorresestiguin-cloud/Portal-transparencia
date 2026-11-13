@@ -277,6 +277,23 @@ a.stat:hover { border-color: var(--line-strong); box-shadow: var(--sh-1); }
 .ask-cta.compact { flex-direction: row; flex-wrap: wrap; justify-content: space-between; align-items: center; margin-top: var(--sp-7); padding: var(--sp-5); }
 .ask-cta.compact > div { flex: 1 1 340px; }
 .ask-cta.compact .ask-title { font-size: 1.0625rem; }
+/* Portada · segunda capa: datos y cumplimiento, separada visualmente del recorrido ciudadano */
+.home-body > .ask-cta { margin: 0 0 var(--sp-7); }
+.home-deep { background: var(--surface-2); border-top: var(--border); padding: var(--sp-6) 0 var(--sp-7); }
+.deep-kicker { font-size: var(--fs-meta); text-transform: uppercase; letter-spacing: .08em; color: var(--muted); font-weight: 700; margin: 0 0 var(--sp-4); }
+.deep-grid { display: grid; gap: var(--sp-5); grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 900px) { .deep-grid { grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); align-items: start; } }
+.deep-card { background: var(--surface); border: var(--border); border-radius: var(--r-lg); padding: var(--sp-5); }
+.deep-card h3 { display: flex; gap: var(--sp-2); align-items: center; font-size: 1.125rem; margin: 0 0 var(--sp-2); }
+.deep-card h3 .icon { color: var(--brand-ink); }
+.deep-desc { color: var(--ink-2); font-size: var(--fs-small); margin: 0 0 var(--sp-4); }
+.deep-sub { font-size: var(--fs-meta); font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; margin: 0 0 var(--sp-2); }
+.deep-links { display: flex; flex-wrap: wrap; gap: var(--sp-2) var(--sp-4); margin: var(--sp-3) 0 0; font-size: var(--fs-small); font-weight: 600; }
+.deep-links a { display: inline-flex; gap: 4px; align-items: center; min-height: 24px; }
+.deep-score { display: flex; align-items: baseline; gap: var(--sp-3); text-decoration: none; color: var(--ink-2); padding: var(--sp-3) var(--sp-4); border: var(--border); border-radius: var(--r-md); background: var(--surface-2); }
+.deep-score:hover { border-color: var(--brand); }
+.deep-score-n { font-size: 1.75rem; font-weight: 800; color: var(--ink); font-variant-numeric: tabular-nums; }
+.obl-why { display: block; margin-top: 2px; }
 .home-about { display: grid; gap: var(--sp-3); grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); padding-top: var(--sp-5); border-top: var(--border); }
 .home-about a { display: flex; gap: var(--sp-3); align-items: flex-start; padding: var(--sp-3); border-radius: var(--r-md); text-decoration: none; color: var(--ink-2); font-size: var(--fs-small); }
 .home-about a:hover { background: var(--surface); }

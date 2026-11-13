@@ -118,7 +118,7 @@ async function renderChrome() {
       <li><a href="api/openapi.json">OpenAPI</a> · <a href="datapackage.json">Data Package</a></li><li><a href="feed.xml">${t('feed')}</a></li></ul></nav>
     </div>
     <div class="container footer-bottom"><p class="small">${tr('Información publicada conforme a la Ley 19/2013 y a la', 'Informació publicada d’acord amb la Llei 19/2013 i la', 'Published under Law 19/2013 and')} <a href="${esc(CFG.normativa_autonomica?.eli || '#')}">${esc(pick(CFG.normativa_autonomica))}</a>. ${t('footer_license')} <a href="${esc(CFG.licencia_datos)}" rel="license">CC BY 4.0</a>.</p>
-    <p class="small"><a href="#/accesibilidad">${tr('Accesibilidad y aviso legal', 'Accessibilitat i avís legal', 'Accessibility & legal')}</a> · <a href="admin/">${t('editor')}</a></p></div>`;
+    <p class="small"><a href="#/accesibilidad">${tr('Accesibilidad y aviso legal', 'Accessibilitat i avís legal', 'Accessibility & legal')}</a></p></div>`;
 }
 function markNav(id) {
   document.querySelectorAll('[data-nav]').forEach((a) => (a.dataset.nav === (id || '') ? a.setAttribute('aria-current', 'page') : a.removeAttribute('aria-current')));
@@ -180,22 +180,27 @@ async function viewHome(view) {
     <div class="container home-body">
       <section class="home-section" aria-labelledby="h-faq"><h2 id="h-faq" class="section-title">${tr('Lo más consultado', 'El més consultat', 'Most viewed')}</h2>
         <ul class="faq-list">${preguntas.map((q) => `<li><a href="#/${q.pagina}">${icon('question', 20)}<span>${esc(pick(q.texto))}</span>${icon('arrow', 18)}</a></li>`).join('')}</ul></section>
-      <section class="home-section" aria-labelledby="h-data"><div class="section-head"><h2 id="h-data" class="section-title">${tr('Datos destacados', 'Dades destacades', 'Key figures')}</h2><a href="#/sobre-los-datos" class="section-link">${tr('Cómo se calculan', 'Com es calculen', 'How they are calculated')}</a></div>
-        <div class="stat-row" data-figures aria-busy="true">${(PORTAL.portada.datos_destacados || []).map(() => '<div class="stat sk"></div>').join('')}</div></section>
       <section class="home-section" aria-labelledby="h-topics"><h2 id="h-topics" class="section-title">${tr('Explora por temas', 'Explora per temes', 'Explore by topic')}</h2>
         <ul class="topic-list">${PORTAL.categorias.map((c) => `<li><a class="topic" href="#/categoria/${c.id}"><span class="topic-icon">${icon(c.icono, 22)}</span><span class="topic-body"><span class="topic-title">${esc(pick(c.titulo))}</span><span class="topic-desc">${esc(pick(c.descripcion))}</span></span><span class="topic-count">${c.paginas.length} ${c.paginas.length === 1 ? tr('contenido', 'contingut', 'item') : tr('contenidos', 'continguts', 'items')}${icon('chevron', 16)}</span></a></li>`).join('')}</ul></section>
-      <div class="home-split">
-        <section class="home-section" aria-labelledby="h-upd"><h2 id="h-upd" class="section-title">${tr('Últimas actualizaciones', 'Últimes actualitzacions', 'Latest updates')}</h2>
-          <ul class="update-list">${updates.map((u) => `<li><a href="#/${u.pagina || 'datos/' + u.id}"><span class="update-title">${esc(pick(u.titulo))}</span><span class="update-meta">${fmt.int(u.registros)} ${t('records')} · ${u.fuente === 'placsp' || u.fuente === 'bdns' ? tr('actualización automática', 'actualització automàtica', 'automatic update') : tr('actualización manual', 'actualització manual', 'manual update')}</span></a><time datetime="${u.actualizado}">${fmt.date(u.actualizado)}</time></li>`).join('')}</ul>
-          <p class="small"><a href="feed.xml">${icon('rss', 14)} ${tr('Suscríbete a las novedades (Atom)', 'Subscriu-te a les novetats (Atom)', 'Subscribe to updates (Atom)')}</a></p></section>
-        ${askCta()}
-      </div>
-      <section class="home-about" aria-labelledby="h-about"><h2 id="h-about" class="sr-only">${tr('Sobre este portal', 'Sobre aquest portal', 'About this portal')}</h2>
-        <a href="#/sobre-los-datos">${icon('info', 20)}<span><strong>${tr('Sobre los datos', 'Sobre les dades', 'About the data')}</strong>${tr('Procedencia, actualización y metodología', 'Procedència, actualització i metodologia', 'Sources, updates and method')}</span></a>
-        <a href="#/datos-abiertos">${icon('database', 20)}<span><strong>${tr('Datos abiertos y API', 'Dades obertes i API', 'Open data & API')}</strong>CSV · JSON · API · DCAT · OCDS</span></a>
-        <a href="#/indice">${icon('check', 20)}<span><strong>${tr('Índice de cumplimiento', 'Índex de compliment', 'Compliance index')}</strong>${tr('Qué publica el Ayuntamiento y qué falta', 'Què publica l’Ajuntament i què falta', 'What is published and what is missing')}</span></a></section>
-    </div>`;
+      <section class="home-section" aria-labelledby="h-data"><div class="section-head"><h2 id="h-data" class="section-title">${tr('En cifras', 'En xifres', 'In figures')}</h2><a href="#/sobre-los-datos" class="section-link">${tr('Cómo se calculan', 'Com es calculen', 'How they are calculated')}</a></div>
+        <div class="stat-row" data-figures aria-busy="true">${(PORTAL.portada.datos_destacados || []).map(() => '<div class="stat sk"></div>').join('')}</div></section>
+      ${askCta(true)}
+    </div>
+    <section class="home-deep" aria-labelledby="h-deep"><div class="container">
+      <h2 id="h-deep" class="deep-kicker">${tr('Para profundizar', 'Per a aprofundir', 'Go deeper')}</h2>
+      <div class="deep-grid">
+        <section class="deep-card" aria-labelledby="h-explore-data"><h3 id="h-explore-data">${icon('database', 20)}${tr('Explorar los datos', 'Explorar les dades', 'Explore the data')}</h3>
+          <p class="deep-desc">${tr('Para periodistas, investigadores y reutilizadores: conjuntos completos, descargas y API.', 'Per a periodistes, investigadors i reutilitzadors: conjunts complets, descàrregues i API.', 'For journalists, researchers and re-users: full datasets, downloads and API.')}</p>
+          <p class="deep-sub">${tr('Últimas actualizaciones', 'Últimes actualitzacions', 'Latest updates')}</p>
+          <ul class="update-list">${updates.slice(0, 4).map((u) => `<li><a href="#/${u.pagina || 'datos/' + u.id}"><span class="update-title">${esc(pick(u.titulo))}</span><span class="update-meta">${fmt.int(u.registros)} ${t('records')} · ${u.fuente === 'placsp' || u.fuente === 'bdns' ? tr('actualización automática', 'actualització automàtica', 'automatic update') : tr('actualización manual', 'actualització manual', 'manual update')}</span></a><time datetime="${u.actualizado}">${fmt.date(u.actualizado)}</time></li>`).join('')}</ul>
+          <p class="deep-links"><a href="#/datos-abiertos">${tr('Catálogo de datos', 'Catàleg de dades', 'Data catalogue')}</a><a href="api/openapi.json">API</a><a href="feed.xml">${icon('rss', 14)} Atom</a></p></section>
+        <section class="deep-card" aria-labelledby="h-method"><h3 id="h-method">${icon('check', 20)}${tr('Cumplimiento y metodología', 'Compliment i metodologia', 'Compliance and method')}</h3>
+          <p class="deep-desc">${tr('Qué obliga a publicar la ley, si está al día y de dónde sale cada dato.', 'Què obliga a publicar la llei, si està al dia i d’on ix cada dada.', 'What the law requires, whether it is up to date and where each figure comes from.')}</p>
+          <a class="deep-score" href="#/indice" data-score><span class="deep-score-n">—</span><span>${tr('Índice de cumplimiento', 'Índex de compliment', 'Compliance index')}</span></a>
+          <p class="deep-links"><a href="#/indice">${tr('Obligaciones legales', 'Obligacions legals', 'Legal obligations')}</a><a href="#/sobre-los-datos">${tr('Fuentes y actualización', 'Fonts i actualització', 'Sources and updates')}</a><a href="data/catalog.jsonld">DCAT-AP</a><a href="#/contratos">OCDS</a></p></section>
+      </div></div></section>`;
   searchBox(view.querySelector('.home-search'), { size: 'lg', popular: popular() });
+  import('./compliance.js').then(async (C) => { const sc = C.score(await C.obligaciones()); const el = view.querySelector('[data-score] .deep-score-n'); if (el) el.textContent = `${fmt.dec(sc.total, 0)} %`; }).catch(() => {});
   // cifras después de pintar (no bloquean la portada)
   Promise.all((PORTAL.portada.datos_destacados || []).map((it) => figure(it).catch(() => null))).then((fs) => {
     const row = view.querySelector('[data-figures]');
@@ -210,9 +215,9 @@ async function viewCategory(view, id) {
   const c = PORTAL.categorias.find((x) => x.id === id);
   if (!c) return notFound(view);
   const pages = await Promise.all(c.paginas.map(async (p) => { const pg = await store.page(p); const meta = await pageMeta(pg); return { id: p, pg, meta }; }));
-  const obl = (await store.rows('obligaciones')).filter((o) => c.paginas.includes(o.pagina) && o.estado !== 'no_aplica');
-  const { isStale } = await import('./blocks/avanzados.js');
-  const ok = obl.filter((o) => o.estado === 'publicado' && !isStale(o)).length;
+  const { obligaciones } = await import('./compliance.js');
+  const obl = (await obligaciones(c.paginas)).filter((o) => o.estado_calc !== 'no_aplica');
+  const ok = obl.filter((o) => o.estado_calc === 'publicado').length;
   view.innerHTML = `<div class="container layout-sidebar">${await categoryNav(c, null)}<div class="content">
     ${pageHeader({ titulo: c.titulo, intro: c.descripcion }, [['#/', t('home')], [null, pick(c.titulo)]])}
     ${c.cifras?.length ? `<section aria-labelledby="h-kf"><h2 id="h-kf" class="section-title">${tr('Cifras clave', 'Xifres clau', 'Key figures')}</h2><div class="stat-row" data-figures></div></section>` : ''}
@@ -293,6 +298,8 @@ async function viewSearch(view, query) {
 
 // ---------------------------------------------------------------- arranque
 async function init() {
+  // Vista previa desde el editor (admin/): el portal se muestra en un iframe con los borradores sin publicar.
+  try { const ov = window.parent !== window && window.parent.__edPreview?.(); if (ov) { for (const [p, o] of Object.entries(ov)) store.setOverride(p, o); document.documentElement.dataset.preview = '1'; } } catch { /* otro origen */ }
   [CFG, PORTAL] = await Promise.all([store.config(), store.portal()]);
   setCodelists(await store.getJSON('data/codelists.json'));
   let l = new URLSearchParams(location.search).get('lang');

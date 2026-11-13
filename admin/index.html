@@ -17,15 +17,20 @@
       <label class="ed-lang">Idioma de edición
         <select id="ed-edit-lang"><option value="es">Castellano</option><option value="va">Valencià</option><option value="en">English</option></select>
       </label>
+      <label class="ed-lang">Modo
+        <select id="ed-mode" title="El modo sencillo oculta los detalles técnicos"><option value="simple">Sencillo</option><option value="avanzado">Avanzado</option></select>
+      </label>
+      <button type="button" class="btn-ghost" id="ed-preview">Vista previa</button>
       <a class="btn-ghost" href="../" target="_blank" rel="noopener">Ver portal ↗</a>
       <button type="button" class="btn-ghost" id="ed-undo" disabled>Deshacer</button>
-      <button type="button" class="btn" id="ed-publish">Publicar <span class="ed-count" id="ed-count">0</span></button>
+      <button type="button" class="btn" id="ed-publish">Revisar y publicar <span class="ed-count" id="ed-count">0</span></button>
     </div>
   </header>
   <div class="ed-layout">
     <nav class="ed-side" aria-label="Secciones del editor">
       <div class="ed-tabs" role="tablist">
-        <button role="tab" data-tab="paginas" aria-selected="true">Páginas</button>
+        <button role="tab" data-tab="inicio" aria-selected="true">Inicio</button>
+        <button role="tab" data-tab="paginas" aria-selected="false">Páginas</button>
         <button role="tab" data-tab="datos" aria-selected="false">Datos</button>
         <button role="tab" data-tab="entidad" aria-selected="false">Entidad</button>
         <button role="tab" data-tab="sync" aria-selected="false">Fuentes</button>

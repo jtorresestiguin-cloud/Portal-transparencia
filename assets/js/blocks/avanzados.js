@@ -1,6 +1,7 @@
 /**
  * Componentes avanzados: exploradores interactivos que se insertan como un bloque más.
  */
+import * as C from '../compliance.js';
 import { tr, t, pick, label, codes, lang } from '../i18n.js';
 import { h, esc, icon, fmt, sum, groupBy, chartCard, dataTable, kpiRow, delta, meter, statusBadge, selectControl, modal, definitionList, download, toCSV, flushCharts, filterSummary, emptyState } from '../ui.js';
 import { sankey, treemap, columns, hBar, SERIES } from '../charts.js';
@@ -232,34 +233,27 @@ async function contratacion(el, p, ctx) {
 }
 
 // ============================================================================ ÍNDICE
-const PESO = { publicado: 1, parcial: 0.5, pendiente: 0 };
-const MAX_DIAS = { continua: 15, semanal: 10, mensual: 45, trimestral: 105, semestral: 200, anual: 380, cuando_cambie: 400 };
+// El estado se calcula a partir de las evidencias (compliance.js); isStale y score
+// se mantienen por compatibilidad con bloques y extensiones existentes.
+const MAX_DIAS = C.MAX_DIAS;
 export const isStale = (o, hoy = new Date()) => o.estado === 'publicado' && o.ultima_actualizacion && (hoy - new Date(o.ultima_actualizacion + 'T00:00:00Z')) / 864e5 > MAX_DIAS[o.periodicidad];
-export function score(obl) {
-  const ap = obl.filter((o) => o.estado !== 'no_aplica');
-  const s_ = (set) => (set.reduce((a, o) => a + PESO[o.estado], 0) / (set.length || 1)) * 100;
-  const counts = { publicado: 0, parcial: 0, pendiente: 0 };
-  ap.forEach((o) => counts[o.estado]++);
-  return { total: s_(ap), counts, byBloque: [...new Set(ap.map((o) => o.bloque))].map((b) => ({ bloque: b, score: s_(ap.filter((o) => o.bloque === b)), n: ap.filter((o) => o.bloque === b).length })), stale: ap.filter((o) => isStale(o)).length };
-}
+export const score = (ev) => C.score(ev[0] && 'estado_calc' in ev[0] ? ev : ev.map((o) => ({ ...o, estado_calc: isStale(o) ? 'desactualizada' : o.estado })));
 async function indice(el) {
-  const obl = await store.rows('obligaciones');
-  const ap = obl.filter((o) => o.estado !== 'no_aplica');
-  const sc = score(obl);
-  const stale = ap.filter((o) => isStale(o));
-  const fresh = sc.counts.publicado - stale.length;
+  const ev = await C.obligaciones();
+  const sc = C.score(ev);
   const stat = (n, txt, cls, ic) => `<div class="status-stat status-${cls}">${icon(ic, 22)}<span class="status-n">${n}</span><span>${txt}</span></div>`;
   el.innerHTML = `<div class="callout callout-info">${icon('info', 20)}<div><p>${tr('Esta página explica qué información obliga a publicar la normativa de transparencia y si el Ayuntamiento la tiene publicada y al día. Es información de control: <strong>si buscas un dato concreto, usa el buscador o los temas</strong>.', 'Aquesta pàgina explica quina informació obliga a publicar la normativa de transparència i si l’Ajuntament la té publicada i al dia. És informació de control: <strong>si busques una dada concreta, usa el cercador o els temes</strong>.', 'This page explains what transparency law requires to be published and whether it is published and up to date. It is a control tool: <strong>to find specific information, use search or topics</strong>.')}</p></div></div>
     <section><h2 class="section-title">${tr('¿Está publicada la información?', 'Està publicada la informació?', 'Is the information published?')}</h2>
-      <div class="status-stats">${stat(fresh, tr('Disponibles y al día', 'Disponibles i al dia', 'Available and up to date'), 'good', 'ok')}${stat(stale.length, tr('Disponibles, pendientes de actualizar', 'Disponibles, pendents d’actualitzar', 'Available, need updating'), 'serious', 'clock')}${stat(sc.counts.parcial, tr('Incompletas', 'Incompletes', 'Incomplete'), 'warning', 'alert')}${stat(sc.counts.pendiente, tr('Pendientes de publicar', 'Pendents de publicar', 'Not yet published'), 'critical', 'alert')}</div>
-      <p class="muted small">${tr(`Índice de cumplimiento: <strong>${fmt.dec(sc.total, 0)} %</strong> (publicada = 1 punto, incompleta = 0,5, pendiente = 0; ${ap.length} obligaciones evaluadas).`, `Índex de compliment: <strong>${fmt.dec(sc.total, 0)} %</strong> (publicada = 1 punt, incompleta = 0,5, pendent = 0; ${ap.length} obligacions avaluades).`, `Compliance index: <strong>${fmt.dec(sc.total, 0)}%</strong> (published = 1, incomplete = 0.5, pending = 0; ${ap.length} obligations assessed).`)}</p></section>
+      <div class="status-stats">${stat(sc.counts.publicado, tr('Disponibles y al día', 'Disponibles i al dia', 'Available and up to date'), 'good', 'ok')}${stat(sc.counts.desactualizada, tr('Disponibles, pendientes de actualizar', 'Disponibles, pendents d’actualitzar', 'Available, need updating'), 'serious', 'clock')}${stat(sc.counts.parcial, tr('Incompletas', 'Incompletes', 'Incomplete'), 'warning', 'alert')}${stat(sc.counts.pendiente, tr('Pendientes de publicar', 'Pendents de publicar', 'Not yet published'), 'critical', 'alert')}</div>
+      <p class="muted small">${tr(`Índice de cumplimiento: <strong>${fmt.dec(sc.total, 0)} %</strong> (al día = 1 punto, pendiente de actualizar = 0,75, incompleta = 0,5, pendiente = 0; ${sc.n} obligaciones evaluadas). El estado se calcula automáticamente con la fecha de la última actualización de cada página y conjunto de datos y la periodicidad exigida.`, `Índex de compliment: <strong>${fmt.dec(sc.total, 0)} %</strong> (al dia = 1 punt, pendent d’actualitzar = 0,75, incompleta = 0,5, pendent = 0; ${sc.n} obligacions avaluades). L’estat es calcula automàticament amb la data de l’última actualització de cada pàgina i conjunt de dades i la periodicitat exigida.`, `Compliance index: <strong>${fmt.dec(sc.total, 0)}%</strong> (up to date = 1, needs updating = 0.75, incomplete = 0.5, pending = 0; ${sc.n} obligations assessed). Status is computed automatically from the last update of each page and dataset and the required frequency.`)}</p></section>
     <section><h2 class="section-title">${tr('Por temas', 'Per temes', 'By topic')}</h2><ul class="meter-list">${sc.byBloque.map((b) => `<li><span class="ml-label">${label('bloque_obligacion', b.bloque)}</span><span class="ml-val">${fmt.dec(b.score, 0)} %</span>${meter(b.score, { labelText: `${label('bloque_obligacion', b.bloque)}: ${fmt.dec(b.score, 0)} %` })}</li>`).join('')}</ul></section>`;
   const card = h(`<section><h2 class="section-title">${tr('Detalle técnico: obligación, fundamento, estado y evidencia', 'Detall tècnic: obligació, fonament, estat i evidència', 'Technical detail: obligation, legal basis, status and evidence')}</h2></section>`);
-  card.appendChild(dataTable({ caption: tr('Obligaciones', 'Obligacions', 'Obligations'), rows: obl, pageSize: 60, columns: [
+  const ORD = { no_aplica: -1, pendiente: 0, parcial: 0.5, desactualizada: 0.75, publicado: 1 };
+  card.appendChild(dataTable({ caption: tr('Obligaciones', 'Obligacions', 'Obligations'), rows: ev, pageSize: 60, columns: [
     { key: 'titulo', label: tr('Obligación', 'Obligació', 'Obligation') },
     { key: 'norma', label: tr('Fundamento', 'Fonament', 'Legal basis'), format: (v, o) => `${v}, ${o.articulo}` },
-    { key: 'estado', label: tr('Estado', 'Estat', 'Status'), html: true, format: (v, o) => statusBadge(isStale(o) ? 'desactualizada' : v), sortValue: (o) => (o.estado === 'no_aplica' ? -1 : PESO[o.estado] - (isStale(o) ? 0.25 : 0)) },
-    { key: 'ultima_actualizacion', label: t('updated'), format: (v, o) => (v ? `${fmt.date(v)} · ${label('periodicidad', o.periodicidad)}` : label('periodicidad', o.periodicidad)) },
+    { key: 'estado_calc', label: tr('Estado', 'Estat', 'Status'), html: true, format: (v, o) => `${statusBadge(v)}${o.automatico ? `<span class="muted small obl-why">${esc(C.motivoTexto(o, tr, fmt.date))}</span>` : ''}`, sortValue: (o) => ORD[o.estado_calc] ?? 0 },
+    { key: 'evidencia', label: t('updated'), format: (v, o) => (v ? `${fmt.date(v)} · ${label('periodicidad', o.periodicidad)}` : label('periodicidad', o.periodicidad)) },
     { key: 'pagina', label: tr('Evidencia', 'Evidència', 'Evidence'), html: true, format: (v) => `<a href="#/${v}">${tr('Ver dónde se publica', 'Veure on es publica', 'See where it is published')}</a>` }] }));
   el.appendChild(card);
 }
