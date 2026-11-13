@@ -15,6 +15,8 @@ import { FORMATS } from './blocks/index.js';
 import { searchBox, search, highlight, remember, TYPES } from './search.js';
 
 let CFG, PORTAL;
+document.documentElement.dataset.app = 'ok'; // los módulos se han cargado (lo comprueba index.html)
+
 const LANG_NAMES = { es: 'Castellano', va: 'Valencià', en: 'English' };
 
 // ---------------------------------------------------------------- rutas

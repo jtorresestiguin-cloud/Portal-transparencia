@@ -14,6 +14,15 @@
   <link rel="stylesheet" href="assets/css/portal.css">
   <script>try { var th = localStorage.getItem('theme'); if (th) document.documentElement.dataset.theme = th; } catch (e) {}</script>
   <script type="module" src="assets/js/app.js"></script>
+  <script>
+    // Si el portal no llega a cargarse (fichero antiguo en caché, bloqueo de red…), se ofrece recargar en vez de dejar la página en blanco.
+    setTimeout(function () {
+      if (document.documentElement.dataset.app) return;
+      var m = document.getElementById('main'); if (!m) return;
+      m.removeAttribute('aria-busy');
+      m.innerHTML = '<div class="container" style="padding:3rem 1rem;max-width:40rem"><h1>No se ha podido cargar el portal</h1><p>Puede deberse a una versión anterior guardada en el navegador. Recarga la página; si persiste, pulsa Ctrl+F5 (o Cmd+Shift+R en Mac).</p><p lang="en">The portal could not be loaded. Please reload the page.</p><p><button type="button" class="btn btn-primary" onclick="location.reload()">Recargar</button></p></div>';
+    }, 8000);
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Saltar al contenido</a>
