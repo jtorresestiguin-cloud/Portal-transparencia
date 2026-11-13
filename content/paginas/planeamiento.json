@@ -1,0 +1,69 @@
+{
+ "id": "planeamiento",
+ "icono": "layout",
+ "titulo": {
+  "es": "Planeamiento urbanístico",
+  "va": "Planejament urbanístic",
+  "en": "Urban planning"
+ },
+ "intro": {
+  "es": "Instrumentos de planeamiento vigentes y en tramitación, y convenios urbanísticos.",
+  "va": "Instruments de planejament vigents i en tramitació, i convenis urbanístics.",
+  "en": "Planning instruments in force and in progress, and planning agreements."
+ },
+ "bloques": [
+  {
+   "tipo": "documentos",
+   "titulo": {
+    "es": "Planeamiento vigente",
+    "va": "Planejament vigent",
+    "en": "Plans in force"
+   },
+   "items": [
+    {
+     "titulo": {
+      "es": "Plan General de Ordenación Urbana",
+      "va": "Pla General d’Ordenació Urbana",
+      "en": "General urban plan"
+     },
+     "fecha": "2012-04-30",
+     "url": "#",
+     "formato": "PDF"
+    },
+    {
+     "titulo": {
+      "es": "Plan parcial del sector residencial",
+      "va": "Pla parcial del sector residencial",
+      "en": "Residential sector plan"
+     },
+     "fecha": "2019-07-15",
+     "url": "#",
+     "formato": "PDF"
+    }
+   ]
+  },
+  {
+   "tipo": "documentos",
+   "titulo": {
+    "es": "En tramitación",
+    "va": "En tramitació",
+    "en": "In progress"
+   },
+   "items": [
+    {
+     "titulo": {
+      "es": "Modificación puntual n.º 4 del Plan General",
+      "va": "Modificació puntual núm. 4 del Pla General",
+      "en": "General plan amendment no. 4"
+     },
+     "fecha": "2026-09-01",
+     "url": "#",
+     "formato": "PDF"
+    }
+   ]
+  },
+  {
+   "tipo": "indicadores"
+  }
+ ]
+}

@@ -1,0 +1,103 @@
+{
+ "id": "procesos-selectivos",
+ "icono": "briefcase",
+ "titulo": {
+  "es": "Oferta de empleo y procesos selectivos",
+  "va": "Oferta d’ocupació i processos selectius",
+  "en": "Public employment and recruitment"
+ },
+ "intro": {
+  "es": "Ofertas de empleo público, bases, listas y resultados de los procesos selectivos y bolsas de trabajo.",
+  "va": "Ofertes d’ocupació pública, bases, llistes i resultats dels processos selectius i borses de treball.",
+  "en": "Public employment offers, rules, lists and results of recruitment processes."
+ },
+ "bloques": [
+  {
+   "tipo": "documentos",
+   "titulo": {
+    "es": "Oferta de empleo público",
+    "va": "Oferta d’ocupació pública",
+    "en": "Public employment offer"
+   },
+   "items": [
+    {
+     "titulo": {
+      "es": "Oferta de empleo público 2026",
+      "va": "Oferta d’ocupació pública 2026",
+      "en": "Public employment offer 2026"
+     },
+     "fecha": "2026-03-15",
+     "url": "#",
+     "formato": "PDF"
+    },
+    {
+     "titulo": {
+      "es": "Oferta de empleo público 2025",
+      "va": "Oferta d’ocupació pública 2025",
+      "en": "Public employment offer 2025"
+     },
+     "fecha": "2025-03-20",
+     "url": "#",
+     "formato": "PDF"
+    }
+   ]
+  },
+  {
+   "tipo": "documentos",
+   "titulo": {
+    "es": "Procesos selectivos y bolsas",
+    "va": "Processos selectius i borses",
+    "en": "Recruitment processes and pools"
+   },
+   "items": [
+    {
+     "titulo": {
+      "es": "Bases de la bolsa de administrativo/a",
+      "va": "Bases de la borsa d’administratiu/va",
+      "en": "Administrative staff pool: rules"
+     },
+     "fecha": "2026-09-10",
+     "url": "#",
+     "formato": "PDF"
+    },
+    {
+     "titulo": {
+      "es": "Lista provisional de personas admitidas y excluidas",
+      "va": "Llista provisional de persones admeses i excloses",
+      "en": "Provisional list of admitted candidates"
+     },
+     "fecha": "2026-10-08",
+     "url": "#",
+     "formato": "PDF"
+    }
+   ]
+  },
+  {
+   "tipo": "enlaces",
+   "titulo": {
+    "es": "Tramitación",
+    "va": "Tramitació",
+    "en": "Applications"
+   },
+   "items": [
+    {
+     "titulo": {
+      "es": "Presentar una solicitud en la sede electrónica",
+      "va": "Presentar una sol·licitud en la seu electrònica",
+      "en": "Apply at the e-office"
+     },
+     "texto": {
+      "es": "Inscripción en procesos selectivos abiertos.",
+      "va": "Inscripció en processos selectius oberts.",
+      "en": "Sign up for open processes."
+     },
+     "url": "https://sede.example.org",
+     "icono": "external"
+    }
+   ]
+  },
+  {
+   "tipo": "indicadores"
+  }
+ ]
+}

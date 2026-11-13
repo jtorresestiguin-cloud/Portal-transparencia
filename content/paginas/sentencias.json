@@ -1,0 +1,39 @@
+{
+ "id": "sentencias",
+ "icono": "scale",
+ "titulo": {
+  "es": "Sentencias y resoluciones judiciales",
+  "va": "Sentències i resolucions judicials",
+  "en": "Court rulings"
+ },
+ "intro": {
+  "es": "Resoluciones judiciales que afectan a la entidad, una vez firmes y anonimizadas.",
+  "va": "Resolucions judicials que afecten l’entitat, una vegada fermes i anonimitzades.",
+  "en": "Final, anonymised court rulings affecting the council."
+ },
+ "bloques": [
+  {
+   "tipo": "documentos",
+   "titulo": {
+    "es": "Sentencias firmes",
+    "va": "Sentències fermes",
+    "en": "Final rulings"
+   },
+   "items": [
+    {
+     "titulo": {
+      "es": "Sentencia del Juzgado de lo Contencioso-Administrativo (anonimizada)",
+      "va": "Sentència del Jutjat Contenciós Administratiu (anonimitzada)",
+      "en": "Administrative court ruling (anonymised)"
+     },
+     "fecha": "2025-06-30",
+     "url": "#",
+     "formato": "PDF"
+    }
+   ]
+  },
+  {
+   "tipo": "indicadores"
+  }
+ ]
+}

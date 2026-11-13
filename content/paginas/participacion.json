@@ -1,0 +1,61 @@
+{
+ "id": "participacion",
+ "icono": "share",
+ "titulo": {
+  "es": "Participación ciudadana",
+  "va": "Participació ciutadana",
+  "en": "Citizen participation"
+ },
+ "intro": {
+  "es": "Consultas, procesos participativos y valoración de los servicios públicos.",
+  "va": "Consultes, processos participatius i valoració dels serveis públics.",
+  "en": "Consultations, participatory processes and public service ratings."
+ },
+ "bloques": [
+  {
+   "tipo": "texto",
+   "titulo": {
+    "es": "Canales de participación",
+    "va": "Canals de participació",
+    "en": "Ways to take part"
+   },
+   "contenido": {
+    "es": "- Consultas públicas previas sobre nuevas normas (ver **Información jurídica**).\n- Consejos sectoriales y órganos de participación.\n- Procesos participativos y presupuestos participativos.",
+    "va": "- Consultes públiques prèvies sobre noves normes (vegeu **Informació jurídica**).\n- Consells sectorials i òrgans de participació.\n- Processos participatius i pressupostos participatius.",
+    "en": "- Prior public consultations on new regulations (see **Legal information**).\n- Sector councils and participation bodies.\n- Participatory processes and participatory budgeting."
+   }
+  },
+  {
+   "tipo": "aviso",
+   "nivel": "info",
+   "contenido": {
+    "es": "**Próximamente:** cuestionario de valoración de los servicios públicos con resultados actualizados automáticamente, y sección de presupuestos participativos.",
+    "va": "**Pròximament:** qüestionari de valoració dels serveis públics amb resultats actualitzats automàticament, i secció de pressupostos participatius.",
+    "en": "**Coming soon:** public service rating survey with automatically updated results, and a participatory budgeting section."
+   }
+  },
+  {
+   "tipo": "documentos",
+   "titulo": {
+    "es": "Documentos",
+    "va": "Documents",
+    "en": "Documents"
+   },
+   "items": [
+    {
+     "titulo": {
+      "es": "Reglamento de participación ciudadana",
+      "va": "Reglament de participació ciutadana",
+      "en": "Citizen participation regulation"
+     },
+     "fecha": "2021-09-15",
+     "url": "#",
+     "formato": "PDF"
+    }
+   ]
+  },
+  {
+   "tipo": "indicadores"
+  }
+ ]
+}

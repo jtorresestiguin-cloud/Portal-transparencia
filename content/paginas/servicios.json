@@ -1,0 +1,101 @@
+{
+ "id": "servicios",
+ "icono": "users",
+ "titulo": {
+  "es": "Servicios y atención a la ciudadanía",
+  "va": "Serveis i atenció a la ciutadania",
+  "en": "Services and citizen support"
+ },
+ "intro": {
+  "es": "Qué servicios presta la entidad, con qué compromisos de calidad y cómo hacer trámites o sugerencias.",
+  "va": "Quins serveis presta l’entitat, amb quins compromisos de qualitat i com fer tràmits o suggeriments.",
+  "en": "Services provided, quality commitments and how to make requests or suggestions."
+ },
+ "bloques": [
+  {
+   "tipo": "enlaces",
+   "titulo": {
+    "es": "Accesos",
+    "va": "Accessos",
+    "en": "Quick links"
+   },
+   "items": [
+    {
+     "titulo": {
+      "es": "Sede electrónica",
+      "va": "Seu electrònica",
+      "en": "e-Office"
+     },
+     "texto": {
+      "es": "Trámites en línea las 24 horas.",
+      "va": "Tràmits en línia les 24 hores.",
+      "en": "Online procedures 24/7."
+     },
+     "url": "https://sede.example.org",
+     "icono": "external"
+    },
+    {
+     "titulo": {
+      "es": "Quejas y sugerencias",
+      "va": "Queixes i suggeriments",
+      "en": "Complaints and suggestions"
+     },
+     "texto": {
+      "es": "Ayúdanos a mejorar los servicios.",
+      "va": "Ajuda’ns a millorar els serveis.",
+      "en": "Help us improve our services."
+     },
+     "url": "https://sede.example.org",
+     "icono": "mail"
+    },
+    {
+     "titulo": {
+      "es": "Horario y oficinas",
+      "va": "Horari i oficines",
+      "en": "Opening hours"
+     },
+     "texto": {
+      "es": "Oficina de atención ciudadana: lunes a viernes, 9 a 14 h.",
+      "va": "Oficina d’atenció ciutadana: dilluns a divendres, de 9 a 14 h.",
+      "en": "Citizen office: Mon–Fri, 9 am–2 pm."
+     },
+     "url": "#/organizacion",
+     "icono": "building"
+    }
+   ]
+  },
+  {
+   "tipo": "documentos",
+   "titulo": {
+    "es": "Catálogo y cartas de servicios",
+    "va": "Catàleg i cartes de serveis",
+    "en": "Service catalogue and charters"
+   },
+   "items": [
+    {
+     "titulo": {
+      "es": "Catálogo de servicios municipales",
+      "va": "Catàleg de serveis municipals",
+      "en": "Municipal service catalogue"
+     },
+     "fecha": "2025-05-01",
+     "url": "#",
+     "formato": "PDF"
+    },
+    {
+     "titulo": {
+      "es": "Carta de servicios de la oficina de atención ciudadana",
+      "va": "Carta de serveis de l’oficina d’atenció ciutadana",
+      "en": "Citizen office service charter"
+     },
+     "fecha": "2025-05-01",
+     "url": "#",
+     "formato": "PDF"
+    }
+   ]
+  },
+  {
+   "tipo": "indicadores"
+  }
+ ]
+}

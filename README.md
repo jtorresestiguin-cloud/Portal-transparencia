@@ -9,14 +9,22 @@ Portal de transparencia **genérico, interoperable, visual y basado en el dato**
 ### 1. Portal público (`/`)
 Estructura habitual de los portales municipales: barra institucional, cabecera con escudo, **portada con «cajitas» por categorías** (con el grado de cumplimiento de cada una), menú lateral y migas de pan.
 
-| Categoría | Páginas |
+| Categoría | Subapartados |
 |---|---|
-| Información institucional y organizativa | Organización y funciones · Normativa municipal |
-| Altos cargos y cargos electos | Fichas de cargos con retribución, dedicación y declaraciones · Agenda institucional |
-| Contratación | Contratos (explorador con indicadores de riesgo y exportación OCDS) · Encargos a medios propios |
-| Convenios y subvenciones | Subvenciones concedidas · Convenios |
-| Información económica y presupuestaria | Presupuesto (flujo ingresos→gastos, áreas, capítulos) · Periodo medio de pago y deuda |
-| Patrimonio · Personal · Derecho de acceso · Índice de transparencia · Datos abiertos | |
+| Información institucional | Organización y funciones · Cargos electos y personal directivo · Agenda institucional |
+| Personal y empleo | Plantilla y RPT · Oferta de empleo y procesos selectivos · Compatibilidades |
+| Información jurídica | Proyectos normativos y participación · Normativa municipal · Sentencias |
+| Patrimonio | Bienes inmuebles (con mapa) |
+| Presupuesto y economía | Presupuesto y ejecución · Estabilidad, pago a proveedores y deuda |
+| Ayudas y subvenciones | Concedidas (BDNS) · Recibidas · Plan estratégico |
+| Contratación | Contratos (PLACSP, con indicadores de riesgo y exportación OCDS) · Encargos a medios propios |
+| Convenios | Convenios suscritos |
+| Urbanismo y medio ambiente | Planeamiento urbanístico · Medio ambiente |
+| Información y atención a la ciudadanía | Servicios, cartas de servicios, sede y sugerencias |
+| Participación | Participación ciudadana (preparada para la valoración de servicios y los presupuestos participativos) |
+| Acceso a la información pública · Índice de transparencia · Datos abiertos | |
+
+La portada funciona como **directorio**: cada categoría es una caja con sus subapartados enlazados y su grado de cumplimiento.
 
 Castellano, valenciano e inglés; modo oscuro; buscador global (`/`); cada gráfico con vista de tabla y descarga CSV/SVG; filtros en la URL; diseño adaptable a móvil.
 

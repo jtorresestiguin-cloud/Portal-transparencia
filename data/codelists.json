@@ -875,6 +875,21 @@
    "es": "Datos abiertos",
    "va": "Dades obertes",
    "en": "Open data"
+  },
+  "urbanismo": {
+   "es": "Urbanismo y medio ambiente",
+   "va": "Urbanisme i medi ambient",
+   "en": "Planning & environment"
+  },
+  "ciudadania": {
+   "es": "Información y atención a la ciudadanía",
+   "va": "Informació i atenció a la ciutadania",
+   "en": "Citizen information"
+  },
+  "participacion": {
+   "es": "Participación",
+   "va": "Participació",
+   "en": "Participation"
   }
  },
  "periodicidad": {

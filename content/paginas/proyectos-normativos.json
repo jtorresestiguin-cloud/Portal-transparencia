@@ -1,0 +1,68 @@
+{
+ "id": "proyectos-normativos",
+ "icono": "scale",
+ "titulo": {
+  "es": "Proyectos normativos y participación",
+  "va": "Projectes normatius i participació",
+  "en": "Draft regulations and public input"
+ },
+ "intro": {
+  "es": "Ordenanzas y reglamentos en elaboración, consultas públicas previas y trámites de información pública.",
+  "va": "Ordenances i reglaments en elaboració, consultes públiques prèvies i tràmits d’informació pública.",
+  "en": "Regulations being drafted, prior public consultations and public information procedures."
+ },
+ "bloques": [
+  {
+   "tipo": "aviso",
+   "nivel": "info",
+   "contenido": {
+    "es": "Puedes participar en la elaboración de las normas municipales durante el plazo de **consulta pública previa** (art. 133 de la Ley 39/2015).",
+    "va": "Pots participar en l’elaboració de les normes municipals durant el termini de **consulta pública prèvia** (art. 133 de la Llei 39/2015).",
+    "en": "You can take part in drafting municipal regulations during the **prior public consultation** (art. 133, Law 39/2015)."
+   }
+  },
+  {
+   "tipo": "documentos",
+   "titulo": {
+    "es": "Consultas públicas previas",
+    "va": "Consultes públiques prèvies",
+    "en": "Prior public consultations"
+   },
+   "items": [
+    {
+     "titulo": {
+      "es": "Consulta pública: ordenanza de movilidad",
+      "va": "Consulta pública: ordenança de mobilitat",
+      "en": "Consultation: mobility by-law"
+     },
+     "fecha": "2026-10-01",
+     "url": "#",
+     "formato": "PDF"
+    }
+   ]
+  },
+  {
+   "tipo": "documentos",
+   "titulo": {
+    "es": "Proyectos en información pública",
+    "va": "Projectes en informació pública",
+    "en": "Drafts under public information"
+   },
+   "items": [
+    {
+     "titulo": {
+      "es": "Modificación de la ordenanza fiscal de residuos",
+      "va": "Modificació de l’ordenança fiscal de residus",
+      "en": "Waste tax by-law amendment"
+     },
+     "fecha": "2026-10-20",
+     "url": "#",
+     "formato": "PDF"
+    }
+   ]
+  },
+  {
+   "tipo": "indicadores"
+  }
+ ]
+}

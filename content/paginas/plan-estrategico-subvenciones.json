@@ -1,0 +1,49 @@
+{
+ "id": "plan-estrategico-subvenciones",
+ "icono": "target",
+ "titulo": {
+  "es": "Plan estratégico de subvenciones",
+  "va": "Pla estratègic de subvencions",
+  "en": "Strategic grants plan"
+ },
+ "intro": {
+  "es": "Objetivos, líneas, costes y fuentes de financiación de las subvenciones municipales (art. 8 de la Ley 38/2003).",
+  "va": "Objectius, línies, costos i fonts de finançament de les subvencions municipals (art. 8 de la Llei 38/2003).",
+  "en": "Objectives, lines, costs and funding of municipal grants (art. 8, Law 38/2003)."
+ },
+ "bloques": [
+  {
+   "tipo": "documentos",
+   "titulo": {
+    "es": "Documentos",
+    "va": "Documents",
+    "en": "Documents"
+   },
+   "items": [
+    {
+     "titulo": {
+      "es": "Plan estratégico de subvenciones 2025-2027",
+      "va": "Pla estratègic de subvencions 2025-2027",
+      "en": "Strategic grants plan 2025-2027"
+     },
+     "fecha": "2025-02-10",
+     "url": "#",
+     "formato": "PDF"
+    },
+    {
+     "titulo": {
+      "es": "Informe de seguimiento 2025",
+      "va": "Informe de seguiment 2025",
+      "en": "2025 monitoring report"
+     },
+     "fecha": "2026-03-01",
+     "url": "#",
+     "formato": "PDF"
+    }
+   ]
+  },
+  {
+   "tipo": "indicadores"
+  }
+ ]
+}

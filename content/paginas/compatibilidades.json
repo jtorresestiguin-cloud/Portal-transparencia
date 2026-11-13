@@ -1,0 +1,39 @@
+{
+ "id": "compatibilidades",
+ "icono": "check",
+ "titulo": {
+  "es": "Compatibilidades",
+  "va": "Compatibilitats",
+  "en": "Compatibility rulings"
+ },
+ "intro": {
+  "es": "Resoluciones de autorización o reconocimiento de compatibilidad del personal y de los cargos públicos.",
+  "va": "Resolucions d’autorització o reconeixement de compatibilitat del personal i dels càrrecs públics.",
+  "en": "Compatibility rulings for staff and public officials."
+ },
+ "bloques": [
+  {
+   "tipo": "documentos",
+   "titulo": {
+    "es": "Resoluciones de compatibilidad",
+    "va": "Resolucions de compatibilitat",
+    "en": "Compatibility rulings"
+   },
+   "items": [
+    {
+     "titulo": {
+      "es": "Resolución de compatibilidad para actividad docente",
+      "va": "Resolució de compatibilitat per a activitat docent",
+      "en": "Teaching activity compatibility"
+     },
+     "fecha": "2025-11-20",
+     "url": "#",
+     "formato": "PDF"
+    }
+   ]
+  },
+  {
+   "tipo": "indicadores"
+  }
+ ]
+}

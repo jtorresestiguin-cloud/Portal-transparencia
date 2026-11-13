@@ -1984,7 +1984,7 @@
             "@id": "http://www.iana.org/assignments/media-types/text/csv"
           },
           "dcat:byteSize": {
-            "@value": "4698",
+            "@value": "6022",
             "@type": "xsd:nonNegativeInteger"
           },
           "dct:license": {
@@ -2007,7 +2007,7 @@
             "@id": "http://www.iana.org/assignments/media-types/application/json"
           },
           "dcat:byteSize": {
-            "@value": "11589",
+            "@value": "14793",
             "@type": "xsd:nonNegativeInteger"
           },
           "dct:license": {

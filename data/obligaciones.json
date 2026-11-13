@@ -67,15 +67,39 @@
   },
   {
    "id": "INS-06",
-   "bloque": "institucional",
+   "bloque": "ciudadania",
    "norma": "Ley 19/2013",
    "articulo": "art. 8.1.i",
    "titulo": "Información estadística sobre la calidad de los servicios",
-   "pagina": "organizacion",
+   "pagina": "servicios",
    "estado": "pendiente",
    "periodicidad": "anual",
    "conjunto": null,
    "ultima_actualizacion": null
+  },
+  {
+   "id": "CIU-01",
+   "bloque": "ciudadania",
+   "norma": "Buena práctica",
+   "articulo": "—",
+   "titulo": "Catálogo de servicios y cartas de servicios",
+   "pagina": "servicios",
+   "estado": "publicado",
+   "periodicidad": "anual",
+   "conjunto": null,
+   "ultima_actualizacion": "2026-08-27"
+  },
+  {
+   "id": "CIU-02",
+   "bloque": "ciudadania",
+   "norma": "Buena práctica",
+   "articulo": "—",
+   "titulo": "Sistema de quejas y sugerencias",
+   "pagina": "servicios",
+   "estado": "publicado",
+   "periodicidad": "cuando_cambie",
+   "conjunto": null,
+   "ultima_actualizacion": "2026-09-19"
   },
   {
    "id": "CAR-01",
@@ -87,7 +111,7 @@
    "estado": "publicado",
    "periodicidad": "cuando_cambie",
    "conjunto": "cargos",
-   "ultima_actualizacion": "2026-08-27"
+   "ultima_actualizacion": "2026-10-16"
   },
   {
    "id": "CAR-02",
@@ -99,7 +123,7 @@
    "estado": "publicado",
    "periodicidad": "anual",
    "conjunto": "cargos",
-   "ultima_actualizacion": "2026-09-19"
+   "ultima_actualizacion": "2026-11-06"
   },
   {
    "id": "CAR-03",
@@ -111,7 +135,7 @@
    "estado": "publicado",
    "periodicidad": "anual",
    "conjunto": "cargos",
-   "ultima_actualizacion": "2026-10-16"
+   "ultima_actualizacion": "2026-08-31"
   },
   {
    "id": "CAR-04",
@@ -123,19 +147,19 @@
    "estado": "parcial",
    "periodicidad": "anual",
    "conjunto": "cargos",
-   "ultima_actualizacion": "2026-11-06"
+   "ultima_actualizacion": "2026-10-25"
   },
   {
    "id": "CAR-05",
    "bloque": "cargos",
    "norma": "Ley 19/2013",
    "articulo": "art. 8.1.g",
-   "titulo": "Resoluciones de compatibilidad",
-   "pagina": "cargos",
+   "titulo": "Resoluciones de compatibilidad de cargos",
+   "pagina": "compatibilidades",
    "estado": "parcial",
    "periodicidad": "cuando_cambie",
    "conjunto": null,
-   "ultima_actualizacion": "2026-08-31"
+   "ultima_actualizacion": "2026-09-23"
   },
   {
    "id": "CAR-06",
@@ -147,7 +171,7 @@
    "estado": "publicado",
    "periodicidad": "semanal",
    "conjunto": "agenda",
-   "ultima_actualizacion": "2026-10-25"
+   "ultima_actualizacion": "2026-09-18"
   },
   {
    "id": "JUR-01",
@@ -159,7 +183,7 @@
    "estado": "publicado",
    "periodicidad": "cuando_cambie",
    "conjunto": "normativa",
-   "ultima_actualizacion": "2026-09-23"
+   "ultima_actualizacion": "2026-11-09"
   },
   {
    "id": "JUR-02",
@@ -167,11 +191,35 @@
    "norma": "Ley 19/2013",
    "articulo": "art. 7.c",
    "titulo": "Proyectos de ordenanzas y reglamentos",
-   "pagina": "normativa",
+   "pagina": "proyectos-normativos",
    "estado": "parcial",
    "periodicidad": "continua",
    "conjunto": null,
-   "ultima_actualizacion": "2026-09-18"
+   "ultima_actualizacion": "2026-10-15"
+  },
+  {
+   "id": "JUR-05",
+   "bloque": "juridica",
+   "norma": "Ley 39/2015",
+   "articulo": "art. 133",
+   "titulo": "Consulta pública previa en la elaboración de normas",
+   "pagina": "proyectos-normativos",
+   "estado": "publicado",
+   "periodicidad": "continua",
+   "conjunto": null,
+   "ultima_actualizacion": "2026-09-22"
+  },
+  {
+   "id": "JUR-06",
+   "bloque": "juridica",
+   "norma": "Buena práctica",
+   "articulo": "—",
+   "titulo": "Sentencias y resoluciones judiciales firmes",
+   "pagina": "sentencias",
+   "estado": "parcial",
+   "periodicidad": "cuando_cambie",
+   "conjunto": null,
+   "ultima_actualizacion": "2026-10-25"
   },
   {
    "id": "JUR-03",
@@ -179,11 +227,11 @@
    "norma": "Ley 19/2013",
    "articulo": "art. 7.e",
    "titulo": "Documentos sometidos a información pública",
-   "pagina": "normativa",
+   "pagina": "proyectos-normativos",
    "estado": "publicado",
    "periodicidad": "continua",
    "conjunto": null,
-   "ultima_actualizacion": "2026-11-09"
+   "ultima_actualizacion": "2026-11-11"
   },
   {
    "id": "JUR-04",
@@ -195,7 +243,7 @@
    "estado": "publicado",
    "periodicidad": "cuando_cambie",
    "conjunto": "normativa",
-   "ultima_actualizacion": "2026-10-15"
+   "ultima_actualizacion": "2026-09-12"
   },
   {
    "id": "CON-01",
@@ -207,7 +255,7 @@
    "estado": "publicado",
    "periodicidad": "continua",
    "conjunto": "contratos",
-   "ultima_actualizacion": "2026-09-22"
+   "ultima_actualizacion": "2026-09-03"
   },
   {
    "id": "CON-02",
@@ -219,7 +267,7 @@
    "estado": "publicado",
    "periodicidad": "trimestral",
    "conjunto": "contratos",
-   "ultima_actualizacion": "2026-10-25"
+   "ultima_actualizacion": "2026-10-12"
   },
   {
    "id": "CON-03",
@@ -231,7 +279,7 @@
    "estado": "publicado",
    "periodicidad": "anual",
    "conjunto": "contratos",
-   "ultima_actualizacion": "2026-11-11"
+   "ultima_actualizacion": "2026-10-27"
   },
   {
    "id": "CON-04",
@@ -243,7 +291,7 @@
    "estado": "parcial",
    "periodicidad": "continua",
    "conjunto": null,
-   "ultima_actualizacion": "2026-09-12"
+   "ultima_actualizacion": "2026-11-08"
   },
   {
    "id": "CON-05",
@@ -255,7 +303,7 @@
    "estado": "publicado",
    "periodicidad": "continua",
    "conjunto": "encargos",
-   "ultima_actualizacion": "2026-09-03"
+   "ultima_actualizacion": "2026-09-20"
   },
   {
    "id": "SUB-01",
@@ -267,7 +315,7 @@
    "estado": "publicado",
    "periodicidad": "trimestral",
    "conjunto": "convenios",
-   "ultima_actualizacion": "2026-10-12"
+   "ultima_actualizacion": "2026-08-26"
   },
   {
    "id": "SUB-02",
@@ -279,7 +327,7 @@
    "estado": "publicado",
    "periodicidad": "trimestral",
    "conjunto": "subvenciones",
-   "ultima_actualizacion": "2026-10-27"
+   "ultima_actualizacion": "2026-08-25"
   },
   {
    "id": "SUB-03",
@@ -291,7 +339,31 @@
    "estado": "parcial",
    "periodicidad": "trimestral",
    "conjunto": null,
-   "ultima_actualizacion": "2026-11-08"
+   "ultima_actualizacion": "2026-11-09"
+  },
+  {
+   "id": "SUB-04",
+   "bloque": "convenios_subvenciones",
+   "norma": "Buena práctica",
+   "articulo": "—",
+   "titulo": "Subvenciones y ayudas recibidas",
+   "pagina": "subvenciones-recibidas",
+   "estado": "parcial",
+   "periodicidad": "anual",
+   "conjunto": null,
+   "ultima_actualizacion": "2026-09-28"
+  },
+  {
+   "id": "SUB-05",
+   "bloque": "convenios_subvenciones",
+   "norma": "Ley 38/2003",
+   "articulo": "art. 8.1",
+   "titulo": "Plan estratégico de subvenciones",
+   "pagina": "plan-estrategico-subvenciones",
+   "estado": "publicado",
+   "periodicidad": "anual",
+   "conjunto": null,
+   "ultima_actualizacion": "2026-09-25"
   },
   {
    "id": "ECO-01",
@@ -303,7 +375,7 @@
    "estado": "publicado",
    "periodicidad": "trimestral",
    "conjunto": "presupuesto",
-   "ultima_actualizacion": "2026-09-20"
+   "ultima_actualizacion": "2026-10-14"
   },
   {
    "id": "ECO-02",
@@ -315,7 +387,7 @@
    "estado": "publicado",
    "periodicidad": "trimestral",
    "conjunto": null,
-   "ultima_actualizacion": "2026-08-26"
+   "ultima_actualizacion": "2026-09-03"
   },
   {
    "id": "ECO-03",
@@ -327,7 +399,7 @@
    "estado": "parcial",
    "periodicidad": "anual",
    "conjunto": null,
-   "ultima_actualizacion": "2026-08-25"
+   "ultima_actualizacion": "2026-08-30"
   },
   {
    "id": "ECO-04",
@@ -339,7 +411,7 @@
    "estado": "publicado",
    "periodicidad": "mensual",
    "conjunto": "pmp",
-   "ultima_actualizacion": "2026-11-09"
+   "ultima_actualizacion": "2026-10-19"
   },
   {
    "id": "ECO-05",
@@ -351,7 +423,7 @@
    "estado": "publicado",
    "periodicidad": "anual",
    "conjunto": "deuda",
-   "ultima_actualizacion": "2026-09-28"
+   "ultima_actualizacion": "2026-09-04"
   },
   {
    "id": "PAT-01",
@@ -363,7 +435,7 @@
    "estado": "publicado",
    "periodicidad": "anual",
    "conjunto": "inmuebles",
-   "ultima_actualizacion": "2026-09-25"
+   "ultima_actualizacion": "2026-09-20"
   },
   {
    "id": "PAT-02",
@@ -387,7 +459,7 @@
    "estado": "publicado",
    "periodicidad": "anual",
    "conjunto": "plantilla",
-   "ultima_actualizacion": "2026-10-14"
+   "ultima_actualizacion": "2026-10-22"
   },
   {
    "id": "PER-02",
@@ -395,11 +467,59 @@
    "norma": "Ley 1/2022 CV",
    "articulo": "personal",
    "titulo": "Ofertas de empleo público y procesos selectivos",
-   "pagina": "personal",
+   "pagina": "procesos-selectivos",
    "estado": "parcial",
    "periodicidad": "continua",
    "conjunto": null,
-   "ultima_actualizacion": "2026-09-03"
+   "ultima_actualizacion": "2026-10-03"
+  },
+  {
+   "id": "PER-03",
+   "bloque": "personal",
+   "norma": "Ley 19/2013",
+   "articulo": "art. 8.1.g",
+   "titulo": "Resoluciones de compatibilidad del personal",
+   "pagina": "compatibilidades",
+   "estado": "publicado",
+   "periodicidad": "cuando_cambie",
+   "conjunto": null,
+   "ultima_actualizacion": "2026-10-22"
+  },
+  {
+   "id": "URB-01",
+   "bloque": "urbanismo",
+   "norma": "Ley 7/1985",
+   "articulo": "art. 70 ter",
+   "titulo": "Instrumentos de planeamiento urbanístico",
+   "pagina": "planeamiento",
+   "estado": "publicado",
+   "periodicidad": "cuando_cambie",
+   "conjunto": null,
+   "ultima_actualizacion": "2026-09-18"
+  },
+  {
+   "id": "URB-02",
+   "bloque": "urbanismo",
+   "norma": "Ley 27/2006",
+   "articulo": "art. 7",
+   "titulo": "Información ambiental",
+   "pagina": "medio-ambiente",
+   "estado": "parcial",
+   "periodicidad": "anual",
+   "conjunto": null,
+   "ultima_actualizacion": "2026-10-26"
+  },
+  {
+   "id": "PAR-01",
+   "bloque": "participacion",
+   "norma": "Buena práctica",
+   "articulo": "—",
+   "titulo": "Procesos de participación ciudadana",
+   "pagina": "participacion",
+   "estado": "parcial",
+   "periodicidad": "continua",
+   "conjunto": null,
+   "ultima_actualizacion": "2026-08-25"
   },
   {
    "id": "ACC-01",
@@ -411,7 +531,7 @@
    "estado": "publicado",
    "periodicidad": "cuando_cambie",
    "conjunto": null,
-   "ultima_actualizacion": "2026-08-30"
+   "ultima_actualizacion": "2026-09-27"
   },
   {
    "id": "ACC-02",
@@ -423,7 +543,7 @@
    "estado": "publicado",
    "periodicidad": "trimestral",
    "conjunto": "solicitudes-acceso",
-   "ultima_actualizacion": "2026-10-19"
+   "ultima_actualizacion": "2026-09-02"
   },
   {
    "id": "DAT-01",
@@ -435,7 +555,7 @@
    "estado": "publicado",
    "periodicidad": "continua",
    "conjunto": null,
-   "ultima_actualizacion": "2026-09-04"
+   "ultima_actualizacion": "2026-09-17"
   }
  ]
 }

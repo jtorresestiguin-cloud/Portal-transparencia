@@ -39,7 +39,7 @@ async function router() {
   document.title = `${route && title ? title + ' · ' : ''}${t('portal_name')} · ${pick(CFG.nombre)}`;
   if (window.__rendered) { window.scrollTo({ top: 0 }); document.getElementById('page-title')?.focus({ preventScroll: true }); }
   window.__rendered = true;
-  markNav(route === 'categoria' ? sub : route);
+  markNav(route);
   const live = document.getElementById('live'); live.textContent = ''; setTimeout(() => (live.textContent = title || ''), 50);
 }
 
@@ -49,7 +49,8 @@ function applyTheme() {
   if (CFG.colores?.principal) r.setProperty('--brand', CFG.colores.principal);
   if (CFG.colores?.secundario) r.setProperty('--accent', CFG.colores.secundario);
 }
-function renderChrome() {
+async function renderChrome() {
+  const navItems = await Promise.all([...(PORTAL.portada.destacados || []), 'indice', 'datos-abiertos'].filter((v, i, a) => a.indexOf(v) === i).map(async (id) => [id, pick((await store.page(id)).titulo)]));
   document.documentElement.lang = lang() === 'va' ? 'ca-ES-valencia' : lang();
   document.querySelector('.skip-link').textContent = t('skip');
   document.getElementById('topbar').innerHTML = `<div class="container topbar-row">
@@ -69,7 +70,7 @@ function renderChrome() {
   document.getElementById('demo-banner').innerHTML = `${icon('info', 16)} <span>${t('demo_banner')}</span> <a href="#/accesibilidad">${t('demo_more')}</a>`;
   document.getElementById('mainnav').innerHTML = `<ul class="container mainnav-list">
     <li><a href="#/" data-nav="">${icon('home', 16)}<span>${t('home')}</span></a></li>
-    ${PORTAL.categorias.map((c) => `<li><a href="#/categoria/${c.id}" data-nav="${c.id}">${esc(pick(c.titulo))}</a></li>`).join('')}</ul>`;
+    ${navItems.map(([id, txt]) => `<li><a href="#/${id}" data-nav="${id}">${esc(txt)}</a></li>`).join('')}</ul>`;
   document.getElementById('site-footer').innerHTML = `<div class="container footer-grid">
     <div class="footer-ent"><img src="${esc(CFG.escudo)}" alt="" width="40" height="49"><div><p class="footer-brand">${esc(pick(CFG.nombre))}</p>
       <p class="muted small">${esc(CFG.direccion)} · ${esc(CFG.telefono)}<br><a href="mailto:${esc(CFG.email_transparencia)}">${esc(CFG.email_transparencia)}</a> · NIF ${esc(CFG.nif)} · DIR3 ${esc(CFG.dir3)}</p>
@@ -98,6 +99,7 @@ async function viewHome(view) {
   const sc = score(obl);
   const counts = Object.fromEntries(PORTAL.categorias.map((c) => [c.id, obl.filter((o) => c.paginas.includes(o.pagina))]));
   const dest = await Promise.all((PORTAL.portada.destacados || []).map(async (id) => ({ id, pg: await store.page(id) })));
+  const titles = Object.fromEntries(await Promise.all(PORTAL.categorias.flatMap((c) => c.paginas).map(async (id) => [id, pick((await store.page(id)).titulo)])));
   const news = [
     ...contratos.filter((c) => c.fecha_adjudicacion).slice(0, 5).map((c) => ({ d: c.fecha_adjudicacion, k: tr('Contrato', 'Contracte', 'Contract'), ti: c.objeto, m: `${c.adjudicatario || ''}${c.importe_adjudicacion_sin_iva ? ' · ' + fmt.eur(c.importe_adjudicacion_sin_iva) : ''}`, href: `#/contratos?q=${encodeURIComponent(c.id)}` })),
     ...subv.slice(0, 3).map((s) => ({ d: s.fecha_concesion, k: tr('Subvención', 'Subvenció', 'Grant'), ti: s.convocatoria, m: `${s.beneficiario} · ${fmt.eur(s.importe)}`, href: `#/subvenciones?q=${encodeURIComponent(s.id)}` })),
@@ -111,9 +113,10 @@ async function viewHome(view) {
     </div></section>
     <div class="container">
       <h2 class="section-title">${tr('Información por categorías', 'Informació per categories', 'Information by category')}</h2>
-      <ul class="tile-grid">${PORTAL.categorias.map((c) => { const o = counts[c.id]; const pct = o.length ? (o.reduce((a, x) => a + ({ publicado: 1, parcial: 0.5 }[x.estado] || 0), 0) / o.length) * 100 : null; return `<li><a class="tile" href="#/categoria/${c.id}">
-        <span class="tile-icon">${icon(c.icono, 30)}</span><span class="tile-title">${esc(pick(c.titulo))}</span><span class="tile-text">${esc(pick(c.descripcion))}</span>
-        ${pct !== null ? `<span class="tile-meter"><span>${o.length} ${tr('obligaciones', 'obligacions', 'obligations')} · ${fmt.dec(pct, 0)} %</span>${meter(pct)}</span>` : `<span class="tile-meter muted small">${c.paginas.length} ${t('pages')}</span>`}</a></li>`; }).join('')}</ul>
+      <ul class="tile-grid dir">${PORTAL.categorias.map((c) => { const o = counts[c.id]; const pct = o.length ? (o.reduce((a, x) => a + ({ publicado: 1, parcial: 0.5 }[x.estado] || 0), 0) / o.length) * 100 : null; return `<li class="tile">
+        <a class="tile-head" href="#/categoria/${c.id}"><span class="tile-icon">${icon(c.icono, 26)}</span><span class="tile-title">${esc(pick(c.titulo))}</span></a>
+        <ul class="tile-links">${c.paginas.map((p) => `<li><a href="#/${p}">${icon('chevron', 14)}<span>${esc(titles[p])}</span></a></li>`).join('')}</ul>
+        ${pct !== null ? `<span class="tile-meter"><span>${o.length} ${tr('obligaciones', 'obligacions', 'obligations')} · ${fmt.dec(pct, 0)} %</span>${meter(pct)}</span>` : ''}</li>`; }).join('')}</ul>
       <div class="home-row">
         <section class="card"><div class="card-head"><h2 class="block-title">${tr('Últimas publicaciones', 'Últimes publicacions', 'Latest updates')}</h2><a href="feed.xml" class="small">${icon('rss', 14)} Atom</a></div>
           <ol class="news-list">${news.map((n) => `<li><a href="${n.href}"><time datetime="${n.d}">${fmt.date(n.d)}</time><span class="news-kind">${n.k}</span><span class="news-title">${esc(n.ti)}</span><span class="news-meta">${esc(n.m)}</span></a></li>`).join('')}</ol></section>
@@ -213,7 +216,7 @@ async function init() {
   if (!l) { try { l = localStorage.getItem('lang'); } catch { /* */ } }
   setLang(LANGS.includes(l) ? l : CFG.idioma_por_defecto || 'es');
   applyTheme();
-  renderChrome();
+  await renderChrome();
   try { const th = localStorage.getItem('theme'); if (th) document.documentElement.dataset.theme = th; } catch { /* */ }
   document.getElementById('theme-toggle').addEventListener('click', () => {
     const cur = document.documentElement.dataset.theme || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
@@ -223,7 +226,7 @@ async function init() {
   document.getElementById('topbar').addEventListener('click', (e) => {
     const b = e.target.closest('[data-lang]'); if (!b) return;
     setLang(b.dataset.lang); try { localStorage.setItem('lang', b.dataset.lang); } catch { /* */ }
-    index = null; renderChrome(); router();
+    index = null; renderChrome().then(router);
   });
   document.getElementById('nav-toggle').addEventListener('click', (e) => { const o = document.body.classList.toggle('nav-open'); e.currentTarget.setAttribute('aria-expanded', String(o)); });
   document.getElementById('search-open').addEventListener('click', openSearch);

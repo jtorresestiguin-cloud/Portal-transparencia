@@ -1164,7 +1164,7 @@
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "bytes": 4698,
+      "bytes": 6022,
       "sources": [
         {
           "title": "Unidad de Transparencia"
@@ -1192,7 +1192,10 @@
                 "patrimonio",
                 "personal",
                 "acceso",
-                "datos"
+                "datos",
+                "urbanismo",
+                "ciudadania",
+                "participacion"
               ]
             }
           },

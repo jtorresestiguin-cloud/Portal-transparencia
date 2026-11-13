@@ -1,0 +1,62 @@
+{
+ "id": "medio-ambiente",
+ "icono": "layout",
+ "titulo": {
+  "es": "Medio ambiente",
+  "va": "Medi ambient",
+  "en": "Environment"
+ },
+ "intro": {
+  "es": "Información ambiental, calidad del aire y del agua, residuos y planes de acción por el clima.",
+  "va": "Informació ambiental, qualitat de l’aire i de l’aigua, residus i plans d’acció pel clima.",
+  "en": "Environmental information, air and water quality, waste and climate plans."
+ },
+ "bloques": [
+  {
+   "tipo": "texto",
+   "titulo": {
+    "es": "Información ambiental",
+    "va": "Informació ambiental",
+    "en": "Environmental information"
+   },
+   "contenido": {
+    "es": "Derecho de acceso a la información ambiental conforme a la **Ley 27/2006**. Publica aquí los planes, autorizaciones y datos de calidad ambiental.",
+    "va": "Dret d’accés a la informació ambiental d’acord amb la **Llei 27/2006**. Publica ací els plans, autoritzacions i dades de qualitat ambiental.",
+    "en": "Right of access to environmental information under **Law 27/2006**."
+   }
+  },
+  {
+   "tipo": "documentos",
+   "titulo": {
+    "es": "Documentos",
+    "va": "Documents",
+    "en": "Documents"
+   },
+   "items": [
+    {
+     "titulo": {
+      "es": "Plan de Acción por el Clima y la Energía Sostenible (PACES)",
+      "va": "Pla d’Acció pel Clima i l’Energia Sostenible (PAES)",
+      "en": "Sustainable Energy and Climate Action Plan"
+     },
+     "fecha": "2023-11-20",
+     "url": "#",
+     "formato": "PDF"
+    },
+    {
+     "titulo": {
+      "es": "Análisis de calidad del agua de consumo",
+      "va": "Anàlisi de qualitat de l’aigua de consum",
+      "en": "Drinking-water quality analysis"
+     },
+     "fecha": "2026-09-30",
+     "url": "#",
+     "formato": "PDF"
+    }
+   ]
+  },
+  {
+   "tipo": "indicadores"
+  }
+ ]
+}

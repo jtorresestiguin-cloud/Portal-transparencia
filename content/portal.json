@@ -15,7 +15,8 @@
    "contratos",
    "cargos",
    "presupuesto",
-   "subvenciones"
+   "subvenciones",
+   "derecho-acceso"
   ]
  },
  "categorias": [
@@ -23,36 +24,111 @@
    "id": "institucional",
    "icono": "building",
    "titulo": {
-    "es": "Información institucional y organizativa",
-    "va": "Informació institucional i organitzativa",
+    "es": "Información institucional",
+    "va": "Informació institucional",
     "en": "Institutional information"
    },
    "descripcion": {
-    "es": "Funciones, organización, órganos de gobierno y normativa.",
-    "va": "Funcions, organització, òrgans de govern i normativa.",
-    "en": "Functions, organisation, governing bodies and regulations."
+    "es": "Organización, órganos de gobierno, cargos electos y agenda.",
+    "va": "Organització, òrgans de govern, càrrecs electes i agenda.",
+    "en": "Organisation, governing bodies, elected officials and diary."
    },
    "paginas": [
     "organizacion",
-    "normativa"
+    "cargos",
+    "agenda"
    ]
   },
   {
-   "id": "cargos",
-   "icono": "users",
+   "id": "personal",
+   "icono": "briefcase",
    "titulo": {
-    "es": "Altos cargos y cargos electos",
-    "va": "Alts càrrecs i càrrecs electes",
-    "en": "Senior & elected officials"
+    "es": "Personal y empleo",
+    "va": "Personal i ocupació",
+    "en": "Staff and employment"
    },
    "descripcion": {
-    "es": "Identificación, retribuciones, declaraciones y agenda.",
-    "va": "Identificació, retribucions, declaracions i agenda.",
-    "en": "Identity, pay, declarations and diary."
+    "es": "RPT, plantilla, compatibilidades, oferta de empleo y procesos selectivos.",
+    "va": "RLT, plantilla, compatibilitats, oferta d’ocupació i processos selectius.",
+    "en": "Job catalogue, workforce, compatibilities and recruitment."
    },
    "paginas": [
-    "cargos",
-    "agenda"
+    "personal",
+    "procesos-selectivos",
+    "compatibilidades"
+   ]
+  },
+  {
+   "id": "juridica",
+   "icono": "scale",
+   "titulo": {
+    "es": "Información jurídica",
+    "va": "Informació jurídica",
+    "en": "Legal information"
+   },
+   "descripcion": {
+    "es": "Proyectos normativos, participación en su elaboración, normativa vigente y sentencias.",
+    "va": "Projectes normatius, participació en la seua elaboració, normativa vigent i sentències.",
+    "en": "Draft regulations, public input, regulations in force and court rulings."
+   },
+   "paginas": [
+    "proyectos-normativos",
+    "normativa",
+    "sentencias"
+   ]
+  },
+  {
+   "id": "patrimonio",
+   "icono": "map",
+   "titulo": {
+    "es": "Patrimonio",
+    "va": "Patrimoni",
+    "en": "Assets"
+   },
+   "descripcion": {
+    "es": "Bienes inmuebles de titularidad municipal.",
+    "va": "Béns immobles de titularitat municipal.",
+    "en": "Municipal real estate."
+   },
+   "paginas": [
+    "patrimonio"
+   ]
+  },
+  {
+   "id": "economica",
+   "icono": "euro",
+   "titulo": {
+    "es": "Presupuesto y economía",
+    "va": "Pressupost i economia",
+    "en": "Budget and finance"
+   },
+   "descripcion": {
+    "es": "Presupuesto, ejecución, periodo medio de pago y deuda.",
+    "va": "Pressupost, execució, període mitjà de pagament i deute.",
+    "en": "Budget, execution, payment period and debt."
+   },
+   "paginas": [
+    "presupuesto",
+    "economia"
+   ]
+  },
+  {
+   "id": "subvenciones",
+   "icono": "hand",
+   "titulo": {
+    "es": "Ayudas y subvenciones",
+    "va": "Ajudes i subvencions",
+    "en": "Grants"
+   },
+   "descripcion": {
+    "es": "Subvenciones concedidas y recibidas y plan estratégico.",
+    "va": "Subvencions concedides i rebudes i pla estratègic.",
+    "en": "Grants awarded and received, and strategic plan."
+   },
+   "paginas": [
+    "subvenciones",
+    "subvenciones-recibidas",
+    "plan-estrategico-subvenciones"
    ]
   },
   {
@@ -74,82 +150,81 @@
    ]
   },
   {
-   "id": "convenios-subvenciones",
-   "icono": "hand",
+   "id": "convenios",
+   "icono": "link",
    "titulo": {
-    "es": "Convenios y subvenciones",
-    "va": "Convenis i subvencions",
-    "en": "Agreements & grants"
+    "es": "Convenios",
+    "va": "Convenis",
+    "en": "Agreements"
    },
    "descripcion": {
-    "es": "Convenios suscritos y subvenciones concedidas (BDNS).",
-    "va": "Convenis subscrits i subvencions concedides (BDNS).",
-    "en": "Signed agreements and grants awarded (BDNS)."
+    "es": "Convenios de colaboración suscritos.",
+    "va": "Convenis de col·laboració subscrits.",
+    "en": "Signed collaboration agreements."
    },
    "paginas": [
-    "subvenciones",
     "convenios"
    ]
   },
   {
-   "id": "economica",
-   "icono": "euro",
+   "id": "urbanismo",
+   "icono": "layout",
    "titulo": {
-    "es": "Información económica y presupuestaria",
-    "va": "Informació econòmica i pressupostària",
-    "en": "Economic & budget information"
+    "es": "Urbanismo y medio ambiente",
+    "va": "Urbanisme i medi ambient",
+    "en": "Planning and environment"
    },
    "descripcion": {
-    "es": "Presupuesto, ejecución, periodo medio de pago y deuda.",
-    "va": "Pressupost, execució, període mitjà de pagament i deute.",
-    "en": "Budget, execution, payment period and debt."
+    "es": "Planeamiento urbanístico, convenios urbanísticos e información ambiental.",
+    "va": "Planejament urbanístic, convenis urbanístics i informació ambiental.",
+    "en": "Urban planning and environmental information."
    },
    "paginas": [
-    "presupuesto",
-    "economia"
+    "planeamiento",
+    "medio-ambiente"
    ]
   },
   {
-   "id": "patrimonio",
-   "icono": "map",
+   "id": "ciudadania",
+   "icono": "users",
    "titulo": {
-    "es": "Patrimonio",
-    "va": "Patrimoni",
-    "en": "Assets"
+    "es": "Información y atención a la ciudadanía",
+    "va": "Informació i atenció a la ciutadania",
+    "en": "Citizen information and services"
    },
    "descripcion": {
-    "es": "Bienes inmuebles de titularidad municipal.",
-    "va": "Béns immobles de titularitat municipal.",
-    "en": "Municipal real estate."
+    "es": "Catálogo de servicios, cartas de servicios, sede electrónica y sugerencias.",
+    "va": "Catàleg de serveis, cartes de serveis, seu electrònica i suggeriments.",
+    "en": "Service catalogue, service charters, e-office and suggestions."
    },
    "paginas": [
-    "patrimonio"
+    "servicios"
    ]
   },
   {
-   "id": "personal",
-   "icono": "briefcase",
+   "id": "participacion",
+   "icono": "share",
    "titulo": {
-    "es": "Personal",
-    "va": "Personal",
-    "en": "Staff"
+    "es": "Participación",
+    "va": "Participació",
+    "en": "Participation"
    },
    "descripcion": {
-    "es": "Plantilla, tipos de personal y grupos profesionales.",
-    "va": "Plantilla, tipus de personal i grups professionals.",
-    "en": "Workforce, staff types and grades."
+    "es": "Consultas, procesos participativos y valoración de los servicios.",
+    "va": "Consultes, processos participatius i valoració dels serveis.",
+    "en": "Consultations, participatory processes and service ratings."
    },
    "paginas": [
-    "personal"
+    "participacion"
    ]
   },
   {
    "id": "acceso",
    "icono": "inbox",
    "titulo": {
-    "es": "Derecho de acceso",
-    "va": "Dret d’accés",
-    "en": "Right of access"
+    "es": "Acceso a la información pública",
+    "va": "Accés a la informació pública",
+    "en": "Access to public information"
    },
    "descripcion": {
     "es": "Cómo solicitar información y estadísticas de respuesta.",

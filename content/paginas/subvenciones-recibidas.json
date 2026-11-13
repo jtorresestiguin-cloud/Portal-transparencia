@@ -1,0 +1,62 @@
+{
+ "id": "subvenciones-recibidas",
+ "icono": "hand",
+ "titulo": {
+  "es": "Subvenciones recibidas",
+  "va": "Subvencions rebudes",
+  "en": "Grants received"
+ },
+ "intro": {
+  "es": "Ayudas y subvenciones que recibe la entidad de otras administraciones, incluidos los fondos europeos.",
+  "va": "Ajudes i subvencions que rep l’entitat d’altres administracions, inclosos els fons europeus.",
+  "en": "Grants the council receives from other bodies, including EU funds."
+ },
+ "bloques": [
+  {
+   "tipo": "texto",
+   "titulo": {
+    "es": "Cómo se publica",
+    "va": "Com es publica",
+    "en": "How it is published"
+   },
+   "contenido": {
+    "es": "Las subvenciones recibidas se pueden consultar en la [Base de Datos Nacional de Subvenciones](https://www.infosubvenciones.es) buscando por el NIF de la entidad como beneficiaria. Aquí se publican además las resoluciones de concesión y su justificación.",
+    "va": "Les subvencions rebudes es poden consultar en la [Base de Dades Nacional de Subvencions](https://www.infosubvenciones.es) cercant pel NIF de l’entitat com a beneficiària. Ací es publiquen a més les resolucions de concessió i la seua justificació.",
+    "en": "Grants received can be checked in the [National Grants Database](https://www.infosubvenciones.es) by searching for the council’s tax ID as beneficiary. Award decisions and their justification are also published here."
+   }
+  },
+  {
+   "tipo": "documentos",
+   "titulo": {
+    "es": "Resoluciones de concesión",
+    "va": "Resolucions de concessió",
+    "en": "Award decisions"
+   },
+   "items": [
+    {
+     "titulo": {
+      "es": "Plan provincial de obras y servicios",
+      "va": "Pla provincial d’obres i serveis",
+      "en": "Provincial works plan"
+     },
+     "fecha": "2026-05-12",
+     "url": "#",
+     "formato": "PDF"
+    },
+    {
+     "titulo": {
+      "es": "Fondos europeos: rehabilitación energética",
+      "va": "Fons europeus: rehabilitació energètica",
+      "en": "EU funds: energy retrofit"
+     },
+     "fecha": "2025-12-01",
+     "url": "#",
+     "formato": "PDF"
+    }
+   ]
+  },
+  {
+   "tipo": "indicadores"
+  }
+ ]
+}
