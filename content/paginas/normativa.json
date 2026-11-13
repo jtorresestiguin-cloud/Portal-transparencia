@@ -46,8 +46,8 @@
     "titulo",
     "tipo",
     "fecha_aprobacion",
-    "boletin",
-    "url"
+    "url",
+    "vigente"
    ],
    "filtros": [
     "tipo"
@@ -66,5 +66,5 @@
   "va": "Secretaria General",
   "en": "General Secretariat"
  },
- "actualizado": "2026-11-10"
+ "actualizado": "2026-11-13"
 }

@@ -1,7 +1,6 @@
 {
  "generado": "2026-11-13",
  "fuente": "manual",
- "ejemplo": true,
  "aviso": "Datos de ejemplo generados sintéticamente. No son cifras oficiales.",
  "unidad": "EUR bruto anual",
  "datos": [
@@ -17,7 +16,7 @@
    "retribucion_anual": 31500,
    "indemnizaciones_anuales": 0,
    "fecha_nombramiento": "2023-06-23",
-   "foto": "assets/img/cargos/C01.svg",
+   "foto": "archivos/cargos/2026/generated-photo-bb60da0b-7164-423e-9301-5a102c516048-d43j.jpg",
    "email": "c01@example.org",
    "cv_url": "",
    "declaracion_bienes_url": "#",
@@ -203,5 +202,6 @@
    "declaracion_bienes_url": "#",
    "declaracion_actividades_url": "#"
   }
- ]
+ ],
+ "actualizado": "2026-11-13"
 }

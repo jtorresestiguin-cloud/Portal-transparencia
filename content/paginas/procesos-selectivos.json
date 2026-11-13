@@ -19,40 +19,7 @@
     "va": "Oferta d’ocupació pública",
     "en": "Public employment offer"
    },
-   "items": [
-    {
-     "titulo": {
-      "es": "Oferta de empleo público 2026",
-      "va": "Oferta d’ocupació pública 2026",
-      "en": "Public employment offer 2026"
-     },
-     "fecha": "2026-03-15",
-     "url": "#",
-     "formato": "PDF"
-    },
-    {
-     "titulo": {
-      "es": "Oferta de empleo público 2025",
-      "va": "Oferta d’ocupació pública 2025",
-      "en": "Public employment offer 2025"
-     },
-     "fecha": "2025-03-20",
-     "url": "#",
-     "formato": "PDF"
-    },
-    {
-     "titulo": {
-      "es": "",
-      "va": "",
-      "en": ""
-     },
-     "tipo": {
-      "es": "",
-      "va": "",
-      "en": ""
-     }
-    }
-   ]
+   "items": []
   },
   {
    "tipo": "documentos",
