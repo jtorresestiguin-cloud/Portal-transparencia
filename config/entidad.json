@@ -1,7 +1,15 @@
 {
   "_comentario": "Configuración de la entidad. Es el ÚNICO fichero que hay que cambiar para adaptar el portal a otra administración. También se edita desde el editor visual (admin/), pestaña «Entidad».",
-  "nombre": { "es": "Ayuntamiento de Ejemplo", "va": "Ajuntament d'Exemple", "en": "Example Town Council" },
-  "nombre_corto": { "es": "Ayuntamiento de Ejemplo", "va": "Ajuntament d'Exemple", "en": "Example Town Council" },
+  "nombre": {
+    "es": "Ayuntamiento de Vicentorres",
+    "va": "Ajuntament d'Exemple",
+    "en": "Example Town Council"
+  },
+  "nombre_corto": {
+    "es": "Ayuntamiento de Ejemplo",
+    "va": "Ajuntament d'Exemple",
+    "en": "Example Town Council"
+  },
   "tipo": "ayuntamiento",
   "nif": "P0000000X",
   "dir3": "L00000000",
@@ -14,8 +22,15 @@
   "web": "https://www.example.org",
   "sede_electronica": "https://sede.example.org",
   "escudo": "assets/img/escudo.svg",
-  "colores": { "principal": "#7a1f2b", "secundario": "#b5893b" },
-  "idiomas": ["es", "va", "en"],
+  "colores": {
+    "principal": "#5f5353",
+    "secundario": "#b5893b"
+  },
+  "idiomas": [
+    "es",
+    "va",
+    "en"
+  ],
   "idioma_por_defecto": "es",
   "normativa_autonomica": {
     "es": "Ley 1/2022, de 13 de abril, de Transparencia y Buen Gobierno de la Comunitat Valenciana",
@@ -23,7 +38,10 @@
     "en": "Valencian Law 1/2022 on Transparency and Good Governance",
     "eli": "https://www.boe.es/eli/es-vc/l/2022/04/13/1"
   },
-  "consejo_transparencia": { "nombre": "Consejo de Transparencia de la Comunitat Valenciana", "url": "https://www.consejotransparencia.gva.es" },
+  "consejo_transparencia": {
+    "nombre": "Consejo de Transparencia de la Comunitat Valenciana",
+    "url": "https://www.consejotransparencia.gva.es"
+  },
   "licencia_datos": "https://creativecommons.org/licenses/by/4.0/",
   "datos_de_ejemplo": true,
   "fuentes": {
@@ -31,11 +49,22 @@
       "activo": true,
       "_ayuda": "Filtra las entradas de los feeds de la Plataforma de Contratación del Sector Público cuyo órgano de contratación coincida con alguno de estos identificadores (NIF o DIR3) o nombres.",
       "feeds": [
-        { "tipo": "licitaciones", "url": "https://contrataciondelsectorpublico.gob.es/sindicacion/sindicacion_643/licitacionesPerfilesContratanteCompleto3.atom" },
-        { "tipo": "menores", "url": "https://contrataciondelsectorpublico.gob.es/sindicacion/sindicacion_1143/contratosMenoresPerfilesContratantes.atom" }
+        {
+          "tipo": "licitaciones",
+          "url": "https://contrataciondelsectorpublico.gob.es/sindicacion/sindicacion_643/licitacionesPerfilesContratanteCompleto3.atom"
+        },
+        {
+          "tipo": "menores",
+          "url": "https://contrataciondelsectorpublico.gob.es/sindicacion/sindicacion_1143/contratosMenoresPerfilesContratantes.atom"
+        }
       ],
-      "identificadores_organo": ["P0000000X", "L00000000"],
-      "nombres_organo": ["Ayuntamiento de Ejemplo"],
+      "identificadores_organo": [
+        "P0000000X",
+        "L00000000"
+      ],
+      "nombres_organo": [
+        "Ayuntamiento de Ejemplo"
+      ],
       "desde": "2022-01-01",
       "max_paginas": 400
     },
@@ -48,5 +77,8 @@
       "desde": "2022-01-01"
     }
   },
-  "github": { "repositorio": "jtorresestiguin-cloud/Portal-transparencia", "rama": "main" }
+  "github": {
+    "repositorio": "jtorresestiguin-cloud/Portal-transparencia",
+    "rama": "main"
+  }
 }

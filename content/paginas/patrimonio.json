@@ -35,6 +35,16 @@
      "operacion": "sumar",
      "campo": "superficie_m2",
      "formato": "m2"
+    },
+    {
+     "etiqueta": {
+      "es": "",
+      "va": "",
+      "en": ""
+     },
+     "conjunto": "inmuebles",
+     "operacion": "contar",
+     "campo": "naturaleza"
     }
    ]
   },
@@ -58,7 +68,8 @@
     "naturaleza",
     "direccion",
     "superficie_m2",
-    "uso"
+    "uso",
+    "referencia_catastral"
    ],
    "filtros": [
     "tipo",
@@ -75,5 +86,5 @@
   "va": "Patrimoni",
   "en": "Assets"
  },
- "actualizado": "2026-11-10"
+ "actualizado": "2026-11-13"
 }
