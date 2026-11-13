@@ -5,29 +5,12 @@
  "unidad": "EUR bruto anual",
  "datos": [
   {
-   "id": "CAR-mwervtp2",
-   "nombre": null,
-   "tipo_cargo": null,
-   "cargo": null,
-   "areas": null,
-   "grupo_politico": null,
-   "dedicacion": null,
-   "retribucion_anual": null,
-   "indemnizaciones_anuales": null,
-   "fecha_nombramiento": null,
-   "foto": null,
-   "email": null,
-   "cv_url": null,
-   "declaracion_bienes_url": null,
-   "declaracion_actividades_url": null
-  },
-  {
    "id": "C01",
-   "nombre": "Laura Ejemplo López",
+   "nombre": "Benito Pérez",
    "tipo_cargo": "alcaldia",
    "cargo": "Alcalde/sa",
    "areas": "Presidencia y Policía Local",
-   "grupo_politico": "Grupo Municipal A",
+   "grupo_politico": "Partido Socialista",
    "dedicacion": "exclusiva",
    "retribucion_anual": 46800,
    "indemnizaciones_anuales": 0,
@@ -40,7 +23,7 @@
   },
   {
    "id": "C02",
-   "nombre": "Vicent Ejemplo López",
+   "nombre": "Alfonso López",
    "tipo_cargo": "teniente_alcaldia",
    "cargo": "1.ª Tenencia de Alcaldía",
    "areas": "Hacienda y Personal",
@@ -57,7 +40,7 @@
   },
   {
    "id": "C03",
-   "nombre": "Marta Ejemplo García",
+   "nombre": "Jorge García",
    "tipo_cargo": "teniente_alcaldia",
    "cargo": "2.ª Tenencia de Alcaldía",
    "areas": "Urbanismo y Obras",
@@ -309,23 +292,6 @@
    "cv_url": "",
    "declaracion_bienes_url": "#",
    "declaracion_actividades_url": "#"
-  },
-  {
-   "id": "E01",
-   "nombre": "Persona Ejemplo Eventual",
-   "tipo_cargo": "eventual",
-   "cargo": "Asesor/a de Alcaldía",
-   "areas": "Gabinete de Alcaldía",
-   "grupo_politico": "",
-   "dedicacion": "exclusiva",
-   "retribucion_anual": 32100,
-   "indemnizaciones_anuales": 0,
-   "fecha_nombramiento": "2023-07-03",
-   "foto": "",
-   "email": "gabinete@example.org",
-   "cv_url": "",
-   "declaracion_bienes_url": "",
-   "declaracion_actividades_url": ""
   }
  ],
  "actualizado": "2026-11-13"
