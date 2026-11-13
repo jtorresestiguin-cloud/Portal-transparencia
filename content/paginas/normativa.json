@@ -1,0 +1,64 @@
+{
+ "id": "normativa",
+ "icono": "scale",
+ "titulo": {
+  "es": "Normativa municipal",
+  "va": "Normativa municipal",
+  "en": "Municipal regulations"
+ },
+ "intro": {
+  "es": "Ordenanzas, reglamentos e instrucciones vigentes.",
+  "va": "Ordenances, reglaments i instruccions vigents.",
+  "en": "By-laws, regulations and instructions in force."
+ },
+ "bloques": [
+  {
+   "tipo": "cifras",
+   "items": [
+    {
+     "etiqueta": {
+      "es": "Normas vigentes",
+      "va": "Normes vigents",
+      "en": "Regulations in force"
+     },
+     "conjunto": "normativa",
+     "operacion": "contar",
+     "filtro": "vigente=true",
+     "formato": "entero"
+    },
+    {
+     "etiqueta": {
+      "es": "Ordenanzas fiscales",
+      "va": "Ordenances fiscals",
+      "en": "Tax by-laws"
+     },
+     "conjunto": "normativa",
+     "operacion": "contar",
+     "filtro": "tipo=ordenanza_fiscal",
+     "formato": "entero"
+    }
+   ]
+  },
+  {
+   "tipo": "tabla",
+   "conjunto": "normativa",
+   "columnas": [
+    "titulo",
+    "tipo",
+    "fecha_aprobacion",
+    "boletin",
+    "url"
+   ],
+   "filtros": [
+    "tipo"
+   ],
+   "busqueda": true,
+   "orden": "fecha_aprobacion",
+   "descendente": true,
+   "por_pagina": 20
+  },
+  {
+   "tipo": "indicadores"
+  }
+ ]
+}

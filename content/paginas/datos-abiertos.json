@@ -1,0 +1,19 @@
+{
+ "id": "datos-abiertos",
+ "icono": "database",
+ "titulo": {
+  "es": "Datos abiertos",
+  "va": "Dades obertes",
+  "en": "Open data"
+ },
+ "intro": {
+  "es": "Todos los datos del portal en formatos abiertos, con API y catálogo federable.",
+  "va": "Totes les dades del portal en formats oberts, amb API i catàleg federable.",
+  "en": "All portal data in open formats, with an API and harvestable catalogue."
+ },
+ "bloques": [
+  {
+   "tipo": "catalogo"
+  }
+ ]
+}

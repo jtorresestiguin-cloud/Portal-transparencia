@@ -1,0 +1,26 @@
+{
+ "id": "contratos",
+ "icono": "file",
+ "titulo": {
+  "es": "Contratos",
+  "va": "Contractes",
+  "en": "Contracts"
+ },
+ "intro": {
+  "es": "Todos los contratos del perfil del contratante, incluidos los menores. Se actualizan automáticamente cada día desde la Plataforma de Contratación del Sector Público.",
+  "va": "Tots els contractes del perfil del contractant, inclosos els menors. S’actualitzen automàticament cada dia des de la Plataforma de Contractació del Sector Públic.",
+  "en": "All contracting-profile contracts, including minor contracts, updated daily from the Public Procurement Platform."
+ },
+ "bloques": [
+  {
+   "tipo": "fuente",
+   "conjunto": "contratos"
+  },
+  {
+   "tipo": "contratacion"
+  },
+  {
+   "tipo": "indicadores"
+  }
+ ]
+}

@@ -1,0 +1,44 @@
+{
+ "generado": "2026-11-13",
+ "fuente": "manual",
+ "ejemplo": true,
+ "aviso": "Datos de ejemplo generados sintéticamente. No son cifras oficiales.",
+ "unidad": "EUR",
+ "datos": [
+  {
+   "anio": 2019,
+   "deuda_viva": 5919760.49,
+   "ingresos_corrientes": 13415937.39
+  },
+  {
+   "anio": 2020,
+   "deuda_viva": 5408449.26,
+   "ingresos_corrientes": 14005569.25
+  },
+  {
+   "anio": 2021,
+   "deuda_viva": 4894923.22,
+   "ingresos_corrientes": 14183272.26
+  },
+  {
+   "anio": 2022,
+   "deuda_viva": 4361844.19,
+   "ingresos_corrientes": 14904733.83
+  },
+  {
+   "anio": 2023,
+   "deuda_viva": 3881293.4,
+   "ingresos_corrientes": 15343825.74
+  },
+  {
+   "anio": 2024,
+   "deuda_viva": 3506401.99,
+   "ingresos_corrientes": 16001125.32
+  },
+  {
+   "anio": 2025,
+   "deuda_viva": 3086283.29,
+   "ingresos_corrientes": 16577564.04
+  }
+ ]
+}

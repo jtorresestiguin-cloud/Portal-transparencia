@@ -1,0 +1,9 @@
+{
+  "_comentario": "Respuesta de prueba con la forma de la API de la BDNS (GET /concesiones/busqueda). Datos ficticios.",
+  "content": [
+    { "id": 1, "codConcesion": "SB900001", "numeroConvocatoria": "812345", "convocatoria": "Subvenciones a clubes deportivos 2026", "nivel1": "LOCAL", "nivel2": "VALENCIA", "nivel3": "AYUNTAMIENTO DE EJEMPLO", "fechaConcesion": "2026-10-15", "beneficiario": "G12345678 CLUB DEPORTIVO PRUEBA", "instrumento": "SUBVENCIÓN Y ENTREGA DINERARIA SIN CONTRAPRESTACIÓN", "importe": 4500, "ayudaEquivalente": 4500 },
+    { "id": 2, "codConcesion": "SB900002", "numeroConvocatoria": "812346", "convocatoria": "Ayudas de emergencia social", "nivel1": "LOCAL", "nivel2": "VALENCIA", "nivel3": "AYUNTAMIENTO DE EJEMPLO", "fechaConcesion": "02/10/2026", "beneficiario": "***1234** PERSONA FÍSICA", "importe": "600.50" }
+  ],
+  "totalPages": 1,
+  "totalElements": 2
+}

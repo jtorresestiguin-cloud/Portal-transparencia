@@ -1,0 +1,22 @@
+{
+ "id": "presupuesto",
+ "icono": "euro",
+ "titulo": {
+  "es": "Presupuesto y ejecución",
+  "va": "Pressupost i execució",
+  "en": "Budget and execution"
+ },
+ "intro": {
+  "es": "De dónde salen los ingresos, en qué se gastan y cómo se ejecuta el presupuesto.",
+  "va": "D’on ixen els ingressos, en què es gasten i com s’executa el pressupost.",
+  "en": "Where revenue comes from, what it is spent on and how the budget is executed."
+ },
+ "bloques": [
+  {
+   "tipo": "presupuesto"
+  },
+  {
+   "tipo": "indicadores"
+  }
+ ]
+}

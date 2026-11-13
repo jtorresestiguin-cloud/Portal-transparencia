@@ -1,0 +1,110 @@
+{
+ "id": "cargos",
+ "icono": "users",
+ "titulo": {
+  "es": "Cargos electos y personal directivo",
+  "va": "Càrrecs electes i personal directiu",
+  "en": "Elected officials and senior staff"
+ },
+ "intro": {
+  "es": "Quién forma la corporación, qué responsabilidades tiene, cuánto cobra y sus declaraciones de bienes y actividades.",
+  "va": "Qui forma la corporació, quines responsabilitats té, quant cobra i les seues declaracions de béns i activitats.",
+  "en": "Who sits on the council, their responsibilities, pay and declarations."
+ },
+ "bloques": [
+  {
+   "tipo": "cifras",
+   "items": [
+    {
+     "etiqueta": {
+      "es": "Miembros de la corporación",
+      "va": "Membres de la corporació",
+      "en": "Council members"
+     },
+     "conjunto": "cargos",
+     "operacion": "contar",
+     "filtro": "tipo_cargo!=eventual",
+     "formato": "entero"
+    },
+    {
+     "etiqueta": {
+      "es": "Con dedicación exclusiva",
+      "va": "Amb dedicació exclusiva",
+      "en": "Full-time"
+     },
+     "conjunto": "cargos",
+     "operacion": "contar",
+     "filtro": "dedicacion=exclusiva",
+     "formato": "entero"
+    },
+    {
+     "etiqueta": {
+      "es": "Retribuciones anuales",
+      "va": "Retribucions anuals",
+      "en": "Annual pay"
+     },
+     "conjunto": "cargos",
+     "operacion": "sumar",
+     "campo": "retribucion_anual",
+     "formato": "euros"
+    },
+    {
+     "etiqueta": {
+      "es": "Asistencias e indemnizaciones",
+      "va": "Assistències i indemnitzacions",
+      "en": "Attendance fees"
+     },
+     "conjunto": "cargos",
+     "operacion": "sumar",
+     "campo": "indemnizaciones_anuales",
+     "formato": "euros"
+    }
+   ]
+  },
+  {
+   "tipo": "personas",
+   "titulo": {
+    "es": "Corporación municipal",
+    "va": "Corporació municipal",
+    "en": "Council members"
+   },
+   "conjunto": "cargos",
+   "filtro": "tipo_cargo!=eventual",
+   "mostrar_retribucion": true
+  },
+  {
+   "tipo": "personas",
+   "titulo": {
+    "es": "Personal eventual y directivo",
+    "va": "Personal eventual i directiu",
+    "en": "Advisers and senior staff"
+   },
+   "conjunto": "cargos",
+   "filtro": "tipo_cargo=eventual",
+   "mostrar_retribucion": true
+  },
+  {
+   "tipo": "grafico",
+   "titulo": {
+    "es": "Retribuciones por cargo",
+    "va": "Retribucions per càrrec",
+    "en": "Pay by official"
+   },
+   "subtitulo": {
+    "es": "Euros brutos anuales",
+    "va": "Euros bruts anuals",
+    "en": "Gross EUR per year"
+   },
+   "conjunto": "cargos",
+   "tipo_grafico": "barras",
+   "agrupar": "nombre",
+   "valor": "retribucion_anual",
+   "operacion": "sumar",
+   "filtro": "retribucion_anual>0",
+   "formato": "euros"
+  },
+  {
+   "tipo": "indicadores"
+  }
+ ]
+}

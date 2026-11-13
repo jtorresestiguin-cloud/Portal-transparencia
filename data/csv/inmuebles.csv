@@ -1,0 +1,15 @@
+id,denominacion,tipo,naturaleza,direccion,referencia_catastral,superficie_m2,uso,lat,lon
+INV-001,Casa Consistorial,edificio,demanial,"Calle Ejemplo, 66",4578859YJ2902N0001KL,4659.31,Oficinas municipales,39.57087,-0.32921
+INV-002,Casa de Cultura,edificio,demanial,"Calle Ejemplo, 112",3164551YJ7981N0001PQ,2502.48,Equipamiento cultural,39.57782,-0.32592
+INV-003,Polideportivo municipal,deportivo,demanial,"Calle Ejemplo, 49",6853042YJ4718N0001AB,4585.54,Instalación deportiva,39.56511,-0.33713
+INV-004,Piscina municipal,deportivo,demanial,"Calle Ejemplo, 72",5613903YJ4098N0001KL,4619.83,Instalación deportiva,39.57769,-0.32323
+INV-005,CEIP Ejemplo,educativo,demanial,"Calle Ejemplo, 55",1335076YJ8389N0001PQ,828.74,Centro educativo,39.56611,-0.33472
+INV-006,Escuela infantil municipal,educativo,demanial,"Calle Ejemplo, 9",9736130YJ8394N0001PQ,613.07,Centro educativo,39.56314,-0.33124
+INV-007,Parque central,parque,demanial,"Calle Ejemplo, 90",3513518YJ4947N0001AB,3125.15,Zona verde,39.5625,-0.33813
+INV-008,Jardín de la Glorieta,parque,demanial,"Calle Ejemplo, 69",5882972YJ6067N0001PQ,183.75,Zona verde,39.57518,-0.33952
+INV-009,Centro social de mayores,edificio,demanial,"Calle Ejemplo, 113",3647978YJ3268N0001AB,1567.65,Servicios sociales,39.57151,-0.33333
+INV-010,Retén de la Policía Local,edificio,demanial,"Calle Ejemplo, 26",6623118YJ6071N0001PQ,2788.68,Seguridad,39.57439,-0.32375
+INV-011,Solar del antiguo mercado,solar,patrimonial,"Calle Ejemplo, 101",9371518YJ7056N0001KL,730.89,Sin uso,39.57797,-0.33125
+INV-012,Finca rústica del camí vell,rustico,patrimonial,"Calle Ejemplo, 5",2018581YJ8012N0001KL,23025.9,Arrendamiento agrícola,39.56345,-0.33791
+INV-013,Almacén municipal,edificio,patrimonial,"Calle Ejemplo, 22",8394689YJ7084N0001AB,5482.96,Almacén de la brigada,39.57391,-0.32095
+INV-014,Local comercial de la plaza,edificio,patrimonial,"Calle Ejemplo, 33",8413546YJ4606N0001AB,5356.05,Alquiler,39.57289,-0.33204

@@ -1,0 +1,132 @@
+{
+ "id": "economia",
+ "icono": "chart",
+ "titulo": {
+  "es": "Estabilidad, pago a proveedores y deuda",
+  "va": "Estabilitat, pagament a proveïdors i deute",
+  "en": "Stability, supplier payments and debt"
+ },
+ "intro": {
+  "es": "Periodo medio de pago, deuda viva y documentos económicos.",
+  "va": "Període mitjà de pagament, deute viu i documents econòmics.",
+  "en": "Payment period, outstanding debt and financial documents."
+ },
+ "bloques": [
+  {
+   "tipo": "cifras",
+   "items": [
+    {
+     "etiqueta": {
+      "es": "PMP último mes",
+      "va": "PMP últim mes",
+      "en": "Latest payment period"
+     },
+     "conjunto": "pmp",
+     "operacion": "ultimo",
+     "campo": "pmp_dias",
+     "formato": "dias"
+    },
+    {
+     "etiqueta": {
+      "es": "Deuda viva 2025",
+      "va": "Deute viu 2025",
+      "en": "Debt 2025"
+     },
+     "conjunto": "deuda",
+     "operacion": "ultimo",
+     "campo": "deuda_viva",
+     "formato": "euros_compacto"
+    }
+   ]
+  },
+  {
+   "tipo": "aviso",
+   "nivel": "info",
+   "contenido": {
+    "es": "El plazo máximo legal de pago a proveedores es de **30 días** (Real Decreto 635/2014).",
+    "va": "El termini màxim legal de pagament a proveïdors és de **30 dies** (Reial decret 635/2014).",
+    "en": "The legal maximum supplier payment period is **30 days**."
+   }
+  },
+  {
+   "tipo": "grafico",
+   "titulo": {
+    "es": "Periodo medio de pago a proveedores",
+    "va": "Període mitjà de pagament a proveïdors",
+    "en": "Average supplier payment period"
+   },
+   "subtitulo": {
+    "es": "Días, mensual",
+    "va": "Dies, mensual",
+    "en": "Days, monthly"
+   },
+   "conjunto": "pmp",
+   "tipo_grafico": "lineas",
+   "agrupar": "periodo",
+   "valor": "pmp_dias",
+   "operacion": "sumar",
+   "formato": "dias",
+   "orden": "etiqueta",
+   "ancho": "completo",
+   "referencia": 30
+  },
+  {
+   "tipo": "grafico",
+   "titulo": {
+    "es": "Deuda viva a 31 de diciembre",
+    "va": "Deute viu a 31 de desembre",
+    "en": "Outstanding debt at 31 December"
+   },
+   "conjunto": "deuda",
+   "tipo_grafico": "columnas",
+   "agrupar": "anio",
+   "valor": "deuda_viva",
+   "operacion": "sumar",
+   "formato": "euros",
+   "orden": "etiqueta"
+  },
+  {
+   "tipo": "documentos",
+   "titulo": {
+    "es": "Documentos económicos",
+    "va": "Documents econòmics",
+    "en": "Financial documents"
+   },
+   "items": [
+    {
+     "titulo": {
+      "es": "Cuenta general 2024",
+      "va": "Compte general 2024",
+      "en": "General accounts 2024"
+     },
+     "fecha": "2025-10-01",
+     "url": "#",
+     "formato": "PDF"
+    },
+    {
+     "titulo": {
+      "es": "Informe de estabilidad presupuestaria (3T 2026)",
+      "va": "Informe d’estabilitat pressupostària (3T 2026)",
+      "en": "Budget stability report (Q3 2026)"
+     },
+     "fecha": "2026-10-30",
+     "url": "#",
+     "formato": "PDF"
+    },
+    {
+     "titulo": {
+      "es": "Informe de fiscalización de la Sindicatura de Comptes",
+      "va": "Informe de fiscalització de la Sindicatura de Comptes",
+      "en": "Audit Office report"
+     },
+     "fecha": "2025-06-12",
+     "url": "#",
+     "formato": "PDF"
+    }
+   ]
+  },
+  {
+   "tipo": "indicadores"
+  }
+ ]
+}

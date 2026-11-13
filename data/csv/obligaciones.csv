@@ -1,0 +1,37 @@
+id,bloque,norma,articulo,titulo,pagina,estado,periodicidad,conjunto,ultima_actualizacion
+INS-01,institucional,Ley 19/2013,art. 6.1,Funciones y normativa de aplicación,organizacion,publicado,cuando_cambie,,2026-09-23
+INS-02,institucional,Ley 19/2013,art. 6.1,Estructura organizativa y organigrama,organizacion,publicado,cuando_cambie,,2026-09-08
+INS-03,institucional,Ley 19/2013,art. 6.1,Órganos de gobierno: composición y funciones,organizacion,publicado,cuando_cambie,cargos,2026-10-18
+INS-04,institucional,Ley 19/2013,art. 6.2,Planes y programas anuales y plurianuales,organizacion,parcial,anual,,2026-09-30
+INS-05,institucional,Ley 19/2013,art. 6 bis,Registro de actividades de tratamiento de datos,organizacion,publicado,cuando_cambie,,2026-11-02
+INS-06,institucional,Ley 19/2013,art. 8.1.i,Información estadística sobre la calidad de los servicios,organizacion,pendiente,anual,,
+CAR-01,cargos,Ley 19/2013,art. 6.1,"Identificación, perfil y trayectoria de los responsables",cargos,publicado,cuando_cambie,cargos,2026-08-27
+CAR-02,cargos,Ley 19/2013,art. 8.1.f,Retribuciones de cargos electos y personal directivo,cargos,publicado,anual,cargos,2026-09-19
+CAR-03,cargos,Ley 7/1985,art. 75.5,Régimen de dedicación y asistencias,cargos,publicado,anual,cargos,2026-10-16
+CAR-04,cargos,Ley 19/2013,art. 8.1.h,Declaraciones anuales de bienes y actividades,cargos,parcial,anual,cargos,2026-11-06
+CAR-05,cargos,Ley 19/2013,art. 8.1.g,Resoluciones de compatibilidad,cargos,parcial,cuando_cambie,,2026-08-31
+CAR-06,cargos,Ley 1/2022 CV,grupos de interés,Agenda institucional y reuniones con grupos de interés,agenda,publicado,semanal,agenda,2026-10-25
+JUR-01,juridica,Ley 19/2013,art. 7.a,"Directrices, instrucciones y circulares",normativa,publicado,cuando_cambie,normativa,2026-09-23
+JUR-02,juridica,Ley 19/2013,art. 7.c,Proyectos de ordenanzas y reglamentos,normativa,parcial,continua,,2026-09-18
+JUR-03,juridica,Ley 19/2013,art. 7.e,Documentos sometidos a información pública,normativa,publicado,continua,,2026-11-09
+JUR-04,juridica,Ley 7/1985,art. 70.2,Ordenanzas y reglamentos vigentes,normativa,publicado,cuando_cambie,normativa,2026-10-15
+CON-01,contratacion,Ley 19/2013,art. 8.1.a,"Contratos: objeto, duración, importe, procedimiento, ofertas y adjudicatario",contratos,publicado,continua,contratos,2026-09-22
+CON-02,contratacion,Ley 19/2013,art. 8.1.a,Contratos menores (trimestral),contratos,publicado,trimestral,contratos,2026-10-25
+CON-03,contratacion,Ley 19/2013,art. 8.1.a,Estadística por procedimiento de contratación,contratos,publicado,anual,contratos,2026-11-11
+CON-04,contratacion,Ley 19/2013,art. 8.1.a,Modificaciones y desistimientos,contratos,parcial,continua,,2026-09-12
+CON-05,contratacion,Ley 9/2017,art. 63.6,Encargos a medios propios,encargos,publicado,continua,encargos,2026-09-03
+SUB-01,convenios_subvenciones,Ley 19/2013,art. 8.1.b,Convenios suscritos,convenios,publicado,trimestral,convenios,2026-10-12
+SUB-02,convenios_subvenciones,Ley 19/2013,art. 8.1.c,Subvenciones y ayudas concedidas,subvenciones,publicado,trimestral,subvenciones,2026-10-27
+SUB-03,convenios_subvenciones,Ley 19/2013,art. 8.1.b,Encomiendas de gestión,convenios,parcial,trimestral,,2026-11-08
+ECO-01,economica,Ley 19/2013,art. 8.1.d,Presupuesto y estado de ejecución,presupuesto,publicado,trimestral,presupuesto,2026-09-20
+ECO-02,economica,Ley 19/2013,art. 8.1.d,Cumplimiento de estabilidad presupuestaria,economia,publicado,trimestral,,2026-08-26
+ECO-03,economica,Ley 19/2013,art. 8.1.e,Cuentas anuales e informes de auditoría y fiscalización,economia,parcial,anual,,2026-08-25
+ECO-04,economica,RD 635/2014,art. 6,Periodo medio de pago a proveedores,economia,publicado,mensual,pmp,2026-11-09
+ECO-05,economica,LO 2/2012,art. 13,Deuda pública,economia,publicado,anual,deuda,2026-09-28
+PAT-01,patrimonio,Ley 19/2013,art. 8.3,Relación de bienes inmuebles,patrimonio,publicado,anual,inmuebles,2026-09-25
+PAT-02,patrimonio,Ley 1/2022 CV,patrimonio,Vehículos oficiales,patrimonio,pendiente,anual,,
+PER-01,personal,Ley 1/2022 CV,personal,Relación de puestos de trabajo y plantilla,personal,publicado,anual,plantilla,2026-10-14
+PER-02,personal,Ley 1/2022 CV,personal,Ofertas de empleo público y procesos selectivos,personal,parcial,continua,,2026-09-03
+ACC-01,acceso,Ley 19/2013,art. 17,Procedimiento de solicitud de acceso,derecho-acceso,publicado,cuando_cambie,,2026-08-30
+ACC-02,acceso,Ley 1/2022 CV,derecho de acceso,Estadística de solicitudes y resoluciones,derecho-acceso,publicado,trimestral,solicitudes-acceso,2026-10-19
+DAT-01,datos,Ley 19/2013,art. 5.4,Información en formatos reutilizables,datos-abiertos,publicado,continua,,2026-09-04

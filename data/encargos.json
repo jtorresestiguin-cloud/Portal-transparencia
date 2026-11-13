@@ -1,0 +1,163 @@
+{
+ "generado": "2026-11-13",
+ "fuente": "ejemplo",
+ "ejemplo": true,
+ "aviso": "Datos de ejemplo generados sintéticamente. No son cifras oficiales.",
+ "unidad": "EUR",
+ "datos": [
+  {
+   "id": "ENC-2026-002",
+   "objeto": "Redacción de proyecto técnico",
+   "medio_propio": "Sociedad Pública Provincial de Ejemplo, SA",
+   "medio_propio_nif": "A99000002",
+   "fecha_encargo": "2026-06-08",
+   "importe_sin_iva": 80510.01,
+   "duracion_meses": 12,
+   "url": "https://contrataciondelsectorpublico.gob.es",
+   "fuente": "ejemplo"
+  },
+  {
+   "id": "ENC-2026-006",
+   "objeto": "Redacción de proyecto técnico",
+   "medio_propio": "Sociedad Pública Provincial de Ejemplo, SA",
+   "medio_propio_nif": "A99000002",
+   "fecha_encargo": "2026-05-16",
+   "importe_sin_iva": 250157.34,
+   "duracion_meses": 12,
+   "url": "https://contrataciondelsectorpublico.gob.es",
+   "fuente": "ejemplo"
+  },
+  {
+   "id": "ENC-2026-001",
+   "objeto": "Gestión de la escuela infantil",
+   "medio_propio": "Consorcio Comarcal de Ejemplo",
+   "medio_propio_nif": "P9900001J",
+   "fecha_encargo": "2026-03-10",
+   "importe_sin_iva": 190725.5,
+   "duracion_meses": 24,
+   "url": "https://contrataciondelsectorpublico.gob.es",
+   "fuente": "ejemplo"
+  },
+  {
+   "id": "ENC-2026-010",
+   "objeto": "Redacción de proyecto técnico",
+   "medio_propio": "Sociedad Pública Provincial de Ejemplo, SA",
+   "medio_propio_nif": "A99000002",
+   "fecha_encargo": "2026-02-18",
+   "importe_sin_iva": 21960.59,
+   "duracion_meses": 24,
+   "url": "https://contrataciondelsectorpublico.gob.es",
+   "fuente": "ejemplo"
+  },
+  {
+   "id": "ENC-2026-007",
+   "objeto": "Mantenimiento de instalaciones deportivas",
+   "medio_propio": "Consorcio Comarcal de Ejemplo",
+   "medio_propio_nif": "P9900001J",
+   "fecha_encargo": "2026-01-04",
+   "importe_sin_iva": 258033.36,
+   "duracion_meses": 24,
+   "url": "https://contrataciondelsectorpublico.gob.es",
+   "fuente": "ejemplo"
+  },
+  {
+   "id": "ENC-2025-014",
+   "objeto": "Apoyo técnico en urbanismo",
+   "medio_propio": "Sociedad Pública Provincial de Ejemplo, SA",
+   "medio_propio_nif": "A99000002",
+   "fecha_encargo": "2025-08-18",
+   "importe_sin_iva": 39489.37,
+   "duracion_meses": 36,
+   "url": "https://contrataciondelsectorpublico.gob.es",
+   "fuente": "ejemplo"
+  },
+  {
+   "id": "ENC-2025-003",
+   "objeto": "Redacción de proyecto técnico",
+   "medio_propio": "Empresa Municipal de Servicios Ejemplo, SA",
+   "medio_propio_nif": "A99000001",
+   "fecha_encargo": "2025-05-06",
+   "importe_sin_iva": 182565.06,
+   "duracion_meses": 24,
+   "url": "https://contrataciondelsectorpublico.gob.es",
+   "fuente": "ejemplo"
+  },
+  {
+   "id": "ENC-2024-008",
+   "objeto": "Gestión de la escuela infantil",
+   "medio_propio": "Sociedad Pública Provincial de Ejemplo, SA",
+   "medio_propio_nif": "A99000002",
+   "fecha_encargo": "2024-11-06",
+   "importe_sin_iva": 48501.51,
+   "duracion_meses": 36,
+   "url": "https://contrataciondelsectorpublico.gob.es",
+   "fuente": "ejemplo"
+  },
+  {
+   "id": "ENC-2024-012",
+   "objeto": "Gestión del servicio de agua potable",
+   "medio_propio": "Consorcio Comarcal de Ejemplo",
+   "medio_propio_nif": "P9900001J",
+   "fecha_encargo": "2024-03-21",
+   "importe_sin_iva": 111887.01,
+   "duracion_meses": 24,
+   "url": "https://contrataciondelsectorpublico.gob.es",
+   "fuente": "ejemplo"
+  },
+  {
+   "id": "ENC-2023-004",
+   "objeto": "Gestión del servicio de agua potable",
+   "medio_propio": "Consorcio Comarcal de Ejemplo",
+   "medio_propio_nif": "P9900001J",
+   "fecha_encargo": "2023-12-05",
+   "importe_sin_iva": 280091.87,
+   "duracion_meses": 12,
+   "url": "https://contrataciondelsectorpublico.gob.es",
+   "fuente": "ejemplo"
+  },
+  {
+   "id": "ENC-2023-013",
+   "objeto": "Mantenimiento de instalaciones deportivas",
+   "medio_propio": "Empresa Municipal de Servicios Ejemplo, SA",
+   "medio_propio_nif": "A99000001",
+   "fecha_encargo": "2023-10-02",
+   "importe_sin_iva": 115302.73,
+   "duracion_meses": 36,
+   "url": "https://contrataciondelsectorpublico.gob.es",
+   "fuente": "ejemplo"
+  },
+  {
+   "id": "ENC-2023-009",
+   "objeto": "Gestión del servicio de agua potable",
+   "medio_propio": "Empresa Municipal de Servicios Ejemplo, SA",
+   "medio_propio_nif": "A99000001",
+   "fecha_encargo": "2023-08-20",
+   "importe_sin_iva": 269283.9,
+   "duracion_meses": 12,
+   "url": "https://contrataciondelsectorpublico.gob.es",
+   "fuente": "ejemplo"
+  },
+  {
+   "id": "ENC-2022-011",
+   "objeto": "Gestión de la escuela infantil",
+   "medio_propio": "Consorcio Comarcal de Ejemplo",
+   "medio_propio_nif": "P9900001J",
+   "fecha_encargo": "2022-09-26",
+   "importe_sin_iva": 57737.06,
+   "duracion_meses": 12,
+   "url": "https://contrataciondelsectorpublico.gob.es",
+   "fuente": "ejemplo"
+  },
+  {
+   "id": "ENC-2022-005",
+   "objeto": "Gestión de la escuela infantil",
+   "medio_propio": "Sociedad Pública Provincial de Ejemplo, SA",
+   "medio_propio_nif": "A99000002",
+   "fecha_encargo": "2022-01-12",
+   "importe_sin_iva": 240304.95,
+   "duracion_meses": 24,
+   "url": "https://contrataciondelsectorpublico.gob.es",
+   "fuente": "ejemplo"
+  }
+ ]
+}

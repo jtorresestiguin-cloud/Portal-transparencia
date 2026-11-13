@@ -1,0 +1,198 @@
+{
+ "_comentario": "Estructura del portal: categorías (cajitas de la portada y menú lateral) y páginas que contiene cada una. Se edita desde admin/.",
+ "portada": {
+  "titulo": {
+   "es": "Portal de Transparencia",
+   "va": "Portal de Transparència",
+   "en": "Transparency Portal"
+  },
+  "intro": {
+   "es": "Consulta cómo se gestionan los recursos públicos: presupuesto, contratos, subvenciones, cargos públicos y mucho más. Toda la información se puede descargar en formatos abiertos.",
+   "va": "Consulta com es gestionen els recursos públics: pressupost, contractes, subvencions, càrrecs públics i molt més. Tota la informació es pot descarregar en formats oberts.",
+   "en": "See how public resources are managed: budget, contracts, grants, public officials and more. Everything can be downloaded in open formats."
+  },
+  "destacados": [
+   "contratos",
+   "cargos",
+   "presupuesto",
+   "subvenciones"
+  ]
+ },
+ "categorias": [
+  {
+   "id": "institucional",
+   "icono": "building",
+   "titulo": {
+    "es": "Información institucional y organizativa",
+    "va": "Informació institucional i organitzativa",
+    "en": "Institutional information"
+   },
+   "descripcion": {
+    "es": "Funciones, organización, órganos de gobierno y normativa.",
+    "va": "Funcions, organització, òrgans de govern i normativa.",
+    "en": "Functions, organisation, governing bodies and regulations."
+   },
+   "paginas": [
+    "organizacion",
+    "normativa"
+   ]
+  },
+  {
+   "id": "cargos",
+   "icono": "users",
+   "titulo": {
+    "es": "Altos cargos y cargos electos",
+    "va": "Alts càrrecs i càrrecs electes",
+    "en": "Senior & elected officials"
+   },
+   "descripcion": {
+    "es": "Identificación, retribuciones, declaraciones y agenda.",
+    "va": "Identificació, retribucions, declaracions i agenda.",
+    "en": "Identity, pay, declarations and diary."
+   },
+   "paginas": [
+    "cargos",
+    "agenda"
+   ]
+  },
+  {
+   "id": "contratacion",
+   "icono": "file",
+   "titulo": {
+    "es": "Contratación",
+    "va": "Contractació",
+    "en": "Procurement"
+   },
+   "descripcion": {
+    "es": "Contratos y encargos a medios propios, sincronizados con la Plataforma de Contratación.",
+    "va": "Contractes i encàrrecs a mitjans propis, sincronitzats amb la Plataforma de Contractació.",
+    "en": "Contracts and in-house assignments, synced with the Procurement Platform."
+   },
+   "paginas": [
+    "contratos",
+    "encargos"
+   ]
+  },
+  {
+   "id": "convenios-subvenciones",
+   "icono": "hand",
+   "titulo": {
+    "es": "Convenios y subvenciones",
+    "va": "Convenis i subvencions",
+    "en": "Agreements & grants"
+   },
+   "descripcion": {
+    "es": "Convenios suscritos y subvenciones concedidas (BDNS).",
+    "va": "Convenis subscrits i subvencions concedides (BDNS).",
+    "en": "Signed agreements and grants awarded (BDNS)."
+   },
+   "paginas": [
+    "subvenciones",
+    "convenios"
+   ]
+  },
+  {
+   "id": "economica",
+   "icono": "euro",
+   "titulo": {
+    "es": "Información económica y presupuestaria",
+    "va": "Informació econòmica i pressupostària",
+    "en": "Economic & budget information"
+   },
+   "descripcion": {
+    "es": "Presupuesto, ejecución, periodo medio de pago y deuda.",
+    "va": "Pressupost, execució, període mitjà de pagament i deute.",
+    "en": "Budget, execution, payment period and debt."
+   },
+   "paginas": [
+    "presupuesto",
+    "economia"
+   ]
+  },
+  {
+   "id": "patrimonio",
+   "icono": "map",
+   "titulo": {
+    "es": "Patrimonio",
+    "va": "Patrimoni",
+    "en": "Assets"
+   },
+   "descripcion": {
+    "es": "Bienes inmuebles de titularidad municipal.",
+    "va": "Béns immobles de titularitat municipal.",
+    "en": "Municipal real estate."
+   },
+   "paginas": [
+    "patrimonio"
+   ]
+  },
+  {
+   "id": "personal",
+   "icono": "briefcase",
+   "titulo": {
+    "es": "Personal",
+    "va": "Personal",
+    "en": "Staff"
+   },
+   "descripcion": {
+    "es": "Plantilla, tipos de personal y grupos profesionales.",
+    "va": "Plantilla, tipus de personal i grups professionals.",
+    "en": "Workforce, staff types and grades."
+   },
+   "paginas": [
+    "personal"
+   ]
+  },
+  {
+   "id": "acceso",
+   "icono": "inbox",
+   "titulo": {
+    "es": "Derecho de acceso",
+    "va": "Dret d’accés",
+    "en": "Right of access"
+   },
+   "descripcion": {
+    "es": "Cómo solicitar información y estadísticas de respuesta.",
+    "va": "Com sol·licitar informació i estadístiques de resposta.",
+    "en": "How to request information and response statistics."
+   },
+   "paginas": [
+    "derecho-acceso"
+   ]
+  },
+  {
+   "id": "indice",
+   "icono": "check",
+   "titulo": {
+    "es": "Índice de transparencia",
+    "va": "Índex de transparència",
+    "en": "Transparency index"
+   },
+   "descripcion": {
+    "es": "Grado de cumplimiento de cada obligación legal.",
+    "va": "Grau de compliment de cada obligació legal.",
+    "en": "Compliance with each legal obligation."
+   },
+   "paginas": [
+    "indice"
+   ]
+  },
+  {
+   "id": "datos",
+   "icono": "database",
+   "titulo": {
+    "es": "Datos abiertos",
+    "va": "Dades obertes",
+    "en": "Open data"
+   },
+   "descripcion": {
+    "es": "Catálogo de datos reutilizables, API y estándares.",
+    "va": "Catàleg de dades reutilitzables, API i estàndards.",
+    "en": "Reusable data catalogue, API and standards."
+   },
+   "paginas": [
+    "datos-abiertos"
+   ]
+  }
+ ]
+}

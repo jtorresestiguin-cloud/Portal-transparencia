@@ -7,7 +7,7 @@ import { exportSVG, sparkline, hideTip } from './charts.js';
 // ---------------------------------------------------------------------------
 // Formatadors dependents de l'idioma
 // ---------------------------------------------------------------------------
-const LOCALE = { ca: 'ca-ES', es: 'es-ES', en: 'en-GB' };
+const LOCALE = { es: 'es-ES', va: 'ca-ES', en: 'en-GB' };
 const nf = (o) => new Intl.NumberFormat(LOCALE[lang()], o);
 export const fmt = {
   int: (n) => nf({ maximumFractionDigits: 0 }).format(n),
@@ -17,6 +17,8 @@ export const fmt = {
   eurC: (n) => nf({ style: 'currency', currency: 'EUR', notation: 'compact', maximumFractionDigits: Math.abs(n) >= 1e6 ? 1 : 0 }).format(n),
   compact: (n) => nf({ notation: 'compact', maximumFractionDigits: Math.abs(n) >= 1e6 ? 1 : 0 }).format(n),
   pct: (n, d = 1) => nf({ style: 'percent', minimumFractionDigits: d, maximumFractionDigits: d }).format(n / 100),
+  dias: (n) => `${nf({ maximumFractionDigits: 1 }).format(n)} ${lang() === 'en' ? 'days' : lang() === 'va' ? 'dies' : 'días'}`,
+  m2: (n) => `${nf({ maximumFractionDigits: 0 }).format(n)} m²`,
   date: (s) => s ? new Intl.DateTimeFormat(LOCALE[lang()], { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' }).format(new Date(s + 'T00:00:00Z')) : '—',
   dateLong: (s) => new Intl.DateTimeFormat(LOCALE[lang()], { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(new Date(s + 'T00:00:00Z')),
   month: (ym, long = false) => {
@@ -70,6 +72,24 @@ export const ICONS = {
   rss: '<path d="M4 11a9 9 0 0 1 9 9M4 4a16 16 0 0 1 16 16M5 19h.01"/>',
   external: '<path d="M14 3h7v7M21 3l-9 9M19 14v6H4V5h6"/>',
   globe: '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/>',
+  briefcase: '<rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/>',
+  scale: '<path d="M12 3v18M7 21h10M5 7h14M5 7l-3 7a4 4 0 0 0 6 0zM19 7l-3 7a4 4 0 0 0 6 0z"/>',
+  share: '<circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/>',
+  home: '<path d="M3 11l9-8 9 8M5 9.5V21h14V9.5"/>',
+  chevron: '<path d="M9 6l6 6-6 6"/>',
+  edit: '<path d="M4 20h4L19 9l-4-4L4 16zM14 6l4 4"/>',
+  plus: '<path d="M12 5v14M5 12h14"/>',
+  trash: '<path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"/>',
+  up: '<path d="M12 19V5M6 11l6-6 6 6"/>',
+  down: '<path d="M12 5v14M6 13l6 6 6-6"/>',
+  eye: '<path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/>',
+  save: '<path d="M5 3h11l3 3v15H5zM8 3v5h7V3M8 21v-7h8v7"/>',
+  sync: '<path d="M20 11a8 8 0 0 0-14.5-4.5L4 8M4 4v4h4M4 13a8 8 0 0 0 14.5 4.5L20 16M20 20v-4h-4"/>',
+  grip: '<circle cx="9" cy="6" r="1"/><circle cx="15" cy="6" r="1"/><circle cx="9" cy="12" r="1"/><circle cx="15" cy="12" r="1"/><circle cx="9" cy="18" r="1"/><circle cx="15" cy="18" r="1"/>',
+  text: '<path d="M4 6h16M4 12h16M4 18h10"/>',
+  layout: '<rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/>',
+  mail: '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/>',
+  settings: '<circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/>',
   plane: '<path d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/>',
 };
 export const icon = (name, size = 20) => `<svg class="icon" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[name] || ''}</svg>`;
@@ -120,7 +140,7 @@ export function chartCard(o) {
       </figcaption>
       <div class="chart-body"></div>
       <div class="chart-table" hidden></div>
-      <p class="chart-source">${o.note ? `${o.note} · ` : ''}${o.dataset ? `${t('source')}: <a href="#/dades-obertes/${o.dataset}">${t('dataset')} «${esc(o.datasetTitle || o.dataset)}»</a>` : ''}</p>
+      <p class="chart-source">${o.note ? `${o.note} · ` : ''}${o.dataset ? `${t('source')}: <a href="#/datos/${o.dataset}">${t('dataset')} «${esc(o.datasetTitle || o.dataset)}»</a>` : ''}</p>
     </figure>`);
   const body = card.querySelector('.chart-body');
   const tableWrap = card.querySelector('.chart-table');
@@ -188,9 +208,9 @@ export function meter(pct, { labelText, status } = {}) {
 }
 
 export function statusBadge(code) {
-  const map = { publicat: ['ok', 'good'], parcial: ['warn', 'warning'], pendent: ['x', 'critical'] };
+  const map = { publicado: ['ok', 'good'], parcial: ['warn', 'warning'], pendiente: ['x', 'critical'] };
   const [ic, cls] = map[code] || ['info', 'neutral'];
-  return `<span class="badge badge-${cls}">${icon(ic, 14)}${label('estat_obligacio', code)}</span>`;
+  return `<span class="badge badge-${cls}">${icon(ic, 14)}${label('estado_obligacion', code)}</span>`;
 }
 
 // ---------------------------------------------------------------------------

@@ -4,52 +4,50 @@
     "dct": "http://purl.org/dc/terms/",
     "foaf": "http://xmlns.com/foaf/0.1/",
     "vcard": "http://www.w3.org/2006/vcard/ns#",
-    "xsd": "http://www.w3.org/2001/XMLSchema#",
-    "adms": "http://www.w3.org/ns/adms#",
-    "schema": "https://schema.org/"
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
   },
   "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/catalog",
   "@type": "dcat:Catalog",
   "dct:title": [
     {
-      "@language": "ca",
-      "@value": "Catàleg de dades obertes del Consorci de Turisme de Barcelona"
+      "@language": "es",
+      "@value": "Catálogo de datos abiertos del portal de transparencia"
     },
     {
-      "@language": "es",
-      "@value": "Catálogo de datos abiertos del Consorci de Turisme de Barcelona"
+      "@language": "ca-valencia",
+      "@value": "Catàleg de dades obertes del portal de transparència"
     },
     {
       "@language": "en",
-      "@value": "Open data catalogue of the Barcelona Tourism Consortium"
+      "@value": "Open data catalogue of the transparency portal"
     }
   ],
   "dct:description": [
     {
-      "@language": "ca",
-      "@value": "Conjunts de dades de transparència i d'activitat turística publicats en formats oberts i reutilitzables."
+      "@language": "es",
+      "@value": "Conjuntos de datos de transparencia publicados en formatos abiertos y reutilizables."
     },
     {
-      "@language": "es",
-      "@value": "Conjuntos de datos de transparencia y de actividad turística publicados en formatos abiertos y reutilizables."
+      "@language": "ca-valencia",
+      "@value": "Conjunts de dades de transparència publicats en formats oberts i reutilitzables."
     },
     {
       "@language": "en",
-      "@value": "Transparency and tourism activity datasets published in open, reusable formats."
+      "@value": "Transparency datasets published in open, reusable formats."
     }
   ],
   "dct:publisher": {
-    "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/#organitzacio",
+    "@id": "http://datos.gob.es/recurso/sector-publico/org/Organismo/L00000000",
     "@type": "foaf:Agent",
-    "foaf:name": "Consorci de Turisme de Barcelona",
-    "dct:identifier": "PENDENT-DIR3"
+    "foaf:name": "Ayuntamiento de Ejemplo",
+    "dct:identifier": "L00000000"
   },
   "dct:language": [
     {
-      "@id": "http://publications.europa.eu/resource/authority/language/CAT"
+      "@id": "http://publications.europa.eu/resource/authority/language/SPA"
     },
     {
-      "@id": "http://publications.europa.eu/resource/authority/language/SPA"
+      "@id": "http://publications.europa.eu/resource/authority/language/CAT"
     },
     {
       "@id": "http://publications.europa.eu/resource/authority/language/ENG"
@@ -58,41 +56,26 @@
   "dct:license": {
     "@id": "https://creativecommons.org/licenses/by/4.0/"
   },
-  "dct:issued": {
-    "@value": "2026-01-15",
-    "@type": "xsd:date"
-  },
   "dct:modified": {
-    "@value": "2026-11-12",
+    "@value": "2026-11-13",
     "@type": "xsd:date"
   },
-  "dct:spatial": [
-    {
-      "@id": "https://www.geonames.org/3128760"
-    },
-    {
-      "@id": "http://datos.gob.es/recurso/sector-publico/territorio/Provincia/Barcelona"
-    }
-  ],
   "foaf:homepage": {
     "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/"
   },
-  "dcat:themeTaxonomy": {
-    "@id": "http://publications.europa.eu/resource/authority/data-theme"
-  },
   "dcat:dataset": [
     {
-      "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/dades-obertes/pressupost",
+      "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/datos/presupuesto",
       "@type": "dcat:Dataset",
-      "dct:identifier": "pressupost",
+      "dct:identifier": "presupuesto",
       "dct:title": [
-        {
-          "@language": "ca",
-          "@value": "Pressupost i execució pressupostària"
-        },
         {
           "@language": "es",
           "@value": "Presupuesto y ejecución presupuestaria"
+        },
+        {
+          "@language": "ca-valencia",
+          "@value": "Pressupost i execució pressupostària"
         },
         {
           "@language": "en",
@@ -101,38 +84,34 @@
       ],
       "dct:description": [
         {
-          "@language": "ca",
-          "@value": "Pressupost inicial, definitiu i executat per any, tipus (ingrés/despesa), capítol econòmic i programa."
+          "@language": "es",
+          "@value": "Créditos iniciales, definitivos y ejecutados por año, tipo, capítulo económico y área de gasto (Orden EHA/3565/2008)."
         },
         {
-          "@language": "es",
-          "@value": "Presupuesto inicial, definitivo y ejecutado por año, tipo (ingreso/gasto), capítulo económico y programa."
+          "@language": "ca-valencia",
+          "@value": "Crèdits inicials, definitius i executats per any, tipus, capítol econòmic i àrea de despesa (Ordre EHA/3565/2008)."
         },
         {
           "@language": "en",
-          "@value": "Initial, final and executed budget by year, type (revenue/expense), economic chapter and programme."
+          "@value": "Initial, final and executed budget by year, type, economic chapter and spending area."
         }
       ],
       "dcat:keyword": [
         {
-          "@language": "ca",
-          "@value": "pressupost"
+          "@language": "es",
+          "@value": "presupuesto"
         },
         {
-          "@language": "ca",
-          "@value": "execució"
+          "@language": "es",
+          "@value": "ejecución"
         },
         {
-          "@language": "ca",
-          "@value": "ingressos"
+          "@language": "es",
+          "@value": "ingresos"
         },
         {
-          "@language": "ca",
-          "@value": "despeses"
-        },
-        {
-          "@language": "ca",
-          "@value": "capítol"
+          "@language": "es",
+          "@value": "gastos"
         }
       ],
       "dcat:theme": [
@@ -144,7 +123,7 @@
         }
       ],
       "dct:publisher": {
-        "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/#organitzacio"
+        "@id": "http://datos.gob.es/recurso/sector-publico/org/Organismo/L00000000"
       },
       "dct:accrualPeriodicity": {
         "@id": "http://publications.europa.eu/resource/authority/frequency/QUARTERLY"
@@ -160,50 +139,32 @@
           "@type": "xsd:date"
         }
       },
-      "dct:spatial": {
-        "@id": "https://www.geonames.org/3128760"
-      },
       "dct:modified": {
-        "@value": "2026-11-12",
+        "@value": "2026-11-13",
         "@type": "xsd:date"
       },
-      "dct:language": [
-        {
-          "@id": "http://publications.europa.eu/resource/authority/language/CAT"
-        },
-        {
-          "@id": "http://publications.europa.eu/resource/authority/language/SPA"
-        },
-        {
-          "@id": "http://publications.europa.eu/resource/authority/language/ENG"
-        }
-      ],
       "dcat:contactPoint": {
         "@type": "vcard:Organization",
-        "vcard:fn": "Unitat de Transparència",
+        "vcard:fn": "Unidad de Transparencia",
         "vcard:hasEmail": {
           "@id": "mailto:transparencia@example.org"
         }
       },
       "dcat:landingPage": {
-        "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/economia"
+        "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/presupuesto"
       },
       "dct:conformsTo": {
-        "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/datapackage.json#pressupost"
+        "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/datapackage.json#presupuesto"
       },
       "dcat:distribution": [
         {
-          "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/pressupost.csv",
+          "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/presupuesto.csv",
           "@type": "dcat:Distribution",
-          "dct:title": {
-            "@language": "ca",
-            "@value": "Pressupost i execució pressupostària (CSV)"
-          },
           "dcat:accessURL": {
-            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/pressupost.csv"
+            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/presupuesto.csv"
           },
           "dcat:downloadURL": {
-            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/pressupost.csv"
+            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/presupuesto.csv"
           },
           "dct:format": {
             "@id": "http://publications.europa.eu/resource/authority/file-type/CSV"
@@ -212,7 +173,7 @@
             "@id": "http://www.iana.org/assignments/media-types/text/csv"
           },
           "dcat:byteSize": {
-            "@value": "9460",
+            "@value": "10298",
             "@type": "xsd:nonNegativeInteger"
           },
           "dct:license": {
@@ -220,17 +181,13 @@
           }
         },
         {
-          "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/pressupost.json",
+          "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/presupuesto.json",
           "@type": "dcat:Distribution",
-          "dct:title": {
-            "@language": "ca",
-            "@value": "Pressupost i execució pressupostària (JSON)"
-          },
           "dcat:accessURL": {
-            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/pressupost.json"
+            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/presupuesto.json"
           },
           "dcat:downloadURL": {
-            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/pressupost.json"
+            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/presupuesto.json"
           },
           "dct:format": {
             "@id": "http://publications.europa.eu/resource/authority/file-type/JSON"
@@ -239,7 +196,7 @@
             "@id": "http://www.iana.org/assignments/media-types/application/json"
           },
           "dcat:byteSize": {
-            "@value": "34456",
+            "@value": "35227",
             "@type": "xsd:nonNegativeInteger"
           },
           "dct:license": {
@@ -249,60 +206,64 @@
       ]
     },
     {
-      "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/dades-obertes/contractes",
+      "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/datos/contratos",
       "@type": "dcat:Dataset",
-      "dct:identifier": "contractes",
+      "dct:identifier": "contratos",
       "dct:title": [
         {
-          "@language": "ca",
-          "@value": "Contractes adjudicats"
+          "@language": "es",
+          "@value": "Contratos"
         },
         {
-          "@language": "es",
-          "@value": "Contratos adjudicados"
+          "@language": "ca-valencia",
+          "@value": "Contractes"
         },
         {
           "@language": "en",
-          "@value": "Awarded contracts"
+          "@value": "Contracts"
         }
       ],
       "dct:description": [
         {
-          "@language": "ca",
-          "@value": "Relació de contractes adjudicats, inclosos els menors, amb procediment, CPV, imports, licitadors i adjudicatari. Alineat amb els camps de la PSCP i OCDS."
+          "@language": "es",
+          "@value": "Contratos del perfil del contratante, incluidos los menores, sincronizados automáticamente desde la Plataforma de Contratación del Sector Público."
         },
         {
-          "@language": "es",
-          "@value": "Relación de contratos adjudicados, incluidos los menores, con procedimiento, CPV, importes, licitadores y adjudicatario. Alineado con los campos de la PSCP y OCDS."
+          "@language": "ca-valencia",
+          "@value": "Contractes del perfil del contractant, inclosos els menors, sincronitzats automàticament des de la Plataforma de Contractació del Sector Públic."
         },
         {
           "@language": "en",
-          "@value": "Awarded contracts, including minor contracts, with procedure, CPV, amounts, bidders and supplier. Aligned with PSCP and OCDS fields."
+          "@value": "Contracting-profile contracts, including minor contracts, synchronised automatically from the Spanish Public Procurement Platform."
         }
       ],
       "dcat:keyword": [
         {
-          "@language": "ca",
-          "@value": "contractació"
+          "@language": "es",
+          "@value": "contratación"
         },
         {
-          "@language": "ca",
-          "@value": "licitació"
+          "@language": "es",
+          "@value": "licitación"
         },
         {
-          "@language": "ca",
-          "@value": "adjudicació"
+          "@language": "es",
+          "@value": "adjudicación"
         },
         {
-          "@language": "ca",
-          "@value": "contractes menors"
+          "@language": "es",
+          "@value": "contratos menores"
         },
         {
-          "@language": "ca",
-          "@value": "CPV"
+          "@language": "es",
+          "@value": "PLACSP"
         },
         {
-          "@language": "ca",
+          "@language": "es",
+          "@value": "CODICE"
+        },
+        {
+          "@language": "es",
           "@value": "OCDS"
         }
       ],
@@ -315,7 +276,7 @@
         }
       ],
       "dct:publisher": {
-        "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/#organitzacio"
+        "@id": "http://datos.gob.es/recurso/sector-publico/org/Organismo/L00000000"
       },
       "dct:accrualPeriodicity": {
         "@id": "http://publications.europa.eu/resource/authority/frequency/CONT"
@@ -331,50 +292,35 @@
           "@type": "xsd:date"
         }
       },
-      "dct:spatial": {
-        "@id": "https://www.geonames.org/3128760"
-      },
       "dct:modified": {
-        "@value": "2026-11-12",
+        "@value": "2026-11-13",
         "@type": "xsd:date"
       },
-      "dct:language": [
-        {
-          "@id": "http://publications.europa.eu/resource/authority/language/CAT"
-        },
-        {
-          "@id": "http://publications.europa.eu/resource/authority/language/SPA"
-        },
-        {
-          "@id": "http://publications.europa.eu/resource/authority/language/ENG"
-        }
-      ],
+      "dct:source": {
+        "@id": "https://contrataciondelsectorpublico.gob.es"
+      },
       "dcat:contactPoint": {
         "@type": "vcard:Organization",
-        "vcard:fn": "Unitat de Transparència",
+        "vcard:fn": "Unidad de Transparencia",
         "vcard:hasEmail": {
           "@id": "mailto:transparencia@example.org"
         }
       },
       "dcat:landingPage": {
-        "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/contractacio"
+        "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/contratos"
       },
       "dct:conformsTo": {
-        "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/datapackage.json#contractes"
+        "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/datapackage.json#contratos"
       },
       "dcat:distribution": [
         {
-          "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/contractes.csv",
+          "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/contratos.csv",
           "@type": "dcat:Distribution",
-          "dct:title": {
-            "@language": "ca",
-            "@value": "Contractes adjudicats (CSV)"
-          },
           "dcat:accessURL": {
-            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/contractes.csv"
+            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/contratos.csv"
           },
           "dcat:downloadURL": {
-            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/contractes.csv"
+            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/contratos.csv"
           },
           "dct:format": {
             "@id": "http://publications.europa.eu/resource/authority/file-type/CSV"
@@ -383,7 +329,7 @@
             "@id": "http://www.iana.org/assignments/media-types/text/csv"
           },
           "dcat:byteSize": {
-            "@value": "84717",
+            "@value": "88581",
             "@type": "xsd:nonNegativeInteger"
           },
           "dct:license": {
@@ -391,17 +337,13 @@
           }
         },
         {
-          "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/contractes.json",
+          "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/contratos.json",
           "@type": "dcat:Distribution",
-          "dct:title": {
-            "@language": "ca",
-            "@value": "Contractes adjudicats (JSON)"
-          },
           "dcat:accessURL": {
-            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/contractes.json"
+            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/contratos.json"
           },
           "dcat:downloadURL": {
-            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/contractes.json"
+            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/contratos.json"
           },
           "dct:format": {
             "@id": "http://publications.europa.eu/resource/authority/file-type/JSON"
@@ -410,7 +352,7 @@
             "@id": "http://www.iana.org/assignments/media-types/application/json"
           },
           "dcat:byteSize": {
-            "@value": "254336",
+            "@value": "251737",
             "@type": "xsd:nonNegativeInteger"
           },
           "dct:license": {
@@ -420,17 +362,154 @@
       ]
     },
     {
-      "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/dades-obertes/subvencions",
+      "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/datos/encargos",
       "@type": "dcat:Dataset",
-      "dct:identifier": "subvencions",
+      "dct:identifier": "encargos",
       "dct:title": [
         {
-          "@language": "ca",
-          "@value": "Subvencions i ajuts atorgats"
+          "@language": "es",
+          "@value": "Encargos a medios propios"
+        },
+        {
+          "@language": "ca-valencia",
+          "@value": "Encàrrecs a mitjans propis"
+        },
+        {
+          "@language": "en",
+          "@value": "In-house assignments"
+        }
+      ],
+      "dct:description": [
+        {
+          "@language": "es",
+          "@value": "Encargos a medios propios personificados (art. 32 y 63.6 de la Ley 9/2017)."
+        },
+        {
+          "@language": "ca-valencia",
+          "@value": "Encàrrecs a mitjans propis personificats (art. 32 i 63.6 de la Llei 9/2017)."
+        },
+        {
+          "@language": "en",
+          "@value": "Assignments to in-house entities (arts. 32 and 63.6 of Law 9/2017)."
+        }
+      ],
+      "dcat:keyword": [
+        {
+          "@language": "es",
+          "@value": "encargos"
         },
         {
           "@language": "es",
-          "@value": "Subvenciones y ayudas concedidas"
+          "@value": "medios propios"
+        },
+        {
+          "@language": "es",
+          "@value": "contratación"
+        }
+      ],
+      "dcat:theme": [
+        {
+          "@id": "http://publications.europa.eu/resource/authority/data-theme/GOVE"
+        },
+        {
+          "@id": "http://datos.gob.es/kos/sector-publico/sector/sector-publico"
+        }
+      ],
+      "dct:publisher": {
+        "@id": "http://datos.gob.es/recurso/sector-publico/org/Organismo/L00000000"
+      },
+      "dct:accrualPeriodicity": {
+        "@id": "http://publications.europa.eu/resource/authority/frequency/CONT"
+      },
+      "dct:temporal": {
+        "@type": "dct:PeriodOfTime",
+        "dcat:startDate": {
+          "@value": "2022-01-01",
+          "@type": "xsd:date"
+        },
+        "dcat:endDate": {
+          "@value": "2026-12-31",
+          "@type": "xsd:date"
+        }
+      },
+      "dct:modified": {
+        "@value": "2026-11-13",
+        "@type": "xsd:date"
+      },
+      "dcat:contactPoint": {
+        "@type": "vcard:Organization",
+        "vcard:fn": "Unidad de Transparencia",
+        "vcard:hasEmail": {
+          "@id": "mailto:transparencia@example.org"
+        }
+      },
+      "dcat:landingPage": {
+        "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/encargos"
+      },
+      "dct:conformsTo": {
+        "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/datapackage.json#encargos"
+      },
+      "dcat:distribution": [
+        {
+          "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/encargos.csv",
+          "@type": "dcat:Distribution",
+          "dcat:accessURL": {
+            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/encargos.csv"
+          },
+          "dcat:downloadURL": {
+            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/encargos.csv"
+          },
+          "dct:format": {
+            "@id": "http://publications.europa.eu/resource/authority/file-type/CSV"
+          },
+          "dcat:mediaType": {
+            "@id": "http://www.iana.org/assignments/media-types/text/csv"
+          },
+          "dcat:byteSize": {
+            "@value": "2533",
+            "@type": "xsd:nonNegativeInteger"
+          },
+          "dct:license": {
+            "@id": "https://creativecommons.org/licenses/by/4.0/"
+          }
+        },
+        {
+          "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/encargos.json",
+          "@type": "dcat:Distribution",
+          "dcat:accessURL": {
+            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/encargos.json"
+          },
+          "dcat:downloadURL": {
+            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/encargos.json"
+          },
+          "dct:format": {
+            "@id": "http://publications.europa.eu/resource/authority/file-type/JSON"
+          },
+          "dcat:mediaType": {
+            "@id": "http://www.iana.org/assignments/media-types/application/json"
+          },
+          "dcat:byteSize": {
+            "@value": "5123",
+            "@type": "xsd:nonNegativeInteger"
+          },
+          "dct:license": {
+            "@id": "https://creativecommons.org/licenses/by/4.0/"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/datos/subvenciones",
+      "@type": "dcat:Dataset",
+      "dct:identifier": "subvenciones",
+      "dct:title": [
+        {
+          "@language": "es",
+          "@value": "Subvenciones concedidas"
+        },
+        {
+          "@language": "ca-valencia",
+          "@value": "Subvencions concedides"
         },
         {
           "@language": "en",
@@ -439,34 +518,34 @@
       ],
       "dct:description": [
         {
-          "@language": "ca",
-          "@value": "Subvencions atorgades per línia, modalitat, beneficiari, districte i estat de justificació, amb referència BDNS."
+          "@language": "es",
+          "@value": "Concesiones de subvenciones y ayudas, sincronizadas automáticamente desde la Base de Datos Nacional de Subvenciones (BDNS)."
         },
         {
-          "@language": "es",
-          "@value": "Subvenciones concedidas por línea, modalidad, beneficiario, distrito y estado de justificación, con referencia BDNS."
+          "@language": "ca-valencia",
+          "@value": "Concessions de subvencions i ajudes, sincronitzades automàticament des de la Base de Dades Nacional de Subvencions (BDNS)."
         },
         {
           "@language": "en",
-          "@value": "Grants awarded by line, modality, beneficiary, district and accounting status, with BDNS reference."
+          "@value": "Grants awarded, synchronised automatically from the National Grants Database (BDNS)."
         }
       ],
       "dcat:keyword": [
         {
-          "@language": "ca",
-          "@value": "subvencions"
+          "@language": "es",
+          "@value": "subvenciones"
         },
         {
-          "@language": "ca",
-          "@value": "ajuts"
+          "@language": "es",
+          "@value": "ayudas"
         },
         {
-          "@language": "ca",
+          "@language": "es",
           "@value": "BDNS"
         },
         {
-          "@language": "ca",
-          "@value": "beneficiaris"
+          "@language": "es",
+          "@value": "beneficiarios"
         }
       ],
       "dcat:theme": [
@@ -478,7 +557,143 @@
         }
       ],
       "dct:publisher": {
-        "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/#organitzacio"
+        "@id": "http://datos.gob.es/recurso/sector-publico/org/Organismo/L00000000"
+      },
+      "dct:accrualPeriodicity": {
+        "@id": "http://publications.europa.eu/resource/authority/frequency/CONT"
+      },
+      "dct:temporal": {
+        "@type": "dct:PeriodOfTime",
+        "dcat:startDate": {
+          "@value": "2022-01-01",
+          "@type": "xsd:date"
+        },
+        "dcat:endDate": {
+          "@value": "2026-12-31",
+          "@type": "xsd:date"
+        }
+      },
+      "dct:modified": {
+        "@value": "2026-11-13",
+        "@type": "xsd:date"
+      },
+      "dct:source": {
+        "@id": "https://www.infosubvenciones.es"
+      },
+      "dcat:contactPoint": {
+        "@type": "vcard:Organization",
+        "vcard:fn": "Unidad de Transparencia",
+        "vcard:hasEmail": {
+          "@id": "mailto:transparencia@example.org"
+        }
+      },
+      "dcat:landingPage": {
+        "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/subvenciones"
+      },
+      "dct:conformsTo": {
+        "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/datapackage.json#subvenciones"
+      },
+      "dcat:distribution": [
+        {
+          "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/subvenciones.csv",
+          "@type": "dcat:Distribution",
+          "dcat:accessURL": {
+            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/subvenciones.csv"
+          },
+          "dcat:downloadURL": {
+            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/subvenciones.csv"
+          },
+          "dct:format": {
+            "@id": "http://publications.europa.eu/resource/authority/file-type/CSV"
+          },
+          "dcat:mediaType": {
+            "@id": "http://www.iana.org/assignments/media-types/text/csv"
+          },
+          "dcat:byteSize": {
+            "@value": "36498",
+            "@type": "xsd:nonNegativeInteger"
+          },
+          "dct:license": {
+            "@id": "https://creativecommons.org/licenses/by/4.0/"
+          }
+        },
+        {
+          "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/subvenciones.json",
+          "@type": "dcat:Distribution",
+          "dcat:accessURL": {
+            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/subvenciones.json"
+          },
+          "dcat:downloadURL": {
+            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/subvenciones.json"
+          },
+          "dct:format": {
+            "@id": "http://publications.europa.eu/resource/authority/file-type/JSON"
+          },
+          "dcat:mediaType": {
+            "@id": "http://www.iana.org/assignments/media-types/application/json"
+          },
+          "dcat:byteSize": {
+            "@value": "80433",
+            "@type": "xsd:nonNegativeInteger"
+          },
+          "dct:license": {
+            "@id": "https://creativecommons.org/licenses/by/4.0/"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/datos/convenios",
+      "@type": "dcat:Dataset",
+      "dct:identifier": "convenios",
+      "dct:title": [
+        {
+          "@language": "es",
+          "@value": "Convenios"
+        },
+        {
+          "@language": "ca-valencia",
+          "@value": "Convenis"
+        },
+        {
+          "@language": "en",
+          "@value": "Agreements"
+        }
+      ],
+      "dct:description": [
+        {
+          "@language": "es",
+          "@value": "Convenios suscritos, con partes, objeto, vigencia y obligaciones económicas."
+        },
+        {
+          "@language": "ca-valencia",
+          "@value": "Convenis subscrits, amb parts, objecte, vigència i obligacions econòmiques."
+        },
+        {
+          "@language": "en",
+          "@value": "Signed agreements with parties, purpose, term and financial obligations."
+        }
+      ],
+      "dcat:keyword": [
+        {
+          "@language": "es",
+          "@value": "convenios"
+        },
+        {
+          "@language": "es",
+          "@value": "colaboración"
+        }
+      ],
+      "dcat:theme": [
+        {
+          "@id": "http://publications.europa.eu/resource/authority/data-theme/GOVE"
+        },
+        {
+          "@id": "http://datos.gob.es/kos/sector-publico/sector/sector-publico"
+        }
+      ],
+      "dct:publisher": {
+        "@id": "http://datos.gob.es/recurso/sector-publico/org/Organismo/L00000000"
       },
       "dct:accrualPeriodicity": {
         "@id": "http://publications.europa.eu/resource/authority/frequency/QUARTERLY"
@@ -494,50 +709,32 @@
           "@type": "xsd:date"
         }
       },
-      "dct:spatial": {
-        "@id": "https://www.geonames.org/3128760"
-      },
       "dct:modified": {
-        "@value": "2026-11-12",
+        "@value": "2026-11-13",
         "@type": "xsd:date"
       },
-      "dct:language": [
-        {
-          "@id": "http://publications.europa.eu/resource/authority/language/CAT"
-        },
-        {
-          "@id": "http://publications.europa.eu/resource/authority/language/SPA"
-        },
-        {
-          "@id": "http://publications.europa.eu/resource/authority/language/ENG"
-        }
-      ],
       "dcat:contactPoint": {
         "@type": "vcard:Organization",
-        "vcard:fn": "Unitat de Transparència",
+        "vcard:fn": "Unidad de Transparencia",
         "vcard:hasEmail": {
           "@id": "mailto:transparencia@example.org"
         }
       },
       "dcat:landingPage": {
-        "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/subvencions"
+        "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/convenios"
       },
       "dct:conformsTo": {
-        "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/datapackage.json#subvencions"
+        "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/datapackage.json#convenios"
       },
       "dcat:distribution": [
         {
-          "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/subvencions.csv",
+          "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/convenios.csv",
           "@type": "dcat:Distribution",
-          "dct:title": {
-            "@language": "ca",
-            "@value": "Subvencions i ajuts atorgats (CSV)"
-          },
           "dcat:accessURL": {
-            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/subvencions.csv"
+            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/convenios.csv"
           },
           "dcat:downloadURL": {
-            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/subvencions.csv"
+            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/convenios.csv"
           },
           "dct:format": {
             "@id": "http://publications.europa.eu/resource/authority/file-type/CSV"
@@ -546,7 +743,7 @@
             "@id": "http://www.iana.org/assignments/media-types/text/csv"
           },
           "dcat:byteSize": {
-            "@value": "12602",
+            "@value": "4260",
             "@type": "xsd:nonNegativeInteger"
           },
           "dct:license": {
@@ -554,17 +751,13 @@
           }
         },
         {
-          "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/subvencions.json",
+          "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/convenios.json",
           "@type": "dcat:Distribution",
-          "dct:title": {
-            "@language": "ca",
-            "@value": "Subvencions i ajuts atorgats (JSON)"
-          },
           "dcat:accessURL": {
-            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/subvencions.json"
+            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/convenios.json"
           },
           "dcat:downloadURL": {
-            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/subvencions.json"
+            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/convenios.json"
           },
           "dct:format": {
             "@id": "http://publications.europa.eu/resource/authority/file-type/JSON"
@@ -573,7 +766,7 @@
             "@id": "http://www.iana.org/assignments/media-types/application/json"
           },
           "dcat:byteSize": {
-            "@value": "37810",
+            "@value": "8396",
             "@type": "xsd:nonNegativeInteger"
           },
           "dct:license": {
@@ -583,49 +776,53 @@
       ]
     },
     {
-      "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/dades-obertes/convenis",
+      "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/datos/cargos",
       "@type": "dcat:Dataset",
-      "dct:identifier": "convenis",
+      "dct:identifier": "cargos",
       "dct:title": [
         {
-          "@language": "ca",
-          "@value": "Convenis de col·laboració"
+          "@language": "es",
+          "@value": "Cargos electos y personal directivo"
         },
         {
-          "@language": "es",
-          "@value": "Convenios de colaboración"
+          "@language": "ca-valencia",
+          "@value": "Càrrecs electes i personal directiu"
         },
         {
           "@language": "en",
-          "@value": "Collaboration agreements"
+          "@value": "Elected officials and senior staff"
         }
       ],
       "dct:description": [
         {
-          "@language": "ca",
-          "@value": "Convenis signats amb objecte, part signant, vigència i obligacions econòmiques."
+          "@language": "es",
+          "@value": "Identificación, perfil, dedicación, retribuciones y declaraciones de bienes y actividades."
         },
         {
-          "@language": "es",
-          "@value": "Convenios firmados con objeto, parte firmante, vigencia y obligaciones económicas."
+          "@language": "ca-valencia",
+          "@value": "Identificació, perfil, dedicació, retribucions i declaracions de béns i activitats."
         },
         {
           "@language": "en",
-          "@value": "Signed agreements with purpose, counterparty, term and financial obligations."
+          "@value": "Identity, profile, dedication, pay and declarations of assets and activities."
         }
       ],
       "dcat:keyword": [
         {
-          "@language": "ca",
-          "@value": "convenis"
+          "@language": "es",
+          "@value": "cargos electos"
         },
         {
-          "@language": "ca",
-          "@value": "col·laboració"
+          "@language": "es",
+          "@value": "retribuciones"
         },
         {
-          "@language": "ca",
-          "@value": "patrocini"
+          "@language": "es",
+          "@value": "declaraciones de bienes"
+        },
+        {
+          "@language": "es",
+          "@value": "alcaldía"
         }
       ],
       "dcat:theme": [
@@ -637,170 +834,7 @@
         }
       ],
       "dct:publisher": {
-        "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/#organitzacio"
-      },
-      "dct:accrualPeriodicity": {
-        "@id": "http://publications.europa.eu/resource/authority/frequency/QUARTERLY"
-      },
-      "dct:temporal": {
-        "@type": "dct:PeriodOfTime",
-        "dcat:startDate": {
-          "@value": "2022-01-01",
-          "@type": "xsd:date"
-        },
-        "dcat:endDate": {
-          "@value": "2026-12-31",
-          "@type": "xsd:date"
-        }
-      },
-      "dct:spatial": {
-        "@id": "https://www.geonames.org/3128760"
-      },
-      "dct:modified": {
-        "@value": "2026-11-12",
-        "@type": "xsd:date"
-      },
-      "dct:language": [
-        {
-          "@id": "http://publications.europa.eu/resource/authority/language/CAT"
-        },
-        {
-          "@id": "http://publications.europa.eu/resource/authority/language/SPA"
-        },
-        {
-          "@id": "http://publications.europa.eu/resource/authority/language/ENG"
-        }
-      ],
-      "dcat:contactPoint": {
-        "@type": "vcard:Organization",
-        "vcard:fn": "Unitat de Transparència",
-        "vcard:hasEmail": {
-          "@id": "mailto:transparencia@example.org"
-        }
-      },
-      "dcat:landingPage": {
-        "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/subvencions"
-      },
-      "dct:conformsTo": {
-        "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/datapackage.json#convenis"
-      },
-      "dcat:distribution": [
-        {
-          "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/convenis.csv",
-          "@type": "dcat:Distribution",
-          "dct:title": {
-            "@language": "ca",
-            "@value": "Convenis de col·laboració (CSV)"
-          },
-          "dcat:accessURL": {
-            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/convenis.csv"
-          },
-          "dcat:downloadURL": {
-            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/convenis.csv"
-          },
-          "dct:format": {
-            "@id": "http://publications.europa.eu/resource/authority/file-type/CSV"
-          },
-          "dcat:mediaType": {
-            "@id": "http://www.iana.org/assignments/media-types/text/csv"
-          },
-          "dcat:byteSize": {
-            "@value": "6360",
-            "@type": "xsd:nonNegativeInteger"
-          },
-          "dct:license": {
-            "@id": "https://creativecommons.org/licenses/by/4.0/"
-          }
-        },
-        {
-          "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/convenis.json",
-          "@type": "dcat:Distribution",
-          "dct:title": {
-            "@language": "ca",
-            "@value": "Convenis de col·laboració (JSON)"
-          },
-          "dcat:accessURL": {
-            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/convenis.json"
-          },
-          "dcat:downloadURL": {
-            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/convenis.json"
-          },
-          "dct:format": {
-            "@id": "http://publications.europa.eu/resource/authority/file-type/JSON"
-          },
-          "dcat:mediaType": {
-            "@id": "http://www.iana.org/assignments/media-types/application/json"
-          },
-          "dcat:byteSize": {
-            "@value": "15954",
-            "@type": "xsd:nonNegativeInteger"
-          },
-          "dct:license": {
-            "@id": "https://creativecommons.org/licenses/by/4.0/"
-          }
-        }
-      ]
-    },
-    {
-      "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/dades-obertes/plantilla",
-      "@type": "dcat:Dataset",
-      "dct:identifier": "plantilla",
-      "dct:title": [
-        {
-          "@language": "ca",
-          "@value": "Plantilla de personal"
-        },
-        {
-          "@language": "es",
-          "@value": "Plantilla de personal"
-        },
-        {
-          "@language": "en",
-          "@value": "Workforce"
-        }
-      ],
-      "dct:description": [
-        {
-          "@language": "ca",
-          "@value": "Efectius a 31 de desembre per categoria, sexe, franja d'edat i tipus de relació laboral."
-        },
-        {
-          "@language": "es",
-          "@value": "Efectivos a 31 de diciembre por categoría, sexo, franja de edad y tipo de relación laboral."
-        },
-        {
-          "@language": "en",
-          "@value": "Headcount at 31 December by category, sex, age band and contract type."
-        }
-      ],
-      "dcat:keyword": [
-        {
-          "@language": "ca",
-          "@value": "personal"
-        },
-        {
-          "@language": "ca",
-          "@value": "plantilla"
-        },
-        {
-          "@language": "ca",
-          "@value": "gènere"
-        },
-        {
-          "@language": "ca",
-          "@value": "ocupació"
-        }
-      ],
-      "dcat:theme": [
-        {
-          "@id": "http://publications.europa.eu/resource/authority/data-theme/GOVE"
-        },
-        {
-          "@id": "http://datos.gob.es/kos/sector-publico/sector/sector-publico"
-        }
-      ],
-      "dct:publisher": {
-        "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/#organitzacio"
+        "@id": "http://datos.gob.es/recurso/sector-publico/org/Organismo/L00000000"
       },
       "dct:accrualPeriodicity": {
         "@id": "http://publications.europa.eu/resource/authority/frequency/ANNUAL"
@@ -808,58 +842,40 @@
       "dct:temporal": {
         "@type": "dct:PeriodOfTime",
         "dcat:startDate": {
-          "@value": "2021-01-01",
+          "@value": "2023-06-17",
           "@type": "xsd:date"
         },
         "dcat:endDate": {
-          "@value": "2026-12-31",
+          "@value": "2027-06-30",
           "@type": "xsd:date"
         }
       },
-      "dct:spatial": {
-        "@id": "https://www.geonames.org/3128760"
-      },
       "dct:modified": {
-        "@value": "2026-11-12",
+        "@value": "2026-11-13",
         "@type": "xsd:date"
       },
-      "dct:language": [
-        {
-          "@id": "http://publications.europa.eu/resource/authority/language/CAT"
-        },
-        {
-          "@id": "http://publications.europa.eu/resource/authority/language/SPA"
-        },
-        {
-          "@id": "http://publications.europa.eu/resource/authority/language/ENG"
-        }
-      ],
       "dcat:contactPoint": {
         "@type": "vcard:Organization",
-        "vcard:fn": "Unitat de Transparència",
+        "vcard:fn": "Unidad de Transparencia",
         "vcard:hasEmail": {
           "@id": "mailto:transparencia@example.org"
         }
       },
       "dcat:landingPage": {
-        "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/personal"
+        "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/cargos"
       },
       "dct:conformsTo": {
-        "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/datapackage.json#plantilla"
+        "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/datapackage.json#cargos"
       },
       "dcat:distribution": [
         {
-          "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/plantilla.csv",
+          "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/cargos.csv",
           "@type": "dcat:Distribution",
-          "dct:title": {
-            "@language": "ca",
-            "@value": "Plantilla de personal (CSV)"
-          },
           "dcat:accessURL": {
-            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/plantilla.csv"
+            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/cargos.csv"
           },
           "dcat:downloadURL": {
-            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/plantilla.csv"
+            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/cargos.csv"
           },
           "dct:format": {
             "@id": "http://publications.europa.eu/resource/authority/file-type/CSV"
@@ -868,7 +884,7 @@
             "@id": "http://www.iana.org/assignments/media-types/text/csv"
           },
           "dcat:byteSize": {
-            "@value": "30806",
+            "@value": "2720",
             "@type": "xsd:nonNegativeInteger"
           },
           "dct:license": {
@@ -876,17 +892,13 @@
           }
         },
         {
-          "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/plantilla.json",
+          "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/cargos.json",
           "@type": "dcat:Distribution",
-          "dct:title": {
-            "@language": "ca",
-            "@value": "Plantilla de personal (JSON)"
-          },
           "dcat:accessURL": {
-            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/plantilla.json"
+            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/cargos.json"
           },
           "dcat:downloadURL": {
-            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/plantilla.json"
+            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/cargos.json"
           },
           "dct:format": {
             "@id": "http://publications.europa.eu/resource/authority/file-type/JSON"
@@ -895,7 +907,7 @@
             "@id": "http://www.iana.org/assignments/media-types/application/json"
           },
           "dcat:byteSize": {
-            "@value": "122326",
+            "@value": "8612",
             "@type": "xsd:nonNegativeInteger"
           },
           "dct:license": {
@@ -905,342 +917,16 @@
       ]
     },
     {
-      "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/dades-obertes/retribucions",
-      "@type": "dcat:Dataset",
-      "dct:identifier": "retribucions",
-      "dct:title": [
-        {
-          "@language": "ca",
-          "@value": "Taules retributives i bretxa salarial"
-        },
-        {
-          "@language": "es",
-          "@value": "Tablas retributivas y brecha salarial"
-        },
-        {
-          "@language": "en",
-          "@value": "Pay scales and gender pay gap"
-        }
-      ],
-      "dct:description": [
-        {
-          "@language": "ca",
-          "@value": "Retribució bruta anual mínima, màxima i mitjana per sexe i categoria professional."
-        },
-        {
-          "@language": "es",
-          "@value": "Retribución bruta anual mínima, máxima y media por sexo y categoría profesional."
-        },
-        {
-          "@language": "en",
-          "@value": "Minimum, maximum and average gross annual pay by sex and category."
-        }
-      ],
-      "dcat:keyword": [
-        {
-          "@language": "ca",
-          "@value": "retribucions"
-        },
-        {
-          "@language": "ca",
-          "@value": "salaris"
-        },
-        {
-          "@language": "ca",
-          "@value": "bretxa salarial"
-        },
-        {
-          "@language": "ca",
-          "@value": "igualtat"
-        }
-      ],
-      "dcat:theme": [
-        {
-          "@id": "http://publications.europa.eu/resource/authority/data-theme/GOVE"
-        },
-        {
-          "@id": "http://datos.gob.es/kos/sector-publico/sector/sector-publico"
-        }
-      ],
-      "dct:publisher": {
-        "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/#organitzacio"
-      },
-      "dct:accrualPeriodicity": {
-        "@id": "http://publications.europa.eu/resource/authority/frequency/ANNUAL"
-      },
-      "dct:temporal": {
-        "@type": "dct:PeriodOfTime",
-        "dcat:startDate": {
-          "@value": "2022-01-01",
-          "@type": "xsd:date"
-        },
-        "dcat:endDate": {
-          "@value": "2026-12-31",
-          "@type": "xsd:date"
-        }
-      },
-      "dct:spatial": {
-        "@id": "https://www.geonames.org/3128760"
-      },
-      "dct:modified": {
-        "@value": "2026-11-12",
-        "@type": "xsd:date"
-      },
-      "dct:language": [
-        {
-          "@id": "http://publications.europa.eu/resource/authority/language/CAT"
-        },
-        {
-          "@id": "http://publications.europa.eu/resource/authority/language/SPA"
-        },
-        {
-          "@id": "http://publications.europa.eu/resource/authority/language/ENG"
-        }
-      ],
-      "dcat:contactPoint": {
-        "@type": "vcard:Organization",
-        "vcard:fn": "Unitat de Transparència",
-        "vcard:hasEmail": {
-          "@id": "mailto:transparencia@example.org"
-        }
-      },
-      "dcat:landingPage": {
-        "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/personal"
-      },
-      "dct:conformsTo": {
-        "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/datapackage.json#retribucions"
-      },
-      "dcat:distribution": [
-        {
-          "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/retribucions.csv",
-          "@type": "dcat:Distribution",
-          "dct:title": {
-            "@language": "ca",
-            "@value": "Taules retributives i bretxa salarial (CSV)"
-          },
-          "dcat:accessURL": {
-            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/retribucions.csv"
-          },
-          "dcat:downloadURL": {
-            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/retribucions.csv"
-          },
-          "dct:format": {
-            "@id": "http://publications.europa.eu/resource/authority/file-type/CSV"
-          },
-          "dcat:mediaType": {
-            "@id": "http://www.iana.org/assignments/media-types/text/csv"
-          },
-          "dcat:byteSize": {
-            "@value": "1824",
-            "@type": "xsd:nonNegativeInteger"
-          },
-          "dct:license": {
-            "@id": "https://creativecommons.org/licenses/by/4.0/"
-          }
-        },
-        {
-          "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/retribucions.json",
-          "@type": "dcat:Distribution",
-          "dct:title": {
-            "@language": "ca",
-            "@value": "Taules retributives i bretxa salarial (JSON)"
-          },
-          "dcat:accessURL": {
-            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/retribucions.json"
-          },
-          "dcat:downloadURL": {
-            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/retribucions.json"
-          },
-          "dct:format": {
-            "@id": "http://publications.europa.eu/resource/authority/file-type/JSON"
-          },
-          "dcat:mediaType": {
-            "@id": "http://www.iana.org/assignments/media-types/application/json"
-          },
-          "dcat:byteSize": {
-            "@value": "7953",
-            "@type": "xsd:nonNegativeInteger"
-          },
-          "dct:license": {
-            "@id": "https://creativecommons.org/licenses/by/4.0/"
-          }
-        }
-      ]
-    },
-    {
-      "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/dades-obertes/alts-carrecs",
-      "@type": "dcat:Dataset",
-      "dct:identifier": "alts-carrecs",
-      "dct:title": [
-        {
-          "@language": "ca",
-          "@value": "Alts càrrecs i personal directiu"
-        },
-        {
-          "@language": "es",
-          "@value": "Altos cargos y personal directivo"
-        },
-        {
-          "@language": "en",
-          "@value": "Senior officials"
-        }
-      ],
-      "dct:description": [
-        {
-          "@language": "ca",
-          "@value": "Llocs directius, retribucions, data de nomenament i estat de les declaracions."
-        },
-        {
-          "@language": "es",
-          "@value": "Puestos directivos, retribuciones, fecha de nombramiento y estado de las declaraciones."
-        },
-        {
-          "@language": "en",
-          "@value": "Senior positions, pay, appointment date and declaration status."
-        }
-      ],
-      "dcat:keyword": [
-        {
-          "@language": "ca",
-          "@value": "alts càrrecs"
-        },
-        {
-          "@language": "ca",
-          "@value": "retribucions"
-        },
-        {
-          "@language": "ca",
-          "@value": "declaracions"
-        },
-        {
-          "@language": "ca",
-          "@value": "bon govern"
-        }
-      ],
-      "dcat:theme": [
-        {
-          "@id": "http://publications.europa.eu/resource/authority/data-theme/GOVE"
-        },
-        {
-          "@id": "http://datos.gob.es/kos/sector-publico/sector/sector-publico"
-        }
-      ],
-      "dct:publisher": {
-        "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/#organitzacio"
-      },
-      "dct:accrualPeriodicity": {
-        "@id": "http://publications.europa.eu/resource/authority/frequency/ANNUAL"
-      },
-      "dct:temporal": {
-        "@type": "dct:PeriodOfTime",
-        "dcat:startDate": {
-          "@value": "2026-01-01",
-          "@type": "xsd:date"
-        },
-        "dcat:endDate": {
-          "@value": "2026-12-31",
-          "@type": "xsd:date"
-        }
-      },
-      "dct:spatial": {
-        "@id": "https://www.geonames.org/3128760"
-      },
-      "dct:modified": {
-        "@value": "2026-11-12",
-        "@type": "xsd:date"
-      },
-      "dct:language": [
-        {
-          "@id": "http://publications.europa.eu/resource/authority/language/CAT"
-        },
-        {
-          "@id": "http://publications.europa.eu/resource/authority/language/SPA"
-        },
-        {
-          "@id": "http://publications.europa.eu/resource/authority/language/ENG"
-        }
-      ],
-      "dcat:contactPoint": {
-        "@type": "vcard:Organization",
-        "vcard:fn": "Unitat de Transparència",
-        "vcard:hasEmail": {
-          "@id": "mailto:transparencia@example.org"
-        }
-      },
-      "dcat:landingPage": {
-        "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/bon-govern"
-      },
-      "dct:conformsTo": {
-        "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/datapackage.json#alts-carrecs"
-      },
-      "dcat:distribution": [
-        {
-          "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/alts-carrecs.csv",
-          "@type": "dcat:Distribution",
-          "dct:title": {
-            "@language": "ca",
-            "@value": "Alts càrrecs i personal directiu (CSV)"
-          },
-          "dcat:accessURL": {
-            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/alts-carrecs.csv"
-          },
-          "dcat:downloadURL": {
-            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/alts-carrecs.csv"
-          },
-          "dct:format": {
-            "@id": "http://publications.europa.eu/resource/authority/file-type/CSV"
-          },
-          "dcat:mediaType": {
-            "@id": "http://www.iana.org/assignments/media-types/text/csv"
-          },
-          "dcat:byteSize": {
-            "@value": "909",
-            "@type": "xsd:nonNegativeInteger"
-          },
-          "dct:license": {
-            "@id": "https://creativecommons.org/licenses/by/4.0/"
-          }
-        },
-        {
-          "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/alts-carrecs.json",
-          "@type": "dcat:Distribution",
-          "dct:title": {
-            "@language": "ca",
-            "@value": "Alts càrrecs i personal directiu (JSON)"
-          },
-          "dcat:accessURL": {
-            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/alts-carrecs.json"
-          },
-          "dcat:downloadURL": {
-            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/alts-carrecs.json"
-          },
-          "dct:format": {
-            "@id": "http://publications.europa.eu/resource/authority/file-type/JSON"
-          },
-          "dcat:mediaType": {
-            "@id": "http://www.iana.org/assignments/media-types/application/json"
-          },
-          "dcat:byteSize": {
-            "@value": "2484",
-            "@type": "xsd:nonNegativeInteger"
-          },
-          "dct:license": {
-            "@id": "https://creativecommons.org/licenses/by/4.0/"
-          }
-        }
-      ]
-    },
-    {
-      "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/dades-obertes/agenda",
+      "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/datos/agenda",
       "@type": "dcat:Dataset",
       "dct:identifier": "agenda",
       "dct:title": [
         {
-          "@language": "ca",
+          "@language": "es",
           "@value": "Agenda institucional"
         },
         {
-          "@language": "es",
+          "@language": "ca-valencia",
           "@value": "Agenda institucional"
         },
         {
@@ -1250,34 +936,26 @@
       ],
       "dct:description": [
         {
-          "@language": "ca",
-          "@value": "Activitats públiques de la direcció, amb indicació de reunions amb grups d'interès inscrits al registre."
+          "@language": "es",
+          "@value": "Agenda pública de la alcaldía y concejalías, con indicación de reuniones con grupos de interés."
         },
         {
-          "@language": "es",
-          "@value": "Actividades públicas de la dirección, con indicación de reuniones con grupos de interés inscritos en el registro."
+          "@language": "ca-valencia",
+          "@value": "Agenda pública de l’alcaldia i regidories, amb indicació de reunions amb grups d’interés."
         },
         {
           "@language": "en",
-          "@value": "Public activities of senior management, flagging meetings with registered lobby groups."
+          "@value": "Public diary of the mayor and councillors, flagging lobby meetings."
         }
       ],
       "dcat:keyword": [
         {
-          "@language": "ca",
+          "@language": "es",
           "@value": "agenda"
         },
         {
-          "@language": "ca",
-          "@value": "grups d'interès"
-        },
-        {
-          "@language": "ca",
-          "@value": "lobbies"
-        },
-        {
-          "@language": "ca",
-          "@value": "reunions"
+          "@language": "es",
+          "@value": "grupos de interés"
         }
       ],
       "dcat:theme": [
@@ -1289,7 +967,7 @@
         }
       ],
       "dct:publisher": {
-        "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/#organitzacio"
+        "@id": "http://datos.gob.es/recurso/sector-publico/org/Organismo/L00000000"
       },
       "dct:accrualPeriodicity": {
         "@id": "http://publications.europa.eu/resource/authority/frequency/WEEKLY"
@@ -1305,33 +983,19 @@
           "@type": "xsd:date"
         }
       },
-      "dct:spatial": {
-        "@id": "https://www.geonames.org/3128760"
-      },
       "dct:modified": {
-        "@value": "2026-11-12",
+        "@value": "2026-11-13",
         "@type": "xsd:date"
       },
-      "dct:language": [
-        {
-          "@id": "http://publications.europa.eu/resource/authority/language/CAT"
-        },
-        {
-          "@id": "http://publications.europa.eu/resource/authority/language/SPA"
-        },
-        {
-          "@id": "http://publications.europa.eu/resource/authority/language/ENG"
-        }
-      ],
       "dcat:contactPoint": {
         "@type": "vcard:Organization",
-        "vcard:fn": "Unitat de Transparència",
+        "vcard:fn": "Unidad de Transparencia",
         "vcard:hasEmail": {
           "@id": "mailto:transparencia@example.org"
         }
       },
       "dcat:landingPage": {
-        "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/bon-govern"
+        "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/agenda"
       },
       "dct:conformsTo": {
         "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/datapackage.json#agenda"
@@ -1340,10 +1004,6 @@
         {
           "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/agenda.csv",
           "@type": "dcat:Distribution",
-          "dct:title": {
-            "@language": "ca",
-            "@value": "Agenda institucional (CSV)"
-          },
           "dcat:accessURL": {
             "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/agenda.csv"
           },
@@ -1357,7 +1017,7 @@
             "@id": "http://www.iana.org/assignments/media-types/text/csv"
           },
           "dcat:byteSize": {
-            "@value": "11301",
+            "@value": "10003",
             "@type": "xsd:nonNegativeInteger"
           },
           "dct:license": {
@@ -1367,10 +1027,6 @@
         {
           "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/agenda.json",
           "@type": "dcat:Distribution",
-          "dct:title": {
-            "@language": "ca",
-            "@value": "Agenda institucional (JSON)"
-          },
           "dcat:accessURL": {
             "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/agenda.json"
           },
@@ -1384,7 +1040,7 @@
             "@id": "http://www.iana.org/assignments/media-types/application/json"
           },
           "dcat:byteSize": {
-            "@value": "31426",
+            "@value": "23189",
             "@type": "xsd:nonNegativeInteger"
           },
           "dct:license": {
@@ -1394,49 +1050,53 @@
       ]
     },
     {
-      "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/dades-obertes/regals",
+      "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/datos/plantilla",
       "@type": "dcat:Dataset",
-      "dct:identifier": "regals",
+      "dct:identifier": "plantilla",
       "dct:title": [
         {
-          "@language": "ca",
-          "@value": "Registre de regals institucionals"
+          "@language": "es",
+          "@value": "Plantilla de personal"
         },
         {
-          "@language": "es",
-          "@value": "Registro de regalos institucionales"
+          "@language": "ca-valencia",
+          "@value": "Plantilla de personal"
         },
         {
           "@language": "en",
-          "@value": "Register of gifts"
+          "@value": "Workforce"
         }
       ],
       "dct:description": [
         {
-          "@language": "ca",
-          "@value": "Obsequis rebuts per la direcció, valor estimat i destinació."
+          "@language": "es",
+          "@value": "Efectivos a 31 de diciembre por tipo de personal, grupo profesional y sexo."
         },
         {
-          "@language": "es",
-          "@value": "Obsequios recibidos por la dirección, valor estimado y destino."
+          "@language": "ca-valencia",
+          "@value": "Efectius a 31 de desembre per tipus de personal, grup professional i sexe."
         },
         {
           "@language": "en",
-          "@value": "Gifts received by senior management, estimated value and destination."
+          "@value": "Headcount at 31 December by staff type, grade and sex."
         }
       ],
       "dcat:keyword": [
         {
-          "@language": "ca",
-          "@value": "regals"
+          "@language": "es",
+          "@value": "personal"
         },
         {
-          "@language": "ca",
-          "@value": "integritat"
+          "@language": "es",
+          "@value": "plantilla"
         },
         {
-          "@language": "ca",
-          "@value": "codi ètic"
+          "@language": "es",
+          "@value": "RPT"
+        },
+        {
+          "@language": "es",
+          "@value": "igualdad"
         }
       ],
       "dcat:theme": [
@@ -1448,66 +1108,48 @@
         }
       ],
       "dct:publisher": {
-        "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/#organitzacio"
+        "@id": "http://datos.gob.es/recurso/sector-publico/org/Organismo/L00000000"
       },
       "dct:accrualPeriodicity": {
-        "@id": "http://publications.europa.eu/resource/authority/frequency/QUARTERLY"
+        "@id": "http://publications.europa.eu/resource/authority/frequency/ANNUAL"
       },
       "dct:temporal": {
         "@type": "dct:PeriodOfTime",
         "dcat:startDate": {
-          "@value": "2024-01-01",
+          "@value": "2021-01-01",
           "@type": "xsd:date"
         },
         "dcat:endDate": {
-          "@value": "2026-12-31",
+          "@value": "2025-12-31",
           "@type": "xsd:date"
         }
       },
-      "dct:spatial": {
-        "@id": "https://www.geonames.org/3128760"
-      },
       "dct:modified": {
-        "@value": "2026-11-12",
+        "@value": "2026-11-13",
         "@type": "xsd:date"
       },
-      "dct:language": [
-        {
-          "@id": "http://publications.europa.eu/resource/authority/language/CAT"
-        },
-        {
-          "@id": "http://publications.europa.eu/resource/authority/language/SPA"
-        },
-        {
-          "@id": "http://publications.europa.eu/resource/authority/language/ENG"
-        }
-      ],
       "dcat:contactPoint": {
         "@type": "vcard:Organization",
-        "vcard:fn": "Unitat de Transparència",
+        "vcard:fn": "Unidad de Transparencia",
         "vcard:hasEmail": {
           "@id": "mailto:transparencia@example.org"
         }
       },
       "dcat:landingPage": {
-        "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/bon-govern"
+        "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/personal"
       },
       "dct:conformsTo": {
-        "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/datapackage.json#regals"
+        "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/datapackage.json#plantilla"
       },
       "dcat:distribution": [
         {
-          "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/regals.csv",
+          "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/plantilla.csv",
           "@type": "dcat:Distribution",
-          "dct:title": {
-            "@language": "ca",
-            "@value": "Registre de regals institucionals (CSV)"
-          },
           "dcat:accessURL": {
-            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/regals.csv"
+            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/plantilla.csv"
           },
           "dcat:downloadURL": {
-            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/regals.csv"
+            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/plantilla.csv"
           },
           "dct:format": {
             "@id": "http://publications.europa.eu/resource/authority/file-type/CSV"
@@ -1516,7 +1158,7 @@
             "@id": "http://www.iana.org/assignments/media-types/text/csv"
           },
           "dcat:byteSize": {
-            "@value": "2209",
+            "@value": "4761",
             "@type": "xsd:nonNegativeInteger"
           },
           "dct:license": {
@@ -1524,17 +1166,13 @@
           }
         },
         {
-          "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/regals.json",
+          "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/plantilla.json",
           "@type": "dcat:Distribution",
-          "dct:title": {
-            "@language": "ca",
-            "@value": "Registre de regals institucionals (JSON)"
-          },
           "dcat:accessURL": {
-            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/regals.json"
+            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/plantilla.json"
           },
           "dcat:downloadURL": {
-            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/regals.json"
+            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/plantilla.json"
           },
           "dct:format": {
             "@id": "http://publications.europa.eu/resource/authority/file-type/JSON"
@@ -1543,7 +1181,7 @@
             "@id": "http://www.iana.org/assignments/media-types/application/json"
           },
           "dcat:byteSize": {
-            "@value": "5364",
+            "@value": "18966",
             "@type": "xsd:nonNegativeInteger"
           },
           "dct:license": {
@@ -1553,73 +1191,61 @@
       ]
     },
     {
-      "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/dades-obertes/indicadors-turisme",
+      "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/datos/pmp",
       "@type": "dcat:Dataset",
-      "dct:identifier": "indicadors-turisme",
+      "dct:identifier": "pmp",
       "dct:title": [
         {
-          "@language": "ca",
-          "@value": "Indicadors turístics mensuals de Barcelona"
+          "@language": "es",
+          "@value": "Periodo medio de pago a proveedores"
         },
         {
-          "@language": "es",
-          "@value": "Indicadores turísticos mensuales de Barcelona"
+          "@language": "ca-valencia",
+          "@value": "Període mitjà de pagament a proveïdors"
         },
         {
           "@language": "en",
-          "@value": "Monthly tourism indicators for Barcelona"
+          "@value": "Average supplier payment period"
         }
       ],
       "dct:description": [
         {
-          "@language": "ca",
-          "@value": "Sèrie mensual de pernoctacions i turistes hotelers, ocupació, preu mitjà, passatgers aeroportuaris, creueristes i ús de serveis del Consorci."
+          "@language": "es",
+          "@value": "Periodo medio de pago mensual (Real Decreto 635/2014)."
         },
         {
-          "@language": "es",
-          "@value": "Serie mensual de pernoctaciones y turistas hoteleros, ocupación, precio medio, pasajeros aeroportuarios, cruceristas y uso de servicios del Consorci."
+          "@language": "ca-valencia",
+          "@value": "Període mitjà de pagament mensual (Reial decret 635/2014)."
         },
         {
           "@language": "en",
-          "@value": "Monthly series of hotel nights and guests, occupancy, average rate, airport passengers, cruise passengers and use of Consortium services."
+          "@value": "Monthly average payment period (Royal Decree 635/2014)."
         }
       ],
       "dcat:keyword": [
         {
-          "@language": "ca",
-          "@value": "turisme"
+          "@language": "es",
+          "@value": "PMP"
         },
         {
-          "@language": "ca",
-          "@value": "pernoctacions"
+          "@language": "es",
+          "@value": "morosidad"
         },
         {
-          "@language": "ca",
-          "@value": "ocupació hotelera"
-        },
-        {
-          "@language": "ca",
-          "@value": "creuers"
-        },
-        {
-          "@language": "ca",
-          "@value": "aeroport"
-        },
-        {
-          "@language": "ca",
-          "@value": "estadística"
+          "@language": "es",
+          "@value": "proveedores"
         }
       ],
       "dcat:theme": [
         {
-          "@id": "http://publications.europa.eu/resource/authority/data-theme/ECON"
+          "@id": "http://publications.europa.eu/resource/authority/data-theme/GOVE"
         },
         {
-          "@id": "http://datos.gob.es/kos/sector-publico/sector/turismo"
+          "@id": "http://datos.gob.es/kos/sector-publico/sector/sector-publico"
         }
       ],
       "dct:publisher": {
-        "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/#organitzacio"
+        "@id": "http://datos.gob.es/recurso/sector-publico/org/Organismo/L00000000"
       },
       "dct:accrualPeriodicity": {
         "@id": "http://publications.europa.eu/resource/authority/frequency/MONTHLY"
@@ -1627,7 +1253,7 @@
       "dct:temporal": {
         "@type": "dct:PeriodOfTime",
         "dcat:startDate": {
-          "@value": "2019-01-01",
+          "@value": "2022-01-01",
           "@type": "xsd:date"
         },
         "dcat:endDate": {
@@ -1635,50 +1261,32 @@
           "@type": "xsd:date"
         }
       },
-      "dct:spatial": {
-        "@id": "https://www.geonames.org/3128760"
-      },
       "dct:modified": {
-        "@value": "2026-11-12",
+        "@value": "2026-11-13",
         "@type": "xsd:date"
       },
-      "dct:language": [
-        {
-          "@id": "http://publications.europa.eu/resource/authority/language/CAT"
-        },
-        {
-          "@id": "http://publications.europa.eu/resource/authority/language/SPA"
-        },
-        {
-          "@id": "http://publications.europa.eu/resource/authority/language/ENG"
-        }
-      ],
       "dcat:contactPoint": {
         "@type": "vcard:Organization",
-        "vcard:fn": "Unitat de Transparència",
+        "vcard:fn": "Unidad de Transparencia",
         "vcard:hasEmail": {
           "@id": "mailto:transparencia@example.org"
         }
       },
       "dcat:landingPage": {
-        "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/activitat"
+        "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/economia"
       },
       "dct:conformsTo": {
-        "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/datapackage.json#indicadors-turisme"
+        "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/datapackage.json#pmp"
       },
       "dcat:distribution": [
         {
-          "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/indicadors-turisme.csv",
+          "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/pmp.csv",
           "@type": "dcat:Distribution",
-          "dct:title": {
-            "@language": "ca",
-            "@value": "Indicadors turístics mensuals de Barcelona (CSV)"
-          },
           "dcat:accessURL": {
-            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/indicadors-turisme.csv"
+            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/pmp.csv"
           },
           "dcat:downloadURL": {
-            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/indicadors-turisme.csv"
+            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/pmp.csv"
           },
           "dct:format": {
             "@id": "http://publications.europa.eu/resource/authority/file-type/CSV"
@@ -1687,7 +1295,7 @@
             "@id": "http://www.iana.org/assignments/media-types/text/csv"
           },
           "dcat:byteSize": {
-            "@value": "7341",
+            "@value": "865",
             "@type": "xsd:nonNegativeInteger"
           },
           "dct:license": {
@@ -1695,17 +1303,13 @@
           }
         },
         {
-          "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/indicadors-turisme.json",
+          "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/pmp.json",
           "@type": "dcat:Distribution",
-          "dct:title": {
-            "@language": "ca",
-            "@value": "Indicadors turístics mensuals de Barcelona (JSON)"
-          },
           "dcat:accessURL": {
-            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/indicadors-turisme.json"
+            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/pmp.json"
           },
           "dcat:downloadURL": {
-            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/indicadors-turisme.json"
+            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/pmp.json"
           },
           "dct:format": {
             "@id": "http://publications.europa.eu/resource/authority/file-type/JSON"
@@ -1714,7 +1318,7 @@
             "@id": "http://www.iana.org/assignments/media-types/application/json"
           },
           "dcat:byteSize": {
-            "@value": "39479",
+            "@value": "3293",
             "@type": "xsd:nonNegativeInteger"
           },
           "dct:license": {
@@ -1724,61 +1328,61 @@
       ]
     },
     {
-      "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/dades-obertes/mercats-origen",
+      "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/datos/deuda",
       "@type": "dcat:Dataset",
-      "dct:identifier": "mercats-origen",
+      "dct:identifier": "deuda",
       "dct:title": [
         {
-          "@language": "ca",
-          "@value": "Mercats d'origen dels turistes"
+          "@language": "es",
+          "@value": "Deuda viva"
         },
         {
-          "@language": "es",
-          "@value": "Mercados de origen de los turistas"
+          "@language": "ca-valencia",
+          "@value": "Deute viu"
         },
         {
           "@language": "en",
-          "@value": "Source markets"
+          "@value": "Outstanding debt"
         }
       ],
       "dct:description": [
         {
-          "@language": "ca",
-          "@value": "Quota de turistes allotjats per país o regió d'origen."
+          "@language": "es",
+          "@value": "Deuda viva a 31 de diciembre e ingresos corrientes liquidados."
         },
         {
-          "@language": "es",
-          "@value": "Cuota de turistas alojados por país o región de origen."
+          "@language": "ca-valencia",
+          "@value": "Deute viu a 31 de desembre i ingressos corrents liquidats."
         },
         {
           "@language": "en",
-          "@value": "Share of hotel guests by country or region of origin."
+          "@value": "Outstanding debt at 31 December and current revenue."
         }
       ],
       "dcat:keyword": [
         {
-          "@language": "ca",
-          "@value": "mercats"
+          "@language": "es",
+          "@value": "deuda"
         },
         {
-          "@language": "ca",
-          "@value": "procedència"
+          "@language": "es",
+          "@value": "endeudamiento"
         },
         {
-          "@language": "ca",
-          "@value": "turistes internacionals"
+          "@language": "es",
+          "@value": "estabilidad"
         }
       ],
       "dcat:theme": [
         {
-          "@id": "http://publications.europa.eu/resource/authority/data-theme/ECON"
+          "@id": "http://publications.europa.eu/resource/authority/data-theme/GOVE"
         },
         {
-          "@id": "http://datos.gob.es/kos/sector-publico/sector/turismo"
+          "@id": "http://datos.gob.es/kos/sector-publico/sector/sector-publico"
         }
       ],
       "dct:publisher": {
-        "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/#organitzacio"
+        "@id": "http://datos.gob.es/recurso/sector-publico/org/Organismo/L00000000"
       },
       "dct:accrualPeriodicity": {
         "@id": "http://publications.europa.eu/resource/authority/frequency/ANNUAL"
@@ -1794,50 +1398,32 @@
           "@type": "xsd:date"
         }
       },
-      "dct:spatial": {
-        "@id": "https://www.geonames.org/3128760"
-      },
       "dct:modified": {
-        "@value": "2026-11-12",
+        "@value": "2026-11-13",
         "@type": "xsd:date"
       },
-      "dct:language": [
-        {
-          "@id": "http://publications.europa.eu/resource/authority/language/CAT"
-        },
-        {
-          "@id": "http://publications.europa.eu/resource/authority/language/SPA"
-        },
-        {
-          "@id": "http://publications.europa.eu/resource/authority/language/ENG"
-        }
-      ],
       "dcat:contactPoint": {
         "@type": "vcard:Organization",
-        "vcard:fn": "Unitat de Transparència",
+        "vcard:fn": "Unidad de Transparencia",
         "vcard:hasEmail": {
           "@id": "mailto:transparencia@example.org"
         }
       },
       "dcat:landingPage": {
-        "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/activitat"
+        "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/economia"
       },
       "dct:conformsTo": {
-        "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/datapackage.json#mercats-origen"
+        "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/datapackage.json#deuda"
       },
       "dcat:distribution": [
         {
-          "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/mercats-origen.csv",
+          "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/deuda.csv",
           "@type": "dcat:Distribution",
-          "dct:title": {
-            "@language": "ca",
-            "@value": "Mercats d'origen dels turistes (CSV)"
-          },
           "dcat:accessURL": {
-            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/mercats-origen.csv"
+            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/deuda.csv"
           },
           "dcat:downloadURL": {
-            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/mercats-origen.csv"
+            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/deuda.csv"
           },
           "dct:format": {
             "@id": "http://publications.europa.eu/resource/authority/file-type/CSV"
@@ -1846,7 +1432,7 @@
             "@id": "http://www.iana.org/assignments/media-types/text/csv"
           },
           "dcat:byteSize": {
-            "@value": "1020",
+            "@value": "239",
             "@type": "xsd:nonNegativeInteger"
           },
           "dct:license": {
@@ -1854,17 +1440,13 @@
           }
         },
         {
-          "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/mercats-origen.json",
+          "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/deuda.json",
           "@type": "dcat:Distribution",
-          "dct:title": {
-            "@language": "ca",
-            "@value": "Mercats d'origen dels turistes (JSON)"
-          },
           "dcat:accessURL": {
-            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/mercats-origen.json"
+            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/deuda.json"
           },
           "dcat:downloadURL": {
-            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/mercats-origen.json"
+            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/deuda.json"
           },
           "dct:format": {
             "@id": "http://publications.europa.eu/resource/authority/file-type/JSON"
@@ -1873,7 +1455,7 @@
             "@id": "http://www.iana.org/assignments/media-types/application/json"
           },
           "dcat:byteSize": {
-            "@value": "5358",
+            "@value": "834",
             "@type": "xsd:nonNegativeInteger"
           },
           "dct:license": {
@@ -1883,61 +1465,61 @@
       ]
     },
     {
-      "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/dades-obertes/oficines-informacio",
+      "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/datos/inmuebles",
       "@type": "dcat:Dataset",
-      "dct:identifier": "oficines-informacio",
+      "dct:identifier": "inmuebles",
       "dct:title": [
         {
-          "@language": "ca",
-          "@value": "Oficines i punts d'informació turística"
+          "@language": "es",
+          "@value": "Bienes inmuebles"
         },
         {
-          "@language": "es",
-          "@value": "Oficinas y puntos de información turística"
+          "@language": "ca-valencia",
+          "@value": "Béns immobles"
         },
         {
           "@language": "en",
-          "@value": "Tourist information offices"
+          "@value": "Real estate"
         }
       ],
       "dct:description": [
         {
-          "@language": "ca",
-          "@value": "Ubicació georeferenciada (WGS84), districte, accessibilitat i visites anuals de les oficines d'informació."
+          "@language": "es",
+          "@value": "Relación de bienes inmuebles de titularidad municipal (art. 8.3 Ley 19/2013), georreferenciados."
         },
         {
-          "@language": "es",
-          "@value": "Ubicación georreferenciada (WGS84), distrito, accesibilidad y visitas anuales de las oficinas de información."
+          "@language": "ca-valencia",
+          "@value": "Relació de béns immobles de titularitat municipal (art. 8.3 Llei 19/2013), georeferenciats."
         },
         {
           "@language": "en",
-          "@value": "Geo-referenced location (WGS84), district, accessibility and annual visits of information offices."
+          "@value": "Municipal real estate (art. 8.3 Law 19/2013), geo-referenced."
         }
       ],
       "dcat:keyword": [
         {
-          "@language": "ca",
-          "@value": "oficines de turisme"
+          "@language": "es",
+          "@value": "patrimonio"
         },
         {
-          "@language": "ca",
-          "@value": "geolocalització"
+          "@language": "es",
+          "@value": "inmuebles"
         },
         {
-          "@language": "ca",
-          "@value": "atenció al visitant"
+          "@language": "es",
+          "@value": "inventario"
         }
       ],
       "dcat:theme": [
         {
-          "@id": "http://publications.europa.eu/resource/authority/data-theme/ECON"
+          "@id": "http://publications.europa.eu/resource/authority/data-theme/GOVE"
         },
         {
-          "@id": "http://datos.gob.es/kos/sector-publico/sector/turismo"
+          "@id": "http://datos.gob.es/kos/sector-publico/sector/sector-publico"
         }
       ],
       "dct:publisher": {
-        "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/#organitzacio"
+        "@id": "http://datos.gob.es/recurso/sector-publico/org/Organismo/L00000000"
       },
       "dct:accrualPeriodicity": {
         "@id": "http://publications.europa.eu/resource/authority/frequency/ANNUAL"
@@ -1953,50 +1535,32 @@
           "@type": "xsd:date"
         }
       },
-      "dct:spatial": {
-        "@id": "https://www.geonames.org/3128760"
-      },
       "dct:modified": {
-        "@value": "2026-11-12",
+        "@value": "2026-11-13",
         "@type": "xsd:date"
       },
-      "dct:language": [
-        {
-          "@id": "http://publications.europa.eu/resource/authority/language/CAT"
-        },
-        {
-          "@id": "http://publications.europa.eu/resource/authority/language/SPA"
-        },
-        {
-          "@id": "http://publications.europa.eu/resource/authority/language/ENG"
-        }
-      ],
       "dcat:contactPoint": {
         "@type": "vcard:Organization",
-        "vcard:fn": "Unitat de Transparència",
+        "vcard:fn": "Unidad de Transparencia",
         "vcard:hasEmail": {
           "@id": "mailto:transparencia@example.org"
         }
       },
       "dcat:landingPage": {
-        "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/activitat"
+        "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/patrimonio"
       },
       "dct:conformsTo": {
-        "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/datapackage.json#oficines-informacio"
+        "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/datapackage.json#inmuebles"
       },
       "dcat:distribution": [
         {
-          "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/oficines-informacio.csv",
+          "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/inmuebles.csv",
           "@type": "dcat:Distribution",
-          "dct:title": {
-            "@language": "ca",
-            "@value": "Oficines i punts d'informació turística (CSV)"
-          },
           "dcat:accessURL": {
-            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/oficines-informacio.csv"
+            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/inmuebles.csv"
           },
           "dcat:downloadURL": {
-            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/oficines-informacio.csv"
+            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/inmuebles.csv"
           },
           "dct:format": {
             "@id": "http://publications.europa.eu/resource/authority/file-type/CSV"
@@ -2005,7 +1569,7 @@
             "@id": "http://www.iana.org/assignments/media-types/text/csv"
           },
           "dcat:byteSize": {
-            "@value": "716",
+            "@value": "1958",
             "@type": "xsd:nonNegativeInteger"
           },
           "dct:license": {
@@ -2013,17 +1577,13 @@
           }
         },
         {
-          "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/oficines-informacio.json",
+          "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/inmuebles.json",
           "@type": "dcat:Distribution",
-          "dct:title": {
-            "@language": "ca",
-            "@value": "Oficines i punts d'informació turística (JSON)"
-          },
           "dcat:accessURL": {
-            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/oficines-informacio.json"
+            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/inmuebles.json"
           },
           "dcat:downloadURL": {
-            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/oficines-informacio.json"
+            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/inmuebles.json"
           },
           "dct:format": {
             "@id": "http://publications.europa.eu/resource/authority/file-type/JSON"
@@ -2032,7 +1592,7 @@
             "@id": "http://www.iana.org/assignments/media-types/application/json"
           },
           "dcat:byteSize": {
-            "@value": "2105",
+            "@value": "4596",
             "@type": "xsd:nonNegativeInteger"
           },
           "dct:license": {
@@ -2042,53 +1602,49 @@
       ]
     },
     {
-      "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/dades-obertes/dret-acces",
+      "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/datos/normativa",
       "@type": "dcat:Dataset",
-      "dct:identifier": "dret-acces",
+      "dct:identifier": "normativa",
       "dct:title": [
         {
-          "@language": "ca",
-          "@value": "Sol·licituds d'accés a la informació pública"
+          "@language": "es",
+          "@value": "Normativa municipal"
         },
         {
-          "@language": "es",
-          "@value": "Solicitudes de acceso a la información pública"
+          "@language": "ca-valencia",
+          "@value": "Normativa municipal"
         },
         {
           "@language": "en",
-          "@value": "Freedom of information requests"
+          "@value": "Municipal regulations"
         }
       ],
       "dct:description": [
         {
-          "@language": "ca",
-          "@value": "Sol·licituds rebudes, tema, canal, tipus de sol·licitant, sentit de la resolució i termini de resposta."
+          "@language": "es",
+          "@value": "Ordenanzas, reglamentos e instrucciones vigentes con enlace al boletín oficial."
         },
         {
-          "@language": "es",
-          "@value": "Solicitudes recibidas, tema, canal, tipo de solicitante, sentido de la resolución y plazo de respuesta."
+          "@language": "ca-valencia",
+          "@value": "Ordenances, reglaments i instruccions vigents amb enllaç al butlletí oficial."
         },
         {
           "@language": "en",
-          "@value": "Requests received, topic, channel, requester type, outcome and response time."
+          "@value": "By-laws, regulations and instructions in force, linked to the official gazette."
         }
       ],
       "dcat:keyword": [
         {
-          "@language": "ca",
-          "@value": "dret d'accés"
+          "@language": "es",
+          "@value": "ordenanzas"
         },
         {
-          "@language": "ca",
-          "@value": "sol·licituds"
+          "@language": "es",
+          "@value": "reglamentos"
         },
         {
-          "@language": "ca",
-          "@value": "GAIP"
-        },
-        {
-          "@language": "ca",
-          "@value": "resolucions"
+          "@language": "es",
+          "@value": "normativa"
         }
       ],
       "dcat:theme": [
@@ -2100,7 +1656,144 @@
         }
       ],
       "dct:publisher": {
-        "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/#organitzacio"
+        "@id": "http://datos.gob.es/recurso/sector-publico/org/Organismo/L00000000"
+      },
+      "dct:accrualPeriodicity": {
+        "@id": "http://publications.europa.eu/resource/authority/frequency/CONT"
+      },
+      "dct:temporal": {
+        "@type": "dct:PeriodOfTime",
+        "dcat:startDate": {
+          "@value": "1990-01-01",
+          "@type": "xsd:date"
+        },
+        "dcat:endDate": {
+          "@value": "2026-12-31",
+          "@type": "xsd:date"
+        }
+      },
+      "dct:modified": {
+        "@value": "2026-11-13",
+        "@type": "xsd:date"
+      },
+      "dcat:contactPoint": {
+        "@type": "vcard:Organization",
+        "vcard:fn": "Unidad de Transparencia",
+        "vcard:hasEmail": {
+          "@id": "mailto:transparencia@example.org"
+        }
+      },
+      "dcat:landingPage": {
+        "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/normativa"
+      },
+      "dct:conformsTo": {
+        "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/datapackage.json#normativa"
+      },
+      "dcat:distribution": [
+        {
+          "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/normativa.csv",
+          "@type": "dcat:Distribution",
+          "dcat:accessURL": {
+            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/normativa.csv"
+          },
+          "dcat:downloadURL": {
+            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/normativa.csv"
+          },
+          "dct:format": {
+            "@id": "http://publications.europa.eu/resource/authority/file-type/CSV"
+          },
+          "dcat:mediaType": {
+            "@id": "http://www.iana.org/assignments/media-types/text/csv"
+          },
+          "dcat:byteSize": {
+            "@value": "1468",
+            "@type": "xsd:nonNegativeInteger"
+          },
+          "dct:license": {
+            "@id": "https://creativecommons.org/licenses/by/4.0/"
+          }
+        },
+        {
+          "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/normativa.json",
+          "@type": "dcat:Distribution",
+          "dcat:accessURL": {
+            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/normativa.json"
+          },
+          "dcat:downloadURL": {
+            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/normativa.json"
+          },
+          "dct:format": {
+            "@id": "http://publications.europa.eu/resource/authority/file-type/JSON"
+          },
+          "dcat:mediaType": {
+            "@id": "http://www.iana.org/assignments/media-types/application/json"
+          },
+          "dcat:byteSize": {
+            "@value": "3323",
+            "@type": "xsd:nonNegativeInteger"
+          },
+          "dct:license": {
+            "@id": "https://creativecommons.org/licenses/by/4.0/"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/datos/solicitudes-acceso",
+      "@type": "dcat:Dataset",
+      "dct:identifier": "solicitudes-acceso",
+      "dct:title": [
+        {
+          "@language": "es",
+          "@value": "Solicitudes de acceso a la información pública"
+        },
+        {
+          "@language": "ca-valencia",
+          "@value": "Sol·licituds d’accés a la informació pública"
+        },
+        {
+          "@language": "en",
+          "@value": "Freedom of information requests"
+        }
+      ],
+      "dct:description": [
+        {
+          "@language": "es",
+          "@value": "Solicitudes recibidas, tema, canal, tipo de solicitante, sentido de la resolución y plazo."
+        },
+        {
+          "@language": "ca-valencia",
+          "@value": "Sol·licituds rebudes, tema, canal, tipus de sol·licitant, sentit de la resolució i termini."
+        },
+        {
+          "@language": "en",
+          "@value": "Requests received, topic, channel, requester type, outcome and response time."
+        }
+      ],
+      "dcat:keyword": [
+        {
+          "@language": "es",
+          "@value": "derecho de acceso"
+        },
+        {
+          "@language": "es",
+          "@value": "solicitudes"
+        },
+        {
+          "@language": "es",
+          "@value": "resoluciones"
+        }
+      ],
+      "dcat:theme": [
+        {
+          "@id": "http://publications.europa.eu/resource/authority/data-theme/GOVE"
+        },
+        {
+          "@id": "http://datos.gob.es/kos/sector-publico/sector/sector-publico"
+        }
+      ],
+      "dct:publisher": {
+        "@id": "http://datos.gob.es/recurso/sector-publico/org/Organismo/L00000000"
       },
       "dct:accrualPeriodicity": {
         "@id": "http://publications.europa.eu/resource/authority/frequency/QUARTERLY"
@@ -2116,50 +1809,32 @@
           "@type": "xsd:date"
         }
       },
-      "dct:spatial": {
-        "@id": "https://www.geonames.org/3128760"
-      },
       "dct:modified": {
-        "@value": "2026-11-12",
+        "@value": "2026-11-13",
         "@type": "xsd:date"
       },
-      "dct:language": [
-        {
-          "@id": "http://publications.europa.eu/resource/authority/language/CAT"
-        },
-        {
-          "@id": "http://publications.europa.eu/resource/authority/language/SPA"
-        },
-        {
-          "@id": "http://publications.europa.eu/resource/authority/language/ENG"
-        }
-      ],
       "dcat:contactPoint": {
         "@type": "vcard:Organization",
-        "vcard:fn": "Unitat de Transparència",
+        "vcard:fn": "Unidad de Transparencia",
         "vcard:hasEmail": {
           "@id": "mailto:transparencia@example.org"
         }
       },
       "dcat:landingPage": {
-        "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/dret-acces"
+        "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/derecho-acceso"
       },
       "dct:conformsTo": {
-        "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/datapackage.json#dret-acces"
+        "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/datapackage.json#solicitudes-acceso"
       },
       "dcat:distribution": [
         {
-          "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/dret-acces.csv",
+          "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/solicitudes-acceso.csv",
           "@type": "dcat:Distribution",
-          "dct:title": {
-            "@language": "ca",
-            "@value": "Sol·licituds d'accés a la informació pública (CSV)"
-          },
           "dcat:accessURL": {
-            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/dret-acces.csv"
+            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/solicitudes-acceso.csv"
           },
           "dcat:downloadURL": {
-            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/dret-acces.csv"
+            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/solicitudes-acceso.csv"
           },
           "dct:format": {
             "@id": "http://publications.europa.eu/resource/authority/file-type/CSV"
@@ -2168,7 +1843,7 @@
             "@id": "http://www.iana.org/assignments/media-types/text/csv"
           },
           "dcat:byteSize": {
-            "@value": "24203",
+            "@value": "12712",
             "@type": "xsd:nonNegativeInteger"
           },
           "dct:license": {
@@ -2176,17 +1851,13 @@
           }
         },
         {
-          "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/dret-acces.json",
+          "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/solicitudes-acceso.json",
           "@type": "dcat:Distribution",
-          "dct:title": {
-            "@language": "ca",
-            "@value": "Sol·licituds d'accés a la informació pública (JSON)"
-          },
           "dcat:accessURL": {
-            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/dret-acces.json"
+            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/solicitudes-acceso.json"
           },
           "dcat:downloadURL": {
-            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/dret-acces.json"
+            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/solicitudes-acceso.json"
           },
           "dct:format": {
             "@id": "http://publications.europa.eu/resource/authority/file-type/JSON"
@@ -2195,7 +1866,7 @@
             "@id": "http://www.iana.org/assignments/media-types/application/json"
           },
           "dcat:byteSize": {
-            "@value": "77797",
+            "@value": "42840",
             "@type": "xsd:nonNegativeInteger"
           },
           "dct:license": {
@@ -2205,180 +1876,17 @@
       ]
     },
     {
-      "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/dades-obertes/objectius",
+      "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/datos/obligaciones",
       "@type": "dcat:Dataset",
-      "dct:identifier": "objectius",
+      "dct:identifier": "obligaciones",
       "dct:title": [
-        {
-          "@language": "ca",
-          "@value": "Objectius estratègics i grau de compliment"
-        },
-        {
-          "@language": "es",
-          "@value": "Objetivos estratégicos y grado de cumplimiento"
-        },
-        {
-          "@language": "en",
-          "@value": "Strategic objectives and progress"
-        }
-      ],
-      "dct:description": [
-        {
-          "@language": "ca",
-          "@value": "Objectius del pla d'actuació amb indicador, valor de base, valor actual i fita."
-        },
-        {
-          "@language": "es",
-          "@value": "Objetivos del plan de actuación con indicador, valor base, valor actual y meta."
-        },
-        {
-          "@language": "en",
-          "@value": "Action plan objectives with indicator, baseline, current value and target."
-        }
-      ],
-      "dcat:keyword": [
-        {
-          "@language": "ca",
-          "@value": "planificació"
-        },
-        {
-          "@language": "ca",
-          "@value": "objectius"
-        },
-        {
-          "@language": "ca",
-          "@value": "indicadors"
-        },
-        {
-          "@language": "ca",
-          "@value": "rendició de comptes"
-        }
-      ],
-      "dcat:theme": [
-        {
-          "@id": "http://publications.europa.eu/resource/authority/data-theme/GOVE"
-        },
-        {
-          "@id": "http://datos.gob.es/kos/sector-publico/sector/sector-publico"
-        }
-      ],
-      "dct:publisher": {
-        "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/#organitzacio"
-      },
-      "dct:accrualPeriodicity": {
-        "@id": "http://publications.europa.eu/resource/authority/frequency/BIANNUAL"
-      },
-      "dct:temporal": {
-        "@type": "dct:PeriodOfTime",
-        "dcat:startDate": {
-          "@value": "2024-01-01",
-          "@type": "xsd:date"
-        },
-        "dcat:endDate": {
-          "@value": "2030-12-31",
-          "@type": "xsd:date"
-        }
-      },
-      "dct:spatial": {
-        "@id": "https://www.geonames.org/3128760"
-      },
-      "dct:modified": {
-        "@value": "2026-11-12",
-        "@type": "xsd:date"
-      },
-      "dct:language": [
-        {
-          "@id": "http://publications.europa.eu/resource/authority/language/CAT"
-        },
-        {
-          "@id": "http://publications.europa.eu/resource/authority/language/SPA"
-        },
-        {
-          "@id": "http://publications.europa.eu/resource/authority/language/ENG"
-        }
-      ],
-      "dcat:contactPoint": {
-        "@type": "vcard:Organization",
-        "vcard:fn": "Unitat de Transparència",
-        "vcard:hasEmail": {
-          "@id": "mailto:transparencia@example.org"
-        }
-      },
-      "dcat:landingPage": {
-        "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/activitat"
-      },
-      "dct:conformsTo": {
-        "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/datapackage.json#objectius"
-      },
-      "dcat:distribution": [
-        {
-          "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/objectius.csv",
-          "@type": "dcat:Distribution",
-          "dct:title": {
-            "@language": "ca",
-            "@value": "Objectius estratègics i grau de compliment (CSV)"
-          },
-          "dcat:accessURL": {
-            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/objectius.csv"
-          },
-          "dcat:downloadURL": {
-            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/objectius.csv"
-          },
-          "dct:format": {
-            "@id": "http://publications.europa.eu/resource/authority/file-type/CSV"
-          },
-          "dcat:mediaType": {
-            "@id": "http://www.iana.org/assignments/media-types/text/csv"
-          },
-          "dcat:byteSize": {
-            "@value": "1147",
-            "@type": "xsd:nonNegativeInteger"
-          },
-          "dct:license": {
-            "@id": "https://creativecommons.org/licenses/by/4.0/"
-          }
-        },
-        {
-          "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/objectius.json",
-          "@type": "dcat:Distribution",
-          "dct:title": {
-            "@language": "ca",
-            "@value": "Objectius estratègics i grau de compliment (JSON)"
-          },
-          "dcat:accessURL": {
-            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/objectius.json"
-          },
-          "dcat:downloadURL": {
-            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/objectius.json"
-          },
-          "dct:format": {
-            "@id": "http://publications.europa.eu/resource/authority/file-type/JSON"
-          },
-          "dcat:mediaType": {
-            "@id": "http://www.iana.org/assignments/media-types/application/json"
-          },
-          "dcat:byteSize": {
-            "@value": "2772",
-            "@type": "xsd:nonNegativeInteger"
-          },
-          "dct:license": {
-            "@id": "https://creativecommons.org/licenses/by/4.0/"
-          }
-        }
-      ]
-    },
-    {
-      "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/dades-obertes/obligacions",
-      "@type": "dcat:Dataset",
-      "dct:identifier": "obligacions",
-      "dct:title": [
-        {
-          "@language": "ca",
-          "@value": "Compliment de les obligacions de publicitat activa"
-        },
         {
           "@language": "es",
           "@value": "Cumplimiento de las obligaciones de publicidad activa"
+        },
+        {
+          "@language": "ca-valencia",
+          "@value": "Compliment de les obligacions de publicitat activa"
         },
         {
           "@language": "en",
@@ -2387,34 +1895,34 @@
       ],
       "dct:description": [
         {
-          "@language": "ca",
-          "@value": "Autoavaluació de cada obligació de la Llei 19/2014: estat de publicació, periodicitat, data d'actualització i conjunt de dades associat."
+          "@language": "es",
+          "@value": "Autoevaluación de cada obligación de la Ley 19/2013, la Ley 7/1985 y la normativa autonómica: estado, periodicidad y última actualización."
         },
         {
-          "@language": "es",
-          "@value": "Autoevaluación de cada obligación de la Ley 19/2014: estado de publicación, periodicidad, fecha de actualización y conjunto de datos asociado."
+          "@language": "ca-valencia",
+          "@value": "Autoavaluació de cada obligació de la Llei 19/2013, la Llei 7/1985 i la normativa autonòmica: estat, periodicitat i darrera actualització."
         },
         {
           "@language": "en",
-          "@value": "Self-assessment of each obligation under Catalan Law 19/2014: status, frequency, last update and linked dataset."
+          "@value": "Self-assessment of each disclosure obligation: status, frequency and last update."
         }
       ],
       "dcat:keyword": [
         {
-          "@language": "ca",
-          "@value": "transparència"
+          "@language": "es",
+          "@value": "transparencia"
         },
         {
-          "@language": "ca",
-          "@value": "publicitat activa"
+          "@language": "es",
+          "@value": "publicidad activa"
         },
         {
-          "@language": "ca",
-          "@value": "Llei 19/2014"
+          "@language": "es",
+          "@value": "Ley 19/2013"
         },
         {
-          "@language": "ca",
-          "@value": "compliment"
+          "@language": "es",
+          "@value": "cumplimiento"
         }
       ],
       "dcat:theme": [
@@ -2426,7 +1934,7 @@
         }
       ],
       "dct:publisher": {
-        "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/#organitzacio"
+        "@id": "http://datos.gob.es/recurso/sector-publico/org/Organismo/L00000000"
       },
       "dct:accrualPeriodicity": {
         "@id": "http://publications.europa.eu/resource/authority/frequency/MONTHLY"
@@ -2442,50 +1950,32 @@
           "@type": "xsd:date"
         }
       },
-      "dct:spatial": {
-        "@id": "https://www.geonames.org/3128760"
-      },
       "dct:modified": {
-        "@value": "2026-11-12",
+        "@value": "2026-11-13",
         "@type": "xsd:date"
       },
-      "dct:language": [
-        {
-          "@id": "http://publications.europa.eu/resource/authority/language/CAT"
-        },
-        {
-          "@id": "http://publications.europa.eu/resource/authority/language/SPA"
-        },
-        {
-          "@id": "http://publications.europa.eu/resource/authority/language/ENG"
-        }
-      ],
       "dcat:contactPoint": {
         "@type": "vcard:Organization",
-        "vcard:fn": "Unitat de Transparència",
+        "vcard:fn": "Unidad de Transparencia",
         "vcard:hasEmail": {
           "@id": "mailto:transparencia@example.org"
         }
       },
       "dcat:landingPage": {
-        "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/compliment"
+        "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/indice"
       },
       "dct:conformsTo": {
-        "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/datapackage.json#obligacions"
+        "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/datapackage.json#obligaciones"
       },
       "dcat:distribution": [
         {
-          "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/obligacions.csv",
+          "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/obligaciones.csv",
           "@type": "dcat:Distribution",
-          "dct:title": {
-            "@language": "ca",
-            "@value": "Compliment de les obligacions de publicitat activa (CSV)"
-          },
           "dcat:accessURL": {
-            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/obligacions.csv"
+            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/obligaciones.csv"
           },
           "dcat:downloadURL": {
-            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/obligacions.csv"
+            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/obligaciones.csv"
           },
           "dct:format": {
             "@id": "http://publications.europa.eu/resource/authority/file-type/CSV"
@@ -2494,7 +1984,7 @@
             "@id": "http://www.iana.org/assignments/media-types/text/csv"
           },
           "dcat:byteSize": {
-            "@value": "5076",
+            "@value": "4698",
             "@type": "xsd:nonNegativeInteger"
           },
           "dct:license": {
@@ -2502,17 +1992,13 @@
           }
         },
         {
-          "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/obligacions.json",
+          "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/obligaciones.json",
           "@type": "dcat:Distribution",
-          "dct:title": {
-            "@language": "ca",
-            "@value": "Compliment de les obligacions de publicitat activa (JSON)"
-          },
           "dcat:accessURL": {
-            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/obligacions.json"
+            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/obligaciones.json"
           },
           "dcat:downloadURL": {
-            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/obligacions.json"
+            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/obligaciones.json"
           },
           "dct:format": {
             "@id": "http://publications.europa.eu/resource/authority/file-type/JSON"
@@ -2521,7 +2007,7 @@
             "@id": "http://www.iana.org/assignments/media-types/application/json"
           },
           "dcat:byteSize": {
-            "@value": "13817",
+            "@value": "11589",
             "@type": "xsd:nonNegativeInteger"
           },
           "dct:license": {

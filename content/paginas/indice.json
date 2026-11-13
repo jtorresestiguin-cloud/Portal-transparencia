@@ -1,0 +1,19 @@
+{
+ "id": "indice",
+ "icono": "check",
+ "titulo": {
+  "es": "Índice de transparencia",
+  "va": "Índex de transparència",
+  "en": "Transparency index"
+ },
+ "intro": {
+  "es": "Autoevaluación pública del cumplimiento de cada obligación de publicidad activa.",
+  "va": "Autoavaluació pública del compliment de cada obligació de publicitat activa.",
+  "en": "Public self-assessment of every disclosure obligation."
+ },
+ "bloques": [
+  {
+   "tipo": "indice"
+  }
+ ]
+}

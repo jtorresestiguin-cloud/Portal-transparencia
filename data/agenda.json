@@ -1,1023 +1,976 @@
 {
-  "generat": "2026-11-11",
-  "avis": "Dades d'exemple generades sintèticament per al prototip. No són xifres oficials.",
-  "dades": [
-    {
-      "data": "2026-11-06",
-      "carrec": "direccio_general",
-      "tipus": "acte",
-      "activitat": "Presentació de dades del balanç turístic",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2026-10-30",
-      "carrec": "direccio_promocio",
-      "tipus": "reunio",
-      "activitat": "Reunió amb grup d'interès inscrit al registre",
-      "grup_interes_registrat": true,
-      "codi_registre_gi": "RGI-2385",
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2026-10-28",
-      "carrec": "direccio_general",
-      "tipus": "reunio",
-      "activitat": "Reunió amb associació veïnal sobre gestió de fluxos",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2026-10-22",
-      "carrec": "direccio_convention_bureau",
-      "tipus": "reunio",
-      "activitat": "Reunió amb operador de creuers",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2026-10-21",
-      "carrec": "direccio_promocio",
-      "tipus": "acte",
-      "activitat": "Jornada sobre turisme sostenible i ciutat",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2026-10-20",
-      "carrec": "direccio_general",
-      "tipus": "organ",
-      "activitat": "Sessió del Consell General",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2026-10-19",
-      "carrec": "direccio_general",
-      "tipus": "reunio",
-      "activitat": "Reunió amb grup d'interès inscrit al registre",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2026-10-15",
-      "carrec": "direccio_general",
-      "tipus": "reunio",
-      "activitat": "Reunió amb representants del sector hoteler",
-      "grup_interes_registrat": true,
-      "codi_registre_gi": "RGI-3571",
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2026-10-14",
-      "carrec": "direccio_convention_bureau",
-      "tipus": "reunio",
-      "activitat": "Reunió amb representants del sector hoteler",
-      "grup_interes_registrat": true,
-      "codi_registre_gi": "RGI-3406",
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2026-10-08",
-      "carrec": "direccio_convention_bureau",
-      "tipus": "acte",
-      "activitat": "Lliurament de premis de congressos de la ciutat",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2026-10-01",
-      "carrec": "direccio_general",
-      "tipus": "fira",
-      "activitat": "Assistència a fira professional internacional de turisme",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Tòquio"
-    },
-    {
-      "data": "2026-09-29",
-      "carrec": "direccio_general",
-      "tipus": "acte",
-      "activitat": "Jornada sobre turisme sostenible i ciutat",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2026-09-17",
-      "carrec": "direccio_productes",
-      "tipus": "reunio",
-      "activitat": "Reunió amb grup d'interès inscrit al registre",
-      "grup_interes_registrat": true,
-      "codi_registre_gi": "RGI-9006",
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2026-09-16",
-      "carrec": "direccio_general",
-      "tipus": "acte",
-      "activitat": "Jornada sobre turisme sostenible i ciutat",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2026-09-14",
-      "carrec": "direccio_general",
-      "tipus": "acte",
-      "activitat": "Presentació de dades del balanç turístic",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2026-09-07",
-      "carrec": "direccio_convention_bureau",
-      "tipus": "acte",
-      "activitat": "Lliurament de premis de congressos de la ciutat",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2026-09-04",
-      "carrec": "direccio_general",
-      "tipus": "reunio",
-      "activitat": "Reunió amb operador de creuers",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2026-09-01",
-      "carrec": "direccio_promocio",
-      "tipus": "viatge",
-      "activitat": "Missió comercial a mercat emissor",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Dubai"
-    },
-    {
-      "data": "2026-08-31",
-      "carrec": "direccio_general",
-      "tipus": "acte",
-      "activitat": "Lliurament de premis de congressos de la ciutat",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2026-08-27",
-      "carrec": "direccio_productes",
-      "tipus": "organ",
-      "activitat": "Sessió del Consell General",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2026-08-25",
-      "carrec": "direccio_general",
-      "tipus": "organ",
-      "activitat": "Sessió del Comitè Executiu",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2026-08-20",
-      "carrec": "direccio_general",
-      "tipus": "reunio",
-      "activitat": "Reunió amb operador de creuers",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2026-08-19",
-      "carrec": "direccio_general",
-      "tipus": "fira",
-      "activitat": "Assistència a fira professional internacional de turisme",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Berlín"
-    },
-    {
-      "data": "2026-08-17",
-      "carrec": "direccio_general",
-      "tipus": "reunio",
-      "activitat": "Reunió amb grup d'interès inscrit al registre",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2026-08-11",
-      "carrec": "direccio_promocio",
-      "tipus": "viatge",
-      "activitat": "Missió comercial a mercat emissor",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Nova York"
-    },
-    {
-      "data": "2026-08-10",
-      "carrec": "direccio_general",
-      "tipus": "acte",
-      "activitat": "Jornada sobre turisme sostenible i ciutat",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2026-08-07",
-      "carrec": "direccio_convention_bureau",
-      "tipus": "reunio",
-      "activitat": "Reunió amb associació veïnal sobre gestió de fluxos",
-      "grup_interes_registrat": true,
-      "codi_registre_gi": "RGI-5052",
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2026-08-06",
-      "carrec": "direccio_convention_bureau",
-      "tipus": "fira",
-      "activitat": "Assistència a fira professional internacional de turisme",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Dubai"
-    },
-    {
-      "data": "2026-08-05",
-      "carrec": "direccio_general",
-      "tipus": "reunio",
-      "activitat": "Reunió amb representants del sector hoteler",
-      "grup_interes_registrat": true,
-      "codi_registre_gi": "RGI-2667",
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2026-07-20",
-      "carrec": "direccio_general",
-      "tipus": "reunio",
-      "activitat": "Reunió amb associació veïnal sobre gestió de fluxos",
-      "grup_interes_registrat": true,
-      "codi_registre_gi": "RGI-8533",
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2026-07-17",
-      "carrec": "direccio_general",
-      "tipus": "viatge",
-      "activitat": "Missió comercial a mercat emissor",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Madrid"
-    },
-    {
-      "data": "2026-07-15",
-      "carrec": "direccio_general",
-      "tipus": "reunio",
-      "activitat": "Reunió amb representants del sector hoteler",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2026-07-14",
-      "carrec": "direccio_general",
-      "tipus": "reunio",
-      "activitat": "Reunió amb grup d'interès inscrit al registre",
-      "grup_interes_registrat": true,
-      "codi_registre_gi": "RGI-1357",
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2026-07-10",
-      "carrec": "direccio_general",
-      "tipus": "reunio",
-      "activitat": "Reunió amb grup d'interès inscrit al registre",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2026-07-08",
-      "carrec": "direccio_productes",
-      "tipus": "viatge",
-      "activitat": "Missió comercial a mercat emissor",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Nova York"
-    },
-    {
-      "data": "2026-07-07",
-      "carrec": "direccio_convention_bureau",
-      "tipus": "reunio",
-      "activitat": "Reunió amb operador de creuers",
-      "grup_interes_registrat": true,
-      "codi_registre_gi": "RGI-1929",
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2026-07-03",
-      "carrec": "direccio_convention_bureau",
-      "tipus": "acte",
-      "activitat": "Lliurament de premis de congressos de la ciutat",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2026-07-01",
-      "carrec": "direccio_general",
-      "tipus": "acte",
-      "activitat": "Lliurament de premis de congressos de la ciutat",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2026-06-24",
-      "carrec": "direccio_convention_bureau",
-      "tipus": "organ",
-      "activitat": "Sessió del Consell General",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2026-06-23",
-      "carrec": "direccio_promocio",
-      "tipus": "reunio",
-      "activitat": "Reunió amb operador de creuers",
-      "grup_interes_registrat": true,
-      "codi_registre_gi": "RGI-7963",
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2026-06-22",
-      "carrec": "direccio_general",
-      "tipus": "acte",
-      "activitat": "Presentació de dades del balanç turístic",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2026-06-19",
-      "carrec": "direccio_general",
-      "tipus": "fira",
-      "activitat": "Assistència a fira professional internacional de turisme",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Seül"
-    },
-    {
-      "data": "2026-06-17",
-      "carrec": "direccio_sostenibilitat",
-      "tipus": "fira",
-      "activitat": "Assistència a fira professional internacional de turisme",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Berlín"
-    },
-    {
-      "data": "2026-06-16",
-      "carrec": "direccio_promocio",
-      "tipus": "reunio",
-      "activitat": "Reunió amb representants del sector hoteler",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2026-06-15",
-      "carrec": "direccio_general",
-      "tipus": "reunio",
-      "activitat": "Reunió amb representants del sector hoteler",
-      "grup_interes_registrat": true,
-      "codi_registre_gi": "RGI-9471",
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2026-06-12",
-      "carrec": "direccio_convention_bureau",
-      "tipus": "reunio",
-      "activitat": "Reunió amb representants del sector hoteler",
-      "grup_interes_registrat": true,
-      "codi_registre_gi": "RGI-1883",
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2026-06-05",
-      "carrec": "direccio_promocio",
-      "tipus": "acte",
-      "activitat": "Lliurament de premis de congressos de la ciutat",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2026-06-02",
-      "carrec": "direccio_general",
-      "tipus": "acte",
-      "activitat": "Jornada sobre turisme sostenible i ciutat",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2026-05-28",
-      "carrec": "direccio_general",
-      "tipus": "organ",
-      "activitat": "Sessió del Comitè Executiu",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2026-05-27",
-      "carrec": "direccio_general",
-      "tipus": "organ",
-      "activitat": "Sessió del Consell General",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2026-05-25",
-      "carrec": "direccio_general",
-      "tipus": "organ",
-      "activitat": "Sessió del Comitè Executiu",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2026-05-21",
-      "carrec": "direccio_sostenibilitat",
-      "tipus": "reunio",
-      "activitat": "Reunió amb associació veïnal sobre gestió de fluxos",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2026-05-18",
-      "carrec": "direccio_convention_bureau",
-      "tipus": "reunio",
-      "activitat": "Reunió amb associació veïnal sobre gestió de fluxos",
-      "grup_interes_registrat": true,
-      "codi_registre_gi": "RGI-6905",
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2026-05-15",
-      "carrec": "direccio_convention_bureau",
-      "tipus": "fira",
-      "activitat": "Assistència a fira professional internacional de turisme",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Madrid"
-    },
-    {
-      "data": "2026-05-14",
-      "carrec": "direccio_promocio",
-      "tipus": "reunio",
-      "activitat": "Reunió amb grup d'interès inscrit al registre",
-      "grup_interes_registrat": true,
-      "codi_registre_gi": "RGI-6570",
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2026-05-11",
-      "carrec": "direccio_productes",
-      "tipus": "acte",
-      "activitat": "Jornada sobre turisme sostenible i ciutat",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2026-05-07",
-      "carrec": "direccio_general",
-      "tipus": "reunio",
-      "activitat": "Reunió amb representants del sector hoteler",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2026-05-05",
-      "carrec": "direccio_general",
-      "tipus": "reunio",
-      "activitat": "Reunió amb operador de creuers",
-      "grup_interes_registrat": true,
-      "codi_registre_gi": "RGI-1113",
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2026-04-30",
-      "carrec": "direccio_convention_bureau",
-      "tipus": "reunio",
-      "activitat": "Reunió amb associació veïnal sobre gestió de fluxos",
-      "grup_interes_registrat": true,
-      "codi_registre_gi": "RGI-4397",
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2026-04-27",
-      "carrec": "direccio_general",
-      "tipus": "organ",
-      "activitat": "Sessió del Consell General",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2026-04-24",
-      "carrec": "direccio_sostenibilitat",
-      "tipus": "organ",
-      "activitat": "Sessió del Consell General",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2026-04-17",
-      "carrec": "direccio_convention_bureau",
-      "tipus": "reunio",
-      "activitat": "Reunió amb operador de creuers",
-      "grup_interes_registrat": true,
-      "codi_registre_gi": "RGI-9905",
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2026-04-16",
-      "carrec": "direccio_general",
-      "tipus": "reunio",
-      "activitat": "Reunió amb associació veïnal sobre gestió de fluxos",
-      "grup_interes_registrat": true,
-      "codi_registre_gi": "RGI-6987",
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2026-04-15",
-      "carrec": "direccio_productes",
-      "tipus": "fira",
-      "activitat": "Assistència a fira professional internacional de turisme",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Milà"
-    },
-    {
-      "data": "2026-04-13",
-      "carrec": "direccio_general",
-      "tipus": "organ",
-      "activitat": "Sessió del Consell General",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2026-04-10",
-      "carrec": "direccio_general",
-      "tipus": "reunio",
-      "activitat": "Reunió amb associació veïnal sobre gestió de fluxos",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2026-04-09",
-      "carrec": "direccio_general",
-      "tipus": "organ",
-      "activitat": "Sessió del Comitè Executiu",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2026-04-08",
-      "carrec": "direccio_general",
-      "tipus": "reunio",
-      "activitat": "Reunió amb representants del sector hoteler",
-      "grup_interes_registrat": true,
-      "codi_registre_gi": "RGI-6890",
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2026-04-03",
-      "carrec": "direccio_convention_bureau",
-      "tipus": "organ",
-      "activitat": "Sessió del Comitè Executiu",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2026-03-31",
-      "carrec": "direccio_productes",
-      "tipus": "reunio",
-      "activitat": "Reunió de coordinació amb l'Ajuntament de Barcelona",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2026-03-26",
-      "carrec": "direccio_promocio",
-      "tipus": "reunio",
-      "activitat": "Reunió amb representants del sector hoteler",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2026-03-19",
-      "carrec": "direccio_general",
-      "tipus": "organ",
-      "activitat": "Sessió del Comitè Executiu",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2026-03-18",
-      "carrec": "direccio_convention_bureau",
-      "tipus": "acte",
-      "activitat": "Lliurament de premis de congressos de la ciutat",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2026-03-17",
-      "carrec": "direccio_productes",
-      "tipus": "acte",
-      "activitat": "Lliurament de premis de congressos de la ciutat",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2026-03-13",
-      "carrec": "direccio_promocio",
-      "tipus": "acte",
-      "activitat": "Presentació de dades del balanç turístic",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2026-03-05",
-      "carrec": "direccio_productes",
-      "tipus": "organ",
-      "activitat": "Sessió del Comitè Executiu",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2026-03-03",
-      "carrec": "direccio_general",
-      "tipus": "reunio",
-      "activitat": "Reunió amb operador de creuers",
-      "grup_interes_registrat": true,
-      "codi_registre_gi": "RGI-7146",
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2026-02-24",
-      "carrec": "direccio_general",
-      "tipus": "viatge",
-      "activitat": "Missió comercial a mercat emissor",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Dubai"
-    },
-    {
-      "data": "2026-02-23",
-      "carrec": "direccio_sostenibilitat",
-      "tipus": "reunio",
-      "activitat": "Reunió amb associació veïnal sobre gestió de fluxos",
-      "grup_interes_registrat": true,
-      "codi_registre_gi": "RGI-2036",
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2026-02-16",
-      "carrec": "direccio_promocio",
-      "tipus": "viatge",
-      "activitat": "Missió comercial a mercat emissor",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Dubai"
-    },
-    {
-      "data": "2026-02-13",
-      "carrec": "direccio_general",
-      "tipus": "reunio",
-      "activitat": "Reunió amb associació veïnal sobre gestió de fluxos",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2026-02-12",
-      "carrec": "direccio_productes",
-      "tipus": "reunio",
-      "activitat": "Reunió de coordinació amb l'Ajuntament de Barcelona",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2026-02-10",
-      "carrec": "direccio_promocio",
-      "tipus": "fira",
-      "activitat": "Assistència a fira professional internacional de turisme",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Seül"
-    },
-    {
-      "data": "2026-02-05",
-      "carrec": "direccio_promocio",
-      "tipus": "organ",
-      "activitat": "Sessió del Comitè Executiu",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2026-02-04",
-      "carrec": "direccio_productes",
-      "tipus": "reunio",
-      "activitat": "Reunió amb grup d'interès inscrit al registre",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2026-02-03",
-      "carrec": "direccio_general",
-      "tipus": "reunio",
-      "activitat": "Reunió amb grup d'interès inscrit al registre",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2026-01-30",
-      "carrec": "direccio_general",
-      "tipus": "reunio",
-      "activitat": "Reunió amb associació veïnal sobre gestió de fluxos",
-      "grup_interes_registrat": true,
-      "codi_registre_gi": "RGI-9950",
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2026-01-23",
-      "carrec": "direccio_convention_bureau",
-      "tipus": "reunio",
-      "activitat": "Reunió amb grup d'interès inscrit al registre",
-      "grup_interes_registrat": true,
-      "codi_registre_gi": "RGI-2094",
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2026-01-22",
-      "carrec": "direccio_promocio",
-      "tipus": "acte",
-      "activitat": "Presentació de dades del balanç turístic",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2026-01-20",
-      "carrec": "direccio_promocio",
-      "tipus": "reunio",
-      "activitat": "Reunió amb operador de creuers",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2026-01-19",
-      "carrec": "direccio_convention_bureau",
-      "tipus": "reunio",
-      "activitat": "Reunió de coordinació amb l'Ajuntament de Barcelona",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2026-01-16",
-      "carrec": "direccio_promocio",
-      "tipus": "acte",
-      "activitat": "Jornada sobre turisme sostenible i ciutat",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2026-01-15",
-      "carrec": "direccio_promocio",
-      "tipus": "acte",
-      "activitat": "Jornada sobre turisme sostenible i ciutat",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2026-01-07",
-      "carrec": "direccio_general",
-      "tipus": "viatge",
-      "activitat": "Missió comercial a mercat emissor",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Dubai"
-    },
-    {
-      "data": "2026-01-06",
-      "carrec": "direccio_general",
-      "tipus": "acte",
-      "activitat": "Presentació de dades del balanç turístic",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2026-01-05",
-      "carrec": "direccio_convention_bureau",
-      "tipus": "acte",
-      "activitat": "Presentació de dades del balanç turístic",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2026-01-01",
-      "carrec": "direccio_promocio",
-      "tipus": "reunio",
-      "activitat": "Reunió amb associació veïnal sobre gestió de fluxos",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2025-12-30",
-      "carrec": "direccio_promocio",
-      "tipus": "reunio",
-      "activitat": "Reunió amb grup d'interès inscrit al registre",
-      "grup_interes_registrat": true,
-      "codi_registre_gi": "RGI-8257",
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2025-12-29",
-      "carrec": "direccio_general",
-      "tipus": "reunio",
-      "activitat": "Reunió amb associació veïnal sobre gestió de fluxos",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2025-12-24",
-      "carrec": "direccio_convention_bureau",
-      "tipus": "organ",
-      "activitat": "Sessió del Comitè Executiu",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2025-12-19",
-      "carrec": "direccio_general",
-      "tipus": "reunio",
-      "activitat": "Reunió amb grup d'interès inscrit al registre",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2025-12-18",
-      "carrec": "direccio_general",
-      "tipus": "organ",
-      "activitat": "Sessió del Consell General",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2025-12-12",
-      "carrec": "direccio_productes",
-      "tipus": "organ",
-      "activitat": "Sessió del Comitè Executiu",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2025-12-11",
-      "carrec": "direccio_productes",
-      "tipus": "acte",
-      "activitat": "Jornada sobre turisme sostenible i ciutat",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2025-12-10",
-      "carrec": "direccio_sostenibilitat",
-      "tipus": "acte",
-      "activitat": "Jornada sobre turisme sostenible i ciutat",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2025-12-09",
-      "carrec": "direccio_productes",
-      "tipus": "fira",
-      "activitat": "Assistència a fira professional internacional de turisme",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Nova York"
-    },
-    {
-      "data": "2025-12-02",
-      "carrec": "direccio_general",
-      "tipus": "viatge",
-      "activitat": "Missió comercial a mercat emissor",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Seül"
-    },
-    {
-      "data": "2025-11-18",
-      "carrec": "direccio_productes",
-      "tipus": "reunio",
-      "activitat": "Reunió amb operador de creuers",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2025-11-14",
-      "carrec": "direccio_promocio",
-      "tipus": "fira",
-      "activitat": "Assistència a fira professional internacional de turisme",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Seül"
-    },
-    {
-      "data": "2025-11-12",
-      "carrec": "direccio_convention_bureau",
-      "tipus": "organ",
-      "activitat": "Sessió del Comitè Executiu",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2025-11-11",
-      "carrec": "direccio_promocio",
-      "tipus": "fira",
-      "activitat": "Assistència a fira professional internacional de turisme",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Nova York"
-    },
-    {
-      "data": "2025-11-06",
-      "carrec": "direccio_convention_bureau",
-      "tipus": "acte",
-      "activitat": "Jornada sobre turisme sostenible i ciutat",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Barcelona"
-    },
-    {
-      "data": "2025-11-03",
-      "carrec": "direccio_convention_bureau",
-      "tipus": "acte",
-      "activitat": "Jornada sobre turisme sostenible i ciutat",
-      "grup_interes_registrat": false,
-      "codi_registre_gi": null,
-      "lloc_activitat": "Barcelona"
-    }
-  ]
+ "generado": "2026-11-13",
+ "fuente": "manual",
+ "ejemplo": true,
+ "aviso": "Datos de ejemplo generados sintéticamente. No son cifras oficiales.",
+ "datos": [
+  {
+   "fecha": "2026-11-12",
+   "cargo_id": "C01",
+   "tipo": "reunion",
+   "asunto": "Reunión con asociación empresarial",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": "Inscrito RGI-809"
+  },
+  {
+   "fecha": "2026-11-11",
+   "cargo_id": "C02",
+   "tipo": "acto",
+   "asunto": "Inauguración de la reforma del parque",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2026-11-05",
+   "cargo_id": "C03",
+   "tipo": "viaje",
+   "asunto": "Asamblea de la federación de municipios",
+   "lugar": "Valencia",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2026-11-03",
+   "cargo_id": "C04",
+   "tipo": "acto",
+   "asunto": "Inauguración de la reforma del parque",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2026-10-29",
+   "cargo_id": "C03",
+   "tipo": "acto",
+   "asunto": "Inauguración de la reforma del parque",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2026-10-28",
+   "cargo_id": "C02",
+   "tipo": "reunion",
+   "asunto": "Reunión con empresa adjudicataria del servicio de limpieza",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": "Inscrito RGI-628"
+  },
+  {
+   "fecha": "2026-10-27",
+   "cargo_id": "C04",
+   "tipo": "acto",
+   "asunto": "Inauguración de la reforma del parque",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2026-10-26",
+   "cargo_id": "C01",
+   "tipo": "acto",
+   "asunto": "Inauguración de la reforma del parque",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2026-10-23",
+   "cargo_id": "C02",
+   "tipo": "pleno",
+   "asunto": "Sesión ordinaria del Pleno",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2026-10-22",
+   "cargo_id": "C02",
+   "tipo": "viaje",
+   "asunto": "Asamblea de la federación de municipios",
+   "lugar": "Valencia",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2026-10-21",
+   "cargo_id": "C01",
+   "tipo": "reunion",
+   "asunto": "Reunión con asociación empresarial",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": "Inscrito RGI-734"
+  },
+  {
+   "fecha": "2026-10-19",
+   "cargo_id": "C01",
+   "tipo": "viaje",
+   "asunto": "Asamblea de la federación de municipios",
+   "lugar": "Valencia",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2026-10-13",
+   "cargo_id": "C01",
+   "tipo": "acto",
+   "asunto": "Inauguración de la reforma del parque",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2026-10-12",
+   "cargo_id": "C04",
+   "tipo": "acto",
+   "asunto": "Inauguración de la reforma del parque",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2026-10-08",
+   "cargo_id": "C04",
+   "tipo": "pleno",
+   "asunto": "Sesión ordinaria del Pleno",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2026-10-07",
+   "cargo_id": "C01",
+   "tipo": "viaje",
+   "asunto": "Asamblea de la federación de municipios",
+   "lugar": "Valencia",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2026-10-06",
+   "cargo_id": "C02",
+   "tipo": "viaje",
+   "asunto": "Asamblea de la federación de municipios",
+   "lugar": "Valencia",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2026-10-05",
+   "cargo_id": "C01",
+   "tipo": "pleno",
+   "asunto": "Sesión ordinaria del Pleno",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2026-10-02",
+   "cargo_id": "C01",
+   "tipo": "viaje",
+   "asunto": "Asamblea de la federación de municipios",
+   "lugar": "Valencia",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2026-10-01",
+   "cargo_id": "C04",
+   "tipo": "viaje",
+   "asunto": "Asamblea de la federación de municipios",
+   "lugar": "Valencia",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2026-09-30",
+   "cargo_id": "C01",
+   "tipo": "reunion",
+   "asunto": "Reunión con la Diputación Provincial",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2026-09-29",
+   "cargo_id": "C02",
+   "tipo": "pleno",
+   "asunto": "Sesión ordinaria del Pleno",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2026-09-25",
+   "cargo_id": "C01",
+   "tipo": "reunion",
+   "asunto": "Reunión con asociación empresarial",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": "Inscrito RGI-680"
+  },
+  {
+   "fecha": "2026-09-24",
+   "cargo_id": "C02",
+   "tipo": "reunion",
+   "asunto": "Reunión con empresa adjudicataria del servicio de limpieza",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": "Inscrito RGI-434"
+  },
+  {
+   "fecha": "2026-09-23",
+   "cargo_id": "C01",
+   "tipo": "reunion",
+   "asunto": "Reunión con la asociación de vecinos",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2026-09-22",
+   "cargo_id": "C01",
+   "tipo": "reunion",
+   "asunto": "Reunión con asociación empresarial",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": "Inscrito RGI-956"
+  },
+  {
+   "fecha": "2026-09-17",
+   "cargo_id": "C03",
+   "tipo": "reunion",
+   "asunto": "Reunión con la Diputación Provincial",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2026-09-15",
+   "cargo_id": "C03",
+   "tipo": "reunion",
+   "asunto": "Reunión con la Diputación Provincial",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2026-09-03",
+   "cargo_id": "C02",
+   "tipo": "reunion",
+   "asunto": "Reunión con la asociación de vecinos",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2026-09-02",
+   "cargo_id": "C04",
+   "tipo": "viaje",
+   "asunto": "Asamblea de la federación de municipios",
+   "lugar": "Valencia",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2026-08-31",
+   "cargo_id": "C02",
+   "tipo": "reunion",
+   "asunto": "Reunión con la Diputación Provincial",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2026-08-28",
+   "cargo_id": "C01",
+   "tipo": "junta",
+   "asunto": "Junta de Gobierno Local",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2026-08-26",
+   "cargo_id": "C04",
+   "tipo": "reunion",
+   "asunto": "Reunión con la asociación de vecinos",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2026-08-24",
+   "cargo_id": "C03",
+   "tipo": "reunion",
+   "asunto": "Reunión con empresa adjudicataria del servicio de limpieza",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": "Inscrito RGI-665"
+  },
+  {
+   "fecha": "2026-08-18",
+   "cargo_id": "C01",
+   "tipo": "acto",
+   "asunto": "Inauguración de la reforma del parque",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2026-08-17",
+   "cargo_id": "C02",
+   "tipo": "acto",
+   "asunto": "Inauguración de la reforma del parque",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2026-08-13",
+   "cargo_id": "C01",
+   "tipo": "reunion",
+   "asunto": "Reunión con la Diputación Provincial",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2026-08-10",
+   "cargo_id": "C02",
+   "tipo": "viaje",
+   "asunto": "Asamblea de la federación de municipios",
+   "lugar": "Valencia",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2026-08-07",
+   "cargo_id": "C03",
+   "tipo": "pleno",
+   "asunto": "Sesión ordinaria del Pleno",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2026-08-06",
+   "cargo_id": "C03",
+   "tipo": "reunion",
+   "asunto": "Reunión con empresa adjudicataria del servicio de limpieza",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": "Inscrito RGI-807"
+  },
+  {
+   "fecha": "2026-07-20",
+   "cargo_id": "C01",
+   "tipo": "reunion",
+   "asunto": "Reunión con empresa adjudicataria del servicio de limpieza",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": "Inscrito RGI-553"
+  },
+  {
+   "fecha": "2026-07-17",
+   "cargo_id": "C01",
+   "tipo": "reunion",
+   "asunto": "Reunión con empresa adjudicataria del servicio de limpieza",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": "Inscrito RGI-395"
+  },
+  {
+   "fecha": "2026-07-16",
+   "cargo_id": "C02",
+   "tipo": "pleno",
+   "asunto": "Sesión ordinaria del Pleno",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2026-07-09",
+   "cargo_id": "C01",
+   "tipo": "acto",
+   "asunto": "Acto de entrega de premios escolares",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2026-07-07",
+   "cargo_id": "C03",
+   "tipo": "reunion",
+   "asunto": "Reunión con la Diputación Provincial",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2026-07-01",
+   "cargo_id": "C02",
+   "tipo": "reunion",
+   "asunto": "Reunión con empresa adjudicataria del servicio de limpieza",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": "Inscrito RGI-613"
+  },
+  {
+   "fecha": "2026-06-29",
+   "cargo_id": "C01",
+   "tipo": "acto",
+   "asunto": "Acto de entrega de premios escolares",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2026-06-22",
+   "cargo_id": "C01",
+   "tipo": "acto",
+   "asunto": "Acto de entrega de premios escolares",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2026-06-19",
+   "cargo_id": "C01",
+   "tipo": "pleno",
+   "asunto": "Sesión ordinaria del Pleno",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2026-06-15",
+   "cargo_id": "C03",
+   "tipo": "reunion",
+   "asunto": "Reunión con asociación empresarial",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": "Inscrito RGI-274"
+  },
+  {
+   "fecha": "2026-06-10",
+   "cargo_id": "C02",
+   "tipo": "viaje",
+   "asunto": "Asamblea de la federación de municipios",
+   "lugar": "Valencia",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2026-06-09",
+   "cargo_id": "C01",
+   "tipo": "viaje",
+   "asunto": "Asamblea de la federación de municipios",
+   "lugar": "Valencia",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2026-06-02",
+   "cargo_id": "C01",
+   "tipo": "pleno",
+   "asunto": "Sesión ordinaria del Pleno",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2026-06-01",
+   "cargo_id": "C01",
+   "tipo": "junta",
+   "asunto": "Junta de Gobierno Local",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2026-05-25",
+   "cargo_id": "C04",
+   "tipo": "viaje",
+   "asunto": "Asamblea de la federación de municipios",
+   "lugar": "Valencia",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2026-05-20",
+   "cargo_id": "C01",
+   "tipo": "junta",
+   "asunto": "Junta de Gobierno Local",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2026-05-14",
+   "cargo_id": "C04",
+   "tipo": "viaje",
+   "asunto": "Asamblea de la federación de municipios",
+   "lugar": "Valencia",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2026-05-12",
+   "cargo_id": "C01",
+   "tipo": "pleno",
+   "asunto": "Sesión ordinaria del Pleno",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2026-05-08",
+   "cargo_id": "C01",
+   "tipo": "reunion",
+   "asunto": "Reunión con la Diputación Provincial",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2026-05-07",
+   "cargo_id": "C01",
+   "tipo": "reunion",
+   "asunto": "Reunión con asociación empresarial",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": "Inscrito RGI-325"
+  },
+  {
+   "fecha": "2026-05-06",
+   "cargo_id": "C02",
+   "tipo": "reunion",
+   "asunto": "Reunión con asociación empresarial",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": "Inscrito RGI-292"
+  },
+  {
+   "fecha": "2026-05-01",
+   "cargo_id": "C02",
+   "tipo": "reunion",
+   "asunto": "Reunión con empresa adjudicataria del servicio de limpieza",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": "Inscrito RGI-204"
+  },
+  {
+   "fecha": "2026-04-29",
+   "cargo_id": "C04",
+   "tipo": "reunion",
+   "asunto": "Reunión con la asociación de vecinos",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2026-04-23",
+   "cargo_id": "C03",
+   "tipo": "viaje",
+   "asunto": "Asamblea de la federación de municipios",
+   "lugar": "Valencia",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2026-04-22",
+   "cargo_id": "C02",
+   "tipo": "viaje",
+   "asunto": "Asamblea de la federación de municipios",
+   "lugar": "Valencia",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2026-04-20",
+   "cargo_id": "C02",
+   "tipo": "pleno",
+   "asunto": "Sesión ordinaria del Pleno",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2026-04-16",
+   "cargo_id": "C01",
+   "tipo": "viaje",
+   "asunto": "Asamblea de la federación de municipios",
+   "lugar": "Valencia",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2026-04-13",
+   "cargo_id": "C01",
+   "tipo": "reunion",
+   "asunto": "Reunión con la asociación de vecinos",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2026-04-10",
+   "cargo_id": "C01",
+   "tipo": "acto",
+   "asunto": "Inauguración de la reforma del parque",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2026-04-07",
+   "cargo_id": "C01",
+   "tipo": "reunion",
+   "asunto": "Reunión con empresa adjudicataria del servicio de limpieza",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": "Inscrito RGI-676"
+  },
+  {
+   "fecha": "2026-04-06",
+   "cargo_id": "C01",
+   "tipo": "acto",
+   "asunto": "Inauguración de la reforma del parque",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2026-04-03",
+   "cargo_id": "C02",
+   "tipo": "reunion",
+   "asunto": "Reunión con asociación empresarial",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": "Inscrito RGI-877"
+  },
+  {
+   "fecha": "2026-03-27",
+   "cargo_id": "C01",
+   "tipo": "reunion",
+   "asunto": "Reunión con la asociación de vecinos",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2026-03-26",
+   "cargo_id": "C01",
+   "tipo": "acto",
+   "asunto": "Acto de entrega de premios escolares",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2026-03-24",
+   "cargo_id": "C02",
+   "tipo": "reunion",
+   "asunto": "Reunión con empresa adjudicataria del servicio de limpieza",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": "Inscrito RGI-756"
+  },
+  {
+   "fecha": "2026-03-20",
+   "cargo_id": "C03",
+   "tipo": "reunion",
+   "asunto": "Reunión con empresa adjudicataria del servicio de limpieza",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": "Inscrito RGI-343"
+  },
+  {
+   "fecha": "2026-03-17",
+   "cargo_id": "C01",
+   "tipo": "pleno",
+   "asunto": "Sesión ordinaria del Pleno",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2026-03-10",
+   "cargo_id": "C01",
+   "tipo": "reunion",
+   "asunto": "Reunión con asociación empresarial",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": "Inscrito RGI-446"
+  },
+  {
+   "fecha": "2026-03-09",
+   "cargo_id": "C01",
+   "tipo": "reunion",
+   "asunto": "Reunión con asociación empresarial",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": "Inscrito RGI-241"
+  },
+  {
+   "fecha": "2026-03-04",
+   "cargo_id": "C01",
+   "tipo": "acto",
+   "asunto": "Acto de entrega de premios escolares",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2026-03-03",
+   "cargo_id": "C01",
+   "tipo": "viaje",
+   "asunto": "Asamblea de la federación de municipios",
+   "lugar": "Valencia",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2026-03-02",
+   "cargo_id": "C03",
+   "tipo": "viaje",
+   "asunto": "Asamblea de la federación de municipios",
+   "lugar": "Valencia",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2026-02-27",
+   "cargo_id": "C03",
+   "tipo": "pleno",
+   "asunto": "Sesión ordinaria del Pleno",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2026-02-26",
+   "cargo_id": "C01",
+   "tipo": "pleno",
+   "asunto": "Sesión ordinaria del Pleno",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2026-02-25",
+   "cargo_id": "C01",
+   "tipo": "reunion",
+   "asunto": "Reunión con la asociación de vecinos",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2026-02-23",
+   "cargo_id": "C03",
+   "tipo": "reunion",
+   "asunto": "Reunión con la Diputación Provincial",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2026-02-20",
+   "cargo_id": "C02",
+   "tipo": "pleno",
+   "asunto": "Sesión ordinaria del Pleno",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2026-02-19",
+   "cargo_id": "C01",
+   "tipo": "acto",
+   "asunto": "Acto de entrega de premios escolares",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2026-02-16",
+   "cargo_id": "C02",
+   "tipo": "junta",
+   "asunto": "Junta de Gobierno Local",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2026-02-10",
+   "cargo_id": "C01",
+   "tipo": "viaje",
+   "asunto": "Asamblea de la federación de municipios",
+   "lugar": "Valencia",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2026-02-09",
+   "cargo_id": "C01",
+   "tipo": "reunion",
+   "asunto": "Reunión con asociación empresarial",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": "Inscrito RGI-370"
+  },
+  {
+   "fecha": "2026-02-05",
+   "cargo_id": "C01",
+   "tipo": "acto",
+   "asunto": "Inauguración de la reforma del parque",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2026-02-04",
+   "cargo_id": "C01",
+   "tipo": "reunion",
+   "asunto": "Reunión con empresa adjudicataria del servicio de limpieza",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": "Inscrito RGI-189"
+  },
+  {
+   "fecha": "2026-02-03",
+   "cargo_id": "C01",
+   "tipo": "reunion",
+   "asunto": "Reunión con empresa adjudicataria del servicio de limpieza",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": "Inscrito RGI-359"
+  },
+  {
+   "fecha": "2026-01-29",
+   "cargo_id": "C04",
+   "tipo": "reunion",
+   "asunto": "Reunión con asociación empresarial",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": "Inscrito RGI-716"
+  },
+  {
+   "fecha": "2026-01-28",
+   "cargo_id": "C03",
+   "tipo": "acto",
+   "asunto": "Acto de entrega de premios escolares",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2026-01-27",
+   "cargo_id": "C01",
+   "tipo": "pleno",
+   "asunto": "Sesión ordinaria del Pleno",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2026-01-26",
+   "cargo_id": "C01",
+   "tipo": "viaje",
+   "asunto": "Asamblea de la federación de municipios",
+   "lugar": "Valencia",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2026-01-19",
+   "cargo_id": "C04",
+   "tipo": "reunion",
+   "asunto": "Reunión con asociación empresarial",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": "Inscrito RGI-287"
+  },
+  {
+   "fecha": "2026-01-16",
+   "cargo_id": "C01",
+   "tipo": "acto",
+   "asunto": "Acto de entrega de premios escolares",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2026-01-07",
+   "cargo_id": "C03",
+   "tipo": "junta",
+   "asunto": "Junta de Gobierno Local",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2026-01-06",
+   "cargo_id": "C02",
+   "tipo": "viaje",
+   "asunto": "Asamblea de la federación de municipios",
+   "lugar": "Valencia",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2026-01-01",
+   "cargo_id": "C02",
+   "tipo": "viaje",
+   "asunto": "Asamblea de la federación de municipios",
+   "lugar": "Valencia",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2025-12-31",
+   "cargo_id": "C01",
+   "tipo": "acto",
+   "asunto": "Inauguración de la reforma del parque",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2025-12-24",
+   "cargo_id": "C04",
+   "tipo": "junta",
+   "asunto": "Junta de Gobierno Local",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2025-12-22",
+   "cargo_id": "C01",
+   "tipo": "reunion",
+   "asunto": "Reunión con empresa adjudicataria del servicio de limpieza",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": "Inscrito RGI-730"
+  },
+  {
+   "fecha": "2025-12-18",
+   "cargo_id": "C01",
+   "tipo": "viaje",
+   "asunto": "Asamblea de la federación de municipios",
+   "lugar": "Valencia",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2025-12-15",
+   "cargo_id": "C01",
+   "tipo": "junta",
+   "asunto": "Junta de Gobierno Local",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2025-12-10",
+   "cargo_id": "C01",
+   "tipo": "pleno",
+   "asunto": "Sesión ordinaria del Pleno",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2025-12-03",
+   "cargo_id": "C01",
+   "tipo": "reunion",
+   "asunto": "Reunión con la Diputación Provincial",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2025-12-01",
+   "cargo_id": "C01",
+   "tipo": "junta",
+   "asunto": "Junta de Gobierno Local",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2025-11-28",
+   "cargo_id": "C02",
+   "tipo": "viaje",
+   "asunto": "Asamblea de la federación de municipios",
+   "lugar": "Valencia",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2025-11-27",
+   "cargo_id": "C01",
+   "tipo": "reunion",
+   "asunto": "Reunión con la Diputación Provincial",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2025-11-26",
+   "cargo_id": "C03",
+   "tipo": "reunion",
+   "asunto": "Reunión con la Diputación Provincial",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2025-11-25",
+   "cargo_id": "C01",
+   "tipo": "reunion",
+   "asunto": "Reunión con la Diputación Provincial",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2025-11-24",
+   "cargo_id": "C02",
+   "tipo": "reunion",
+   "asunto": "Reunión con la Diputación Provincial",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2025-11-20",
+   "cargo_id": "C04",
+   "tipo": "acto",
+   "asunto": "Acto de entrega de premios escolares",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2025-11-18",
+   "cargo_id": "C04",
+   "tipo": "acto",
+   "asunto": "Acto de entrega de premios escolares",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2025-11-17",
+   "cargo_id": "C02",
+   "tipo": "pleno",
+   "asunto": "Sesión ordinaria del Pleno",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2025-11-11",
+   "cargo_id": "C01",
+   "tipo": "acto",
+   "asunto": "Acto de entrega de premios escolares",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": ""
+  },
+  {
+   "fecha": "2025-11-04",
+   "cargo_id": "C01",
+   "tipo": "reunion",
+   "asunto": "Reunión con la Diputación Provincial",
+   "lugar": "Casa Consistorial",
+   "grupo_interes": ""
+  }
+ ]
 }

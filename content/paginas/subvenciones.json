@@ -1,0 +1,124 @@
+{
+ "id": "subvenciones",
+ "icono": "hand",
+ "titulo": {
+  "es": "Subvenciones concedidas",
+  "va": "Subvencions concedides",
+  "en": "Grants awarded"
+ },
+ "intro": {
+  "es": "Subvenciones y ayudas concedidas, sincronizadas automáticamente con la Base de Datos Nacional de Subvenciones (BDNS).",
+  "va": "Subvencions i ajudes concedides, sincronitzades automàticament amb la Base de Dades Nacional de Subvencions (BDNS).",
+  "en": "Grants awarded, synced automatically with the National Grants Database (BDNS)."
+ },
+ "bloques": [
+  {
+   "tipo": "fuente",
+   "conjunto": "subvenciones"
+  },
+  {
+   "tipo": "cifras",
+   "items": [
+    {
+     "etiqueta": {
+      "es": "Importe concedido",
+      "va": "Import concedit",
+      "en": "Amount awarded"
+     },
+     "conjunto": "subvenciones",
+     "operacion": "sumar",
+     "campo": "importe",
+     "formato": "euros_compacto"
+    },
+    {
+     "etiqueta": {
+      "es": "Concesiones",
+      "va": "Concessions",
+      "en": "Awards"
+     },
+     "conjunto": "subvenciones",
+     "operacion": "contar",
+     "formato": "entero"
+    },
+    {
+     "etiqueta": {
+      "es": "Importe medio",
+      "va": "Import mitjà",
+      "en": "Average amount"
+     },
+     "conjunto": "subvenciones",
+     "operacion": "media",
+     "campo": "importe",
+     "formato": "euros"
+    }
+   ]
+  },
+  {
+   "tipo": "grafico",
+   "titulo": {
+    "es": "Importe por finalidad y año",
+    "va": "Import per finalitat i any",
+    "en": "Amount by purpose and year"
+   },
+   "conjunto": "subvenciones",
+   "tipo_grafico": "columnas_apiladas",
+   "agrupar": "fecha_concesion:anio",
+   "series": "finalidad",
+   "valor": "importe",
+   "operacion": "sumar",
+   "formato": "euros",
+   "orden": "etiqueta",
+   "ancho": "completo"
+  },
+  {
+   "tipo": "grafico",
+   "titulo": {
+    "es": "Por modalidad de concesión",
+    "va": "Per modalitat de concessió",
+    "en": "By award modality"
+   },
+   "conjunto": "subvenciones",
+   "tipo_grafico": "barras",
+   "agrupar": "modalidad",
+   "valor": "importe",
+   "operacion": "sumar",
+   "formato": "euros"
+  },
+  {
+   "tipo": "grafico",
+   "titulo": {
+    "es": "Principales beneficiarios",
+    "va": "Principals beneficiaris",
+    "en": "Top beneficiaries"
+   },
+   "conjunto": "subvenciones",
+   "tipo_grafico": "barras",
+   "agrupar": "beneficiario",
+   "valor": "importe",
+   "operacion": "sumar",
+   "formato": "euros",
+   "limite": 10
+  },
+  {
+   "tipo": "tabla",
+   "conjunto": "subvenciones",
+   "columnas": [
+    "fecha_concesion",
+    "convocatoria",
+    "beneficiario",
+    "finalidad",
+    "importe"
+   ],
+   "filtros": [
+    "finalidad",
+    "modalidad"
+   ],
+   "busqueda": true,
+   "orden": "fecha_concesion",
+   "descendente": true
+  },
+  {
+   "tipo": "indicadores"
+  }
+ ]
+}

@@ -1,0 +1,1810 @@
+{
+ "generado": "2026-11-13",
+ "fuente": "ejemplo",
+ "ejemplo": true,
+ "aviso": "Datos de ejemplo generados sintéticamente. No son cifras oficiales.",
+ "unidad": "EUR",
+ "fecha_corte_en_ejecucion": "2026-09-30",
+ "datos": [
+  {
+   "anio": 2021,
+   "tipo": "ingreso",
+   "capitulo": "1",
+   "area_gasto": null,
+   "inicial": 5431615.35,
+   "definitivo": 5723970.78,
+   "ejecutado": 5441757.28,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2021,
+   "tipo": "ingreso",
+   "capitulo": "2",
+   "area_gasto": null,
+   "inicial": 280464.53,
+   "definitivo": 290278.21,
+   "ejecutado": 297277.44,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2021,
+   "tipo": "ingreso",
+   "capitulo": "3",
+   "area_gasto": null,
+   "inicial": 2232069.36,
+   "definitivo": 2363173.03,
+   "ejecutado": 2409900.22,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2021,
+   "tipo": "ingreso",
+   "capitulo": "4",
+   "area_gasto": null,
+   "inicial": 4713545.93,
+   "definitivo": 4992521.67,
+   "ejecutado": 4813019.07,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2021,
+   "tipo": "ingreso",
+   "capitulo": "5",
+   "area_gasto": null,
+   "inicial": 277245.43,
+   "definitivo": 299129.88,
+   "ejecutado": 288553.86,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2021,
+   "tipo": "ingreso",
+   "capitulo": "6",
+   "area_gasto": null,
+   "inicial": 71742.68,
+   "definitivo": 75705.24,
+   "ejecutado": 69939.84,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2021,
+   "tipo": "ingreso",
+   "capitulo": "7",
+   "area_gasto": null,
+   "inicial": 635598.79,
+   "definitivo": 660067.26,
+   "ejecutado": 665872.6,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2021,
+   "tipo": "ingreso",
+   "capitulo": "8",
+   "area_gasto": null,
+   "inicial": 65364.14,
+   "definitivo": 67552.24,
+   "ejecutado": 68198.28,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2021,
+   "tipo": "ingreso",
+   "capitulo": "9",
+   "area_gasto": null,
+   "inicial": 398376.65,
+   "definitivo": 424419.91,
+   "ejecutado": 416928.74,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2021,
+   "tipo": "gasto",
+   "capitulo": "3",
+   "area_gasto": "0",
+   "inicial": 115563.69,
+   "definitivo": 125053.26,
+   "ejecutado": 112833.35,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2021,
+   "tipo": "gasto",
+   "capitulo": "9",
+   "area_gasto": "0",
+   "inicial": 355191.63,
+   "definitivo": 382527.87,
+   "ejecutado": 351797.16,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2021,
+   "tipo": "gasto",
+   "capitulo": "1",
+   "area_gasto": "1",
+   "inicial": 1623493.33,
+   "definitivo": 1755291.9,
+   "ejecutado": 1587744.38,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2021,
+   "tipo": "gasto",
+   "capitulo": "2",
+   "area_gasto": "1",
+   "inicial": 2140482.71,
+   "definitivo": 2189059.02,
+   "ejecutado": 2068316.56,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2021,
+   "tipo": "gasto",
+   "capitulo": "6",
+   "area_gasto": "1",
+   "inicial": 808573.14,
+   "definitivo": 862225.67,
+   "ejecutado": 683517.85,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2021,
+   "tipo": "gasto",
+   "capitulo": "1",
+   "area_gasto": "2",
+   "inicial": 835817.08,
+   "definitivo": 854280.23,
+   "ejecutado": 807348.92,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2021,
+   "tipo": "gasto",
+   "capitulo": "2",
+   "area_gasto": "2",
+   "inicial": 354468.2,
+   "definitivo": 374410.19,
+   "ejecutado": 365301.51,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2021,
+   "tipo": "gasto",
+   "capitulo": "4",
+   "area_gasto": "2",
+   "inicial": 652962.78,
+   "definitivo": 652248.14,
+   "ejecutado": 622024.08,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2021,
+   "tipo": "gasto",
+   "capitulo": "1",
+   "area_gasto": "3",
+   "inicial": 950000.93,
+   "definitivo": 1023406.42,
+   "ejecutado": 985810.15,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2021,
+   "tipo": "gasto",
+   "capitulo": "2",
+   "area_gasto": "3",
+   "inicial": 868897.97,
+   "definitivo": 926085.43,
+   "ejecutado": 868915.5,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2021,
+   "tipo": "gasto",
+   "capitulo": "4",
+   "area_gasto": "3",
+   "inicial": 268790.68,
+   "definitivo": 271476.63,
+   "ejecutado": 265087.97,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2021,
+   "tipo": "gasto",
+   "capitulo": "6",
+   "area_gasto": "3",
+   "inicial": 236992.62,
+   "definitivo": 238713.4,
+   "ejecutado": 147464.84,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2021,
+   "tipo": "gasto",
+   "capitulo": "1",
+   "area_gasto": "4",
+   "inicial": 272144.6,
+   "definitivo": 290086.55,
+   "ejecutado": 261990.03,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2021,
+   "tipo": "gasto",
+   "capitulo": "2",
+   "area_gasto": "4",
+   "inicial": 270137.07,
+   "definitivo": 270055.14,
+   "ejecutado": 251024.14,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2021,
+   "tipo": "gasto",
+   "capitulo": "4",
+   "area_gasto": "4",
+   "inicial": 100562.66,
+   "definitivo": 105880.48,
+   "ejecutado": 100917.95,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2021,
+   "tipo": "gasto",
+   "capitulo": "6",
+   "area_gasto": "4",
+   "inicial": 293510.17,
+   "definitivo": 297000.57,
+   "ejecutado": 193480.33,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2021,
+   "tipo": "gasto",
+   "capitulo": "1",
+   "area_gasto": "9",
+   "inicial": 1991995.65,
+   "definitivo": 2151932.41,
+   "ejecutado": 1898055.29,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2021,
+   "tipo": "gasto",
+   "capitulo": "2",
+   "area_gasto": "9",
+   "inicial": 1115953.55,
+   "definitivo": 1196459.92,
+   "ejecutado": 1098706.17,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2021,
+   "tipo": "gasto",
+   "capitulo": "4",
+   "area_gasto": "9",
+   "inicial": 213146.12,
+   "definitivo": 221670.4,
+   "ejecutado": 207494,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2021,
+   "tipo": "gasto",
+   "capitulo": "5",
+   "area_gasto": "9",
+   "inicial": 72241.81,
+   "definitivo": 77517.17,
+   "ejecutado": 73448.28,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2021,
+   "tipo": "gasto",
+   "capitulo": "6",
+   "area_gasto": "9",
+   "inicial": 73028.82,
+   "definitivo": 73303.77,
+   "ejecutado": 44663.64,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2022,
+   "tipo": "ingreso",
+   "capitulo": "1",
+   "area_gasto": null,
+   "inicial": 5679936.21,
+   "definitivo": 6037555.69,
+   "ejecutado": 5931592.17,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2022,
+   "tipo": "ingreso",
+   "capitulo": "2",
+   "area_gasto": null,
+   "inicial": 294349.29,
+   "definitivo": 299810.64,
+   "ejecutado": 281237.18,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2022,
+   "tipo": "ingreso",
+   "capitulo": "3",
+   "area_gasto": null,
+   "inicial": 2548411.61,
+   "definitivo": 2581235.5,
+   "ejecutado": 2602580.12,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2022,
+   "tipo": "ingreso",
+   "capitulo": "4",
+   "area_gasto": null,
+   "inicial": 4850276.69,
+   "definitivo": 4985941.4,
+   "ejecutado": 4913878.94,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2022,
+   "tipo": "ingreso",
+   "capitulo": "5",
+   "area_gasto": null,
+   "inicial": 290778.3,
+   "definitivo": 299925.17,
+   "ejecutado": 314019.36,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2022,
+   "tipo": "ingreso",
+   "capitulo": "6",
+   "area_gasto": null,
+   "inicial": 73831.34,
+   "definitivo": 78883.91,
+   "ejecutado": 74521.92,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2022,
+   "tipo": "ingreso",
+   "capitulo": "7",
+   "area_gasto": null,
+   "inicial": 653670.96,
+   "definitivo": 677299.65,
+   "ejecutado": 668359.34,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2022,
+   "tipo": "ingreso",
+   "capitulo": "8",
+   "area_gasto": null,
+   "inicial": 68310.23,
+   "definitivo": 69543.6,
+   "ejecutado": 70275.59,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2022,
+   "tipo": "ingreso",
+   "capitulo": "9",
+   "area_gasto": null,
+   "inicial": 434652.07,
+   "definitivo": 463447.97,
+   "ejecutado": 472047.49,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2022,
+   "tipo": "gasto",
+   "capitulo": "3",
+   "area_gasto": "0",
+   "inicial": 128265.65,
+   "definitivo": 129957.67,
+   "ejecutado": 116838.51,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2022,
+   "tipo": "gasto",
+   "capitulo": "9",
+   "area_gasto": "0",
+   "inicial": 354066.78,
+   "definitivo": 383402.52,
+   "ejecutado": 345872.06,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2022,
+   "tipo": "gasto",
+   "capitulo": "1",
+   "area_gasto": "1",
+   "inicial": 1677061.77,
+   "definitivo": 1715197.46,
+   "ejecutado": 1640888.53,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2022,
+   "tipo": "gasto",
+   "capitulo": "2",
+   "area_gasto": "1",
+   "inicial": 2233918.78,
+   "definitivo": 2218065.94,
+   "ejecutado": 2030733.53,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2022,
+   "tipo": "gasto",
+   "capitulo": "6",
+   "area_gasto": "1",
+   "inicial": 781626.82,
+   "definitivo": 836499.84,
+   "ejecutado": 632687.25,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2022,
+   "tipo": "gasto",
+   "capitulo": "1",
+   "area_gasto": "2",
+   "inicial": 793837.81,
+   "definitivo": 828976.36,
+   "ejecutado": 741939.81,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2022,
+   "tipo": "gasto",
+   "capitulo": "2",
+   "area_gasto": "2",
+   "inicial": 391512.27,
+   "definitivo": 391186.21,
+   "ejecutado": 349544.56,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2022,
+   "tipo": "gasto",
+   "capitulo": "4",
+   "area_gasto": "2",
+   "inicial": 627083.31,
+   "definitivo": 681829.39,
+   "ejecutado": 653219.69,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2022,
+   "tipo": "gasto",
+   "capitulo": "1",
+   "area_gasto": "3",
+   "inicial": 955922.9,
+   "definitivo": 948316.57,
+   "ejecutado": 838330.64,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2022,
+   "tipo": "gasto",
+   "capitulo": "2",
+   "area_gasto": "3",
+   "inicial": 913082.89,
+   "definitivo": 905224.68,
+   "ejecutado": 874589.71,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2022,
+   "tipo": "gasto",
+   "capitulo": "4",
+   "area_gasto": "3",
+   "inicial": 300793.09,
+   "definitivo": 302249.45,
+   "ejecutado": 266522.95,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2022,
+   "tipo": "gasto",
+   "capitulo": "6",
+   "area_gasto": "3",
+   "inicial": 242947.75,
+   "definitivo": 260812.31,
+   "ejecutado": 160373.21,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2022,
+   "tipo": "gasto",
+   "capitulo": "1",
+   "area_gasto": "4",
+   "inicial": 293514.12,
+   "definitivo": 300614.29,
+   "ejecutado": 272095.89,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2022,
+   "tipo": "gasto",
+   "capitulo": "2",
+   "area_gasto": "4",
+   "inicial": 307028.4,
+   "definitivo": 333986.63,
+   "ejecutado": 305005.4,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2022,
+   "tipo": "gasto",
+   "capitulo": "4",
+   "area_gasto": "4",
+   "inicial": 105506.54,
+   "definitivo": 106021.1,
+   "ejecutado": 95325.89,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2022,
+   "tipo": "gasto",
+   "capitulo": "6",
+   "area_gasto": "4",
+   "inicial": 308613.38,
+   "definitivo": 334773.16,
+   "ejecutado": 244846.26,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2022,
+   "tipo": "gasto",
+   "capitulo": "1",
+   "area_gasto": "9",
+   "inicial": 2026338.54,
+   "definitivo": 2180753.91,
+   "ejecutado": 1937973.78,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2022,
+   "tipo": "gasto",
+   "capitulo": "2",
+   "area_gasto": "9",
+   "inicial": 1211677.71,
+   "definitivo": 1264989.67,
+   "ejecutado": 1215494.37,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2022,
+   "tipo": "gasto",
+   "capitulo": "4",
+   "area_gasto": "9",
+   "inicial": 227665.29,
+   "definitivo": 245904.26,
+   "ejecutado": 230493.88,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2022,
+   "tipo": "gasto",
+   "capitulo": "5",
+   "area_gasto": "9",
+   "inicial": 69417.88,
+   "definitivo": 69564.24,
+   "ejecutado": 65293.07,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2022,
+   "tipo": "gasto",
+   "capitulo": "6",
+   "area_gasto": "9",
+   "inicial": 72141.36,
+   "definitivo": 76255.69,
+   "ejecutado": 57057.16,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2023,
+   "tipo": "ingreso",
+   "capitulo": "1",
+   "area_gasto": null,
+   "inicial": 5845095.62,
+   "definitivo": 6232129.05,
+   "ejecutado": 5881427.91,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2023,
+   "tipo": "ingreso",
+   "capitulo": "2",
+   "area_gasto": null,
+   "inicial": 298545.83,
+   "definitivo": 305134.33,
+   "ejecutado": 303904.67,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2023,
+   "tipo": "ingreso",
+   "capitulo": "3",
+   "area_gasto": null,
+   "inicial": 2625124.05,
+   "definitivo": 2708732.43,
+   "ejecutado": 2621581.01,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2023,
+   "tipo": "ingreso",
+   "capitulo": "4",
+   "area_gasto": null,
+   "inicial": 4769660.13,
+   "definitivo": 4810418.82,
+   "ejecutado": 4471667.19,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2023,
+   "tipo": "ingreso",
+   "capitulo": "5",
+   "area_gasto": null,
+   "inicial": 294103.49,
+   "definitivo": 296731.66,
+   "ejecutado": 289098.57,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2023,
+   "tipo": "ingreso",
+   "capitulo": "6",
+   "area_gasto": null,
+   "inicial": 79798.83,
+   "definitivo": 81264.42,
+   "ejecutado": 83718.69,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2023,
+   "tipo": "ingreso",
+   "capitulo": "7",
+   "area_gasto": null,
+   "inicial": 710484.43,
+   "definitivo": 727097.7,
+   "ejecutado": 735596.71,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2023,
+   "tipo": "ingreso",
+   "capitulo": "8",
+   "area_gasto": null,
+   "inicial": 77619.82,
+   "definitivo": 79593.01,
+   "ejecutado": 79549.43,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2023,
+   "tipo": "ingreso",
+   "capitulo": "9",
+   "area_gasto": null,
+   "inicial": 451277.95,
+   "definitivo": 452856.11,
+   "ejecutado": 419554.88,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2023,
+   "tipo": "gasto",
+   "capitulo": "3",
+   "area_gasto": "0",
+   "inicial": 125162.64,
+   "definitivo": 129477.36,
+   "ejecutado": 121551.13,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2023,
+   "tipo": "gasto",
+   "capitulo": "9",
+   "area_gasto": "0",
+   "inicial": 381274.16,
+   "definitivo": 378501.59,
+   "ejecutado": 334164.53,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2023,
+   "tipo": "gasto",
+   "capitulo": "1",
+   "area_gasto": "1",
+   "inicial": 1778171.45,
+   "definitivo": 1789704.1,
+   "ejecutado": 1600803.87,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2023,
+   "tipo": "gasto",
+   "capitulo": "2",
+   "area_gasto": "1",
+   "inicial": 2370607.04,
+   "definitivo": 2564334.49,
+   "ejecutado": 2258662.34,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2023,
+   "tipo": "gasto",
+   "capitulo": "6",
+   "area_gasto": "1",
+   "inicial": 905736.81,
+   "definitivo": 927306.12,
+   "ejecutado": 693720.94,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2023,
+   "tipo": "gasto",
+   "capitulo": "1",
+   "area_gasto": "2",
+   "inicial": 890401.74,
+   "definitivo": 920913.98,
+   "ejecutado": 841572.24,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2023,
+   "tipo": "gasto",
+   "capitulo": "2",
+   "area_gasto": "2",
+   "inicial": 408103.22,
+   "definitivo": 422561.07,
+   "ejecutado": 387513.48,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2023,
+   "tipo": "gasto",
+   "capitulo": "4",
+   "area_gasto": "2",
+   "inicial": 712476.94,
+   "definitivo": 737281.7,
+   "ejecutado": 676787.96,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2023,
+   "tipo": "gasto",
+   "capitulo": "1",
+   "area_gasto": "3",
+   "inicial": 1033462.67,
+   "definitivo": 1073066.92,
+   "ejecutado": 996054.19,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2023,
+   "tipo": "gasto",
+   "capitulo": "2",
+   "area_gasto": "3",
+   "inicial": 966536.76,
+   "definitivo": 1030259.1,
+   "ejecutado": 941137.49,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2023,
+   "tipo": "gasto",
+   "capitulo": "4",
+   "area_gasto": "3",
+   "inicial": 301261.81,
+   "definitivo": 328320.82,
+   "ejecutado": 293026,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2023,
+   "tipo": "gasto",
+   "capitulo": "6",
+   "area_gasto": "3",
+   "inicial": 264311.03,
+   "definitivo": 280696.64,
+   "ejecutado": 163258.54,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2023,
+   "tipo": "gasto",
+   "capitulo": "1",
+   "area_gasto": "4",
+   "inicial": 316611.76,
+   "definitivo": 314794.87,
+   "ejecutado": 282180.32,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2023,
+   "tipo": "gasto",
+   "capitulo": "2",
+   "area_gasto": "4",
+   "inicial": 329851.29,
+   "definitivo": 347229.32,
+   "ejecutado": 314559.99,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2023,
+   "tipo": "gasto",
+   "capitulo": "4",
+   "area_gasto": "4",
+   "inicial": 104875.9,
+   "definitivo": 113761.17,
+   "ejecutado": 105977.17,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2023,
+   "tipo": "gasto",
+   "capitulo": "6",
+   "area_gasto": "4",
+   "inicial": 327564.44,
+   "definitivo": 355980.42,
+   "ejecutado": 285681.76,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2023,
+   "tipo": "gasto",
+   "capitulo": "1",
+   "area_gasto": "9",
+   "inicial": 2113253.84,
+   "definitivo": 2318452.83,
+   "ejecutado": 2063110.05,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2023,
+   "tipo": "gasto",
+   "capitulo": "2",
+   "area_gasto": "9",
+   "inicial": 1303751.2,
+   "definitivo": 1297068.04,
+   "ejecutado": 1248244.01,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2023,
+   "tipo": "gasto",
+   "capitulo": "4",
+   "area_gasto": "9",
+   "inicial": 232878.78,
+   "definitivo": 238510.17,
+   "ejecutado": 212314.09,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2023,
+   "tipo": "gasto",
+   "capitulo": "5",
+   "area_gasto": "9",
+   "inicial": 79401.7,
+   "definitivo": 85979.82,
+   "ejecutado": 78010.69,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2023,
+   "tipo": "gasto",
+   "capitulo": "6",
+   "area_gasto": "9",
+   "inicial": 79775.83,
+   "definitivo": 79109.49,
+   "ejecutado": 50113.18,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2024,
+   "tipo": "ingreso",
+   "capitulo": "1",
+   "area_gasto": null,
+   "inicial": 6361571.52,
+   "definitivo": 6855997,
+   "ejecutado": 6567568.25,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2024,
+   "tipo": "ingreso",
+   "capitulo": "2",
+   "area_gasto": null,
+   "inicial": 317490.21,
+   "definitivo": 336883.86,
+   "ejecutado": 346352.69,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2024,
+   "tipo": "ingreso",
+   "capitulo": "3",
+   "area_gasto": null,
+   "inicial": 2793613.51,
+   "definitivo": 2854971.35,
+   "ejecutado": 2960443.48,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2024,
+   "tipo": "ingreso",
+   "capitulo": "4",
+   "area_gasto": null,
+   "inicial": 5215976.8,
+   "definitivo": 5249653.95,
+   "ejecutado": 5068661.9,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2024,
+   "tipo": "ingreso",
+   "capitulo": "5",
+   "area_gasto": null,
+   "inicial": 327229.53,
+   "definitivo": 346124.77,
+   "ejecutado": 321570.41,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2024,
+   "tipo": "ingreso",
+   "capitulo": "6",
+   "area_gasto": null,
+   "inicial": 78447.83,
+   "definitivo": 81879.71,
+   "ejecutado": 81684.12,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2024,
+   "tipo": "ingreso",
+   "capitulo": "7",
+   "area_gasto": null,
+   "inicial": 703337.68,
+   "definitivo": 730310.18,
+   "ejecutado": 721777.11,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2024,
+   "tipo": "ingreso",
+   "capitulo": "8",
+   "area_gasto": null,
+   "inicial": 80948.65,
+   "definitivo": 84996.46,
+   "ejecutado": 79692.85,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2024,
+   "tipo": "ingreso",
+   "capitulo": "9",
+   "area_gasto": null,
+   "inicial": 484646.24,
+   "definitivo": 522162.67,
+   "ejecutado": 482000.69,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2024,
+   "tipo": "gasto",
+   "capitulo": "3",
+   "area_gasto": "0",
+   "inicial": 140000.39,
+   "definitivo": 151773.03,
+   "ejecutado": 140542.86,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2024,
+   "tipo": "gasto",
+   "capitulo": "9",
+   "area_gasto": "0",
+   "inicial": 433963.48,
+   "definitivo": 449081.85,
+   "ejecutado": 434777.41,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2024,
+   "tipo": "gasto",
+   "capitulo": "1",
+   "area_gasto": "1",
+   "inicial": 1886333.82,
+   "definitivo": 2034284.81,
+   "ejecutado": 1935889.79,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2024,
+   "tipo": "gasto",
+   "capitulo": "2",
+   "area_gasto": "1",
+   "inicial": 2482984.21,
+   "definitivo": 2683392.81,
+   "ejecutado": 2476859.8,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2024,
+   "tipo": "gasto",
+   "capitulo": "6",
+   "area_gasto": "1",
+   "inicial": 919672.88,
+   "definitivo": 913261.55,
+   "ejecutado": 645131.6,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2024,
+   "tipo": "gasto",
+   "capitulo": "1",
+   "area_gasto": "2",
+   "inicial": 888400.21,
+   "definitivo": 961087.26,
+   "ejecutado": 898703.39,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2024,
+   "tipo": "gasto",
+   "capitulo": "2",
+   "area_gasto": "2",
+   "inicial": 403862.24,
+   "definitivo": 404865.45,
+   "ejecutado": 367742.94,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2024,
+   "tipo": "gasto",
+   "capitulo": "4",
+   "area_gasto": "2",
+   "inicial": 707574.74,
+   "definitivo": 705203.19,
+   "ejecutado": 678104.99,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2024,
+   "tipo": "gasto",
+   "capitulo": "1",
+   "area_gasto": "3",
+   "inicial": 1078505,
+   "definitivo": 1177142.81,
+   "ejecutado": 1102600.55,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2024,
+   "tipo": "gasto",
+   "capitulo": "2",
+   "area_gasto": "3",
+   "inicial": 980708.02,
+   "definitivo": 1042103.2,
+   "ejecutado": 962088.2,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2024,
+   "tipo": "gasto",
+   "capitulo": "4",
+   "area_gasto": "3",
+   "inicial": 332777.07,
+   "definitivo": 334216.14,
+   "ejecutado": 294577.41,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2024,
+   "tipo": "gasto",
+   "capitulo": "6",
+   "area_gasto": "3",
+   "inicial": 280833.93,
+   "definitivo": 295528.93,
+   "ejecutado": 190592.15,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2024,
+   "tipo": "gasto",
+   "capitulo": "1",
+   "area_gasto": "4",
+   "inicial": 324641.99,
+   "definitivo": 353245.68,
+   "ejecutado": 333001.14,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2024,
+   "tipo": "gasto",
+   "capitulo": "2",
+   "area_gasto": "4",
+   "inicial": 341869.75,
+   "definitivo": 367654.28,
+   "ejecutado": 359475.47,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2024,
+   "tipo": "gasto",
+   "capitulo": "4",
+   "area_gasto": "4",
+   "inicial": 106422.88,
+   "definitivo": 109320.42,
+   "ejecutado": 102540.53,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2024,
+   "tipo": "gasto",
+   "capitulo": "6",
+   "area_gasto": "4",
+   "inicial": 316820.9,
+   "definitivo": 338658.94,
+   "ejecutado": 228858.85,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2024,
+   "tipo": "gasto",
+   "capitulo": "1",
+   "area_gasto": "9",
+   "inicial": 2424185.86,
+   "definitivo": 2517240.74,
+   "ejecutado": 2339501.25,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2024,
+   "tipo": "gasto",
+   "capitulo": "2",
+   "area_gasto": "9",
+   "inicial": 1237007.33,
+   "definitivo": 1249858.17,
+   "ejecutado": 1206446.41,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2024,
+   "tipo": "gasto",
+   "capitulo": "4",
+   "area_gasto": "9",
+   "inicial": 255257.62,
+   "definitivo": 258516.13,
+   "ejecutado": 246882.05,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2024,
+   "tipo": "gasto",
+   "capitulo": "5",
+   "area_gasto": "9",
+   "inicial": 83897.05,
+   "definitivo": 84271.84,
+   "ejecutado": 79663.5,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2024,
+   "tipo": "gasto",
+   "capitulo": "6",
+   "area_gasto": "9",
+   "inicial": 85538.49,
+   "definitivo": 89873.54,
+   "ejecutado": 59717.43,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2025,
+   "tipo": "ingreso",
+   "capitulo": "1",
+   "area_gasto": null,
+   "inicial": 6529272.54,
+   "definitivo": 6570935.44,
+   "ejecutado": 6435102.47,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2025,
+   "tipo": "ingreso",
+   "capitulo": "2",
+   "area_gasto": null,
+   "inicial": 315177.98,
+   "definitivo": 331696.77,
+   "ejecutado": 312315.99,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2025,
+   "tipo": "ingreso",
+   "capitulo": "3",
+   "area_gasto": null,
+   "inicial": 2895132.99,
+   "definitivo": 2978255.88,
+   "ejecutado": 2977789.28,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2025,
+   "tipo": "ingreso",
+   "capitulo": "4",
+   "area_gasto": null,
+   "inicial": 5291040.11,
+   "definitivo": 5386866.99,
+   "ejecutado": 5404812.96,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2025,
+   "tipo": "ingreso",
+   "capitulo": "5",
+   "area_gasto": null,
+   "inicial": 341819.6,
+   "definitivo": 359714.37,
+   "ejecutado": 359427.02,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2025,
+   "tipo": "ingreso",
+   "capitulo": "6",
+   "area_gasto": null,
+   "inicial": 83080.38,
+   "definitivo": 86532.14,
+   "ejecutado": 87048.02,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2025,
+   "tipo": "ingreso",
+   "capitulo": "7",
+   "area_gasto": null,
+   "inicial": 726005.17,
+   "definitivo": 729156.21,
+   "ejecutado": 701614.45,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2025,
+   "tipo": "ingreso",
+   "capitulo": "8",
+   "area_gasto": null,
+   "inicial": 83652.2,
+   "definitivo": 86408.79,
+   "ejecutado": 82114.05,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2025,
+   "tipo": "ingreso",
+   "capitulo": "9",
+   "area_gasto": null,
+   "inicial": 507162.2,
+   "definitivo": 529175.14,
+   "ejecutado": 502049.4,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2025,
+   "tipo": "gasto",
+   "capitulo": "3",
+   "area_gasto": "0",
+   "inicial": 146611,
+   "definitivo": 150215.13,
+   "ejecutado": 142826.46,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2025,
+   "tipo": "gasto",
+   "capitulo": "9",
+   "area_gasto": "0",
+   "inicial": 435428.96,
+   "definitivo": 477174.84,
+   "ejecutado": 432203.38,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2025,
+   "tipo": "gasto",
+   "capitulo": "1",
+   "area_gasto": "1",
+   "inicial": 1918769.95,
+   "definitivo": 2110320.92,
+   "ejecutado": 1863128.18,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2025,
+   "tipo": "gasto",
+   "capitulo": "2",
+   "area_gasto": "1",
+   "inicial": 2589586.18,
+   "definitivo": 2765851.48,
+   "ejecutado": 2509536.51,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2025,
+   "tipo": "gasto",
+   "capitulo": "6",
+   "area_gasto": "1",
+   "inicial": 963398.83,
+   "definitivo": 959640.49,
+   "ejecutado": 748686.3,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2025,
+   "tipo": "gasto",
+   "capitulo": "1",
+   "area_gasto": "2",
+   "inicial": 929783.8,
+   "definitivo": 964089.17,
+   "ejecutado": 867668.87,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2025,
+   "tipo": "gasto",
+   "capitulo": "2",
+   "area_gasto": "2",
+   "inicial": 435235.04,
+   "definitivo": 439583.1,
+   "ejecutado": 410812.84,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2025,
+   "tipo": "gasto",
+   "capitulo": "4",
+   "area_gasto": "2",
+   "inicial": 785233.35,
+   "definitivo": 823280.85,
+   "ejecutado": 724895.95,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2025,
+   "tipo": "gasto",
+   "capitulo": "1",
+   "area_gasto": "3",
+   "inicial": 1071005.15,
+   "definitivo": 1158229.42,
+   "ejecutado": 1054112.26,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2025,
+   "tipo": "gasto",
+   "capitulo": "2",
+   "area_gasto": "3",
+   "inicial": 1025397.4,
+   "definitivo": 1109109.87,
+   "ejecutado": 1042501.92,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2025,
+   "tipo": "gasto",
+   "capitulo": "4",
+   "area_gasto": "3",
+   "inicial": 354603.76,
+   "definitivo": 356102.71,
+   "ejecutado": 347733.64,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2025,
+   "tipo": "gasto",
+   "capitulo": "6",
+   "area_gasto": "3",
+   "inicial": 285557.95,
+   "definitivo": 286328.97,
+   "ejecutado": 198691.94,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2025,
+   "tipo": "gasto",
+   "capitulo": "1",
+   "area_gasto": "4",
+   "inicial": 347525.79,
+   "definitivo": 350977.4,
+   "ejecutado": 327000.48,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2025,
+   "tipo": "gasto",
+   "capitulo": "2",
+   "area_gasto": "4",
+   "inicial": 328548.67,
+   "definitivo": 329116.62,
+   "ejecutado": 322240.02,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2025,
+   "tipo": "gasto",
+   "capitulo": "4",
+   "area_gasto": "4",
+   "inicial": 122301.74,
+   "definitivo": 124360.58,
+   "ejecutado": 112241.63,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2025,
+   "tipo": "gasto",
+   "capitulo": "6",
+   "area_gasto": "4",
+   "inicial": 353421.71,
+   "definitivo": 366674.12,
+   "ejecutado": 256788.59,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2025,
+   "tipo": "gasto",
+   "capitulo": "1",
+   "area_gasto": "9",
+   "inicial": 2501142.99,
+   "definitivo": 2669564.07,
+   "ejecutado": 2556047.93,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2025,
+   "tipo": "gasto",
+   "capitulo": "2",
+   "area_gasto": "9",
+   "inicial": 1342254.47,
+   "definitivo": 1442471.82,
+   "ejecutado": 1326819.02,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2025,
+   "tipo": "gasto",
+   "capitulo": "4",
+   "area_gasto": "9",
+   "inicial": 249823.51,
+   "definitivo": 249174.77,
+   "ejecutado": 221995.3,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2025,
+   "tipo": "gasto",
+   "capitulo": "5",
+   "area_gasto": "9",
+   "inicial": 84711.2,
+   "definitivo": 86443.95,
+   "ejecutado": 82640.59,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2025,
+   "tipo": "gasto",
+   "capitulo": "6",
+   "area_gasto": "9",
+   "inicial": 86245.43,
+   "definitivo": 94047.34,
+   "ejecutado": 57204.48,
+   "estado": "liquidado"
+  },
+  {
+   "anio": 2026,
+   "tipo": "ingreso",
+   "capitulo": "1",
+   "area_gasto": null,
+   "inicial": 6216748.84,
+   "definitivo": 6354230.71,
+   "ejecutado": 3880509,
+   "estado": "en_ejecucion"
+  },
+  {
+   "anio": 2026,
+   "tipo": "ingreso",
+   "capitulo": "2",
+   "area_gasto": null,
+   "inicial": 357602.28,
+   "definitivo": 364548.5,
+   "ejecutado": 242115.25,
+   "estado": "en_ejecucion"
+  },
+  {
+   "anio": 2026,
+   "tipo": "ingreso",
+   "capitulo": "3",
+   "area_gasto": null,
+   "inicial": 3020761.8,
+   "definitivo": 3030245.14,
+   "ejecutado": 2070446.91,
+   "estado": "en_ejecucion"
+  },
+  {
+   "anio": 2026,
+   "tipo": "ingreso",
+   "capitulo": "4",
+   "area_gasto": null,
+   "inicial": 5601983.56,
+   "definitivo": 5714282.83,
+   "ejecutado": 4199193.56,
+   "estado": "en_ejecucion"
+  },
+  {
+   "anio": 2026,
+   "tipo": "ingreso",
+   "capitulo": "5",
+   "area_gasto": null,
+   "inicial": 359748.17,
+   "definitivo": 384228.94,
+   "ejecutado": 254358.12,
+   "estado": "en_ejecucion"
+  },
+  {
+   "anio": 2026,
+   "tipo": "ingreso",
+   "capitulo": "6",
+   "area_gasto": null,
+   "inicial": 86183.82,
+   "definitivo": 86551.85,
+   "ejecutado": 55151.81,
+   "estado": "en_ejecucion"
+  },
+  {
+   "anio": 2026,
+   "tipo": "ingreso",
+   "capitulo": "7",
+   "area_gasto": null,
+   "inicial": 794369.02,
+   "definitivo": 834631.94,
+   "ejecutado": 504788.82,
+   "estado": "en_ejecucion"
+  },
+  {
+   "anio": 2026,
+   "tipo": "ingreso",
+   "capitulo": "8",
+   "area_gasto": null,
+   "inicial": 85486.88,
+   "definitivo": 86826.78,
+   "ejecutado": 53901.16,
+   "estado": "en_ejecucion"
+  },
+  {
+   "anio": 2026,
+   "tipo": "ingreso",
+   "capitulo": "9",
+   "area_gasto": null,
+   "inicial": 501682.38,
+   "definitivo": 528052.51,
+   "ejecutado": 349771.01,
+   "estado": "en_ejecucion"
+  },
+  {
+   "anio": 2026,
+   "tipo": "gasto",
+   "capitulo": "3",
+   "area_gasto": "0",
+   "inicial": 143777.52,
+   "definitivo": 150361.77,
+   "ejecutado": 98268.16,
+   "estado": "en_ejecucion"
+  },
+  {
+   "anio": 2026,
+   "tipo": "gasto",
+   "capitulo": "9",
+   "area_gasto": "0",
+   "inicial": 459511.63,
+   "definitivo": 493470.17,
+   "ejecutado": 343595.81,
+   "estado": "en_ejecucion"
+  },
+  {
+   "anio": 2026,
+   "tipo": "gasto",
+   "capitulo": "1",
+   "area_gasto": "1",
+   "inicial": 2004402.69,
+   "definitivo": 2099799.34,
+   "ejecutado": 1222982.66,
+   "estado": "en_ejecucion"
+  },
+  {
+   "anio": 2026,
+   "tipo": "gasto",
+   "capitulo": "2",
+   "area_gasto": "1",
+   "inicial": 2707998.34,
+   "definitivo": 2840318.77,
+   "ejecutado": 1875374.7,
+   "estado": "en_ejecucion"
+  },
+  {
+   "anio": 2026,
+   "tipo": "gasto",
+   "capitulo": "6",
+   "area_gasto": "1",
+   "inicial": 1035728.62,
+   "definitivo": 1050972.76,
+   "ejecutado": 657205.59,
+   "estado": "en_ejecucion"
+  },
+  {
+   "anio": 2026,
+   "tipo": "gasto",
+   "capitulo": "1",
+   "area_gasto": "2",
+   "inicial": 980289.89,
+   "definitivo": 1014118.56,
+   "ejecutado": 661209.47,
+   "estado": "en_ejecucion"
+  },
+  {
+   "anio": 2026,
+   "tipo": "gasto",
+   "capitulo": "2",
+   "area_gasto": "2",
+   "inicial": 472717.51,
+   "definitivo": 501538.43,
+   "ejecutado": 299337.76,
+   "estado": "en_ejecucion"
+  },
+  {
+   "anio": 2026,
+   "tipo": "gasto",
+   "capitulo": "4",
+   "area_gasto": "2",
+   "inicial": 798072.3,
+   "definitivo": 859653.46,
+   "ejecutado": 591298.53,
+   "estado": "en_ejecucion"
+  },
+  {
+   "anio": 2026,
+   "tipo": "gasto",
+   "capitulo": "1",
+   "area_gasto": "3",
+   "inicial": 1177594.47,
+   "definitivo": 1184899.95,
+   "ejecutado": 827185.54,
+   "estado": "en_ejecucion"
+  },
+  {
+   "anio": 2026,
+   "tipo": "gasto",
+   "capitulo": "2",
+   "area_gasto": "3",
+   "inicial": 1151969.15,
+   "definitivo": 1184399.58,
+   "ejecutado": 711858.93,
+   "estado": "en_ejecucion"
+  },
+  {
+   "anio": 2026,
+   "tipo": "gasto",
+   "capitulo": "4",
+   "area_gasto": "3",
+   "inicial": 335315.29,
+   "definitivo": 357993.09,
+   "ejecutado": 251203.76,
+   "estado": "en_ejecucion"
+  },
+  {
+   "anio": 2026,
+   "tipo": "gasto",
+   "capitulo": "6",
+   "area_gasto": "3",
+   "inicial": 299413.37,
+   "definitivo": 298451.14,
+   "ejecutado": 187268.61,
+   "estado": "en_ejecucion"
+  },
+  {
+   "anio": 2026,
+   "tipo": "gasto",
+   "capitulo": "1",
+   "area_gasto": "4",
+   "inicial": 371606.39,
+   "definitivo": 382129.26,
+   "ejecutado": 217851.82,
+   "estado": "en_ejecucion"
+  },
+  {
+   "anio": 2026,
+   "tipo": "gasto",
+   "capitulo": "2",
+   "area_gasto": "4",
+   "inicial": 345993.99,
+   "definitivo": 357577.41,
+   "ejecutado": 216626.63,
+   "estado": "en_ejecucion"
+  },
+  {
+   "anio": 2026,
+   "tipo": "gasto",
+   "capitulo": "4",
+   "area_gasto": "4",
+   "inicial": 126114.44,
+   "definitivo": 136299.8,
+   "ejecutado": 97166.67,
+   "estado": "en_ejecucion"
+  },
+  {
+   "anio": 2026,
+   "tipo": "gasto",
+   "capitulo": "6",
+   "area_gasto": "4",
+   "inicial": 350497.49,
+   "definitivo": 356442.95,
+   "ejecutado": 219687.63,
+   "estado": "en_ejecucion"
+  },
+  {
+   "anio": 2026,
+   "tipo": "gasto",
+   "capitulo": "1",
+   "area_gasto": "9",
+   "inicial": 2566136.92,
+   "definitivo": 2659080.37,
+   "ejecutado": 1531975.56,
+   "estado": "en_ejecucion"
+  },
+  {
+   "anio": 2026,
+   "tipo": "gasto",
+   "capitulo": "2",
+   "area_gasto": "9",
+   "inicial": 1401586.16,
+   "definitivo": 1453002.98,
+   "ejecutado": 881560.46,
+   "estado": "en_ejecucion"
+  },
+  {
+   "anio": 2026,
+   "tipo": "gasto",
+   "capitulo": "4",
+   "area_gasto": "9",
+   "inicial": 262296.37,
+   "definitivo": 263248.78,
+   "ejecutado": 166709.15,
+   "estado": "en_ejecucion"
+  },
+  {
+   "anio": 2026,
+   "tipo": "gasto",
+   "capitulo": "5",
+   "area_gasto": "9",
+   "inicial": 85045.89,
+   "definitivo": 87736.44,
+   "ejecutado": 60699.62,
+   "estado": "en_ejecucion"
+  },
+  {
+   "anio": 2026,
+   "tipo": "gasto",
+   "capitulo": "6",
+   "area_gasto": "9",
+   "inicial": 92509.19,
+   "definitivo": 99013.41,
+   "ejecutado": 60008.77,
+   "estado": "en_ejecucion"
+  }
+ ]
+}

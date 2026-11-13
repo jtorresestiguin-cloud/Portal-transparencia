@@ -1,149 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ca">
-  <title>Novetats — Portal de Transparència del Consorci de Turisme de Barcelona</title>
-  <link href="https://jtorresestiguin-cloud.github.io/Portal-transparencia/feed.xml" rel="self"/>
-  <link href="https://jtorresestiguin-cloud.github.io/Portal-transparencia/"/>
-  <id>https://jtorresestiguin-cloud.github.io/Portal-transparencia/feed.xml</id>
-  <updated>2026-11-12T00:00:00Z</updated>
-  <author><name>Consorci de Turisme de Barcelona</name></author>
-  <entry>
-    <title>Contracte adjudicat: Producció d'estand en fira professional internacional</title>
-    <link href="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/contractacio/CTB-2026-0284"/>
-    <id>https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/contractacio/CTB-2026-0284</id>
-    <updated>2026-10-14T00:00:00Z</updated>
-    <summary>Empresa Demo Fusta Mitjans, SL · 103.725,05 € sense IVA · Obert simplificat</summary>
-  </entry>
-  <entry>
-    <title>Contracte adjudicat: Llicències de programari de gestió</title>
-    <link href="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/contractacio/CTB-2026-0254"/>
-    <id>https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/contractacio/CTB-2026-0254</id>
-    <updated>2026-10-10T00:00:00Z</updated>
-    <summary>Empresa Demo Tramuntana Consultoria, SL · 83.727,68 € sense IVA · Negociat sense publicitat</summary>
-  </entry>
-  <entry>
-    <title>Contracte adjudicat: Servei de núvol i infraestructura de sistemes</title>
-    <link href="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/contractacio/CTB-2026-0271"/>
-    <id>https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/contractacio/CTB-2026-0271</id>
-    <updated>2026-10-09T00:00:00Z</updated>
-    <summary>Empresa Demo Ponent Mitjans, SL · 5.736,75 € sense IVA · Contracte menor</summary>
-  </entry>
-  <entry>
-    <title>Contracte adjudicat: Programació cultural en barris i territori</title>
-    <link href="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/contractacio/CTB-2026-0288"/>
-    <id>https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/contractacio/CTB-2026-0288</id>
-    <updated>2026-10-06T00:00:00Z</updated>
-    <summary>Empresa Demo Mestral Gràfiques, SL · 14.319,74 € sense IVA · Contracte menor</summary>
-  </entry>
-  <entry>
-    <title>Contracte adjudicat: Subministrament de material de marxandatge de la destinació</title>
-    <link href="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/contractacio/CTB-2026-0296"/>
-    <id>https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/contractacio/CTB-2026-0296</id>
-    <updated>2026-10-01T00:00:00Z</updated>
-    <summary>Empresa Demo Garbí Logística, SL · 1.205.162,36 € sense IVA · Obert</summary>
-  </entry>
-  <entry>
-    <title>Contracte adjudicat: Gestió de xarxes socials en mercats internacionals</title>
-    <link href="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/contractacio/CTB-2026-0292"/>
-    <id>https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/contractacio/CTB-2026-0292</id>
-    <updated>2026-09-18T00:00:00Z</updated>
-    <summary>Empresa Demo Mestral Gràfiques, SL · 1.598.659,71 € sense IVA · Obert</summary>
-  </entry>
-  <entry>
-    <title>Contracte adjudicat: Traducció de continguts web a 10 idiomes</title>
-    <link href="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/contractacio/CTB-2026-0250"/>
-    <id>https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/contractacio/CTB-2026-0250</id>
-    <updated>2026-09-17T00:00:00Z</updated>
-    <summary>Empresa Demo Tramuntana Consultoria, SL · 5.664,54 € sense IVA · Contracte menor</summary>
-  </entry>
-  <entry>
-    <title>Contracte adjudicat: Servei de núvol i infraestructura de sistemes</title>
-    <link href="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/contractacio/CTB-2026-0294"/>
-    <id>https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/contractacio/CTB-2026-0294</id>
-    <updated>2026-09-08T00:00:00Z</updated>
-    <summary>Empresa Demo Tramuntana Consultoria, SL · 7.295,59 € sense IVA · Contracte menor</summary>
-  </entry>
-  <entry>
-    <title>Contracte adjudicat: Servei de transport de material promocional</title>
-    <link href="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/contractacio/CTB-2026-0256"/>
-    <id>https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/contractacio/CTB-2026-0256</id>
-    <updated>2026-09-05T00:00:00Z</updated>
-    <summary>Empresa Demo Mestral Gràfiques, SL · 32.001,54 € sense IVA · Simplificat abreujat</summary>
-  </entry>
-  <entry>
-    <title>Conveni signat: Promoció de la destinació Barcelona en mercats internacionals amb aerolínia</title>
-    <link href="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/subvencions/CNV-2026-036"/>
-    <id>https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/subvencions/CNV-2026-036</id>
-    <updated>2026-09-05T00:00:00Z</updated>
-    <summary>Entitat Demo Atles (privat)</summary>
-  </entry>
-  <entry>
-    <title>Contracte adjudicat: Serveis de màrqueting de continguts de la destinació</title>
-    <link href="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/contractacio/CTB-2026-0281"/>
-    <id>https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/contractacio/CTB-2026-0281</id>
-    <updated>2026-09-03T00:00:00Z</updated>
-    <summary>Empresa Demo Nexe Serveis, SL · 8.790,43 € sense IVA · Contracte menor</summary>
-  </entry>
-  <entry>
-    <title>Contracte adjudicat: Producció d'estand en fira professional internacional</title>
-    <link href="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/contractacio/CTB-2026-0276"/>
-    <id>https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/contractacio/CTB-2026-0276</id>
-    <updated>2026-08-27T00:00:00Z</updated>
-    <summary>Empresa Demo Garbí Logística, SL · 132.144,06 € sense IVA · Obert simplificat</summary>
-  </entry>
-  <entry>
-    <title>Contracte adjudicat: Impressió de plànols de la ciutat</title>
-    <link href="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/contractacio/CTB-2026-0272"/>
-    <id>https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/contractacio/CTB-2026-0272</id>
-    <updated>2026-08-23T00:00:00Z</updated>
-    <summary>Empresa Demo Mosaic Mitjans, SL · 147.949,80 € sense IVA · Negociat sense publicitat</summary>
-  </entry>
-  <entry>
-    <title>Contracte adjudicat: Impressió de plànols de la ciutat</title>
-    <link href="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/contractacio/CTB-2026-0269"/>
-    <id>https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/contractacio/CTB-2026-0269</id>
-    <updated>2026-08-04T00:00:00Z</updated>
-    <summary>Empresa Demo Argila Logística, SL · 9.299,75 € sense IVA · Contracte menor</summary>
-  </entry>
-  <entry>
-    <title>Contracte adjudicat: Servei de transport per a viatges de familiarització</title>
-    <link href="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/contractacio/CTB-2026-0252"/>
-    <id>https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/contractacio/CTB-2026-0252</id>
-    <updated>2026-08-02T00:00:00Z</updated>
-    <summary>Empresa Demo Seda Gràfiques, SL · 3.910,63 € sense IVA · Contracte menor</summary>
-  </entry>
-  <entry>
-    <title>Contracte adjudicat: Compra de mitjans per a campanya de promoció de la destinació</title>
-    <link href="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/contractacio/CTB-2026-0255"/>
-    <id>https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/contractacio/CTB-2026-0255</id>
-    <updated>2026-07-28T00:00:00Z</updated>
-    <summary>Empresa Demo Marbre Esdeveniments, SL · 14.512,63 € sense IVA · Contracte menor</summary>
-  </entry>
-  <entry>
-    <title>Conveni signat: Patrocini d'esdeveniment internacional</title>
-    <link href="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/subvencions/CNV-2026-039"/>
-    <id>https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/subvencions/CNV-2026-039</id>
-    <updated>2026-06-17T00:00:00Z</updated>
-    <summary>Entitat Demo Garbí (privat)</summary>
-  </entry>
-  <entry>
-    <title>Conveni signat: Col·laboració en recerca i dades turístiques amb universitat</title>
-    <link href="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/subvencions/CNV-2026-034"/>
-    <id>https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/subvencions/CNV-2026-034</id>
-    <updated>2026-06-02T00:00:00Z</updated>
-    <summary>Entitat Demo Tramuntana (universitat)</summary>
-  </entry>
-  <entry>
-    <title>Conveni signat: Col·laboració per a la promoció conjunta de la destinació</title>
-    <link href="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/subvencions/CNV-2026-041"/>
-    <id>https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/subvencions/CNV-2026-041</id>
-    <updated>2026-04-17T00:00:00Z</updated>
-    <summary>Entitat Demo Àgora (administracio)</summary>
-  </entry>
-  <entry>
-    <title>Conveni signat: Projecte europeu de turisme sostenible</title>
-    <link href="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/subvencions/CNV-2026-037"/>
-    <id>https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/subvencions/CNV-2026-037</id>
-    <updated>2026-04-03T00:00:00Z</updated>
-    <summary>Entitat Demo Fusta (internacional)</summary>
-  </entry>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="es">
+  <title>Novedades — Portal de Transparencia — Ayuntamiento de Ejemplo</title>
+  <link href="https://jtorresestiguin-cloud.github.io/Portal-transparencia/feed.xml" rel="self"/><link href="https://jtorresestiguin-cloud.github.io/Portal-transparencia/"/>
+  <id>https://jtorresestiguin-cloud.github.io/Portal-transparencia/feed.xml</id><updated>2026-11-13T00:00:00Z</updated><author><name>Ayuntamiento de Ejemplo</name></author>
+  <entry><title>Contrato: Licencias de software de gestión</title><link href="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/contratos?q=EJ-2026-0346"/><id>https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/contratos?q=EJ-2026-0346</id><updated>2026-10-25T00:00:00Z</updated><summary>Servicios Mestral Ejemplo, SL · 11.466,65 €</summary></entry>
+  <entry><title>Contrato: Mantenimiento del alumbrado público</title><link href="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/contratos?q=EJ-2026-0349"/><id>https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/contratos?q=EJ-2026-0349</id><updated>2026-10-18T00:00:00Z</updated><summary>Instalaciones Rajola Ejemplo, SL · 6143,85 €</summary></entry>
+  <entry><title>Contrato: Servicio de soporte informático</title><link href="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/contratos?q=EJ-2026-0359"/><id>https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/contratos?q=EJ-2026-0359</id><updated>2026-10-17T00:00:00Z</updated><summary>Limpiezas Mediterrània Ejemplo, SL · 6259,85 €</summary></entry>
+  <entry><title>Contrato: Gestión de la piscina municipal</title><link href="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/contratos?q=EJ-2026-0317"/><id>https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/contratos?q=EJ-2026-0317</id><updated>2026-10-12T00:00:00Z</updated><summary>Obras Marjal Ejemplo, SL · 1064,97 €</summary></entry>
+  <entry><title>Contrato: Producción técnica de conciertos de verano</title><link href="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/contratos?q=EJ-2026-0348"/><id>https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/contratos?q=EJ-2026-0348</id><updated>2026-10-05T00:00:00Z</updated><summary>Instalaciones Barraca Ejemplo, SL · 99.910,97 €</summary></entry>
+  <entry><title>Contrato: Servicio de limpieza de edificios municipales (2026-2028)</title><link href="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/contratos?q=EJ-2026-0325"/><id>https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/contratos?q=EJ-2026-0325</id><updated>2026-09-27T00:00:00Z</updated><summary>Obras Tramuntana Ejemplo, SL · 49.476,85 €</summary></entry>
+  <entry><title>Contrato: Programa de atención a la infancia (2026-2028)</title><link href="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/contratos?q=EJ-2026-0344"/><id>https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/contratos?q=EJ-2026-0344</id><updated>2026-09-26T00:00:00Z</updated><summary>Obras Tramuntana Ejemplo, SL · 49.878,08 €</summary></entry>
+  <entry><title>Contrato: Servicio de limpieza de edificios municipales</title><link href="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/contratos?q=EJ-2026-0334"/><id>https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/contratos?q=EJ-2026-0334</id><updated>2026-09-21T00:00:00Z</updated><summary>Servicios Séquia Ejemplo, SL · 12.089,65 €</summary></entry>
+  <entry><title>Contrato: Vigilancia de eventos municipales</title><link href="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/contratos?q=EJ-2026-0323"/><id>https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/contratos?q=EJ-2026-0323</id><updated>2026-09-19T00:00:00Z</updated><summary>Gestión Ponent Ejemplo, SL · 9705,59 €</summary></entry>
+  <entry><title>Contrato: Talleres culturales para mayores (2026-2028)</title><link href="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/contratos?q=EJ-2026-0358"/><id>https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/contratos?q=EJ-2026-0358</id><updated>2026-09-19T00:00:00Z</updated><summary>Sistemas Palmera Ejemplo, SL · 157.768,74 €</summary></entry>
+  <entry><title>Contrato: Ampliación del centro social</title><link href="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/contratos?q=EJ-2026-0332"/><id>https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/contratos?q=EJ-2026-0332</id><updated>2026-09-16T00:00:00Z</updated><summary>Obras Marjal Ejemplo, SL · 819.989,74 €</summary></entry>
+  <entry><title>Subvención: Ayudas a entidades de acción social 2026</title><link href="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/subvenciones?q=SUB-2026-0182"/><id>https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/subvenciones?q=SUB-2026-0182</id><updated>2026-09-14T00:00:00Z</updated><summary>AMPA del CEIP Tramuntana de Ejemplo · 5142,32 €</summary></entry>
+  <entry><title>Subvención: Ayudas para la eficiencia energética en viviendas 2026</title><link href="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/subvenciones?q=SUB-2026-0215"/><id>https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/subvenciones?q=SUB-2026-0215</id><updated>2026-09-14T00:00:00Z</updated><summary>Club de Atletismo Garbí de Ejemplo · 2089,81 €</summary></entry>
+  <entry><title>Subvención: Subvenciones a asociaciones culturales 2026</title><link href="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/subvenciones?q=SUB-2026-0170"/><id>https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/subvenciones?q=SUB-2026-0170</id><updated>2026-09-11T00:00:00Z</updated><summary>Sociedad Musical Xaloc de Ejemplo · 8889,78 €</summary></entry>
+  <entry><title>Subvención: Ayudas a AMPA para actividades extraescolares 2026</title><link href="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/subvenciones?q=SUB-2026-0197"/><id>https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/subvenciones?q=SUB-2026-0197</id><updated>2026-09-09T00:00:00Z</updated><summary>Asociación Juvenil Garbí de Ejemplo · 2299,08 €</summary></entry>
+  <entry><title>Contrato: Reforma de aseos del colegio público</title><link href="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/contratos?q=EJ-2026-0345"/><id>https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/contratos?q=EJ-2026-0345</id><updated>2026-09-08T00:00:00Z</updated><summary>Servicios Albufera Ejemplo, SL · 32.579,62 €</summary></entry>
+  <entry><title>Contrato: Organización de las fiestas patronales</title><link href="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/contratos?q=EJ-2026-0310"/><id>https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/contratos?q=EJ-2026-0310</id><updated>2026-09-07T00:00:00Z</updated><summary>Limpiezas Alqueria Ejemplo, SL · 180.055,79 €</summary></entry>
+  <entry><title>Subvención: Ayudas a entidades de acción social 2026</title><link href="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/subvenciones?q=SUB-2026-0184"/><id>https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/subvenciones?q=SUB-2026-0184</id><updated>2026-09-07T00:00:00Z</updated><summary>Asociación Cultural Marjal de Ejemplo · 4169,63 €</summary></entry>
+  <entry><title>Contrato: Mejora de la accesibilidad en aceras</title><link href="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/contratos?q=EJ-2026-0338"/><id>https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/contratos?q=EJ-2026-0338</id><updated>2026-09-05T00:00:00Z</updated><summary>Servicios Albufera Ejemplo, SL · 8463,49 €</summary></entry>
+  <entry><title>Subvención: Ayudas a AMPA para actividades extraescolares 2026</title><link href="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/subvenciones?q=SUB-2026-0196"/><id>https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/subvenciones?q=SUB-2026-0196</id><updated>2026-09-05T00:00:00Z</updated><summary>Fundación Social Marjal de Ejemplo · 1628,64 €</summary></entry>
+  <entry><title>Contrato: Gestión de la piscina municipal</title><link href="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/contratos?q=EJ-2026-0336"/><id>https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/contratos?q=EJ-2026-0336</id><updated>2026-09-04T00:00:00Z</updated><summary>Instalaciones Xaloc Ejemplo, SL · 4259,43 €</summary></entry>
+  <entry><title>Contrato: Mantenimiento del alumbrado público</title><link href="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/contratos?q=EJ-2026-0360"/><id>https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/contratos?q=EJ-2026-0360</id><updated>2026-09-02T00:00:00Z</updated><summary>Sistemas Palmera Ejemplo, SL · 19.121,43 €</summary></entry>
+  <entry><title>Subvención: Ayudas a AMPA para actividades extraescolares 2026</title><link href="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/subvenciones?q=SUB-2026-0195"/><id>https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/subvenciones?q=SUB-2026-0195</id><updated>2026-09-01T00:00:00Z</updated><summary>AMPA del CEIP Taronger de Ejemplo · 3319,59 €</summary></entry>
+  <entry><title>Contrato: Asfaltado de caminos municipales (2026-2028)</title><link href="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/contratos?q=EJ-2026-0351"/><id>https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/contratos?q=EJ-2026-0351</id><updated>2026-08-26T00:00:00Z</updated><summary>Sistemas Taronger Ejemplo, SL · 685.201,49 €</summary></entry>
+  <entry><title>Subvención: Subvenciones a asociaciones culturales 2026</title><link href="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/subvenciones?q=SUB-2026-0164"/><id>https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/subvenciones?q=SUB-2026-0164</id><updated>2026-08-20T00:00:00Z</updated><summary>Sociedad Musical Rajola de Ejemplo · 2788,99 €</summary></entry>
+  <entry><title>Subvención: Subvenciones a clubes y entidades deportivas 2026</title><link href="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/subvenciones?q=SUB-2026-0177"/><id>https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/subvenciones?q=SUB-2026-0177</id><updated>2026-08-18T00:00:00Z</updated><summary>Sociedad Musical Barraca de Ejemplo · 12.141,73 €</summary></entry>
+  <entry><title>Contrato: Suministro de barredora urbana (2026-2028)</title><link href="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/contratos?q=EJ-2026-0314"/><id>https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/contratos?q=EJ-2026-0314</id><updated>2026-08-16T00:00:00Z</updated><summary>Sistemas Garbí Ejemplo, SL · 42.416,61 €</summary></entry>
+  <entry><title>Contrato: Reforma de aseos del colegio público</title><link href="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/contratos?q=EJ-2026-0363"/><id>https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/contratos?q=EJ-2026-0363</id><updated>2026-08-13T00:00:00Z</updated><summary>Instalaciones Xaloc Ejemplo, SL · 27.054,67 €</summary></entry>
+  <entry><title>Subvención: Ayudas a AMPA para actividades extraescolares 2026</title><link href="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/subvenciones?q=SUB-2026-0192"/><id>https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/subvenciones?q=SUB-2026-0192</id><updated>2026-08-10T00:00:00Z</updated><summary>Club Deportivo Palmera de Ejemplo · 1629,63 €</summary></entry>
+  <entry><title>Contrato: Ampliación del centro social</title><link href="https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/contratos?q=EJ-2026-0322"/><id>https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/contratos?q=EJ-2026-0322</id><updated>2026-07-26T00:00:00Z</updated><summary>Gestión Ponent Ejemplo, SL · 7419,79 €</summary></entry>
 </feed>

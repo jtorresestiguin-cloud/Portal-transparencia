@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Gestión de contenidos · Portal de Transparencia</title>
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/css/portal.css">
+  <link rel="stylesheet" href="editor.css">
+  <script type="module" src="editor.js"></script>
+</head>
+<body class="ed">
+  <header class="ed-top">
+    <div class="ed-brand"><img src="../assets/img/escudo.svg" alt="" width="26" height="32"><div><strong>Gestión de contenidos</strong><span id="ed-entity"></span></div></div>
+    <div class="ed-top-tools">
+      <label class="ed-lang">Idioma de edición
+        <select id="ed-edit-lang"><option value="es">Castellano</option><option value="va">Valencià</option><option value="en">English</option></select>
+      </label>
+      <a class="btn-ghost" href="../" target="_blank" rel="noopener">Ver portal ↗</a>
+      <button type="button" class="btn-ghost" id="ed-undo" disabled>Deshacer</button>
+      <button type="button" class="btn" id="ed-publish">Publicar <span class="ed-count" id="ed-count">0</span></button>
+    </div>
+  </header>
+  <div class="ed-layout">
+    <nav class="ed-side" aria-label="Secciones del editor">
+      <div class="ed-tabs" role="tablist">
+        <button role="tab" data-tab="paginas" aria-selected="true">Páginas</button>
+        <button role="tab" data-tab="datos" aria-selected="false">Datos</button>
+        <button role="tab" data-tab="entidad" aria-selected="false">Entidad</button>
+        <button role="tab" data-tab="sync" aria-selected="false">Fuentes</button>
+      </div>
+      <div id="ed-side-body" class="ed-side-body"></div>
+    </nav>
+    <main id="ed-main" class="ed-main" tabindex="-1"></main>
+    <aside id="ed-props" class="ed-props" aria-label="Propiedades"></aside>
+  </div>
+  <div id="ed-toast" class="ed-toast" role="status" aria-live="polite"></div>
+</body>
+</html>

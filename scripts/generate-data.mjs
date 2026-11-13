@@ -1,17 +1,15 @@
 #!/usr/bin/env node
 /**
- * Generador de DADES D'EXEMPLE per al prototip del Portal de Transparència
- * del Consorci de Turisme de Barcelona.
+ * Genera DATOS DE EJEMPLO para el prototipo del portal de transparencia de una
+ * entidad local genérica (≈15.000 habitantes).
  *
- * IMPORTANT: totes les xifres que produeix aquest script són sintètiques i
- * il·lustratives. Serveixen per demostrar el model de dades, les
- * visualitzacions i la interoperabilitat. S'han de substituir per les dades
- * oficials (ERP economicofinancer, PSCP, RRHH, registre, etc.) abans de
- * qualsevol publicació real. Vegeu docs/MODELO-DATOS.md.
+ * IMPORTANTE: todas las cifras, personas, empresas y entidades son ficticias.
+ * Los conjuntos «contratos», «encargos» y «subvenciones» se sustituyen
+ * automáticamente por datos reales cuando se ejecuta la sincronización
+ * (scripts/sync/*.mjs) con la configuración de config/entidad.json.
+ * El resto se edita desde el editor visual (admin/).
  *
- * Ús:  node scripts/generate-data.mjs
- * Resultat: data/*.json (format font). Després cal executar
- *           node scripts/build-catalog.mjs per generar CSV, DCAT i API.
+ * Uso: node scripts/generate-data.mjs
  */
 import { writeFileSync, mkdirSync } from 'node:fs';
 import { dirname, join } from 'node:path';
@@ -21,10 +19,7 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const DATA = join(ROOT, 'data');
 mkdirSync(DATA, { recursive: true });
 
-// ---------------------------------------------------------------------------
-// PRNG determinista (mulberry32) perquè el resultat sigui reproduïble
-// ---------------------------------------------------------------------------
-let seed = 19930401; // any de constitució del Consorci
+let seed = 46000;
 function rnd() {
   seed |= 0; seed = (seed + 0x6d2b79f5) | 0;
   let t = Math.imul(seed ^ (seed >>> 15), 1 | seed);
@@ -34,535 +29,296 @@ function rnd() {
 const between = (a, b) => a + (b - a) * rnd();
 const int = (a, b) => Math.floor(between(a, b + 1));
 const pick = (arr) => arr[Math.floor(rnd() * arr.length)];
-const weighted = (pairs) => {
-  const total = pairs.reduce((s, [, w]) => s + w, 0);
-  let r = rnd() * total;
-  for (const [v, w] of pairs) { if ((r -= w) <= 0) return v; }
-  return pairs[pairs.length - 1][0];
-};
-const round2 = (n) => Math.round(n * 100) / 100;
+const weighted = (pairs) => { const tot = pairs.reduce((s, [, w]) => s + w, 0); let r = rnd() * tot; for (const [v, w] of pairs) if ((r -= w) <= 0) return v; return pairs.at(-1)[0]; };
+const r2 = (n) => Math.round(n * 100) / 100;
 const pad = (n, l = 2) => String(n).padStart(l, '0');
 const iso = (y, m, d) => `${y}-${pad(m)}-${pad(d)}`;
-const addDays = (dateStr, days) => {
-  const d = new Date(dateStr + 'T00:00:00Z');
-  d.setUTCDate(d.getUTCDate() + days);
-  return d.toISOString().slice(0, 10);
-};
+const addDays = (s, n) => { const d = new Date(s + 'T00:00:00Z'); d.setUTCDate(d.getUTCDate() + n); return d.toISOString().slice(0, 10); };
+const HOY = '2026-11-13';
 
-const META = {
-  generat: '2026-11-11',
-  avis: "Dades d'exemple generades sintèticament per al prototip. No són xifres oficials.",
-};
-function save(name, payload) {
-  const file = join(DATA, `${name}.json`);
-  writeFileSync(file, JSON.stringify(payload, null, 2) + '\n');
-  const n = Array.isArray(payload.dades) ? payload.dades.length : '-';
-  console.log(`  ✓ data/${name}.json (${n} registres)`);
+function save(name, fuente, datos, extra = {}) {
+  writeFileSync(join(DATA, `${name}.json`), JSON.stringify({
+    generado: HOY, fuente, ejemplo: true,
+    aviso: 'Datos de ejemplo generados sintéticamente. No son cifras oficiales.', ...extra, datos,
+  }, null, 1) + '\n');
+  console.log(`  ✓ data/${name}.json (${datos.length})`);
 }
+console.log('Generando datos de ejemplo…');
 
-console.log('Generant dades d\'exemple…');
-
-// ---------------------------------------------------------------------------
-// 1. PRESSUPOST (ingressos i despeses per capítol i programa, 2021-2026)
-// ---------------------------------------------------------------------------
-const ANYS_PRESSUPOST = [2021, 2022, 2023, 2024, 2025, 2026];
-const recuperacio = { 2021: 0.52, 2022: 0.86, 2023: 1.0, 2024: 1.07, 2025: 1.12, 2026: 1.16 };
-const BASE_TOTAL = 78_000_000;
-
-const ingressosEstructura = [
-  { capitol: '3', pes: 0.71 }, // vendes i prestació de serveis (productes turístics)
-  { capitol: '4', pes: 0.24 }, // transferències corrents (impost estades turístiques, aportacions)
-  { capitol: '5', pes: 0.02 }, // ingressos patrimonials
-  { capitol: '7', pes: 0.03 }, // transferències de capital
-];
-const despesesProgrames = [
-  { programa: 'P1', pes: 0.22 }, // promoció i màrqueting
-  { programa: 'P2', pes: 0.06 }, // convention bureau
-  { programa: 'P3', pes: 0.09 }, // informació i atenció al visitant
-  { programa: 'P4', pes: 0.43 }, // productes turístics
-  { programa: 'P5', pes: 0.08 }, // turisme sostenible i territori
-  { programa: 'P6', pes: 0.12 }, // estructura i serveis generals
-];
-const capitolsPerPrograma = {
-  P1: { '1': 0.18, '2': 0.72, '4': 0.08, '6': 0.02 },
-  P2: { '1': 0.35, '2': 0.55, '4': 0.08, '6': 0.02 },
-  P3: { '1': 0.55, '2': 0.35, '6': 0.10 },
-  P4: { '1': 0.16, '2': 0.78, '6': 0.06 },
-  P5: { '1': 0.20, '2': 0.35, '4': 0.42, '6': 0.03 },
-  P6: { '1': 0.48, '2': 0.38, '3': 0.04, '6': 0.10 },
+// 1. PRESUPUESTO -------------------------------------------------------------
+const ANYS = [2021, 2022, 2023, 2024, 2025, 2026];
+const crec = { 2021: 0.9, 2022: 0.94, 2023: 1, 2024: 1.05, 2025: 1.09, 2026: 1.13 };
+const ING = { 1: 0.38, 2: 0.02, 3: 0.17, 4: 0.33, 5: 0.02, 6: 0.005, 7: 0.045, 8: 0.005, 9: 0.03 };
+const AREAS = { 0: 0.035, 1: 0.34, 2: 0.13, 3: 0.17, 4: 0.07, 9: 0.255 };
+const CAP_AREA = {
+  0: { 3: 0.25, 9: 0.75 }, 1: { 1: 0.35, 2: 0.48, 6: 0.17 }, 2: { 1: 0.45, 2: 0.2, 4: 0.35 },
+  3: { 1: 0.4, 2: 0.38, 4: 0.12, 6: 0.1 }, 4: { 1: 0.3, 2: 0.3, 4: 0.1, 6: 0.3 }, 9: { 1: 0.58, 2: 0.32, 4: 0.06, 5: 0.02, 6: 0.02 },
 };
+const presupuesto = [];
+for (const anio of ANYS) {
+  const total = 15_200_000 * crec[anio];
+  const curso = anio === 2026;
+  for (const [cap, p] of Object.entries(ING)) {
+    const ini = total * p * between(0.95, 1.05), def = ini * between(1, 1.08);
+    presupuesto.push({ anio, tipo: 'ingreso', capitulo: cap, area_gasto: null, inicial: r2(ini), definitivo: r2(def), ejecutado: r2(def * (curso ? between(0.6, 0.75) : between(0.92, 1.05))), estado: curso ? 'en_ejecucion' : 'liquidado' });
+  }
+  for (const [area, pa] of Object.entries(AREAS)) {
+    for (const [cap, pc] of Object.entries(CAP_AREA[area])) {
+      const ini = total * pa * pc * between(0.94, 1.06), def = ini * between(0.99, 1.1);
+      presupuesto.push({ anio, tipo: 'gasto', capitulo: cap, area_gasto: area, inicial: r2(ini), definitivo: r2(def), ejecutado: r2(def * (curso ? between(0.55, 0.72) : cap === '6' ? between(0.55, 0.85) : between(0.88, 0.98))), estado: curso ? 'en_ejecucion' : 'liquidado' });
+    }
+  }
+}
+save('presupuesto', 'ejemplo', presupuesto, { unidad: 'EUR', fecha_corte_en_ejecucion: '2026-09-30' });
 
-const pressupost = [];
-for (const any of ANYS_PRESSUPOST) {
-  const total = BASE_TOTAL * recuperacio[any] * between(0.98, 1.02);
-  const enCurs = any === 2026;
-  const grauExecIng = enCurs ? 0.74 : between(0.95, 1.06);
-  const grauExecDesp = enCurs ? 0.69 : between(0.9, 0.98);
-  for (const { capitol, pes } of ingressosEstructura) {
-    const inicial = total * pes * between(0.96, 1.04);
-    const definitiu = inicial * between(1.0, 1.06);
-    pressupost.push({
-      any, tipus: 'ingres', capitol, programa: null,
-      inicial: round2(inicial), definitiu: round2(definitiu),
-      executat: round2(definitiu * grauExecIng * between(0.97, 1.03)),
-      estat: enCurs ? 'en_execucio' : 'liquidat',
+// 2. CONTRATOS (formato alineado con PLACSP/CODICE) ---------------------------
+const CPVS = [
+  ['90910000', '2', 6, ['Servicio de limpieza de edificios municipales', 'Limpieza de colegios públicos']],
+  ['90511000', '2', 2, ['Servicio de recogida y transporte de residuos urbanos']],
+  ['77310000', '2', 5, ['Mantenimiento de parques y jardines', 'Poda del arbolado urbano']],
+  ['45233140', '3', 6, ['Reurbanización de calle', 'Asfaltado de caminos municipales', 'Mejora de la accesibilidad en aceras']],
+  ['45210000', '3', 2, ['Construcción de pabellón polideportivo', 'Ampliación del centro social']],
+  ['45453000', '3', 4, ['Rehabilitación de la casa de cultura', 'Reforma de aseos del colegio público']],
+  ['50232100', '2', 3, ['Mantenimiento del alumbrado público']],
+  ['09310000', '1', 2, ['Suministro de energía eléctrica para instalaciones municipales']],
+  ['72000000', '2', 4, ['Mantenimiento de aplicaciones de gestión municipal', 'Servicio de soporte informático']],
+  ['48000000', '1', 3, ['Licencias de software de gestión', 'Suministro de software de sede electrónica']],
+  ['79952000', '2', 5, ['Organización de las fiestas patronales', 'Producción técnica de conciertos de verano']],
+  ['92312000', '2', 4, ['Programación cultural de la casa de cultura', 'Talleres culturales para mayores']],
+  ['85310000', '2', 3, ['Servicio de ayuda a domicilio', 'Programa de atención a la infancia']],
+  ['80410000', '2', 2, ['Escuela de verano municipal']],
+  ['92610000', '2', 2, ['Gestión de la piscina municipal']],
+  ['79710000', '2', 1, ['Vigilancia de eventos municipales']],
+  ['66510000', '2', 1, ['Seguro de responsabilidad civil y daños']],
+  ['34144000', '1', 1, ['Suministro de vehículo para la policía local', 'Suministro de barredora urbana']],
+];
+const RAICES = ['Albufera', 'Horta', 'Llevant', 'Garbí', 'Ponent', 'Xaloc', 'Mestral', 'Tramuntana', 'Mediterrània', 'Taronger', 'Arrossar', 'Barraca', 'Séquia', 'Marjal', 'Alqueria', 'Palmera', 'Brosquil', 'Rajola'];
+const SECT = ['Servicios', 'Obras', 'Limpiezas', 'Sistemas', 'Gestión', 'Instalaciones'];
+const EMPRESAS = RAICES.map((r, i) => ({ nombre: `${SECT[i % SECT.length]} ${r} Ejemplo, SL`, nif: `B9${pad(9000000 + i * 211, 7)}`, pyme: rnd() < 0.85 }));
+const contratos = [];
+let seq = 1;
+for (const anio of [2022, 2023, 2024, 2025, 2026]) {
+  const n = anio === 2026 ? int(52, 60) : int(70, 85);
+  for (let i = 0; i < n; i++) {
+    const [cpv, tipo, , objs] = weighted(CPVS.map((c) => [c, c[2]]));
+    const proc = weighted([['6', 55], ['9', 22], ['1', 12], ['3', 3], ['7', 6], ['13', 2]]);
+    let base;
+    if (proc === '6') base = tipo === '3' ? between(5000, 39900) : between(1000, 14900);
+    else if (proc === '9') base = tipo === '3' ? between(40000, 1500000) : between(15000, 139000);
+    else if (proc === '1') base = between(120000, 2200000);
+    else base = between(15000, 200000);
+    const ofertas = proc === '6' ? int(1, 3) : proc === '3' ? 1 : weighted([[1, 2], [2, 3], [3, 5], [4, 4], [5, 3], [7, 2], [9, 1]]);
+    const baja = ofertas === 1 ? between(0, 0.03) : Math.min(0.3, between(0.02, 0.07) * Math.sqrt(ofertas) * between(0.7, 1.4));
+    const adj = base * (1 - baja);
+    const emp = pick(rnd() < 0.4 ? EMPRESAS.slice(0, 6) : EMPRESAS);
+    const fadj = iso(anio, int(1, anio === 2026 ? 10 : 12), int(1, 28));
+    const iva = cpv === '85310000' ? 1.04 : 1.21;
+    contratos.push({
+      id: `EJ-${anio}-${pad(seq++, 4)}`, expediente: `${anio}/${pad(int(100, 2999), 4)}`,
+      objeto: `${pick(objs)}${proc !== '6' && rnd() < 0.3 ? ` (${anio}-${anio + 2})` : ''}`,
+      tipo, procedimiento: proc, estado: proc === '6' ? 'ADJ' : weighted([['RES', 7], ['ADJ', 3]]), cpv,
+      organo: proc === '6' ? 'Alcaldía' : weighted([['Junta de Gobierno Local', 3], ['Pleno', 1], ['Alcaldía', 2]]),
+      fecha_adjudicacion: fadj, fecha_formalizacion: proc === '6' ? null : addDays(fadj, int(10, 30)),
+      duracion_meses: proc === '6' ? int(1, 12) : weighted([[12, 4], [24, 3], [36, 1], [48, 1], [6, 1]]),
+      presupuesto_base_sin_iva: r2(base), importe_adjudicacion_sin_iva: r2(adj), importe_adjudicacion_con_iva: r2(adj * iva),
+      numero_ofertas: ofertas, adjudicatario: emp.nombre, adjudicatario_nif: emp.nif, adjudicatario_pyme: emp.pyme,
+      url: 'https://contrataciondelsectorpublico.gob.es', fuente: 'ejemplo',
     });
   }
-  for (const { programa, pes } of despesesProgrames) {
-    for (const [capitol, pc] of Object.entries(capitolsPerPrograma[programa])) {
-      const inicial = total * pes * pc * between(0.95, 1.05);
-      const definitiu = inicial * between(0.99, 1.07);
-      pressupost.push({
-        any, tipus: 'despesa', capitol, programa,
-        inicial: round2(inicial), definitiu: round2(definitiu),
-        executat: round2(definitiu * grauExecDesp * between(0.94, 1.03)),
-        estat: enCurs ? 'en_execucio' : 'liquidat',
+}
+contratos.sort((a, b) => b.fecha_adjudicacion.localeCompare(a.fecha_adjudicacion));
+save('contratos', 'ejemplo', contratos, { unidad: 'EUR' });
+
+// 3. ENCARGOS A MEDIOS PROPIOS ----------------------------------------------
+const MEDIOS = [['Empresa Municipal de Servicios Ejemplo, SA', 'A99000001'], ['Consorcio Comarcal de Ejemplo', 'P9900001J'], ['Sociedad Pública Provincial de Ejemplo, SA', 'A99000002']];
+const OBJ_ENC = ['Gestión del servicio de agua potable', 'Mantenimiento de instalaciones deportivas', 'Redacción de proyecto técnico', 'Gestión de la escuela infantil', 'Apoyo técnico en urbanismo'];
+const encargos = [];
+for (let i = 0; i < 14; i++) {
+  const [m, nif] = pick(MEDIOS), y = pick([2022, 2023, 2024, 2025, 2026]);
+  encargos.push({ id: `ENC-${y}-${pad(i + 1, 3)}`, objeto: pick(OBJ_ENC), medio_propio: m, medio_propio_nif: nif, fecha_encargo: iso(y, int(1, y === 2026 ? 9 : 12), int(1, 28)), importe_sin_iva: r2(between(18000, 420000)), duracion_meses: pick([12, 24, 36]), url: 'https://contrataciondelsectorpublico.gob.es', fuente: 'ejemplo' });
+}
+encargos.sort((a, b) => b.fecha_encargo.localeCompare(a.fecha_encargo));
+save('encargos', 'ejemplo', encargos, { unidad: 'EUR' });
+
+// 4. SUBVENCIONES (formato alineado con BDNS) --------------------------------
+const CONVOC = [
+  ['cultura', 'concurrencia', 'Subvenciones a asociaciones culturales', [1500, 9000]],
+  ['deporte', 'concurrencia', 'Subvenciones a clubes y entidades deportivas', [2000, 15000]],
+  ['servicios_sociales', 'concurrencia', 'Ayudas a entidades de acción social', [2000, 12000]],
+  ['educacion', 'concurrencia', 'Ayudas a AMPA para actividades extraescolares', [800, 4000]],
+  ['comercio', 'concurrencia', 'Ayudas al comercio local y la contratación', [1000, 6000]],
+  ['fiestas', 'nominativa', 'Subvención nominativa a la comisión de fiestas', [8000, 30000]],
+  ['cooperacion', 'directa', 'Ayuda humanitaria de emergencia', [3000, 10000]],
+  ['medio_ambiente', 'concurrencia', 'Ayudas para la eficiencia energética en viviendas', [500, 3000]],
+];
+const ENTIDADES = ['Asociación Cultural', 'Club Deportivo', 'AMPA del CEIP', 'Asociación de Comerciantes', 'Sociedad Musical', 'Asociación de Mayores', 'Fundación Social', 'Comisión de Fiestas', 'Asociación Juvenil', 'Club de Atletismo'];
+const subvenciones = [];
+let sseq = 1;
+for (const y of [2022, 2023, 2024, 2025, 2026]) {
+  for (const [fin, mod, conv, [a, b]] of CONVOC) {
+    const bdns = String(600000 + int(1, 299999));
+    const n = mod === 'concurrencia' ? int(4, 10) : 1;
+    for (let i = 0; i < n; i++) {
+      subvenciones.push({
+        id: `SUB-${y}-${pad(sseq++, 4)}`, codigo_bdns: bdns, convocatoria: `${conv} ${y}`, finalidad: fin, modalidad: mod,
+        beneficiario: `${pick(ENTIDADES)} ${pick(RAICES)} de Ejemplo`, beneficiario_nif: `G9${pad(8000000 + int(1, 99999), 7)}`,
+        fecha_concesion: iso(y, int(3, y === 2026 ? 9 : 11), int(1, 28)), importe: r2(between(a, b)), fuente: 'ejemplo',
       });
     }
   }
 }
-save('pressupost', { ...META, unitat: 'EUR', data_tall_execucio_2026: '2026-09-30', dades: pressupost });
+subvenciones.sort((a, b) => b.fecha_concesion.localeCompare(a.fecha_concesion));
+save('subvenciones', 'ejemplo', subvenciones, { unidad: 'EUR' });
 
-// ---------------------------------------------------------------------------
-// 2. CONTRACTACIÓ (2022-2026)
-// ---------------------------------------------------------------------------
-const CPV = [
-  ['79341000', 'serveis', 'P1', 12], ['79342000', 'serveis', 'P1', 10],
-  ['79952000', 'serveis', 'P2', 8], ['72000000', 'serveis', 'P6', 9],
-  ['79810000', 'serveis', 'P3', 5], ['90910000', 'serveis', 'P6', 4],
-  ['79710000', 'serveis', 'P4', 4], ['60100000', 'serveis', 'P4', 6],
-  ['79530000', 'serveis', 'P3', 4], ['39294100', 'subministrament', 'P3', 4],
-  ['48000000', 'subministrament', 'P6', 5], ['79311000', 'serveis', 'P5', 5],
-  ['79400000', 'serveis', 'P6', 4], ['30213000', 'subministrament', 'P6', 3],
-  ['45400000', 'obres', 'P3', 2], ['45310000', 'obres', 'P6', 1],
-  ['92312000', 'serveis', 'P5', 4], ['79822500', 'serveis', 'P1', 3],
-];
-const CPV_OBJECTES = {
-  '79341000': ['Campanya de publicitat internacional als mercats emissors', 'Compra de mitjans per a campanya de promoció de la destinació', 'Publicitat digital segmentada per a mercats de llarga distància'],
-  '79342000': ['Serveis de màrqueting de continguts de la destinació', 'Gestió de xarxes socials en mercats internacionals', 'Accions de màrqueting amb operadors turístics'],
-  '79952000': ['Organització de viatges de familiarització per a premsa', 'Producció d\'estand en fira professional internacional', 'Organització de jornades professionals MICE'],
-  '72000000': ['Manteniment evolutiu del web de la destinació', 'Servei de núvol i infraestructura de sistemes', 'Desenvolupament de la plataforma de dades turístiques'],
-  '79810000': ['Impressió de material informatiu per a oficines de turisme', 'Impressió de plànols de la ciutat'],
-  '90910000': ['Servei de neteja d\'oficines i punts d\'informació'],
-  '79710000': ['Servei de seguretat i vigilància en punts de venda'],
-  '60100000': ['Servei de transport per a viatges de familiarització', 'Servei de transport de material promocional'],
-  '79530000': ['Servei de traducció i interpretació multilingüe', 'Traducció de continguts web a 10 idiomes'],
-  '39294100': ['Subministrament de material de marxandatge de la destinació', 'Subministrament de fullets i material de difusió'],
-  '48000000': ['Llicències de programari de gestió', 'Subministrament de llicències CRM'],
-  '79311000': ['Estudi de perfil i hàbits de la demanda turística', 'Enquesta de satisfacció de visitants', 'Estudi d\'impacte econòmic d\'esdeveniments'],
-  '79400000': ['Assessorament en compliment normatiu i protecció de dades', 'Consultoria de pla estratègic de turisme'],
-  '30213000': ['Subministrament d\'equips informàtics portàtils'],
-  '45400000': ['Obres de reforma d\'oficina d\'informació turística'],
-  '45310000': ['Obres d\'adequació d\'instal·lacions elèctriques'],
-  '92312000': ['Programació cultural en barris i territori', 'Activitats de dinamització de destinacions de proximitat'],
-  '79822500': ['Disseny gràfic de campanyes i materials'],
-};
-const ARRELS = ['Àgora', 'Lumen', 'Nexe', 'Llevant', 'Ponent', 'Tramuntana', 'Garbí', 'Mestral', 'Xaloc', 'Migjorn',
-  'Brúixola', 'Fanal', 'Mosaic', 'Trencadís', 'Vela', 'Far', 'Atles', 'Ràdium', 'Cobalt', 'Òliba',
-  'Fusta', 'Ciment', 'Argila', 'Seda', 'Cotó', 'Coure', 'Granit', 'Marbre'];
-const SECTORS = ['Comunicació', 'Digital', 'Serveis', 'Esdeveniments', 'Mitjans', 'Consultoria', 'Logística', 'Gràfiques'];
-const empreses = ARRELS.map((a, i) => ({
-  nom: `Empresa Demo ${a} ${SECTORS[i % SECTORS.length]}, SL`,
-  nif: `B0${pad(9000000 + i * 137, 7)}`,
-  pime: rnd() < 0.72,
-}));
-
-const contractes = [];
-let seq = 1;
-for (const any of [2022, 2023, 2024, 2025, 2026]) {
-  const n = any === 2026 ? int(42, 48) : int(55, 68);
-  for (let i = 0; i < n; i++) {
-    const [cpv, tipus, programa] = weighted(CPV.map((c) => [c, c[3]]));
-    const procediment = weighted([
-      ['obert', 30], ['obert_simplificat', 22], ['simplificat_abreujat', 10],
-      ['menor', 28], ['negociat_sense_publicitat', 4], ['basat_acord_marc', 6],
-    ]);
-    let pressupostLicitacio;
-    switch (procediment) {
-      case 'menor': pressupostLicitacio = tipus === 'obres' ? between(8000, 39000) : between(3000, 14900); break;
-      case 'simplificat_abreujat': pressupostLicitacio = between(15000, 59000); break;
-      case 'obert_simplificat': pressupostLicitacio = between(40000, 139000); break;
-      case 'negociat_sense_publicitat': pressupostLicitacio = between(20000, 180000); break;
-      case 'basat_acord_marc': pressupostLicitacio = between(10000, 250000); break;
-      default: pressupostLicitacio = between(140000, 2400000);
-    }
-    const licitadors = procediment === 'menor' ? int(1, 3)
-      : procediment === 'negociat_sense_publicitat' ? 1
-      : weighted([[1, 2], [2, 4], [3, 6], [4, 6], [5, 4], [6, 3], [8, 2], [11, 1]]);
-    const baixa = licitadors === 1 ? between(0, 0.03) : Math.min(0.32, between(0.02, 0.06) * Math.sqrt(licitadors) * between(0.7, 1.5));
-    const adjudicacio = pressupostLicitacio * (1 - baixa);
-    const empresa = pick(rnd() < 0.35 ? empreses.slice(0, 8) : empreses);
-    const maxMes = any === 2026 ? 10 : 12;
-    const mes = int(1, maxMes);
-    const dataAdj = iso(any, mes, int(1, 28));
-    const objecte = pick(CPV_OBJECTES[cpv]);
-    contractes.push({
-      id: `CTB-${any}-${pad(seq++, 4)}`,
-      expedient: `${any}/${pad(i + 1, 3)}`,
-      objecte,
-      tipus,
-      procediment,
-      cpv,
-      programa,
-      data_adjudicacio: dataAdj,
-      data_formalitzacio: procediment === 'menor' ? null : addDays(dataAdj, int(10, 35)),
-      durada_mesos: procediment === 'menor' ? int(1, 12) : weighted([[6, 1], [12, 4], [24, 3], [36, 1], [48, 1]]),
-      pressupost_licitacio_sense_iva: round2(pressupostLicitacio),
-      import_adjudicacio_sense_iva: round2(adjudicacio),
-      import_adjudicacio_amb_iva: round2(adjudicacio * 1.21),
-      nombre_licitadors: licitadors,
-      adjudicatari: empresa.nom,
-      adjudicatari_nif: empresa.nif,
-      adjudicatari_pime: empresa.pime,
-      clausules_socials: procediment !== 'menor' && rnd() < 0.78,
-      clausules_ambientals: procediment !== 'menor' && rnd() < 0.64,
-      lots: procediment === 'obert' && rnd() < 0.3 ? int(2, 5) : 1,
-      modificat: procediment !== 'menor' && rnd() < 0.06,
-      enllac_pscp: 'https://contractaciopublica.cat/ca/perfils-contractant',
-    });
-  }
+// 5. CONVENIOS -----------------------------------------------------------------
+const CONV = [['Convenio con la Diputación Provincial para la asistencia técnica municipal', 'administracion'], ['Convenio con la Generalitat para el servicio de atención temprana', 'administracion'],
+  ['Convenio de colaboración con la sociedad musical para la escuela de música', 'entidad'], ['Convenio con la universidad para prácticas de estudiantes', 'universidad'],
+  ['Convenio con entidad bancaria para la gestión de la recaudación', 'privado'], ['Convenio con Cruz Roja para el servicio de teleasistencia', 'entidad'],
+  ['Convenio con el consorcio de bomberos', 'administracion'], ['Convenio con asociación de comerciantes para la dinamización comercial', 'entidad']];
+const convenios = [];
+for (let i = 0; i < 26; i++) {
+  const [obj, tp] = pick(CONV), y = pick([2022, 2023, 2024, 2025, 2026]), f = iso(y, int(1, y === 2026 ? 10 : 12), int(1, 28)), dur = pick([12, 24, 48]);
+  convenios.push({ id: `CNV-${y}-${pad(i + 1, 3)}`, objeto: obj, partes: `Ayuntamiento y ${tp === 'administracion' ? 'Administración de ejemplo' : 'Entidad de ejemplo ' + pick(RAICES)}`, tipo_parte: tp, fecha_firma: f, fecha_fin: addDays(f, dur * 30), obligaciones_economicas: r2(rnd() < 0.3 ? 0 : between(3000, 120000)), url: '' });
 }
-contractes.sort((a, b) => b.data_adjudicacio.localeCompare(a.data_adjudicacio));
-save('contractes', { ...META, unitat: 'EUR', dades: contractes });
+convenios.sort((a, b) => b.fecha_firma.localeCompare(a.fecha_firma));
+save('convenios', 'ejemplo', convenios, { unidad: 'EUR' });
 
-// ---------------------------------------------------------------------------
-// 3. SUBVENCIONS ATORGADES I AJUTS + CONVENIS
-// ---------------------------------------------------------------------------
-const LINIES_SUBV = [
-  ['L1', 'concurrencia', [8000, 45000]],  // dinamització turística de barris
-  ['L2', 'concurrencia', [5000, 30000]],  // esdeveniments i congressos
-  ['L3', 'directa', [20000, 150000]],     // projectes singulars
-  ['L4', 'nominativa', [40000, 250000]],  // entitats del sector
-];
-const BENEFICIARIS = ['Associació Demo de Comerciants', 'Fundació Demo Cultural', 'Federació Demo d\'Entitats', 'Associació Demo Gastronòmica',
-  'Gremi Demo de Serveis Turístics', 'Fundació Demo Esportiva', 'Associació Demo de Veïns', 'Entitat Demo de Festes Populars',
-  'Associació Demo Congressos', 'Fundació Demo Patrimoni'];
-const DISTRICTES = ['Ciutat Vella', 'Eixample', 'Sants-Montjuïc', 'Les Corts', 'Sarrià-Sant Gervasi', 'Gràcia', 'Horta-Guinardó', 'Nou Barris', 'Sant Andreu', 'Sant Martí'];
-const subvencions = [];
-let sseq = 1;
-for (const any of [2022, 2023, 2024, 2025, 2026]) {
-  const n = int(14, 22);
-  for (let i = 0; i < n; i++) {
-    const [linia, modalitat, [a, b]] = weighted(LINIES_SUBV.map((l) => [l, l[0] === 'L1' ? 5 : l[0] === 'L2' ? 3 : 1]));
-    const sol = between(a, b);
-    const districte = linia === 'L1' ? pick(DISTRICTES) : weighted([['Ciutat', 3], [pick(DISTRICTES), 1]]);
-    const benef = `${pick(BENEFICIARIS)} ${districte === 'Ciutat' ? 'de Barcelona' : districte}`;
-    subvencions.push({
-      id: `SUB-${any}-${pad(sseq++, 3)}`,
-      any,
-      linia,
-      modalitat,
-      beneficiari: benef,
-      beneficiari_nif: `G0${pad(8000000 + int(1, 99999), 7)}`,
-      districte: districte === 'Ciutat' ? null : districte,
-      import_sollicitat: round2(sol),
-      import_atorgat: round2(sol * between(0.6, 1)),
-      data_concessio: iso(any, int(any === 2026 ? 2 : 3, any === 2026 ? 9 : 11), int(1, 28)),
-      estat_justificacio: any >= 2026 ? 'pendent' : weighted([['justificada', 8], ['en_revisio', 1], ['reintegrament_parcial', 0.4]]),
-      bdns: `${700000 + int(1, 99999)}`,
-    });
-  }
+// 6. CARGOS -------------------------------------------------------------------
+const NOMBRES = ['Laura', 'Vicent', 'Marta', 'Josep', 'Amparo', 'Javier', 'Elena', 'Pau', 'Rosa', 'Andrés', 'Núria', 'Carlos', 'Isabel', 'Miguel', 'Lucía', 'Toni', 'Carmen'];
+const cargos = [];
+const GRUPOS = ['Grupo Municipal A', 'Grupo Municipal B', 'Grupo Municipal C', 'Grupo Municipal D'];
+const AREAS_DEL = ['Hacienda y Personal', 'Urbanismo y Obras', 'Servicios Sociales e Igualdad', 'Cultura y Fiestas', 'Deportes y Juventud', 'Educación', 'Medio Ambiente', 'Comercio y Empleo', 'Seguridad Ciudadana', 'Participación y Transparencia'];
+for (let i = 0; i < 17; i++) {
+  const gob = i < 9;
+  const tipo = i === 0 ? 'alcaldia' : i < 4 ? 'teniente_alcaldia' : 'concejalia';
+  const ded = i === 0 ? 'exclusiva' : gob && i < 5 ? 'exclusiva' : gob && i < 8 ? 'parcial' : 'ninguna';
+  cargos.push({
+    id: `C${pad(i + 1)}`, nombre: `${NOMBRES[i]} Ejemplo ${pick(['García', 'Martí', 'Ferrer', 'López', 'Navarro', 'Sanchis', 'Gil', 'Ruiz'])}`,
+    tipo_cargo: tipo, cargo: i === 0 ? 'Alcalde/sa' : i < 4 ? `${i}.ª Tenencia de Alcaldía` : 'Concejal/a',
+    areas: gob ? (i === 0 ? 'Presidencia y Policía Local' : AREAS_DEL[i - 1]) : 'Sin delegación',
+    grupo_politico: gob ? (i < 6 ? GRUPOS[0] : GRUPOS[1]) : (i < 14 ? GRUPOS[2] : GRUPOS[3]),
+    dedicacion: ded, retribucion_anual: ded === 'exclusiva' ? (i === 0 ? 46800 : 36400) : ded === 'parcial' ? 18200 : 0,
+    indemnizaciones_anuales: ded === 'ninguna' ? r2(int(10, 24) * 150) : 0,
+    fecha_nombramiento: i < 4 ? '2023-06-17' : '2023-06-28', foto: '', email: `cargo${i + 1}@example.org`,
+    cv_url: '', declaracion_bienes_url: '#', declaracion_actividades_url: '#',
+  });
 }
-save('subvencions', { ...META, unitat: 'EUR', dades: subvencions });
+cargos.push({ id: 'E01', nombre: 'Persona Ejemplo Eventual', tipo_cargo: 'eventual', cargo: 'Asesor/a de Alcaldía', areas: 'Gabinete de Alcaldía', grupo_politico: '', dedicacion: 'exclusiva', retribucion_anual: 32100, indemnizaciones_anuales: 0, fecha_nombramiento: '2023-07-03', foto: '', email: 'gabinete@example.org', cv_url: '', declaracion_bienes_url: '', declaracion_actividades_url: '' });
+save('cargos', 'manual', cargos, { unidad: 'EUR bruto anual' });
 
-const CONVENIS_OBJ = [
-  ['Col·laboració per a la promoció conjunta de la destinació', 'administracio'],
-  ['Col·laboració en la gestió del servei d\'informació turística', 'administracio'],
-  ['Patrocini d\'esdeveniment internacional', 'privat'],
-  ['Col·laboració en recerca i dades turístiques amb universitat', 'universitat'],
-  ['Promoció de la destinació Barcelona en mercats internacionals amb aerolínia', 'privat'],
-  ['Col·laboració per al desenvolupament del turisme de proximitat', 'administracio'],
-  ['Atracció de congressos científics', 'entitat'],
-  ['Projecte europeu de turisme sostenible', 'internacional'],
-];
-const convenis = [];
-let cseq = 1;
-for (const any of [2022, 2023, 2024, 2025, 2026]) {
-  for (let i = 0; i < int(7, 12); i++) {
-    const [obj, tipusPart] = pick(CONVENIS_OBJ);
-    const signatura = iso(any, int(1, any === 2026 ? 10 : 12), int(1, 28));
-    const durada = pick([12, 24, 36, 48]);
-    convenis.push({
-      id: `CNV-${any}-${pad(cseq++, 3)}`,
-      objecte: obj,
-      tipus_part: tipusPart,
-      part_signant: `Entitat Demo ${pick(ARRELS)} (${tipusPart})`,
-      data_signatura: signatura,
-      data_fi: addDays(signatura, durada * 30),
-      durada_mesos: durada,
-      obligacions_economiques_ctb: round2(rnd() < 0.3 ? 0 : between(10000, 400000)),
-      aportacio_altra_part: round2(rnd() < 0.5 ? 0 : between(10000, 300000)),
-    });
-  }
-}
-save('convenis', { ...META, unitat: 'EUR', dades: convenis });
-
-// ---------------------------------------------------------------------------
-// 4. PERSONAL: plantilla, retribucions
-// ---------------------------------------------------------------------------
-const CATEGORIES = [
-  ['direccio', 8, 0.45], ['comandament', 28, 0.55], ['tecnic_superior', 70, 0.63],
-  ['tecnic', 62, 0.58], ['administratiu', 34, 0.74], ['informacio_turistica', 88, 0.66],
-  ['operacions', 46, 0.41],
-];
-const FRANGES = [['<30', 0.16], ['30-39', 0.27], ['40-49', 0.3], ['50-59', 0.2], ['>=60', 0.07]];
-const plantilla = [];
-const efectiusAny = { 2021: 0.82, 2022: 0.9, 2023: 0.97, 2024: 1.0, 2025: 1.03, 2026: 1.05 };
-for (const any of Object.keys(efectiusAny).map(Number)) {
-  for (const [cat, base, pctDona] of CATEGORIES) {
-    const total = Math.round(base * efectiusAny[any] * between(0.95, 1.05));
-    for (const [sexe, pct] of [['dona', pctDona + (any - 2021) * 0.004], ['home', 1 - pctDona - (any - 2021) * 0.004]]) {
-      const nSexe = Math.round(total * pct);
-      for (const [franja, pf] of FRANGES) {
-        const nf = Math.round(nSexe * pf);
-        if (!nf) continue;
-        const temporal = cat === 'informacio_turistica' || cat === 'operacions' ? Math.round(nf * (any >= 2023 ? 0.12 : 0.24)) : Math.round(nf * 0.05);
-        const fixDisc = cat === 'informacio_turistica' ? Math.round(nf * 0.15) : 0;
-        const indef = nf - temporal - fixDisc;
-        for (const [relacio, n] of [['indefinit', indef], ['temporal', temporal], ['fix_discontinu', fixDisc]]) {
-          if (n > 0) plantilla.push({ any, data_referencia: `${any}-12-31`, categoria: cat, sexe, franja_edat: franja, tipus_relacio: relacio, efectius: n });
-        }
-      }
-    }
-  }
-}
-save('plantilla', { ...META, dades: plantilla });
-
-const retribucions = [];
-const BANDES = {
-  direccio: [78000, 112000], comandament: [56000, 76000], tecnic_superior: [41000, 55000],
-  tecnic: [33000, 42000], administratiu: [27000, 34000], informacio_turistica: [24500, 31000], operacions: [23500, 30500],
-};
-for (const any of [2022, 2023, 2024, 2025, 2026]) {
-  const inc = { 2022: 1, 2023: 1.025, 2024: 1.045, 2025: 1.07, 2026: 1.09 }[any];
-  for (const [cat, [mn, mx]] of Object.entries(BANDES)) {
-    const mitjanaD = between(mn, mx) * inc;
-    const bretxa = cat === 'direccio' ? between(0.02, 0.07) : between(-0.01, 0.045);
-    retribucions.push({
-      any, categoria: cat,
-      retribucio_minima: round2(mn * inc), retribucio_maxima: round2(mx * inc),
-      retribucio_mitjana_dones: round2(mitjanaD * (1 - bretxa / 2)),
-      retribucio_mitjana_homes: round2(mitjanaD * (1 + bretxa / 2)),
-    });
-  }
-}
-save('retribucions', { ...META, unitat: 'EUR bruts anuals', dades: retribucions });
-
-// Alts càrrecs i personal directiu (per lloc, sense dades personals en el prototip)
-const altsCarrecs = [
-  { lloc: 'direccio_general', organ: 'Direcció General', tipus_vinculacio: 'alta_direccio', retribucio_fixa: 128500, retribucio_variable_maxima: 0, data_nomenament: '2023-03-01', declaracio_interessos: true, declaracio_patrimonial: true, compatibilitat: 'no_consta_activitat' },
-  { lloc: 'direccio_promocio', organ: 'Direcció de Promoció i Màrqueting', tipus_vinculacio: 'personal_directiu', retribucio_fixa: 98200, retribucio_variable_maxima: 0, data_nomenament: '2021-09-15', declaracio_interessos: true, declaracio_patrimonial: false, compatibilitat: 'no_consta_activitat' },
-  { lloc: 'direccio_convention_bureau', organ: 'Direcció del Barcelona Convention Bureau', tipus_vinculacio: 'personal_directiu', retribucio_fixa: 92400, retribucio_variable_maxima: 0, data_nomenament: '2020-02-01', declaracio_interessos: true, declaracio_patrimonial: false, compatibilitat: 'docencia_autoritzada' },
-  { lloc: 'direccio_productes', organ: 'Direcció de Productes Turístics', tipus_vinculacio: 'personal_directiu', retribucio_fixa: 95800, retribucio_variable_maxima: 0, data_nomenament: '2022-05-09', declaracio_interessos: true, declaracio_patrimonial: false, compatibilitat: 'no_consta_activitat' },
-  { lloc: 'direccio_economica', organ: 'Direcció Economicofinancera i de Serveis Generals', tipus_vinculacio: 'personal_directiu', retribucio_fixa: 94100, retribucio_variable_maxima: 0, data_nomenament: '2019-11-04', declaracio_interessos: true, declaracio_patrimonial: false, compatibilitat: 'no_consta_activitat' },
-  { lloc: 'direccio_sostenibilitat', organ: 'Direcció de Turisme Sostenible i Territori', tipus_vinculacio: 'personal_directiu', retribucio_fixa: 89600, retribucio_variable_maxima: 0, data_nomenament: '2024-01-08', declaracio_interessos: true, declaracio_patrimonial: false, compatibilitat: 'no_consta_activitat' },
-];
-save('alts-carrecs', { ...META, unitat: 'EUR bruts anuals', dades: altsCarrecs });
-
-// Agenda institucional (darrers 12 mesos)
-const ACTIVITATS = [
-  ['reunio', 'Reunió amb representants del sector hoteler'], ['reunio', 'Reunió de coordinació amb l\'Ajuntament de Barcelona'],
-  ['fira', 'Assistència a fira professional internacional de turisme'], ['acte', 'Presentació de dades del balanç turístic'],
-  ['reunio', 'Reunió amb associació veïnal sobre gestió de fluxos'], ['viatge', 'Missió comercial a mercat emissor'],
-  ['acte', 'Lliurament de premis de congressos de la ciutat'], ['reunio', 'Reunió amb operador de creuers'],
-  ['reunio', 'Reunió amb grup d\'interès inscrit al registre'], ['organ', 'Sessió del Comitè Executiu'],
-  ['organ', 'Sessió del Consell General'], ['acte', 'Jornada sobre turisme sostenible i ciutat'],
-];
+// 7. AGENDA -------------------------------------------------------------------
+const ACT = [['reunion', 'Reunión con la asociación de vecinos'], ['reunion', 'Reunión con empresa adjudicataria del servicio de limpieza'], ['acto', 'Inauguración de la reforma del parque'],
+  ['pleno', 'Sesión ordinaria del Pleno'], ['junta', 'Junta de Gobierno Local'], ['reunion', 'Reunión con la Diputación Provincial'], ['acto', 'Acto de entrega de premios escolares'],
+  ['reunion', 'Reunión con asociación empresarial'], ['viaje', 'Asamblea de la federación de municipios']];
 const agenda = [];
-let d = new Date('2025-11-03T00:00:00Z');
-const fi = new Date('2026-11-06T00:00:00Z');
-while (d <= fi) {
-  if (d.getUTCDay() > 0 && d.getUTCDay() < 6 && rnd() < 0.42) {
-    const [tipus, activitat] = pick(ACTIVITATS);
-    const lloc = weighted([['direccio_general', 5], ['direccio_promocio', 2], ['direccio_convention_bureau', 2], ['direccio_productes', 1], ['direccio_sostenibilitat', 1]]);
-    agenda.push({
-      data: d.toISOString().slice(0, 10), carrec: lloc, tipus, activitat,
-      grup_interes_registrat: tipus === 'reunio' ? rnd() < 0.55 : false,
-      codi_registre_gi: null,
-      lloc_activitat: tipus === 'viatge' || tipus === 'fira' ? pick(['Londres', 'Nova York', 'Berlín', 'Tòquio', 'Madrid', 'Seül', 'Milà', 'Dubai']) : 'Barcelona',
-    });
-    const last = agenda[agenda.length - 1];
-    if (last.grup_interes_registrat) last.codi_registre_gi = `RGI-${int(1000, 9999)}`;
+const d = new Date('2025-11-03T00:00:00Z');
+while (d <= new Date('2026-11-12T00:00:00Z')) {
+  if (d.getUTCDay() > 0 && d.getUTCDay() < 6 && rnd() < 0.45) {
+    const [tipo, asunto] = pick(ACT);
+    agenda.push({ fecha: d.toISOString().slice(0, 10), cargo_id: weighted([['C01', 5], ['C02', 2], ['C03', 1], ['C04', 1]]), tipo, asunto, lugar: tipo === 'viaje' ? 'Valencia' : 'Casa Consistorial', grupo_interes: tipo === 'reunion' && /empresa|empresarial/.test(asunto) ? `Inscrito RGI-${int(100, 999)}` : '' });
   }
   d.setUTCDate(d.getUTCDate() + 1);
 }
-agenda.sort((a, b) => b.data.localeCompare(a.data));
-save('agenda', { ...META, dades: agenda });
+agenda.sort((a, b) => b.fecha.localeCompare(a.fecha));
+save('agenda', 'manual', agenda);
 
-const regals = [];
-for (let i = 0; i < 26; i++) {
-  const y = pick([2024, 2025, 2026]);
-  regals.push({
-    data: iso(y, int(1, y === 2026 ? 10 : 12), int(1, 28)),
-    carrec: pick(Object.values(altsCarrecs).map((a) => a.lloc)),
-    descripcio: pick(['Llibre institucional', 'Obsequi protocol·lari d\'una delegació estrangera', 'Entrades a esdeveniment cultural', 'Producte gastronòmic', 'Peça d\'artesania']),
-    valor_estimat: round2(between(15, 240)),
-    destinacio: pick(['fons_patrimonial', 'retornat', 'donacio_entitat_social', 'fons_patrimonial']),
-  });
-}
-regals.sort((a, b) => b.data.localeCompare(a.data));
-save('regals', { ...META, unitat: 'EUR', dades: regals });
-
-// ---------------------------------------------------------------------------
-// 5. INDICADORS TURÍSTICS (sèrie mensual 2019-01 → 2026-09)
-// ---------------------------------------------------------------------------
-const estac = [0.68, 0.72, 0.86, 0.99, 1.06, 1.12, 1.18, 1.17, 1.13, 1.08, 0.83, 0.78];
-const covid = (y, m) => {
-  if (y === 2020) return [1, 0.95, 0.42, 0.01, 0.02, 0.08, 0.28, 0.33, 0.22, 0.18, 0.1, 0.12][m - 1];
-  if (y === 2021) return [0.1, 0.11, 0.14, 0.17, 0.22, 0.35, 0.5, 0.58, 0.55, 0.63, 0.66, 0.6][m - 1];
-  if (y === 2022) return [0.55, 0.66, 0.78, 0.86, 0.9, 0.94, 0.96, 0.96, 0.97, 0.98, 0.95, 0.97][m - 1];
-  return { 2019: 1, 2023: 1.02, 2024: 1.05, 2025: 1.07, 2026: 1.085 }[y];
-};
-const indicadors = [];
-for (let y = 2019; y <= 2026; y++) {
-  for (let m = 1; m <= 12; m++) {
-    if (y === 2026 && m > 9) break;
-    const f = covid(y, m) * estac[m - 1];
-    const noise = () => between(0.97, 1.03);
-    const pernoctacions = Math.round(1_720_000 * f * noise());
-    const turistes = Math.round(pernoctacions / between(2.45, 2.7));
-    const ocupacio = Math.min(94, Math.max(3, 79 * Math.pow(f, 0.85) * noise()));
-    const preuBase = 128 * Math.pow(1.045, Math.max(0, y - 2019));
-    const adr = Math.max(55, preuBase * (0.78 + 0.28 * estac[m - 1]) * (f < 0.5 ? 0.72 : 1) * noise());
-    const creuers = Math.round((y === 2020 && m > 3) || (y === 2021 && m < 7) ? 0 : 260_000 * covid(y, m) * [0.25, 0.22, 0.45, 1.05, 1.25, 1.3, 1.35, 1.3, 1.35, 1.4, 0.95, 0.55][m - 1] * noise());
-    indicadors.push({
-      periode: `${y}-${pad(m)}`,
-      any: y, mes: m,
-      pernoctacions_hoteleres: pernoctacions,
-      turistes_hotelers: turistes,
-      ocupacio_hotelera_pct: round2(ocupacio),
-      preu_mitja_habitacio_eur: round2(adr),
-      passatgers_aeroport: Math.round(4_400_000 * f * noise()),
-      creueristes: creuers,
-      consultes_oficines_informacio: Math.round(210_000 * Math.pow(f, 1.1) * noise() * (y >= 2024 ? 0.9 : 1)),
-      vendes_targeta_turistica: Math.round(36_000 * f * noise()),
-      usuaris_bus_turistic: Math.round(205_000 * Math.pow(f, 1.15) * noise()),
-    });
+// 8. PLANTILLA ------------------------------------------------------------------
+const plantilla = [];
+const BASE = { funcionario: { A1: 6, A2: 9, C1: 28, C2: 22, AP: 8 }, interino: { A1: 1, A2: 3, C1: 4, C2: 5, AP: 2 }, laboral_fijo: { A2: 2, C1: 3, C2: 8, AP: 12 }, laboral_temporal: { C2: 6, AP: 9 }, eventual: { A2: 1 } };
+for (const anio of [2021, 2022, 2023, 2024, 2025]) {
+  for (const [tp, gr] of Object.entries(BASE)) for (const [g, n] of Object.entries(gr)) {
+    const tot = Math.max(0, Math.round(n * (tp === 'interino' || tp === 'laboral_temporal' ? (1.3 - (anio - 2021) * 0.12) : (0.92 + (anio - 2021) * 0.03)) * between(0.9, 1.1)));
+    const muj = Math.round(tot * ({ A1: 0.5, A2: 0.6, C1: 0.45, C2: 0.62, AP: 0.35 }[g]));
+    if (muj) plantilla.push({ anio, tipo_personal: tp, grupo: g, sexo: 'mujer', efectivos: muj });
+    if (tot - muj) plantilla.push({ anio, tipo_personal: tp, grupo: g, sexo: 'hombre', efectivos: tot - muj });
   }
 }
-save('indicadors-turisme', { ...META, ambit: 'Barcelona ciutat', dades: indicadors });
+save('plantilla', 'manual', plantilla);
 
-const MERCATS = [['ES', 0.19], ['US', 0.13], ['GB', 0.08], ['FR', 0.07], ['IT', 0.06], ['DE', 0.055], ['NL', 0.03], ['CN', 0.025], ['JP', 0.018], ['KR', 0.02], ['LATAM', 0.07], ['ALTRES_EU', 0.12], ['ALTRES', 0.112]];
-const mercats = [];
-for (const y of [2019, 2022, 2023, 2024, 2025]) {
-  let parts = MERCATS.map(([codi, p]) => {
-    let adj = p * between(0.9, 1.1);
-    if (y === 2022 && ['CN', 'JP', 'KR'].includes(codi)) adj *= 0.3;
-    if (y === 2022 && codi === 'ES') adj *= 1.35;
-    if (y >= 2024 && codi === 'US') adj *= 1.15;
-    return [codi, adj];
-  });
-  const s = parts.reduce((a, [, p]) => a + p, 0);
-  for (const [codi, p] of parts) mercats.push({ any: y, mercat: codi, quota_pct: round2((p / s) * 100) });
-}
-save('mercats-origen', { ...META, base: 'turistes allotjats en establiments hotelers', dades: mercats });
+// 9. PMP y DEUDA ----------------------------------------------------------------
+const pmp = [];
+for (let y = 2022; y <= 2026; y++) for (let m = 1; m <= 12; m++) { if (y === 2026 && m > 9) break; pmp.push({ periodo: `${y}-${pad(m)}`, pmp_dias: r2(Math.max(4, 34 - (y - 2022) * 5 + between(-6, 8) + (m === 12 ? 6 : 0))) }); }
+save('pmp', 'manual', pmp);
+const deuda = [];
+let dv = 6_800_000;
+for (let y = 2019; y <= 2025; y++) { dv *= between(0.84, 0.92); deuda.push({ anio: y, deuda_viva: r2(dv), ingresos_corrientes: r2(13_500_000 * (1 + (y - 2019) * 0.035) * between(0.98, 1.02)) }); }
+save('deuda', 'manual', deuda, { unidad: 'EUR' });
 
-// Oficines i punts d'informació turística (coordenades aproximades)
-const oficines = [
-  { id: 'OIT-01', nom: 'Plaça de Catalunya', districte: 'Eixample', lat: 41.3870, lon: 2.1700, visites_2025: 0, accessible: true },
-  { id: 'OIT-02', nom: 'Plaça de Sant Jaume', districte: 'Ciutat Vella', lat: 41.3826, lon: 2.1771, visites_2025: 0, accessible: true },
-  { id: 'OIT-03', nom: 'Estació de Sants', districte: 'Sants-Montjuïc', lat: 41.3792, lon: 2.1404, visites_2025: 0, accessible: true },
-  { id: 'OIT-04', nom: 'Aeroport T1', districte: 'Fora del municipi (El Prat)', lat: 41.2885, lon: 2.0733, visites_2025: 0, accessible: true },
-  { id: 'OIT-05', nom: 'Aeroport T2', districte: 'Fora del municipi (El Prat)', lat: 41.3036, lon: 2.0767, visites_2025: 0, accessible: true },
-  { id: 'OIT-06', nom: 'Mirador de Colom', districte: 'Ciutat Vella', lat: 41.3758, lon: 2.1778, visites_2025: 0, accessible: false },
-  { id: 'OIT-07', nom: 'Sagrada Família (punt d\'informació)', districte: 'Eixample', lat: 41.4036, lon: 2.1744, visites_2025: 0, accessible: true },
-  { id: 'OIT-08', nom: 'Terminal de creuers (punt d\'informació)', districte: 'Sants-Montjuïc', lat: 41.3681, lon: 2.1795, visites_2025: 0, accessible: true },
-  { id: 'OIT-09', nom: 'Park Güell (punt d\'informació)', districte: 'Gràcia', lat: 41.4135, lon: 2.1527, visites_2025: 0, accessible: false },
-];
-for (const o of oficines) o.visites_2025 = int(60_000, 650_000);
-save('oficines-informacio', { ...META, avis_coordenades: 'Coordenades aproximades (WGS84) per a la demo.', dades: oficines });
+// 10. INMUEBLES -------------------------------------------------------------------
+const INM = [['Casa Consistorial', 'edificio', 'demanial', 'Oficinas municipales'], ['Casa de Cultura', 'edificio', 'demanial', 'Equipamiento cultural'], ['Polideportivo municipal', 'deportivo', 'demanial', 'Instalación deportiva'],
+  ['Piscina municipal', 'deportivo', 'demanial', 'Instalación deportiva'], ['CEIP Ejemplo', 'educativo', 'demanial', 'Centro educativo'], ['Escuela infantil municipal', 'educativo', 'demanial', 'Centro educativo'],
+  ['Parque central', 'parque', 'demanial', 'Zona verde'], ['Jardín de la Glorieta', 'parque', 'demanial', 'Zona verde'], ['Centro social de mayores', 'edificio', 'demanial', 'Servicios sociales'],
+  ['Retén de la Policía Local', 'edificio', 'demanial', 'Seguridad'], ['Solar del antiguo mercado', 'solar', 'patrimonial', 'Sin uso'], ['Finca rústica del camí vell', 'rustico', 'patrimonial', 'Arrendamiento agrícola'],
+  ['Almacén municipal', 'edificio', 'patrimonial', 'Almacén de la brigada'], ['Local comercial de la plaza', 'edificio', 'patrimonial', 'Alquiler']];
+const inmuebles = INM.map(([den, tipo, nat, uso], i) => ({ id: `INV-${pad(i + 1, 3)}`, denominacion: den, tipo, naturaleza: nat, direccion: `Calle Ejemplo, ${int(1, 120)}`, referencia_catastral: `${int(1000000, 9999999)}YJ${int(1000, 9999)}N0001${pick(['AB', 'KL', 'PQ'])}`, superficie_m2: r2(tipo === 'rustico' ? between(4000, 25000) : between(150, 6000)), uso, lat: r2(39.57 + between(-0.008, 0.008)) , lon: r2(-0.33 + between(-0.01, 0.01)) }));
+inmuebles.forEach((x) => { x.lat = Math.round((39.57 + between(-0.008, 0.008)) * 1e5) / 1e5; x.lon = Math.round((-0.33 + between(-0.01, 0.01)) * 1e5) / 1e5; });
+save('inmuebles', 'manual', inmuebles, { aviso_coordenadas: 'Coordenadas ficticias para la demostración.' });
 
-// ---------------------------------------------------------------------------
-// 6. DRET D'ACCÉS A LA INFORMACIÓ PÚBLICA
-// ---------------------------------------------------------------------------
-const TEMES = [['contractacio', 4], ['dades_turistiques', 5], ['pressupost', 2], ['personal', 2], ['activitat', 3], ['bon_govern', 1], ['altres', 1]];
-const dretAcces = [];
+// 11. NORMATIVA ---------------------------------------------------------------------
+const NORMAS = [['Ordenanza fiscal reguladora del Impuesto sobre Bienes Inmuebles', 'ordenanza_fiscal'], ['Ordenanza fiscal del Impuesto sobre Vehículos de Tracción Mecánica', 'ordenanza_fiscal'],
+  ['Ordenanza fiscal del Impuesto sobre Construcciones, Instalaciones y Obras', 'ordenanza_fiscal'], ['Ordenanza fiscal de la tasa de recogida de residuos', 'ordenanza_fiscal'],
+  ['Ordenanza reguladora de la convivencia ciudadana', 'ordenanza'], ['Ordenanza de tenencia de animales de compañía', 'ordenanza'], ['Ordenanza de terrazas y ocupación de la vía pública', 'ordenanza'],
+  ['Reglamento orgánico municipal', 'reglamento'], ['Reglamento de transparencia, participación y datos abiertos', 'reglamento'], ['Reglamento de la administración electrónica', 'reglamento'],
+  ['Reglamento de uso de instalaciones deportivas', 'reglamento'], ['Instrucción sobre contratación menor', 'instruccion']];
+const normativa = NORMAS.map(([titulo, tipo], i) => { const f = iso(int(2005, 2025), int(1, 12), int(1, 28)); return { id: `NOR-${pad(i + 1, 3)}`, titulo, tipo, fecha_aprobacion: f, fecha_publicacion: addDays(f, int(10, 40)), boletin: `BOP n.º ${int(1, 250)}`, url: '#', vigente: true }; });
+save('normativa', 'manual', normativa);
+
+// 12. SOLICITUDES DE ACCESO ------------------------------------------------------
+const solicitudes = [];
 let dseq = 1;
-for (const any of [2021, 2022, 2023, 2024, 2025, 2026]) {
-  const n = { 2021: 24, 2022: 31, 2023: 38, 2024: 47, 2025: 56, 2026: 44 }[any];
+for (const y of [2021, 2022, 2023, 2024, 2025, 2026]) {
+  const n = { 2021: 14, 2022: 19, 2023: 26, 2024: 31, 2025: 38, 2026: 30 }[y];
   for (let i = 0; i < n; i++) {
-    const entrada = iso(any, int(1, any === 2026 ? 10 : 12), int(1, 28));
-    const sentit = weighted([['estimacio', 58], ['estimacio_parcial', 16], ['desestimacio', 8], ['inadmissio', 10], ['desistiment', 4], ['en_tramit', any === 2026 ? 6 : 0]]);
-    const dies = sentit === 'en_tramit' ? null : Math.max(3, Math.round(between(6, 30) * (rnd() < 0.08 ? 1.6 : 1)));
-    dretAcces.push({
-      id: `DAIP-${any}-${pad(dseq++, 3)}`,
-      data_entrada: entrada,
-      canal: weighted([['seu_electronica', 7], ['correu_electronic', 2], ['presencial', 1]]),
-      tipus_sollicitant: weighted([['persona_fisica', 6], ['mitja_comunicacio', 2], ['entitat', 1.5], ['empresa', 1], ['grup_politic', 0.5]]),
-      tema: weighted(TEMES),
-      sentit_resolucio: sentit,
-      data_resolucio: dies === null ? null : addDays(entrada, dies),
-      dies_resolucio: dies,
-      reclamacio_gaip: sentit === 'desestimacio' || sentit === 'estimacio_parcial' ? rnd() < 0.3 : false,
-    });
+    const ent = iso(y, int(1, y === 2026 ? 10 : 12), int(1, 28));
+    const s = weighted([['estimada', 58], ['estimada_parcial', 15], ['desestimada', 8], ['inadmitida', 10], ['desistimiento', 4], ['en_tramite', y === 2026 ? 8 : 0]]);
+    const dias = s === 'en_tramite' ? null : Math.max(2, Math.round(between(5, 30) * (rnd() < 0.1 ? 1.5 : 1)));
+    solicitudes.push({ id: `SAI-${y}-${pad(dseq++, 3)}`, fecha_entrada: ent, canal: weighted([['sede', 7], ['registro', 2], ['correo', 1]]), tipo_solicitante: weighted([['persona', 6], ['medio', 1.5], ['asociacion', 1.5], ['empresa', 1], ['grupo_politico', 1]]),
+      tema: weighted([['contratacion', 4], ['urbanismo', 4], ['economia', 2], ['personal', 2], ['subvenciones', 1], ['servicios', 3], ['otros', 1]]), sentido: s,
+      fecha_resolucion: dias === null ? null : addDays(ent, dias), dias_resolucion: dias, reclamacion_consejo: ['desestimada', 'estimada_parcial'].includes(s) && rnd() < 0.3 });
   }
 }
-save('dret-acces', { ...META, termini_legal_dies: 30, dades: dretAcces });
+save('solicitudes-acceso', 'manual', solicitudes, { plazo_legal_dias: 30 });
 
-// ---------------------------------------------------------------------------
-// 7. PLA D'ACTUACIÓ / OBJECTIUS ESTRATÈGICS
-// ---------------------------------------------------------------------------
-const objectius = [
-  { id: 'OE1', eix: 'sostenibilitat', objectiu: 'Desconcentrar fluxos: augmentar la quota de visites fora dels 5 punts més visitats', indicador: 'Quota de visites fora d\'espais de màxima afluència (%)', valor_base: 18, valor_actual: 23.4, valor_objectiu: 28, any_objectiu: 2027, unitat: '%' },
-  { id: 'OE2', eix: 'sostenibilitat', objectiu: 'Reduir la petjada de carboni de les operacions pròpies', indicador: 'Emissions abast 1+2 (tCO₂e)', valor_base: 2140, valor_actual: 1630, valor_objectiu: 1070, any_objectiu: 2030, unitat: 'tCO₂e' },
-  { id: 'OE3', eix: 'valor', objectiu: 'Atreure congressos internacionals d\'alt valor', indicador: 'Congressos internacionals captats (ICCA)', valor_base: 142, valor_actual: 168, valor_objectiu: 180, any_objectiu: 2027, unitat: 'congressos' },
-  { id: 'OE4', eix: 'valor', objectiu: 'Augmentar la despesa mitjana per visitant', indicador: 'Despesa mitjana diària per turista (€)', valor_base: 182, valor_actual: 204, valor_objectiu: 215, any_objectiu: 2027, unitat: '€' },
-  { id: 'OE5', eix: 'ciutadania', objectiu: 'Millorar la percepció ciutadana del turisme', indicador: 'Residents que consideren el turisme beneficiós (%)', valor_base: 59, valor_actual: 63, valor_objectiu: 70, any_objectiu: 2028, unitat: '%' },
-  { id: 'OE6', eix: 'ciutadania', objectiu: 'Retornar valor als barris amb el programa de territori', indicador: 'Districtes amb projectes actius', valor_base: 4, valor_actual: 9, valor_objectiu: 10, any_objectiu: 2026, unitat: 'districtes' },
-  { id: 'OE7', eix: 'governanca', objectiu: 'Obrir les dades: publicar conjunts reutilitzables', indicador: 'Conjunts de dades publicats en format obert', valor_base: 3, valor_actual: 16, valor_objectiu: 25, any_objectiu: 2027, unitat: 'conjunts' },
-  { id: 'OE8', eix: 'governanca', objectiu: 'Reduir el termini mitjà de resposta del dret d\'accés', indicador: 'Dies mitjans de resolució', valor_base: 24, valor_actual: 16.8, valor_objectiu: 12, any_objectiu: 2027, unitat: 'dies' },
+// 13. OBLIGACIONES ------------------------------------------------------------------
+const ob = (id, bloque, norma, articulo, titulo, pagina, estado, periodicidad, conjunto = null) => ({ id, bloque, norma, articulo, titulo, pagina, estado, periodicidad, conjunto, ultima_actualizacion: estado === 'pendiente' ? null : addDays(HOY, -int(1, 80)) });
+const L19 = 'Ley 19/2013', LBRL = 'Ley 7/1985', LCSP = 'Ley 9/2017', CV = 'Ley 1/2022 CV';
+const obligaciones = [
+  ob('INS-01', 'institucional', L19, 'art. 6.1', 'Funciones y normativa de aplicación', 'organizacion', 'publicado', 'cuando_cambie'),
+  ob('INS-02', 'institucional', L19, 'art. 6.1', 'Estructura organizativa y organigrama', 'organizacion', 'publicado', 'cuando_cambie'),
+  ob('INS-03', 'institucional', L19, 'art. 6.1', 'Órganos de gobierno: composición y funciones', 'organizacion', 'publicado', 'cuando_cambie', 'cargos'),
+  ob('INS-04', 'institucional', L19, 'art. 6.2', 'Planes y programas anuales y plurianuales', 'organizacion', 'parcial', 'anual'),
+  ob('INS-05', 'institucional', L19, 'art. 6 bis', 'Registro de actividades de tratamiento de datos', 'organizacion', 'publicado', 'cuando_cambie'),
+  ob('INS-06', 'institucional', L19, 'art. 8.1.i', 'Información estadística sobre la calidad de los servicios', 'organizacion', 'pendiente', 'anual'),
+  ob('CAR-01', 'cargos', L19, 'art. 6.1', 'Identificación, perfil y trayectoria de los responsables', 'cargos', 'publicado', 'cuando_cambie', 'cargos'),
+  ob('CAR-02', 'cargos', L19, 'art. 8.1.f', 'Retribuciones de cargos electos y personal directivo', 'cargos', 'publicado', 'anual', 'cargos'),
+  ob('CAR-03', 'cargos', LBRL, 'art. 75.5', 'Régimen de dedicación y asistencias', 'cargos', 'publicado', 'anual', 'cargos'),
+  ob('CAR-04', 'cargos', L19, 'art. 8.1.h', 'Declaraciones anuales de bienes y actividades', 'cargos', 'parcial', 'anual', 'cargos'),
+  ob('CAR-05', 'cargos', L19, 'art. 8.1.g', 'Resoluciones de compatibilidad', 'cargos', 'parcial', 'cuando_cambie'),
+  ob('CAR-06', 'cargos', CV, 'grupos de interés', 'Agenda institucional y reuniones con grupos de interés', 'agenda', 'publicado', 'semanal', 'agenda'),
+  ob('JUR-01', 'juridica', L19, 'art. 7.a', 'Directrices, instrucciones y circulares', 'normativa', 'publicado', 'cuando_cambie', 'normativa'),
+  ob('JUR-02', 'juridica', L19, 'art. 7.c', 'Proyectos de ordenanzas y reglamentos', 'normativa', 'parcial', 'continua'),
+  ob('JUR-03', 'juridica', L19, 'art. 7.e', 'Documentos sometidos a información pública', 'normativa', 'publicado', 'continua'),
+  ob('JUR-04', 'juridica', LBRL, 'art. 70.2', 'Ordenanzas y reglamentos vigentes', 'normativa', 'publicado', 'cuando_cambie', 'normativa'),
+  ob('CON-01', 'contratacion', L19, 'art. 8.1.a', 'Contratos: objeto, duración, importe, procedimiento, ofertas y adjudicatario', 'contratos', 'publicado', 'continua', 'contratos'),
+  ob('CON-02', 'contratacion', L19, 'art. 8.1.a', 'Contratos menores (trimestral)', 'contratos', 'publicado', 'trimestral', 'contratos'),
+  ob('CON-03', 'contratacion', L19, 'art. 8.1.a', 'Estadística por procedimiento de contratación', 'contratos', 'publicado', 'anual', 'contratos'),
+  ob('CON-04', 'contratacion', L19, 'art. 8.1.a', 'Modificaciones y desistimientos', 'contratos', 'parcial', 'continua'),
+  ob('CON-05', 'contratacion', LCSP, 'art. 63.6', 'Encargos a medios propios', 'encargos', 'publicado', 'continua', 'encargos'),
+  ob('SUB-01', 'convenios_subvenciones', L19, 'art. 8.1.b', 'Convenios suscritos', 'convenios', 'publicado', 'trimestral', 'convenios'),
+  ob('SUB-02', 'convenios_subvenciones', L19, 'art. 8.1.c', 'Subvenciones y ayudas concedidas', 'subvenciones', 'publicado', 'trimestral', 'subvenciones'),
+  ob('SUB-03', 'convenios_subvenciones', L19, 'art. 8.1.b', 'Encomiendas de gestión', 'convenios', 'parcial', 'trimestral'),
+  ob('ECO-01', 'economica', L19, 'art. 8.1.d', 'Presupuesto y estado de ejecución', 'presupuesto', 'publicado', 'trimestral', 'presupuesto'),
+  ob('ECO-02', 'economica', L19, 'art. 8.1.d', 'Cumplimiento de estabilidad presupuestaria', 'economia', 'publicado', 'trimestral'),
+  ob('ECO-03', 'economica', L19, 'art. 8.1.e', 'Cuentas anuales e informes de auditoría y fiscalización', 'economia', 'parcial', 'anual'),
+  ob('ECO-04', 'economica', 'RD 635/2014', 'art. 6', 'Periodo medio de pago a proveedores', 'economia', 'publicado', 'mensual', 'pmp'),
+  ob('ECO-05', 'economica', 'LO 2/2012', 'art. 13', 'Deuda pública', 'economia', 'publicado', 'anual', 'deuda'),
+  ob('PAT-01', 'patrimonio', L19, 'art. 8.3', 'Relación de bienes inmuebles', 'patrimonio', 'publicado', 'anual', 'inmuebles'),
+  ob('PAT-02', 'patrimonio', CV, 'patrimonio', 'Vehículos oficiales', 'patrimonio', 'pendiente', 'anual'),
+  ob('PER-01', 'personal', CV, 'personal', 'Relación de puestos de trabajo y plantilla', 'personal', 'publicado', 'anual', 'plantilla'),
+  ob('PER-02', 'personal', CV, 'personal', 'Ofertas de empleo público y procesos selectivos', 'personal', 'parcial', 'continua'),
+  ob('ACC-01', 'acceso', L19, 'art. 17', 'Procedimiento de solicitud de acceso', 'derecho-acceso', 'publicado', 'cuando_cambie'),
+  ob('ACC-02', 'acceso', CV, 'derecho de acceso', 'Estadística de solicitudes y resoluciones', 'derecho-acceso', 'publicado', 'trimestral', 'solicitudes-acceso'),
+  ob('DAT-01', 'datos', L19, 'art. 5.4', 'Información en formatos reutilizables', 'datos-abiertos', 'publicado', 'continua'),
 ];
-save('objectius', { ...META, dades: objectius });
-
-// ---------------------------------------------------------------------------
-// 8. OBLIGACIONS DE PUBLICITAT ACTIVA (autoavaluació Llei 19/2014)
-// ---------------------------------------------------------------------------
-const ob = (id, bloc, article, titol, seccio, estat, periodicitat, conjunt = null) =>
-  ({ id, bloc, article, titol, seccio, estat, periodicitat, conjunt_dades: conjunt, darrera_actualitzacio: estat === 'pendent' ? null : addDays('2026-11-11', -int(1, 75)) });
-const obligacions = [
-  ob('INS-01', 'institucional', 'art. 9.1.a', 'Funcions, competències i normativa aplicable', 'institucio', 'publicat', 'quan_canvii'),
-  ob('INS-02', 'institucional', 'art. 9.1.b', 'Estructura organitzativa i organigrama', 'institucio', 'publicat', 'quan_canvii'),
-  ob('INS-03', 'institucional', 'art. 9.1.c', 'Òrgans de govern: composició i funcions', 'institucio', 'publicat', 'quan_canvii'),
-  ob('INS-04', 'institucional', 'art. 9.1.d', 'Ens dependents i participats', 'institucio', 'publicat', 'anual'),
-  ob('INS-05', 'institucional', 'art. 9.1.e', 'Ubicació i horaris d\'oficines', 'activitat', 'publicat', 'quan_canvii', 'oficines-informacio'),
-  ob('INS-06', 'institucional', 'art. 9.1.f', 'Inventari d\'ens i entitats vinculades', 'institucio', 'parcial', 'anual'),
-  ob('INS-07', 'institucional', 'art. 9.1.g', 'Alts càrrecs: identificació, perfil i trajectòria', 'bon-govern', 'publicat', 'quan_canvii', 'alts-carrecs'),
-  ob('INS-08', 'institucional', 'art. 11.1.b', 'Retribucions d\'alts càrrecs i personal directiu', 'bon-govern', 'publicat', 'anual', 'alts-carrecs'),
-  ob('INS-09', 'institucional', 'art. 9.1.i', 'Relació de llocs de treball i plantilla', 'personal', 'publicat', 'anual', 'plantilla'),
-  ob('INS-10', 'institucional', 'art. 9.1.j', 'Taules retributives del personal', 'personal', 'publicat', 'anual', 'retribucions'),
-  ob('INS-11', 'institucional', 'art. 9.1.l', 'Processos de selecció i provisió de llocs', 'personal', 'parcial', 'continua'),
-  ob('INS-12', 'institucional', 'art. 11.1.c', 'Declaracions d\'activitats i béns', 'bon-govern', 'parcial', 'anual', 'alts-carrecs'),
-  ob('INS-13', 'institucional', 'art. 55', 'Agenda pública dels alts càrrecs', 'bon-govern', 'publicat', 'setmanal', 'agenda'),
-  ob('INS-14', 'institucional', 'art. 55', 'Registre de regals institucionals', 'bon-govern', 'publicat', 'trimestral', 'regals'),
-  ob('ECO-01', 'economica', 'art. 11.1.a', 'Pressupost i execució trimestral', 'economia', 'publicat', 'trimestral', 'pressupost'),
-  ob('ECO-02', 'economica', 'art. 11.1.c', 'Comptes anuals i informes d\'auditoria', 'economia', 'publicat', 'anual'),
-  ob('ECO-03', 'economica', 'art. 11.1.d', 'Informes de control financer i de la Sindicatura', 'economia', 'parcial', 'quan_canvii'),
-  ob('ECO-04', 'economica', 'art. 11.1.e', 'Període mitjà de pagament a proveïdors', 'economia', 'publicat', 'mensual'),
-  ob('ECO-05', 'economica', 'art. 11.1.f', 'Endeutament i estabilitat pressupostària', 'economia', 'publicat', 'trimestral'),
-  ob('ECO-06', 'economica', 'art. 11.1.g', 'Inventari de béns i drets (patrimoni)', 'economia', 'pendent', 'anual'),
-  ob('CON-01', 'contractacio', 'art. 13.1.a', 'Perfil de contractant i licitacions en curs', 'contractacio', 'publicat', 'continua'),
-  ob('CON-02', 'contractacio', 'art. 13.1.b', 'Contractes adjudicats: objecte, import, adjudicatari', 'contractacio', 'publicat', 'continua', 'contractes'),
-  ob('CON-03', 'contractacio', 'art. 13.1.c', 'Contractes menors (relació trimestral)', 'contractacio', 'publicat', 'trimestral', 'contractes'),
-  ob('CON-04', 'contractacio', 'art. 13.1.d', 'Modificacions, pròrrogues i resolucions', 'contractacio', 'publicat', 'continua', 'contractes'),
-  ob('CON-05', 'contractacio', 'art. 13.1.e', 'Estadístiques de contractació per procediment', 'contractacio', 'publicat', 'anual', 'contractes'),
-  ob('CON-06', 'contractacio', 'art. 13.1.f', 'Composició de les meses de contractació', 'contractacio', 'parcial', 'continua'),
-  ob('CNV-01', 'convenis', 'art. 14.1', 'Relació de convenis vigents i signats', 'subvencions', 'publicat', 'trimestral', 'convenis'),
-  ob('CNV-02', 'convenis', 'art. 14.2', 'Text íntegre dels convenis', 'subvencions', 'parcial', 'trimestral', 'convenis'),
-  ob('SUB-01', 'subvencions', 'art. 15.1.a', 'Línies i bases reguladores de subvencions', 'subvencions', 'publicat', 'anual'),
-  ob('SUB-02', 'subvencions', 'art. 15.1.c', 'Subvencions i ajuts atorgats amb beneficiaris', 'subvencions', 'publicat', 'trimestral', 'subvencions'),
-  ob('SUB-03', 'subvencions', 'art. 15.1.d', 'Justificació i control de subvencions', 'subvencions', 'parcial', 'anual', 'subvencions'),
-  ob('PLA-01', 'planificacio', 'art. 12', 'Plans i programes anuals i plurianuals', 'activitat', 'publicat', 'anual', 'objectius'),
-  ob('PLA-02', 'planificacio', 'art. 12', 'Grau de compliment i indicadors dels plans', 'activitat', 'publicat', 'semestral', 'objectius'),
-  ob('PLA-03', 'planificacio', 'art. 11.1.i', 'Estadístiques i dades d\'activitat (indicadors turístics)', 'activitat', 'publicat', 'mensual', 'indicadors-turisme'),
-  ob('PLA-04', 'planificacio', 'art. 12', 'Cartes de serveis i avaluació de la qualitat', 'activitat', 'pendent', 'anual'),
-  ob('DAC-01', 'dret_acces', 'art. 18', 'Procediment per exercir el dret d\'accés', 'dret-acces', 'publicat', 'quan_canvii'),
-  ob('DAC-02', 'dret_acces', 'art. 14.4', 'Estadístiques de sol·licituds i resolucions', 'dret-acces', 'publicat', 'trimestral', 'dret-acces'),
-  ob('DAC-03', 'dret_acces', 'art. 8.1.m', 'Resolucions estimatòries de la GAIP', 'dret-acces', 'parcial', 'continua'),
-  ob('NOR-01', 'normativa', 'art. 10.1', 'Estatuts, reglaments i instruccions interpretatives', 'institucio', 'publicat', 'quan_canvii'),
-  ob('NOR-02', 'normativa', 'art. 10.1.c', 'Codi ètic i de conducta', 'bon-govern', 'publicat', 'quan_canvii'),
-  ob('NOR-03', 'normativa', 'art. 10.1.f', 'Canal intern d\'informació (Llei 2/2023) i mesures antifrau', 'bon-govern', 'publicat', 'quan_canvii'),
-  ob('DAT-01', 'dades_obertes', 'art. 17', 'Catàleg de dades obertes reutilitzables (DCAT-AP)', 'dades-obertes', 'publicat', 'continua'),
-];
-save('obligacions', { ...META, marc_normatiu: 'Llei 19/2014, del 29 de desembre, de transparència, accés a la informació pública i bon govern', dades: obligacions });
-
-console.log('Fet.');
+save('obligaciones', 'manual', obligaciones, { marco: 'Ley 19/2013, Ley 7/1985, Ley 9/2017 y Ley 1/2022 de la Comunitat Valenciana' });
+console.log('Hecho.');

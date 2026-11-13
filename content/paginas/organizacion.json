@@ -1,0 +1,124 @@
+{
+ "id": "organizacion",
+ "icono": "building",
+ "titulo": {
+  "es": "Organización y funciones",
+  "va": "Organització i funcions",
+  "en": "Organisation and functions"
+ },
+ "intro": {
+  "es": "Qué hace la entidad, cómo se organiza y quién la gobierna.",
+  "va": "Què fa l’entitat, com s’organitza i qui la governa.",
+  "en": "What the council does, how it is organised and who governs it."
+ },
+ "bloques": [
+  {
+   "tipo": "texto",
+   "titulo": {
+    "es": "Funciones",
+    "va": "Funcions",
+    "en": "Functions"
+   },
+   "contenido": {
+    "es": "El Ayuntamiento ejerce las competencias que le atribuye la **Ley 7/1985, reguladora de las Bases del Régimen Local** (arts. 25 y 26) y la legislación autonómica: urbanismo, medio ambiente urbano, abastecimiento de agua, alumbrado, recogida de residuos, servicios sociales, policía local, cultura, deporte, fiestas y promoción de la actividad económica.\n\nEdita este texto desde el editor de contenidos para adaptarlo a la entidad.",
+    "va": "L’Ajuntament exerceix les competències que li atribueix la **Llei 7/1985, reguladora de les Bases del Règim Local** (arts. 25 i 26) i la legislació autonòmica: urbanisme, medi ambient urbà, abastiment d’aigua, enllumenat, recollida de residus, serveis socials, policia local, cultura, esport, festes i promoció de l’activitat econòmica.\n\nEdita aquest text des de l’editor de continguts per a adaptar-lo a l’entitat.",
+    "en": "The council exercises the powers granted by **Law 7/1985 on Local Government** (arts. 25 and 26) and regional legislation: planning, urban environment, water supply, street lighting, waste collection, social services, local police, culture, sport, festivals and economic development.\n\nEdit this text in the content editor to fit your organisation."
+   }
+  },
+  {
+   "tipo": "enlaces",
+   "titulo": {
+    "es": "Órganos de gobierno",
+    "va": "Òrgans de govern",
+    "en": "Governing bodies"
+   },
+   "items": [
+    {
+     "titulo": {
+      "es": "Pleno",
+      "va": "Ple",
+      "en": "Full council"
+     },
+     "texto": {
+      "es": "Órgano de máxima representación política. Lo integran todos los concejales y concejalas.",
+      "va": "Òrgan de màxima representació política. L’integren tots els regidors i regidores.",
+      "en": "Highest representative body, made up of all councillors."
+     },
+     "url": "#/cargos",
+     "icono": "users"
+    },
+    {
+     "titulo": {
+      "es": "Junta de Gobierno Local",
+      "va": "Junta de Govern Local",
+      "en": "Governing board"
+     },
+     "texto": {
+      "es": "Asiste a la Alcaldía y ejerce las atribuciones delegadas.",
+      "va": "Assisteix l’Alcaldia i exerceix les atribucions delegades.",
+      "en": "Assists the mayor and exercises delegated powers."
+     },
+     "url": "#/cargos",
+     "icono": "users"
+    },
+    {
+     "titulo": {
+      "es": "Alcaldía",
+      "va": "Alcaldia",
+      "en": "Mayor"
+     },
+     "texto": {
+      "es": "Dirige el gobierno y la administración municipal.",
+      "va": "Dirigeix el govern i l’administració municipal.",
+      "en": "Leads the municipal government and administration."
+     },
+     "url": "#/cargos",
+     "icono": "building"
+    }
+   ]
+  },
+  {
+   "tipo": "documentos",
+   "titulo": {
+    "es": "Documentos",
+    "va": "Documents",
+    "en": "Documents"
+   },
+   "items": [
+    {
+     "titulo": {
+      "es": "Organigrama municipal",
+      "va": "Organigrama municipal",
+      "en": "Organisation chart"
+     },
+     "fecha": "2025-01-15",
+     "url": "#",
+     "formato": "PDF"
+    },
+    {
+     "titulo": {
+      "es": "Registro de actividades de tratamiento",
+      "va": "Registre d’activitats de tractament",
+      "en": "Record of processing activities"
+     },
+     "fecha": "2025-03-01",
+     "url": "#",
+     "formato": "PDF"
+    },
+    {
+     "titulo": {
+      "es": "Plan de actuación municipal",
+      "va": "Pla d’actuació municipal",
+      "en": "Municipal action plan"
+     },
+     "fecha": "2024-02-10",
+     "url": "#",
+     "formato": "PDF"
+    }
+   ]
+  },
+  {
+   "tipo": "indicadores"
+  }
+ ]
+}

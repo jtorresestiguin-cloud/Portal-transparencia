@@ -1,9 +1,0 @@
-id,eix,objectiu,indicador,valor_base,valor_actual,valor_objectiu,any_objectiu,unitat
-OE1,sostenibilitat,Desconcentrar fluxos: augmentar la quota de visites fora dels 5 punts més visitats,Quota de visites fora d'espais de màxima afluència (%),18,23.4,28,2027,%
-OE2,sostenibilitat,Reduir la petjada de carboni de les operacions pròpies,Emissions abast 1+2 (tCO₂e),2140,1630,1070,2030,tCO₂e
-OE3,valor,Atreure congressos internacionals d'alt valor,Congressos internacionals captats (ICCA),142,168,180,2027,congressos
-OE4,valor,Augmentar la despesa mitjana per visitant,Despesa mitjana diària per turista (€),182,204,215,2027,€
-OE5,ciutadania,Millorar la percepció ciutadana del turisme,Residents que consideren el turisme beneficiós (%),59,63,70,2028,%
-OE6,ciutadania,Retornar valor als barris amb el programa de territori,Districtes amb projectes actius,4,9,10,2026,districtes
-OE7,governanca,Obrir les dades: publicar conjunts reutilitzables,Conjunts de dades publicats en format obert,3,16,25,2027,conjunts
-OE8,governanca,Reduir el termini mitjà de resposta del dret d'accés,Dies mitjans de resolució,24,16.8,12,2027,dies

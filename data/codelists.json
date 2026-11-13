@@ -1,194 +1,917 @@
 {
-  "descripcio": "Llistes de codis controlades (vocabularis) utilitzades pels conjunts de dades. Cada codi té etiqueta en català, castellà i anglès. Els codis són estables i són els que apareixen als fitxers CSV/JSON.",
-  "capitol_ingres": {
-    "3": { "ca": "Taxes, vendes i prestació de serveis", "es": "Tasas, ventas y prestación de servicios", "en": "Fees, sales and services" },
-    "4": { "ca": "Transferències corrents", "es": "Transferencias corrientes", "en": "Current transfers" },
-    "5": { "ca": "Ingressos patrimonials", "es": "Ingresos patrimoniales", "en": "Property income" },
-    "7": { "ca": "Transferències de capital", "es": "Transferencias de capital", "en": "Capital transfers" }
+ "descripcion": "Listas de códigos controladas. Cada código tiene etiqueta en castellano, valenciano e inglés. Los códigos de contratación siguen las listas CODICE de la Plataforma de Contratación del Sector Público (verificar contra la versión oficial vigente).",
+ "capitulo_ingreso": {
+  "1": {
+   "es": "Impuestos directos",
+   "va": "Imposts directes",
+   "en": "Direct taxes"
   },
-  "capitol_despesa": {
-    "1": { "ca": "Despeses de personal", "es": "Gastos de personal", "en": "Staff costs" },
-    "2": { "ca": "Béns corrents i serveis", "es": "Bienes corrientes y servicios", "en": "Goods and services" },
-    "3": { "ca": "Despeses financeres", "es": "Gastos financieros", "en": "Financial expenses" },
-    "4": { "ca": "Transferències corrents", "es": "Transferencias corrientes", "en": "Current transfers" },
-    "6": { "ca": "Inversions reals", "es": "Inversiones reales", "en": "Capital investment" }
+  "2": {
+   "es": "Impuestos indirectos",
+   "va": "Imposts indirectes",
+   "en": "Indirect taxes"
   },
-  "programa": {
-    "P1": { "ca": "Promoció i màrqueting de la destinació", "es": "Promoción y marketing del destino", "en": "Destination promotion & marketing" },
-    "P2": { "ca": "Barcelona Convention Bureau (MICE)", "es": "Barcelona Convention Bureau (MICE)", "en": "Barcelona Convention Bureau (MICE)" },
-    "P3": { "ca": "Informació i atenció al visitant", "es": "Información y atención al visitante", "en": "Visitor information services" },
-    "P4": { "ca": "Productes i serveis turístics", "es": "Productos y servicios turísticos", "en": "Tourism products & services" },
-    "P5": { "ca": "Turisme sostenible i territori", "es": "Turismo sostenible y territorio", "en": "Sustainable tourism & neighbourhoods" },
-    "P6": { "ca": "Estructura i serveis generals", "es": "Estructura y servicios generales", "en": "Overheads & general services" }
+  "3": {
+   "es": "Tasas, precios públicos y otros ingresos",
+   "va": "Taxes, preus públics i altres ingressos",
+   "en": "Fees, public prices and other revenue"
   },
-  "tipus_contracte": {
-    "serveis": { "ca": "Serveis", "es": "Servicios", "en": "Services" },
-    "subministrament": { "ca": "Subministrament", "es": "Suministro", "en": "Supplies" },
-    "obres": { "ca": "Obres", "es": "Obras", "en": "Works" }
+  "4": {
+   "es": "Transferencias corrientes",
+   "va": "Transferències corrents",
+   "en": "Current transfers"
   },
-  "procediment": {
-    "obert": { "ca": "Obert", "es": "Abierto", "en": "Open" },
-    "obert_simplificat": { "ca": "Obert simplificat", "es": "Abierto simplificado", "en": "Simplified open" },
-    "simplificat_abreujat": { "ca": "Simplificat abreujat", "es": "Simplificado abreviado", "en": "Fast-track simplified" },
-    "menor": { "ca": "Contracte menor", "es": "Contrato menor", "en": "Minor contract" },
-    "negociat_sense_publicitat": { "ca": "Negociat sense publicitat", "es": "Negociado sin publicidad", "en": "Negotiated without notice" },
-    "basat_acord_marc": { "ca": "Basat en acord marc", "es": "Basado en acuerdo marco", "en": "Framework call-off" }
+  "5": {
+   "es": "Ingresos patrimoniales",
+   "va": "Ingressos patrimonials",
+   "en": "Property income"
   },
-  "cpv": {
-    "79341000": { "ca": "Serveis de publicitat", "es": "Servicios de publicidad", "en": "Advertising services" },
-    "79342000": { "ca": "Serveis de màrqueting", "es": "Servicios de marketing", "en": "Marketing services" },
-    "79952000": { "ca": "Organització d'esdeveniments", "es": "Organización de eventos", "en": "Event services" },
-    "72000000": { "ca": "Serveis TI", "es": "Servicios TI", "en": "IT services" },
-    "79810000": { "ca": "Serveis d'impressió", "es": "Servicios de impresión", "en": "Printing services" },
-    "90910000": { "ca": "Serveis de neteja", "es": "Servicios de limpieza", "en": "Cleaning services" },
-    "79710000": { "ca": "Serveis de seguretat", "es": "Servicios de seguridad", "en": "Security services" },
-    "60100000": { "ca": "Transport per carretera", "es": "Transporte por carretera", "en": "Road transport" },
-    "79530000": { "ca": "Traducció", "es": "Traducción", "en": "Translation" },
-    "39294100": { "ca": "Material informatiu i promocional", "es": "Material informativo y promocional", "en": "Information & promotional material" },
-    "48000000": { "ca": "Paquets de programari", "es": "Paquetes de software", "en": "Software packages" },
-    "79311000": { "ca": "Estudis i enquestes", "es": "Estudios y encuestas", "en": "Surveys & studies" },
-    "79400000": { "ca": "Consultoria", "es": "Consultoría", "en": "Consulting" },
-    "30213000": { "ca": "Ordinadors personals", "es": "Ordenadores personales", "en": "Personal computers" },
-    "45400000": { "ca": "Treballs d'acabat d'edificis", "es": "Trabajos de acabado de edificios", "en": "Building completion work" },
-    "45310000": { "ca": "Instal·lacions elèctriques", "es": "Instalaciones eléctricas", "en": "Electrical installation" },
-    "92312000": { "ca": "Serveis artístics i culturals", "es": "Servicios artísticos y culturales", "en": "Artistic & cultural services" },
-    "79822500": { "ca": "Disseny gràfic", "es": "Diseño gráfico", "en": "Graphic design" }
+  "6": {
+   "es": "Enajenación de inversiones reales",
+   "va": "Alienació d’inversions reals",
+   "en": "Sale of real investments"
   },
-  "linia_subvencio": {
-    "L1": { "ca": "Dinamització turística de barris", "es": "Dinamización turística de barrios", "en": "Neighbourhood tourism projects" },
-    "L2": { "ca": "Esdeveniments i congressos", "es": "Eventos y congresos", "en": "Events & conferences" },
-    "L3": { "ca": "Projectes singulars", "es": "Proyectos singulares", "en": "Special projects" },
-    "L4": { "ca": "Entitats del sector (nominatives)", "es": "Entidades del sector (nominativas)", "en": "Sector bodies (nominative)" }
+  "7": {
+   "es": "Transferencias de capital",
+   "va": "Transferències de capital",
+   "en": "Capital transfers"
   },
-  "modalitat_subvencio": {
-    "concurrencia": { "ca": "Concurrència competitiva", "es": "Concurrencia competitiva", "en": "Competitive call" },
-    "directa": { "ca": "Concessió directa", "es": "Concesión directa", "en": "Direct award" },
-    "nominativa": { "ca": "Nominativa", "es": "Nominativa", "en": "Nominative" }
+  "8": {
+   "es": "Activos financieros",
+   "va": "Actius financers",
+   "en": "Financial assets"
   },
-  "estat_justificacio": {
-    "justificada": { "ca": "Justificada", "es": "Justificada", "en": "Accounted for" },
-    "en_revisio": { "ca": "En revisió", "es": "En revisión", "en": "Under review" },
-    "reintegrament_parcial": { "ca": "Reintegrament parcial", "es": "Reintegro parcial", "en": "Partial repayment" },
-    "pendent": { "ca": "Pendent", "es": "Pendiente", "en": "Pending" }
-  },
-  "tipus_part": {
-    "administracio": { "ca": "Administració pública", "es": "Administración pública", "en": "Public administration" },
-    "privat": { "ca": "Entitat privada", "es": "Entidad privada", "en": "Private entity" },
-    "universitat": { "ca": "Universitat / recerca", "es": "Universidad / investigación", "en": "University / research" },
-    "entitat": { "ca": "Entitat sense ànim de lucre", "es": "Entidad sin ánimo de lucro", "en": "Non-profit" },
-    "internacional": { "ca": "Organisme internacional", "es": "Organismo internacional", "en": "International body" }
-  },
-  "categoria": {
-    "direccio": { "ca": "Direcció", "es": "Dirección", "en": "Senior management" },
-    "comandament": { "ca": "Comandament intermedi", "es": "Mando intermedio", "en": "Middle management" },
-    "tecnic_superior": { "ca": "Tècnic/a superior", "es": "Técnico/a superior", "en": "Senior specialist" },
-    "tecnic": { "ca": "Tècnic/a", "es": "Técnico/a", "en": "Specialist" },
-    "administratiu": { "ca": "Administratiu/va", "es": "Administrativo/a", "en": "Administrative" },
-    "informacio_turistica": { "ca": "Informació turística", "es": "Información turística", "en": "Visitor information" },
-    "operacions": { "ca": "Operacions i producte", "es": "Operaciones y producto", "en": "Operations & products" }
-  },
-  "sexe": {
-    "dona": { "ca": "Dones", "es": "Mujeres", "en": "Women" },
-    "home": { "ca": "Homes", "es": "Hombres", "en": "Men" }
-  },
-  "tipus_relacio": {
-    "indefinit": { "ca": "Indefinit", "es": "Indefinido", "en": "Permanent" },
-    "temporal": { "ca": "Temporal", "es": "Temporal", "en": "Temporary" },
-    "fix_discontinu": { "ca": "Fix discontinu", "es": "Fijo discontinuo", "en": "Seasonal permanent" }
-  },
-  "lloc": {
-    "direccio_general": { "ca": "Direcció General", "es": "Dirección General", "en": "Director General" },
-    "direccio_promocio": { "ca": "Direcció de Promoció i Màrqueting", "es": "Dirección de Promoción y Marketing", "en": "Promotion & Marketing Director" },
-    "direccio_convention_bureau": { "ca": "Direcció del Convention Bureau", "es": "Dirección del Convention Bureau", "en": "Convention Bureau Director" },
-    "direccio_productes": { "ca": "Direcció de Productes Turístics", "es": "Dirección de Productos Turísticos", "en": "Tourism Products Director" },
-    "direccio_economica": { "ca": "Direcció Economicofinancera", "es": "Dirección Económico-financiera", "en": "Finance Director" },
-    "direccio_sostenibilitat": { "ca": "Direcció de Turisme Sostenible", "es": "Dirección de Turismo Sostenible", "en": "Sustainable Tourism Director" }
-  },
-  "tipus_agenda": {
-    "reunio": { "ca": "Reunió", "es": "Reunión", "en": "Meeting" },
-    "fira": { "ca": "Fira", "es": "Feria", "en": "Trade fair" },
-    "acte": { "ca": "Acte públic", "es": "Acto público", "en": "Public event" },
-    "viatge": { "ca": "Viatge institucional", "es": "Viaje institucional", "en": "Official trip" },
-    "organ": { "ca": "Òrgan de govern", "es": "Órgano de gobierno", "en": "Governing body" }
-  },
-  "destinacio_regal": {
-    "fons_patrimonial": { "ca": "Fons patrimonial", "es": "Fondo patrimonial", "en": "Institutional collection" },
-    "retornat": { "ca": "Retornat", "es": "Devuelto", "en": "Returned" },
-    "donacio_entitat_social": { "ca": "Donat a entitat social", "es": "Donado a entidad social", "en": "Donated to charity" }
-  },
-  "mercat": {
-    "ES": { "ca": "Espanya", "es": "España", "en": "Spain" },
-    "US": { "ca": "Estats Units", "es": "Estados Unidos", "en": "United States" },
-    "GB": { "ca": "Regne Unit", "es": "Reino Unido", "en": "United Kingdom" },
-    "FR": { "ca": "França", "es": "Francia", "en": "France" },
-    "IT": { "ca": "Itàlia", "es": "Italia", "en": "Italy" },
-    "DE": { "ca": "Alemanya", "es": "Alemania", "en": "Germany" },
-    "NL": { "ca": "Països Baixos", "es": "Países Bajos", "en": "Netherlands" },
-    "CN": { "ca": "Xina", "es": "China", "en": "China" },
-    "JP": { "ca": "Japó", "es": "Japón", "en": "Japan" },
-    "KR": { "ca": "Corea del Sud", "es": "Corea del Sur", "en": "South Korea" },
-    "LATAM": { "ca": "Amèrica Llatina", "es": "América Latina", "en": "Latin America" },
-    "ALTRES_EU": { "ca": "Resta d'Europa", "es": "Resto de Europa", "en": "Rest of Europe" },
-    "ALTRES": { "ca": "Resta del món", "es": "Resto del mundo", "en": "Rest of world" }
-  },
-  "sentit_resolucio": {
-    "estimacio": { "ca": "Estimada", "es": "Estimada", "en": "Granted" },
-    "estimacio_parcial": { "ca": "Estimada parcialment", "es": "Estimada parcialmente", "en": "Partially granted" },
-    "desestimacio": { "ca": "Desestimada", "es": "Desestimada", "en": "Refused" },
-    "inadmissio": { "ca": "Inadmesa", "es": "Inadmitida", "en": "Inadmissible" },
-    "desistiment": { "ca": "Desistiment", "es": "Desistimiento", "en": "Withdrawn" },
-    "en_tramit": { "ca": "En tràmit", "es": "En trámite", "en": "In progress" }
-  },
-  "tema_dai": {
-    "contractacio": { "ca": "Contractació", "es": "Contratación", "en": "Procurement" },
-    "dades_turistiques": { "ca": "Dades turístiques", "es": "Datos turísticos", "en": "Tourism data" },
-    "pressupost": { "ca": "Pressupost", "es": "Presupuesto", "en": "Budget" },
-    "personal": { "ca": "Personal", "es": "Personal", "en": "Staff" },
-    "activitat": { "ca": "Activitat", "es": "Actividad", "en": "Activity" },
-    "bon_govern": { "ca": "Bon govern", "es": "Buen gobierno", "en": "Good governance" },
-    "altres": { "ca": "Altres", "es": "Otros", "en": "Other" }
-  },
-  "canal": {
-    "seu_electronica": { "ca": "Seu electrònica", "es": "Sede electrónica", "en": "e-Office" },
-    "correu_electronic": { "ca": "Correu electrònic", "es": "Correo electrónico", "en": "Email" },
-    "presencial": { "ca": "Presencial", "es": "Presencial", "en": "In person" }
-  },
-  "tipus_sollicitant": {
-    "persona_fisica": { "ca": "Persona física", "es": "Persona física", "en": "Individual" },
-    "mitja_comunicacio": { "ca": "Mitjà de comunicació", "es": "Medio de comunicación", "en": "Media" },
-    "entitat": { "ca": "Entitat", "es": "Entidad", "en": "Organisation" },
-    "empresa": { "ca": "Empresa", "es": "Empresa", "en": "Company" },
-    "grup_politic": { "ca": "Grup polític", "es": "Grupo político", "en": "Political group" }
-  },
-  "estat_obligacio": {
-    "publicat": { "ca": "Publicat", "es": "Publicado", "en": "Published" },
-    "parcial": { "ca": "Parcial", "es": "Parcial", "en": "Partial" },
-    "pendent": { "ca": "Pendent", "es": "Pendiente", "en": "Pending" }
-  },
-  "bloc_obligacio": {
-    "institucional": { "ca": "Informació institucional i organitzativa", "es": "Información institucional y organizativa", "en": "Institutional & organisational" },
-    "economica": { "ca": "Gestió econòmica i pressupostària", "es": "Gestión económica y presupuestaria", "en": "Economic & budget management" },
-    "contractacio": { "ca": "Contractació pública", "es": "Contratación pública", "en": "Public procurement" },
-    "convenis": { "ca": "Convenis de col·laboració", "es": "Convenios de colaboración", "en": "Collaboration agreements" },
-    "subvencions": { "ca": "Subvencions i ajuts", "es": "Subvenciones y ayudas", "en": "Grants" },
-    "planificacio": { "ca": "Planificació, activitat i estadística", "es": "Planificación, actividad y estadística", "en": "Planning, activity & statistics" },
-    "dret_acces": { "ca": "Dret d'accés", "es": "Derecho de acceso", "en": "Right of access" },
-    "normativa": { "ca": "Normativa i integritat", "es": "Normativa e integridad", "en": "Rules & integrity" },
-    "dades_obertes": { "ca": "Dades obertes", "es": "Datos abiertos", "en": "Open data" }
-  },
-  "periodicitat": {
-    "continua": { "ca": "Contínua", "es": "Continua", "en": "Continuous" },
-    "setmanal": { "ca": "Setmanal", "es": "Semanal", "en": "Weekly" },
-    "mensual": { "ca": "Mensual", "es": "Mensual", "en": "Monthly" },
-    "trimestral": { "ca": "Trimestral", "es": "Trimestral", "en": "Quarterly" },
-    "semestral": { "ca": "Semestral", "es": "Semestral", "en": "Half-yearly" },
-    "anual": { "ca": "Anual", "es": "Anual", "en": "Annual" },
-    "quan_canvii": { "ca": "Quan hi hagi canvis", "es": "Cuando haya cambios", "en": "On change" }
-  },
-  "eix": {
-    "sostenibilitat": { "ca": "Sostenibilitat", "es": "Sostenibilidad", "en": "Sustainability" },
-    "valor": { "ca": "Valor econòmic", "es": "Valor económico", "en": "Economic value" },
-    "ciutadania": { "ca": "Ciutadania i territori", "es": "Ciudadanía y territorio", "en": "Residents & neighbourhoods" },
-    "governanca": { "ca": "Governança oberta", "es": "Gobernanza abierta", "en": "Open governance" }
+  "9": {
+   "es": "Pasivos financieros",
+   "va": "Passius financers",
+   "en": "Financial liabilities"
   }
+ },
+ "capitulo_gasto": {
+  "1": {
+   "es": "Gastos de personal",
+   "va": "Despeses de personal",
+   "en": "Staff costs"
+  },
+  "2": {
+   "es": "Gastos en bienes corrientes y servicios",
+   "va": "Despeses en béns corrents i serveis",
+   "en": "Goods and services"
+  },
+  "3": {
+   "es": "Gastos financieros",
+   "va": "Despeses financeres",
+   "en": "Financial expenses"
+  },
+  "4": {
+   "es": "Transferencias corrientes",
+   "va": "Transferències corrents",
+   "en": "Current transfers"
+  },
+  "5": {
+   "es": "Fondo de contingencia",
+   "va": "Fons de contingència",
+   "en": "Contingency fund"
+  },
+  "6": {
+   "es": "Inversiones reales",
+   "va": "Inversions reals",
+   "en": "Capital investment"
+  },
+  "7": {
+   "es": "Transferencias de capital",
+   "va": "Transferències de capital",
+   "en": "Capital transfers"
+  },
+  "8": {
+   "es": "Activos financieros",
+   "va": "Actius financers",
+   "en": "Financial assets"
+  },
+  "9": {
+   "es": "Pasivos financieros",
+   "va": "Passius financers",
+   "en": "Financial liabilities"
+  }
+ },
+ "area_gasto": {
+  "0": {
+   "es": "Deuda pública",
+   "va": "Deute públic",
+   "en": "Public debt"
+  },
+  "1": {
+   "es": "Servicios públicos básicos",
+   "va": "Serveis públics bàsics",
+   "en": "Basic public services"
+  },
+  "2": {
+   "es": "Protección y promoción social",
+   "va": "Protecció i promoció social",
+   "en": "Social protection"
+  },
+  "3": {
+   "es": "Bienes públicos de carácter preferente",
+   "va": "Béns públics de caràcter preferent",
+   "en": "Preferential public goods"
+  },
+  "4": {
+   "es": "Actuaciones de carácter económico",
+   "va": "Actuacions de caràcter econòmic",
+   "en": "Economic affairs"
+  },
+  "9": {
+   "es": "Actuaciones de carácter general",
+   "va": "Actuacions de caràcter general",
+   "en": "General services"
+  }
+ },
+ "tipo_contrato": {
+  "1": {
+   "es": "Suministros",
+   "va": "Subministraments",
+   "en": "Supplies"
+  },
+  "2": {
+   "es": "Servicios",
+   "va": "Serveis",
+   "en": "Services"
+  },
+  "3": {
+   "es": "Obras",
+   "va": "Obres",
+   "en": "Works"
+  },
+  "21": {
+   "es": "Gestión de servicios públicos",
+   "va": "Gestió de serveis públics",
+   "en": "Public service management"
+  },
+  "22": {
+   "es": "Concesión de servicios",
+   "va": "Concessió de serveis",
+   "en": "Service concession"
+  },
+  "31": {
+   "es": "Concesión de obras públicas",
+   "va": "Concessió d’obres públiques",
+   "en": "Public works concession"
+  },
+  "32": {
+   "es": "Concesión de obras",
+   "va": "Concessió d’obres",
+   "en": "Works concession"
+  },
+  "7": {
+   "es": "Administrativo especial",
+   "va": "Administratiu especial",
+   "en": "Special administrative"
+  },
+  "8": {
+   "es": "Privado",
+   "va": "Privat",
+   "en": "Private"
+  },
+  "50": {
+   "es": "Patrimonial",
+   "va": "Patrimonial",
+   "en": "Property"
+  },
+  "999": {
+   "es": "Otros",
+   "va": "Altres",
+   "en": "Other"
+  }
+ },
+ "procedimiento": {
+  "1": {
+   "es": "Abierto",
+   "va": "Obert",
+   "en": "Open"
+  },
+  "2": {
+   "es": "Restringido",
+   "va": "Restringit",
+   "en": "Restricted"
+  },
+  "3": {
+   "es": "Negociado sin publicidad",
+   "va": "Negociat sense publicitat",
+   "en": "Negotiated without notice"
+  },
+  "4": {
+   "es": "Negociado con publicidad",
+   "va": "Negociat amb publicitat",
+   "en": "Negotiated with notice"
+  },
+  "5": {
+   "es": "Diálogo competitivo",
+   "va": "Diàleg competitiu",
+   "en": "Competitive dialogue"
+  },
+  "6": {
+   "es": "Contrato menor",
+   "va": "Contracte menor",
+   "en": "Minor contract"
+  },
+  "7": {
+   "es": "Derivado de acuerdo marco",
+   "va": "Derivat d’acord marc",
+   "en": "Framework call-off"
+  },
+  "8": {
+   "es": "Concurso de proyectos",
+   "va": "Concurs de projectes",
+   "en": "Design contest"
+  },
+  "9": {
+   "es": "Abierto simplificado",
+   "va": "Obert simplificat",
+   "en": "Simplified open"
+  },
+  "10": {
+   "es": "Asociación para la innovación",
+   "va": "Associació per a la innovació",
+   "en": "Innovation partnership"
+  },
+  "13": {
+   "es": "Licitación con negociación",
+   "va": "Licitació amb negociació",
+   "en": "Competitive procedure with negotiation"
+  },
+  "100": {
+   "es": "Normas internas",
+   "va": "Normes internes",
+   "en": "Internal rules"
+  },
+  "999": {
+   "es": "Otros",
+   "va": "Altres",
+   "en": "Other"
+  },
+  "11": {
+   "es": "Derivado de asociación para la innovación",
+   "va": "Derivat d’associació per a la innovació",
+   "en": "Innovation partnership call-off"
+  },
+  "12": {
+   "es": "Basado en sistema dinámico de adquisición",
+   "va": "Basat en sistema dinàmic d’adquisició",
+   "en": "Dynamic purchasing system"
+  }
+ },
+ "estado_contrato": {
+  "PRE": {
+   "es": "Anuncio previo",
+   "va": "Anunci previ",
+   "en": "Prior notice"
+  },
+  "PUB": {
+   "es": "En plazo",
+   "va": "En termini",
+   "en": "Open for bids"
+  },
+  "EV": {
+   "es": "Pendiente de adjudicación",
+   "va": "Pendent d’adjudicació",
+   "en": "Under evaluation"
+  },
+  "ADJ": {
+   "es": "Adjudicado",
+   "va": "Adjudicat",
+   "en": "Awarded"
+  },
+  "RES": {
+   "es": "Resuelto (formalizado)",
+   "va": "Resolt (formalitzat)",
+   "en": "Resolved (signed)"
+  },
+  "ANUL": {
+   "es": "Anulado",
+   "va": "Anul·lat",
+   "en": "Cancelled"
+  }
+ },
+ "fuente": {
+  "placsp": {
+   "es": "Plataforma de Contratación del Sector Público",
+   "va": "Plataforma de Contractació del Sector Públic",
+   "en": "Public Sector Procurement Platform"
+  },
+  "bdns": {
+   "es": "Base de Datos Nacional de Subvenciones",
+   "va": "Base de Dades Nacional de Subvencions",
+   "en": "National Grants Database"
+  },
+  "manual": {
+   "es": "Carga manual",
+   "va": "Càrrega manual",
+   "en": "Manual entry"
+  },
+  "ejemplo": {
+   "es": "Dato de ejemplo",
+   "va": "Dada d’exemple",
+   "en": "Sample data"
+  }
+ },
+ "cpv": {
+  "90910000": {
+   "es": "Servicios de limpieza",
+   "va": "Serveis de neteja",
+   "en": "Cleaning services"
+  },
+  "90511000": {
+   "es": "Recogida de residuos",
+   "va": "Recollida de residus",
+   "en": "Refuse collection"
+  },
+  "77310000": {
+   "es": "Plantación y mantenimiento de zonas verdes",
+   "va": "Plantació i manteniment de zones verdes",
+   "en": "Green-space maintenance"
+  },
+  "45233140": {
+   "es": "Obras viales",
+   "va": "Obres viàries",
+   "en": "Roadworks"
+  },
+  "45210000": {
+   "es": "Construcción de edificios",
+   "va": "Construcció d’edificis",
+   "en": "Building construction"
+  },
+  "45453000": {
+   "es": "Reparación y reacondicionamiento",
+   "va": "Reparació i rehabilitació",
+   "en": "Refurbishment work"
+  },
+  "50232100": {
+   "es": "Mantenimiento del alumbrado público",
+   "va": "Manteniment de l’enllumenat públic",
+   "en": "Street-lighting maintenance"
+  },
+  "09310000": {
+   "es": "Electricidad",
+   "va": "Electricitat",
+   "en": "Electricity"
+  },
+  "72000000": {
+   "es": "Servicios TI",
+   "va": "Serveis TI",
+   "en": "IT services"
+  },
+  "48000000": {
+   "es": "Paquetes de software",
+   "va": "Paquets de programari",
+   "en": "Software packages"
+  },
+  "79952000": {
+   "es": "Organización de eventos",
+   "va": "Organització d’esdeveniments",
+   "en": "Event services"
+  },
+  "92312000": {
+   "es": "Servicios artísticos y culturales",
+   "va": "Serveis artístics i culturals",
+   "en": "Artistic & cultural services"
+  },
+  "85310000": {
+   "es": "Servicios sociales",
+   "va": "Serveis socials",
+   "en": "Social work services"
+  },
+  "80410000": {
+   "es": "Servicios educativos",
+   "va": "Serveis educatius",
+   "en": "Educational services"
+  },
+  "92610000": {
+   "es": "Gestión de instalaciones deportivas",
+   "va": "Gestió d’instal·lacions esportives",
+   "en": "Sports facility operation"
+  },
+  "79710000": {
+   "es": "Seguridad y vigilancia",
+   "va": "Seguretat i vigilància",
+   "en": "Security services"
+  },
+  "66510000": {
+   "es": "Seguros",
+   "va": "Assegurances",
+   "en": "Insurance"
+  },
+  "34144000": {
+   "es": "Vehículos especiales",
+   "va": "Vehicles especials",
+   "en": "Special-purpose vehicles"
+  }
+ },
+ "modalidad_subvencion": {
+  "concurrencia": {
+   "es": "Concurrencia competitiva",
+   "va": "Concurrència competitiva",
+   "en": "Competitive call"
+  },
+  "directa": {
+   "es": "Concesión directa",
+   "va": "Concessió directa",
+   "en": "Direct award"
+  },
+  "nominativa": {
+   "es": "Nominativa",
+   "va": "Nominativa",
+   "en": "Nominative"
+  }
+ },
+ "finalidad_subvencion": {
+  "cultura": {
+   "es": "Cultura",
+   "va": "Cultura",
+   "en": "Culture"
+  },
+  "deporte": {
+   "es": "Deporte",
+   "va": "Esport",
+   "en": "Sport"
+  },
+  "servicios_sociales": {
+   "es": "Servicios sociales",
+   "va": "Serveis socials",
+   "en": "Social services"
+  },
+  "educacion": {
+   "es": "Educación",
+   "va": "Educació",
+   "en": "Education"
+  },
+  "comercio": {
+   "es": "Comercio y empleo",
+   "va": "Comerç i ocupació",
+   "en": "Trade and employment"
+  },
+  "fiestas": {
+   "es": "Fiestas y tradiciones",
+   "va": "Festes i tradicions",
+   "en": "Festivals and traditions"
+  },
+  "medio_ambiente": {
+   "es": "Medio ambiente",
+   "va": "Medi ambient",
+   "en": "Environment"
+  },
+  "cooperacion": {
+   "es": "Cooperación al desarrollo",
+   "va": "Cooperació al desenvolupament",
+   "en": "Development aid"
+  },
+  "otros": {
+   "es": "Otras finalidades",
+   "va": "Altres finalitats",
+   "en": "Other"
+  }
+ },
+ "tipo_parte": {
+  "administracion": {
+   "es": "Administración pública",
+   "va": "Administració pública",
+   "en": "Public administration"
+  },
+  "privado": {
+   "es": "Entidad privada",
+   "va": "Entitat privada",
+   "en": "Private entity"
+  },
+  "entidad": {
+   "es": "Entidad sin ánimo de lucro",
+   "va": "Entitat sense ànim de lucre",
+   "en": "Non-profit"
+  },
+  "universidad": {
+   "es": "Universidad",
+   "va": "Universitat",
+   "en": "University"
+  }
+ },
+ "tipo_cargo": {
+  "alcaldia": {
+   "es": "Alcaldía",
+   "va": "Alcaldia",
+   "en": "Mayor"
+  },
+  "teniente_alcaldia": {
+   "es": "Tenencia de alcaldía",
+   "va": "Tinença d’alcaldia",
+   "en": "Deputy mayor"
+  },
+  "concejalia": {
+   "es": "Concejalía",
+   "va": "Regidoria",
+   "en": "Councillor"
+  },
+  "eventual": {
+   "es": "Personal eventual",
+   "va": "Personal eventual",
+   "en": "Political adviser"
+  },
+  "directivo": {
+   "es": "Personal directivo",
+   "va": "Personal directiu",
+   "en": "Senior manager"
+  }
+ },
+ "dedicacion": {
+  "exclusiva": {
+   "es": "Dedicación exclusiva",
+   "va": "Dedicació exclusiva",
+   "en": "Full-time"
+  },
+  "parcial": {
+   "es": "Dedicación parcial",
+   "va": "Dedicació parcial",
+   "en": "Part-time"
+  },
+  "ninguna": {
+   "es": "Sin dedicación (asistencias)",
+   "va": "Sense dedicació (assistències)",
+   "en": "No dedication (attendance fees)"
+  }
+ },
+ "tipo_agenda": {
+  "reunion": {
+   "es": "Reunión",
+   "va": "Reunió",
+   "en": "Meeting"
+  },
+  "acto": {
+   "es": "Acto público",
+   "va": "Acte públic",
+   "en": "Public event"
+  },
+  "pleno": {
+   "es": "Pleno",
+   "va": "Ple",
+   "en": "Full council"
+  },
+  "junta": {
+   "es": "Junta de Gobierno",
+   "va": "Junta de Govern",
+   "en": "Governing board"
+  },
+  "viaje": {
+   "es": "Viaje institucional",
+   "va": "Viatge institucional",
+   "en": "Official trip"
+  }
+ },
+ "tipo_personal": {
+  "funcionario": {
+   "es": "Funcionario de carrera",
+   "va": "Funcionari de carrera",
+   "en": "Career civil servant"
+  },
+  "interino": {
+   "es": "Funcionario interino",
+   "va": "Funcionari interí",
+   "en": "Interim civil servant"
+  },
+  "laboral_fijo": {
+   "es": "Laboral fijo",
+   "va": "Laboral fix",
+   "en": "Permanent employee"
+  },
+  "laboral_temporal": {
+   "es": "Laboral temporal",
+   "va": "Laboral temporal",
+   "en": "Temporary employee"
+  },
+  "eventual": {
+   "es": "Personal eventual",
+   "va": "Personal eventual",
+   "en": "Political adviser"
+  }
+ },
+ "grupo_profesional": {
+  "A1": {
+   "es": "A1",
+   "va": "A1",
+   "en": "A1"
+  },
+  "A2": {
+   "es": "A2",
+   "va": "A2",
+   "en": "A2"
+  },
+  "C1": {
+   "es": "C1",
+   "va": "C1",
+   "en": "C1"
+  },
+  "C2": {
+   "es": "C2",
+   "va": "C2",
+   "en": "C2"
+  },
+  "AP": {
+   "es": "Agrupaciones profesionales",
+   "va": "Agrupacions professionals",
+   "en": "Other grades"
+  }
+ },
+ "sexo": {
+  "mujer": {
+   "es": "Mujeres",
+   "va": "Dones",
+   "en": "Women"
+  },
+  "hombre": {
+   "es": "Hombres",
+   "va": "Homes",
+   "en": "Men"
+  }
+ },
+ "tipo_norma": {
+  "ordenanza_fiscal": {
+   "es": "Ordenanza fiscal",
+   "va": "Ordenança fiscal",
+   "en": "Tax by-law"
+  },
+  "ordenanza": {
+   "es": "Ordenanza",
+   "va": "Ordenança",
+   "en": "By-law"
+  },
+  "reglamento": {
+   "es": "Reglamento",
+   "va": "Reglament",
+   "en": "Regulation"
+  },
+  "instruccion": {
+   "es": "Instrucción o circular",
+   "va": "Instrucció o circular",
+   "en": "Instruction"
+  }
+ },
+ "naturaleza_inmueble": {
+  "demanial": {
+   "es": "Dominio público",
+   "va": "Domini públic",
+   "en": "Public domain"
+  },
+  "patrimonial": {
+   "es": "Patrimonial",
+   "va": "Patrimonial",
+   "en": "Private estate"
+  }
+ },
+ "tipo_inmueble": {
+  "edificio": {
+   "es": "Edificio",
+   "va": "Edifici",
+   "en": "Building"
+  },
+  "deportivo": {
+   "es": "Instalación deportiva",
+   "va": "Instal·lació esportiva",
+   "en": "Sports facility"
+  },
+  "educativo": {
+   "es": "Centro educativo",
+   "va": "Centre educatiu",
+   "en": "School"
+  },
+  "parque": {
+   "es": "Parque o jardín",
+   "va": "Parc o jardí",
+   "en": "Park"
+  },
+  "solar": {
+   "es": "Solar",
+   "va": "Solar",
+   "en": "Plot"
+  },
+  "rustico": {
+   "es": "Finca rústica",
+   "va": "Finca rústica",
+   "en": "Rural land"
+  }
+ },
+ "sentido_resolucion": {
+  "estimada": {
+   "es": "Estimada",
+   "va": "Estimada",
+   "en": "Granted"
+  },
+  "estimada_parcial": {
+   "es": "Estimada parcialmente",
+   "va": "Estimada parcialment",
+   "en": "Partially granted"
+  },
+  "desestimada": {
+   "es": "Desestimada",
+   "va": "Desestimada",
+   "en": "Refused"
+  },
+  "inadmitida": {
+   "es": "Inadmitida",
+   "va": "Inadmesa",
+   "en": "Inadmissible"
+  },
+  "desistimiento": {
+   "es": "Desistimiento",
+   "va": "Desistiment",
+   "en": "Withdrawn"
+  },
+  "en_tramite": {
+   "es": "En trámite",
+   "va": "En tràmit",
+   "en": "In progress"
+  }
+ },
+ "tema_solicitud": {
+  "contratacion": {
+   "es": "Contratación",
+   "va": "Contractació",
+   "en": "Procurement"
+  },
+  "urbanismo": {
+   "es": "Urbanismo",
+   "va": "Urbanisme",
+   "en": "Planning"
+  },
+  "economia": {
+   "es": "Economía y presupuesto",
+   "va": "Economia i pressupost",
+   "en": "Budget & finance"
+  },
+  "personal": {
+   "es": "Personal",
+   "va": "Personal",
+   "en": "Staff"
+  },
+  "subvenciones": {
+   "es": "Subvenciones",
+   "va": "Subvencions",
+   "en": "Grants"
+  },
+  "servicios": {
+   "es": "Servicios municipales",
+   "va": "Serveis municipals",
+   "en": "Municipal services"
+  },
+  "otros": {
+   "es": "Otros",
+   "va": "Altres",
+   "en": "Other"
+  }
+ },
+ "canal": {
+  "sede": {
+   "es": "Sede electrónica",
+   "va": "Seu electrònica",
+   "en": "e-Office"
+  },
+  "registro": {
+   "es": "Registro presencial",
+   "va": "Registre presencial",
+   "en": "In person"
+  },
+  "correo": {
+   "es": "Correo electrónico",
+   "va": "Correu electrònic",
+   "en": "Email"
+  }
+ },
+ "tipo_solicitante": {
+  "persona": {
+   "es": "Persona física",
+   "va": "Persona física",
+   "en": "Individual"
+  },
+  "medio": {
+   "es": "Medio de comunicación",
+   "va": "Mitjà de comunicació",
+   "en": "Media"
+  },
+  "asociacion": {
+   "es": "Asociación",
+   "va": "Associació",
+   "en": "Association"
+  },
+  "empresa": {
+   "es": "Empresa",
+   "va": "Empresa",
+   "en": "Company"
+  },
+  "grupo_politico": {
+   "es": "Grupo político",
+   "va": "Grup polític",
+   "en": "Political group"
+  }
+ },
+ "estado_obligacion": {
+  "publicado": {
+   "es": "Publicado",
+   "va": "Publicat",
+   "en": "Published"
+  },
+  "parcial": {
+   "es": "Parcial",
+   "va": "Parcial",
+   "en": "Partial"
+  },
+  "pendiente": {
+   "es": "Pendiente",
+   "va": "Pendent",
+   "en": "Pending"
+  }
+ },
+ "bloque_obligacion": {
+  "institucional": {
+   "es": "Información institucional y organizativa",
+   "va": "Informació institucional i organitzativa",
+   "en": "Institutional & organisational"
+  },
+  "cargos": {
+   "es": "Altos cargos y cargos electos",
+   "va": "Alts càrrecs i càrrecs electes",
+   "en": "Senior & elected officials"
+  },
+  "juridica": {
+   "es": "Normativa e información jurídica",
+   "va": "Normativa i informació jurídica",
+   "en": "Legal information"
+  },
+  "contratacion": {
+   "es": "Contratación",
+   "va": "Contractació",
+   "en": "Procurement"
+  },
+  "convenios_subvenciones": {
+   "es": "Convenios y subvenciones",
+   "va": "Convenis i subvencions",
+   "en": "Agreements & grants"
+  },
+  "economica": {
+   "es": "Información económica y presupuestaria",
+   "va": "Informació econòmica i pressupostària",
+   "en": "Economic & budget information"
+  },
+  "patrimonio": {
+   "es": "Patrimonio",
+   "va": "Patrimoni",
+   "en": "Assets"
+  },
+  "personal": {
+   "es": "Personal",
+   "va": "Personal",
+   "en": "Staff"
+  },
+  "acceso": {
+   "es": "Derecho de acceso",
+   "va": "Dret d’accés",
+   "en": "Right of access"
+  },
+  "datos": {
+   "es": "Datos abiertos",
+   "va": "Dades obertes",
+   "en": "Open data"
+  }
+ },
+ "periodicidad": {
+  "continua": {
+   "es": "Continua",
+   "va": "Contínua",
+   "en": "Continuous"
+  },
+  "semanal": {
+   "es": "Semanal",
+   "va": "Setmanal",
+   "en": "Weekly"
+  },
+  "mensual": {
+   "es": "Mensual",
+   "va": "Mensual",
+   "en": "Monthly"
+  },
+  "trimestral": {
+   "es": "Trimestral",
+   "va": "Trimestral",
+   "en": "Quarterly"
+  },
+  "semestral": {
+   "es": "Semestral",
+   "va": "Semestral",
+   "en": "Half-yearly"
+  },
+  "anual": {
+   "es": "Anual",
+   "va": "Anual",
+   "en": "Annual"
+  },
+  "cuando_cambie": {
+   "es": "Cuando haya cambios",
+   "va": "Quan hi haja canvis",
+   "en": "On change"
+  }
+ }
 }

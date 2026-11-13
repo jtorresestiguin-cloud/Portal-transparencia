@@ -1,0 +1,73 @@
+{
+ "id": "patrimonio",
+ "icono": "map",
+ "titulo": {
+  "es": "Bienes inmuebles",
+  "va": "Béns immobles",
+  "en": "Real estate"
+ },
+ "intro": {
+  "es": "Relación de bienes inmuebles de titularidad municipal.",
+  "va": "Relació de béns immobles de titularitat municipal.",
+  "en": "Municipal real estate."
+ },
+ "bloques": [
+  {
+   "tipo": "cifras",
+   "items": [
+    {
+     "etiqueta": {
+      "es": "Inmuebles",
+      "va": "Immobles",
+      "en": "Properties"
+     },
+     "conjunto": "inmuebles",
+     "operacion": "contar",
+     "formato": "entero"
+    },
+    {
+     "etiqueta": {
+      "es": "Superficie total",
+      "va": "Superfície total",
+      "en": "Total area"
+     },
+     "conjunto": "inmuebles",
+     "operacion": "sumar",
+     "campo": "superficie_m2",
+     "formato": "m2"
+    }
+   ]
+  },
+  {
+   "tipo": "mapa",
+   "titulo": {
+    "es": "Mapa de inmuebles",
+    "va": "Mapa d’immobles",
+    "en": "Property map"
+   },
+   "conjunto": "inmuebles",
+   "campo_titulo": "denominacion"
+  },
+  {
+   "tipo": "tabla",
+   "conjunto": "inmuebles",
+   "columnas": [
+    "id",
+    "denominacion",
+    "tipo",
+    "naturaleza",
+    "direccion",
+    "superficie_m2",
+    "uso"
+   ],
+   "filtros": [
+    "tipo",
+    "naturaleza"
+   ],
+   "busqueda": true
+  },
+  {
+   "tipo": "indicadores"
+  }
+ ]
+}

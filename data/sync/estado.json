@@ -1,0 +1,8 @@
+{
+ "_comentario": "Lo actualiza automáticamente la sincronización (scripts/sync/run.mjs). No editar a mano.",
+ "fecha": null,
+ "fuentes": {
+  "placsp": { "estado": "pendiente", "fecha": null, "mensaje": "Aún no se ha ejecutado la sincronización. Los contratos mostrados son de ejemplo." },
+  "bdns": { "estado": "pendiente", "fecha": null, "mensaje": "Aún no se ha ejecutado la sincronización. Las subvenciones mostradas son de ejemplo." }
+ }
+}

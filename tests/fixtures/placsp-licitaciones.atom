@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Fichero de prueba con la estructura de la sindicación de PLACSP (Atom + CODICE). Datos ficticios. -->
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:at="http://purl.org/atompub/tombstones/1.0"
+      xmlns:cac="urn:dgpe:names:draft:codice:schema:xsd:CommonAggregateComponents-2"
+      xmlns:cbc="urn:dgpe:names:draft:codice:schema:xsd:CommonBasicComponents-2"
+      xmlns:cac-place-ext="urn:dgpe:names:draft:codice-place-ext:schema:xsd:CommonAggregateComponents-2"
+      xmlns:cbc-place-ext="urn:dgpe:names:draft:codice-place-ext:schema:xsd:CommonBasicComponents-2">
+  <title>Licitaciones publicadas en la Plataforma de Contratación del Sector Público</title>
+  <id>https://contrataciondelsectorpublico.gob.es/sindicacion/sindicacion_643/licitacionesPerfilesContratanteCompleto3.atom</id>
+  <updated>2026-11-12T08:00:00.000+01:00</updated>
+  <link href="placsp-licitaciones-2.atom" rel="next"/>
+  <at:deleted-entry ref="https://contrataciondelsectorpublico.gob.es/sindicacion/licitacionesPerfilContratante/999" when="2026-11-11T10:00:00+01:00"/>
+  <entry>
+    <id>https://contrataciondelsectorpublico.gob.es/sindicacion/licitacionesPerfilContratante/1001</id>
+    <link href="https://contrataciondelsectorpublico.gob.es/wps/poc?uri=deeplink:detalle_licitacion&amp;idEvl=AAA1001"/>
+    <summary type="text">Id licitación: 2026/045; Órgano de Contratación: Junta de Gobierno Local del Ayuntamiento de Ejemplo; Importe: 120000 EUR; Estado: RES</summary>
+    <title>Servicio de limpieza de edificios municipales</title>
+    <updated>2026-11-10T09:30:00.000+01:00</updated>
+    <cac-place-ext:ContractFolderStatus>
+      <cbc:ContractFolderID>2026/045</cbc:ContractFolderID>
+      <cbc-place-ext:ContractFolderStatusCode listURI="https://contrataciondelestado.es/codice/cl/2.04/SyndicationContractFolderStatusCode-2.04.gc">RES</cbc-place-ext:ContractFolderStatusCode>
+      <cac-place-ext:LocatedContractingParty>
+        <cac:Party>
+          <cac:PartyIdentification><cbc:ID schemeName="DIR3">L00000000</cbc:ID></cac:PartyIdentification>
+          <cac:PartyIdentification><cbc:ID schemeName="NIF">P0000000X</cbc:ID></cac:PartyIdentification>
+          <cac:PartyName><cbc:Name>Junta de Gobierno Local del Ayuntamiento de Ejemplo</cbc:Name></cac:PartyName>
+        </cac:Party>
+      </cac-place-ext:LocatedContractingParty>
+      <cac:ProcurementProject>
+        <cbc:Name>Servicio de limpieza de edificios municipales</cbc:Name>
+        <cbc:TypeCode listURI="https://contrataciondelestado.es/codice/cl/2.08/ContractCode-2.08.gc">2</cbc:TypeCode>
+        <cac:BudgetAmount>
+          <cbc:EstimatedOverallContractAmount currencyID="EUR">240000</cbc:EstimatedOverallContractAmount>
+          <cbc:TotalAmount currencyID="EUR">145200</cbc:TotalAmount>
+          <cbc:TaxExclusiveAmount currencyID="EUR">120000</cbc:TaxExclusiveAmount>
+        </cac:BudgetAmount>
+        <cac:RequiredCommodityClassification><cbc:ItemClassificationCode listURI="CPV2008">90910000</cbc:ItemClassificationCode></cac:RequiredCommodityClassification>
+        <cac:PlannedPeriod><cbc:DurationMeasure unitCode="ANN">2</cbc:DurationMeasure></cac:PlannedPeriod>
+      </cac:ProcurementProject>
+      <cac:TenderResult>
+        <cbc:ResultCode>9</cbc:ResultCode>
+        <cbc:AwardDate>2026-10-20</cbc:AwardDate>
+        <cbc:ReceivedTenderQuantity>4</cbc:ReceivedTenderQuantity>
+        <cbc:SMEAwardedIndicator>true</cbc:SMEAwardedIndicator>
+        <cac:WinningParty>
+          <cac:PartyIdentification><cbc:ID schemeName="NIF">B12345678</cbc:ID></cac:PartyIdentification>
+          <cac:PartyName><cbc:Name>Limpiezas Prueba, SL</cbc:Name></cac:PartyName>
+        </cac:WinningParty>
+        <cac:AwardedTenderedProject><cac:LegalMonetaryTotal>
+          <cbc:TaxExclusiveAmount currencyID="EUR">104500.50</cbc:TaxExclusiveAmount>
+          <cbc:PayableAmount currencyID="EUR">126445.61</cbc:PayableAmount>
+        </cac:LegalMonetaryTotal></cac:AwardedTenderedProject>
+        <cac:Contract><cbc:IssueDate>2026-11-05</cbc:IssueDate></cac:Contract>
+      </cac:TenderResult>
+      <cac:TenderingProcess><cbc:ProcedureCode listURI="https://contrataciondelestado.es/codice/cl/2.07/SyndicationTenderingProcessCode-2.07.gc">9</cbc:ProcedureCode></cac:TenderingProcess>
+    </cac-place-ext:ContractFolderStatus>
+  </entry>
+  <entry>
+    <id>https://contrataciondelsectorpublico.gob.es/sindicacion/licitacionesPerfilContratante/1002</id>
+    <link href="https://contrataciondelsectorpublico.gob.es/wps/poc?uri=deeplink:detalle_licitacion&amp;idEvl=AAA1002"/>
+    <summary type="text">Id licitación: OTRO/1; Órgano de Contratación: Otro Ayuntamiento; Estado: ADJ</summary>
+    <title>Contrato de otro órgano que no debe importarse</title>
+    <updated>2026-11-10T08:00:00.000+01:00</updated>
+    <cac-place-ext:ContractFolderStatus>
+      <cbc:ContractFolderID>OTRO/1</cbc:ContractFolderID>
+      <cbc-place-ext:ContractFolderStatusCode>ADJ</cbc-place-ext:ContractFolderStatusCode>
+      <cac-place-ext:LocatedContractingParty><cac:Party>
+        <cac:PartyIdentification><cbc:ID schemeName="NIF">P9999999Z</cbc:ID></cac:PartyIdentification>
+        <cac:PartyName><cbc:Name>Otro Ayuntamiento</cbc:Name></cac:PartyName>
+      </cac:Party></cac-place-ext:LocatedContractingParty>
+      <cac:ProcurementProject><cbc:Name>Contrato de otro órgano</cbc:Name><cbc:TypeCode>1</cbc:TypeCode></cac:ProcurementProject>
+    </cac-place-ext:ContractFolderStatus>
+  </entry>
+  <entry>
+    <id>https://contrataciondelsectorpublico.gob.es/sindicacion/licitacionesPerfilContratante/1003</id>
+    <link href="https://contrataciondelsectorpublico.gob.es/wps/poc?uri=deeplink:detalle_licitacion&amp;idEvl=AAA1003"/>
+    <summary type="text">Id licitación: 2026/050; Encargo a medio propio personificado; Estado: RES</summary>
+    <title>Encargo a medio propio para la gestión del agua potable</title>
+    <updated>2026-11-09T12:00:00.000+01:00</updated>
+    <cac-place-ext:ContractFolderStatus>
+      <cbc:ContractFolderID>2026/050</cbc:ContractFolderID>
+      <cbc-place-ext:ContractFolderStatusCode>RES</cbc-place-ext:ContractFolderStatusCode>
+      <cac-place-ext:LocatedContractingParty><cac:Party>
+        <cac:PartyIdentification><cbc:ID schemeName="NIF">P0000000X</cbc:ID></cac:PartyIdentification>
+        <cac:PartyName><cbc:Name>Alcaldía del Ayuntamiento de Ejemplo</cbc:Name></cac:PartyName>
+      </cac:Party></cac-place-ext:LocatedContractingParty>
+      <cac:ProcurementProject><cbc:Name>Gestión del servicio de agua potable</cbc:Name><cbc:TypeCode>2</cbc:TypeCode>
+        <cac:BudgetAmount><cbc:TaxExclusiveAmount currencyID="EUR">300000</cbc:TaxExclusiveAmount></cac:BudgetAmount>
+        <cac:PlannedPeriod><cbc:DurationMeasure unitCode="MON">36</cbc:DurationMeasure></cac:PlannedPeriod></cac:ProcurementProject>
+      <cac:TenderResult><cbc:AwardDate>2026-11-01</cbc:AwardDate>
+        <cac:WinningParty><cac:PartyIdentification><cbc:ID>A99000001</cbc:ID></cac:PartyIdentification><cac:PartyName><cbc:Name>Empresa Municipal de Prueba, SA</cbc:Name></cac:PartyName></cac:WinningParty>
+        <cac:AwardedTenderedProject><cac:LegalMonetaryTotal><cbc:TaxExclusiveAmount currencyID="EUR">300000</cbc:TaxExclusiveAmount></cac:LegalMonetaryTotal></cac:AwardedTenderedProject>
+      </cac:TenderResult>
+    </cac-place-ext:ContractFolderStatus>
+  </entry>
+</feed>

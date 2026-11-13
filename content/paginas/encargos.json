@@ -1,0 +1,77 @@
+{
+ "id": "encargos",
+ "icono": "share",
+ "titulo": {
+  "es": "Encargos a medios propios",
+  "va": "Encàrrecs a mitjans propis",
+  "en": "In-house assignments"
+ },
+ "intro": {
+  "es": "Encargos realizados a entidades que tienen la condición de medio propio personificado.",
+  "va": "Encàrrecs realitzats a entitats que tenen la condició de mitjà propi personificat.",
+  "en": "Assignments to in-house entities."
+ },
+ "bloques": [
+  {
+   "tipo": "fuente",
+   "conjunto": "encargos"
+  },
+  {
+   "tipo": "cifras",
+   "items": [
+    {
+     "etiqueta": {
+      "es": "Encargos",
+      "va": "Encàrrecs",
+      "en": "Assignments"
+     },
+     "conjunto": "encargos",
+     "operacion": "contar",
+     "formato": "entero"
+    },
+    {
+     "etiqueta": {
+      "es": "Importe total",
+      "va": "Import total",
+      "en": "Total value"
+     },
+     "conjunto": "encargos",
+     "operacion": "sumar",
+     "campo": "importe_sin_iva",
+     "formato": "euros_compacto"
+    }
+   ]
+  },
+  {
+   "tipo": "grafico",
+   "titulo": {
+    "es": "Importe por medio propio",
+    "va": "Import per mitjà propi",
+    "en": "Value by in-house entity"
+   },
+   "conjunto": "encargos",
+   "tipo_grafico": "barras",
+   "agrupar": "medio_propio",
+   "valor": "importe_sin_iva",
+   "operacion": "sumar",
+   "formato": "euros"
+  },
+  {
+   "tipo": "tabla",
+   "conjunto": "encargos",
+   "columnas": [
+    "fecha_encargo",
+    "objeto",
+    "medio_propio",
+    "importe_sin_iva",
+    "duracion_meses"
+   ],
+   "busqueda": true,
+   "orden": "fecha_encargo",
+   "descendente": true
+  },
+  {
+   "tipo": "indicadores"
+  }
+ ]
+}

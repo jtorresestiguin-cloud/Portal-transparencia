@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:cac="urn:x:cac" xmlns:cbc="urn:x:cbc" xmlns:cac-place-ext="urn:x:cpe" xmlns:cbc-place-ext="urn:x:cbpe">
+  <title>Contratos menores</title>
+  <updated>2026-11-12T08:00:00.000+01:00</updated>
+  <entry>
+    <id>https://contrataciondelsectorpublico.gob.es/sindicacion/contratosMenores/2001</id>
+    <link href="https://contrataciondelsectorpublico.gob.es/wps/poc?uri=deeplink:detalle_licitacion&amp;idEvl=MEN2001"/>
+    <title>Suministro de material de oficina</title>
+    <updated>2026-11-08T10:00:00.000+01:00</updated>
+    <cac-place-ext:ContractFolderStatus>
+      <cbc:ContractFolderID>MEN-2026-310</cbc:ContractFolderID>
+      <cbc-place-ext:ContractFolderStatusCode>RES</cbc-place-ext:ContractFolderStatusCode>
+      <cac-place-ext:LocatedContractingParty><cac:Party>
+        <cac:PartyIdentification><cbc:ID>P0000000X</cbc:ID></cac:PartyIdentification>
+        <cac:PartyName><cbc:Name>Alcaldía del Ayuntamiento de Ejemplo</cbc:Name></cac:PartyName>
+      </cac:Party></cac-place-ext:LocatedContractingParty>
+      <cac:ProcurementProject><cbc:Name>Suministro de material de oficina</cbc:Name><cbc:TypeCode>1</cbc:TypeCode>
+        <cac:RequiredCommodityClassification><cbc:ItemClassificationCode>30192000</cbc:ItemClassificationCode></cac:RequiredCommodityClassification></cac:ProcurementProject>
+      <cac:TenderResult><cbc:AwardDate>2026-11-07</cbc:AwardDate><cbc:ReceivedTenderQuantity>1</cbc:ReceivedTenderQuantity>
+        <cac:WinningParty><cac:PartyIdentification><cbc:ID>B33333333</cbc:ID></cac:PartyIdentification><cac:PartyName><cbc:Name>Papelería Prueba, SL</cbc:Name></cac:PartyName></cac:WinningParty>
+        <cac:AwardedTenderedProject><cac:LegalMonetaryTotal><cbc:TaxExclusiveAmount currencyID="EUR">2450.80</cbc:TaxExclusiveAmount><cbc:PayableAmount currencyID="EUR">2965.47</cbc:PayableAmount></cac:LegalMonetaryTotal></cac:AwardedTenderedProject></cac:TenderResult>
+    </cac-place-ext:ContractFolderStatus>
+  </entry>
+</feed>

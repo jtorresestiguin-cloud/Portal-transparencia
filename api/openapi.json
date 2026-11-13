@@ -1,16 +1,12 @@
 {
   "openapi": "3.1.0",
   "info": {
-    "title": "API de dades obertes — Consorci de Turisme de Barcelona",
+    "title": "API de datos abiertos — Ayuntamiento de Ejemplo",
     "version": "1.0.0",
-    "description": "API REST estàtica de només lectura. Cada conjunt de dades es pot obtenir en JSON (amb metadades) o CSV. No requereix autenticació; CORS obert quan es serveix des de GitHub Pages o un CDN.",
+    "description": "API REST estática de solo lectura. Cada conjunto se ofrece en JSON (con metadatos) y CSV.",
     "license": {
-      "name": "CC BY 4.0 (dades)",
+      "name": "CC BY 4.0",
       "url": "https://creativecommons.org/licenses/by/4.0/"
-    },
-    "contact": {
-      "name": "Unitat de Transparència",
-      "email": "transparencia@example.org"
     }
   },
   "servers": [
@@ -18,24 +14,23 @@
       "url": "https://jtorresestiguin-cloud.github.io/Portal-transparencia"
     }
   ],
-  "tags": [
-    {
-      "name": "catàleg"
-    },
-    {
-      "name": "conjunts"
-    }
-  ],
   "paths": {
-    "/data/catalog.jsonld": {
+    "/config/entidad.json": {
       "get": {
-        "tags": [
-          "catàleg"
-        ],
-        "summary": "Catàleg DCAT-AP (JSON-LD)",
+        "summary": "Datos de la entidad",
         "responses": {
           "200": {
-            "description": "Catàleg",
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/data/catalog.jsonld": {
+      "get": {
+        "summary": "Catálogo DCAT-AP (JSON-LD)",
+        "responses": {
+          "200": {
+            "description": "OK",
             "content": {
               "application/ld+json": {}
             }
@@ -45,13 +40,10 @@
     },
     "/data/catalog.rdf": {
       "get": {
-        "tags": [
-          "catàleg"
-        ],
-        "summary": "Catàleg DCAT-AP-ES (RDF/XML) per federar amb datos.gob.es",
+        "summary": "Catálogo DCAT-AP-ES (RDF/XML) para datos.gob.es",
         "responses": {
           "200": {
-            "description": "Catàleg",
+            "description": "OK",
             "content": {
               "application/rdf+xml": {}
             }
@@ -59,62 +51,39 @@
         }
       }
     },
-    "/data/catalog.ttl": {
-      "get": {
-        "tags": [
-          "catàleg"
-        ],
-        "summary": "Catàleg DCAT-AP (Turtle)",
-        "responses": {
-          "200": {
-            "description": "Catàleg",
-            "content": {
-              "text/turtle": {}
-            }
-          }
-        }
-      }
-    },
     "/datapackage.json": {
       "get": {
-        "tags": [
-          "catàleg"
-        ],
-        "summary": "Frictionless Data Package amb Table Schema de cada recurs",
+        "summary": "Frictionless Data Package",
         "responses": {
           "200": {
-            "description": "Data package",
-            "content": {
-              "application/json": {}
-            }
+            "description": "OK"
           }
         }
       }
     },
     "/data/codelists.json": {
       "get": {
-        "tags": [
-          "catàleg"
-        ],
-        "summary": "Llistes de codis multilingües (ca/es/en)",
+        "summary": "Listas de códigos (es/va/en)",
         "responses": {
           "200": {
-            "description": "Vocabularis",
-            "content": {
-              "application/json": {}
-            }
+            "description": "OK"
           }
         }
       }
     },
-    "/data/pressupost.json": {
+    "/data/sync/estado.json": {
       "get": {
-        "tags": [
-          "conjunts"
-        ],
-        "operationId": "get_pressupost",
-        "summary": "Pressupost i execució pressupostària (JSON)",
-        "description": "Pressupost inicial, definitiu i executat per any, tipus (ingrés/despesa), capítol econòmic i programa.",
+        "summary": "Estado de la última sincronización automática con PLACSP y BDNS",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/data/presupuesto.json": {
+      "get": {
+        "summary": "Presupuesto y ejecución presupuestaria (JSON)",
         "responses": {
           "200": {
             "description": "OK",
@@ -123,17 +92,16 @@
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "generat": {
-                      "type": "string",
-                      "format": "date"
-                    },
-                    "avis": {
+                    "generado": {
                       "type": "string"
                     },
-                    "dades": {
+                    "fuente": {
+                      "type": "string"
+                    },
+                    "datos": {
                       "type": "array",
                       "items": {
-                        "$ref": "#/components/schemas/Pressupost"
+                        "$ref": "#/components/schemas/Presupuesto"
                       }
                     }
                   }
@@ -144,13 +112,9 @@
         }
       }
     },
-    "/data/csv/pressupost.csv": {
+    "/data/csv/presupuesto.csv": {
       "get": {
-        "tags": [
-          "conjunts"
-        ],
-        "operationId": "get_pressupost_csv",
-        "summary": "Pressupost i execució pressupostària (CSV)",
+        "summary": "Presupuesto y ejecución presupuestaria (CSV)",
         "responses": {
           "200": {
             "description": "OK",
@@ -161,14 +125,9 @@
         }
       }
     },
-    "/data/contractes.json": {
+    "/data/contratos.json": {
       "get": {
-        "tags": [
-          "conjunts"
-        ],
-        "operationId": "get_contractes",
-        "summary": "Contractes adjudicats (JSON)",
-        "description": "Relació de contractes adjudicats, inclosos els menors, amb procediment, CPV, imports, licitadors i adjudicatari. Alineat amb els camps de la PSCP i OCDS.",
+        "summary": "Contratos (JSON)",
         "responses": {
           "200": {
             "description": "OK",
@@ -177,17 +136,16 @@
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "generat": {
-                      "type": "string",
-                      "format": "date"
-                    },
-                    "avis": {
+                    "generado": {
                       "type": "string"
                     },
-                    "dades": {
+                    "fuente": {
+                      "type": "string"
+                    },
+                    "datos": {
                       "type": "array",
                       "items": {
-                        "$ref": "#/components/schemas/Contractes"
+                        "$ref": "#/components/schemas/Contratos"
                       }
                     }
                   }
@@ -198,13 +156,9 @@
         }
       }
     },
-    "/data/csv/contractes.csv": {
+    "/data/csv/contratos.csv": {
       "get": {
-        "tags": [
-          "conjunts"
-        ],
-        "operationId": "get_contractes_csv",
-        "summary": "Contractes adjudicats (CSV)",
+        "summary": "Contratos (CSV)",
         "responses": {
           "200": {
             "description": "OK",
@@ -215,14 +169,9 @@
         }
       }
     },
-    "/data/subvencions.json": {
+    "/data/encargos.json": {
       "get": {
-        "tags": [
-          "conjunts"
-        ],
-        "operationId": "get_subvencions",
-        "summary": "Subvencions i ajuts atorgats (JSON)",
-        "description": "Subvencions atorgades per línia, modalitat, beneficiari, districte i estat de justificació, amb referència BDNS.",
+        "summary": "Encargos a medios propios (JSON)",
         "responses": {
           "200": {
             "description": "OK",
@@ -231,17 +180,16 @@
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "generat": {
-                      "type": "string",
-                      "format": "date"
-                    },
-                    "avis": {
+                    "generado": {
                       "type": "string"
                     },
-                    "dades": {
+                    "fuente": {
+                      "type": "string"
+                    },
+                    "datos": {
                       "type": "array",
                       "items": {
-                        "$ref": "#/components/schemas/Subvencions"
+                        "$ref": "#/components/schemas/Encargos"
                       }
                     }
                   }
@@ -252,13 +200,9 @@
         }
       }
     },
-    "/data/csv/subvencions.csv": {
+    "/data/csv/encargos.csv": {
       "get": {
-        "tags": [
-          "conjunts"
-        ],
-        "operationId": "get_subvencions_csv",
-        "summary": "Subvencions i ajuts atorgats (CSV)",
+        "summary": "Encargos a medios propios (CSV)",
         "responses": {
           "200": {
             "description": "OK",
@@ -269,14 +213,9 @@
         }
       }
     },
-    "/data/convenis.json": {
+    "/data/subvenciones.json": {
       "get": {
-        "tags": [
-          "conjunts"
-        ],
-        "operationId": "get_convenis",
-        "summary": "Convenis de col·laboració (JSON)",
-        "description": "Convenis signats amb objecte, part signant, vigència i obligacions econòmiques.",
+        "summary": "Subvenciones concedidas (JSON)",
         "responses": {
           "200": {
             "description": "OK",
@@ -285,17 +224,16 @@
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "generat": {
-                      "type": "string",
-                      "format": "date"
-                    },
-                    "avis": {
+                    "generado": {
                       "type": "string"
                     },
-                    "dades": {
+                    "fuente": {
+                      "type": "string"
+                    },
+                    "datos": {
                       "type": "array",
                       "items": {
-                        "$ref": "#/components/schemas/Convenis"
+                        "$ref": "#/components/schemas/Subvenciones"
                       }
                     }
                   }
@@ -306,13 +244,9 @@
         }
       }
     },
-    "/data/csv/convenis.csv": {
+    "/data/csv/subvenciones.csv": {
       "get": {
-        "tags": [
-          "conjunts"
-        ],
-        "operationId": "get_convenis_csv",
-        "summary": "Convenis de col·laboració (CSV)",
+        "summary": "Subvenciones concedidas (CSV)",
         "responses": {
           "200": {
             "description": "OK",
@@ -323,14 +257,9 @@
         }
       }
     },
-    "/data/plantilla.json": {
+    "/data/convenios.json": {
       "get": {
-        "tags": [
-          "conjunts"
-        ],
-        "operationId": "get_plantilla",
-        "summary": "Plantilla de personal (JSON)",
-        "description": "Efectius a 31 de desembre per categoria, sexe, franja d'edat i tipus de relació laboral.",
+        "summary": "Convenios (JSON)",
         "responses": {
           "200": {
             "description": "OK",
@@ -339,17 +268,16 @@
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "generat": {
-                      "type": "string",
-                      "format": "date"
-                    },
-                    "avis": {
+                    "generado": {
                       "type": "string"
                     },
-                    "dades": {
+                    "fuente": {
+                      "type": "string"
+                    },
+                    "datos": {
                       "type": "array",
                       "items": {
-                        "$ref": "#/components/schemas/Plantilla"
+                        "$ref": "#/components/schemas/Convenios"
                       }
                     }
                   }
@@ -360,13 +288,9 @@
         }
       }
     },
-    "/data/csv/plantilla.csv": {
+    "/data/csv/convenios.csv": {
       "get": {
-        "tags": [
-          "conjunts"
-        ],
-        "operationId": "get_plantilla_csv",
-        "summary": "Plantilla de personal (CSV)",
+        "summary": "Convenios (CSV)",
         "responses": {
           "200": {
             "description": "OK",
@@ -377,14 +301,9 @@
         }
       }
     },
-    "/data/retribucions.json": {
+    "/data/cargos.json": {
       "get": {
-        "tags": [
-          "conjunts"
-        ],
-        "operationId": "get_retribucions",
-        "summary": "Taules retributives i bretxa salarial (JSON)",
-        "description": "Retribució bruta anual mínima, màxima i mitjana per sexe i categoria professional.",
+        "summary": "Cargos electos y personal directivo (JSON)",
         "responses": {
           "200": {
             "description": "OK",
@@ -393,17 +312,16 @@
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "generat": {
-                      "type": "string",
-                      "format": "date"
-                    },
-                    "avis": {
+                    "generado": {
                       "type": "string"
                     },
-                    "dades": {
+                    "fuente": {
+                      "type": "string"
+                    },
+                    "datos": {
                       "type": "array",
                       "items": {
-                        "$ref": "#/components/schemas/Retribucions"
+                        "$ref": "#/components/schemas/Cargos"
                       }
                     }
                   }
@@ -414,67 +332,9 @@
         }
       }
     },
-    "/data/csv/retribucions.csv": {
+    "/data/csv/cargos.csv": {
       "get": {
-        "tags": [
-          "conjunts"
-        ],
-        "operationId": "get_retribucions_csv",
-        "summary": "Taules retributives i bretxa salarial (CSV)",
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/csv": {}
-            }
-          }
-        }
-      }
-    },
-    "/data/alts-carrecs.json": {
-      "get": {
-        "tags": [
-          "conjunts"
-        ],
-        "operationId": "get_alts_carrecs",
-        "summary": "Alts càrrecs i personal directiu (JSON)",
-        "description": "Llocs directius, retribucions, data de nomenament i estat de les declaracions.",
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "generat": {
-                      "type": "string",
-                      "format": "date"
-                    },
-                    "avis": {
-                      "type": "string"
-                    },
-                    "dades": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "#/components/schemas/AltsCarrecs"
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/data/csv/alts-carrecs.csv": {
-      "get": {
-        "tags": [
-          "conjunts"
-        ],
-        "operationId": "get_alts_carrecs_csv",
-        "summary": "Alts càrrecs i personal directiu (CSV)",
+        "summary": "Cargos electos y personal directivo (CSV)",
         "responses": {
           "200": {
             "description": "OK",
@@ -487,12 +347,7 @@
     },
     "/data/agenda.json": {
       "get": {
-        "tags": [
-          "conjunts"
-        ],
-        "operationId": "get_agenda",
         "summary": "Agenda institucional (JSON)",
-        "description": "Activitats públiques de la direcció, amb indicació de reunions amb grups d'interès inscrits al registre.",
         "responses": {
           "200": {
             "description": "OK",
@@ -501,14 +356,13 @@
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "generat": {
-                      "type": "string",
-                      "format": "date"
-                    },
-                    "avis": {
+                    "generado": {
                       "type": "string"
                     },
-                    "dades": {
+                    "fuente": {
+                      "type": "string"
+                    },
+                    "datos": {
                       "type": "array",
                       "items": {
                         "$ref": "#/components/schemas/Agenda"
@@ -524,10 +378,6 @@
     },
     "/data/csv/agenda.csv": {
       "get": {
-        "tags": [
-          "conjunts"
-        ],
-        "operationId": "get_agenda_csv",
         "summary": "Agenda institucional (CSV)",
         "responses": {
           "200": {
@@ -539,14 +389,9 @@
         }
       }
     },
-    "/data/regals.json": {
+    "/data/plantilla.json": {
       "get": {
-        "tags": [
-          "conjunts"
-        ],
-        "operationId": "get_regals",
-        "summary": "Registre de regals institucionals (JSON)",
-        "description": "Obsequis rebuts per la direcció, valor estimat i destinació.",
+        "summary": "Plantilla de personal (JSON)",
         "responses": {
           "200": {
             "description": "OK",
@@ -555,17 +400,16 @@
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "generat": {
-                      "type": "string",
-                      "format": "date"
-                    },
-                    "avis": {
+                    "generado": {
                       "type": "string"
                     },
-                    "dades": {
+                    "fuente": {
+                      "type": "string"
+                    },
+                    "datos": {
                       "type": "array",
                       "items": {
-                        "$ref": "#/components/schemas/Regals"
+                        "$ref": "#/components/schemas/Plantilla"
                       }
                     }
                   }
@@ -576,13 +420,9 @@
         }
       }
     },
-    "/data/csv/regals.csv": {
+    "/data/csv/plantilla.csv": {
       "get": {
-        "tags": [
-          "conjunts"
-        ],
-        "operationId": "get_regals_csv",
-        "summary": "Registre de regals institucionals (CSV)",
+        "summary": "Plantilla de personal (CSV)",
         "responses": {
           "200": {
             "description": "OK",
@@ -593,14 +433,9 @@
         }
       }
     },
-    "/data/indicadors-turisme.json": {
+    "/data/pmp.json": {
       "get": {
-        "tags": [
-          "conjunts"
-        ],
-        "operationId": "get_indicadors_turisme",
-        "summary": "Indicadors turístics mensuals de Barcelona (JSON)",
-        "description": "Sèrie mensual de pernoctacions i turistes hotelers, ocupació, preu mitjà, passatgers aeroportuaris, creueristes i ús de serveis del Consorci.",
+        "summary": "Periodo medio de pago a proveedores (JSON)",
         "responses": {
           "200": {
             "description": "OK",
@@ -609,17 +444,16 @@
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "generat": {
-                      "type": "string",
-                      "format": "date"
-                    },
-                    "avis": {
+                    "generado": {
                       "type": "string"
                     },
-                    "dades": {
+                    "fuente": {
+                      "type": "string"
+                    },
+                    "datos": {
                       "type": "array",
                       "items": {
-                        "$ref": "#/components/schemas/IndicadorsTurisme"
+                        "$ref": "#/components/schemas/Pmp"
                       }
                     }
                   }
@@ -630,13 +464,9 @@
         }
       }
     },
-    "/data/csv/indicadors-turisme.csv": {
+    "/data/csv/pmp.csv": {
       "get": {
-        "tags": [
-          "conjunts"
-        ],
-        "operationId": "get_indicadors_turisme_csv",
-        "summary": "Indicadors turístics mensuals de Barcelona (CSV)",
+        "summary": "Periodo medio de pago a proveedores (CSV)",
         "responses": {
           "200": {
             "description": "OK",
@@ -647,14 +477,9 @@
         }
       }
     },
-    "/data/mercats-origen.json": {
+    "/data/deuda.json": {
       "get": {
-        "tags": [
-          "conjunts"
-        ],
-        "operationId": "get_mercats_origen",
-        "summary": "Mercats d'origen dels turistes (JSON)",
-        "description": "Quota de turistes allotjats per país o regió d'origen.",
+        "summary": "Deuda viva (JSON)",
         "responses": {
           "200": {
             "description": "OK",
@@ -663,17 +488,16 @@
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "generat": {
-                      "type": "string",
-                      "format": "date"
-                    },
-                    "avis": {
+                    "generado": {
                       "type": "string"
                     },
-                    "dades": {
+                    "fuente": {
+                      "type": "string"
+                    },
+                    "datos": {
                       "type": "array",
                       "items": {
-                        "$ref": "#/components/schemas/MercatsOrigen"
+                        "$ref": "#/components/schemas/Deuda"
                       }
                     }
                   }
@@ -684,13 +508,9 @@
         }
       }
     },
-    "/data/csv/mercats-origen.csv": {
+    "/data/csv/deuda.csv": {
       "get": {
-        "tags": [
-          "conjunts"
-        ],
-        "operationId": "get_mercats_origen_csv",
-        "summary": "Mercats d'origen dels turistes (CSV)",
+        "summary": "Deuda viva (CSV)",
         "responses": {
           "200": {
             "description": "OK",
@@ -701,14 +521,9 @@
         }
       }
     },
-    "/data/oficines-informacio.json": {
+    "/data/inmuebles.json": {
       "get": {
-        "tags": [
-          "conjunts"
-        ],
-        "operationId": "get_oficines_informacio",
-        "summary": "Oficines i punts d'informació turística (JSON)",
-        "description": "Ubicació georeferenciada (WGS84), districte, accessibilitat i visites anuals de les oficines d'informació.",
+        "summary": "Bienes inmuebles (JSON)",
         "responses": {
           "200": {
             "description": "OK",
@@ -717,17 +532,16 @@
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "generat": {
-                      "type": "string",
-                      "format": "date"
-                    },
-                    "avis": {
+                    "generado": {
                       "type": "string"
                     },
-                    "dades": {
+                    "fuente": {
+                      "type": "string"
+                    },
+                    "datos": {
                       "type": "array",
                       "items": {
-                        "$ref": "#/components/schemas/OficinesInformacio"
+                        "$ref": "#/components/schemas/Inmuebles"
                       }
                     }
                   }
@@ -738,13 +552,9 @@
         }
       }
     },
-    "/data/csv/oficines-informacio.csv": {
+    "/data/csv/inmuebles.csv": {
       "get": {
-        "tags": [
-          "conjunts"
-        ],
-        "operationId": "get_oficines_informacio_csv",
-        "summary": "Oficines i punts d'informació turística (CSV)",
+        "summary": "Bienes inmuebles (CSV)",
         "responses": {
           "200": {
             "description": "OK",
@@ -755,14 +565,9 @@
         }
       }
     },
-    "/data/dret-acces.json": {
+    "/data/normativa.json": {
       "get": {
-        "tags": [
-          "conjunts"
-        ],
-        "operationId": "get_dret_acces",
-        "summary": "Sol·licituds d'accés a la informació pública (JSON)",
-        "description": "Sol·licituds rebudes, tema, canal, tipus de sol·licitant, sentit de la resolució i termini de resposta.",
+        "summary": "Normativa municipal (JSON)",
         "responses": {
           "200": {
             "description": "OK",
@@ -771,17 +576,16 @@
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "generat": {
-                      "type": "string",
-                      "format": "date"
-                    },
-                    "avis": {
+                    "generado": {
                       "type": "string"
                     },
-                    "dades": {
+                    "fuente": {
+                      "type": "string"
+                    },
+                    "datos": {
                       "type": "array",
                       "items": {
-                        "$ref": "#/components/schemas/DretAcces"
+                        "$ref": "#/components/schemas/Normativa"
                       }
                     }
                   }
@@ -792,13 +596,9 @@
         }
       }
     },
-    "/data/csv/dret-acces.csv": {
+    "/data/csv/normativa.csv": {
       "get": {
-        "tags": [
-          "conjunts"
-        ],
-        "operationId": "get_dret_acces_csv",
-        "summary": "Sol·licituds d'accés a la informació pública (CSV)",
+        "summary": "Normativa municipal (CSV)",
         "responses": {
           "200": {
             "description": "OK",
@@ -809,14 +609,9 @@
         }
       }
     },
-    "/data/objectius.json": {
+    "/data/solicitudes-acceso.json": {
       "get": {
-        "tags": [
-          "conjunts"
-        ],
-        "operationId": "get_objectius",
-        "summary": "Objectius estratègics i grau de compliment (JSON)",
-        "description": "Objectius del pla d'actuació amb indicador, valor de base, valor actual i fita.",
+        "summary": "Solicitudes de acceso a la información pública (JSON)",
         "responses": {
           "200": {
             "description": "OK",
@@ -825,17 +620,16 @@
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "generat": {
-                      "type": "string",
-                      "format": "date"
-                    },
-                    "avis": {
+                    "generado": {
                       "type": "string"
                     },
-                    "dades": {
+                    "fuente": {
+                      "type": "string"
+                    },
+                    "datos": {
                       "type": "array",
                       "items": {
-                        "$ref": "#/components/schemas/Objectius"
+                        "$ref": "#/components/schemas/SolicitudesAcceso"
                       }
                     }
                   }
@@ -846,13 +640,9 @@
         }
       }
     },
-    "/data/csv/objectius.csv": {
+    "/data/csv/solicitudes-acceso.csv": {
       "get": {
-        "tags": [
-          "conjunts"
-        ],
-        "operationId": "get_objectius_csv",
-        "summary": "Objectius estratègics i grau de compliment (CSV)",
+        "summary": "Solicitudes de acceso a la información pública (CSV)",
         "responses": {
           "200": {
             "description": "OK",
@@ -863,14 +653,9 @@
         }
       }
     },
-    "/data/obligacions.json": {
+    "/data/obligaciones.json": {
       "get": {
-        "tags": [
-          "conjunts"
-        ],
-        "operationId": "get_obligacions",
-        "summary": "Compliment de les obligacions de publicitat activa (JSON)",
-        "description": "Autoavaluació de cada obligació de la Llei 19/2014: estat de publicació, periodicitat, data d'actualització i conjunt de dades associat.",
+        "summary": "Cumplimiento de las obligaciones de publicidad activa (JSON)",
         "responses": {
           "200": {
             "description": "OK",
@@ -879,17 +664,16 @@
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "generat": {
-                      "type": "string",
-                      "format": "date"
-                    },
-                    "avis": {
+                    "generado": {
                       "type": "string"
                     },
-                    "dades": {
+                    "fuente": {
+                      "type": "string"
+                    },
+                    "datos": {
                       "type": "array",
                       "items": {
-                        "$ref": "#/components/schemas/Obligacions"
+                        "$ref": "#/components/schemas/Obligaciones"
                       }
                     }
                   }
@@ -900,13 +684,9 @@
         }
       }
     },
-    "/data/csv/obligacions.csv": {
+    "/data/csv/obligaciones.csv": {
       "get": {
-        "tags": [
-          "conjunts"
-        ],
-        "operationId": "get_obligacions_csv",
-        "summary": "Compliment de les obligacions de publicitat activa (CSV)",
+        "summary": "Cumplimiento de las obligaciones de publicidad activa (CSV)",
         "responses": {
           "200": {
             "description": "OK",
@@ -920,659 +700,443 @@
   },
   "components": {
     "schemas": {
-      "Pressupost": {
+      "Presupuesto": {
         "type": "object",
-        "description": "Pressupost i execució pressupostària",
         "properties": {
-          "any": {
+          "anio": {
             "type": "integer",
-            "description": "Exercici pressupostari"
+            "description": "Ejercicio"
           },
-          "tipus": {
+          "tipo": {
             "type": "string",
-            "description": "ingres | despesa"
+            "description": "ingreso | gasto"
           },
-          "capitol": {
+          "capitulo": {
             "type": "string",
-            "description": "Capítol de la classificació econòmica",
-            "enum": [
-              "3",
-              "4",
-              "5",
-              "7",
-              "1",
-              "2",
-              "3",
-              "4",
-              "6"
-            ]
+            "description": "Capítulo de la clasificación económica"
           },
-          "programa": {
+          "area_gasto": {
             "type": "string",
-            "description": "Programa de despesa (buit en ingressos)",
-            "enum": [
-              "P1",
-              "P2",
-              "P3",
-              "P4",
-              "P5",
-              "P6"
-            ]
+            "description": "Área de gasto (solo gastos)"
           },
           "inicial": {
             "type": "number",
-            "description": "Crèdit/previsió inicial (EUR)"
+            "description": "Crédito o previsión inicial (EUR)"
           },
-          "definitiu": {
+          "definitivo": {
             "type": "number",
-            "description": "Crèdit/previsió definitiva després de modificacions (EUR)"
+            "description": "Crédito o previsión definitiva (EUR)"
           },
-          "executat": {
+          "ejecutado": {
             "type": "number",
-            "description": "Obligacions reconegudes / drets reconeguts (EUR)"
+            "description": "Obligaciones o derechos reconocidos netos (EUR)"
           },
-          "estat": {
+          "estado": {
             "type": "string",
-            "description": "liquidat | en_execucio"
+            "description": "liquidado | en_ejecucion"
           }
         }
       },
-      "Contractes": {
+      "Contratos": {
         "type": "object",
-        "description": "Contractes adjudicats",
         "properties": {
           "id": {
             "type": "string",
-            "description": "Identificador únic del contracte"
+            "description": "Identificador de la entrada en PLACSP"
           },
-          "expedient": {
+          "expediente": {
             "type": "string",
-            "description": "Número d'expedient"
+            "description": "Número de expediente"
           },
-          "objecte": {
+          "objeto": {
             "type": "string",
-            "description": "Objecte del contracte"
+            "description": "Objeto del contrato"
           },
-          "tipus": {
+          "tipo": {
             "type": "string",
-            "description": "Tipus de contracte",
-            "enum": [
-              "serveis",
-              "subministrament",
-              "obres"
-            ]
+            "description": "Tipo de contrato (CODICE ContractCode)"
           },
-          "procediment": {
+          "procedimiento": {
             "type": "string",
-            "description": "Procediment d'adjudicació",
-            "enum": [
-              "obert",
-              "obert_simplificat",
-              "simplificat_abreujat",
-              "menor",
-              "negociat_sense_publicitat",
-              "basat_acord_marc"
-            ]
+            "description": "Procedimiento (CODICE)"
+          },
+          "estado": {
+            "type": "string",
+            "description": "Estado de la licitación"
           },
           "cpv": {
             "type": "string",
-            "description": "Codi CPV principal (Reglament CE 213/2008)",
-            "enum": [
-              "30213000",
-              "39294100",
-              "45310000",
-              "45400000",
-              "48000000",
-              "60100000",
-              "72000000",
-              "79311000",
-              "79341000",
-              "79342000",
-              "79400000",
-              "79530000",
-              "79710000",
-              "79810000",
-              "79822500",
-              "79952000",
-              "90910000",
-              "92312000"
-            ]
+            "description": "Código CPV principal"
           },
-          "programa": {
+          "organo": {
             "type": "string",
-            "description": "Programa pressupostari",
-            "enum": [
-              "P1",
-              "P2",
-              "P3",
-              "P4",
-              "P5",
-              "P6"
-            ]
+            "description": "Órgano de contratación"
           },
-          "data_adjudicacio": {
+          "fecha_adjudicacion": {
             "type": "string",
             "format": "date",
-            "description": "Data d'adjudicació (ISO 8601)"
+            "description": "Fecha de adjudicación"
           },
-          "data_formalitzacio": {
+          "fecha_formalizacion": {
             "type": "string",
             "format": "date",
-            "description": "Data de formalització (buit en menors)"
+            "description": "Fecha de formalización"
           },
-          "durada_mesos": {
-            "type": "integer",
-            "description": "Durada inicial en mesos"
-          },
-          "pressupost_licitacio_sense_iva": {
+          "duracion_meses": {
             "type": "number",
-            "description": "Pressupost base de licitació sense IVA (EUR)"
+            "description": "Duración en meses"
           },
-          "import_adjudicacio_sense_iva": {
+          "presupuesto_base_sin_iva": {
             "type": "number",
-            "description": "Import d'adjudicació sense IVA (EUR)"
+            "description": "Presupuesto base de licitación sin IVA (EUR)"
           },
-          "import_adjudicacio_amb_iva": {
+          "importe_adjudicacion_sin_iva": {
             "type": "number",
-            "description": "Import d'adjudicació amb IVA (EUR)"
+            "description": "Importe de adjudicación sin IVA (EUR)"
           },
-          "nombre_licitadors": {
+          "importe_adjudicacion_con_iva": {
+            "type": "number",
+            "description": "Importe de adjudicación con IVA (EUR)"
+          },
+          "numero_ofertas": {
             "type": "integer",
-            "description": "Nombre d'ofertes rebudes"
+            "description": "Número de ofertas recibidas"
           },
-          "adjudicatari": {
+          "adjudicatario": {
             "type": "string",
-            "description": "Raó social de l'adjudicatari"
+            "description": "Adjudicatario"
           },
-          "adjudicatari_nif": {
+          "adjudicatario_nif": {
             "type": "string",
-            "description": "NIF de l'adjudicatari"
+            "description": "NIF del adjudicatario"
           },
-          "adjudicatari_pime": {
+          "adjudicatario_pyme": {
             "type": "boolean",
-            "description": "L'adjudicatari és PIME"
+            "description": "El adjudicatario es pyme"
           },
-          "clausules_socials": {
-            "type": "boolean",
-            "description": "Inclou clàusules socials"
-          },
-          "clausules_ambientals": {
-            "type": "boolean",
-            "description": "Inclou clàusules ambientals"
-          },
-          "lots": {
-            "type": "integer",
-            "description": "Nombre de lots"
-          },
-          "modificat": {
-            "type": "boolean",
-            "description": "El contracte ha estat modificat"
-          },
-          "enllac_pscp": {
+          "url": {
             "type": "string",
-            "description": "Enllaç a la Plataforma de Serveis de Contractació Pública"
+            "description": "Enlace a la licitación en PLACSP"
+          },
+          "fuente": {
+            "type": "string",
+            "description": "Origen del registro"
           }
         }
       },
-      "Subvencions": {
+      "Encargos": {
         "type": "object",
-        "description": "Subvencions i ajuts atorgats",
         "properties": {
           "id": {
             "type": "string",
             "description": "Identificador"
           },
-          "any": {
-            "type": "integer",
-            "description": "Exercici"
-          },
-          "linia": {
+          "objeto": {
             "type": "string",
-            "description": "Línia de subvenció",
-            "enum": [
-              "L1",
-              "L2",
-              "L3",
-              "L4"
-            ]
+            "description": "Objeto del encargo"
           },
-          "modalitat": {
+          "medio_propio": {
             "type": "string",
-            "description": "Modalitat de concessió",
-            "enum": [
-              "concurrencia",
-              "directa",
-              "nominativa"
-            ]
+            "description": "Medio propio"
           },
-          "beneficiari": {
+          "medio_propio_nif": {
             "type": "string",
-            "description": "Entitat beneficiària"
+            "description": "NIF del medio propio"
           },
-          "beneficiari_nif": {
-            "type": "string",
-            "description": "NIF de la beneficiària"
-          },
-          "districte": {
-            "type": "string",
-            "description": "Districte de Barcelona (buit si és d'àmbit ciutat)"
-          },
-          "import_sollicitat": {
-            "type": "number",
-            "description": "Import sol·licitat (EUR)"
-          },
-          "import_atorgat": {
-            "type": "number",
-            "description": "Import atorgat (EUR)"
-          },
-          "data_concessio": {
+          "fecha_encargo": {
             "type": "string",
             "format": "date",
-            "description": "Data de concessió"
+            "description": "Fecha del encargo"
           },
-          "estat_justificacio": {
-            "type": "string",
-            "description": "Estat de justificació",
-            "enum": [
-              "justificada",
-              "en_revisio",
-              "reintegrament_parcial",
-              "pendent"
-            ]
+          "importe_sin_iva": {
+            "type": "number",
+            "description": "Importe sin IVA (EUR)"
           },
-          "bdns": {
+          "duracion_meses": {
+            "type": "number",
+            "description": "Duración en meses"
+          },
+          "url": {
             "type": "string",
-            "description": "Codi a la Base de Dades Nacional de Subvencions"
+            "description": "Enlace al documento"
+          },
+          "fuente": {
+            "type": "string",
+            "description": "Origen del registro"
           }
         }
       },
-      "Convenis": {
+      "Subvenciones": {
         "type": "object",
-        "description": "Convenis de col·laboració",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Código de concesión"
+          },
+          "codigo_bdns": {
+            "type": "string",
+            "description": "Código BDNS de la convocatoria"
+          },
+          "convocatoria": {
+            "type": "string",
+            "description": "Título de la convocatoria"
+          },
+          "finalidad": {
+            "type": "string",
+            "description": "Finalidad"
+          },
+          "modalidad": {
+            "type": "string",
+            "description": "Modalidad de concesión"
+          },
+          "beneficiario": {
+            "type": "string",
+            "description": "Beneficiario"
+          },
+          "beneficiario_nif": {
+            "type": "string",
+            "description": "NIF del beneficiario (solo personas jurídicas)"
+          },
+          "fecha_concesion": {
+            "type": "string",
+            "format": "date",
+            "description": "Fecha de concesión"
+          },
+          "importe": {
+            "type": "number",
+            "description": "Importe concedido (EUR)"
+          },
+          "fuente": {
+            "type": "string",
+            "description": "Origen del registro"
+          }
+        }
+      },
+      "Convenios": {
+        "type": "object",
         "properties": {
           "id": {
             "type": "string",
             "description": "Identificador"
           },
-          "objecte": {
+          "objeto": {
             "type": "string",
-            "description": "Objecte del conveni"
+            "description": "Objeto"
           },
-          "tipus_part": {
+          "partes": {
             "type": "string",
-            "description": "Naturalesa de l'altra part",
-            "enum": [
-              "administracio",
-              "privat",
-              "universitat",
-              "entitat",
-              "internacional"
-            ]
+            "description": "Partes firmantes"
           },
-          "part_signant": {
+          "tipo_parte": {
             "type": "string",
-            "description": "Entitat signant"
+            "description": "Naturaleza de la otra parte"
           },
-          "data_signatura": {
+          "fecha_firma": {
             "type": "string",
             "format": "date",
-            "description": "Data de signatura"
+            "description": "Fecha de firma"
           },
-          "data_fi": {
+          "fecha_fin": {
             "type": "string",
             "format": "date",
-            "description": "Data de finalització"
+            "description": "Fin de la vigencia"
           },
-          "durada_mesos": {
-            "type": "integer",
-            "description": "Durada en mesos"
-          },
-          "obligacions_economiques_ctb": {
+          "obligaciones_economicas": {
             "type": "number",
-            "description": "Obligacions econòmiques del Consorci (EUR)"
+            "description": "Obligaciones económicas (EUR)"
           },
-          "aportacio_altra_part": {
-            "type": "number",
-            "description": "Aportació de l'altra part (EUR)"
+          "url": {
+            "type": "string",
+            "description": "Texto íntegro"
           }
         }
       },
-      "Plantilla": {
+      "Cargos": {
         "type": "object",
-        "description": "Plantilla de personal",
         "properties": {
-          "any": {
-            "type": "integer",
-            "description": "Any"
+          "id": {
+            "type": "string",
+            "description": "Identificador"
           },
-          "data_referencia": {
+          "nombre": {
+            "type": "string",
+            "description": "Nombre y apellidos"
+          },
+          "tipo_cargo": {
+            "type": "string",
+            "description": "Tipo de cargo"
+          },
+          "cargo": {
+            "type": "string",
+            "description": "Denominación del cargo"
+          },
+          "areas": {
+            "type": "string",
+            "description": "Áreas o delegaciones"
+          },
+          "grupo_politico": {
+            "type": "string",
+            "description": "Grupo político"
+          },
+          "dedicacion": {
+            "type": "string",
+            "description": "Régimen de dedicación"
+          },
+          "retribucion_anual": {
+            "type": "number",
+            "description": "Retribución bruta anual (EUR)"
+          },
+          "indemnizaciones_anuales": {
+            "type": "number",
+            "description": "Asistencias e indemnizaciones del último año (EUR)"
+          },
+          "fecha_nombramiento": {
             "type": "string",
             "format": "date",
-            "description": "Data de referència"
+            "description": "Fecha de nombramiento o toma de posesión"
           },
-          "categoria": {
+          "foto": {
             "type": "string",
-            "description": "Categoria professional",
-            "enum": [
-              "direccio",
-              "comandament",
-              "tecnic_superior",
-              "tecnic",
-              "administratiu",
-              "informacio_turistica",
-              "operacions"
-            ]
+            "description": "Fotografía (URL)"
           },
-          "sexe": {
+          "email": {
             "type": "string",
-            "description": "Sexe",
-            "enum": [
-              "dona",
-              "home"
-            ]
+            "description": "Correo electrónico"
           },
-          "franja_edat": {
+          "cv_url": {
             "type": "string",
-            "description": "Franja d'edat"
+            "description": "Currículum / trayectoria"
           },
-          "tipus_relacio": {
+          "declaracion_bienes_url": {
             "type": "string",
-            "description": "Tipus de relació laboral",
-            "enum": [
-              "indefinit",
-              "temporal",
-              "fix_discontinu"
-            ]
+            "description": "Declaración de bienes"
           },
-          "efectius": {
-            "type": "integer",
-            "description": "Nombre de persones"
-          }
-        }
-      },
-      "Retribucions": {
-        "type": "object",
-        "description": "Taules retributives i bretxa salarial",
-        "properties": {
-          "any": {
-            "type": "integer",
-            "description": "Any"
-          },
-          "categoria": {
+          "declaracion_actividades_url": {
             "type": "string",
-            "description": "Categoria professional",
-            "enum": [
-              "direccio",
-              "comandament",
-              "tecnic_superior",
-              "tecnic",
-              "administratiu",
-              "informacio_turistica",
-              "operacions"
-            ]
-          },
-          "retribucio_minima": {
-            "type": "number",
-            "description": "Retribució bruta anual mínima de la banda (EUR)"
-          },
-          "retribucio_maxima": {
-            "type": "number",
-            "description": "Retribució bruta anual màxima de la banda (EUR)"
-          },
-          "retribucio_mitjana_dones": {
-            "type": "number",
-            "description": "Retribució mitjana de les dones (EUR)"
-          },
-          "retribucio_mitjana_homes": {
-            "type": "number",
-            "description": "Retribució mitjana dels homes (EUR)"
-          }
-        }
-      },
-      "AltsCarrecs": {
-        "type": "object",
-        "description": "Alts càrrecs i personal directiu",
-        "properties": {
-          "lloc": {
-            "type": "string",
-            "description": "Codi del lloc",
-            "enum": [
-              "direccio_general",
-              "direccio_promocio",
-              "direccio_convention_bureau",
-              "direccio_productes",
-              "direccio_economica",
-              "direccio_sostenibilitat"
-            ]
-          },
-          "organ": {
-            "type": "string",
-            "description": "Òrgan o unitat"
-          },
-          "tipus_vinculacio": {
-            "type": "string",
-            "description": "alta_direccio | personal_directiu"
-          },
-          "retribucio_fixa": {
-            "type": "number",
-            "description": "Retribució fixa bruta anual (EUR)"
-          },
-          "retribucio_variable_maxima": {
-            "type": "number",
-            "description": "Retribució variable màxima (EUR)"
-          },
-          "data_nomenament": {
-            "type": "string",
-            "format": "date",
-            "description": "Data de nomenament"
-          },
-          "declaracio_interessos": {
-            "type": "boolean",
-            "description": "Declaració d'interessos publicada"
-          },
-          "declaracio_patrimonial": {
-            "type": "boolean",
-            "description": "Declaració patrimonial publicada"
-          },
-          "compatibilitat": {
-            "type": "string",
-            "description": "Situació de compatibilitat"
+            "description": "Declaración de actividades"
           }
         }
       },
       "Agenda": {
         "type": "object",
-        "description": "Agenda institucional",
         "properties": {
-          "data": {
+          "fecha": {
             "type": "string",
             "format": "date",
-            "description": "Data"
+            "description": "Fecha"
           },
-          "carrec": {
+          "cargo_id": {
             "type": "string",
-            "description": "Lloc directiu",
-            "enum": [
-              "direccio_general",
-              "direccio_promocio",
-              "direccio_convention_bureau",
-              "direccio_productes",
-              "direccio_economica",
-              "direccio_sostenibilitat"
-            ]
+            "description": "Cargo (identificador del conjunto «cargos»)"
           },
-          "tipus": {
+          "tipo": {
             "type": "string",
-            "description": "Tipus d'activitat",
-            "enum": [
-              "reunio",
-              "fira",
-              "acte",
-              "viatge",
-              "organ"
-            ]
+            "description": "Tipo de actividad"
           },
-          "activitat": {
+          "asunto": {
             "type": "string",
-            "description": "Descripció"
+            "description": "Asunto"
           },
-          "grup_interes_registrat": {
-            "type": "boolean",
-            "description": "Reunió amb grup d'interès registrat"
-          },
-          "codi_registre_gi": {
+          "lugar": {
             "type": "string",
-            "description": "Codi al Registre de grups d'interès"
+            "description": "Lugar"
           },
-          "lloc_activitat": {
+          "grupo_interes": {
             "type": "string",
-            "description": "Ciutat"
+            "description": "Grupo de interés inscrito (si procede)"
           }
         }
       },
-      "Regals": {
+      "Plantilla": {
         "type": "object",
-        "description": "Registre de regals institucionals",
         "properties": {
-          "data": {
-            "type": "string",
-            "format": "date",
-            "description": "Data"
+          "anio": {
+            "type": "integer",
+            "description": "Año"
           },
-          "carrec": {
+          "tipo_personal": {
             "type": "string",
-            "description": "Lloc directiu",
-            "enum": [
-              "direccio_general",
-              "direccio_promocio",
-              "direccio_convention_bureau",
-              "direccio_productes",
-              "direccio_economica",
-              "direccio_sostenibilitat"
-            ]
+            "description": "Tipo de personal"
           },
-          "descripcio": {
+          "grupo": {
             "type": "string",
-            "description": "Descripció de l'obsequi"
+            "description": "Grupo profesional"
           },
-          "valor_estimat": {
-            "type": "number",
-            "description": "Valor estimat (EUR)"
-          },
-          "destinacio": {
+          "sexo": {
             "type": "string",
-            "description": "Destinació",
-            "enum": [
-              "fons_patrimonial",
-              "retornat",
-              "donacio_entitat_social"
-            ]
+            "description": "Sexo"
+          },
+          "efectivos": {
+            "type": "integer",
+            "description": "Número de personas"
           }
         }
       },
-      "IndicadorsTurisme": {
+      "Pmp": {
         "type": "object",
-        "description": "Indicadors turístics mensuals de Barcelona",
         "properties": {
-          "periode": {
+          "periodo": {
             "type": "string",
             "pattern": "^\\d{4}-\\d{2}$",
-            "description": "Període (AAAA-MM)"
+            "description": "Mes (AAAA-MM)"
           },
-          "any": {
-            "type": "integer",
-            "description": "Any"
-          },
-          "mes": {
-            "type": "integer",
-            "description": "Mes"
-          },
-          "pernoctacions_hoteleres": {
-            "type": "integer",
-            "description": "Pernoctacions en establiments hotelers"
-          },
-          "turistes_hotelers": {
-            "type": "integer",
-            "description": "Turistes allotjats en hotels"
-          },
-          "ocupacio_hotelera_pct": {
+          "pmp_dias": {
             "type": "number",
-            "description": "Ocupació hotelera per habitacions (%)"
-          },
-          "preu_mitja_habitacio_eur": {
-            "type": "number",
-            "description": "Preu mitjà per habitació ocupada, ADR (EUR)"
-          },
-          "passatgers_aeroport": {
-            "type": "integer",
-            "description": "Passatgers a l'aeroport"
-          },
-          "creueristes": {
-            "type": "integer",
-            "description": "Passatgers de creuers"
-          },
-          "consultes_oficines_informacio": {
-            "type": "integer",
-            "description": "Consultes ateses a les oficines d'informació"
-          },
-          "vendes_targeta_turistica": {
-            "type": "integer",
-            "description": "Targetes turístiques venudes"
-          },
-          "usuaris_bus_turistic": {
-            "type": "integer",
-            "description": "Usuaris del bus turístic"
+            "description": "Periodo medio de pago (días)"
           }
         }
       },
-      "MercatsOrigen": {
+      "Deuda": {
         "type": "object",
-        "description": "Mercats d'origen dels turistes",
         "properties": {
-          "any": {
+          "anio": {
             "type": "integer",
-            "description": "Any"
+            "description": "Año"
           },
-          "mercat": {
-            "type": "string",
-            "description": "Codi ISO 3166-1 alfa-2 o agregat",
-            "enum": [
-              "ES",
-              "US",
-              "GB",
-              "FR",
-              "IT",
-              "DE",
-              "NL",
-              "CN",
-              "JP",
-              "KR",
-              "LATAM",
-              "ALTRES_EU",
-              "ALTRES"
-            ]
-          },
-          "quota_pct": {
+          "deuda_viva": {
             "type": "number",
-            "description": "Quota sobre el total (%)"
+            "description": "Deuda viva (EUR)"
+          },
+          "ingresos_corrientes": {
+            "type": "number",
+            "description": "Ingresos corrientes liquidados (EUR)"
           }
         }
       },
-      "OficinesInformacio": {
+      "Inmuebles": {
         "type": "object",
-        "description": "Oficines i punts d'informació turística",
         "properties": {
           "id": {
             "type": "string",
-            "description": "Identificador"
+            "description": "Número de inventario"
           },
-          "nom": {
+          "denominacion": {
             "type": "string",
-            "description": "Nom"
+            "description": "Denominación"
           },
-          "districte": {
+          "tipo": {
             "type": "string",
-            "description": "Districte"
+            "description": "Tipo"
+          },
+          "naturaleza": {
+            "type": "string",
+            "description": "Naturaleza jurídica"
+          },
+          "direccion": {
+            "type": "string",
+            "description": "Dirección"
+          },
+          "referencia_catastral": {
+            "type": "string",
+            "description": "Referencia catastral"
+          },
+          "superficie_m2": {
+            "type": "number",
+            "description": "Superficie (m²)"
+          },
+          "uso": {
+            "type": "string",
+            "description": "Uso o destino"
           },
           "lat": {
             "type": "number",
@@ -1581,203 +1145,134 @@
           "lon": {
             "type": "number",
             "description": "Longitud WGS84"
-          },
-          "visites_2025": {
-            "type": "integer",
-            "description": "Visites ateses el 2025"
-          },
-          "accessible": {
-            "type": "boolean",
-            "description": "Accés adaptat per a persones amb mobilitat reduïda"
           }
         }
       },
-      "DretAcces": {
+      "Normativa": {
         "type": "object",
-        "description": "Sol·licituds d'accés a la informació pública",
-        "properties": {
-          "id": {
-            "type": "string",
-            "description": "Identificador anonimitzat"
-          },
-          "data_entrada": {
-            "type": "string",
-            "format": "date",
-            "description": "Data d'entrada"
-          },
-          "canal": {
-            "type": "string",
-            "description": "Canal",
-            "enum": [
-              "seu_electronica",
-              "correu_electronic",
-              "presencial"
-            ]
-          },
-          "tipus_sollicitant": {
-            "type": "string",
-            "description": "Tipus de sol·licitant",
-            "enum": [
-              "persona_fisica",
-              "mitja_comunicacio",
-              "entitat",
-              "empresa",
-              "grup_politic"
-            ]
-          },
-          "tema": {
-            "type": "string",
-            "description": "Tema",
-            "enum": [
-              "contractacio",
-              "dades_turistiques",
-              "pressupost",
-              "personal",
-              "activitat",
-              "bon_govern",
-              "altres"
-            ]
-          },
-          "sentit_resolucio": {
-            "type": "string",
-            "description": "Sentit de la resolució",
-            "enum": [
-              "estimacio",
-              "estimacio_parcial",
-              "desestimacio",
-              "inadmissio",
-              "desistiment",
-              "en_tramit"
-            ]
-          },
-          "data_resolucio": {
-            "type": "string",
-            "format": "date",
-            "description": "Data de resolució"
-          },
-          "dies_resolucio": {
-            "type": "integer",
-            "description": "Dies naturals fins a la resolució"
-          },
-          "reclamacio_gaip": {
-            "type": "boolean",
-            "description": "S'ha presentat reclamació a la GAIP"
-          }
-        }
-      },
-      "Objectius": {
-        "type": "object",
-        "description": "Objectius estratègics i grau de compliment",
         "properties": {
           "id": {
             "type": "string",
             "description": "Identificador"
           },
-          "eix": {
+          "titulo": {
             "type": "string",
-            "description": "Eix estratègic",
-            "enum": [
-              "sostenibilitat",
-              "valor",
-              "ciutadania",
-              "governanca"
-            ]
+            "description": "Título"
           },
-          "objectiu": {
+          "tipo": {
             "type": "string",
-            "description": "Objectiu"
+            "description": "Tipo de norma"
           },
-          "indicador": {
+          "fecha_aprobacion": {
             "type": "string",
-            "description": "Indicador de seguiment"
+            "format": "date",
+            "description": "Aprobación definitiva"
           },
-          "valor_base": {
-            "type": "number",
-            "description": "Valor de base"
-          },
-          "valor_actual": {
-            "type": "number",
-            "description": "Valor actual"
-          },
-          "valor_objectiu": {
-            "type": "number",
-            "description": "Valor fita"
-          },
-          "any_objectiu": {
-            "type": "integer",
-            "description": "Any de la fita"
-          },
-          "unitat": {
+          "fecha_publicacion": {
             "type": "string",
-            "description": "Unitat de mesura"
+            "format": "date",
+            "description": "Publicación en el boletín"
+          },
+          "boletin": {
+            "type": "string",
+            "description": "Boletín y número"
+          },
+          "url": {
+            "type": "string",
+            "description": "Texto publicado"
+          },
+          "vigente": {
+            "type": "boolean",
+            "description": "Vigente"
           }
         }
       },
-      "Obligacions": {
+      "SolicitudesAcceso": {
         "type": "object",
-        "description": "Compliment de les obligacions de publicitat activa",
         "properties": {
           "id": {
             "type": "string",
-            "description": "Identificador de l'obligació"
+            "description": "Identificador anonimizado"
           },
-          "bloc": {
-            "type": "string",
-            "description": "Bloc temàtic",
-            "enum": [
-              "institucional",
-              "economica",
-              "contractacio",
-              "convenis",
-              "subvencions",
-              "planificacio",
-              "dret_acces",
-              "normativa",
-              "dades_obertes"
-            ]
-          },
-          "article": {
-            "type": "string",
-            "description": "Article de la Llei 19/2014"
-          },
-          "titol": {
-            "type": "string",
-            "description": "Obligació"
-          },
-          "seccio": {
-            "type": "string",
-            "description": "Secció del portal on es publica"
-          },
-          "estat": {
-            "type": "string",
-            "description": "Estat",
-            "enum": [
-              "publicat",
-              "parcial",
-              "pendent"
-            ]
-          },
-          "periodicitat": {
-            "type": "string",
-            "description": "Periodicitat d'actualització",
-            "enum": [
-              "continua",
-              "setmanal",
-              "mensual",
-              "trimestral",
-              "semestral",
-              "anual",
-              "quan_canvii"
-            ]
-          },
-          "conjunt_dades": {
-            "type": "string",
-            "description": "Conjunt de dades associat"
-          },
-          "darrera_actualitzacio": {
+          "fecha_entrada": {
             "type": "string",
             "format": "date",
-            "description": "Darrera actualització"
+            "description": "Fecha de entrada"
+          },
+          "canal": {
+            "type": "string",
+            "description": "Canal"
+          },
+          "tipo_solicitante": {
+            "type": "string",
+            "description": "Tipo de solicitante"
+          },
+          "tema": {
+            "type": "string",
+            "description": "Tema"
+          },
+          "sentido": {
+            "type": "string",
+            "description": "Sentido de la resolución"
+          },
+          "fecha_resolucion": {
+            "type": "string",
+            "format": "date",
+            "description": "Fecha de resolución"
+          },
+          "dias_resolucion": {
+            "type": "integer",
+            "description": "Días naturales hasta la resolución"
+          },
+          "reclamacion_consejo": {
+            "type": "boolean",
+            "description": "Reclamación ante el Consejo de Transparencia"
+          }
+        }
+      },
+      "Obligaciones": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Identificador"
+          },
+          "bloque": {
+            "type": "string",
+            "description": "Bloque"
+          },
+          "norma": {
+            "type": "string",
+            "description": "Norma"
+          },
+          "articulo": {
+            "type": "string",
+            "description": "Artículo"
+          },
+          "titulo": {
+            "type": "string",
+            "description": "Obligación"
+          },
+          "pagina": {
+            "type": "string",
+            "description": "Página del portal donde se publica"
+          },
+          "estado": {
+            "type": "string",
+            "description": "Estado"
+          },
+          "periodicidad": {
+            "type": "string",
+            "description": "Periodicidad"
+          },
+          "conjunto": {
+            "type": "string",
+            "description": "Conjunto de datos asociado"
+          },
+          "ultima_actualizacion": {
+            "type": "string",
+            "format": "date",
+            "description": "Última actualización"
           }
         }
       }

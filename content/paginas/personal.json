@@ -1,0 +1,112 @@
+{
+ "id": "personal",
+ "icono": "briefcase",
+ "titulo": {
+  "es": "Personal",
+  "va": "Personal",
+  "en": "Staff"
+ },
+ "intro": {
+  "es": "Plantilla municipal por tipo de personal, grupo profesional y sexo.",
+  "va": "Plantilla municipal per tipus de personal, grup professional i sexe.",
+  "en": "Municipal workforce by staff type, grade and sex."
+ },
+ "bloques": [
+  {
+   "tipo": "cifras",
+   "items": [
+    {
+     "etiqueta": {
+      "es": "Efectivos 2025",
+      "va": "Efectius 2025",
+      "en": "Headcount 2025"
+     },
+     "conjunto": "plantilla",
+     "operacion": "sumar",
+     "campo": "efectivos",
+     "filtro": "anio=2025",
+     "formato": "entero"
+    },
+    {
+     "etiqueta": {
+      "es": "Mujeres 2025",
+      "va": "Dones 2025",
+      "en": "Women 2025"
+     },
+     "conjunto": "plantilla",
+     "operacion": "sumar",
+     "campo": "efectivos",
+     "filtro": "anio=2025;sexo=mujer",
+     "formato": "entero"
+    }
+   ]
+  },
+  {
+   "tipo": "grafico",
+   "titulo": {
+    "es": "Plantilla por tipo de personal",
+    "va": "Plantilla per tipus de personal",
+    "en": "Staff by type"
+   },
+   "conjunto": "plantilla",
+   "tipo_grafico": "columnas_apiladas",
+   "agrupar": "anio",
+   "series": "tipo_personal",
+   "valor": "efectivos",
+   "operacion": "sumar",
+   "formato": "entero",
+   "orden": "etiqueta",
+   "ancho": "completo"
+  },
+  {
+   "tipo": "grafico",
+   "titulo": {
+    "es": "Por grupo profesional y sexo (2025)",
+    "va": "Per grup professional i sexe (2025)",
+    "en": "By grade and sex (2025)"
+   },
+   "conjunto": "plantilla",
+   "tipo_grafico": "columnas",
+   "agrupar": "grupo",
+   "series": "sexo",
+   "valor": "efectivos",
+   "operacion": "sumar",
+   "filtro": "anio=2025",
+   "formato": "entero",
+   "orden": "etiqueta"
+  },
+  {
+   "tipo": "documentos",
+   "titulo": {
+    "es": "Documentos",
+    "va": "Documents",
+    "en": "Documents"
+   },
+   "items": [
+    {
+     "titulo": {
+      "es": "Relación de puestos de trabajo (RPT)",
+      "va": "Relació de llocs de treball (RLT)",
+      "en": "Job catalogue"
+     },
+     "fecha": "2025-02-01",
+     "url": "#",
+     "formato": "PDF"
+    },
+    {
+     "titulo": {
+      "es": "Oferta de empleo público 2026",
+      "va": "Oferta d’ocupació pública 2026",
+      "en": "Public employment offer 2026"
+     },
+     "fecha": "2026-03-15",
+     "url": "#",
+     "formato": "PDF"
+    }
+   ]
+  },
+  {
+   "tipo": "indicadores"
+  }
+ ]
+}

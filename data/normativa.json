@@ -1,0 +1,128 @@
+{
+ "generado": "2026-11-13",
+ "fuente": "manual",
+ "ejemplo": true,
+ "aviso": "Datos de ejemplo generados sintéticamente. No son cifras oficiales.",
+ "datos": [
+  {
+   "id": "NOR-001",
+   "titulo": "Ordenanza fiscal reguladora del Impuesto sobre Bienes Inmuebles",
+   "tipo": "ordenanza_fiscal",
+   "fecha_aprobacion": "2021-07-05",
+   "fecha_publicacion": "2021-08-04",
+   "boletin": "BOP n.º 168",
+   "url": "#",
+   "vigente": true
+  },
+  {
+   "id": "NOR-002",
+   "titulo": "Ordenanza fiscal del Impuesto sobre Vehículos de Tracción Mecánica",
+   "tipo": "ordenanza_fiscal",
+   "fecha_aprobacion": "2016-05-18",
+   "fecha_publicacion": "2016-06-09",
+   "boletin": "BOP n.º 64",
+   "url": "#",
+   "vigente": true
+  },
+  {
+   "id": "NOR-003",
+   "titulo": "Ordenanza fiscal del Impuesto sobre Construcciones, Instalaciones y Obras",
+   "tipo": "ordenanza_fiscal",
+   "fecha_aprobacion": "2021-08-11",
+   "fecha_publicacion": "2021-08-21",
+   "boletin": "BOP n.º 146",
+   "url": "#",
+   "vigente": true
+  },
+  {
+   "id": "NOR-004",
+   "titulo": "Ordenanza fiscal de la tasa de recogida de residuos",
+   "tipo": "ordenanza_fiscal",
+   "fecha_aprobacion": "2014-06-04",
+   "fecha_publicacion": "2014-07-01",
+   "boletin": "BOP n.º 184",
+   "url": "#",
+   "vigente": true
+  },
+  {
+   "id": "NOR-005",
+   "titulo": "Ordenanza reguladora de la convivencia ciudadana",
+   "tipo": "ordenanza",
+   "fecha_aprobacion": "2009-06-27",
+   "fecha_publicacion": "2009-07-31",
+   "boletin": "BOP n.º 203",
+   "url": "#",
+   "vigente": true
+  },
+  {
+   "id": "NOR-006",
+   "titulo": "Ordenanza de tenencia de animales de compañía",
+   "tipo": "ordenanza",
+   "fecha_aprobacion": "2018-04-06",
+   "fecha_publicacion": "2018-05-16",
+   "boletin": "BOP n.º 3",
+   "url": "#",
+   "vigente": true
+  },
+  {
+   "id": "NOR-007",
+   "titulo": "Ordenanza de terrazas y ocupación de la vía pública",
+   "tipo": "ordenanza",
+   "fecha_aprobacion": "2006-06-23",
+   "fecha_publicacion": "2006-08-01",
+   "boletin": "BOP n.º 70",
+   "url": "#",
+   "vigente": true
+  },
+  {
+   "id": "NOR-008",
+   "titulo": "Reglamento orgánico municipal",
+   "tipo": "reglamento",
+   "fecha_aprobacion": "2009-09-02",
+   "fecha_publicacion": "2009-09-28",
+   "boletin": "BOP n.º 240",
+   "url": "#",
+   "vigente": true
+  },
+  {
+   "id": "NOR-009",
+   "titulo": "Reglamento de transparencia, participación y datos abiertos",
+   "tipo": "reglamento",
+   "fecha_aprobacion": "2023-02-23",
+   "fecha_publicacion": "2023-03-05",
+   "boletin": "BOP n.º 67",
+   "url": "#",
+   "vigente": true
+  },
+  {
+   "id": "NOR-010",
+   "titulo": "Reglamento de la administración electrónica",
+   "tipo": "reglamento",
+   "fecha_aprobacion": "2019-07-07",
+   "fecha_publicacion": "2019-08-12",
+   "boletin": "BOP n.º 63",
+   "url": "#",
+   "vigente": true
+  },
+  {
+   "id": "NOR-011",
+   "titulo": "Reglamento de uso de instalaciones deportivas",
+   "tipo": "reglamento",
+   "fecha_aprobacion": "2016-12-05",
+   "fecha_publicacion": "2017-01-08",
+   "boletin": "BOP n.º 10",
+   "url": "#",
+   "vigente": true
+  },
+  {
+   "id": "NOR-012",
+   "titulo": "Instrucción sobre contratación menor",
+   "tipo": "instruccion",
+   "fecha_aprobacion": "2011-04-15",
+   "fecha_publicacion": "2011-05-02",
+   "boletin": "BOP n.º 16",
+   "url": "#",
+   "vigente": true
+  }
+ ]
+}

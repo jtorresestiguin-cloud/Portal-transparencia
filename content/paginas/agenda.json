@@ -1,0 +1,66 @@
+{
+ "id": "agenda",
+ "icono": "calendar",
+ "titulo": {
+  "es": "Agenda institucional",
+  "va": "Agenda institucional",
+  "en": "Official diary"
+ },
+ "intro": {
+  "es": "Actividades públicas de la Alcaldía y las concejalías, incluidas las reuniones con grupos de interés.",
+  "va": "Activitats públiques de l’Alcaldia i les regidories, incloses les reunions amb grups d’interés.",
+  "en": "Public activities of the mayor and councillors, including lobby meetings."
+ },
+ "bloques": [
+  {
+   "tipo": "grafico",
+   "titulo": {
+    "es": "Actividades por tipo",
+    "va": "Activitats per tipus",
+    "en": "Entries by type"
+   },
+   "conjunto": "agenda",
+   "tipo_grafico": "barras",
+   "agrupar": "tipo",
+   "operacion": "contar",
+   "formato": "entero"
+  },
+  {
+   "tipo": "grafico",
+   "titulo": {
+    "es": "Actividades por mes",
+    "va": "Activitats per mes",
+    "en": "Entries per month"
+   },
+   "conjunto": "agenda",
+   "tipo_grafico": "columnas",
+   "agrupar": "fecha:mes",
+   "operacion": "contar",
+   "formato": "entero",
+   "orden": "etiqueta"
+  },
+  {
+   "tipo": "tabla",
+   "conjunto": "agenda",
+   "columnas": [
+    "fecha",
+    "cargo_id",
+    "tipo",
+    "asunto",
+    "lugar",
+    "grupo_interes"
+   ],
+   "filtros": [
+    "tipo",
+    "cargo_id"
+   ],
+   "busqueda": true,
+   "orden": "fecha",
+   "descendente": true,
+   "por_pagina": 15
+  },
+  {
+   "tipo": "indicadores"
+  }
+ ]
+}

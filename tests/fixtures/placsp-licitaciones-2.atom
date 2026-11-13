@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:cac="urn:x:cac" xmlns:cbc="urn:x:cbc" xmlns:cac-place-ext="urn:x:cpe" xmlns:cbc-place-ext="urn:x:cbpe">
+  <title>Página 2</title>
+  <updated>2026-11-12T08:00:00.000+01:00</updated>
+  <entry>
+    <id>https://contrataciondelsectorpublico.gob.es/sindicacion/licitacionesPerfilContratante/1004</id>
+    <link href="https://contrataciondelsectorpublico.gob.es/wps/poc?uri=deeplink:detalle_licitacion&amp;idEvl=AAA1004"/>
+    <title>Obras de reurbanización de la calle Mayor (2 lotes)</title>
+    <updated>2026-10-30T10:00:00.000+01:00</updated>
+    <cac-place-ext:ContractFolderStatus>
+      <cbc:ContractFolderID>2026/030</cbc:ContractFolderID>
+      <cbc-place-ext:ContractFolderStatusCode>ADJ</cbc-place-ext:ContractFolderStatusCode>
+      <cac-place-ext:LocatedContractingParty><cac:Party>
+        <cac:PartyIdentification><cbc:ID schemeName="DIR3">L00000000</cbc:ID></cac:PartyIdentification>
+        <cac:PartyName><cbc:Name>Pleno del Ayuntamiento de Ejemplo</cbc:Name></cac:PartyName>
+      </cac:Party></cac-place-ext:LocatedContractingParty>
+      <cac:ProcurementProject><cbc:Name>Obras de reurbanización de la calle Mayor</cbc:Name><cbc:TypeCode>3</cbc:TypeCode>
+        <cac:BudgetAmount><cbc:TaxExclusiveAmount currencyID="EUR">500000</cbc:TaxExclusiveAmount></cac:BudgetAmount>
+        <cac:RequiredCommodityClassification><cbc:ItemClassificationCode>45233140</cbc:ItemClassificationCode></cac:RequiredCommodityClassification></cac:ProcurementProject>
+      <cac:TenderResult><cbc:AwardDate>2026-10-25</cbc:AwardDate><cbc:ReceivedTenderQuantity>3</cbc:ReceivedTenderQuantity><cbc:SMEAwardedIndicator>false</cbc:SMEAwardedIndicator>
+        <cac:WinningParty><cac:PartyIdentification><cbc:ID>A11111111</cbc:ID></cac:PartyIdentification><cac:PartyName><cbc:Name>Construcciones Prueba, SA</cbc:Name></cac:PartyName></cac:WinningParty>
+        <cac:AwardedTenderedProject><cac:LegalMonetaryTotal><cbc:TaxExclusiveAmount currencyID="EUR">200000</cbc:TaxExclusiveAmount><cbc:PayableAmount currencyID="EUR">242000</cbc:PayableAmount></cac:LegalMonetaryTotal></cac:AwardedTenderedProject></cac:TenderResult>
+      <cac:TenderResult><cbc:AwardDate>2026-10-25</cbc:AwardDate><cbc:ReceivedTenderQuantity>5</cbc:ReceivedTenderQuantity>
+        <cac:WinningParty><cac:PartyIdentification><cbc:ID>B22222222</cbc:ID></cac:PartyIdentification><cac:PartyName><cbc:Name>Obras Prueba, SL</cbc:Name></cac:PartyName></cac:WinningParty>
+        <cac:AwardedTenderedProject><cac:LegalMonetaryTotal><cbc:TaxExclusiveAmount currencyID="EUR">230000</cbc:TaxExclusiveAmount><cbc:PayableAmount currencyID="EUR">278300</cbc:PayableAmount></cac:LegalMonetaryTotal></cac:AwardedTenderedProject></cac:TenderResult>
+      <cac:TenderingProcess><cbc:ProcedureCode>1</cbc:ProcedureCode></cac:TenderingProcess>
+    </cac-place-ext:ContractFolderStatus>
+  </entry>
+</feed>

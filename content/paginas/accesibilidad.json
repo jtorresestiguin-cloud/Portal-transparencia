@@ -1,0 +1,38 @@
+{
+ "id": "accesibilidad",
+ "icono": "info",
+ "titulo": {
+  "es": "Accesibilidad y aviso legal",
+  "va": "Accessibilitat i avís legal",
+  "en": "Accessibility and legal notice"
+ },
+ "intro": {
+  "es": "Cómo está hecho este portal y cómo usarlo con cualquier dispositivo.",
+  "va": "Com està fet aquest portal i com usar-lo amb qualsevol dispositiu.",
+  "en": "How this portal is built and how to use it on any device."
+ },
+ "bloques": [
+  {
+   "tipo": "aviso",
+   "nivel": "advertencia",
+   "contenido": {
+    "es": "**Prototipo con datos de ejemplo.** Las cifras, personas y empresas son ficticias. Los contratos y subvenciones se sustituyen por datos reales al activar la sincronización con PLACSP y BDNS.",
+    "va": "**Prototip amb dades d’exemple.** Les xifres, persones i empreses són fictícies. Els contractes i subvencions se substitueixen per dades reals en activar la sincronització amb PLACSP i BDNS.",
+    "en": "**Prototype with sample data.** Figures, people and companies are fictitious. Contracts and grants are replaced by real data once PLACSP and BDNS sync is enabled."
+   }
+  },
+  {
+   "tipo": "texto",
+   "titulo": {
+    "es": "Declaración de accesibilidad",
+    "va": "Declaració d’accessibilitat",
+    "en": "Accessibility statement"
+   },
+   "contenido": {
+    "es": "Este portal se ha diseñado para cumplir el nivel AA de las WCAG 2.1 y la norma UNE-EN 301549, conforme al **Real Decreto 1112/2018**.\n\n- Todos los gráficos tienen una alternativa en tabla y se pueden descargar en CSV.\n- La paleta de colores está validada para daltonismo y tiene versión para modo oscuro.\n- Navegación completa con teclado y enlace para saltar al contenido.\n- Los estados se indican con icono y texto, nunca solo con color.\n- Disponible en castellano, valenciano e inglés.",
+    "va": "Aquest portal s’ha dissenyat per a complir el nivell AA de les WCAG 2.1 i la norma UNE-EN 301549, d’acord amb el **Reial decret 1112/2018**.\n\n- Tots els gràfics tenen una alternativa en taula i es poden descarregar en CSV.\n- La paleta de colors està validada per a daltonisme i té versió per al mode fosc.\n- Navegació completa amb teclat i enllaç per a saltar al contingut.\n- Els estats s’indiquen amb icona i text, mai només amb color.\n- Disponible en castellà, valencià i anglés.",
+    "en": "This portal is designed to meet WCAG 2.1 AA and EN 301 549, in line with **Royal Decree 1112/2018**.\n\n- Every chart has a table alternative and CSV download.\n- The colour palette is validated for colour-vision deficiencies and has a dark-mode version.\n- Full keyboard navigation and skip link.\n- Statuses use icon and text, never colour alone.\n- Available in Spanish, Valencian and English."
+   }
+  }
+ ]
+}

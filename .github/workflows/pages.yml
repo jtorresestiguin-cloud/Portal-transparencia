@@ -1,10 +1,12 @@
-name: Valida i publica el portal
+name: Valida y publica el portal
 
 on:
   push:
     branches: ["**"]
+    paths-ignore: ["**.md"]
   pull_request:
   workflow_dispatch:
+  workflow_call:
 
 permissions:
   contents: read
@@ -23,7 +25,9 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - name: Valida dades i regenera catàleg (DCAT-AP, CSV, Data Package, OpenAPI)
+      - name: Pruebas de los conectores de sincronización
+        run: node --test tests/*.test.mjs
+      - name: Valida datos y contenidos y regenera el catálogo (DCAT-AP, CSV, Data Package, OpenAPI)
         run: node scripts/build-catalog.mjs
 
   deploy:
@@ -35,12 +39,14 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}   # la última versión de la rama (incluye la sincronización recién guardada)
       - uses: actions/setup-node@v4
         with:
           node-version: 22
       - id: pages
         uses: actions/configure-pages@v5
-      - name: Genera el catàleg amb la URL pública definitiva
+      - name: Genera el catálogo con la URL pública definitiva
         run: node scripts/build-catalog.mjs
         env:
           BASE_URL: ${{ steps.pages.outputs.base_url }}

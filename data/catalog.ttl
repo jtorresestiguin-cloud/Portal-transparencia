@@ -5,492 +5,264 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/catalog> a dcat:Catalog ;
-  dct:title "Catàleg de dades obertes del Consorci de Turisme de Barcelona"@ca, "Catálogo de datos abiertos del Consorci de Turisme de Barcelona"@es, "Open data catalogue of the Barcelona Tourism Consortium"@en ;
-  dct:description "Conjunts de dades de transparència i d'activitat turística publicats en formats oberts i reutilitzables."@ca, "Conjuntos de datos de transparencia y de actividad turística publicados en formatos abiertos y reutilizables."@es, "Transparency and tourism activity datasets published in open, reusable formats."@en ;
-  dct:publisher <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#organitzacio> ;
+  dct:title "Catálogo de datos abiertos del portal de transparencia"@es, "Catàleg de dades obertes del portal de transparència"@ca-valencia, "Open data catalogue of the transparency portal"@en ;
+  dct:description "Conjuntos de datos de transparencia publicados en formatos abiertos y reutilizables."@es, "Conjunts de dades de transparència publicats en formats oberts i reutilitzables."@ca-valencia, "Transparency datasets published in open, reusable formats."@en ;
+  dct:publisher <http://datos.gob.es/recurso/sector-publico/org/Organismo/L00000000> ;
   dct:license <https://creativecommons.org/licenses/by/4.0/> ;
-  dct:language <http://publications.europa.eu/resource/authority/language/CAT>, <http://publications.europa.eu/resource/authority/language/SPA>, <http://publications.europa.eu/resource/authority/language/ENG> ;
-  dct:modified "2026-11-12"^^xsd:date ;
+  dct:language <http://publications.europa.eu/resource/authority/language/SPA>, <http://publications.europa.eu/resource/authority/language/CAT>, <http://publications.europa.eu/resource/authority/language/ENG> ;
+  dct:modified "2026-11-13"^^xsd:date ;
   foaf:homepage <https://jtorresestiguin-cloud.github.io/Portal-transparencia/> ;
-  dcat:dataset <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/dades-obertes/pressupost>,
-    <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/dades-obertes/contractes>,
-    <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/dades-obertes/subvencions>,
-    <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/dades-obertes/convenis>,
-    <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/dades-obertes/plantilla>,
-    <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/dades-obertes/retribucions>,
-    <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/dades-obertes/alts-carrecs>,
-    <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/dades-obertes/agenda>,
-    <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/dades-obertes/regals>,
-    <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/dades-obertes/indicadors-turisme>,
-    <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/dades-obertes/mercats-origen>,
-    <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/dades-obertes/oficines-informacio>,
-    <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/dades-obertes/dret-acces>,
-    <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/dades-obertes/objectius>,
-    <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/dades-obertes/obligacions> .
+  dcat:dataset <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/datos/presupuesto>,
+    <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/datos/contratos>,
+    <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/datos/encargos>,
+    <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/datos/subvenciones>,
+    <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/datos/convenios>,
+    <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/datos/cargos>,
+    <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/datos/agenda>,
+    <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/datos/plantilla>,
+    <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/datos/pmp>,
+    <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/datos/deuda>,
+    <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/datos/inmuebles>,
+    <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/datos/normativa>,
+    <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/datos/solicitudes-acceso>,
+    <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/datos/obligaciones> .
 
-<https://jtorresestiguin-cloud.github.io/Portal-transparencia/#organitzacio> a foaf:Agent ; foaf:name "Consorci de Turisme de Barcelona" ; dct:identifier "PENDENT-DIR3" .
+<http://datos.gob.es/recurso/sector-publico/org/Organismo/L00000000> a foaf:Agent ; foaf:name "Ayuntamiento de Ejemplo" ; dct:identifier "L00000000" .
 
-<https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/dades-obertes/pressupost> a dcat:Dataset ;
-  dct:identifier "pressupost" ;
-  dct:title "Pressupost i execució pressupostària"@ca, "Presupuesto y ejecución presupuestaria"@es, "Budget and budget execution"@en ;
-  dct:description "Pressupost inicial, definitiu i executat per any, tipus (ingrés/despesa), capítol econòmic i programa."@ca, "Presupuesto inicial, definitivo y ejecutado por año, tipo (ingreso/gasto), capítulo económico y programa."@es, "Initial, final and executed budget by year, type (revenue/expense), economic chapter and programme."@en ;
-  dcat:keyword "pressupost"@ca, "execució"@ca, "ingressos"@ca, "despeses"@ca, "capítol"@ca ;
+<https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/datos/presupuesto> a dcat:Dataset ;
+  dct:identifier "presupuesto" ;
+  dct:title "Presupuesto y ejecución presupuestaria"@es, "Pressupost i execució pressupostària"@ca-valencia, "Budget and budget execution"@en ;
+  dct:description "Créditos iniciales, definitivos y ejecutados por año, tipo, capítulo económico y área de gasto (Orden EHA/3565/2008)."@es, "Crèdits inicials, definitius i executats per any, tipus, capítol econòmic i àrea de despesa (Ordre EHA/3565/2008)."@ca-valencia, "Initial, final and executed budget by year, type, economic chapter and spending area."@en ;
+  dcat:keyword "presupuesto"@es, "ejecución"@es, "ingresos"@es, "gastos"@es ;
   dcat:theme <http://publications.europa.eu/resource/authority/data-theme/GOVE>, <http://datos.gob.es/kos/sector-publico/sector/sector-publico> ;
-  dct:publisher <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#organitzacio> ;
+  dct:publisher <http://datos.gob.es/recurso/sector-publico/org/Organismo/L00000000> ;
   dct:accrualPeriodicity <http://publications.europa.eu/resource/authority/frequency/QUARTERLY> ;
   dct:temporal [ a dct:PeriodOfTime ; dcat:startDate "2021-01-01"^^xsd:date ; dcat:endDate "2026-12-31"^^xsd:date ] ;
-  dct:spatial <https://www.geonames.org/3128760> ;
-  dct:modified "2026-11-12"^^xsd:date ;
-  dcat:contactPoint [ a vcard:Organization ; vcard:fn "Unitat de Transparència" ; vcard:hasEmail <mailto:transparencia@example.org> ] ;
-  dcat:landingPage <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/economia> ;
-  dcat:distribution <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/pressupost.csv>, <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/pressupost.json> .
+  dcat:contactPoint [ a vcard:Organization ; vcard:fn "Unidad de Transparencia" ; vcard:hasEmail <mailto:transparencia@example.org> ] ;
+  dcat:landingPage <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/presupuesto> ;
+  dcat:distribution <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/presupuesto.csv>, <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/presupuesto.json> .
 
-<https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/pressupost.csv> a dcat:Distribution ;
-  dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/pressupost.csv> ;
-  dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/pressupost.csv> ;
-  dct:format <http://publications.europa.eu/resource/authority/file-type/CSV> ;
-  dcat:mediaType <http://www.iana.org/assignments/media-types/text/csv> ;
-  dcat:byteSize "9460"^^xsd:nonNegativeInteger ;
-  dct:license <https://creativecommons.org/licenses/by/4.0/> .
+<https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/presupuesto.csv> a dcat:Distribution ; dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/presupuesto.csv> ; dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/presupuesto.csv> ; dct:format <http://publications.europa.eu/resource/authority/file-type/CSV> ; dct:license <https://creativecommons.org/licenses/by/4.0/> .
 
-<https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/pressupost.json> a dcat:Distribution ;
-  dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/pressupost.json> ;
-  dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/pressupost.json> ;
-  dct:format <http://publications.europa.eu/resource/authority/file-type/JSON> ;
-  dcat:mediaType <http://www.iana.org/assignments/media-types/application/json> ;
-  dcat:byteSize "34456"^^xsd:nonNegativeInteger ;
-  dct:license <https://creativecommons.org/licenses/by/4.0/> .
+<https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/presupuesto.json> a dcat:Distribution ; dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/presupuesto.json> ; dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/presupuesto.json> ; dct:format <http://publications.europa.eu/resource/authority/file-type/JSON> ; dct:license <https://creativecommons.org/licenses/by/4.0/> .
 
-<https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/dades-obertes/contractes> a dcat:Dataset ;
-  dct:identifier "contractes" ;
-  dct:title "Contractes adjudicats"@ca, "Contratos adjudicados"@es, "Awarded contracts"@en ;
-  dct:description "Relació de contractes adjudicats, inclosos els menors, amb procediment, CPV, imports, licitadors i adjudicatari. Alineat amb els camps de la PSCP i OCDS."@ca, "Relación de contratos adjudicados, incluidos los menores, con procedimiento, CPV, importes, licitadores y adjudicatario. Alineado con los campos de la PSCP y OCDS."@es, "Awarded contracts, including minor contracts, with procedure, CPV, amounts, bidders and supplier. Aligned with PSCP and OCDS fields."@en ;
-  dcat:keyword "contractació"@ca, "licitació"@ca, "adjudicació"@ca, "contractes menors"@ca, "CPV"@ca, "OCDS"@ca ;
+<https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/datos/contratos> a dcat:Dataset ;
+  dct:identifier "contratos" ;
+  dct:title "Contratos"@es, "Contractes"@ca-valencia, "Contracts"@en ;
+  dct:description "Contratos del perfil del contratante, incluidos los menores, sincronizados automáticamente desde la Plataforma de Contratación del Sector Público."@es, "Contractes del perfil del contractant, inclosos els menors, sincronitzats automàticament des de la Plataforma de Contractació del Sector Públic."@ca-valencia, "Contracting-profile contracts, including minor contracts, synchronised automatically from the Spanish Public Procurement Platform."@en ;
+  dcat:keyword "contratación"@es, "licitación"@es, "adjudicación"@es, "contratos menores"@es, "PLACSP"@es, "CODICE"@es, "OCDS"@es ;
   dcat:theme <http://publications.europa.eu/resource/authority/data-theme/GOVE>, <http://datos.gob.es/kos/sector-publico/sector/sector-publico> ;
-  dct:publisher <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#organitzacio> ;
+  dct:publisher <http://datos.gob.es/recurso/sector-publico/org/Organismo/L00000000> ;
   dct:accrualPeriodicity <http://publications.europa.eu/resource/authority/frequency/CONT> ;
   dct:temporal [ a dct:PeriodOfTime ; dcat:startDate "2022-01-01"^^xsd:date ; dcat:endDate "2026-12-31"^^xsd:date ] ;
-  dct:spatial <https://www.geonames.org/3128760> ;
-  dct:modified "2026-11-12"^^xsd:date ;
-  dcat:contactPoint [ a vcard:Organization ; vcard:fn "Unitat de Transparència" ; vcard:hasEmail <mailto:transparencia@example.org> ] ;
-  dcat:landingPage <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/contractacio> ;
-  dcat:distribution <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/contractes.csv>, <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/contractes.json> .
+  dcat:contactPoint [ a vcard:Organization ; vcard:fn "Unidad de Transparencia" ; vcard:hasEmail <mailto:transparencia@example.org> ] ;
+  dcat:landingPage <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/contratos> ;
+  dcat:distribution <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/contratos.csv>, <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/contratos.json> .
 
-<https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/contractes.csv> a dcat:Distribution ;
-  dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/contractes.csv> ;
-  dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/contractes.csv> ;
-  dct:format <http://publications.europa.eu/resource/authority/file-type/CSV> ;
-  dcat:mediaType <http://www.iana.org/assignments/media-types/text/csv> ;
-  dcat:byteSize "84717"^^xsd:nonNegativeInteger ;
-  dct:license <https://creativecommons.org/licenses/by/4.0/> .
+<https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/contratos.csv> a dcat:Distribution ; dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/contratos.csv> ; dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/contratos.csv> ; dct:format <http://publications.europa.eu/resource/authority/file-type/CSV> ; dct:license <https://creativecommons.org/licenses/by/4.0/> .
 
-<https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/contractes.json> a dcat:Distribution ;
-  dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/contractes.json> ;
-  dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/contractes.json> ;
-  dct:format <http://publications.europa.eu/resource/authority/file-type/JSON> ;
-  dcat:mediaType <http://www.iana.org/assignments/media-types/application/json> ;
-  dcat:byteSize "254336"^^xsd:nonNegativeInteger ;
-  dct:license <https://creativecommons.org/licenses/by/4.0/> .
+<https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/contratos.json> a dcat:Distribution ; dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/contratos.json> ; dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/contratos.json> ; dct:format <http://publications.europa.eu/resource/authority/file-type/JSON> ; dct:license <https://creativecommons.org/licenses/by/4.0/> .
 
-<https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/dades-obertes/subvencions> a dcat:Dataset ;
-  dct:identifier "subvencions" ;
-  dct:title "Subvencions i ajuts atorgats"@ca, "Subvenciones y ayudas concedidas"@es, "Grants awarded"@en ;
-  dct:description "Subvencions atorgades per línia, modalitat, beneficiari, districte i estat de justificació, amb referència BDNS."@ca, "Subvenciones concedidas por línea, modalidad, beneficiario, distrito y estado de justificación, con referencia BDNS."@es, "Grants awarded by line, modality, beneficiary, district and accounting status, with BDNS reference."@en ;
-  dcat:keyword "subvencions"@ca, "ajuts"@ca, "BDNS"@ca, "beneficiaris"@ca ;
+<https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/datos/encargos> a dcat:Dataset ;
+  dct:identifier "encargos" ;
+  dct:title "Encargos a medios propios"@es, "Encàrrecs a mitjans propis"@ca-valencia, "In-house assignments"@en ;
+  dct:description "Encargos a medios propios personificados (art. 32 y 63.6 de la Ley 9/2017)."@es, "Encàrrecs a mitjans propis personificats (art. 32 i 63.6 de la Llei 9/2017)."@ca-valencia, "Assignments to in-house entities (arts. 32 and 63.6 of Law 9/2017)."@en ;
+  dcat:keyword "encargos"@es, "medios propios"@es, "contratación"@es ;
   dcat:theme <http://publications.europa.eu/resource/authority/data-theme/GOVE>, <http://datos.gob.es/kos/sector-publico/sector/sector-publico> ;
-  dct:publisher <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#organitzacio> ;
+  dct:publisher <http://datos.gob.es/recurso/sector-publico/org/Organismo/L00000000> ;
+  dct:accrualPeriodicity <http://publications.europa.eu/resource/authority/frequency/CONT> ;
+  dct:temporal [ a dct:PeriodOfTime ; dcat:startDate "2022-01-01"^^xsd:date ; dcat:endDate "2026-12-31"^^xsd:date ] ;
+  dcat:contactPoint [ a vcard:Organization ; vcard:fn "Unidad de Transparencia" ; vcard:hasEmail <mailto:transparencia@example.org> ] ;
+  dcat:landingPage <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/encargos> ;
+  dcat:distribution <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/encargos.csv>, <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/encargos.json> .
+
+<https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/encargos.csv> a dcat:Distribution ; dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/encargos.csv> ; dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/encargos.csv> ; dct:format <http://publications.europa.eu/resource/authority/file-type/CSV> ; dct:license <https://creativecommons.org/licenses/by/4.0/> .
+
+<https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/encargos.json> a dcat:Distribution ; dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/encargos.json> ; dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/encargos.json> ; dct:format <http://publications.europa.eu/resource/authority/file-type/JSON> ; dct:license <https://creativecommons.org/licenses/by/4.0/> .
+
+<https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/datos/subvenciones> a dcat:Dataset ;
+  dct:identifier "subvenciones" ;
+  dct:title "Subvenciones concedidas"@es, "Subvencions concedides"@ca-valencia, "Grants awarded"@en ;
+  dct:description "Concesiones de subvenciones y ayudas, sincronizadas automáticamente desde la Base de Datos Nacional de Subvenciones (BDNS)."@es, "Concessions de subvencions i ajudes, sincronitzades automàticament des de la Base de Dades Nacional de Subvencions (BDNS)."@ca-valencia, "Grants awarded, synchronised automatically from the National Grants Database (BDNS)."@en ;
+  dcat:keyword "subvenciones"@es, "ayudas"@es, "BDNS"@es, "beneficiarios"@es ;
+  dcat:theme <http://publications.europa.eu/resource/authority/data-theme/GOVE>, <http://datos.gob.es/kos/sector-publico/sector/sector-publico> ;
+  dct:publisher <http://datos.gob.es/recurso/sector-publico/org/Organismo/L00000000> ;
+  dct:accrualPeriodicity <http://publications.europa.eu/resource/authority/frequency/CONT> ;
+  dct:temporal [ a dct:PeriodOfTime ; dcat:startDate "2022-01-01"^^xsd:date ; dcat:endDate "2026-12-31"^^xsd:date ] ;
+  dcat:contactPoint [ a vcard:Organization ; vcard:fn "Unidad de Transparencia" ; vcard:hasEmail <mailto:transparencia@example.org> ] ;
+  dcat:landingPage <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/subvenciones> ;
+  dcat:distribution <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/subvenciones.csv>, <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/subvenciones.json> .
+
+<https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/subvenciones.csv> a dcat:Distribution ; dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/subvenciones.csv> ; dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/subvenciones.csv> ; dct:format <http://publications.europa.eu/resource/authority/file-type/CSV> ; dct:license <https://creativecommons.org/licenses/by/4.0/> .
+
+<https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/subvenciones.json> a dcat:Distribution ; dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/subvenciones.json> ; dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/subvenciones.json> ; dct:format <http://publications.europa.eu/resource/authority/file-type/JSON> ; dct:license <https://creativecommons.org/licenses/by/4.0/> .
+
+<https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/datos/convenios> a dcat:Dataset ;
+  dct:identifier "convenios" ;
+  dct:title "Convenios"@es, "Convenis"@ca-valencia, "Agreements"@en ;
+  dct:description "Convenios suscritos, con partes, objeto, vigencia y obligaciones económicas."@es, "Convenis subscrits, amb parts, objecte, vigència i obligacions econòmiques."@ca-valencia, "Signed agreements with parties, purpose, term and financial obligations."@en ;
+  dcat:keyword "convenios"@es, "colaboración"@es ;
+  dcat:theme <http://publications.europa.eu/resource/authority/data-theme/GOVE>, <http://datos.gob.es/kos/sector-publico/sector/sector-publico> ;
+  dct:publisher <http://datos.gob.es/recurso/sector-publico/org/Organismo/L00000000> ;
   dct:accrualPeriodicity <http://publications.europa.eu/resource/authority/frequency/QUARTERLY> ;
   dct:temporal [ a dct:PeriodOfTime ; dcat:startDate "2022-01-01"^^xsd:date ; dcat:endDate "2026-12-31"^^xsd:date ] ;
-  dct:spatial <https://www.geonames.org/3128760> ;
-  dct:modified "2026-11-12"^^xsd:date ;
-  dcat:contactPoint [ a vcard:Organization ; vcard:fn "Unitat de Transparència" ; vcard:hasEmail <mailto:transparencia@example.org> ] ;
-  dcat:landingPage <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/subvencions> ;
-  dcat:distribution <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/subvencions.csv>, <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/subvencions.json> .
+  dcat:contactPoint [ a vcard:Organization ; vcard:fn "Unidad de Transparencia" ; vcard:hasEmail <mailto:transparencia@example.org> ] ;
+  dcat:landingPage <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/convenios> ;
+  dcat:distribution <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/convenios.csv>, <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/convenios.json> .
 
-<https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/subvencions.csv> a dcat:Distribution ;
-  dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/subvencions.csv> ;
-  dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/subvencions.csv> ;
-  dct:format <http://publications.europa.eu/resource/authority/file-type/CSV> ;
-  dcat:mediaType <http://www.iana.org/assignments/media-types/text/csv> ;
-  dcat:byteSize "12602"^^xsd:nonNegativeInteger ;
-  dct:license <https://creativecommons.org/licenses/by/4.0/> .
+<https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/convenios.csv> a dcat:Distribution ; dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/convenios.csv> ; dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/convenios.csv> ; dct:format <http://publications.europa.eu/resource/authority/file-type/CSV> ; dct:license <https://creativecommons.org/licenses/by/4.0/> .
 
-<https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/subvencions.json> a dcat:Distribution ;
-  dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/subvencions.json> ;
-  dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/subvencions.json> ;
-  dct:format <http://publications.europa.eu/resource/authority/file-type/JSON> ;
-  dcat:mediaType <http://www.iana.org/assignments/media-types/application/json> ;
-  dcat:byteSize "37810"^^xsd:nonNegativeInteger ;
-  dct:license <https://creativecommons.org/licenses/by/4.0/> .
+<https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/convenios.json> a dcat:Distribution ; dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/convenios.json> ; dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/convenios.json> ; dct:format <http://publications.europa.eu/resource/authority/file-type/JSON> ; dct:license <https://creativecommons.org/licenses/by/4.0/> .
 
-<https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/dades-obertes/convenis> a dcat:Dataset ;
-  dct:identifier "convenis" ;
-  dct:title "Convenis de col·laboració"@ca, "Convenios de colaboración"@es, "Collaboration agreements"@en ;
-  dct:description "Convenis signats amb objecte, part signant, vigència i obligacions econòmiques."@ca, "Convenios firmados con objeto, parte firmante, vigencia y obligaciones económicas."@es, "Signed agreements with purpose, counterparty, term and financial obligations."@en ;
-  dcat:keyword "convenis"@ca, "col·laboració"@ca, "patrocini"@ca ;
+<https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/datos/cargos> a dcat:Dataset ;
+  dct:identifier "cargos" ;
+  dct:title "Cargos electos y personal directivo"@es, "Càrrecs electes i personal directiu"@ca-valencia, "Elected officials and senior staff"@en ;
+  dct:description "Identificación, perfil, dedicación, retribuciones y declaraciones de bienes y actividades."@es, "Identificació, perfil, dedicació, retribucions i declaracions de béns i activitats."@ca-valencia, "Identity, profile, dedication, pay and declarations of assets and activities."@en ;
+  dcat:keyword "cargos electos"@es, "retribuciones"@es, "declaraciones de bienes"@es, "alcaldía"@es ;
   dcat:theme <http://publications.europa.eu/resource/authority/data-theme/GOVE>, <http://datos.gob.es/kos/sector-publico/sector/sector-publico> ;
-  dct:publisher <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#organitzacio> ;
-  dct:accrualPeriodicity <http://publications.europa.eu/resource/authority/frequency/QUARTERLY> ;
-  dct:temporal [ a dct:PeriodOfTime ; dcat:startDate "2022-01-01"^^xsd:date ; dcat:endDate "2026-12-31"^^xsd:date ] ;
-  dct:spatial <https://www.geonames.org/3128760> ;
-  dct:modified "2026-11-12"^^xsd:date ;
-  dcat:contactPoint [ a vcard:Organization ; vcard:fn "Unitat de Transparència" ; vcard:hasEmail <mailto:transparencia@example.org> ] ;
-  dcat:landingPage <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/subvencions> ;
-  dcat:distribution <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/convenis.csv>, <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/convenis.json> .
-
-<https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/convenis.csv> a dcat:Distribution ;
-  dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/convenis.csv> ;
-  dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/convenis.csv> ;
-  dct:format <http://publications.europa.eu/resource/authority/file-type/CSV> ;
-  dcat:mediaType <http://www.iana.org/assignments/media-types/text/csv> ;
-  dcat:byteSize "6360"^^xsd:nonNegativeInteger ;
-  dct:license <https://creativecommons.org/licenses/by/4.0/> .
-
-<https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/convenis.json> a dcat:Distribution ;
-  dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/convenis.json> ;
-  dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/convenis.json> ;
-  dct:format <http://publications.europa.eu/resource/authority/file-type/JSON> ;
-  dcat:mediaType <http://www.iana.org/assignments/media-types/application/json> ;
-  dcat:byteSize "15954"^^xsd:nonNegativeInteger ;
-  dct:license <https://creativecommons.org/licenses/by/4.0/> .
-
-<https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/dades-obertes/plantilla> a dcat:Dataset ;
-  dct:identifier "plantilla" ;
-  dct:title "Plantilla de personal"@ca, "Plantilla de personal"@es, "Workforce"@en ;
-  dct:description "Efectius a 31 de desembre per categoria, sexe, franja d'edat i tipus de relació laboral."@ca, "Efectivos a 31 de diciembre por categoría, sexo, franja de edad y tipo de relación laboral."@es, "Headcount at 31 December by category, sex, age band and contract type."@en ;
-  dcat:keyword "personal"@ca, "plantilla"@ca, "gènere"@ca, "ocupació"@ca ;
-  dcat:theme <http://publications.europa.eu/resource/authority/data-theme/GOVE>, <http://datos.gob.es/kos/sector-publico/sector/sector-publico> ;
-  dct:publisher <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#organitzacio> ;
+  dct:publisher <http://datos.gob.es/recurso/sector-publico/org/Organismo/L00000000> ;
   dct:accrualPeriodicity <http://publications.europa.eu/resource/authority/frequency/ANNUAL> ;
-  dct:temporal [ a dct:PeriodOfTime ; dcat:startDate "2021-01-01"^^xsd:date ; dcat:endDate "2026-12-31"^^xsd:date ] ;
-  dct:spatial <https://www.geonames.org/3128760> ;
-  dct:modified "2026-11-12"^^xsd:date ;
-  dcat:contactPoint [ a vcard:Organization ; vcard:fn "Unitat de Transparència" ; vcard:hasEmail <mailto:transparencia@example.org> ] ;
+  dct:temporal [ a dct:PeriodOfTime ; dcat:startDate "2023-06-17"^^xsd:date ; dcat:endDate "2027-06-30"^^xsd:date ] ;
+  dcat:contactPoint [ a vcard:Organization ; vcard:fn "Unidad de Transparencia" ; vcard:hasEmail <mailto:transparencia@example.org> ] ;
+  dcat:landingPage <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/cargos> ;
+  dcat:distribution <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/cargos.csv>, <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/cargos.json> .
+
+<https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/cargos.csv> a dcat:Distribution ; dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/cargos.csv> ; dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/cargos.csv> ; dct:format <http://publications.europa.eu/resource/authority/file-type/CSV> ; dct:license <https://creativecommons.org/licenses/by/4.0/> .
+
+<https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/cargos.json> a dcat:Distribution ; dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/cargos.json> ; dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/cargos.json> ; dct:format <http://publications.europa.eu/resource/authority/file-type/JSON> ; dct:license <https://creativecommons.org/licenses/by/4.0/> .
+
+<https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/datos/agenda> a dcat:Dataset ;
+  dct:identifier "agenda" ;
+  dct:title "Agenda institucional"@es, "Agenda institucional"@ca-valencia, "Official diary"@en ;
+  dct:description "Agenda pública de la alcaldía y concejalías, con indicación de reuniones con grupos de interés."@es, "Agenda pública de l’alcaldia i regidories, amb indicació de reunions amb grups d’interés."@ca-valencia, "Public diary of the mayor and councillors, flagging lobby meetings."@en ;
+  dcat:keyword "agenda"@es, "grupos de interés"@es ;
+  dcat:theme <http://publications.europa.eu/resource/authority/data-theme/GOVE>, <http://datos.gob.es/kos/sector-publico/sector/sector-publico> ;
+  dct:publisher <http://datos.gob.es/recurso/sector-publico/org/Organismo/L00000000> ;
+  dct:accrualPeriodicity <http://publications.europa.eu/resource/authority/frequency/WEEKLY> ;
+  dct:temporal [ a dct:PeriodOfTime ; dcat:startDate "2025-11-01"^^xsd:date ; dcat:endDate "2026-11-30"^^xsd:date ] ;
+  dcat:contactPoint [ a vcard:Organization ; vcard:fn "Unidad de Transparencia" ; vcard:hasEmail <mailto:transparencia@example.org> ] ;
+  dcat:landingPage <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/agenda> ;
+  dcat:distribution <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/agenda.csv>, <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/agenda.json> .
+
+<https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/agenda.csv> a dcat:Distribution ; dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/agenda.csv> ; dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/agenda.csv> ; dct:format <http://publications.europa.eu/resource/authority/file-type/CSV> ; dct:license <https://creativecommons.org/licenses/by/4.0/> .
+
+<https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/agenda.json> a dcat:Distribution ; dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/agenda.json> ; dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/agenda.json> ; dct:format <http://publications.europa.eu/resource/authority/file-type/JSON> ; dct:license <https://creativecommons.org/licenses/by/4.0/> .
+
+<https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/datos/plantilla> a dcat:Dataset ;
+  dct:identifier "plantilla" ;
+  dct:title "Plantilla de personal"@es, "Plantilla de personal"@ca-valencia, "Workforce"@en ;
+  dct:description "Efectivos a 31 de diciembre por tipo de personal, grupo profesional y sexo."@es, "Efectius a 31 de desembre per tipus de personal, grup professional i sexe."@ca-valencia, "Headcount at 31 December by staff type, grade and sex."@en ;
+  dcat:keyword "personal"@es, "plantilla"@es, "RPT"@es, "igualdad"@es ;
+  dcat:theme <http://publications.europa.eu/resource/authority/data-theme/GOVE>, <http://datos.gob.es/kos/sector-publico/sector/sector-publico> ;
+  dct:publisher <http://datos.gob.es/recurso/sector-publico/org/Organismo/L00000000> ;
+  dct:accrualPeriodicity <http://publications.europa.eu/resource/authority/frequency/ANNUAL> ;
+  dct:temporal [ a dct:PeriodOfTime ; dcat:startDate "2021-01-01"^^xsd:date ; dcat:endDate "2025-12-31"^^xsd:date ] ;
+  dcat:contactPoint [ a vcard:Organization ; vcard:fn "Unidad de Transparencia" ; vcard:hasEmail <mailto:transparencia@example.org> ] ;
   dcat:landingPage <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/personal> ;
   dcat:distribution <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/plantilla.csv>, <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/plantilla.json> .
 
-<https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/plantilla.csv> a dcat:Distribution ;
-  dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/plantilla.csv> ;
-  dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/plantilla.csv> ;
-  dct:format <http://publications.europa.eu/resource/authority/file-type/CSV> ;
-  dcat:mediaType <http://www.iana.org/assignments/media-types/text/csv> ;
-  dcat:byteSize "30806"^^xsd:nonNegativeInteger ;
-  dct:license <https://creativecommons.org/licenses/by/4.0/> .
+<https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/plantilla.csv> a dcat:Distribution ; dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/plantilla.csv> ; dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/plantilla.csv> ; dct:format <http://publications.europa.eu/resource/authority/file-type/CSV> ; dct:license <https://creativecommons.org/licenses/by/4.0/> .
 
-<https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/plantilla.json> a dcat:Distribution ;
-  dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/plantilla.json> ;
-  dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/plantilla.json> ;
-  dct:format <http://publications.europa.eu/resource/authority/file-type/JSON> ;
-  dcat:mediaType <http://www.iana.org/assignments/media-types/application/json> ;
-  dcat:byteSize "122326"^^xsd:nonNegativeInteger ;
-  dct:license <https://creativecommons.org/licenses/by/4.0/> .
+<https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/plantilla.json> a dcat:Distribution ; dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/plantilla.json> ; dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/plantilla.json> ; dct:format <http://publications.europa.eu/resource/authority/file-type/JSON> ; dct:license <https://creativecommons.org/licenses/by/4.0/> .
 
-<https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/dades-obertes/retribucions> a dcat:Dataset ;
-  dct:identifier "retribucions" ;
-  dct:title "Taules retributives i bretxa salarial"@ca, "Tablas retributivas y brecha salarial"@es, "Pay scales and gender pay gap"@en ;
-  dct:description "Retribució bruta anual mínima, màxima i mitjana per sexe i categoria professional."@ca, "Retribución bruta anual mínima, máxima y media por sexo y categoría profesional."@es, "Minimum, maximum and average gross annual pay by sex and category."@en ;
-  dcat:keyword "retribucions"@ca, "salaris"@ca, "bretxa salarial"@ca, "igualtat"@ca ;
+<https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/datos/pmp> a dcat:Dataset ;
+  dct:identifier "pmp" ;
+  dct:title "Periodo medio de pago a proveedores"@es, "Període mitjà de pagament a proveïdors"@ca-valencia, "Average supplier payment period"@en ;
+  dct:description "Periodo medio de pago mensual (Real Decreto 635/2014)."@es, "Període mitjà de pagament mensual (Reial decret 635/2014)."@ca-valencia, "Monthly average payment period (Royal Decree 635/2014)."@en ;
+  dcat:keyword "PMP"@es, "morosidad"@es, "proveedores"@es ;
   dcat:theme <http://publications.europa.eu/resource/authority/data-theme/GOVE>, <http://datos.gob.es/kos/sector-publico/sector/sector-publico> ;
-  dct:publisher <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#organitzacio> ;
-  dct:accrualPeriodicity <http://publications.europa.eu/resource/authority/frequency/ANNUAL> ;
-  dct:temporal [ a dct:PeriodOfTime ; dcat:startDate "2022-01-01"^^xsd:date ; dcat:endDate "2026-12-31"^^xsd:date ] ;
-  dct:spatial <https://www.geonames.org/3128760> ;
-  dct:modified "2026-11-12"^^xsd:date ;
-  dcat:contactPoint [ a vcard:Organization ; vcard:fn "Unitat de Transparència" ; vcard:hasEmail <mailto:transparencia@example.org> ] ;
-  dcat:landingPage <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/personal> ;
-  dcat:distribution <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/retribucions.csv>, <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/retribucions.json> .
-
-<https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/retribucions.csv> a dcat:Distribution ;
-  dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/retribucions.csv> ;
-  dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/retribucions.csv> ;
-  dct:format <http://publications.europa.eu/resource/authority/file-type/CSV> ;
-  dcat:mediaType <http://www.iana.org/assignments/media-types/text/csv> ;
-  dcat:byteSize "1824"^^xsd:nonNegativeInteger ;
-  dct:license <https://creativecommons.org/licenses/by/4.0/> .
-
-<https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/retribucions.json> a dcat:Distribution ;
-  dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/retribucions.json> ;
-  dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/retribucions.json> ;
-  dct:format <http://publications.europa.eu/resource/authority/file-type/JSON> ;
-  dcat:mediaType <http://www.iana.org/assignments/media-types/application/json> ;
-  dcat:byteSize "7953"^^xsd:nonNegativeInteger ;
-  dct:license <https://creativecommons.org/licenses/by/4.0/> .
-
-<https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/dades-obertes/alts-carrecs> a dcat:Dataset ;
-  dct:identifier "alts-carrecs" ;
-  dct:title "Alts càrrecs i personal directiu"@ca, "Altos cargos y personal directivo"@es, "Senior officials"@en ;
-  dct:description "Llocs directius, retribucions, data de nomenament i estat de les declaracions."@ca, "Puestos directivos, retribuciones, fecha de nombramiento y estado de las declaraciones."@es, "Senior positions, pay, appointment date and declaration status."@en ;
-  dcat:keyword "alts càrrecs"@ca, "retribucions"@ca, "declaracions"@ca, "bon govern"@ca ;
-  dcat:theme <http://publications.europa.eu/resource/authority/data-theme/GOVE>, <http://datos.gob.es/kos/sector-publico/sector/sector-publico> ;
-  dct:publisher <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#organitzacio> ;
-  dct:accrualPeriodicity <http://publications.europa.eu/resource/authority/frequency/ANNUAL> ;
-  dct:temporal [ a dct:PeriodOfTime ; dcat:startDate "2026-01-01"^^xsd:date ; dcat:endDate "2026-12-31"^^xsd:date ] ;
-  dct:spatial <https://www.geonames.org/3128760> ;
-  dct:modified "2026-11-12"^^xsd:date ;
-  dcat:contactPoint [ a vcard:Organization ; vcard:fn "Unitat de Transparència" ; vcard:hasEmail <mailto:transparencia@example.org> ] ;
-  dcat:landingPage <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/bon-govern> ;
-  dcat:distribution <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/alts-carrecs.csv>, <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/alts-carrecs.json> .
-
-<https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/alts-carrecs.csv> a dcat:Distribution ;
-  dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/alts-carrecs.csv> ;
-  dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/alts-carrecs.csv> ;
-  dct:format <http://publications.europa.eu/resource/authority/file-type/CSV> ;
-  dcat:mediaType <http://www.iana.org/assignments/media-types/text/csv> ;
-  dcat:byteSize "909"^^xsd:nonNegativeInteger ;
-  dct:license <https://creativecommons.org/licenses/by/4.0/> .
-
-<https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/alts-carrecs.json> a dcat:Distribution ;
-  dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/alts-carrecs.json> ;
-  dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/alts-carrecs.json> ;
-  dct:format <http://publications.europa.eu/resource/authority/file-type/JSON> ;
-  dcat:mediaType <http://www.iana.org/assignments/media-types/application/json> ;
-  dcat:byteSize "2484"^^xsd:nonNegativeInteger ;
-  dct:license <https://creativecommons.org/licenses/by/4.0/> .
-
-<https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/dades-obertes/agenda> a dcat:Dataset ;
-  dct:identifier "agenda" ;
-  dct:title "Agenda institucional"@ca, "Agenda institucional"@es, "Official diary"@en ;
-  dct:description "Activitats públiques de la direcció, amb indicació de reunions amb grups d'interès inscrits al registre."@ca, "Actividades públicas de la dirección, con indicación de reuniones con grupos de interés inscritos en el registro."@es, "Public activities of senior management, flagging meetings with registered lobby groups."@en ;
-  dcat:keyword "agenda"@ca, "grups d'interès"@ca, "lobbies"@ca, "reunions"@ca ;
-  dcat:theme <http://publications.europa.eu/resource/authority/data-theme/GOVE>, <http://datos.gob.es/kos/sector-publico/sector/sector-publico> ;
-  dct:publisher <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#organitzacio> ;
-  dct:accrualPeriodicity <http://publications.europa.eu/resource/authority/frequency/WEEKLY> ;
-  dct:temporal [ a dct:PeriodOfTime ; dcat:startDate "2025-11-01"^^xsd:date ; dcat:endDate "2026-11-30"^^xsd:date ] ;
-  dct:spatial <https://www.geonames.org/3128760> ;
-  dct:modified "2026-11-12"^^xsd:date ;
-  dcat:contactPoint [ a vcard:Organization ; vcard:fn "Unitat de Transparència" ; vcard:hasEmail <mailto:transparencia@example.org> ] ;
-  dcat:landingPage <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/bon-govern> ;
-  dcat:distribution <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/agenda.csv>, <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/agenda.json> .
-
-<https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/agenda.csv> a dcat:Distribution ;
-  dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/agenda.csv> ;
-  dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/agenda.csv> ;
-  dct:format <http://publications.europa.eu/resource/authority/file-type/CSV> ;
-  dcat:mediaType <http://www.iana.org/assignments/media-types/text/csv> ;
-  dcat:byteSize "11301"^^xsd:nonNegativeInteger ;
-  dct:license <https://creativecommons.org/licenses/by/4.0/> .
-
-<https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/agenda.json> a dcat:Distribution ;
-  dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/agenda.json> ;
-  dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/agenda.json> ;
-  dct:format <http://publications.europa.eu/resource/authority/file-type/JSON> ;
-  dcat:mediaType <http://www.iana.org/assignments/media-types/application/json> ;
-  dcat:byteSize "31426"^^xsd:nonNegativeInteger ;
-  dct:license <https://creativecommons.org/licenses/by/4.0/> .
-
-<https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/dades-obertes/regals> a dcat:Dataset ;
-  dct:identifier "regals" ;
-  dct:title "Registre de regals institucionals"@ca, "Registro de regalos institucionales"@es, "Register of gifts"@en ;
-  dct:description "Obsequis rebuts per la direcció, valor estimat i destinació."@ca, "Obsequios recibidos por la dirección, valor estimado y destino."@es, "Gifts received by senior management, estimated value and destination."@en ;
-  dcat:keyword "regals"@ca, "integritat"@ca, "codi ètic"@ca ;
-  dcat:theme <http://publications.europa.eu/resource/authority/data-theme/GOVE>, <http://datos.gob.es/kos/sector-publico/sector/sector-publico> ;
-  dct:publisher <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#organitzacio> ;
-  dct:accrualPeriodicity <http://publications.europa.eu/resource/authority/frequency/QUARTERLY> ;
-  dct:temporal [ a dct:PeriodOfTime ; dcat:startDate "2024-01-01"^^xsd:date ; dcat:endDate "2026-12-31"^^xsd:date ] ;
-  dct:spatial <https://www.geonames.org/3128760> ;
-  dct:modified "2026-11-12"^^xsd:date ;
-  dcat:contactPoint [ a vcard:Organization ; vcard:fn "Unitat de Transparència" ; vcard:hasEmail <mailto:transparencia@example.org> ] ;
-  dcat:landingPage <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/bon-govern> ;
-  dcat:distribution <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/regals.csv>, <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/regals.json> .
-
-<https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/regals.csv> a dcat:Distribution ;
-  dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/regals.csv> ;
-  dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/regals.csv> ;
-  dct:format <http://publications.europa.eu/resource/authority/file-type/CSV> ;
-  dcat:mediaType <http://www.iana.org/assignments/media-types/text/csv> ;
-  dcat:byteSize "2209"^^xsd:nonNegativeInteger ;
-  dct:license <https://creativecommons.org/licenses/by/4.0/> .
-
-<https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/regals.json> a dcat:Distribution ;
-  dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/regals.json> ;
-  dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/regals.json> ;
-  dct:format <http://publications.europa.eu/resource/authority/file-type/JSON> ;
-  dcat:mediaType <http://www.iana.org/assignments/media-types/application/json> ;
-  dcat:byteSize "5364"^^xsd:nonNegativeInteger ;
-  dct:license <https://creativecommons.org/licenses/by/4.0/> .
-
-<https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/dades-obertes/indicadors-turisme> a dcat:Dataset ;
-  dct:identifier "indicadors-turisme" ;
-  dct:title "Indicadors turístics mensuals de Barcelona"@ca, "Indicadores turísticos mensuales de Barcelona"@es, "Monthly tourism indicators for Barcelona"@en ;
-  dct:description "Sèrie mensual de pernoctacions i turistes hotelers, ocupació, preu mitjà, passatgers aeroportuaris, creueristes i ús de serveis del Consorci."@ca, "Serie mensual de pernoctaciones y turistas hoteleros, ocupación, precio medio, pasajeros aeroportuarios, cruceristas y uso de servicios del Consorci."@es, "Monthly series of hotel nights and guests, occupancy, average rate, airport passengers, cruise passengers and use of Consortium services."@en ;
-  dcat:keyword "turisme"@ca, "pernoctacions"@ca, "ocupació hotelera"@ca, "creuers"@ca, "aeroport"@ca, "estadística"@ca ;
-  dcat:theme <http://publications.europa.eu/resource/authority/data-theme/ECON>, <http://datos.gob.es/kos/sector-publico/sector/turismo> ;
-  dct:publisher <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#organitzacio> ;
+  dct:publisher <http://datos.gob.es/recurso/sector-publico/org/Organismo/L00000000> ;
   dct:accrualPeriodicity <http://publications.europa.eu/resource/authority/frequency/MONTHLY> ;
-  dct:temporal [ a dct:PeriodOfTime ; dcat:startDate "2019-01-01"^^xsd:date ; dcat:endDate "2026-09-30"^^xsd:date ] ;
-  dct:spatial <https://www.geonames.org/3128760> ;
-  dct:modified "2026-11-12"^^xsd:date ;
-  dcat:contactPoint [ a vcard:Organization ; vcard:fn "Unitat de Transparència" ; vcard:hasEmail <mailto:transparencia@example.org> ] ;
-  dcat:landingPage <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/activitat> ;
-  dcat:distribution <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/indicadors-turisme.csv>, <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/indicadors-turisme.json> .
+  dct:temporal [ a dct:PeriodOfTime ; dcat:startDate "2022-01-01"^^xsd:date ; dcat:endDate "2026-09-30"^^xsd:date ] ;
+  dcat:contactPoint [ a vcard:Organization ; vcard:fn "Unidad de Transparencia" ; vcard:hasEmail <mailto:transparencia@example.org> ] ;
+  dcat:landingPage <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/economia> ;
+  dcat:distribution <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/pmp.csv>, <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/pmp.json> .
 
-<https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/indicadors-turisme.csv> a dcat:Distribution ;
-  dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/indicadors-turisme.csv> ;
-  dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/indicadors-turisme.csv> ;
-  dct:format <http://publications.europa.eu/resource/authority/file-type/CSV> ;
-  dcat:mediaType <http://www.iana.org/assignments/media-types/text/csv> ;
-  dcat:byteSize "7341"^^xsd:nonNegativeInteger ;
-  dct:license <https://creativecommons.org/licenses/by/4.0/> .
+<https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/pmp.csv> a dcat:Distribution ; dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/pmp.csv> ; dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/pmp.csv> ; dct:format <http://publications.europa.eu/resource/authority/file-type/CSV> ; dct:license <https://creativecommons.org/licenses/by/4.0/> .
 
-<https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/indicadors-turisme.json> a dcat:Distribution ;
-  dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/indicadors-turisme.json> ;
-  dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/indicadors-turisme.json> ;
-  dct:format <http://publications.europa.eu/resource/authority/file-type/JSON> ;
-  dcat:mediaType <http://www.iana.org/assignments/media-types/application/json> ;
-  dcat:byteSize "39479"^^xsd:nonNegativeInteger ;
-  dct:license <https://creativecommons.org/licenses/by/4.0/> .
+<https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/pmp.json> a dcat:Distribution ; dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/pmp.json> ; dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/pmp.json> ; dct:format <http://publications.europa.eu/resource/authority/file-type/JSON> ; dct:license <https://creativecommons.org/licenses/by/4.0/> .
 
-<https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/dades-obertes/mercats-origen> a dcat:Dataset ;
-  dct:identifier "mercats-origen" ;
-  dct:title "Mercats d'origen dels turistes"@ca, "Mercados de origen de los turistas"@es, "Source markets"@en ;
-  dct:description "Quota de turistes allotjats per país o regió d'origen."@ca, "Cuota de turistas alojados por país o región de origen."@es, "Share of hotel guests by country or region of origin."@en ;
-  dcat:keyword "mercats"@ca, "procedència"@ca, "turistes internacionals"@ca ;
-  dcat:theme <http://publications.europa.eu/resource/authority/data-theme/ECON>, <http://datos.gob.es/kos/sector-publico/sector/turismo> ;
-  dct:publisher <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#organitzacio> ;
+<https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/datos/deuda> a dcat:Dataset ;
+  dct:identifier "deuda" ;
+  dct:title "Deuda viva"@es, "Deute viu"@ca-valencia, "Outstanding debt"@en ;
+  dct:description "Deuda viva a 31 de diciembre e ingresos corrientes liquidados."@es, "Deute viu a 31 de desembre i ingressos corrents liquidats."@ca-valencia, "Outstanding debt at 31 December and current revenue."@en ;
+  dcat:keyword "deuda"@es, "endeudamiento"@es, "estabilidad"@es ;
+  dcat:theme <http://publications.europa.eu/resource/authority/data-theme/GOVE>, <http://datos.gob.es/kos/sector-publico/sector/sector-publico> ;
+  dct:publisher <http://datos.gob.es/recurso/sector-publico/org/Organismo/L00000000> ;
   dct:accrualPeriodicity <http://publications.europa.eu/resource/authority/frequency/ANNUAL> ;
   dct:temporal [ a dct:PeriodOfTime ; dcat:startDate "2019-01-01"^^xsd:date ; dcat:endDate "2025-12-31"^^xsd:date ] ;
-  dct:spatial <https://www.geonames.org/3128760> ;
-  dct:modified "2026-11-12"^^xsd:date ;
-  dcat:contactPoint [ a vcard:Organization ; vcard:fn "Unitat de Transparència" ; vcard:hasEmail <mailto:transparencia@example.org> ] ;
-  dcat:landingPage <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/activitat> ;
-  dcat:distribution <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/mercats-origen.csv>, <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/mercats-origen.json> .
+  dcat:contactPoint [ a vcard:Organization ; vcard:fn "Unidad de Transparencia" ; vcard:hasEmail <mailto:transparencia@example.org> ] ;
+  dcat:landingPage <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/economia> ;
+  dcat:distribution <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/deuda.csv>, <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/deuda.json> .
 
-<https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/mercats-origen.csv> a dcat:Distribution ;
-  dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/mercats-origen.csv> ;
-  dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/mercats-origen.csv> ;
-  dct:format <http://publications.europa.eu/resource/authority/file-type/CSV> ;
-  dcat:mediaType <http://www.iana.org/assignments/media-types/text/csv> ;
-  dcat:byteSize "1020"^^xsd:nonNegativeInteger ;
-  dct:license <https://creativecommons.org/licenses/by/4.0/> .
+<https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/deuda.csv> a dcat:Distribution ; dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/deuda.csv> ; dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/deuda.csv> ; dct:format <http://publications.europa.eu/resource/authority/file-type/CSV> ; dct:license <https://creativecommons.org/licenses/by/4.0/> .
 
-<https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/mercats-origen.json> a dcat:Distribution ;
-  dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/mercats-origen.json> ;
-  dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/mercats-origen.json> ;
-  dct:format <http://publications.europa.eu/resource/authority/file-type/JSON> ;
-  dcat:mediaType <http://www.iana.org/assignments/media-types/application/json> ;
-  dcat:byteSize "5358"^^xsd:nonNegativeInteger ;
-  dct:license <https://creativecommons.org/licenses/by/4.0/> .
+<https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/deuda.json> a dcat:Distribution ; dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/deuda.json> ; dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/deuda.json> ; dct:format <http://publications.europa.eu/resource/authority/file-type/JSON> ; dct:license <https://creativecommons.org/licenses/by/4.0/> .
 
-<https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/dades-obertes/oficines-informacio> a dcat:Dataset ;
-  dct:identifier "oficines-informacio" ;
-  dct:title "Oficines i punts d'informació turística"@ca, "Oficinas y puntos de información turística"@es, "Tourist information offices"@en ;
-  dct:description "Ubicació georeferenciada (WGS84), districte, accessibilitat i visites anuals de les oficines d'informació."@ca, "Ubicación georreferenciada (WGS84), distrito, accesibilidad y visitas anuales de las oficinas de información."@es, "Geo-referenced location (WGS84), district, accessibility and annual visits of information offices."@en ;
-  dcat:keyword "oficines de turisme"@ca, "geolocalització"@ca, "atenció al visitant"@ca ;
-  dcat:theme <http://publications.europa.eu/resource/authority/data-theme/ECON>, <http://datos.gob.es/kos/sector-publico/sector/turismo> ;
-  dct:publisher <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#organitzacio> ;
+<https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/datos/inmuebles> a dcat:Dataset ;
+  dct:identifier "inmuebles" ;
+  dct:title "Bienes inmuebles"@es, "Béns immobles"@ca-valencia, "Real estate"@en ;
+  dct:description "Relación de bienes inmuebles de titularidad municipal (art. 8.3 Ley 19/2013), georreferenciados."@es, "Relació de béns immobles de titularitat municipal (art. 8.3 Llei 19/2013), georeferenciats."@ca-valencia, "Municipal real estate (art. 8.3 Law 19/2013), geo-referenced."@en ;
+  dcat:keyword "patrimonio"@es, "inmuebles"@es, "inventario"@es ;
+  dcat:theme <http://publications.europa.eu/resource/authority/data-theme/GOVE>, <http://datos.gob.es/kos/sector-publico/sector/sector-publico> ;
+  dct:publisher <http://datos.gob.es/recurso/sector-publico/org/Organismo/L00000000> ;
   dct:accrualPeriodicity <http://publications.europa.eu/resource/authority/frequency/ANNUAL> ;
   dct:temporal [ a dct:PeriodOfTime ; dcat:startDate "2025-01-01"^^xsd:date ; dcat:endDate "2025-12-31"^^xsd:date ] ;
-  dct:spatial <https://www.geonames.org/3128760> ;
-  dct:modified "2026-11-12"^^xsd:date ;
-  dcat:contactPoint [ a vcard:Organization ; vcard:fn "Unitat de Transparència" ; vcard:hasEmail <mailto:transparencia@example.org> ] ;
-  dcat:landingPage <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/activitat> ;
-  dcat:distribution <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/oficines-informacio.csv>, <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/oficines-informacio.json> .
+  dcat:contactPoint [ a vcard:Organization ; vcard:fn "Unidad de Transparencia" ; vcard:hasEmail <mailto:transparencia@example.org> ] ;
+  dcat:landingPage <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/patrimonio> ;
+  dcat:distribution <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/inmuebles.csv>, <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/inmuebles.json> .
 
-<https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/oficines-informacio.csv> a dcat:Distribution ;
-  dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/oficines-informacio.csv> ;
-  dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/oficines-informacio.csv> ;
-  dct:format <http://publications.europa.eu/resource/authority/file-type/CSV> ;
-  dcat:mediaType <http://www.iana.org/assignments/media-types/text/csv> ;
-  dcat:byteSize "716"^^xsd:nonNegativeInteger ;
-  dct:license <https://creativecommons.org/licenses/by/4.0/> .
+<https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/inmuebles.csv> a dcat:Distribution ; dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/inmuebles.csv> ; dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/inmuebles.csv> ; dct:format <http://publications.europa.eu/resource/authority/file-type/CSV> ; dct:license <https://creativecommons.org/licenses/by/4.0/> .
 
-<https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/oficines-informacio.json> a dcat:Distribution ;
-  dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/oficines-informacio.json> ;
-  dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/oficines-informacio.json> ;
-  dct:format <http://publications.europa.eu/resource/authority/file-type/JSON> ;
-  dcat:mediaType <http://www.iana.org/assignments/media-types/application/json> ;
-  dcat:byteSize "2105"^^xsd:nonNegativeInteger ;
-  dct:license <https://creativecommons.org/licenses/by/4.0/> .
+<https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/inmuebles.json> a dcat:Distribution ; dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/inmuebles.json> ; dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/inmuebles.json> ; dct:format <http://publications.europa.eu/resource/authority/file-type/JSON> ; dct:license <https://creativecommons.org/licenses/by/4.0/> .
 
-<https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/dades-obertes/dret-acces> a dcat:Dataset ;
-  dct:identifier "dret-acces" ;
-  dct:title "Sol·licituds d'accés a la informació pública"@ca, "Solicitudes de acceso a la información pública"@es, "Freedom of information requests"@en ;
-  dct:description "Sol·licituds rebudes, tema, canal, tipus de sol·licitant, sentit de la resolució i termini de resposta."@ca, "Solicitudes recibidas, tema, canal, tipo de solicitante, sentido de la resolución y plazo de respuesta."@es, "Requests received, topic, channel, requester type, outcome and response time."@en ;
-  dcat:keyword "dret d'accés"@ca, "sol·licituds"@ca, "GAIP"@ca, "resolucions"@ca ;
+<https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/datos/normativa> a dcat:Dataset ;
+  dct:identifier "normativa" ;
+  dct:title "Normativa municipal"@es, "Normativa municipal"@ca-valencia, "Municipal regulations"@en ;
+  dct:description "Ordenanzas, reglamentos e instrucciones vigentes con enlace al boletín oficial."@es, "Ordenances, reglaments i instruccions vigents amb enllaç al butlletí oficial."@ca-valencia, "By-laws, regulations and instructions in force, linked to the official gazette."@en ;
+  dcat:keyword "ordenanzas"@es, "reglamentos"@es, "normativa"@es ;
   dcat:theme <http://publications.europa.eu/resource/authority/data-theme/GOVE>, <http://datos.gob.es/kos/sector-publico/sector/sector-publico> ;
-  dct:publisher <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#organitzacio> ;
+  dct:publisher <http://datos.gob.es/recurso/sector-publico/org/Organismo/L00000000> ;
+  dct:accrualPeriodicity <http://publications.europa.eu/resource/authority/frequency/CONT> ;
+  dct:temporal [ a dct:PeriodOfTime ; dcat:startDate "1990-01-01"^^xsd:date ; dcat:endDate "2026-12-31"^^xsd:date ] ;
+  dcat:contactPoint [ a vcard:Organization ; vcard:fn "Unidad de Transparencia" ; vcard:hasEmail <mailto:transparencia@example.org> ] ;
+  dcat:landingPage <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/normativa> ;
+  dcat:distribution <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/normativa.csv>, <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/normativa.json> .
+
+<https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/normativa.csv> a dcat:Distribution ; dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/normativa.csv> ; dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/normativa.csv> ; dct:format <http://publications.europa.eu/resource/authority/file-type/CSV> ; dct:license <https://creativecommons.org/licenses/by/4.0/> .
+
+<https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/normativa.json> a dcat:Distribution ; dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/normativa.json> ; dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/normativa.json> ; dct:format <http://publications.europa.eu/resource/authority/file-type/JSON> ; dct:license <https://creativecommons.org/licenses/by/4.0/> .
+
+<https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/datos/solicitudes-acceso> a dcat:Dataset ;
+  dct:identifier "solicitudes-acceso" ;
+  dct:title "Solicitudes de acceso a la información pública"@es, "Sol·licituds d’accés a la informació pública"@ca-valencia, "Freedom of information requests"@en ;
+  dct:description "Solicitudes recibidas, tema, canal, tipo de solicitante, sentido de la resolución y plazo."@es, "Sol·licituds rebudes, tema, canal, tipus de sol·licitant, sentit de la resolució i termini."@ca-valencia, "Requests received, topic, channel, requester type, outcome and response time."@en ;
+  dcat:keyword "derecho de acceso"@es, "solicitudes"@es, "resoluciones"@es ;
+  dcat:theme <http://publications.europa.eu/resource/authority/data-theme/GOVE>, <http://datos.gob.es/kos/sector-publico/sector/sector-publico> ;
+  dct:publisher <http://datos.gob.es/recurso/sector-publico/org/Organismo/L00000000> ;
   dct:accrualPeriodicity <http://publications.europa.eu/resource/authority/frequency/QUARTERLY> ;
   dct:temporal [ a dct:PeriodOfTime ; dcat:startDate "2021-01-01"^^xsd:date ; dcat:endDate "2026-12-31"^^xsd:date ] ;
-  dct:spatial <https://www.geonames.org/3128760> ;
-  dct:modified "2026-11-12"^^xsd:date ;
-  dcat:contactPoint [ a vcard:Organization ; vcard:fn "Unitat de Transparència" ; vcard:hasEmail <mailto:transparencia@example.org> ] ;
-  dcat:landingPage <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/dret-acces> ;
-  dcat:distribution <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/dret-acces.csv>, <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/dret-acces.json> .
+  dcat:contactPoint [ a vcard:Organization ; vcard:fn "Unidad de Transparencia" ; vcard:hasEmail <mailto:transparencia@example.org> ] ;
+  dcat:landingPage <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/derecho-acceso> ;
+  dcat:distribution <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/solicitudes-acceso.csv>, <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/solicitudes-acceso.json> .
 
-<https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/dret-acces.csv> a dcat:Distribution ;
-  dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/dret-acces.csv> ;
-  dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/dret-acces.csv> ;
-  dct:format <http://publications.europa.eu/resource/authority/file-type/CSV> ;
-  dcat:mediaType <http://www.iana.org/assignments/media-types/text/csv> ;
-  dcat:byteSize "24203"^^xsd:nonNegativeInteger ;
-  dct:license <https://creativecommons.org/licenses/by/4.0/> .
+<https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/solicitudes-acceso.csv> a dcat:Distribution ; dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/solicitudes-acceso.csv> ; dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/solicitudes-acceso.csv> ; dct:format <http://publications.europa.eu/resource/authority/file-type/CSV> ; dct:license <https://creativecommons.org/licenses/by/4.0/> .
 
-<https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/dret-acces.json> a dcat:Distribution ;
-  dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/dret-acces.json> ;
-  dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/dret-acces.json> ;
-  dct:format <http://publications.europa.eu/resource/authority/file-type/JSON> ;
-  dcat:mediaType <http://www.iana.org/assignments/media-types/application/json> ;
-  dcat:byteSize "77797"^^xsd:nonNegativeInteger ;
-  dct:license <https://creativecommons.org/licenses/by/4.0/> .
+<https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/solicitudes-acceso.json> a dcat:Distribution ; dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/solicitudes-acceso.json> ; dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/solicitudes-acceso.json> ; dct:format <http://publications.europa.eu/resource/authority/file-type/JSON> ; dct:license <https://creativecommons.org/licenses/by/4.0/> .
 
-<https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/dades-obertes/objectius> a dcat:Dataset ;
-  dct:identifier "objectius" ;
-  dct:title "Objectius estratègics i grau de compliment"@ca, "Objetivos estratégicos y grado de cumplimiento"@es, "Strategic objectives and progress"@en ;
-  dct:description "Objectius del pla d'actuació amb indicador, valor de base, valor actual i fita."@ca, "Objetivos del plan de actuación con indicador, valor base, valor actual y meta."@es, "Action plan objectives with indicator, baseline, current value and target."@en ;
-  dcat:keyword "planificació"@ca, "objectius"@ca, "indicadors"@ca, "rendició de comptes"@ca ;
+<https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/datos/obligaciones> a dcat:Dataset ;
+  dct:identifier "obligaciones" ;
+  dct:title "Cumplimiento de las obligaciones de publicidad activa"@es, "Compliment de les obligacions de publicitat activa"@ca-valencia, "Proactive disclosure compliance"@en ;
+  dct:description "Autoevaluación de cada obligación de la Ley 19/2013, la Ley 7/1985 y la normativa autonómica: estado, periodicidad y última actualización."@es, "Autoavaluació de cada obligació de la Llei 19/2013, la Llei 7/1985 i la normativa autonòmica: estat, periodicitat i darrera actualització."@ca-valencia, "Self-assessment of each disclosure obligation: status, frequency and last update."@en ;
+  dcat:keyword "transparencia"@es, "publicidad activa"@es, "Ley 19/2013"@es, "cumplimiento"@es ;
   dcat:theme <http://publications.europa.eu/resource/authority/data-theme/GOVE>, <http://datos.gob.es/kos/sector-publico/sector/sector-publico> ;
-  dct:publisher <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#organitzacio> ;
-  dct:accrualPeriodicity <http://publications.europa.eu/resource/authority/frequency/BIANNUAL> ;
-  dct:temporal [ a dct:PeriodOfTime ; dcat:startDate "2024-01-01"^^xsd:date ; dcat:endDate "2030-12-31"^^xsd:date ] ;
-  dct:spatial <https://www.geonames.org/3128760> ;
-  dct:modified "2026-11-12"^^xsd:date ;
-  dcat:contactPoint [ a vcard:Organization ; vcard:fn "Unitat de Transparència" ; vcard:hasEmail <mailto:transparencia@example.org> ] ;
-  dcat:landingPage <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/activitat> ;
-  dcat:distribution <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/objectius.csv>, <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/objectius.json> .
-
-<https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/objectius.csv> a dcat:Distribution ;
-  dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/objectius.csv> ;
-  dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/objectius.csv> ;
-  dct:format <http://publications.europa.eu/resource/authority/file-type/CSV> ;
-  dcat:mediaType <http://www.iana.org/assignments/media-types/text/csv> ;
-  dcat:byteSize "1147"^^xsd:nonNegativeInteger ;
-  dct:license <https://creativecommons.org/licenses/by/4.0/> .
-
-<https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/objectius.json> a dcat:Distribution ;
-  dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/objectius.json> ;
-  dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/objectius.json> ;
-  dct:format <http://publications.europa.eu/resource/authority/file-type/JSON> ;
-  dcat:mediaType <http://www.iana.org/assignments/media-types/application/json> ;
-  dcat:byteSize "2772"^^xsd:nonNegativeInteger ;
-  dct:license <https://creativecommons.org/licenses/by/4.0/> .
-
-<https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/dades-obertes/obligacions> a dcat:Dataset ;
-  dct:identifier "obligacions" ;
-  dct:title "Compliment de les obligacions de publicitat activa"@ca, "Cumplimiento de las obligaciones de publicidad activa"@es, "Proactive disclosure compliance"@en ;
-  dct:description "Autoavaluació de cada obligació de la Llei 19/2014: estat de publicació, periodicitat, data d'actualització i conjunt de dades associat."@ca, "Autoevaluación de cada obligación de la Ley 19/2014: estado de publicación, periodicidad, fecha de actualización y conjunto de datos asociado."@es, "Self-assessment of each obligation under Catalan Law 19/2014: status, frequency, last update and linked dataset."@en ;
-  dcat:keyword "transparència"@ca, "publicitat activa"@ca, "Llei 19/2014"@ca, "compliment"@ca ;
-  dcat:theme <http://publications.europa.eu/resource/authority/data-theme/GOVE>, <http://datos.gob.es/kos/sector-publico/sector/sector-publico> ;
-  dct:publisher <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#organitzacio> ;
+  dct:publisher <http://datos.gob.es/recurso/sector-publico/org/Organismo/L00000000> ;
   dct:accrualPeriodicity <http://publications.europa.eu/resource/authority/frequency/MONTHLY> ;
   dct:temporal [ a dct:PeriodOfTime ; dcat:startDate "2026-01-01"^^xsd:date ; dcat:endDate "2026-12-31"^^xsd:date ] ;
-  dct:spatial <https://www.geonames.org/3128760> ;
-  dct:modified "2026-11-12"^^xsd:date ;
-  dcat:contactPoint [ a vcard:Organization ; vcard:fn "Unitat de Transparència" ; vcard:hasEmail <mailto:transparencia@example.org> ] ;
-  dcat:landingPage <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/compliment> ;
-  dcat:distribution <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/obligacions.csv>, <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/obligacions.json> .
+  dcat:contactPoint [ a vcard:Organization ; vcard:fn "Unidad de Transparencia" ; vcard:hasEmail <mailto:transparencia@example.org> ] ;
+  dcat:landingPage <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/indice> ;
+  dcat:distribution <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/obligaciones.csv>, <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/obligaciones.json> .
 
-<https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/obligacions.csv> a dcat:Distribution ;
-  dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/obligacions.csv> ;
-  dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/obligacions.csv> ;
-  dct:format <http://publications.europa.eu/resource/authority/file-type/CSV> ;
-  dcat:mediaType <http://www.iana.org/assignments/media-types/text/csv> ;
-  dcat:byteSize "5076"^^xsd:nonNegativeInteger ;
-  dct:license <https://creativecommons.org/licenses/by/4.0/> .
+<https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/obligaciones.csv> a dcat:Distribution ; dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/obligaciones.csv> ; dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/obligaciones.csv> ; dct:format <http://publications.europa.eu/resource/authority/file-type/CSV> ; dct:license <https://creativecommons.org/licenses/by/4.0/> .
 
-<https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/obligacions.json> a dcat:Distribution ;
-  dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/obligacions.json> ;
-  dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/obligacions.json> ;
-  dct:format <http://publications.europa.eu/resource/authority/file-type/JSON> ;
-  dcat:mediaType <http://www.iana.org/assignments/media-types/application/json> ;
-  dcat:byteSize "13817"^^xsd:nonNegativeInteger ;
-  dct:license <https://creativecommons.org/licenses/by/4.0/> .
+<https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/obligaciones.json> a dcat:Distribution ; dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/obligaciones.json> ; dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/obligaciones.json> ; dct:format <http://publications.europa.eu/resource/authority/file-type/JSON> ; dct:license <https://creativecommons.org/licenses/by/4.0/> .

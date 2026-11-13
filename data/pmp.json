@@ -1,0 +1,236 @@
+{
+ "generado": "2026-11-13",
+ "fuente": "manual",
+ "ejemplo": true,
+ "aviso": "Datos de ejemplo generados sintéticamente. No son cifras oficiales.",
+ "datos": [
+  {
+   "periodo": "2022-01",
+   "pmp_dias": 38.86
+  },
+  {
+   "periodo": "2022-02",
+   "pmp_dias": 29.17
+  },
+  {
+   "periodo": "2022-03",
+   "pmp_dias": 40.53
+  },
+  {
+   "periodo": "2022-04",
+   "pmp_dias": 33.97
+  },
+  {
+   "periodo": "2022-05",
+   "pmp_dias": 40.52
+  },
+  {
+   "periodo": "2022-06",
+   "pmp_dias": 33.2
+  },
+  {
+   "periodo": "2022-07",
+   "pmp_dias": 39.8
+  },
+  {
+   "periodo": "2022-08",
+   "pmp_dias": 39.87
+  },
+  {
+   "periodo": "2022-09",
+   "pmp_dias": 34.55
+  },
+  {
+   "periodo": "2022-10",
+   "pmp_dias": 29.62
+  },
+  {
+   "periodo": "2022-11",
+   "pmp_dias": 30.5
+  },
+  {
+   "periodo": "2022-12",
+   "pmp_dias": 35.96
+  },
+  {
+   "periodo": "2023-01",
+   "pmp_dias": 29.2
+  },
+  {
+   "periodo": "2023-02",
+   "pmp_dias": 34.43
+  },
+  {
+   "periodo": "2023-03",
+   "pmp_dias": 35.51
+  },
+  {
+   "periodo": "2023-04",
+   "pmp_dias": 24.47
+  },
+  {
+   "periodo": "2023-05",
+   "pmp_dias": 26.44
+  },
+  {
+   "periodo": "2023-06",
+   "pmp_dias": 28.15
+  },
+  {
+   "periodo": "2023-07",
+   "pmp_dias": 26.93
+  },
+  {
+   "periodo": "2023-08",
+   "pmp_dias": 33.08
+  },
+  {
+   "periodo": "2023-09",
+   "pmp_dias": 36.54
+  },
+  {
+   "periodo": "2023-10",
+   "pmp_dias": 32.82
+  },
+  {
+   "periodo": "2023-11",
+   "pmp_dias": 27.21
+  },
+  {
+   "periodo": "2023-12",
+   "pmp_dias": 30.68
+  },
+  {
+   "periodo": "2024-01",
+   "pmp_dias": 28.27
+  },
+  {
+   "periodo": "2024-02",
+   "pmp_dias": 27.13
+  },
+  {
+   "periodo": "2024-03",
+   "pmp_dias": 22.3
+  },
+  {
+   "periodo": "2024-04",
+   "pmp_dias": 29.38
+  },
+  {
+   "periodo": "2024-05",
+   "pmp_dias": 28.3
+  },
+  {
+   "periodo": "2024-06",
+   "pmp_dias": 27.53
+  },
+  {
+   "periodo": "2024-07",
+   "pmp_dias": 24.48
+  },
+  {
+   "periodo": "2024-08",
+   "pmp_dias": 27.36
+  },
+  {
+   "periodo": "2024-09",
+   "pmp_dias": 20.77
+  },
+  {
+   "periodo": "2024-10",
+   "pmp_dias": 19.94
+  },
+  {
+   "periodo": "2024-11",
+   "pmp_dias": 28.95
+  },
+  {
+   "periodo": "2024-12",
+   "pmp_dias": 24.93
+  },
+  {
+   "periodo": "2025-01",
+   "pmp_dias": 24.01
+  },
+  {
+   "periodo": "2025-02",
+   "pmp_dias": 18.06
+  },
+  {
+   "periodo": "2025-03",
+   "pmp_dias": 18.33
+  },
+  {
+   "periodo": "2025-04",
+   "pmp_dias": 23.95
+  },
+  {
+   "periodo": "2025-05",
+   "pmp_dias": 22.12
+  },
+  {
+   "periodo": "2025-06",
+   "pmp_dias": 17.78
+  },
+  {
+   "periodo": "2025-07",
+   "pmp_dias": 20.08
+  },
+  {
+   "periodo": "2025-08",
+   "pmp_dias": 24.98
+  },
+  {
+   "periodo": "2025-09",
+   "pmp_dias": 23.17
+  },
+  {
+   "periodo": "2025-10",
+   "pmp_dias": 16.84
+  },
+  {
+   "periodo": "2025-11",
+   "pmp_dias": 14.73
+  },
+  {
+   "periodo": "2025-12",
+   "pmp_dias": 24.01
+  },
+  {
+   "periodo": "2026-01",
+   "pmp_dias": 19.25
+  },
+  {
+   "periodo": "2026-02",
+   "pmp_dias": 19.29
+  },
+  {
+   "periodo": "2026-03",
+   "pmp_dias": 16.15
+  },
+  {
+   "periodo": "2026-04",
+   "pmp_dias": 8.14
+  },
+  {
+   "periodo": "2026-05",
+   "pmp_dias": 14.57
+  },
+  {
+   "periodo": "2026-06",
+   "pmp_dias": 12.11
+  },
+  {
+   "periodo": "2026-07",
+   "pmp_dias": 18.12
+  },
+  {
+   "periodo": "2026-08",
+   "pmp_dias": 11.36
+  },
+  {
+   "periodo": "2026-09",
+   "pmp_dias": 9.42
+  }
+ ]
+}

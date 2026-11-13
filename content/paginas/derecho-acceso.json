@@ -1,0 +1,72 @@
+{
+ "id": "derecho-acceso",
+ "icono": "inbox",
+ "titulo": {
+  "es": "Derecho de acceso a la información",
+  "va": "Dret d’accés a la informació",
+  "en": "Right of access to information"
+ },
+ "intro": {
+  "es": "Cualquier persona puede solicitar información pública sin necesidad de motivarlo.",
+  "va": "Qualsevol persona pot sol·licitar informació pública sense necessitat de motivar-ho.",
+  "en": "Anyone can request public information without giving a reason."
+ },
+ "bloques": [
+  {
+   "tipo": "acceso"
+  },
+  {
+   "tipo": "grafico",
+   "titulo": {
+    "es": "Solicitudes por año y sentido",
+    "va": "Sol·licituds per any i sentit",
+    "en": "Requests by year and outcome"
+   },
+   "conjunto": "solicitudes-acceso",
+   "tipo_grafico": "columnas_apiladas",
+   "agrupar": "fecha_entrada:anio",
+   "series": "sentido",
+   "operacion": "contar",
+   "formato": "entero",
+   "orden": "etiqueta",
+   "ancho": "completo"
+  },
+  {
+   "tipo": "grafico",
+   "titulo": {
+    "es": "Temas más consultados",
+    "va": "Temes més consultats",
+    "en": "Most requested topics"
+   },
+   "conjunto": "solicitudes-acceso",
+   "tipo_grafico": "barras",
+   "agrupar": "tema",
+   "operacion": "contar",
+   "formato": "entero"
+  },
+  {
+   "tipo": "grafico",
+   "titulo": {
+    "es": "Tiempo medio de respuesta",
+    "va": "Temps mitjà de resposta",
+    "en": "Average response time"
+   },
+   "subtitulo": {
+    "es": "Días, por año",
+    "va": "Dies, per any",
+    "en": "Days, by year"
+   },
+   "conjunto": "solicitudes-acceso",
+   "tipo_grafico": "columnas",
+   "agrupar": "fecha_entrada:anio",
+   "valor": "dias_resolucion",
+   "operacion": "media",
+   "formato": "dias",
+   "orden": "etiqueta",
+   "referencia": 30
+  },
+  {
+   "tipo": "indicadores"
+  }
+ ]
+}

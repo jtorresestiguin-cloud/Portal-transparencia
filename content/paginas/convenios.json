@@ -1,0 +1,75 @@
+{
+ "id": "convenios",
+ "icono": "link",
+ "titulo": {
+  "es": "Convenios",
+  "va": "Convenis",
+  "en": "Agreements"
+ },
+ "intro": {
+  "es": "Convenios de colaboración suscritos con otras administraciones y entidades.",
+  "va": "Convenis de col·laboració subscrits amb altres administracions i entitats.",
+  "en": "Collaboration agreements with other bodies."
+ },
+ "bloques": [
+  {
+   "tipo": "cifras",
+   "items": [
+    {
+     "etiqueta": {
+      "es": "Convenios",
+      "va": "Convenis",
+      "en": "Agreements"
+     },
+     "conjunto": "convenios",
+     "operacion": "contar",
+     "formato": "entero"
+    },
+    {
+     "etiqueta": {
+      "es": "Obligaciones económicas",
+      "va": "Obligacions econòmiques",
+      "en": "Financial commitments"
+     },
+     "conjunto": "convenios",
+     "operacion": "sumar",
+     "campo": "obligaciones_economicas",
+     "formato": "euros_compacto"
+    }
+   ]
+  },
+  {
+   "tipo": "grafico",
+   "titulo": {
+    "es": "Convenios por tipo de parte",
+    "va": "Convenis per tipus de part",
+    "en": "Agreements by partner type"
+   },
+   "conjunto": "convenios",
+   "tipo_grafico": "barras",
+   "agrupar": "tipo_parte",
+   "operacion": "contar",
+   "formato": "entero"
+  },
+  {
+   "tipo": "tabla",
+   "conjunto": "convenios",
+   "columnas": [
+    "fecha_firma",
+    "objeto",
+    "partes",
+    "fecha_fin",
+    "obligaciones_economicas"
+   ],
+   "filtros": [
+    "tipo_parte"
+   ],
+   "busqueda": true,
+   "orden": "fecha_firma",
+   "descendente": true
+  },
+  {
+   "tipo": "indicadores"
+  }
+ ]
+}
