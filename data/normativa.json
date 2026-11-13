@@ -1,9 +1,18 @@
 {
  "generado": "2026-11-13",
  "fuente": "manual",
- "ejemplo": true,
  "aviso": "Datos de ejemplo generados sintéticamente. No son cifras oficiales.",
  "datos": [
+  {
+   "id": "NOR-mwerlsqb",
+   "titulo": null,
+   "tipo": null,
+   "fecha_aprobacion": null,
+   "fecha_publicacion": null,
+   "boletin": null,
+   "url": null,
+   "vigente": false
+  },
   {
    "id": "NOR-001",
    "titulo": "Ordenanza fiscal reguladora del Impuesto sobre Bienes Inmuebles",
@@ -124,5 +133,6 @@
    "url": "#",
    "vigente": true
   }
- ]
+ ],
+ "actualizado": "2026-11-13"
 }

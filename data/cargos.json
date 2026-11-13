@@ -1,10 +1,26 @@
 {
  "generado": "2026-11-13",
  "fuente": "manual",
- "ejemplo": true,
  "aviso": "Datos de ejemplo generados sintéticamente. No son cifras oficiales.",
  "unidad": "EUR bruto anual",
  "datos": [
+  {
+   "id": "CAR-mwervtp2",
+   "nombre": null,
+   "tipo_cargo": null,
+   "cargo": null,
+   "areas": null,
+   "grupo_politico": null,
+   "dedicacion": null,
+   "retribucion_anual": null,
+   "indemnizaciones_anuales": null,
+   "fecha_nombramiento": null,
+   "foto": null,
+   "email": null,
+   "cv_url": null,
+   "declaracion_bienes_url": null,
+   "declaracion_actividades_url": null
+  },
   {
    "id": "C01",
    "nombre": "Laura Ejemplo López",
@@ -311,5 +327,6 @@
    "declaracion_bienes_url": "",
    "declaracion_actividades_url": ""
   }
- ]
+ ],
+ "actualizado": "2026-11-13"
 }

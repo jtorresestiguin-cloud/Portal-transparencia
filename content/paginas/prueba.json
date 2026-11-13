@@ -11,24 +11,7 @@
   "va": "",
   "en": ""
  },
- "bloques": [
-  {
-   "tipo": "texto",
-   "titulo": {
-    "es": "Prueba",
-    "va": "Nou apartat",
-    "en": "New section"
-   },
-   "contenido": {
-    "es": "Escribe aquí el texto.",
-    "va": "Escriu ací el text.",
-    "en": "Write your text here."
-   }
-  },
-  {
-   "tipo": "indicadores"
-  }
- ],
+ "bloques": [],
  "actualizado": "2026-11-13",
  "responsable": {
   "es": "XXXXX",
