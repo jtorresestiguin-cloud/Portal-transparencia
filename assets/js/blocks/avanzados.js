@@ -2,6 +2,7 @@
  * Componentes avanzados: exploradores interactivos que se insertan como un bloque más.
  */
 import * as C from '../compliance.js';
+import { exportMenu, openPrintable } from '../export.js';
 import { tr, t, pick, label, codes, lang } from '../i18n.js';
 import { h, esc, icon, fmt, sum, groupBy, chartCard, dataTable, kpiRow, delta, meter, statusBadge, selectControl, modal, definitionList, download, toCSV, flushCharts, filterSummary, emptyState } from '../ui.js';
 import { sankey, treemap, columns, hBar, SERIES } from '../charts.js';
@@ -42,31 +43,47 @@ async function presupuesto(el, p, ctx) {
     out.appendChild(crumbs);
     if (!area) {
       out.appendChild(kpiRow([
-        { label: tr('Presupuesto de gastos', 'Pressupost de despeses', 'Spending budget'), value: fmt.eurC(G(yr, 'definitivo')), ...delta(G(yr, 'definitivo'), G(pv, 'definitivo')), context: `vs. ${anio - 1}` },
-        { label: tr('Ejecutado', 'Executat', 'Executed'), value: fmt.pct((G(yr, 'ejecutado') / G(yr, 'definitivo')) * 100), context: `${fmt.eurC(G(yr, 'ejecutado'))} ${tr('de gasto reconocido', 'de despesa reconeguda', 'spent')}` },
-        { label: curso ? tr('Saldo a la fecha', 'Saldo a la data', 'Balance to date') : tr('Resultado (ingresos − gastos)', 'Resultat (ingressos − despeses)', 'Outturn (revenue − spending)'), value: fmt.eurC(I(yr, 'ejecutado') - G(yr, 'ejecutado')) },
+        { label: tr('Presupuesto de ingresos', 'Pressupost d’ingressos', 'Revenue budget'), value: fmt.eurC(I(yr, 'definitivo')), ...delta(I(yr, 'definitivo'), I(pv, 'definitivo')), context: `${tr('definitivo', 'definitiu', 'final')} · vs. ${anio - 1}` },
+        { label: tr('Presupuesto de gastos', 'Pressupost de despeses', 'Spending budget'), value: fmt.eurC(G(yr, 'definitivo')), ...delta(G(yr, 'definitivo'), G(pv, 'definitivo')), context: `${tr('definitivo', 'definitiu', 'final')} · vs. ${anio - 1}` },
+        { label: tr('Ejecución del gasto', 'Execució de la despesa', 'Spending execution'), value: fmt.pct((G(yr, 'ejecutado') / G(yr, 'definitivo')) * 100), context: `${fmt.eurC(G(yr, 'ejecutado'))} ${tr('de obligaciones reconocidas', 'd’obligacions reconegudes', 'spent')}` },
+        { label: curso ? tr('Saldo a la fecha', 'Saldo a la data', 'Balance to date') : tr('Resultado presupuestario', 'Resultat pressupostari', 'Budget outturn'), value: fmt.eurC(I(yr, 'ejecutado') - G(yr, 'ejecutado')), context: tr('derechos – obligaciones', 'drets – obligacions', 'revenue – spending') },
       ]));
-      const ing = codes('capitulo_ingreso').map((c) => ({ name: label('capitulo_ingreso', c), value: sum(yr.filter((r) => r.tipo === 'ingreso' && r.capitulo === c), (r) => r[base]) })).filter((d) => d.value > 0).sort((a, b) => b.value - a.value);
+      const ing = codes('capitulo_ingreso').map((c) => ({ name: label('capitulo_ingreso', c), value: sum(yr.filter((r) => r.tipo === 'ingreso' && r.capitulo === c), (r) => r[base]) })).filter((d) => d.value > 0).sort((a, b) => b.value - a.value).map((d, i) => ({ ...d, color: `var(--seq-${Math.max(2, 7 - i)})` }));
       const areas = codes('area_gasto').map((a) => ({ key: a, name: label('area_gasto', a), value: sum(yr.filter((r) => r.tipo === 'gasto' && r.area_gasto === a), (r) => r[base]), color: AREA_COLOR[a], ink: a === '4' ? '#0b0b0b' : undefined })).filter((d) => d.value > 0).sort((a, b) => b.value - a.value);
-      out.appendChild(h(`<h2 class="section-title">${tr('¿De dónde viene el dinero?', 'D’on ve els diners?', 'Where does the money come from?')}</h2>`));
-      const g1 = h('<div class="chart-grid"></div>'); out.appendChild(g1);
-      const totI = sum(ing, (d) => d.value);
-      g1.appendChild(chartCard({ title: tr(`Ingresos por tipo (${anio})`, `Ingressos per tipus (${anio})`, `Revenue by type (${anio})`), subtitle: `${baseTxt} · ${tr('euros', 'euros', 'EUR')}`, file: `ingresos-${anio}`, dataset: 'presupuesto', datasetTitle: ds, wide: true, level: 3,
-        draw: (b) => hBar(b, { data: ing.map((d) => ({ label: d.name, value: d.value, note: fmt.pct((d.value / totI) * 100) })), format: fmt.eurC, color: 'var(--s1)', valueName: tr('Ingresos', 'Ingressos', 'Revenue') }),
-        table: { columns: [{ key: 'name', label: tr('Tipo de ingreso', 'Tipus d’ingrés', 'Revenue type') }, { key: 'value', label: 'EUR', align: 'right', format: fmt.eur }], rows: ing } }));
+      // Diagrama de flujos: de dónde viene el dinero y a dónde va
+      const g0 = h('<div class="chart-grid"></div>'); out.appendChild(g0);
+      g0.appendChild(chartCard({
+        title: tr(`De dónde vienen y a dónde van los fondos (${anio})`, `D’on vénen i on van els fons (${anio})`, `Where the money comes from and goes (${anio})`),
+        subtitle: `${tr('Ingresos por capítulo → gasto por área', 'Ingressos per capítol → despesa per àrea', 'Revenue by chapter → spending by area')} · ${baseTxt}`, full: true, file: `presupuesto-flujos-${anio}`, dataset: 'presupuesto', datasetTitle: ds,
+        draw: (b) => sankey(b, { left: ing, right: areas, format: fmt.eurC, centerLabel: fmt.eurC(sum(ing, (d) => d.value)), sideLabels: { L: tr('Ingreso', 'Ingrés', 'Revenue'), R: tr('Gasto', 'Despesa', 'Spending') } }),
+        table: { columns: [{ key: 't', label: tr('Tipo', 'Tipus', 'Type') }, { key: 'name', label: tr('Concepto', 'Concepte', 'Item') }, { key: 'value', label: 'EUR', align: 'right', format: fmt.eur }], rows: [...ing.map((d) => ({ ...d, t: tr('Ingreso', 'Ingrés', 'Revenue') })), ...areas.map((d) => ({ ...d, t: tr('Gasto', 'Despesa', 'Spending') }))] },
+      }));
       out.appendChild(h(`<h2 class="section-title">${tr('¿En qué se gasta?', 'En què es gasta?', 'What is it spent on?')}</h2><p class="muted">${tr('Pulsa un área para ver su detalle.', 'Prem una àrea per a veure’n el detall.', 'Select an area to see its detail.')}</p>`));
       const g2 = h('<div class="chart-grid"></div>'); out.appendChild(g2);
-      g2.appendChild(chartCard({ title: tr(`Gasto por área (${anio})`, `Despesa per àrea (${anio})`, `Spending by area (${anio})`), subtitle: baseTxt, file: `gasto-areas-${anio}`, dataset: 'presupuesto', datasetTitle: ds, wide: true, level: 3,
+      g2.appendChild(chartCard({ title: tr(`Gasto por área (${anio})`, `Despesa per àrea (${anio})`, `Spending by area (${anio})`), subtitle: baseTxt, file: `gasto-areas-${anio}`, dataset: 'presupuesto', datasetTitle: ds, level: 3,
         draw: (b) => treemap(b, { data: areas, format: fmt.eurC, onClick: (d) => { area = d.key; setQ({ area }); draw(); flushCharts(); } }),
         table: { columns: [{ key: 'name', label: tr('Área', 'Àrea', 'Area') }, { key: 'value', label: 'EUR', align: 'right', format: fmt.eur }], rows: areas } }));
+      const capsG = codes('capitulo_gasto').filter((c) => yr.some((r) => r.tipo === 'gasto' && r.capitulo === c));
+      const capRows = capsG.map((c) => { const s_ = yr.filter((r) => r.tipo === 'gasto' && r.capitulo === c); return { c, name: `${c}. ${label('capitulo_gasto', c)}`, definitivo: sum(s_, (r) => r.definitivo), ejecutado: sum(s_, (r) => r.ejecutado) }; });
+      g2.appendChild(chartCard({ title: tr('Ejecución por capítulo de gasto', 'Execució per capítol de despesa', 'Execution by spending chapter'), subtitle: tr('Crédito definitivo y obligaciones reconocidas', 'Crèdit definitiu i obligacions reconegudes', 'Final budget and obligations'), file: `ejecucion-capitulos-${anio}`, dataset: 'presupuesto', datasetTitle: ds, level: 3,
+        draw: (b) => columns(b, { categories: capRows.map((r) => `${tr('Cap.', 'Cap.', 'Ch.')} ${r.c}`), series: [{ name: tr('Definitivo', 'Definitiu', 'Final'), values: capRows.map((r) => r.definitivo), color: 'var(--seq-3)' }, { name: tr('Ejecutado', 'Executat', 'Executed'), values: capRows.map((r) => r.ejecutado), color: 'var(--seq-6)' }], format: fmt.eur, axisFormat: fmt.eurC }),
+        table: { columns: [{ key: 'name', label: tr('Capítulo', 'Capítol', 'Chapter') }, { key: 'definitivo', label: tr('Definitivo', 'Definitiu', 'Final'), align: 'right', format: fmt.eur }, { key: 'ejecutado', label: tr('Ejecutado', 'Executat', 'Executed'), align: 'right', format: fmt.eur }], rows: capRows } }));
       const list = h(`<ul class="drill-list">${areas.map((a) => `<li><button type="button" data-area="${a.key}"><span class="drill-swatch" style="background:${a.color}"></span><span class="drill-name">${esc(a.name)}</span><span class="drill-value">${fmt.eurC(a.value)}</span>${icon('chevron', 16)}</button></li>`).join('')}</ul>`);
       out.appendChild(list);
-      out.appendChild(h(`<h2 class="section-title">${tr('¿Cuánto se ha ejecutado?', 'Quant s’ha executat?', 'How much has been executed?')}</h2>`));
+      out.appendChild(h(`<h2 class="section-title">${tr('Evolución', 'Evolució', 'Over time')}</h2>`));
       const g3 = h('<div class="chart-grid"></div>'); out.appendChild(g3);
-      const evo = anios.map((a) => { const s_ = pres.filter((r) => r.anio === a); return { a, def: G(s_, 'definitivo'), eje: G(s_, 'ejecutado') }; });
-      g3.appendChild(chartCard({ title: tr('Gasto previsto y ejecutado por año', 'Despesa prevista i executada per any', 'Planned and executed spending by year'), subtitle: `${anios[0]}–${anios.at(-1)} · ${tr('euros', 'euros', 'EUR')}`, file: 'presupuesto-ejecucion', dataset: 'presupuesto', datasetTitle: ds, wide: true, level: 3,
-        draw: (b) => columns(b, { categories: evo.map((e) => String(e.a)), series: [{ name: tr('Previsto (definitivo)', 'Previst (definitiu)', 'Planned (final)'), values: evo.map((e) => e.def), color: 'var(--seq-3)' }, { name: tr('Ejecutado', 'Executat', 'Executed'), values: evo.map((e) => e.eje), color: 'var(--seq-6)' }], format: fmt.eur, axisFormat: fmt.eurC }),
-        table: { columns: [{ key: 'a', label: tr('Año', 'Any', 'Year') }, { key: 'def', label: tr('Previsto', 'Previst', 'Planned'), align: 'right', format: fmt.eur }, { key: 'eje', label: tr('Ejecutado', 'Executat', 'Executed'), align: 'right', format: fmt.eur }, { key: 'p', label: '%', align: 'right', format: (v, r) => fmt.pct((r.eje / r.def) * 100) }], rows: evo } }));
+      const evo = anios.map((a) => { const s_ = pres.filter((r) => r.anio === a); return { a, i: I(s_, 'ejecutado'), g: G(s_, 'ejecutado'), def: G(s_, 'definitivo') }; });
+      g3.appendChild(chartCard({ title: tr('Evolución de ingresos y gastos liquidados', 'Evolució d’ingressos i despeses liquidats', 'Revenue and spending over time'), subtitle: `${anios[0]}–${anios.at(-1)} · ${tr('euros', 'euros', 'EUR')}`, file: 'presupuesto-evolucion', dataset: 'presupuesto', datasetTitle: ds, wide: true, level: 3,
+        draw: (b) => columns(b, { categories: evo.map((e) => String(e.a)), series: [{ name: tr('Ingresos', 'Ingressos', 'Revenue'), values: evo.map((e) => e.i) }, { name: tr('Gastos', 'Despeses', 'Spending'), values: evo.map((e) => e.g) }], format: fmt.eur, axisFormat: fmt.eurC }),
+        table: { columns: [{ key: 'a', label: tr('Año', 'Any', 'Year') }, { key: 'i', label: tr('Ingresos', 'Ingressos', 'Revenue'), align: 'right', format: fmt.eur }, { key: 'g', label: tr('Gastos', 'Despeses', 'Spending'), align: 'right', format: fmt.eur }, { key: 'def', label: tr('Gasto previsto', 'Despesa prevista', 'Planned spending'), align: 'right', format: fmt.eur }], rows: evo } }));
+      const det = yr.map((r) => ({ ...r, concepto: r.tipo === 'ingreso' ? label('capitulo_ingreso', r.capitulo) : label('capitulo_gasto', r.capitulo), area: r.area_gasto ? label('area_gasto', r.area_gasto) : '—', pct: r.definitivo ? (r.ejecutado / r.definitivo) * 100 : null }));
+      const card = h(`<section class="card"><h2 class="block-title">${tr('Detalle', 'Detall', 'Detail')} ${anio}</h2></section>`);
+      card.appendChild(dataTable({ caption: tr('Detalle presupuestario', 'Detall pressupostari', 'Budget detail'), pageSize: 20, rows: det, exportName: `presupuesto-${anio}`, columns: [
+        { key: 'tipo', label: tr('Tipo', 'Tipus', 'Type'), format: (v) => (v === 'ingreso' ? tr('Ingreso', 'Ingrés', 'Revenue') : tr('Gasto', 'Despesa', 'Spending')) },
+        { key: 'area', label: tr('Área', 'Àrea', 'Area') }, { key: 'capitulo', label: tr('Cap.', 'Cap.', 'Ch.') }, { key: 'concepto', label: tr('Concepto', 'Concepte', 'Item') },
+        { key: 'inicial', label: tr('Inicial', 'Inicial', 'Initial'), align: 'right', format: fmt.eur }, { key: 'definitivo', label: tr('Definitivo', 'Definitiu', 'Final'), align: 'right', format: fmt.eur },
+        { key: 'ejecutado', label: tr('Ejecutado', 'Executat', 'Executed'), align: 'right', format: fmt.eur }, { key: 'pct', label: '%', align: 'right', format: (v) => (v === null ? '—' : fmt.pct(v)) }] }));
+      out.appendChild(card);
     } else {
       const ar = yr.filter((r) => r.tipo === 'gasto' && r.area_gasto === area);
       const arPv = pv.filter((r) => r.tipo === 'gasto' && r.area_gasto === area);
@@ -182,8 +199,10 @@ async function contratacion(el, p, ctx) {
         { key: 'fecha_adjudicacion', label: tr('Fecha', 'Data', 'Date'), format: fmt.date },
         { key: 'importe_adjudicacion_sin_iva', label: tr('Importe sin IVA', 'Import sense IVA', 'Value ex VAT'), align: 'right', format: (v) => (v ? fmt.eur(v) : '—') }] });
       panel.appendChild(tbl);
-      panel.appendChild(h(`<p class="table-foot">${tr('Pulsa un contrato para ver su ficha.', 'Prem un contracte per a veure’n la fitxa.', 'Select a contract to see its details.')} · <button type="button" class="link-btn" data-export>${icon('download', 14)} ${tr('Descargar esta selección (CSV)', 'Descarregar aquesta selecció (CSV)', 'Download this selection (CSV)')}</button></p>`));
-      panel.querySelector('[data-export]').addEventListener('click', () => download('contratos-seleccion.csv', '﻿' + toCSV(Object.keys(f[0] || {}).map((k) => ({ key: k, label: k })), f), 'text/csv;charset=utf-8'));
+      const foot = h(`<p class="table-foot">${tr('Pulsa un contrato para ver su ficha.', 'Prem un contracte per a veure’n la fitxa.', 'Select a contract to see its details.')} · </p>`);
+      panel.appendChild(foot);
+      store.dsMeta('contratos').then((dm) => foot.appendChild(exportMenu({ name: 'contratos-seleccion', title: tr('Contratos (selección)', 'Contractes (selecció)', 'Contracts (selection)'), source: dm?.fuente?.nombre, label: tr('Descargar esta selección', 'Descarregar aquesta selecció', 'Download this selection'), rows: () => f,
+        columns: (dm?.campos || Object.keys(f[0] || {}).map((k) => ({ nombre: k }))).map((c) => ({ key: c.nombre, label: c.descripcion || c.nombre, format: c.lista ? (v) => store.valueLabel(c, v) : undefined })) })));
     } else if (st.vista === 'estadisticas') {
       const grid = h('<div class="chart-grid"></div>');
       panel.appendChild(grid);
@@ -273,7 +292,7 @@ async function catalogo(el, p, ctx) {
     <ul class="dataset-grid">${m.conjuntos.map((d) => { const i = idx.conjuntos.find((x) => x.id === d.id); return `<li class="card dataset">
       <a class="dataset-title" href="#/datos/${d.id}">${icon(['placsp', 'bdns'].includes(d.fuente.tipo) ? 'sync' : 'database', 18)}<span>${esc(pick(d.titulo))}</span></a>
       <p>${esc(pick(d.descripcion))}</p><p class="muted small">${fmt.int(i?.registros || 0)} ${t('records')} · ${t('source')}: ${esc(d.fuente.nombre)}</p>
-      <div class="dataset-actions"><a class="chip" href="data/csv/${d.id}.csv" download>CSV</a><a class="chip" href="data/${d.id}.json">JSON</a><a class="link-btn" href="#/datos/${d.id}">${tr('Ficha', 'Fitxa', 'Details')} →</a></div></li>`; }).join('')}</ul>`;
+      <div class="dataset-actions"><a class="chip" href="data/xlsx/${d.id}.xlsx" download>Excel</a><a class="chip" href="data/csv/${d.id}.csv" download>CSV</a><a class="chip" href="data/${d.id}.json" target="_blank" rel="noopener">JSON</a><a class="link-btn" href="#/datos/${d.id}">${tr('Ficha', 'Fitxa', 'Details')} →</a></div></li>`; }).join('')}</ul>`;
 }
 export async function datasetDetail(el, id) {
   const m = await store.meta();
@@ -285,7 +304,8 @@ export async function datasetDetail(el, id) {
   el.innerHTML = `<header class="page-header"><nav class="breadcrumb" aria-label="${esc(tr('Estás aquí', 'Estàs ací', 'You are here'))}"><ol><li><a href="#/">${t('home')}</a></li><li><a href="#/datos-abiertos">${tr('Datos abiertos', 'Dades obertes', 'Open data')}</a></li><li><span aria-current="page">${esc(pick(d.titulo))}</span></li></ol></nav>
     <h1 id="page-title" tabindex="-1">${esc(pick(d.titulo))}</h1><p class="lead">${esc(pick(d.descripcion))}</p></header>
     <div class="two-col"><section class="card"><h2 class="block-title">${tr('Descarga y API', 'Descàrrega i API', 'Download & API')}</h2>
-      <p><a class="btn" href="data/csv/${id}.csv" download>${icon('download', 16)} CSV</a> <a class="btn" href="data/${id}.json">${icon('download', 16)} JSON</a> <a class="btn-ghost" href="#/${d.pagina}">${icon('chart', 16)} ${tr('Ver en el portal', 'Veure en el portal', 'See on the portal')}</a></p>
+      <p class="dl-row"><a class="btn" href="data/xlsx/${id}.xlsx" download>${icon('download', 16)} Excel</a> <a class="btn" href="data/csv/${id}.csv" download>${icon('download', 16)} CSV</a> <a class="btn-ghost" href="data/${id}.json" target="_blank" rel="noopener">${icon('external', 16)} JSON</a> <button type="button" class="btn-ghost" data-pdf>${icon('file', 16)} PDF</button> <a class="btn-ghost" href="#/${d.pagina}">${icon('chart', 16)} ${tr('Ver en el portal', 'Veure en el portal', 'See on the portal')}</a></p>
+      <p class="muted small">${tr('El PDF se abre en una pestaña nueva, desde donde puedes guardarlo o imprimirlo.', 'El PDF s’obri en una pestanya nova, des d’on pots desar-lo o imprimir-lo.', 'The PDF opens in a new tab, where you can save or print it.')}</p>
       <p class="label-sm">API REST</p><pre><code>curl -s ${esc(j)}</code></pre>
       <p class="label-sm">Python</p><pre><code>import pandas as pd
 df = pd.read_csv("${esc(c)}")</code></pre></section>
@@ -293,6 +313,7 @@ df = pd.read_csv("${esc(c)}")</code></pre></section>
       [tr('Identificador', 'Identificador', 'Identifier'), `<code>${id}</code>`], [t('records'), fmt.int((env.datos || []).length)], [t('source'), d.fuente.url ? `<a href="${esc(d.fuente.url)}">${esc(d.fuente.nombre)}</a>` : esc(d.fuente.nombre)], [tr('Responsable', 'Responsable', 'Owner'), esc(pick(d.responsable) || '—')],
       [t('updated'), fmt.date(String(env.actualizado || env.generado).slice(0, 10))], [tr('Cobertura temporal', 'Cobertura temporal', 'Temporal coverage'), `${d.temporal[0].slice(0, 4)}–${d.temporal[1].slice(0, 4)}`],
       [tr('Licencia', 'Llicència', 'Licence'), '<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>'], [tr('Temas', 'Temes', 'Themes'), `EU: ${d.tema_eu} · NTI: ${d.tema_nti}`]])}</section></div>`;
+  el.querySelector('[data-pdf]')?.addEventListener('click', () => openPrintable({ title: pick(d.titulo), subtitle: pick(d.descripcion), source: d.fuente.nombre, rows: env.datos || [], columns: d.campos.map((c) => ({ key: c.nombre, label: c.descripcion || c.nombre, align: ['number', 'integer'].includes(c.tipo) ? 'right' : undefined, format: (v) => (c.lista ? store.valueLabel(c, v) : typeof v === 'number' ? fmt.dec(v, Number.isInteger(v) ? 0 : 2) : v === null || v === undefined ? '—' : String(v)) })) }));
   const sch = h(`<section class="card"><h2 class="block-title">${tr('Diccionario de datos', 'Diccionari de dades', 'Data dictionary')}</h2></section>`);
   sch.appendChild(dataTable({ caption: 'schema', rows: d.campos, pageSize: 60, columns: [{ key: 'nombre', label: tr('Campo', 'Camp', 'Field'), html: true, format: (v) => `<code>${v}</code>` }, { key: 'tipo', label: tr('Tipo', 'Tipus', 'Type') }, { key: 'descripcion', label: tr('Descripción', 'Descripció', 'Description') }, { key: 'lista', label: tr('Lista de códigos', 'Llista de codis', 'Code list'), format: (v) => v || '—' }] }));
   el.appendChild(sch);

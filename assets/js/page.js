@@ -52,7 +52,7 @@ export function metaBand(meta) {
     </dl>
     ${meta.sample ? `<span class="badge badge-warning">${icon('alert', 14)}${tr('Datos de ejemplo', 'Dades d’exemple', 'Sample data')}</span>` : ''}
     ${meta.datasets.length ? `<details class="downloads"><summary class="btn-ghost btn-sm">${icon('download', 16)}${tr('Descargar datos', 'Descarregar dades', 'Download data')}</summary>
-      <ul class="downloads-menu">${meta.datasets.map(({ id, m }) => `<li><span>${esc(pick(m.titulo))}</span><span class="dl-links"><a href="data/csv/${id}.csv" download>CSV</a><a href="data/${id}.json">JSON</a><a href="#/datos/${id}">${tr('Ficha', 'Fitxa', 'Details')}</a></span></li>`).join('')}
+      <ul class="downloads-menu">${meta.datasets.map(({ id, m }) => `<li><span>${esc(pick(m.titulo))}</span><span class="dl-links"><a href="data/xlsx/${id}.xlsx" download>Excel</a><a href="data/csv/${id}.csv" download>CSV</a><a href="data/${id}.json" target="_blank" rel="noopener">JSON</a><a href="#/datos/${id}">${tr('Ficha', 'Fitxa', 'Details')}</a></span></li>`).join('')}
       <li class="dl-more"><a href="#/sobre-los-datos">${tr('Sobre los datos: procedencia y metodología', 'Sobre les dades: procedència i metodologia', 'About the data: sources and method')} →</a></li></ul></details>` : ''}
   </div>`;
 }

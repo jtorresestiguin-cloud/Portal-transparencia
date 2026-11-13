@@ -40,9 +40,11 @@
   dct:temporal [ a dct:PeriodOfTime ; dcat:startDate "2021-01-01"^^xsd:date ; dcat:endDate "2026-12-31"^^xsd:date ] ;
   dcat:contactPoint [ a vcard:Organization ; vcard:fn "Unidad de Transparencia" ; vcard:hasEmail <mailto:transparencia@example.org> ] ;
   dcat:landingPage <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/presupuesto> ;
-  dcat:distribution <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/presupuesto.csv>, <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/presupuesto.json> .
+  dcat:distribution <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/presupuesto.csv>, <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/presupuesto.xlsx>, <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/presupuesto.json> .
 
 <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/presupuesto.csv> a dcat:Distribution ; dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/presupuesto.csv> ; dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/presupuesto.csv> ; dct:format <http://publications.europa.eu/resource/authority/file-type/CSV> ; dct:license <https://creativecommons.org/licenses/by/4.0/> .
+
+<https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/presupuesto.xlsx> a dcat:Distribution ; dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/presupuesto.xlsx> ; dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/presupuesto.xlsx> ; dct:format <http://publications.europa.eu/resource/authority/file-type/XLSX> ; dct:license <https://creativecommons.org/licenses/by/4.0/> .
 
 <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/presupuesto.json> a dcat:Distribution ; dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/presupuesto.json> ; dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/presupuesto.json> ; dct:format <http://publications.europa.eu/resource/authority/file-type/JSON> ; dct:license <https://creativecommons.org/licenses/by/4.0/> .
 
@@ -57,9 +59,11 @@
   dct:temporal [ a dct:PeriodOfTime ; dcat:startDate "2022-01-01"^^xsd:date ; dcat:endDate "2026-12-31"^^xsd:date ] ;
   dcat:contactPoint [ a vcard:Organization ; vcard:fn "Unidad de Transparencia" ; vcard:hasEmail <mailto:transparencia@example.org> ] ;
   dcat:landingPage <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/contratos> ;
-  dcat:distribution <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/contratos.csv>, <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/contratos.json> .
+  dcat:distribution <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/contratos.csv>, <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/contratos.xlsx>, <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/contratos.json> .
 
 <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/contratos.csv> a dcat:Distribution ; dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/contratos.csv> ; dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/contratos.csv> ; dct:format <http://publications.europa.eu/resource/authority/file-type/CSV> ; dct:license <https://creativecommons.org/licenses/by/4.0/> .
+
+<https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/contratos.xlsx> a dcat:Distribution ; dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/contratos.xlsx> ; dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/contratos.xlsx> ; dct:format <http://publications.europa.eu/resource/authority/file-type/XLSX> ; dct:license <https://creativecommons.org/licenses/by/4.0/> .
 
 <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/contratos.json> a dcat:Distribution ; dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/contratos.json> ; dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/contratos.json> ; dct:format <http://publications.europa.eu/resource/authority/file-type/JSON> ; dct:license <https://creativecommons.org/licenses/by/4.0/> .
 
@@ -74,9 +78,11 @@
   dct:temporal [ a dct:PeriodOfTime ; dcat:startDate "2022-01-01"^^xsd:date ; dcat:endDate "2026-12-31"^^xsd:date ] ;
   dcat:contactPoint [ a vcard:Organization ; vcard:fn "Unidad de Transparencia" ; vcard:hasEmail <mailto:transparencia@example.org> ] ;
   dcat:landingPage <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/encargos> ;
-  dcat:distribution <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/encargos.csv>, <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/encargos.json> .
+  dcat:distribution <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/encargos.csv>, <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/encargos.xlsx>, <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/encargos.json> .
 
 <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/encargos.csv> a dcat:Distribution ; dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/encargos.csv> ; dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/encargos.csv> ; dct:format <http://publications.europa.eu/resource/authority/file-type/CSV> ; dct:license <https://creativecommons.org/licenses/by/4.0/> .
+
+<https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/encargos.xlsx> a dcat:Distribution ; dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/encargos.xlsx> ; dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/encargos.xlsx> ; dct:format <http://publications.europa.eu/resource/authority/file-type/XLSX> ; dct:license <https://creativecommons.org/licenses/by/4.0/> .
 
 <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/encargos.json> a dcat:Distribution ; dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/encargos.json> ; dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/encargos.json> ; dct:format <http://publications.europa.eu/resource/authority/file-type/JSON> ; dct:license <https://creativecommons.org/licenses/by/4.0/> .
 
@@ -91,9 +97,11 @@
   dct:temporal [ a dct:PeriodOfTime ; dcat:startDate "2022-01-01"^^xsd:date ; dcat:endDate "2026-12-31"^^xsd:date ] ;
   dcat:contactPoint [ a vcard:Organization ; vcard:fn "Unidad de Transparencia" ; vcard:hasEmail <mailto:transparencia@example.org> ] ;
   dcat:landingPage <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/subvenciones> ;
-  dcat:distribution <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/subvenciones.csv>, <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/subvenciones.json> .
+  dcat:distribution <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/subvenciones.csv>, <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/subvenciones.xlsx>, <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/subvenciones.json> .
 
 <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/subvenciones.csv> a dcat:Distribution ; dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/subvenciones.csv> ; dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/subvenciones.csv> ; dct:format <http://publications.europa.eu/resource/authority/file-type/CSV> ; dct:license <https://creativecommons.org/licenses/by/4.0/> .
+
+<https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/subvenciones.xlsx> a dcat:Distribution ; dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/subvenciones.xlsx> ; dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/subvenciones.xlsx> ; dct:format <http://publications.europa.eu/resource/authority/file-type/XLSX> ; dct:license <https://creativecommons.org/licenses/by/4.0/> .
 
 <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/subvenciones.json> a dcat:Distribution ; dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/subvenciones.json> ; dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/subvenciones.json> ; dct:format <http://publications.europa.eu/resource/authority/file-type/JSON> ; dct:license <https://creativecommons.org/licenses/by/4.0/> .
 
@@ -108,9 +116,11 @@
   dct:temporal [ a dct:PeriodOfTime ; dcat:startDate "2022-01-01"^^xsd:date ; dcat:endDate "2026-12-31"^^xsd:date ] ;
   dcat:contactPoint [ a vcard:Organization ; vcard:fn "Unidad de Transparencia" ; vcard:hasEmail <mailto:transparencia@example.org> ] ;
   dcat:landingPage <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/convenios> ;
-  dcat:distribution <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/convenios.csv>, <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/convenios.json> .
+  dcat:distribution <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/convenios.csv>, <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/convenios.xlsx>, <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/convenios.json> .
 
 <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/convenios.csv> a dcat:Distribution ; dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/convenios.csv> ; dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/convenios.csv> ; dct:format <http://publications.europa.eu/resource/authority/file-type/CSV> ; dct:license <https://creativecommons.org/licenses/by/4.0/> .
+
+<https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/convenios.xlsx> a dcat:Distribution ; dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/convenios.xlsx> ; dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/convenios.xlsx> ; dct:format <http://publications.europa.eu/resource/authority/file-type/XLSX> ; dct:license <https://creativecommons.org/licenses/by/4.0/> .
 
 <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/convenios.json> a dcat:Distribution ; dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/convenios.json> ; dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/convenios.json> ; dct:format <http://publications.europa.eu/resource/authority/file-type/JSON> ; dct:license <https://creativecommons.org/licenses/by/4.0/> .
 
@@ -125,9 +135,11 @@
   dct:temporal [ a dct:PeriodOfTime ; dcat:startDate "2023-06-17"^^xsd:date ; dcat:endDate "2027-06-30"^^xsd:date ] ;
   dcat:contactPoint [ a vcard:Organization ; vcard:fn "Unidad de Transparencia" ; vcard:hasEmail <mailto:transparencia@example.org> ] ;
   dcat:landingPage <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/cargos> ;
-  dcat:distribution <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/cargos.csv>, <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/cargos.json> .
+  dcat:distribution <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/cargos.csv>, <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/cargos.xlsx>, <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/cargos.json> .
 
 <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/cargos.csv> a dcat:Distribution ; dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/cargos.csv> ; dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/cargos.csv> ; dct:format <http://publications.europa.eu/resource/authority/file-type/CSV> ; dct:license <https://creativecommons.org/licenses/by/4.0/> .
+
+<https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/cargos.xlsx> a dcat:Distribution ; dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/cargos.xlsx> ; dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/cargos.xlsx> ; dct:format <http://publications.europa.eu/resource/authority/file-type/XLSX> ; dct:license <https://creativecommons.org/licenses/by/4.0/> .
 
 <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/cargos.json> a dcat:Distribution ; dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/cargos.json> ; dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/cargos.json> ; dct:format <http://publications.europa.eu/resource/authority/file-type/JSON> ; dct:license <https://creativecommons.org/licenses/by/4.0/> .
 
@@ -142,9 +154,11 @@
   dct:temporal [ a dct:PeriodOfTime ; dcat:startDate "2025-11-01"^^xsd:date ; dcat:endDate "2026-11-30"^^xsd:date ] ;
   dcat:contactPoint [ a vcard:Organization ; vcard:fn "Unidad de Transparencia" ; vcard:hasEmail <mailto:transparencia@example.org> ] ;
   dcat:landingPage <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/agenda> ;
-  dcat:distribution <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/agenda.csv>, <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/agenda.json> .
+  dcat:distribution <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/agenda.csv>, <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/agenda.xlsx>, <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/agenda.json> .
 
 <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/agenda.csv> a dcat:Distribution ; dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/agenda.csv> ; dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/agenda.csv> ; dct:format <http://publications.europa.eu/resource/authority/file-type/CSV> ; dct:license <https://creativecommons.org/licenses/by/4.0/> .
+
+<https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/agenda.xlsx> a dcat:Distribution ; dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/agenda.xlsx> ; dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/agenda.xlsx> ; dct:format <http://publications.europa.eu/resource/authority/file-type/XLSX> ; dct:license <https://creativecommons.org/licenses/by/4.0/> .
 
 <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/agenda.json> a dcat:Distribution ; dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/agenda.json> ; dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/agenda.json> ; dct:format <http://publications.europa.eu/resource/authority/file-type/JSON> ; dct:license <https://creativecommons.org/licenses/by/4.0/> .
 
@@ -159,9 +173,11 @@
   dct:temporal [ a dct:PeriodOfTime ; dcat:startDate "2021-01-01"^^xsd:date ; dcat:endDate "2025-12-31"^^xsd:date ] ;
   dcat:contactPoint [ a vcard:Organization ; vcard:fn "Unidad de Transparencia" ; vcard:hasEmail <mailto:transparencia@example.org> ] ;
   dcat:landingPage <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/personal> ;
-  dcat:distribution <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/plantilla.csv>, <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/plantilla.json> .
+  dcat:distribution <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/plantilla.csv>, <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/plantilla.xlsx>, <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/plantilla.json> .
 
 <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/plantilla.csv> a dcat:Distribution ; dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/plantilla.csv> ; dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/plantilla.csv> ; dct:format <http://publications.europa.eu/resource/authority/file-type/CSV> ; dct:license <https://creativecommons.org/licenses/by/4.0/> .
+
+<https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/plantilla.xlsx> a dcat:Distribution ; dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/plantilla.xlsx> ; dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/plantilla.xlsx> ; dct:format <http://publications.europa.eu/resource/authority/file-type/XLSX> ; dct:license <https://creativecommons.org/licenses/by/4.0/> .
 
 <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/plantilla.json> a dcat:Distribution ; dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/plantilla.json> ; dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/plantilla.json> ; dct:format <http://publications.europa.eu/resource/authority/file-type/JSON> ; dct:license <https://creativecommons.org/licenses/by/4.0/> .
 
@@ -176,9 +192,11 @@
   dct:temporal [ a dct:PeriodOfTime ; dcat:startDate "2022-01-01"^^xsd:date ; dcat:endDate "2026-09-30"^^xsd:date ] ;
   dcat:contactPoint [ a vcard:Organization ; vcard:fn "Unidad de Transparencia" ; vcard:hasEmail <mailto:transparencia@example.org> ] ;
   dcat:landingPage <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/economia> ;
-  dcat:distribution <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/pmp.csv>, <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/pmp.json> .
+  dcat:distribution <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/pmp.csv>, <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/pmp.xlsx>, <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/pmp.json> .
 
 <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/pmp.csv> a dcat:Distribution ; dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/pmp.csv> ; dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/pmp.csv> ; dct:format <http://publications.europa.eu/resource/authority/file-type/CSV> ; dct:license <https://creativecommons.org/licenses/by/4.0/> .
+
+<https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/pmp.xlsx> a dcat:Distribution ; dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/pmp.xlsx> ; dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/pmp.xlsx> ; dct:format <http://publications.europa.eu/resource/authority/file-type/XLSX> ; dct:license <https://creativecommons.org/licenses/by/4.0/> .
 
 <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/pmp.json> a dcat:Distribution ; dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/pmp.json> ; dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/pmp.json> ; dct:format <http://publications.europa.eu/resource/authority/file-type/JSON> ; dct:license <https://creativecommons.org/licenses/by/4.0/> .
 
@@ -193,9 +211,11 @@
   dct:temporal [ a dct:PeriodOfTime ; dcat:startDate "2019-01-01"^^xsd:date ; dcat:endDate "2025-12-31"^^xsd:date ] ;
   dcat:contactPoint [ a vcard:Organization ; vcard:fn "Unidad de Transparencia" ; vcard:hasEmail <mailto:transparencia@example.org> ] ;
   dcat:landingPage <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/economia> ;
-  dcat:distribution <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/deuda.csv>, <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/deuda.json> .
+  dcat:distribution <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/deuda.csv>, <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/deuda.xlsx>, <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/deuda.json> .
 
 <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/deuda.csv> a dcat:Distribution ; dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/deuda.csv> ; dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/deuda.csv> ; dct:format <http://publications.europa.eu/resource/authority/file-type/CSV> ; dct:license <https://creativecommons.org/licenses/by/4.0/> .
+
+<https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/deuda.xlsx> a dcat:Distribution ; dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/deuda.xlsx> ; dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/deuda.xlsx> ; dct:format <http://publications.europa.eu/resource/authority/file-type/XLSX> ; dct:license <https://creativecommons.org/licenses/by/4.0/> .
 
 <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/deuda.json> a dcat:Distribution ; dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/deuda.json> ; dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/deuda.json> ; dct:format <http://publications.europa.eu/resource/authority/file-type/JSON> ; dct:license <https://creativecommons.org/licenses/by/4.0/> .
 
@@ -210,9 +230,11 @@
   dct:temporal [ a dct:PeriodOfTime ; dcat:startDate "2025-01-01"^^xsd:date ; dcat:endDate "2025-12-31"^^xsd:date ] ;
   dcat:contactPoint [ a vcard:Organization ; vcard:fn "Unidad de Transparencia" ; vcard:hasEmail <mailto:transparencia@example.org> ] ;
   dcat:landingPage <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/patrimonio> ;
-  dcat:distribution <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/inmuebles.csv>, <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/inmuebles.json> .
+  dcat:distribution <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/inmuebles.csv>, <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/inmuebles.xlsx>, <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/inmuebles.json> .
 
 <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/inmuebles.csv> a dcat:Distribution ; dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/inmuebles.csv> ; dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/inmuebles.csv> ; dct:format <http://publications.europa.eu/resource/authority/file-type/CSV> ; dct:license <https://creativecommons.org/licenses/by/4.0/> .
+
+<https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/inmuebles.xlsx> a dcat:Distribution ; dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/inmuebles.xlsx> ; dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/inmuebles.xlsx> ; dct:format <http://publications.europa.eu/resource/authority/file-type/XLSX> ; dct:license <https://creativecommons.org/licenses/by/4.0/> .
 
 <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/inmuebles.json> a dcat:Distribution ; dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/inmuebles.json> ; dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/inmuebles.json> ; dct:format <http://publications.europa.eu/resource/authority/file-type/JSON> ; dct:license <https://creativecommons.org/licenses/by/4.0/> .
 
@@ -227,9 +249,11 @@
   dct:temporal [ a dct:PeriodOfTime ; dcat:startDate "1990-01-01"^^xsd:date ; dcat:endDate "2026-12-31"^^xsd:date ] ;
   dcat:contactPoint [ a vcard:Organization ; vcard:fn "Unidad de Transparencia" ; vcard:hasEmail <mailto:transparencia@example.org> ] ;
   dcat:landingPage <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/normativa> ;
-  dcat:distribution <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/normativa.csv>, <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/normativa.json> .
+  dcat:distribution <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/normativa.csv>, <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/normativa.xlsx>, <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/normativa.json> .
 
 <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/normativa.csv> a dcat:Distribution ; dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/normativa.csv> ; dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/normativa.csv> ; dct:format <http://publications.europa.eu/resource/authority/file-type/CSV> ; dct:license <https://creativecommons.org/licenses/by/4.0/> .
+
+<https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/normativa.xlsx> a dcat:Distribution ; dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/normativa.xlsx> ; dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/normativa.xlsx> ; dct:format <http://publications.europa.eu/resource/authority/file-type/XLSX> ; dct:license <https://creativecommons.org/licenses/by/4.0/> .
 
 <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/normativa.json> a dcat:Distribution ; dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/normativa.json> ; dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/normativa.json> ; dct:format <http://publications.europa.eu/resource/authority/file-type/JSON> ; dct:license <https://creativecommons.org/licenses/by/4.0/> .
 
@@ -244,9 +268,11 @@
   dct:temporal [ a dct:PeriodOfTime ; dcat:startDate "2021-01-01"^^xsd:date ; dcat:endDate "2026-12-31"^^xsd:date ] ;
   dcat:contactPoint [ a vcard:Organization ; vcard:fn "Unidad de Transparencia" ; vcard:hasEmail <mailto:transparencia@example.org> ] ;
   dcat:landingPage <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/derecho-acceso> ;
-  dcat:distribution <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/solicitudes-acceso.csv>, <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/solicitudes-acceso.json> .
+  dcat:distribution <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/solicitudes-acceso.csv>, <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/solicitudes-acceso.xlsx>, <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/solicitudes-acceso.json> .
 
 <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/solicitudes-acceso.csv> a dcat:Distribution ; dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/solicitudes-acceso.csv> ; dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/solicitudes-acceso.csv> ; dct:format <http://publications.europa.eu/resource/authority/file-type/CSV> ; dct:license <https://creativecommons.org/licenses/by/4.0/> .
+
+<https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/solicitudes-acceso.xlsx> a dcat:Distribution ; dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/solicitudes-acceso.xlsx> ; dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/solicitudes-acceso.xlsx> ; dct:format <http://publications.europa.eu/resource/authority/file-type/XLSX> ; dct:license <https://creativecommons.org/licenses/by/4.0/> .
 
 <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/solicitudes-acceso.json> a dcat:Distribution ; dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/solicitudes-acceso.json> ; dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/solicitudes-acceso.json> ; dct:format <http://publications.europa.eu/resource/authority/file-type/JSON> ; dct:license <https://creativecommons.org/licenses/by/4.0/> .
 
@@ -261,8 +287,10 @@
   dct:temporal [ a dct:PeriodOfTime ; dcat:startDate "2026-01-01"^^xsd:date ; dcat:endDate "2026-12-31"^^xsd:date ] ;
   dcat:contactPoint [ a vcard:Organization ; vcard:fn "Unidad de Transparencia" ; vcard:hasEmail <mailto:transparencia@example.org> ] ;
   dcat:landingPage <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/indice> ;
-  dcat:distribution <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/obligaciones.csv>, <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/obligaciones.json> .
+  dcat:distribution <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/obligaciones.csv>, <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/obligaciones.xlsx>, <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/obligaciones.json> .
 
 <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/obligaciones.csv> a dcat:Distribution ; dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/obligaciones.csv> ; dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/obligaciones.csv> ; dct:format <http://publications.europa.eu/resource/authority/file-type/CSV> ; dct:license <https://creativecommons.org/licenses/by/4.0/> .
+
+<https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/obligaciones.xlsx> a dcat:Distribution ; dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/obligaciones.xlsx> ; dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/obligaciones.xlsx> ; dct:format <http://publications.europa.eu/resource/authority/file-type/XLSX> ; dct:license <https://creativecommons.org/licenses/by/4.0/> .
 
 <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/obligaciones.json> a dcat:Distribution ; dcat:accessURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/obligaciones.json> ; dcat:downloadURL <https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/obligaciones.json> ; dct:format <http://publications.europa.eu/resource/authority/file-type/JSON> ; dct:license <https://creativecommons.org/licenses/by/4.0/> .

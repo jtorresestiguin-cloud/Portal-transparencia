@@ -163,7 +163,7 @@ export function validateRecord(ds, r, codelists) {
       const ok = c.lista.split('|').some((l) => codelists[l] && String(v) in codelists[l]);
       if (!ok) errs.push(`«${c.descripcion}»: «${short(v)}» no está en la lista de valores`);
     }
-    if (c.formato === 'uri' && v && !/^(https?:\/\/|\.{0,2}\/|[a-z0-9_-]+\/)/i.test(v)) errs.push(`«${c.descripcion}»: no parece una dirección web`);
+    if (c.formato === 'uri' && v && v !== '#' && !/^(https?:\/\/|mailto:|\.{0,2}\/|[a-z0-9_-]+\/)/i.test(v)) errs.push(`«${c.descripcion}»: no parece una dirección web`);
   }
   return errs;
 }
@@ -181,7 +181,7 @@ export async function runChecks(ctx, files) {
   const known = new Set([...portal.categorias.flatMap((c) => c.paginas), 'accesibilidad', 'sobre-los-datos', 'buscar', 'indice', 'datos-abiertos', 'derecho-acceso']);
   const pageExists = async (id) => known.has(id) || ctx.S.work.has(`content/paginas/${id}.json`) || (await store.page(id).then(() => true).catch(() => false));
   const G = (id, titulo) => ({ id, titulo, items: [] });
-  const g = { esquema: G('esquema', 'Datos válidos y conformes al esquema'), enlaces: G('enlaces', 'Enlaces internos y estructura'), bloques: G('bloques', 'Configuración de los componentes de datos'), trad: G('trad', 'Traducciones'), docs: G('docs', 'Documentos con fecha y enlace'), color: G('color', 'Contraste de color (WCAG 2.2 AA)'), fuentes: G('fuentes', 'Fuentes de datos') };
+  const g = { esquema: G('esquema', 'Datos válidos y conformes al esquema'), enlaces: G('enlaces', 'Enlaces internos y estructura'), bloques: G('bloques', 'Configuración de los componentes de datos'), trad: G('trad', 'Traducciones'), docs: G('docs', 'Documentos y archivos'), color: G('color', 'Contraste de color (WCAG 2.2 AA)'), fuentes: G('fuentes', 'Fuentes de datos') };
   const add = (grp, nivel, texto, accion) => g[grp].items.push({ nivel, texto, accion });
 
   for (const f of files) {
@@ -231,6 +231,18 @@ export async function runChecks(ctx, files) {
       if (P?.activo && !(P.identificadores_organo || []).length && !(P.nombres_organo || []).length) add('fuentes', 'aviso', 'Plataforma de Contratación activa sin identificadores del órgano: la sincronización no traerá contratos.', { tipo: 'entidad' });
       if (B?.activo && !(B.organos || []).length && !B.nombre_organo) add('fuentes', 'aviso', 'BDNS activa sin órgano concedente: la sincronización no traerá subvenciones.', { tipo: 'entidad' });
     }
+  }
+  // Archivos enlazados (archivos/…): deben existir en el portal o estar subidos en esta sesión
+  const refs = new Set();
+  for (const f of files) walk(W(f), (v) => { if (typeof v === 'string' && /^archivos\//.test(v)) refs.add(v); });
+  for (const r of refs) {
+    if (ctx.S.uploads.has(r)) continue;
+    const ok = await fetch(store.url(r), { method: 'HEAD' }).then((x) => x.ok).catch(() => false);
+    if (!ok) add('docs', 'error', `Se enlaza el archivo «${r}», que no existe en el portal ni se ha subido. Vuelve a subirlo.`);
+  }
+  for (const [p, u] of ctx.S.uploads) {
+    if (!refs.has(p)) add('docs', 'aviso', `El archivo subido «${u.name}» no se usa en ningún contenido modificado: se publicará igualmente en ${p}.`);
+    if (u.size > 10e6) add('docs', 'aviso', `«${u.name}» ocupa ${fmt.dec(u.size / 1e6, 1)} MB: conviene reducirlo para facilitar la descarga.`);
   }
   const sync = await store.syncStatus();
   for (const [k, s] of Object.entries(sync?.fuentes || {})) if (s.estado === 'error') add('fuentes', 'aviso', `La última sincronización con ${k.toUpperCase()} falló: ${s.mensaje || 'sin detalle'}.`, { tipo: 'sync' });
@@ -327,9 +339,9 @@ export async function dashboard(ctx) {
         <ul class="ed-statlist"><li><span class="ed-dot ok"></span>${sc.counts.publicado} obligaciones al día</li><li><span class="ed-dot warn"></span>${sc.counts.desactualizada} pendientes de actualizar</li><li><span class="ed-dot warn"></span>${sc.counts.parcial} incompletas</li><li><span class="ed-dot err"></span>${sc.counts.pendiente} pendientes de publicar</li></ul>
         <p class="ed-hint">Calculado con la fecha de la última actualización de cada página y conjunto y la periodicidad exigida.</p></section>
       <section class="ed-card"><h2>Pendiente de publicación</h2>
-        <p class="ed-big">${S.dirty.size}<span>fichero${S.dirty.size === 1 ? '' : 's'} con cambios</span></p>
+        <p class="ed-big">${S.dirty.size + S.uploads.size}<span>cambio${S.dirty.size + S.uploads.size === 1 ? '' : 's'} (${S.dirty.size} fichero${S.dirty.size === 1 ? '' : 's'}${S.uploads.size ? ` y ${S.uploads.size} archivo${S.uploads.size === 1 ? '' : 's'} subido${S.uploads.size === 1 ? '' : 's'}` : ''})</span></p>
         <ul class="ed-statlist"><li>${dirtyMissing ? `<span class="ed-dot warn"></span>${dirtyMissing} texto${dirtyMissing > 1 ? 's' : ''} sin traducir` : '<span class="ed-dot ok"></span>Traducciones completas'}</li></ul>
-        ${S.dirty.size ? '<button type="button" class="btn-ghost" data-go=\'{"tipo":"publicar"}\'>Revisar cambios</button>' : '<p class="ed-hint">No hay cambios sin publicar.</p>'}</section>
+        ${S.dirty.size + S.uploads.size ? '<button type="button" class="btn-ghost" data-go=\'{"tipo":"publicar"}\'>Revisar cambios</button>' : '<p class="ed-hint">No hay cambios sin publicar.</p>'}</section>
       <section class="ed-card"><h2>Fuentes automáticas</h2><ul class="ed-srclist">${src('placsp', 'Plataforma de Contratación')}${src('bdns', 'BDNS (subvenciones)')}</ul>
         <button type="button" class="btn-ghost" data-go='{"tipo":"sync"}'>Ver sincronización</button></section>
     </div>
@@ -468,6 +480,7 @@ export function exportCSV(ds, rows) {
 // ============================================================================ vista previa por dispositivo
 export function preview(ctx, route = '') {
   window.__edPreview = () => Object.fromEntries([...ctx.S.dirty].map((p) => [p, ctx.W(p)]));
+  window.__edAssets = () => Object.fromEntries([...ctx.S.uploads.keys()].map((p) => [p, store.asset(p)]));
   const sizes = { escritorio: 1280, tableta: 768, movil: 375 };
   const dlg = modal('Vista previa con los cambios sin publicar', `<div class="ed-prev-bar" role="group" aria-label="Dispositivo">${Object.entries(sizes).map(([k, w], i) => `<button type="button" class="btn-ghost" data-w="${w}" aria-pressed="${i === 0}">${{ escritorio: 'Escritorio', tableta: 'Tableta', movil: 'Móvil' }[k]} · ${w}px</button>`).join('')}
       <label class="ed-prev-theme"><input type="checkbox" id="pv-dark"> Modo oscuro</label><span class="ed-hint">${ctx.S.dirty.size} fichero(s) con cambios aplicados</span></div>

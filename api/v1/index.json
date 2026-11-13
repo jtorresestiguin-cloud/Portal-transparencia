@@ -26,7 +26,8 @@
       "fuente": "manual",
       "actualizado": "2026-11-13",
       "json": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/presupuesto.json",
-      "csv": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/presupuesto.csv"
+      "csv": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/presupuesto.csv",
+      "xlsx": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/presupuesto.xlsx"
     },
     {
       "id": "contratos",
@@ -39,7 +40,8 @@
       "fuente": "placsp",
       "actualizado": "2026-11-13",
       "json": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/contratos.json",
-      "csv": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/contratos.csv"
+      "csv": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/contratos.csv",
+      "xlsx": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/contratos.xlsx"
     },
     {
       "id": "encargos",
@@ -52,7 +54,8 @@
       "fuente": "placsp",
       "actualizado": "2026-11-13",
       "json": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/encargos.json",
-      "csv": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/encargos.csv"
+      "csv": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/encargos.csv",
+      "xlsx": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/encargos.xlsx"
     },
     {
       "id": "subvenciones",
@@ -65,7 +68,8 @@
       "fuente": "bdns",
       "actualizado": "2026-11-13",
       "json": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/subvenciones.json",
-      "csv": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/subvenciones.csv"
+      "csv": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/subvenciones.csv",
+      "xlsx": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/subvenciones.xlsx"
     },
     {
       "id": "convenios",
@@ -78,7 +82,8 @@
       "fuente": "manual",
       "actualizado": "2026-11-13",
       "json": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/convenios.json",
-      "csv": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/convenios.csv"
+      "csv": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/convenios.csv",
+      "xlsx": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/convenios.xlsx"
     },
     {
       "id": "cargos",
@@ -91,7 +96,8 @@
       "fuente": "manual",
       "actualizado": "2026-11-13",
       "json": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/cargos.json",
-      "csv": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/cargos.csv"
+      "csv": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/cargos.csv",
+      "xlsx": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/cargos.xlsx"
     },
     {
       "id": "agenda",
@@ -104,7 +110,8 @@
       "fuente": "manual",
       "actualizado": "2026-11-13",
       "json": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/agenda.json",
-      "csv": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/agenda.csv"
+      "csv": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/agenda.csv",
+      "xlsx": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/agenda.xlsx"
     },
     {
       "id": "plantilla",
@@ -117,7 +124,8 @@
       "fuente": "manual",
       "actualizado": "2026-11-13",
       "json": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/plantilla.json",
-      "csv": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/plantilla.csv"
+      "csv": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/plantilla.csv",
+      "xlsx": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/plantilla.xlsx"
     },
     {
       "id": "pmp",
@@ -130,7 +138,8 @@
       "fuente": "manual",
       "actualizado": "2026-11-13",
       "json": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/pmp.json",
-      "csv": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/pmp.csv"
+      "csv": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/pmp.csv",
+      "xlsx": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/pmp.xlsx"
     },
     {
       "id": "deuda",
@@ -143,7 +152,8 @@
       "fuente": "manual",
       "actualizado": "2026-11-13",
       "json": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/deuda.json",
-      "csv": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/deuda.csv"
+      "csv": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/deuda.csv",
+      "xlsx": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/deuda.xlsx"
     },
     {
       "id": "inmuebles",
@@ -156,7 +166,8 @@
       "fuente": "manual",
       "actualizado": "2026-11-13",
       "json": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/inmuebles.json",
-      "csv": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/inmuebles.csv"
+      "csv": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/inmuebles.csv",
+      "xlsx": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/inmuebles.xlsx"
     },
     {
       "id": "normativa",
@@ -169,7 +180,8 @@
       "fuente": "manual",
       "actualizado": "2026-11-13",
       "json": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/normativa.json",
-      "csv": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/normativa.csv"
+      "csv": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/normativa.csv",
+      "xlsx": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/normativa.xlsx"
     },
     {
       "id": "solicitudes-acceso",
@@ -182,7 +194,8 @@
       "fuente": "manual",
       "actualizado": "2026-11-13",
       "json": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/solicitudes-acceso.json",
-      "csv": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/solicitudes-acceso.csv"
+      "csv": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/solicitudes-acceso.csv",
+      "xlsx": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/solicitudes-acceso.xlsx"
     },
     {
       "id": "obligaciones",
@@ -195,7 +208,8 @@
       "fuente": "manual",
       "actualizado": "2026-11-13",
       "json": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/obligaciones.json",
-      "csv": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/obligaciones.csv"
+      "csv": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/obligaciones.csv",
+      "xlsx": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/obligaciones.xlsx"
     }
   ]
 }

@@ -41,6 +41,12 @@
           </dcat:Distribution>
         </dcat:distribution>
         <dcat:distribution>
+          <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/presupuesto.xlsx">
+            <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/presupuesto.xlsx"/>
+            <dct:format><dct:IMT><rdf:value>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</rdf:value><rdfs:label>XLSX</rdfs:label></dct:IMT></dct:format>
+          </dcat:Distribution>
+        </dcat:distribution>
+        <dcat:distribution>
           <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/presupuesto.json">
             <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/presupuesto.json"/>
             <dct:format><dct:IMT><rdf:value>application/json</rdf:value><rdfs:label>JSON</rdfs:label></dct:IMT></dct:format>
@@ -77,6 +83,12 @@
           </dcat:Distribution>
         </dcat:distribution>
         <dcat:distribution>
+          <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/contratos.xlsx">
+            <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/contratos.xlsx"/>
+            <dct:format><dct:IMT><rdf:value>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</rdf:value><rdfs:label>XLSX</rdfs:label></dct:IMT></dct:format>
+          </dcat:Distribution>
+        </dcat:distribution>
+        <dcat:distribution>
           <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/contratos.json">
             <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/contratos.json"/>
             <dct:format><dct:IMT><rdf:value>application/json</rdf:value><rdfs:label>JSON</rdfs:label></dct:IMT></dct:format>
@@ -106,6 +118,12 @@
           <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/encargos.csv">
             <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/encargos.csv"/>
             <dct:format><dct:IMT><rdf:value>text/csv</rdf:value><rdfs:label>CSV</rdfs:label></dct:IMT></dct:format>
+          </dcat:Distribution>
+        </dcat:distribution>
+        <dcat:distribution>
+          <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/encargos.xlsx">
+            <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/encargos.xlsx"/>
+            <dct:format><dct:IMT><rdf:value>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</rdf:value><rdfs:label>XLSX</rdfs:label></dct:IMT></dct:format>
           </dcat:Distribution>
         </dcat:distribution>
         <dcat:distribution>
@@ -142,6 +160,12 @@
           </dcat:Distribution>
         </dcat:distribution>
         <dcat:distribution>
+          <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/subvenciones.xlsx">
+            <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/subvenciones.xlsx"/>
+            <dct:format><dct:IMT><rdf:value>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</rdf:value><rdfs:label>XLSX</rdfs:label></dct:IMT></dct:format>
+          </dcat:Distribution>
+        </dcat:distribution>
+        <dcat:distribution>
           <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/subvenciones.json">
             <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/subvenciones.json"/>
             <dct:format><dct:IMT><rdf:value>application/json</rdf:value><rdfs:label>JSON</rdfs:label></dct:IMT></dct:format>
@@ -170,6 +194,12 @@
           <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/convenios.csv">
             <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/convenios.csv"/>
             <dct:format><dct:IMT><rdf:value>text/csv</rdf:value><rdfs:label>CSV</rdfs:label></dct:IMT></dct:format>
+          </dcat:Distribution>
+        </dcat:distribution>
+        <dcat:distribution>
+          <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/convenios.xlsx">
+            <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/convenios.xlsx"/>
+            <dct:format><dct:IMT><rdf:value>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</rdf:value><rdfs:label>XLSX</rdfs:label></dct:IMT></dct:format>
           </dcat:Distribution>
         </dcat:distribution>
         <dcat:distribution>
@@ -206,6 +236,12 @@
           </dcat:Distribution>
         </dcat:distribution>
         <dcat:distribution>
+          <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/cargos.xlsx">
+            <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/cargos.xlsx"/>
+            <dct:format><dct:IMT><rdf:value>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</rdf:value><rdfs:label>XLSX</rdfs:label></dct:IMT></dct:format>
+          </dcat:Distribution>
+        </dcat:distribution>
+        <dcat:distribution>
           <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/cargos.json">
             <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/cargos.json"/>
             <dct:format><dct:IMT><rdf:value>application/json</rdf:value><rdfs:label>JSON</rdfs:label></dct:IMT></dct:format>
@@ -234,6 +270,12 @@
           <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/agenda.csv">
             <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/agenda.csv"/>
             <dct:format><dct:IMT><rdf:value>text/csv</rdf:value><rdfs:label>CSV</rdfs:label></dct:IMT></dct:format>
+          </dcat:Distribution>
+        </dcat:distribution>
+        <dcat:distribution>
+          <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/agenda.xlsx">
+            <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/agenda.xlsx"/>
+            <dct:format><dct:IMT><rdf:value>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</rdf:value><rdfs:label>XLSX</rdfs:label></dct:IMT></dct:format>
           </dcat:Distribution>
         </dcat:distribution>
         <dcat:distribution>
@@ -270,6 +312,12 @@
           </dcat:Distribution>
         </dcat:distribution>
         <dcat:distribution>
+          <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/plantilla.xlsx">
+            <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/plantilla.xlsx"/>
+            <dct:format><dct:IMT><rdf:value>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</rdf:value><rdfs:label>XLSX</rdfs:label></dct:IMT></dct:format>
+          </dcat:Distribution>
+        </dcat:distribution>
+        <dcat:distribution>
           <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/plantilla.json">
             <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/plantilla.json"/>
             <dct:format><dct:IMT><rdf:value>application/json</rdf:value><rdfs:label>JSON</rdfs:label></dct:IMT></dct:format>
@@ -299,6 +347,12 @@
           <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/pmp.csv">
             <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/pmp.csv"/>
             <dct:format><dct:IMT><rdf:value>text/csv</rdf:value><rdfs:label>CSV</rdfs:label></dct:IMT></dct:format>
+          </dcat:Distribution>
+        </dcat:distribution>
+        <dcat:distribution>
+          <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/pmp.xlsx">
+            <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/pmp.xlsx"/>
+            <dct:format><dct:IMT><rdf:value>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</rdf:value><rdfs:label>XLSX</rdfs:label></dct:IMT></dct:format>
           </dcat:Distribution>
         </dcat:distribution>
         <dcat:distribution>
@@ -334,6 +388,12 @@
           </dcat:Distribution>
         </dcat:distribution>
         <dcat:distribution>
+          <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/deuda.xlsx">
+            <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/deuda.xlsx"/>
+            <dct:format><dct:IMT><rdf:value>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</rdf:value><rdfs:label>XLSX</rdfs:label></dct:IMT></dct:format>
+          </dcat:Distribution>
+        </dcat:distribution>
+        <dcat:distribution>
           <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/deuda.json">
             <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/deuda.json"/>
             <dct:format><dct:IMT><rdf:value>application/json</rdf:value><rdfs:label>JSON</rdfs:label></dct:IMT></dct:format>
@@ -363,6 +423,12 @@
           <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/inmuebles.csv">
             <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/inmuebles.csv"/>
             <dct:format><dct:IMT><rdf:value>text/csv</rdf:value><rdfs:label>CSV</rdfs:label></dct:IMT></dct:format>
+          </dcat:Distribution>
+        </dcat:distribution>
+        <dcat:distribution>
+          <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/inmuebles.xlsx">
+            <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/inmuebles.xlsx"/>
+            <dct:format><dct:IMT><rdf:value>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</rdf:value><rdfs:label>XLSX</rdfs:label></dct:IMT></dct:format>
           </dcat:Distribution>
         </dcat:distribution>
         <dcat:distribution>
@@ -398,6 +464,12 @@
           </dcat:Distribution>
         </dcat:distribution>
         <dcat:distribution>
+          <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/normativa.xlsx">
+            <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/normativa.xlsx"/>
+            <dct:format><dct:IMT><rdf:value>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</rdf:value><rdfs:label>XLSX</rdfs:label></dct:IMT></dct:format>
+          </dcat:Distribution>
+        </dcat:distribution>
+        <dcat:distribution>
           <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/normativa.json">
             <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/normativa.json"/>
             <dct:format><dct:IMT><rdf:value>application/json</rdf:value><rdfs:label>JSON</rdfs:label></dct:IMT></dct:format>
@@ -427,6 +499,12 @@
           <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/solicitudes-acceso.csv">
             <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/solicitudes-acceso.csv"/>
             <dct:format><dct:IMT><rdf:value>text/csv</rdf:value><rdfs:label>CSV</rdfs:label></dct:IMT></dct:format>
+          </dcat:Distribution>
+        </dcat:distribution>
+        <dcat:distribution>
+          <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/solicitudes-acceso.xlsx">
+            <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/solicitudes-acceso.xlsx"/>
+            <dct:format><dct:IMT><rdf:value>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</rdf:value><rdfs:label>XLSX</rdfs:label></dct:IMT></dct:format>
           </dcat:Distribution>
         </dcat:distribution>
         <dcat:distribution>
@@ -460,6 +538,12 @@
           <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/obligaciones.csv">
             <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/csv/obligaciones.csv"/>
             <dct:format><dct:IMT><rdf:value>text/csv</rdf:value><rdfs:label>CSV</rdfs:label></dct:IMT></dct:format>
+          </dcat:Distribution>
+        </dcat:distribution>
+        <dcat:distribution>
+          <dcat:Distribution rdf:about="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/obligaciones.xlsx">
+            <dcat:accessURL rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/obligaciones.xlsx"/>
+            <dct:format><dct:IMT><rdf:value>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</rdf:value><rdfs:label>XLSX</rdfs:label></dct:IMT></dct:format>
           </dcat:Distribution>
         </dcat:distribution>
         <dcat:distribution>

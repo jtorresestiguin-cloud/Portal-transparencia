@@ -161,3 +161,10 @@ dialog.ed-prev-dlg .modal-body { display: flex; flex-direction: column; height: 
 .ed-grid tr.locked td { color: var(--ink-2); }
 .ed-pager { display: flex; gap: 10px; align-items: center; justify-content: center; margin-top: 10px; }
 .ed-ro { display: grid; grid-template-columns: 1fr; gap: 2px; font-size: .85rem; } .ed-ro dt { font-weight: 650; color: var(--ink-2); margin-top: 6px; } .ed-ro dd { margin: 0; word-break: break-word; }
+/* Subida de archivos */
+.ed-upload { display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; margin-top: 4px; }
+.ed-up-btn { display: inline-flex; gap: 4px; align-items: center; cursor: pointer; padding: 4px 10px; font-size: .8rem; }
+.ed-up-btn:focus-within { outline: 2px solid var(--brand); outline-offset: 2px; }
+.ed-up-thumb { width: 56px; height: 56px; border-radius: 8px; object-fit: cover; border: 1px solid var(--line); }
+.ed-up-thumb[hidden], .ed-up-view[hidden] { display: none; }
+.ed-up-info { flex-basis: 100%; }

@@ -59,6 +59,18 @@ Selector **Modo** en la barra superior. El **sencillo** (por defecto) muestra so
 5. La tabla permite buscar, filtrar, ordenar por columna, paginar y seleccionar varios registros para eliminarlos.
 6. **Importar CSV** (conjuntos manuales): reconoce las columnas por nombre o descripción, convierte fechas DD/MM/AAAA, importes con coma decimal y valores de las listas, y muestra una **vista previa con la validación de cada fila** antes de añadir, sustituir o importar solo las filas válidas. Desde Excel: *Guardar como → CSV UTF-8*. **Exportar CSV** descarga el conjunto.
 
+## Subir archivos (PDF, fotos, documentos)
+
+Junto a cada campo de enlace (documentos de una página, foto y declaraciones de un cargo, escudo de la entidad…) aparece **Subir archivo** o **Subir imagen**:
+
+- Formatos: PDF, imágenes (JPG, PNG, WebP, GIF, SVG), Word/Writer, Excel/Calc, PowerPoint/Impress, CSV, TXT y ZIP. Máximo 25 MB.
+- Las fotos de cargos se reducen automáticamente a 800 px y las imágenes grandes a 2000 px.
+- El archivo recibe una dirección pública definitiva (`archivos/<tipo>/<año>/<nombre>`) y se ve al momento en la vista previa y con el botón **Ver**, aunque todavía no esté publicado.
+- Se publica junto con el resto de cambios (también en «Enviar a revisión»). Mientras tanto se guarda como borrador en el navegador.
+- Las comprobaciones previas avisan si un contenido enlaza un archivo que no existe o si un archivo es muy pesado.
+
+En el portal, cada documento se puede **ver** (se abre en una pestaña nueva) o **descargar**.
+
 ## Entidad
 
 Nombre en los tres idiomas, NIF, DIR3, dirección, sede electrónica, escudo y **colores corporativos** (se aplican a todo el portal). Junto a los colores se muestra su **contraste WCAG** sobre blanco: el color principal necesita al menos 4,5:1 (si no, la publicación se bloquea); el secundario avisa si no sirve para texto. También los identificadores del órgano para la Plataforma de Contratación y la BDNS y el **modo de publicación por defecto**.

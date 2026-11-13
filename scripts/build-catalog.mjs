@@ -10,6 +10,7 @@
 import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { toXLSX } from '../assets/js/xlsx.js';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const BASE = (process.env.BASE_URL || 'https://jtorresestiguin-cloud.github.io/Portal-transparencia').replace(/\/$/, '');
@@ -67,20 +68,31 @@ for (const ds of datasets) {
   ds.jsonBytes = existsSync(join(ROOT, `data/${ds.id}.json`)) ? Buffer.byteLength(readFileSync(join(ROOT, `data/${ds.id}.json`))) : 0;
   write(`data/csv/${ds.id}.csv`, out);
 }
+// ---------------------------------------------------------------- Excel (.xlsx): cabeceras legibles y listas de códigos con su texto
+console.log('Excel…');
+const CL = existsSync(join(ROOT, 'data/codelists.json')) ? readJSON('data/codelists.json') : {};
+const clLabel = (c, v) => { if (!c.lista || v === null || v === undefined) return v; for (const l of c.lista.split('|')) { const e = CL[l]?.[v]; if (e) return e.es || v; } return v; };
+mkdirSync(join(ROOT, 'data/xlsx'), { recursive: true });
+for (const ds of datasets) {
+  const bin = toXLSX({ sheet: ds.titulo.es, title: ds.titulo.es, columns: ds.campos.map((c) => ({ label: c.descripcion || c.nombre, value: (r) => clLabel(c, r[c.nombre]) })), rows: ds.rows });
+  ds.xlsxBytes = bin.length;
+  writeFileSync(join(ROOT, `data/xlsx/${ds.id}.xlsx`), bin);
+}
 
 // ---------------------------------------------------------------- DCAT-AP
 const FREQ = (f) => `http://publications.europa.eu/resource/authority/frequency/${f}`;
 const EU_THEME = (t) => `http://publications.europa.eu/resource/authority/data-theme/${t}`;
 const NTI_THEME = (t) => `http://datos.gob.es/kos/sector-publico/sector/${t}`;
-const FMT = { csv: 'http://publications.europa.eu/resource/authority/file-type/CSV', json: 'http://publications.europa.eu/resource/authority/file-type/JSON' };
-const MT = { csv: 'text/csv', json: 'application/json' };
+const FMT = { csv: 'http://publications.europa.eu/resource/authority/file-type/CSV', xlsx: 'http://publications.europa.eu/resource/authority/file-type/XLSX', json: 'http://publications.europa.eu/resource/authority/file-type/JSON' };
+const MT = { csv: 'text/csv', xlsx: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', json: 'application/json' };
 const LANG = { es: 'SPA', va: 'CAT', en: 'ENG' };
 const langURI = (l) => `http://publications.europa.eu/resource/authority/language/${LANG[l]}`;
 const RDF_LANG = { es: 'es', va: 'ca-valencia', en: 'en' };
 const catalogURI = `${BASE}/data/catalog`;
 const publisherURI = `http://datos.gob.es/recurso/sector-publico/org/Organismo/${ent.dir3}`;
 const dsURI = (id) => `${BASE}/#/datos/${id}`;
-const distURI = (id, f) => `${BASE}/data/${f === 'csv' ? 'csv/' : ''}${id}.${f}`;
+const distURI = (id, f) => `${BASE}/data/${f === 'json' ? '' : `${f}/`}${id}.${f}`;
+const DISTS = ['csv', 'xlsx', 'json'];
 const lm = (o) => Object.entries(o).map(([l, v]) => ({ '@language': RDF_LANG[l] || l, '@value': v }));
 const ENT_NAME = ent.nombre.es;
 
@@ -103,10 +115,10 @@ const jsonld = {
     'dcat:contactPoint': { '@type': 'vcard:Organization', 'vcard:fn': 'Unidad de Transparencia', 'vcard:hasEmail': { '@id': `mailto:${ent.email_transparencia}` } },
     'dcat:landingPage': { '@id': `${BASE}/#/${ds.pagina}` },
     'dct:conformsTo': { '@id': `${BASE}/datapackage.json#${ds.id}` },
-    'dcat:distribution': ['csv', 'json'].map((f) => ({
+    'dcat:distribution': DISTS.map((f) => ({
       '@id': distURI(ds.id, f), '@type': 'dcat:Distribution', 'dcat:accessURL': { '@id': distURI(ds.id, f) }, 'dcat:downloadURL': { '@id': distURI(ds.id, f) },
       'dct:format': { '@id': FMT[f] }, 'dcat:mediaType': { '@id': `http://www.iana.org/assignments/media-types/${MT[f]}` },
-      'dcat:byteSize': { '@value': String(f === 'csv' ? ds.csvBytes : ds.jsonBytes), '@type': 'xsd:nonNegativeInteger' }, 'dct:license': { '@id': ent.licencia_datos },
+      'dcat:byteSize': { '@value': String({ csv: ds.csvBytes, xlsx: ds.xlsxBytes, json: ds.jsonBytes }[f]), '@type': 'xsd:nonNegativeInteger' }, 'dct:license': { '@id': ent.licencia_datos },
     })),
   })),
 };
@@ -124,8 +136,8 @@ function turtle() {
       `  dct:publisher <${publisherURI}> ;`, `  dct:accrualPeriodicity <${FREQ(ds.periodicidad)}> ;`,
       `  dct:temporal [ a dct:PeriodOfTime ; dcat:startDate "${ds.temporal[0]}"^^xsd:date ; dcat:endDate "${ds.temporal[1]}"^^xsd:date ] ;`,
       `  dcat:contactPoint [ a vcard:Organization ; vcard:fn "Unidad de Transparencia" ; vcard:hasEmail <mailto:${ent.email_transparencia}> ] ;`,
-      `  dcat:landingPage <${BASE}/#/${ds.pagina}> ;`, `  dcat:distribution <${distURI(ds.id, 'csv')}>, <${distURI(ds.id, 'json')}> .`, '');
-    for (const f of ['csv', 'json']) L.push(`<${distURI(ds.id, f)}> a dcat:Distribution ; dcat:accessURL <${distURI(ds.id, f)}> ; dcat:downloadURL <${distURI(ds.id, f)}> ; dct:format <${FMT[f]}> ; dct:license <${ent.licencia_datos}> .`, '');
+      `  dcat:landingPage <${BASE}/#/${ds.pagina}> ;`, `  dcat:distribution ${DISTS.map((f) => `<${distURI(ds.id, f)}>`).join(', ')} .`, '');
+    for (const f of DISTS) L.push(`<${distURI(ds.id, f)}> a dcat:Distribution ; dcat:accessURL <${distURI(ds.id, f)}> ; dcat:downloadURL <${distURI(ds.id, f)}> ; dct:format <${FMT[f]}> ; dct:license <${ent.licencia_datos}> .`, '');
   }
   return L.join('\n');
 }
@@ -142,7 +154,7 @@ function rdfxml() {
       `        <dcat:theme rdf:resource="${NTI_THEME(ds.tema_nti)}"/>`, `        <dct:publisher rdf:resource="${xesc(publisherURI)}"/>`, `        <dct:accrualPeriodicity rdf:resource="${FREQ(ds.periodicidad)}"/>`,
       `        <dct:temporal><dct:PeriodOfTime>${date('dcat:startDate', ds.temporal[0])}${date('dcat:endDate', ds.temporal[1])}</dct:PeriodOfTime></dct:temporal>`,
       `        <dct:license rdf:resource="${ent.licencia_datos}"/>`, `        ${date('dct:modified', ds.src.actualizado || ds.src.generado || TODAY)}`);
-    for (const f of ['csv', 'json']) L.push('        <dcat:distribution>', `          <dcat:Distribution rdf:about="${xesc(distURI(ds.id, f))}">`, `            <dcat:accessURL rdf:resource="${xesc(distURI(ds.id, f))}"/>`,
+    for (const f of DISTS) L.push('        <dcat:distribution>', `          <dcat:Distribution rdf:about="${xesc(distURI(ds.id, f))}">`, `            <dcat:accessURL rdf:resource="${xesc(distURI(ds.id, f))}"/>`,
       `            <dct:format><dct:IMT><rdf:value>${MT[f]}</rdf:value><rdfs:label>${f.toUpperCase()}</rdfs:label></dct:IMT></dct:format>`, '          </dcat:Distribution>', '        </dcat:distribution>');
     L.push('      </dcat:Dataset>', '    </dcat:dataset>');
   }
@@ -191,7 +203,7 @@ for (const ds of datasets) {
 write('api/openapi.json', JSON.stringify(openapi, null, 2) + '\n');
 write('api/v1/index.json', JSON.stringify({ api: 'v1', base: BASE, actualizado: TODAY, entidad: { nombre: ENT_NAME, nif: ent.nif, dir3: ent.dir3 },
   catalogo: { jsonld: `${BASE}/data/catalog.jsonld`, rdf: `${BASE}/data/catalog.rdf`, turtle: `${BASE}/data/catalog.ttl`, datapackage: `${BASE}/datapackage.json`, openapi: `${BASE}/api/openapi.json` },
-  conjuntos: datasets.map((ds) => ({ id: ds.id, titulo: ds.titulo, registros: ds.rows.length, fuente: ds.fuente.tipo, actualizado: ds.src.actualizado || ds.src.generado, json: distURI(ds.id, 'json'), csv: distURI(ds.id, 'csv') })) }, null, 2) + '\n');
+  conjuntos: datasets.map((ds) => ({ id: ds.id, titulo: ds.titulo, registros: ds.rows.length, fuente: ds.fuente.tipo, actualizado: ds.src.actualizado || ds.src.generado, json: distURI(ds.id, 'json'), csv: distURI(ds.id, 'csv'), xlsx: distURI(ds.id, 'xlsx') })) }, null, 2) + '\n');
 
 // ---------------------------------------------------------------- Atom + sitemap
 const fmtEur = (n) => new Intl.NumberFormat('es-ES', { style: 'currency', currency: 'EUR' }).format(n);

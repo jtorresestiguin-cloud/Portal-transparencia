@@ -12,7 +12,9 @@
  * conjunto, campo, campos, select, numero, bool, filtro, lista (subformulario repetible).
  */
 import { tr, t, pick, label, lang } from '../i18n.js';
-import { h, esc, icon, fmt, chartCard, dataTable, kpiRow, meter, statusBadge, selectControl, filterSummary, download, toCSV } from '../ui.js';
+import { h, esc, icon, fmt, chartCard, dataTable, kpiRow, meter, statusBadge, selectControl, filterSummary } from '../ui.js';
+import { exportMenu } from '../export.js';
+const fileName = (u) => String(u || '').split(/[?#]/)[0].split('/').pop() || 'documento';
 import { hBar, columns, lines, treemap, SERIES } from '../charts.js';
 import * as store from '../store.js';
 
@@ -95,7 +97,7 @@ export const BLOCKS = {
         return `<li class="doc">
           <span class="doc-icon" aria-hidden="true">${icon('file', 22)}<span class="doc-format">${esc(d.formato || '')}</span></span>
           <div class="doc-body"><p class="doc-title">${esc(pick(d.titulo))}</p><p class="doc-meta">${meta.map(esc).join('<span aria-hidden="true"> · </span>')}</p></div>
-          <div class="doc-actions">${has ? `<a class="btn-ghost btn-sm" href="${esc(d.url)}" rel="noopener">${icon('eye', 16)}${tr('Ver', 'Veure', 'View')}<span class="sr-only">: ${esc(pick(d.titulo))}</span></a><a class="btn-ghost btn-sm" href="${esc(d.url)}" download>${icon('download', 16)}${tr('Descargar', 'Descarregar', 'Download')}<span class="sr-only">: ${esc(pick(d.titulo))}</span></a>` : `<span class="muted small">${tr('Documento pendiente de enlazar', 'Document pendent d’enllaçar', 'Document link pending')}</span>`}</div></li>`;
+          <div class="doc-actions">${has ? `<a class="btn-ghost btn-sm" href="${esc(store.asset(d.url))}" target="_blank" rel="noopener">${icon('eye', 16)}${tr('Ver', 'Veure', 'View')}<span class="sr-only">: ${esc(pick(d.titulo))} (${esc(tr('se abre en una pestaña nueva', 's’obri en una pestanya nova', 'opens in a new tab'))})</span></a><a class="btn-ghost btn-sm" href="${esc(store.asset(d.url))}" download="${esc(fileName(d.url))}">${icon('download', 16)}${tr('Descargar', 'Descarregar', 'Download')}<span class="sr-only">: ${esc(pick(d.titulo))}</span></a>` : `<span class="muted small">${tr('Documento pendiente de enlazar', 'Document pendent d’enllaçar', 'Document link pending')}</span>`}</div></li>`;
       };
       let body;
       if (!items.length) body = `<p class="muted">${tr('Todavía no hay documentos publicados en este apartado.', 'Encara no hi ha documents publicats en aquest apartat.', 'No documents have been published here yet.')}</p>`;
@@ -223,7 +225,7 @@ export const BLOCKS = {
           ${p.busqueda ? `<label class="control grow"><span>${t('search')}</span><input type="search" class="tf-q" value="${esc(st.q)}" placeholder="${esc(tr('Escribe para filtrar…', 'Escriu per a filtrar…', 'Type to filter…'))}"></label>` : ''}
           ${filterFields.length ? `<details class="more-filters"><summary class="btn-ghost btn-sm">${icon('layout', 16)}${tr('Filtros', 'Filtres', 'Filters')}</summary><div class="more-filters-body">` : ''}${filterFields.map((f) => selectControl(`tf-${f.nombre}-${ctx?.blockIndex ?? 0}`, f.descripcion, [['', t('all')], ...[...new Set(all.map((r) => r[f.nombre]).filter((v) => v !== null && v !== '' && v !== undefined))].map(String).sort().map((v) => [v, fmts[f.nombre].fmt(v)])], st[f.nombre])).join('')}${filterFields.length ? '</div></details>' : ''}
         </form><div class="tf-summary"></div><div class="tf-out"></div>
-        <p class="table-foot">${t('source')}: <a href="#/datos/${p.conjunto}">${esc(pick(ds.titulo))}</a> · <button type="button" class="link-btn" data-export>${icon('download', 14)} ${tr('Descargar esta selección (CSV)', 'Descarregar aquesta selecció (CSV)', 'Download this selection (CSV)')}</button> · <a href="data/csv/${p.conjunto}.csv" download>${tr('Conjunto completo', 'Conjunt complet', 'Full dataset')} (CSV)</a></p></section>`);
+        <p class="table-foot">${t('source')}: <a href="#/datos/${p.conjunto}">${esc(pick(ds.titulo))}</a> · <span data-export></span> · ${tr('Conjunto completo', 'Conjunt complet', 'Full dataset')}: <a href="data/xlsx/${p.conjunto}.xlsx" download>Excel</a> · <a href="data/csv/${p.conjunto}.csv" download>CSV</a> · <a href="data/${p.conjunto}.json" target="_blank" rel="noopener">JSON</a></p></section>`);
       const norm = (s) => String(s ?? '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
       const mf = card.querySelector(".more-filters"); if (mf) mf.open = matchMedia("(min-width: 768px)").matches || filterFields.some((f) => st[f.nombre]);
       let current = all;
@@ -247,7 +249,7 @@ export const BLOCKS = {
       const update = () => { sync(); draw(); };
       card.querySelectorAll('select').forEach((s) => s.addEventListener('change', () => { const f = filterFields.find((x) => s.id.startsWith(`tf-${x.nombre}-`)); st[f.nombre] = s.value; update(); }));
       let deb; card.querySelector('.tf-q')?.addEventListener('input', (e) => { clearTimeout(deb); deb = setTimeout(() => { st.q = e.target.value.trim(); update(); }, 200); });
-      card.querySelector('[data-export]').addEventListener('click', () => download(`${p.conjunto}-seleccion.csv`, '﻿' + toCSV(ds.campos.map((c) => ({ key: c.nombre, label: c.nombre })), current), 'text/csv;charset=utf-8'));
+      card.querySelector('[data-export]').replaceWith(exportMenu({ name: `${p.conjunto}-seleccion`, title: pick(p.titulo) || pick(ds.titulo), source: ds.fuente?.nombre, label: tr('Descargar esta selección', 'Descarregar aquesta selecció', 'Download this selection'), rows: () => current, columns: ds.campos.map((c) => ({ key: c.nombre, label: c.descripcion || c.nombre, format: fmts[c.nombre] && !fmts[c.nombre].html ? (v) => fmts[c.nombre].fmt(v) : undefined })) }));
       draw();
       el.replaceChildren(card);
     },
@@ -261,9 +263,9 @@ export const BLOCKS = {
       const agenda = await store.rows('agenda').catch(() => []);
       const nAg = (id) => agenda.filter((a) => a.cargo_id === id).length;
       const ini = (n) => String(n).split(' ').filter(Boolean).slice(0, 2).map((x) => x[0]).join('').toUpperCase();
-      const doc = (u, txt) => (u ? `<li><a href="${esc(u)}" rel="noopener">${icon('file', 16)}${txt}</a></li>` : '');
+      const doc = (u, txt) => (u ? `<li><a href="${esc(store.asset(u))}" target="_blank" rel="noopener">${icon('file', 16)}${txt}<span class="sr-only"> (${esc(tr('se abre en una pestaña nueva', 's’obri en una pestanya nova', 'opens in a new tab'))})</span></a> <a class="person-dl" href="${esc(store.asset(u))}" download="${esc(fileName(u))}" title="${esc(tr('Descargar', 'Descarregar', 'Download'))}">${icon('download', 14)}<span class="sr-only">${esc(tr('Descargar', 'Descarregar', 'Download'))} ${txt}</span></a></li>` : '');
       el.innerHTML = `<section>${blockTitle(p)}<ul class="people-grid">${data.map((c) => `<li class="person card">
-        <div class="person-head">${c.foto ? `<img src="${esc(c.foto)}" alt="" class="avatar">` : `<span class="avatar" aria-hidden="true">${esc(ini(c.nombre))}</span>`}
+        <div class="person-head">${c.foto ? `<img src="${esc(store.asset(c.foto))}" alt="" class="avatar">` : `<span class="avatar" aria-hidden="true">${esc(ini(c.nombre))}</span>`}
           <div><h3 class="person-name">${esc(c.nombre)}</h3><p class="person-role">${esc(c.cargo)}</p>${c.grupo_politico ? `<p class="person-group">${esc(c.grupo_politico)}</p>` : ''}</div></div>
         ${p.mostrar_retribucion ? `<p class="person-pay"><span class="person-pay-value">${c.retribucion_anual ? fmt.eur(c.retribucion_anual) : tr('Sin retribución fija', 'Sense retribució fixa', 'No fixed salary')}</span><span class="person-pay-label">${c.retribucion_anual ? tr('brutos al año', "bruts a l'any", 'gross per year') : ''}${c.indemnizaciones_anuales ? ` · ${fmt.eur(c.indemnizaciones_anuales)} ${tr('en asistencias', 'en assistències', 'attendance fees')}` : ''}</span></p>` : ''}
         <dl class="person-facts">

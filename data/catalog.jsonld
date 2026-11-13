@@ -181,6 +181,29 @@
           }
         },
         {
+          "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/presupuesto.xlsx",
+          "@type": "dcat:Distribution",
+          "dcat:accessURL": {
+            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/presupuesto.xlsx"
+          },
+          "dcat:downloadURL": {
+            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/presupuesto.xlsx"
+          },
+          "dct:format": {
+            "@id": "http://publications.europa.eu/resource/authority/file-type/XLSX"
+          },
+          "dcat:mediaType": {
+            "@id": "http://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+          },
+          "dcat:byteSize": {
+            "@value": "86154",
+            "@type": "xsd:nonNegativeInteger"
+          },
+          "dct:license": {
+            "@id": "https://creativecommons.org/licenses/by/4.0/"
+          }
+        },
+        {
           "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/presupuesto.json",
           "@type": "dcat:Distribution",
           "dcat:accessURL": {
@@ -337,6 +360,29 @@
           }
         },
         {
+          "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/contratos.xlsx",
+          "@type": "dcat:Distribution",
+          "dcat:accessURL": {
+            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/contratos.xlsx"
+          },
+          "dcat:downloadURL": {
+            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/contratos.xlsx"
+          },
+          "dct:format": {
+            "@id": "http://publications.europa.eu/resource/authority/file-type/XLSX"
+          },
+          "dcat:mediaType": {
+            "@id": "http://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+          },
+          "dcat:byteSize": {
+            "@value": "465840",
+            "@type": "xsd:nonNegativeInteger"
+          },
+          "dct:license": {
+            "@id": "https://creativecommons.org/licenses/by/4.0/"
+          }
+        },
+        {
           "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/contratos.json",
           "@type": "dcat:Distribution",
           "dcat:accessURL": {
@@ -467,6 +513,29 @@
           },
           "dcat:byteSize": {
             "@value": "2533",
+            "@type": "xsd:nonNegativeInteger"
+          },
+          "dct:license": {
+            "@id": "https://creativecommons.org/licenses/by/4.0/"
+          }
+        },
+        {
+          "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/encargos.xlsx",
+          "@type": "dcat:Distribution",
+          "dcat:accessURL": {
+            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/encargos.xlsx"
+          },
+          "dcat:downloadURL": {
+            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/encargos.xlsx"
+          },
+          "dct:format": {
+            "@id": "http://publications.europa.eu/resource/authority/file-type/XLSX"
+          },
+          "dcat:mediaType": {
+            "@id": "http://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+          },
+          "dcat:byteSize": {
+            "@value": "14815",
             "@type": "xsd:nonNegativeInteger"
           },
           "dct:license": {
@@ -618,6 +687,29 @@
           }
         },
         {
+          "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/subvenciones.xlsx",
+          "@type": "dcat:Distribution",
+          "dcat:accessURL": {
+            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/subvenciones.xlsx"
+          },
+          "dcat:downloadURL": {
+            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/subvenciones.xlsx"
+          },
+          "dct:format": {
+            "@id": "http://publications.europa.eu/resource/authority/file-type/XLSX"
+          },
+          "dcat:mediaType": {
+            "@id": "http://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+          },
+          "dcat:byteSize": {
+            "@value": "172927",
+            "@type": "xsd:nonNegativeInteger"
+          },
+          "dct:license": {
+            "@id": "https://creativecommons.org/licenses/by/4.0/"
+          }
+        },
+        {
           "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/subvenciones.json",
           "@type": "dcat:Distribution",
           "dcat:accessURL": {
@@ -744,6 +836,29 @@
           },
           "dcat:byteSize": {
             "@value": "4260",
+            "@type": "xsd:nonNegativeInteger"
+          },
+          "dct:license": {
+            "@id": "https://creativecommons.org/licenses/by/4.0/"
+          }
+        },
+        {
+          "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/convenios.xlsx",
+          "@type": "dcat:Distribution",
+          "dcat:accessURL": {
+            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/convenios.xlsx"
+          },
+          "dcat:downloadURL": {
+            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/convenios.xlsx"
+          },
+          "dct:format": {
+            "@id": "http://publications.europa.eu/resource/authority/file-type/XLSX"
+          },
+          "dcat:mediaType": {
+            "@id": "http://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+          },
+          "dcat:byteSize": {
+            "@value": "18968",
             "@type": "xsd:nonNegativeInteger"
           },
           "dct:license": {
@@ -892,6 +1007,29 @@
           }
         },
         {
+          "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/cargos.xlsx",
+          "@type": "dcat:Distribution",
+          "dcat:accessURL": {
+            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/cargos.xlsx"
+          },
+          "dcat:downloadURL": {
+            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/cargos.xlsx"
+          },
+          "dct:format": {
+            "@id": "http://publications.europa.eu/resource/authority/file-type/XLSX"
+          },
+          "dcat:mediaType": {
+            "@id": "http://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+          },
+          "dcat:byteSize": {
+            "@value": "21573",
+            "@type": "xsd:nonNegativeInteger"
+          },
+          "dct:license": {
+            "@id": "https://creativecommons.org/licenses/by/4.0/"
+          }
+        },
+        {
           "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/cargos.json",
           "@type": "dcat:Distribution",
           "dcat:accessURL": {
@@ -1018,6 +1156,29 @@
           },
           "dcat:byteSize": {
             "@value": "10003",
+            "@type": "xsd:nonNegativeInteger"
+          },
+          "dct:license": {
+            "@id": "https://creativecommons.org/licenses/by/4.0/"
+          }
+        },
+        {
+          "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/agenda.xlsx",
+          "@type": "dcat:Distribution",
+          "dcat:accessURL": {
+            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/agenda.xlsx"
+          },
+          "dcat:downloadURL": {
+            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/agenda.xlsx"
+          },
+          "dct:format": {
+            "@id": "http://publications.europa.eu/resource/authority/file-type/XLSX"
+          },
+          "dcat:mediaType": {
+            "@id": "http://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+          },
+          "dcat:byteSize": {
+            "@value": "53962",
             "@type": "xsd:nonNegativeInteger"
           },
           "dct:license": {
@@ -1166,6 +1327,29 @@
           }
         },
         {
+          "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/plantilla.xlsx",
+          "@type": "dcat:Distribution",
+          "dcat:accessURL": {
+            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/plantilla.xlsx"
+          },
+          "dcat:downloadURL": {
+            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/plantilla.xlsx"
+          },
+          "dct:format": {
+            "@id": "http://publications.europa.eu/resource/authority/file-type/XLSX"
+          },
+          "dcat:mediaType": {
+            "@id": "http://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+          },
+          "dcat:byteSize": {
+            "@value": "53292",
+            "@type": "xsd:nonNegativeInteger"
+          },
+          "dct:license": {
+            "@id": "https://creativecommons.org/licenses/by/4.0/"
+          }
+        },
+        {
           "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/plantilla.json",
           "@type": "dcat:Distribution",
           "dcat:accessURL": {
@@ -1296,6 +1480,29 @@
           },
           "dcat:byteSize": {
             "@value": "865",
+            "@type": "xsd:nonNegativeInteger"
+          },
+          "dct:license": {
+            "@id": "https://creativecommons.org/licenses/by/4.0/"
+          }
+        },
+        {
+          "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/pmp.xlsx",
+          "@type": "dcat:Distribution",
+          "dcat:accessURL": {
+            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/pmp.xlsx"
+          },
+          "dcat:downloadURL": {
+            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/pmp.xlsx"
+          },
+          "dct:format": {
+            "@id": "http://publications.europa.eu/resource/authority/file-type/XLSX"
+          },
+          "dcat:mediaType": {
+            "@id": "http://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+          },
+          "dcat:byteSize": {
+            "@value": "11679",
             "@type": "xsd:nonNegativeInteger"
           },
           "dct:license": {
@@ -1440,6 +1647,29 @@
           }
         },
         {
+          "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/deuda.xlsx",
+          "@type": "dcat:Distribution",
+          "dcat:accessURL": {
+            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/deuda.xlsx"
+          },
+          "dcat:downloadURL": {
+            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/deuda.xlsx"
+          },
+          "dct:format": {
+            "@id": "http://publications.europa.eu/resource/authority/file-type/XLSX"
+          },
+          "dcat:mediaType": {
+            "@id": "http://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+          },
+          "dcat:byteSize": {
+            "@value": "5763",
+            "@type": "xsd:nonNegativeInteger"
+          },
+          "dct:license": {
+            "@id": "https://creativecommons.org/licenses/by/4.0/"
+          }
+        },
+        {
           "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/deuda.json",
           "@type": "dcat:Distribution",
           "dcat:accessURL": {
@@ -1570,6 +1800,29 @@
           },
           "dcat:byteSize": {
             "@value": "1958",
+            "@type": "xsd:nonNegativeInteger"
+          },
+          "dct:license": {
+            "@id": "https://creativecommons.org/licenses/by/4.0/"
+          }
+        },
+        {
+          "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/inmuebles.xlsx",
+          "@type": "dcat:Distribution",
+          "dcat:accessURL": {
+            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/inmuebles.xlsx"
+          },
+          "dcat:downloadURL": {
+            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/inmuebles.xlsx"
+          },
+          "dct:format": {
+            "@id": "http://publications.europa.eu/resource/authority/file-type/XLSX"
+          },
+          "dcat:mediaType": {
+            "@id": "http://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+          },
+          "dcat:byteSize": {
+            "@value": "15221",
             "@type": "xsd:nonNegativeInteger"
           },
           "dct:license": {
@@ -1714,6 +1967,29 @@
           }
         },
         {
+          "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/normativa.xlsx",
+          "@type": "dcat:Distribution",
+          "dcat:accessURL": {
+            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/normativa.xlsx"
+          },
+          "dcat:downloadURL": {
+            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/normativa.xlsx"
+          },
+          "dct:format": {
+            "@id": "http://publications.europa.eu/resource/authority/file-type/XLSX"
+          },
+          "dcat:mediaType": {
+            "@id": "http://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+          },
+          "dcat:byteSize": {
+            "@value": "11972",
+            "@type": "xsd:nonNegativeInteger"
+          },
+          "dct:license": {
+            "@id": "https://creativecommons.org/licenses/by/4.0/"
+          }
+        },
+        {
           "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/normativa.json",
           "@type": "dcat:Distribution",
           "dcat:accessURL": {
@@ -1844,6 +2120,29 @@
           },
           "dcat:byteSize": {
             "@value": "12712",
+            "@type": "xsd:nonNegativeInteger"
+          },
+          "dct:license": {
+            "@id": "https://creativecommons.org/licenses/by/4.0/"
+          }
+        },
+        {
+          "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/solicitudes-acceso.xlsx",
+          "@type": "dcat:Distribution",
+          "dcat:accessURL": {
+            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/solicitudes-acceso.xlsx"
+          },
+          "dcat:downloadURL": {
+            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/solicitudes-acceso.xlsx"
+          },
+          "dct:format": {
+            "@id": "http://publications.europa.eu/resource/authority/file-type/XLSX"
+          },
+          "dcat:mediaType": {
+            "@id": "http://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+          },
+          "dcat:byteSize": {
+            "@value": "90630",
             "@type": "xsd:nonNegativeInteger"
           },
           "dct:license": {
@@ -1985,6 +2284,29 @@
           },
           "dcat:byteSize": {
             "@value": "6022",
+            "@type": "xsd:nonNegativeInteger"
+          },
+          "dct:license": {
+            "@id": "https://creativecommons.org/licenses/by/4.0/"
+          }
+        },
+        {
+          "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/obligaciones.xlsx",
+          "@type": "dcat:Distribution",
+          "dcat:accessURL": {
+            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/obligaciones.xlsx"
+          },
+          "dcat:downloadURL": {
+            "@id": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/data/xlsx/obligaciones.xlsx"
+          },
+          "dct:format": {
+            "@id": "http://publications.europa.eu/resource/authority/file-type/XLSX"
+          },
+          "dcat:mediaType": {
+            "@id": "http://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+          },
+          "dcat:byteSize": {
+            "@value": "39621",
             "@type": "xsd:nonNegativeInteger"
           },
           "dct:license": {

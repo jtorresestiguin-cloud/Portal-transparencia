@@ -14,6 +14,18 @@ export function setOverride(path, obj) { overrides.set(path, obj); }
 export function clearOverride(path) { overrides.delete(path); }
 export function getOverride(path) { return overrides.get(path); }
 
+// Archivos (PDF, imágenes…). Rutas relativas («archivos/2026/acta.pdf») se resuelven desde la raíz
+// del portal, también desde el editor (admin/). El editor registra los archivos subidos aún sin
+// publicar con setAsset(ruta, blobURL) para poder previsualizarlos.
+const assets = new Map();
+export function setAsset(path, href) { if (href) assets.set(path, href); else assets.delete(path); }
+export function asset(u) {
+  if (!u) return u;
+  if (assets.has(u)) return assets.get(u);
+  if (/^([a-z][a-z0-9+.-]*:|\/|#)/i.test(u)) return u;
+  return url(u);
+}
+
 export async function getJSON(path) {
   if (overrides.has(path)) return overrides.get(path);
   if (!cache.has(path)) {

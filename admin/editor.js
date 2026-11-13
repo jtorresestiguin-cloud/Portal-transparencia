@@ -25,8 +25,9 @@ import { h, esc, icon, ICONS, flushCharts, download, modal, fmt } from '../asset
 import * as store from '../assets/js/store.js';
 import { BLOCKS, loadAdvanced, renderBlock } from '../assets/js/blocks/index.js';
 import * as G from './gestion.js';
+import * as A from './archivos.js';
 
-const S = { snap: new Map(), work: new Map(), orig: new Map(), dirty: new Set(), hist: [], lang: 'es', tab: 'inicio', view: null, sel: null, insertAt: null, rec: null, mode: 'simple', pick: new Set(), ds: null };
+const S = { snap: new Map(), work: new Map(), orig: new Map(), dirty: new Set(), hist: [], lang: 'es', tab: 'inicio', view: null, sel: null, insertAt: null, rec: null, mode: 'simple', pick: new Set(), ds: null, uploads: new Map() };
 try { S.mode = localStorage.getItem('ed-mode') || 'simple'; } catch { /* */ }
 const simple = () => S.mode === 'simple';
 // Propiedades que en modo sencillo se agrupan en «Configuración avanzada».
@@ -85,7 +86,7 @@ function saveDraft() {
   try { localStorage.setItem('ed-draft', JSON.stringify(Object.fromEntries([...S.dirty].map((p) => [p, W(p)])))); } catch { /* sin almacenamiento */ }
 }
 function refreshCounters() {
-  $('#ed-count').textContent = S.dirty.size;
+  $('#ed-count').textContent = S.dirty.size + S.uploads.size;
   $('#ed-undo').disabled = !S.hist.length;
   document.querySelectorAll('[data-dirty-path]').forEach((el) => (el.hidden = !S.dirty.has(el.dataset.dirtyPath)));
 }
@@ -132,7 +133,7 @@ async function buildForm(host, props, obj, onChange) {
       case 'texto': input = h(`<input type="text" value="${esc(i18nVal(v))}">`); input.addEventListener('input', () => { setI18n(obj, p.clave, input.value); onChange(p.clave); }); break;
       case 'texto_largo': input = h(`<textarea>${esc(i18nVal(v))}</textarea>`); input.addEventListener('input', () => { setI18n(obj, p.clave, input.value); onChange(p.clave); }); wrap.append(input); input = null; wrap.append(h('<small>Admite **negrita**, *cursiva*, listas con «- » y [enlaces](https://…)</small>')); break;
       case 'texto_simple': case 'url': case 'fecha': case 'numero': case 'color': {
-        const type = { texto_simple: 'text', url: 'url', fecha: 'date', numero: 'number', color: 'color' }[p.tipo];
+        const type = { texto_simple: 'text', url: 'text', fecha: 'date', numero: 'number', color: 'color' }[p.tipo];
         input = h(`<input type="${type}" value="${esc(v ?? '')}">`);
         input.addEventListener('input', () => { obj[p.clave] = p.tipo === 'numero' ? (input.value === '' ? undefined : Number(input.value)) : input.value; onChange(p.clave); });
         break;
@@ -200,6 +201,7 @@ async function buildForm(host, props, obj, onChange) {
       default: input = h(`<input type="text" value="${esc(v ?? '')}">`); input.addEventListener('input', () => { obj[p.clave] = input.value; onChange(p.clave); });
     }
     if (input) wrap.append(input);
+    if (input && (p.tipo === 'url' || p.subir || p.clave === 'escudo')) A.attachUploader(S, input, { kind: p.clave === 'escudo' ? 'entidad' : 'documentos', image: p.clave === 'escudo' || p.imagen, toast });
     if (p.ayuda) wrap.append(h(`<small class="ed-hint">${esc(pick(p.ayuda))}</small>`));
     target(p).appendChild(wrap);
   }
@@ -588,7 +590,7 @@ async function openRecord(ds, path, redraw, readOnly = false) {
     else if (c.tipo === 'date') input = h(`<input type="date" value="${esc(v || '')}">`);
     else if (c.tipo === 'yearmonth') input = h(`<input type="month" value="${esc(v || '')}">`);
     else if (c.tipo === 'number' || c.tipo === 'integer') input = h(`<input type="number" step="${c.tipo === 'integer' ? 1 : 'any'}" value="${v ?? ''}">`);
-    else if (c.formato === 'uri') input = h(`<input type="url" value="${esc(v || '')}" placeholder="https://…">`);
+    else if (c.formato === 'uri' || c.nombre === 'foto') input = h(`<input type="text" inputmode="url" value="${esc(v || '')}" placeholder="https://… o sube un archivo">`);
     else input = h(`<input type="text" value="${esc(v ?? '')}">`);
     if (c.nombre === 'id' && simple()) { input.readOnly = true; wrap.append(h('<small class="ed-hint">Identificador interno (se asigna solo).</small>')); }
     input.addEventListener('input', () => {
@@ -601,7 +603,7 @@ async function openRecord(ds, path, redraw, readOnly = false) {
       redraw(); check();
     });
     wrap.append(input);
-    if (c.nombre === 'foto' && v) wrap.append(h(`<img src="${esc(v)}" alt="" style="width:64px;height:64px;border-radius:50%;object-fit:cover">`));
+    if (c.formato === 'uri' || c.nombre === 'foto') A.attachUploader(S, input, { kind: ds.id === 'cargos' ? 'cargos' : ds.id, image: c.nombre === 'foto', toast });
     form.appendChild(wrap);
   }
   check();
@@ -694,16 +696,18 @@ const serialize = (p) => JSON.stringify(W(p), null, INDENT(p)) + '\n';
 async function openPublish() {
   const gh = ghSettings();
   const files = [...S.dirty];
+  const ups = [...S.uploads.entries()];
+  const total = files.length + ups.length;
   const cfg = W('config/entidad.json');
   const modo = gh.modo || cfg?.github?.publicacion || 'directo';
   const dlg = modal('Revisar y publicar', `
     <ol class="ed-steps-head" aria-label="Pasos"><li>Cambios</li><li>Comprobaciones</li><li>Vista previa</li><li>Publicar</li></ol>
-    <section class="ed-pub-sec"><h3>1. Cambios preparados <span class="ed-hint">(${files.length})</span></h3>
-      ${files.length ? '<ul class="ed-changes" id="pub-changes"><li class="ed-hint">Calculando…</li></ul>' : '<p>No hay cambios pendientes.</p>'}</section>
-    ${files.length ? `<section class="ed-pub-sec"><h3>2. Comprobaciones</h3><div id="pub-checks"><p class="ed-hint">Comprobando datos, enlaces, traducciones y accesibilidad…</p></div></section>
+    <section class="ed-pub-sec"><h3>1. Cambios preparados <span class="ed-hint">(${total})</span></h3>
+      ${total ? '<ul class="ed-changes" id="pub-changes"><li class="ed-hint">Calculando…</li></ul>' : '<p>No hay cambios pendientes.</p>'}</section>
+    ${total ? `<section class="ed-pub-sec"><h3>2. Comprobaciones</h3><div id="pub-checks"><p class="ed-hint">Comprobando datos, enlaces, traducciones y accesibilidad…</p></div></section>
     <section class="ed-pub-sec"><h3>3. Vista previa</h3><p class="ed-hint">Revisa cómo quedará el portal con los cambios en escritorio, tableta y móvil.</p><button type="button" class="btn-ghost" id="pub-prev">${icon('eye', 16)} Abrir vista previa</button></section>` : ''}
-    <section class="ed-pub-sec"><h3>${files.length ? '4. ' : ''}Publicar</h3>
-      ${files.length ? `<fieldset class="ed-modes"><legend class="sr-only">Modo de publicación</legend>
+    <section class="ed-pub-sec"><h3>${total ? '4. ' : ''}Publicar</h3>
+      ${total ? `<fieldset class="ed-modes"><legend class="sr-only">Modo de publicación</legend>
         <label><input type="radio" name="pub-mode" value="revision"${modo === 'revision' ? ' checked' : ''}> <span><strong>Enviar a revisión</strong> (recomendado): crea una propuesta de cambios en GitHub; una persona responsable la revisa y la aprueba, y entonces se publica. El token necesita además el permiso <em>Pull requests: Read and write</em>.</span></label>
         <label><input type="radio" name="pub-mode" value="directo"${modo !== 'revision' ? ' checked' : ''}> <span><strong>Publicar directamente</strong>: los cambios se publican en 1–2 minutos.</span></label></fieldset>` : ''}
       <details class="ed-conn"${gh.token ? '' : ' open'}><summary>Conexión con GitHub ${gh.token ? '· <span class="ed-count-ok">conectado</span>' : '· sin conectar'}</summary>
@@ -714,15 +718,15 @@ async function openPublish() {
         <label class="ed-field" style="display:flex;gap:6px;align-items:center"><input type="checkbox" id="gh-remember"${gh.remembered ? ' checked' : ''}> Recordar en este navegador (no recomendado en equipos compartidos)</label>
         ${gh.token ? '<button type="button" class="link-btn" id="gh-forget">Olvidar el token en este navegador</button>' : ''}
         <details class="ed-hint"><summary>Para un uso en producción</summary><p>El token personal es adecuado para entidades pequeñas. En producción se recomienda una GitHub App u OAuth con un pequeño servicio intermedio, de modo que nadie maneje tokens, y proteger la rama publicada para que solo se publique mediante revisión. Ver docs/GUIA-EDITOR.md.</p></details></details>
-      ${files.length ? `<div class="ed-field"><span>Descripción del cambio</span><input type="text" id="gh-msg" value="Actualización de contenidos del portal de transparencia"></div>` : ''}
-      <div class="modal-actions">${files.length ? '<button type="button" class="btn" id="gh-go" disabled>Comprobando…</button><button type="button" class="btn-ghost" id="dl-go">Descargar ficheros</button><button type="button" class="btn-ghost" id="discard">Descartar todo</button>' : '<button type="button" class="btn" id="gh-save">Guardar conexión</button>'}</div>
+      ${total ? `<div class="ed-field"><span>Descripción del cambio</span><input type="text" id="gh-msg" value="Actualización de contenidos del portal de transparencia"></div>` : ''}
+      <div class="modal-actions">${total ? '<button type="button" class="btn" id="gh-go" disabled>Comprobando…</button><button type="button" class="btn-ghost" id="dl-go">Descargar ficheros</button><button type="button" class="btn-ghost" id="discard">Descartar todo</button>' : '<button type="button" class="btn" id="gh-save">Guardar conexión</button>'}</div>
       <p id="gh-status" class="muted small" role="status"></p></section>`);
   dlg.classList.add('ed-pub-dlg');
   const creds = () => ({ repo: dlg.querySelector('#gh-repo').value.trim(), branch: dlg.querySelector('#gh-branch').value.trim() || 'main', token: dlg.querySelector('#gh-token').value.trim(), modo: dlg.querySelector('[name="pub-mode"]:checked')?.value || modo });
   const store_ = (s) => { try { const rem = dlg.querySelector('#gh-remember').checked; (rem ? localStorage : sessionStorage).setItem('ed-gh', JSON.stringify(s)); if (!rem) localStorage.removeItem('ed-gh'); } catch { /* */ } };
   dlg.querySelector('#gh-forget')?.addEventListener('click', () => { try { localStorage.removeItem('ed-gh'); sessionStorage.removeItem('ed-gh'); } catch { /* */ } dlg.close(); toast('Token olvidado'); });
   dlg.querySelector('#gh-save')?.addEventListener('click', () => { store_(creds()); dlg.close(); toast('Conexión guardada'); });
-  if (!files.length) return;
+  if (!total) return;
   // 1. resumen de cambios
   const list = dlg.querySelector('#pub-changes');
   list.innerHTML = (await Promise.all(files.map(async (f) => {
@@ -730,11 +734,12 @@ async function openPublish() {
     const d = G.describeChange(f, before, W(f));
     return `<li><div class="ed-ch-head"><strong>${esc(await G.fileLabel(f, W(f)))}</strong><span class="ed-hint">${esc(d.resumen.join(' · '))}</span><button type="button" class="ed-mini" data-revert="${esc(f)}" title="Descartar los cambios de este fichero" aria-label="Descartar los cambios de este fichero">${icon('x', 14)}</button></div>
       ${d.detalle.length ? `<details><summary>Antes / después</summary><table class="ed-diff"><thead><tr><th>Dónde</th><th>Antes</th><th>Después</th></tr></thead><tbody>${d.detalle.map((x) => `<tr><td>${esc(x.ruta)}</td><td><del>${esc(x.antes)}</del></td><td><ins>${esc(x.despues)}</ins></td></tr>`).join('')}</tbody></table></details>` : ''}</li>`;
-  }))).join('');
+  }))).join('') + ups.map(([path, u]) => `<li><div class="ed-ch-head"><strong>Archivo nuevo: ${esc(u.name)}</strong><span class="ed-hint">${esc(path)} · ${fmt.dec(u.size / 1e6, 1)} MB · <a href="${esc(store.asset(path))}" target="_blank" rel="noopener">Ver</a></span><button type="button" class="ed-mini" data-revert-up="${esc(path)}" title="Descartar este archivo" aria-label="Descartar este archivo">${icon('x', 14)}</button></div></li>`).join('');
   list.querySelectorAll('[data-revert]').forEach((b) => b.addEventListener('click', () => { revert(b.dataset.revert); dlg.close(); openPublish(); }));
+  list.querySelectorAll('[data-revert-up]').forEach((b) => b.addEventListener('click', () => { A.removeUpload(S, b.dataset.revertUp); refreshCounters(); dlg.close(); openPublish(); }));
   dlg.querySelector('#pub-prev').addEventListener('click', () => G.preview(CTX, S.view?.kind === 'page' ? S.view.id : ''));
-  dlg.querySelector('#dl-go').addEventListener('click', () => files.forEach((f) => download(f.replace(/\//g, '__'), serialize(f), 'application/json')));
-  dlg.querySelector('#discard').addEventListener('click', () => { if (confirm('¿Descartar todos los cambios no publicados?')) { files.forEach(revert); dlg.close(); } });
+  dlg.querySelector('#dl-go').addEventListener('click', () => { files.forEach((f) => download(f.replace(/\//g, '__'), serialize(f), 'application/json')); ups.forEach(([p, u]) => download(p.replace(/\//g, '__'), u.blob, u.type)); });
+  dlg.querySelector('#discard').addEventListener('click', () => { if (confirm('¿Descartar todos los cambios no publicados (incluidos los archivos subidos)?')) { files.forEach(revert); ups.forEach(([p]) => A.removeUpload(S, p)); refreshCounters(); dlg.close(); } });
   // 2. comprobaciones
   const res = await G.runChecks(CTX, files);
   const box = dlg.querySelector('#pub-checks');
@@ -756,13 +761,20 @@ async function openPublish() {
       const ref = await ghApi(s, `/repos/${s.repo}/git/ref/heads/${encodeURIComponent(s.branch)}`);
       const base = await ghApi(s, `/repos/${s.repo}/git/commits/${ref.object.sha}`);
       status.textContent = 'Preparando los cambios…';
-      const tree = await ghApi(s, `/repos/${s.repo}/git/trees`, { method: 'POST', body: JSON.stringify({ base_tree: base.tree.sha, tree: files.map((f) => ({ path: f, mode: '100644', type: 'blob', content: serialize(f) })) }) });
+      const blobs = [];
+      for (const [i, [p, u]] of ups.entries()) {
+        status.textContent = `Subiendo archivos (${i + 1} de ${ups.length}): ${u.name}…`;
+        const b = await ghApi(s, `/repos/${s.repo}/git/blobs`, { method: 'POST', body: JSON.stringify({ content: await A.toBase64(u.blob), encoding: 'base64' }) });
+        blobs.push({ path: p, mode: '100644', type: 'blob', sha: b.sha });
+      }
+      status.textContent = 'Preparando los cambios…';
+      const tree = await ghApi(s, `/repos/${s.repo}/git/trees`, { method: 'POST', body: JSON.stringify({ base_tree: base.tree.sha, tree: [...files.map((f) => ({ path: f, mode: '100644', type: 'blob', content: serialize(f) })), ...blobs] }) });
       const commit = await ghApi(s, `/repos/${s.repo}/git/commits`, { method: 'POST', body: JSON.stringify({ message: msg, tree: tree.sha, parents: [ref.object.sha] }) });
       let done;
       if (s.modo === 'revision') {
         const br = `revision/${new Date().toISOString().slice(0, 16).replace(/[-:T]/g, '')}-${Math.random().toString(36).slice(2, 6)}`;
         await ghApi(s, `/repos/${s.repo}/git/refs`, { method: 'POST', body: JSON.stringify({ ref: `refs/heads/${br}`, sha: commit.sha }) });
-        const body = `## Cambios\n\n${(await Promise.all(files.map(async (f) => `- **${await G.fileLabel(f, W(f))}** (\`${f}\`): ${G.describeChange(f, S.orig.get(f) === 'null' ? null : JSON.parse(S.orig.get(f)), W(f)).resumen.join(', ')}`))).join('\n')}\n\n## Comprobaciones\n\n${res.grupos.map((gr) => `- ${gr.nivel === 'ok' ? '✅' : gr.nivel === 'aviso' ? '⚠️' : '❌'} ${gr.titulo}${gr.items.length ? `\n${gr.items.map((i) => `  - ${i.texto}`).join('\n')}` : ''}`).join('\n')}\n\nPropuesta enviada desde el editor del portal. Al aprobarla y fusionarla, el portal se publica automáticamente.`;
+        const body = `## Cambios\n\n${(await Promise.all(files.map(async (f) => `- **${await G.fileLabel(f, W(f))}** (\`${f}\`): ${G.describeChange(f, S.orig.get(f) === 'null' ? null : JSON.parse(S.orig.get(f)), W(f)).resumen.join(', ')}`))).join('\n')}${ups.map(([p, u]) => `\n- Archivo nuevo: \`${p}\` (${u.name})`).join('')}\n\n## Comprobaciones\n\n${res.grupos.map((gr) => `- ${gr.nivel === 'ok' ? '✅' : gr.nivel === 'aviso' ? '⚠️' : '❌'} ${gr.titulo}${gr.items.length ? `\n${gr.items.map((i) => `  - ${i.texto}`).join('\n')}` : ''}`).join('\n')}\n\nPropuesta enviada desde el editor del portal. Al aprobarla y fusionarla, el portal se publica automáticamente.`;
         const pr = await ghApi(s, `/repos/${s.repo}/pulls`, { method: 'POST', body: JSON.stringify({ title: msg, head: br, base: s.branch, body }) });
         done = `✓ Enviado a revisión: <a href="${esc(pr.html_url)}" target="_blank" rel="noopener">propuesta #${pr.number}</a>. Se publicará cuando la persona responsable la apruebe.`;
         toast('Cambios enviados a revisión');
@@ -772,6 +784,7 @@ async function openPublish() {
         toast('Cambios publicados');
       }
       files.forEach((f) => { S.orig.set(f, JSON.stringify(W(f))); S.dirty.delete(f); });
+      ups.forEach(([p]) => { S.uploads.delete(p); A.idbDel(p); }); // la URL local sigue sirviendo hasta que GitHub Pages publique el archivo
       saveDraft(); refreshCounters(); renderSide();
       status.innerHTML = done;
     } catch (e) {
@@ -829,9 +842,11 @@ async function init() {
   try {
     const draft = JSON.parse(localStorage.getItem('ed-draft') || '{}');
     const paths = Object.keys(draft);
-    if (paths.length && confirm(`Hay ${paths.length} fichero(s) con cambios sin publicar de una sesión anterior. ¿Recuperarlos?`)) {
+    const saved = await A.idbAll();
+    if ((paths.length || saved.size) && confirm(`Hay cambios sin publicar de una sesión anterior (${paths.length} fichero(s)${saved.size ? ` y ${saved.size} archivo(s) subido(s)` : ''}). ¿Recuperarlos?`)) {
       for (const p of paths) { try { await load(p); } catch { S.orig.set(p, 'null'); } S.work.set(p, draft[p]); markDirty(p); }
-    } else localStorage.removeItem('ed-draft');
+      await A.restoreUploads(S);
+    } else { localStorage.removeItem('ed-draft'); A.idbClear(); }
   } catch { /* */ }
   $('#ed-edit-lang').addEventListener('change', (e) => { S.lang = e.target.value; setLang(S.lang); rerender(); });
   $('#ed-mode').value = S.mode;

@@ -141,7 +141,6 @@ export function chartCard(o) {
         </div>
         <div class="chart-actions" role="group" aria-label="${esc(t('chart_actions'))}">
           <button type="button" class="icon-btn" data-act="toggle" aria-pressed="false" title="${esc(t('view_table'))}">${icon('table', 18)}<span class="sr-only">${t('view_table')}</span></button>
-          <button type="button" class="icon-btn" data-act="csv" title="${esc(t('download_csv'))}">${icon('download', 18)}<span class="btn-text">CSV</span></button>
           <button type="button" class="icon-btn" data-act="svg" title="${esc(t('download_svg'))}"><span class="btn-text">SVG</span></button>
         </div>
       </figcaption>
@@ -161,7 +160,7 @@ export function chartCard(o) {
     tableWrap.hidden = !showTable;
     body.hidden = showTable;
   });
-  card.querySelector('[data-act="csv"]').addEventListener('click', () => download(`${o.file}.csv`, '﻿' + toCSV(o.table.columns, o.table.rows), 'text/csv;charset=utf-8'));
+  import('./export.js').then(({ exportMenu }) => card.querySelector('[data-act="svg"]').before(exportMenu({ name: o.file, title: String(o.title).replace(/<[^>]+>/g, ''), subtitle: o.subtitle, columns: o.table.columns, rows: o.table.rows, source: o.datasetTitle })));
   card.querySelector('[data-act="svg"]').addEventListener('click', () => {
     const s = exportSVG(body);
     if (s) download(`${o.file}.svg`, s, 'image/svg+xml');
@@ -276,7 +275,13 @@ export function dataTable(o) {
     if (tr && o.onRow && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); o.onRow(wrap._sorted[+tr.dataset.i]); }
   });
   render();
-  return wrap;
+  if (!o.exportName) return wrap;
+  // Exportación de la tabla completa (con el orden aplicado): Excel, CSV, JSON y PDF
+  const outer = h('<div class="table-with-export"></div>');
+  const foot = h('<p class="table-foot"></p>');
+  outer.append(wrap, foot);
+  import('./export.js').then(({ exportMenu }) => foot.appendChild(exportMenu({ name: o.exportName, title: o.caption || o.exportName, columns: o.columns, rows: () => wrap._sorted || o.rows })));
+  return outer;
 }
 
 // ---------------------------------------------------------------------------

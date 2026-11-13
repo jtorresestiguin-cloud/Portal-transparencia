@@ -26,7 +26,7 @@ Estructura habitual de los portales municipales: barra institucional, cabecera c
 
 La portada funciona como **directorio**: cada categoría es una caja con sus subapartados enlazados y su grado de cumplimiento.
 
-Portada orientada a tareas en dos niveles: primero buscar, preguntas frecuentes, temas y cifras; después «Para profundizar», con *Explorar los datos* (actualizaciones, catálogo, API) y *Cumplimiento y metodología* (índice, fuentes, DCAT, OCDS); **buscador** con autocompletado, sinónimos ciudadanos y resultados agrupados (`#/buscar?q=`); banda de **procedencia** (actualizado · fuente · responsable · descargas) en cada página; página *Sobre los datos*. Castellano, valenciano e inglés; modo oscuro; cada gráfico con vista de tabla y descarga CSV/SVG; filtros en la URL; diseño adaptable a móvil.
+Portada orientada a tareas en dos niveles: primero buscar, preguntas frecuentes, temas y cifras; después «Para profundizar», con *Explorar los datos* (actualizaciones, catálogo, API) y *Cumplimiento y metodología* (índice, fuentes, DCAT, OCDS); **buscador** con autocompletado, sinónimos ciudadanos y resultados agrupados (`#/buscar?q=`); banda de **procedencia** (actualizado · fuente · responsable · descargas) en cada página; página *Sobre los datos*. Castellano, valenciano e inglés; modo oscuro; cada gráfico y tabla con vista de tabla y descarga en **Excel (.xlsx), CSV, JSON, PDF** (y SVG en gráficos); documentos que se abren en pestaña nueva o se descargan; filtros en la URL; diseño adaptable a móvil.
 
 ### 2. Editor visual por componentes (`/admin/`)
 Al estilo de Adobe Experience Manager: las páginas se componen con **bloques** («cajitas») que se arrastran desde una paleta, se reordenan y se configuran en un panel de propiedades con **vista previa real**.
@@ -34,6 +34,7 @@ Al estilo de Adobe Experience Manager: las páginas se componen con **bloques** 
 - **Componentes de contenido:** texto, aviso, lista de documentos, tarjetas de enlace.
 - **Componentes de datos** (siempre conectados a un conjunto de datos): cifras clave, gráfico configurable (barras, columnas, apiladas, líneas, mapa de árbol), tabla con filtros y buscador, fichas de cargos, mapa, origen de los datos, obligaciones legales de la página.
 - **Componentes avanzados:** explorador del presupuesto, explorador de contratación, índice de transparencia, catálogo de datos, solicitud de información.
+- **Archivos:** subida de PDF, fotos de cargos y documentos desde el propio editor, con vista previa antes de publicar.
 - **Datos:** formularios generados desde el esquema para dar de alta y modificar **altos cargos**, agenda, normativa, convenios, inmuebles, etc. (con listas desplegables de códigos y validación de tipos).
 - **Entidad:** nombre, NIF, DIR3, colores corporativos, escudo y configuración de fuentes automáticas.
 - **Inicio de gestión:** estado del portal, obligaciones con estado **calculado automáticamente** (obligación → fuente → periodicidad → última actualización), fuentes automáticas, avisos que necesitan atención, primeros pasos e historial de publicaciones con recuperación de versiones anteriores.
@@ -59,6 +60,7 @@ Conserva siempre los registros cargados a mano, elimina los de ejemplo al llegar
 | DCAT-AP (JSON-LD, Turtle) — data.europa.eu | `data/catalog.jsonld`, `data/catalog.ttl` |
 | DCAT-AP-ES / NTI-RISP (RDF/XML) — datos.gob.es | `data/catalog.rdf` |
 | Frictionless Data Package (esquema de cada tabla) | `datapackage.json` |
+| Excel (.xlsx) por conjunto, generado en cada publicación | `data/xlsx/*.xlsx` |
 | OpenAPI 3.1 (API REST estática) | `api/openapi.json`, `api/v1/index.json` |
 | OCDS (Open Contracting) | exportación por contrato |
 | CODICE / CPV / ELI / ISO 8601 / DIR3 | en los datos y la configuración |

@@ -299,7 +299,7 @@ async function viewSearch(view, query) {
 // ---------------------------------------------------------------- arranque
 async function init() {
   // Vista previa desde el editor (admin/): el portal se muestra en un iframe con los borradores sin publicar.
-  try { const ov = window.parent !== window && window.parent.__edPreview?.(); if (ov) { for (const [p, o] of Object.entries(ov)) store.setOverride(p, o); document.documentElement.dataset.preview = '1'; } } catch { /* otro origen */ }
+  try { const ov = window.parent !== window && window.parent.__edPreview?.(); if (ov) { for (const [p, o] of Object.entries(ov)) store.setOverride(p, o); for (const [p, u] of Object.entries(window.parent.__edAssets?.() || {})) store.setAsset(p, u); document.documentElement.dataset.preview = '1'; } } catch { /* otro origen */ }
   [CFG, PORTAL] = await Promise.all([store.config(), store.portal()]);
   setCodelists(await store.getJSON('data/codelists.json'));
   let l = new URLSearchParams(location.search).get('lang');
