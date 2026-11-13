@@ -464,7 +464,7 @@ export function treemap(container, o) {
         while (textWidth(label, 13) > c.w - 16 && label.length > 4) label = label.slice(0, -2);
         if (label !== c.name) label = label.trimEnd() + '…';
         svgEl('text', { x: c.x + 9, y: c.y + 20, class: 'cell-label', style: `fill:${ink}`, text: label }, g);
-        svgEl('text', { x: c.x + 9, y: c.y + 37, class: 'cell-value', style: `fill:${ink}`, text: `${fmt(c.value)} · ${pct}` }, g);
+        { const vt = textWidth(`${fmt(c.value)} · ${pct}`, 12) <= c.w - 16 ? `${fmt(c.value)} · ${pct}` : textWidth(fmt(c.value), 12) <= c.w - 16 ? fmt(c.value) : ''; if (vt) svgEl('text', { x: c.x + 9, y: c.y + 37, class: 'cell-value', style: `fill:${ink}`, text: vt }, g); }
       }
       bindTip(g, () => `<strong>${c.name}</strong>${tipRow(c.color, '', fmt(c.value))}<div class="tt-note">${pct}</div>`);
       if (o.onClick) { g.classList.add('clickable'); g.addEventListener('click', () => o.onClick(c)); } // la alternativa de teclado es la lista de áreas bajo el gráfico
