@@ -1,10 +1,53 @@
 {
  "generado": "2026-11-13",
- "fuente": "ejemplo",
- "ejemplo": true,
+ "fuente": "manual",
  "aviso": "Datos de ejemplo generados sintéticamente. No son cifras oficiales.",
  "unidad": "EUR",
  "datos": [
+  {
+   "id": "CON-mwewhk9f",
+   "expediente": null,
+   "objeto": null,
+   "tipo": null,
+   "procedimiento": null,
+   "estado": null,
+   "cpv": null,
+   "organo": null,
+   "fecha_adjudicacion": null,
+   "fecha_formalizacion": null,
+   "duracion_meses": null,
+   "presupuesto_base_sin_iva": null,
+   "importe_adjudicacion_sin_iva": null,
+   "importe_adjudicacion_con_iva": null,
+   "numero_ofertas": null,
+   "adjudicatario": null,
+   "adjudicatario_nif": null,
+   "adjudicatario_pyme": false,
+   "url": null,
+   "fuente": "manual"
+  },
+  {
+   "id": "CON-mwet7036",
+   "expediente": null,
+   "objeto": null,
+   "tipo": null,
+   "procedimiento": null,
+   "estado": null,
+   "cpv": null,
+   "organo": null,
+   "fecha_adjudicacion": null,
+   "fecha_formalizacion": null,
+   "duracion_meses": null,
+   "presupuesto_base_sin_iva": null,
+   "importe_adjudicacion_sin_iva": null,
+   "importe_adjudicacion_con_iva": null,
+   "numero_ofertas": null,
+   "adjudicatario": null,
+   "adjudicatario_nif": null,
+   "adjudicatario_pyme": false,
+   "url": null,
+   "fuente": "manual"
+  },
   {
    "id": "EJ-2026-0346",
    "expediente": "2026/2046",
@@ -8057,5 +8100,6 @@
    "url": "https://contrataciondelsectorpublico.gob.es",
    "fuente": "ejemplo"
   }
- ]
+ ],
+ "actualizado": "2026-11-13"
 }

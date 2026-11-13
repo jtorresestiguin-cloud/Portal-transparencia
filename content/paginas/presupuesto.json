@@ -16,7 +16,8 @@
    "tipo": "presupuesto"
   },
   {
-   "tipo": "indicadores"
+   "tipo": "indicadores",
+   "pagina": "Prueva"
   }
  ],
  "responsable": {
@@ -24,5 +25,5 @@
   "va": "Intervenció",
   "en": "Comptroller"
  },
- "actualizado": "2026-11-10"
+ "actualizado": "2026-11-13"
 }

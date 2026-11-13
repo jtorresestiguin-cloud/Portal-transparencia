@@ -1,14 +1,13 @@
 {
  "generado": "2026-11-13",
  "fuente": "manual",
- "ejemplo": true,
  "aviso": "Datos de ejemplo generados sintéticamente. No son cifras oficiales.",
  "datos": [
   {
    "anio": 2021,
    "tipo_personal": "funcionario",
-   "grupo": "A1",
-   "sexo": "mujer",
+   "grupo": "AP",
+   "sexo": "hombre",
    "efectivos": 3
   },
   {
@@ -1124,5 +1123,6 @@
    "sexo": "mujer",
    "efectivos": 1
   }
- ]
+ ],
+ "actualizado": "2026-11-13"
 }
