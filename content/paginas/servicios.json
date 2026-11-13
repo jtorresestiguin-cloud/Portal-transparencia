@@ -97,5 +97,11 @@
   {
    "tipo": "indicadores"
   }
- ]
+ ],
+ "responsable": {
+  "es": "Atención Ciudadana",
+  "va": "Atenció Ciutadana",
+  "en": "Citizen Services"
+ },
+ "actualizado": "2026-11-10"
 }

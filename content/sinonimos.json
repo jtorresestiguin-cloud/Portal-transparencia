@@ -1,0 +1,23 @@
+{
+ "_comentario": "Vocabulario ciudadano para el buscador. Cada grupo reúne palabras equivalentes; si una búsqueda coincide con un grupo que tiene «destino», se muestra esa página como respuesta directa. Se puede ampliar sin tocar código.",
+ "grupos": [
+  { "terminos": ["sueldo", "sueldos", "salario", "salarios", "cobra", "cobran", "cobrar", "nomina", "nominas", "retribucion", "retribuciones", "sou", "sous", "salari", "pay", "salary"], "destino": "cargos" },
+  { "terminos": ["alcalde", "alcaldesa", "alcaldia", "concejal", "concejala", "concejales", "regidor", "regidora", "regidors", "corporacion", "cargo", "cargos", "politicos", "mayor", "councillor"], "destino": "cargos" },
+  { "terminos": ["agenda", "reunion", "reuniones", "reunio", "lobby", "lobbies", "grupos de interes"], "destino": "agenda" },
+  { "terminos": ["contrato", "contratos", "contracte", "contractes", "licitacion", "licitaciones", "adjudicacion", "adjudicaciones", "adjudicatario", "proveedor", "proveedores", "empresa", "empresas", "contract", "contracts", "tender"], "destino": "contratos" },
+  { "terminos": ["obra", "obras", "obres", "reforma", "asfaltado", "construccion", "works"], "destino": "contratos" },
+  { "terminos": ["deuda", "deuda viva", "debe", "deute", "prestamo", "prestamos", "endeudamiento", "debt"], "destino": "economia" },
+  { "terminos": ["pago a proveedores", "pmp", "morosidad", "facturas", "paga"], "destino": "economia" },
+  { "terminos": ["presupuesto", "presupuestos", "pressupost", "gasto", "gastos", "despesa", "ingresos", "impuestos", "budget", "spending"], "destino": "presupuesto" },
+  { "terminos": ["subvencion", "subvenciones", "subvencio", "subvencions", "ayuda", "ayudas", "ajuda", "ajudes", "beca", "becas", "grant", "grants"], "destino": "subvenciones" },
+  { "terminos": ["empleo", "oposicion", "oposiciones", "bolsa", "bolsas", "trabajo", "ocupacio", "plaza", "plazas", "proceso selectivo", "jobs"], "destino": "procesos-selectivos" },
+  { "terminos": ["plantilla", "funcionarios", "trabajadores", "empleados", "rpt", "personal", "staff"], "destino": "personal" },
+  { "terminos": ["ordenanza", "ordenanzas", "ordenanca", "reglamento", "reglamentos", "normas", "normativa", "bylaw"], "destino": "normativa" },
+  { "terminos": ["inmueble", "inmuebles", "edificio", "edificios", "propiedades", "patrimonio", "solares", "terrenos", "property"], "destino": "patrimonio" },
+  { "terminos": ["urbanismo", "plan general", "pgou", "planeamiento", "licencias", "urbanisme"], "destino": "planeamiento" },
+  { "terminos": ["convenio", "convenios", "conveni", "acuerdo", "acuerdos", "agreement"], "destino": "convenios" },
+  { "terminos": ["solicitar", "pedir informacion", "derecho de acceso", "acceso a la informacion", "reclamar", "request"], "destino": "derecho-acceso" },
+  { "terminos": ["datos abiertos", "csv", "api", "descargar", "dcat", "open data", "dades obertes"], "destino": "datos-abiertos" },
+  { "terminos": ["queja", "quejas", "sugerencia", "sugerencias", "reclamacion", "sede", "tramite", "tramites"], "destino": "servicios" }
+ ]
+}

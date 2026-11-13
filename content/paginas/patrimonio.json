@@ -69,5 +69,11 @@
   {
    "tipo": "indicadores"
   }
- ]
+ ],
+ "responsable": {
+  "es": "Patrimonio",
+  "va": "Patrimoni",
+  "en": "Assets"
+ },
+ "actualizado": "2026-11-10"
 }

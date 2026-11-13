@@ -35,5 +35,11 @@
   {
    "tipo": "indicadores"
   }
- ]
+ ],
+ "responsable": {
+  "es": "Recursos Humanos",
+  "va": "Recursos Humans",
+  "en": "Human Resources"
+ },
+ "actualizado": "2026-11-10"
 }

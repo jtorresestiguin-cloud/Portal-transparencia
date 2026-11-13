@@ -12,7 +12,7 @@
  * conjunto, campo, campos, select, numero, bool, filtro, lista (subformulario repetible).
  */
 import { tr, t, pick, label, lang } from '../i18n.js';
-import { h, esc, icon, fmt, chartCard, dataTable, kpiRow, meter, statusBadge, selectControl } from '../ui.js';
+import { h, esc, icon, fmt, chartCard, dataTable, kpiRow, meter, statusBadge, selectControl, filterSummary, download, toCSV } from '../ui.js';
 import { hBar, columns, lines, treemap, SERIES } from '../charts.js';
 import * as store from '../store.js';
 
@@ -45,6 +45,10 @@ const blockTitle = (p) => (p.titulo && pick(p.titulo) ? `<h2 class="block-title"
 async function fieldFormatter(dsId, name) {
   const f = await store.field(dsId, name);
   if (!f) return { label: name, fmt: (v) => v ?? '—', align: 'left' };
+  if (f.referencia) {
+    const ref = Object.fromEntries((await store.rows(f.referencia.conjunto)).map((r) => [r.id, r[f.referencia.campo]]));
+    return { label: f.descripcion, fmt: (v) => ref[v] || v || '—', align: 'left', meta: f, ref };
+  }
   const isMoney = /importe|presupuesto|retribucion|indemnizacion|obligaciones|deuda|ingresos|inicial|definitivo|ejecutado/.test(name);
   let fn;
   if (f.lista) fn = (v) => store.valueLabel(f, v);
@@ -74,12 +78,35 @@ export const BLOCKS = {
   },
   documentos: {
     nombre: L('Lista de documentos', 'Llista de documents', 'Document list'), icono: 'file', grupo: 'contenido',
-    props: [{ clave: 'titulo', tipo: 'texto', etiqueta: L('Título', 'Títol', 'Title') }, { clave: 'items', tipo: 'lista', etiqueta: L('Documentos', 'Documents', 'Documents'), campos: [
-      { clave: 'titulo', tipo: 'texto', etiqueta: L('Título', 'Títol', 'Title') }, { clave: 'fecha', tipo: 'fecha', etiqueta: L('Fecha', 'Data', 'Date') },
-      { clave: 'url', tipo: 'url', etiqueta: L('Enlace', 'Enllaç', 'Link') }, { clave: 'formato', tipo: 'select', etiqueta: L('Formato', 'Format', 'Format'), opciones: [['PDF', 'PDF'], ['XLSX', 'XLSX'], ['CSV', 'CSV'], ['DOCX', 'DOCX'], ['HTML', 'HTML']] }] }],
-    nuevo: () => ({ titulo: L('Documentos', 'Documents', 'Documents'), items: [{ titulo: L('Nuevo documento', 'Nou document', 'New document'), fecha: new Date().toISOString().slice(0, 10), url: '#', formato: 'PDF' }] }),
+    props: [{ clave: 'titulo', tipo: 'texto', etiqueta: L('Título', 'Títol', 'Title') },
+      { clave: 'agrupar_por_anio', tipo: 'bool', etiqueta: L('Agrupar por años (el último visible, el resto en «Histórico»)', 'Agrupar per anys (l’últim visible, la resta en «Històric»)', 'Group by year (latest shown, rest under “History”)') },
+      { clave: 'items', tipo: 'lista', etiqueta: L('Documentos', 'Documents', 'Documents'), campos: [
+      { clave: 'titulo', tipo: 'texto', etiqueta: L('Título', 'Títol', 'Title') }, { clave: 'tipo', tipo: 'texto', etiqueta: L('Tipo de documento (p. ej. Acta, Informe)', 'Tipus de document (p. ex. Acta, Informe)', 'Document type (e.g. Minutes, Report)') },
+      { clave: 'fecha', tipo: 'fecha', etiqueta: L('Fecha', 'Data', 'Date') }, { clave: 'url', tipo: 'url', etiqueta: L('Enlace al fichero', 'Enllaç al fitxer', 'File link') },
+      { clave: 'formato', tipo: 'select', etiqueta: L('Formato', 'Format', 'Format'), opciones: [['PDF', 'PDF'], ['XLSX', 'XLSX'], ['CSV', 'CSV'], ['DOCX', 'DOCX'], ['ODT', 'ODT'], ['HTML', 'HTML'], ['ZIP', 'ZIP']] },
+      { clave: 'tamano', tipo: 'texto_simple', etiqueta: L('Tamaño (p. ej. 1,2 MB)', 'Grandària (p. ex. 1,2 MB)', 'Size (e.g. 1.2 MB)') }] }],
+    nuevo: () => ({ titulo: L('Documentos', 'Documents', 'Documents'), agrupar_por_anio: true, items: [{ titulo: L('Nuevo documento', 'Nou document', 'New document'), fecha: new Date().toISOString().slice(0, 10), url: '#', formato: 'PDF' }] }),
     render: (el, p) => {
-      el.innerHTML = `<section class="card">${blockTitle(p)}<ul class="doc-list">${(p.items || []).map((d) => `<li>${icon('file', 20)}<div class="doc-main"><a href="${esc(d.url || '#')}" rel="noopener">${esc(pick(d.titulo))}</a><span class="muted small">${d.fecha ? fmt.date(d.fecha) : ''}</span></div><span class="chip">${esc(d.formato || '')}</span></li>`).join('') || `<li class="muted">${tr('Sin documentos', 'Sense documents', 'No documents')}</li>`}</ul></section>`;
+      const items = (p.items || []).slice().sort((a, b) => String(b.fecha || '').localeCompare(String(a.fecha || '')));
+      const row = (d) => {
+        const has = d.url && d.url !== '#';
+        const year = d.fecha ? String(d.fecha).slice(0, 4) : '';
+        const meta = [pick(d.tipo), year, d.formato, d.tamano, d.fecha ? fmt.date(d.fecha) : ''].filter(Boolean);
+        return `<li class="doc">
+          <span class="doc-icon" aria-hidden="true">${icon('file', 22)}<span class="doc-format">${esc(d.formato || '')}</span></span>
+          <div class="doc-body"><p class="doc-title">${esc(pick(d.titulo))}</p><p class="doc-meta">${meta.map(esc).join('<span aria-hidden="true"> · </span>')}</p></div>
+          <div class="doc-actions">${has ? `<a class="btn-ghost btn-sm" href="${esc(d.url)}" rel="noopener">${icon('eye', 16)}${tr('Ver', 'Veure', 'View')}<span class="sr-only">: ${esc(pick(d.titulo))}</span></a><a class="btn-ghost btn-sm" href="${esc(d.url)}" download>${icon('download', 16)}${tr('Descargar', 'Descarregar', 'Download')}<span class="sr-only">: ${esc(pick(d.titulo))}</span></a>` : `<span class="muted small">${tr('Documento pendiente de enlazar', 'Document pendent d’enllaçar', 'Document link pending')}</span>`}</div></li>`;
+      };
+      let body;
+      if (!items.length) body = `<p class="muted">${tr('Todavía no hay documentos publicados en este apartado.', 'Encara no hi ha documents publicats en aquest apartat.', 'No documents have been published here yet.')}</p>`;
+      else if (p.agrupar_por_anio !== false && new Set(items.map((d) => String(d.fecha || '').slice(0, 4))).size > 1) {
+        const years = [...new Set(items.map((d) => String(d.fecha || '').slice(0, 4) || '—'))];
+        const [latest, ...older] = years;
+        body = `<p class="doc-group-title">${tr('Última información disponible', 'Última informació disponible', 'Latest information')} · ${esc(latest)}</p><ul class="doc-list">${items.filter((d) => String(d.fecha || '').slice(0, 4) === latest).map(row).join('')}</ul>
+          <details class="doc-history"><summary>${tr('Histórico', 'Històric', 'History')} ${esc(older.at(-1))}–${esc(older[0])} <span class="count">${items.length - items.filter((d) => String(d.fecha || '').slice(0, 4) === latest).length}</span></summary>
+          ${older.map((y) => `<p class="doc-group-title">${esc(y)}</p><ul class="doc-list">${items.filter((d) => String(d.fecha || '').slice(0, 4) === y).map(row).join('')}</ul>`).join('')}</details>`;
+      } else body = `<ul class="doc-list">${items.map(row).join('')}</ul>`;
+      el.innerHTML = `<section class="card">${blockTitle(p)}${body}</section>`;
     },
   },
   enlaces: {
@@ -173,7 +200,7 @@ export const BLOCKS = {
     nombre: L('Tabla de datos', 'Taula de dades', 'Data table'), icono: 'table', grupo: 'datos',
     props: [
       { clave: 'titulo', tipo: 'texto', etiqueta: L('Título', 'Títol', 'Title') }, { clave: 'conjunto', tipo: 'conjunto', etiqueta: L('Conjunto de datos', 'Conjunt de dades', 'Dataset') },
-      { clave: 'columnas', tipo: 'campos', etiqueta: L('Columnas', 'Columnes', 'Columns') }, { clave: 'filtros', tipo: 'campos', etiqueta: L('Desplegables de filtro', 'Desplegables de filtre', 'Filter dropdowns') },
+      { clave: 'columnas', tipo: 'campos', etiqueta: L('Columnas (máximo recomendado: 6)', 'Columnes (màxim recomanat: 6)', 'Columns (recommended max: 6)') }, { clave: 'filtros', tipo: 'campos', etiqueta: L('Desplegables de filtro', 'Desplegables de filtre', 'Filter dropdowns') },
       { clave: 'busqueda', tipo: 'bool', etiqueta: L('Mostrar buscador', 'Mostrar cercador', 'Show search') }, { clave: 'filtro', tipo: 'filtro', etiqueta: L('Filtro fijo', 'Filtre fix', 'Fixed filter') },
       { clave: 'orden', tipo: 'campo', etiqueta: L('Ordenar por', 'Ordenar per', 'Sort by') }, { clave: 'descendente', tipo: 'bool', etiqueta: L('Orden descendente', 'Ordre descendent', 'Descending') },
       { clave: 'por_pagina', tipo: 'numero', etiqueta: L('Filas por página', 'Files per pàgina', 'Rows per page') },
@@ -184,24 +211,43 @@ export const BLOCKS = {
       if (!ds) { el.innerHTML = `<div class="callout callout-advertencia">${tr('Elige un conjunto de datos.', 'Tria un conjunt de dades.', 'Choose a dataset.')}</div>`; return; }
       const all = store.applyFilter(await store.rows(p.conjunto), p.filtro);
       const colNames = (p.columnas?.length ? p.columnas : ds.campos.slice(0, 6).map((c) => c.nombre));
-      const cols = await Promise.all(colNames.map(async (n) => { const f = await fieldFormatter(p.conjunto, n); return { key: n, label: f.label, format: (v) => f.fmt(v), align: f.align, html: f.html }; }));
-      const filterFields = await Promise.all((p.filtros || []).map((n) => store.field(p.conjunto, n)));
-      const q0 = ctx?.query?.get('q') || '';
-      const card = h(`<section class="card">${blockTitle(p)}
-        <form class="filters inline" onsubmit="return false">
-          ${filterFields.filter(Boolean).map((f) => selectControl(`tf-${f.nombre}`, f.descripcion, [['', t('all')], ...[...new Set(all.map((r) => r[f.nombre]).filter((v) => v !== null && v !== ''))].sort().map((v) => [v, store.valueLabel(f, v)])], '')).join('')}
-          ${p.busqueda ? `<label class="control grow"><span>${t('search')}</span><input type="search" class="tf-q" value="${esc(q0)}" placeholder="${esc(tr('Escribe para filtrar…', 'Escriu per a filtrar…', 'Type to filter…'))}"></label>` : ''}
-        </form><div class="tf-out"></div>
-        <p class="chart-source">${t('source')}: <a href="#/datos/${p.conjunto}">${t('dataset')} «${esc(pick(ds.titulo))}»</a> · <a href="data/csv/${p.conjunto}.csv" download>CSV</a> · <a href="data/${p.conjunto}.json">JSON</a></p></section>`);
+      const fmts = Object.fromEntries(await Promise.all([...new Set([...colNames, ...(p.filtros || [])])].map(async (n) => [n, await fieldFormatter(p.conjunto, n)])));
+      const cols = colNames.map((n) => ({ key: n, label: fmts[n].label, format: (v) => fmts[n].fmt(v), align: fmts[n].align, html: fmts[n].html }));
+      const filterFields = (p.filtros || []).map((n) => ds.campos.find((c) => c.nombre === n)).filter(Boolean);
+      const q = ctx?.query || new URLSearchParams();
+      // estado inicial desde la URL: ?q=texto&campo=valor (compartible)
+      const st = { q: q.get('q') || '', ...Object.fromEntries(filterFields.map((f) => [f.nombre, q.get(f.nombre) || ''])) };
+      const nounAll = pick(ds.titulo).toLowerCase();
+      const card = h(`<section class="card table-card">${blockTitle(p)}
+        <form class="filter-bar" onsubmit="return false" aria-label="${esc(t('filters'))}">
+          ${p.busqueda ? `<label class="control grow"><span>${t('search')}</span><input type="search" class="tf-q" value="${esc(st.q)}" placeholder="${esc(tr('Escribe para filtrar…', 'Escriu per a filtrar…', 'Type to filter…'))}"></label>` : ''}
+          ${filterFields.length ? `<details class="more-filters"><summary class="btn-ghost btn-sm">${icon('layout', 16)}${tr('Filtros', 'Filtres', 'Filters')}</summary><div class="more-filters-body">` : ''}${filterFields.map((f) => selectControl(`tf-${f.nombre}-${ctx?.blockIndex ?? 0}`, f.descripcion, [['', t('all')], ...[...new Set(all.map((r) => r[f.nombre]).filter((v) => v !== null && v !== '' && v !== undefined))].map(String).sort().map((v) => [v, fmts[f.nombre].fmt(v)])], st[f.nombre])).join('')}${filterFields.length ? '</div></details>' : ''}
+        </form><div class="tf-summary"></div><div class="tf-out"></div>
+        <p class="table-foot">${t('source')}: <a href="#/datos/${p.conjunto}">${esc(pick(ds.titulo))}</a> · <button type="button" class="link-btn" data-export>${icon('download', 14)} ${tr('Descargar esta selección (CSV)', 'Descarregar aquesta selecció (CSV)', 'Download this selection (CSV)')}</button> · <a href="data/csv/${p.conjunto}.csv" download>${tr('Conjunto completo', 'Conjunt complet', 'Full dataset')} (CSV)</a></p></section>`);
       const norm = (s) => String(s ?? '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
-      const draw = () => {
-        const sel = Object.fromEntries(filterFields.filter(Boolean).map((f) => [f.nombre, card.querySelector(`#tf-${f.nombre}`).value]));
-        const q = norm(card.querySelector('.tf-q')?.value || '');
-        const rowsF = all.filter((r) => Object.entries(sel).every(([k, v]) => !v || String(r[k]) === v) && (!q || norm(Object.values(r).join(' ')).includes(q)));
-        card.querySelector('.tf-out').replaceChildren(dataTable({ caption: pick(p.titulo) || pick(ds.titulo), columns: cols, rows: rowsF, pageSize: Number(p.por_pagina) || 15, sortKey: p.orden || null, sortDir: p.descendente ? -1 : 1 }));
+      const mf = card.querySelector(".more-filters"); if (mf) mf.open = matchMedia("(min-width: 768px)").matches || filterFields.some((f) => st[f.nombre]);
+      let current = all;
+      const sync = () => {
+        const [path, qs] = location.hash.replace(/^#/, '').split('?');
+        const u = new URLSearchParams(qs || '');
+        for (const [k, v] of Object.entries(st)) { if (v) u.set(k, v); else u.delete(k); }
+        history.replaceState(null, '', `#${path}${u.toString() ? '?' + u : ''}`);
       };
-      card.querySelectorAll('select').forEach((s) => s.addEventListener('change', draw));
-      let deb; card.querySelector('.tf-q')?.addEventListener('input', () => { clearTimeout(deb); deb = setTimeout(draw, 200); });
+      const draw = () => {
+        const nq = norm(st.q);
+        current = all.filter((r) => filterFields.every((f) => !st[f.nombre] || String(r[f.nombre]) === st[f.nombre]) && (!nq || norm(Object.values(r).join(' ') + ' ' + colNames.map((n) => fmts[n].ref ? fmts[n].fmt(r[n]) : '').join(' ')).includes(nq)));
+        const chips = [...(st.q ? [{ label: `«${st.q}»`, onRemove: () => { st.q = ''; card.querySelector('.tf-q').value = ''; update(); } }] : []),
+          ...filterFields.filter((f) => st[f.nombre]).map((f) => ({ label: `${f.descripcion}: ${fmts[f.nombre].fmt(st[f.nombre])}`, onRemove: () => { st[f.nombre] = ''; card.querySelector(`#tf-${f.nombre}-${ctx?.blockIndex ?? 0}`).value = ''; update(); } }))];
+        const clearAll = () => { Object.keys(st).forEach((k) => (st[k] = '')); card.querySelectorAll('select').forEach((s) => (s.value = '')); const qi = card.querySelector('.tf-q'); if (qi) qi.value = ''; update(); };
+        card.querySelector('.tf-summary').replaceChildren(filterSummary({ count: current.length, noun: current.length === 1 ? t('record') : t('records'), chips, onClear: clearAll, clearAlways: true }));
+        card.querySelector('.tf-out').replaceChildren(dataTable({ caption: pick(p.titulo) || pick(ds.titulo), columns: cols, rows: current, pageSize: Number(p.por_pagina) || 15, sortKey: p.orden || null, sortDir: p.descendente ? -1 : 1,
+          emptyHtml: `${esc(tr(`No hay ${nounAll} con estos filtros.`, `No hi ha ${nounAll} amb aquests filtres.`, `No ${nounAll} match these filters.`))} <button type="button" class="link-btn" data-clear>${esc(tr('Limpiar filtros', 'Netejar filtres', 'Clear filters'))}</button>` }));
+        card.querySelector('[data-clear]')?.addEventListener('click', clearAll);
+      };
+      const update = () => { sync(); draw(); };
+      card.querySelectorAll('select').forEach((s) => s.addEventListener('change', () => { const f = filterFields.find((x) => s.id.startsWith(`tf-${x.nombre}-`)); st[f.nombre] = s.value; update(); }));
+      let deb; card.querySelector('.tf-q')?.addEventListener('input', (e) => { clearTimeout(deb); deb = setTimeout(() => { st.q = e.target.value.trim(); update(); }, 200); });
+      card.querySelector('[data-export]').addEventListener('click', () => download(`${p.conjunto}-seleccion.csv`, '﻿' + toCSV(ds.campos.map((c) => ({ key: c.nombre, label: c.nombre })), current), 'text/csv;charset=utf-8'));
       draw();
       el.replaceChildren(card);
     },
@@ -212,18 +258,22 @@ export const BLOCKS = {
     nuevo: () => ({ titulo: L('Corporación', 'Corporació', 'Council'), conjunto: 'cargos', mostrar_retribucion: true }),
     render: async (el, p) => {
       const data = store.applyFilter(await store.rows(p.conjunto || 'cargos'), p.filtro);
+      const agenda = await store.rows('agenda').catch(() => []);
+      const nAg = (id) => agenda.filter((a) => a.cargo_id === id).length;
       const ini = (n) => String(n).split(' ').filter(Boolean).slice(0, 2).map((x) => x[0]).join('').toUpperCase();
-      const doc = (u, txt) => (u ? `<a href="${esc(u)}" rel="noopener">${icon('file', 14)} ${txt}</a>` : '');
+      const doc = (u, txt) => (u ? `<li><a href="${esc(u)}" rel="noopener">${icon('file', 16)}${txt}</a></li>` : '');
       el.innerHTML = `<section>${blockTitle(p)}<ul class="people-grid">${data.map((c) => `<li class="person card">
         <div class="person-head">${c.foto ? `<img src="${esc(c.foto)}" alt="" class="avatar">` : `<span class="avatar" aria-hidden="true">${esc(ini(c.nombre))}</span>`}
-          <div><strong class="person-name">${esc(c.nombre)}</strong><span class="person-role">${esc(c.cargo)}</span>${c.grupo_politico ? `<span class="muted small">${esc(c.grupo_politico)}</span>` : ''}</div></div>
+          <div><h3 class="person-name">${esc(c.nombre)}</h3><p class="person-role">${esc(c.cargo)}</p>${c.grupo_politico ? `<p class="person-group">${esc(c.grupo_politico)}</p>` : ''}</div></div>
+        ${p.mostrar_retribucion ? `<p class="person-pay"><span class="person-pay-value">${c.retribucion_anual ? fmt.eur(c.retribucion_anual) : tr('Sin retribución fija', 'Sense retribució fixa', 'No fixed salary')}</span><span class="person-pay-label">${c.retribucion_anual ? tr('brutos al año', "bruts a l'any", 'gross per year') : ''}${c.indemnizaciones_anuales ? ` · ${fmt.eur(c.indemnizaciones_anuales)} ${tr('en asistencias', 'en assistències', 'attendance fees')}` : ''}</span></p>` : ''}
         <dl class="person-facts">
-          <div><dt>${tr('Áreas', 'Àrees', 'Areas')}</dt><dd>${esc(c.areas || '—')}</dd></div>
+          <div><dt>${tr('Responsabilidades', 'Responsabilitats', 'Responsibilities')}</dt><dd>${esc(c.areas || '—')}</dd></div>
           <div><dt>${tr('Dedicación', 'Dedicació', 'Dedication')}</dt><dd>${label('dedicacion', c.dedicacion)}</dd></div>
-          ${p.mostrar_retribucion ? `<div><dt>${tr('Retribución anual', 'Retribució anual', 'Annual pay')}</dt><dd>${c.retribucion_anual ? fmt.eur(c.retribucion_anual) : '—'}</dd></div>${c.indemnizaciones_anuales ? `<div><dt>${tr('Asistencias', 'Assistències', 'Attendance fees')}</dt><dd>${fmt.eur(c.indemnizaciones_anuales)}</dd></div>` : ''}` : ''}
-          <div><dt>${tr('Desde', 'Des de', 'Since')}</dt><dd>${fmt.date(c.fecha_nombramiento)}</dd></div>
+          <div><dt>${tr('En el cargo desde', 'En el càrrec des de', 'In office since')}</dt><dd>${fmt.full(c.fecha_nombramiento)}</dd></div>
         </dl>
-        <div class="person-links">${doc(c.declaracion_bienes_url, tr('Declaración de bienes', 'Declaració de béns', 'Assets declaration'))}${doc(c.declaracion_actividades_url, tr('Declaración de actividades', 'Declaració d’activitats', 'Activities declaration'))}${doc(c.cv_url, tr('Trayectoria', 'Trajectòria', 'Career'))}${c.email ? `<a href="mailto:${esc(c.email)}">${icon('mail', 14)} ${esc(c.email)}</a>` : ''}</div>
+        <ul class="person-links">${doc(c.declaracion_bienes_url, tr('Declaración de bienes', 'Declaració de béns', 'Assets declaration'))}${doc(c.declaracion_actividades_url, tr('Declaración de actividades', 'Declaració d’activitats', 'Activities declaration'))}${doc(c.cv_url, tr('Trayectoria', 'Trajectòria', 'Career'))}
+          ${nAg(c.id) ? `<li><a href="#/agenda?cargo_id=${encodeURIComponent(c.id)}">${icon('calendar', 16)}${tr('Agenda', 'Agenda', 'Diary')} (${nAg(c.id)})</a></li>` : ''}
+          ${c.email ? `<li><a href="mailto:${esc(c.email)}">${icon('mail', 16)}${tr('Contacto institucional', 'Contacte institucional', 'Official contact')}</a></li>` : ''}</ul>
       </li>`).join('')}</ul></section>`;
     },
   },
@@ -267,15 +317,42 @@ export const BLOCKS = {
     },
   },
   indicadores: {
-    nombre: L('Obligaciones de la página', 'Obligacions de la pàgina', 'Page obligations'), icono: 'check', grupo: 'datos',
+    nombre: L('Qué exige la ley en esta página', 'Què exigeix la llei en aquesta pàgina', 'What the law requires on this page'), icono: 'check', grupo: 'datos',
     props: [{ clave: 'pagina', tipo: 'texto_simple', etiqueta: L('Página (vacío = actual)', 'Pàgina (buit = actual)', 'Page (empty = current)') }],
     nuevo: () => ({}),
     render: async (el, p, ctx) => {
-      const pid = p.pagina || ctx?.pageId;
-      const obl = (await store.rows('obligaciones')).filter((o) => o.pagina === pid);
+      const { isStale } = await import('./avanzados.js');
+      const pages = p.lista || [p.pagina || ctx?.pageId];
+      const obl = (await store.rows('obligaciones')).filter((o) => pages.includes(o.pagina));
       if (!obl.length) { el.innerHTML = ''; return; }
-      el.innerHTML = `<details class="card obligations" open><summary><span class="block-title">${icon('check', 18)} ${t('obligations_here')}</span><span class="muted small">${obl.filter((o) => o.estado === 'publicado').length}/${obl.length}</span></summary>
-        <ul class="obl-list">${obl.map((o) => `<li>${statusBadge(o.estado)}<span class="obl-title">${esc(o.titulo)}</span><span class="muted small">${esc(o.norma)}, ${esc(o.articulo)} · ${label('periodicidad', o.periodicidad)}${o.ultima_actualizacion ? ` · ${t('updated')} ${fmt.date(o.ultima_actualizacion)}` : ''}</span></li>`).join('')}</ul></details>`;
+      const state = (o) => (o.estado === 'publicado' && isStale(o) ? 'desactualizada' : o.estado);
+      const list = `<ul class="obl-list">${obl.map((o) => `<li>${statusBadge(state(o))}<span class="obl-title">${esc(o.titulo)}</span><span class="obl-meta">${o.ultima_actualizacion ? `${t('updated')}: ${fmt.date(o.ultima_actualizacion)} · ` : ''}${label('periodicidad', o.periodicidad)} · <abbr title="${esc(tr('Fundamento legal', 'Fonament legal', 'Legal basis'))}">${esc(o.norma)}, ${esc(o.articulo)}</abbr></span></li>`).join('')}</ul>`;
+      if (p.plano) { el.innerHTML = list; return; }
+      const ok = obl.filter((o) => state(o) === 'publicado').length;
+      el.innerHTML = `<details class="status-summary"><summary>${icon('check', 18)}<span>${tr(`Qué exige la ley en esta página: <strong>${ok} de ${obl.length}</strong> apartados disponibles y al día`, `Què exigeix la llei en aquesta pàgina: <strong>${ok} de ${obl.length}</strong> apartats disponibles i al dia`, `What the law requires here: <strong>${ok} of ${obl.length}</strong> items available and up to date`)}</span></summary>${list}
+        <p class="muted small"><a href="#/indice">${tr('Ver el índice de cumplimiento completo', 'Veure l’índex de compliment complet', 'See the full compliance index')}</a></p></details>`;
+    },
+  },
+  fuentes: {
+    nombre: L('Procedencia de los datos', 'Procedència de les dades', 'Data sources'), icono: 'database', grupo: 'datos',
+    props: [{ clave: 'titulo', tipo: 'texto', etiqueta: L('Título', 'Títol', 'Title') }],
+    nuevo: () => ({ titulo: L('Procedencia de los datos', 'Procedència de les dades', 'Data sources') }),
+    render: async (el, p) => {
+      const [m, st] = await Promise.all([store.meta(), store.syncStatus()]);
+      const rowsData = await Promise.all(m.conjuntos.map(async (d) => { const env = await store.dataset(d.id).catch(() => ({})); return { d, env }; }));
+      const FREQ = { CONT: tr('Continua', 'Contínua', 'Continuous'), WEEKLY: tr('Semanal', 'Setmanal', 'Weekly'), MONTHLY: tr('Mensual', 'Mensual', 'Monthly'), QUARTERLY: tr('Trimestral', 'Trimestral', 'Quarterly'), BIANNUAL: tr('Semestral', 'Semestral', 'Half-yearly'), ANNUAL: tr('Anual', 'Anual', 'Annual') };
+      const card = h(`<section class="card">${blockTitle(p)}<p class="muted">${tr('Fuente, responsable, frecuencia y fecha de la última actualización de cada conjunto de datos del portal.', 'Font, responsable, freqüència i data de l’última actualització de cada conjunt de dades del portal.', 'Source, owner, frequency and last update of every dataset.')}</p></section>`);
+      card.appendChild(dataTable({ caption: pick(p.titulo) || 'fuentes', pageSize: 50, rows: rowsData.map(({ d, env }) => ({
+        conjunto: pick(d.titulo), id: d.id, fuente: d.fuente.nombre, url: d.fuente.url, auto: ['placsp', 'bdns'].includes(d.fuente.tipo), responsable: pick(d.responsable), freq: FREQ[d.periodicidad] || d.periodicidad,
+        fecha: env.actualizado || env.generado, ejemplo: env.ejemplo, sync: st?.fuentes?.[d.fuente.tipo] })),
+        columns: [
+          { key: 'conjunto', label: tr('Conjunto de datos', 'Conjunt de dades', 'Dataset'), html: true, format: (v, r) => `<a href="#/datos/${r.id}">${esc(v)}</a>` },
+          { key: 'fuente', label: t('source'), html: true, format: (v, r) => `${r.url ? `<a href="${esc(r.url)}" rel="noopener">${esc(v)}</a>` : esc(v)}<br><span class="muted small">${r.auto ? tr('Actualización automática diaria', 'Actualització automàtica diària', 'Daily automatic update') : tr('Carga manual', 'Càrrega manual', 'Manual upload')}</span>` },
+          { key: 'responsable', label: tr('Responsable', 'Responsable', 'Owner') },
+          { key: 'freq', label: tr('Frecuencia', 'Freqüència', 'Frequency') },
+          { key: 'fecha', label: t('updated'), html: true, format: (v, r) => `${v ? fmt.date(String(v).slice(0, 10)) : '—'}${r.ejemplo ? ` <span class="badge badge-warning">${icon('alert', 12)}${tr('Ejemplo', 'Exemple', 'Sample')}</span>` : ''}`, sortValue: (r) => r.fecha },
+        ] }));
+      el.replaceChildren(card);
     },
   },
 };

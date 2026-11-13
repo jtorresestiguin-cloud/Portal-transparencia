@@ -26,7 +26,7 @@ Estructura habitual de los portales municipales: barra institucional, cabecera c
 
 La portada funciona como **directorio**: cada categoría es una caja con sus subapartados enlazados y su grado de cumplimiento.
 
-Castellano, valenciano e inglés; modo oscuro; buscador global (`/`); cada gráfico con vista de tabla y descarga CSV/SVG; filtros en la URL; diseño adaptable a móvil.
+Portada orientada a tareas (buscador, preguntas frecuentes, datos destacados con fuente y fecha); **buscador** con autocompletado, sinónimos ciudadanos y resultados agrupados (`#/buscar?q=`); banda de **procedencia** (actualizado · fuente · responsable · descargas) en cada página; página *Sobre los datos*. Castellano, valenciano e inglés; modo oscuro; cada gráfico con vista de tabla y descarga CSV/SVG; filtros en la URL; diseño adaptable a móvil.
 
 ### 2. Editor visual por componentes (`/admin/`)
 Al estilo de Adobe Experience Manager: las páginas se componen con **bloques** («cajitas») que se arrastran desde una paleta, se reordenan y se configuran en un panel de propiedades con **vista previa real**.
@@ -38,7 +38,7 @@ Al estilo de Adobe Experience Manager: las páginas se componen con **bloques** 
 - **Entidad:** nombre, NIF, DIR3, colores corporativos, escudo y configuración de fuentes automáticas.
 - **Publicar:** un solo commit en GitHub con todos los cambios (token de grano fino) o descarga de ficheros. Borrador automático en el navegador, deshacer y aviso de traducciones pendientes.
 
-Guía de uso: [`docs/GUIA-EDITOR.md`](docs/GUIA-EDITOR.md).
+Guía de uso: [`docs/GUIA-EDITOR.md`](docs/GUIA-EDITOR.md). Rediseño UX, auditoría y pruebas: [`docs/REDISENO-UX.md`](docs/REDISENO-UX.md).
 
 ### 3. Sincronización automática con fuentes oficiales
 Una tarea diaria de GitHub Actions (`.github/workflows/sync.yml`):

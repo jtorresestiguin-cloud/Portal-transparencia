@@ -1,0 +1,69 @@
+{
+ "id": "sobre-los-datos",
+ "icono": "info",
+ "titulo": {
+  "es": "Sobre los datos",
+  "va": "Sobre les dades",
+  "en": "About the data"
+ },
+ "intro": {
+  "es": "De dónde sale cada dato, cada cuánto se actualiza, con qué método se calcula y cómo puedes reutilizarlo.",
+  "va": "D’on ix cada dada, cada quant s’actualitza, amb quin mètode es calcula i com pots reutilitzar-la.",
+  "en": "Where each figure comes from, how often it is updated, how it is calculated and how you can reuse it."
+ },
+ "responsable": {
+  "es": "Unidad de Transparencia",
+  "va": "Unitat de Transparència",
+  "en": "Transparency Unit"
+ },
+ "actualizado": "2026-11-13",
+ "bloques": [
+  {
+   "tipo": "fuentes",
+   "titulo": {
+    "es": "Procedencia y actualización de cada conjunto de datos",
+    "va": "Procedència i actualització de cada conjunt de dades",
+    "en": "Source and update of each dataset"
+   }
+  },
+  {
+   "tipo": "texto",
+   "titulo": {
+    "es": "Cómo se calculan las cifras",
+    "va": "Com es calculen les xifres",
+    "en": "How figures are calculated"
+   },
+   "contenido": {
+    "es": "- Todas las cifras del portal se calculan en tu navegador a partir de los mismos ficheros que puedes descargar: **lo que ves es exactamente lo que puedes reutilizar**.\n- Los importes de contratos se muestran **sin IVA** salvo que se indique lo contrario.\n- El presupuesto «ejecutado» son las obligaciones reconocidas (gastos) y los derechos reconocidos (ingresos). En el año en curso, la ejecución es acumulada hasta la fecha de corte indicada.\n- Los contratos y las subvenciones se descargan automáticamente cada día de sus fuentes oficiales; si una fuente no responde, se mantiene la última versión válida.",
+    "va": "- Totes les xifres del portal es calculen en el teu navegador a partir dels mateixos fitxers que pots descarregar: **el que veus és exactament el que pots reutilitzar**.\n- Els imports de contractes es mostren **sense IVA** llevat que s’indique el contrari.\n- El pressupost «executat» són les obligacions reconegudes (despeses) i els drets reconeguts (ingressos). En l’any en curs, l’execució és acumulada fins a la data de tall indicada.\n- Els contractes i les subvencions es descarreguen automàticament cada dia de les seues fonts oficials; si una font no respon, es manté l’última versió vàlida.",
+    "en": "- Every figure is computed in your browser from the same files you can download: **what you see is exactly what you can reuse**.\n- Contract values are shown **excluding VAT** unless stated otherwise.\n- “Executed” budget means recognised obligations (spending) and recognised rights (revenue). For the current year, execution is cumulative to the stated cut-off date.\n- Contracts and grants are downloaded daily from their official sources; if a source fails, the last valid version is kept."
+   }
+  },
+  {
+   "tipo": "texto",
+   "titulo": {
+    "es": "Limitaciones",
+    "va": "Limitacions",
+    "en": "Limitations"
+   },
+   "contenido": {
+    "es": "- La Plataforma de Contratación publica los contratos con cierto retraso respecto a su adjudicación.\n- Los datos de personas físicas beneficiarias de subvenciones no se publican, conforme a la normativa de protección de datos.\n- Mientras el portal muestre el aviso de *datos de ejemplo*, las cifras no son oficiales.",
+    "va": "- La Plataforma de Contractació publica els contractes amb cert retard respecte a la seua adjudicació.\n- Les dades de persones físiques beneficiàries de subvencions no es publiquen, d’acord amb la normativa de protecció de dades.\n- Mentre el portal mostre l’avís de *dades d’exemple*, les xifres no són oficials.",
+    "en": "- The Procurement Platform publishes contracts with some delay after award.\n- Data on individuals receiving grants is not published, in line with data-protection law.\n- While the portal shows the *sample data* notice, figures are not official."
+   }
+  },
+  {
+   "tipo": "texto",
+   "titulo": {
+    "es": "Licencia y reutilización",
+    "va": "Llicència i reutilització",
+    "en": "Licence and reuse"
+   },
+   "contenido": {
+    "es": "Los datos se publican con licencia [Creative Commons Reconocimiento 4.0](https://creativecommons.org/licenses/by/4.0/deed.es): puedes copiarlos, transformarlos y redistribuirlos, también con fines comerciales, citando la fuente. Encontrarás los formatos técnicos (CSV, JSON, API, DCAT y OCDS) en [Datos abiertos](#/datos-abiertos).",
+    "va": "Les dades es publiquen amb llicència [Creative Commons Reconeixement 4.0](https://creativecommons.org/licenses/by/4.0/deed.ca): pots copiar-les, transformar-les i redistribuir-les, també amb fins comercials, citant la font. Trobaràs els formats tècnics (CSV, JSON, API, DCAT i OCDS) en [Dades obertes](#/datos-abiertos).",
+    "en": "Data is published under [Creative Commons Attribution 4.0](https://creativecommons.org/licenses/by/4.0/): you may copy, transform and redistribute it, including commercially, crediting the source. Technical formats (CSV, JSON, API, DCAT and OCDS) are in [Open data](#/datos-abiertos)."
+   }
+  }
+ ]
+}

@@ -35,5 +35,11 @@
   {
    "tipo": "indicadores"
   }
- ]
+ ],
+ "responsable": {
+  "es": "Servicios Jurídicos",
+  "va": "Serveis Jurídics",
+  "en": "Legal Services"
+ },
+ "actualizado": "2026-11-10"
 }

@@ -85,7 +85,12 @@
      "tipo": "string",
      "descripcion": "liquidado | en_ejecucion"
     }
-   ]
+   ],
+   "responsable": {
+    "es": "Intervención",
+    "va": "Intervenció",
+    "en": "Comptroller"
+   }
   },
   {
    "id": "contratos",
@@ -227,7 +232,12 @@
      "descripcion": "Origen del registro",
      "lista": "fuente"
     }
-   ]
+   ],
+   "responsable": {
+    "es": "Servicio de Contratación",
+    "va": "Servei de Contractació",
+    "en": "Procurement Service"
+   }
   },
   {
    "id": "encargos",
@@ -306,7 +316,12 @@
      "descripcion": "Origen del registro",
      "lista": "fuente"
     }
-   ]
+   ],
+   "responsable": {
+    "es": "Servicio de Contratación",
+    "va": "Servei de Contractació",
+    "en": "Procurement Service"
+   }
   },
   {
    "id": "subvenciones",
@@ -393,7 +408,12 @@
      "descripcion": "Origen del registro",
      "lista": "fuente"
     }
-   ]
+   ],
+   "responsable": {
+    "es": "Intervención",
+    "va": "Intervenció",
+    "en": "Comptroller"
+   }
   },
   {
    "id": "convenios",
@@ -466,7 +486,12 @@
      "descripcion": "Texto íntegro",
      "formato": "uri"
     }
-   ]
+   ],
+   "responsable": {
+    "es": "Secretaría General",
+    "va": "Secretaria General",
+    "en": "General Secretariat"
+   }
   },
   {
    "id": "cargos",
@@ -580,7 +605,12 @@
      "descripcion": "Declaración de actividades",
      "formato": "uri"
     }
-   ]
+   ],
+   "responsable": {
+    "es": "Secretaría General",
+    "va": "Secretaria General",
+    "en": "General Secretariat"
+   }
   },
   {
    "id": "agenda",
@@ -619,7 +649,11 @@
     {
      "nombre": "cargo_id",
      "tipo": "string",
-     "descripcion": "Cargo (identificador del conjunto «cargos»)"
+     "descripcion": "Cargo",
+     "referencia": {
+      "conjunto": "cargos",
+      "campo": "nombre"
+     }
     },
     {
      "nombre": "tipo",
@@ -642,7 +676,12 @@
      "tipo": "string",
      "descripcion": "Grupo de interés inscrito (si procede)"
     }
-   ]
+   ],
+   "responsable": {
+    "es": "Gabinete de Alcaldía",
+    "va": "Gabinet d’Alcaldia",
+    "en": "Mayor’s Office"
+   }
   },
   {
    "id": "plantilla",
@@ -703,7 +742,12 @@
      "tipo": "integer",
      "descripcion": "Número de personas"
     }
-   ]
+   ],
+   "responsable": {
+    "es": "Recursos Humanos",
+    "va": "Recursos Humans",
+    "en": "Human Resources"
+   }
   },
   {
    "id": "pmp",
@@ -745,7 +789,12 @@
      "tipo": "number",
      "descripcion": "Periodo medio de pago (días)"
     }
-   ]
+   ],
+   "responsable": {
+    "es": "Intervención y Tesorería",
+    "va": "Intervenció i Tresoreria",
+    "en": "Comptroller & Treasury"
+   }
   },
   {
    "id": "deuda",
@@ -792,7 +841,12 @@
      "tipo": "number",
      "descripcion": "Ingresos corrientes liquidados (EUR)"
     }
-   ]
+   ],
+   "responsable": {
+    "es": "Intervención y Tesorería",
+    "va": "Intervenció i Tresoreria",
+    "en": "Comptroller & Treasury"
+   }
   },
   {
    "id": "inmuebles",
@@ -876,7 +930,12 @@
      "tipo": "number",
      "descripcion": "Longitud WGS84"
     }
-   ]
+   ],
+   "responsable": {
+    "es": "Patrimonio",
+    "va": "Patrimoni",
+    "en": "Assets"
+   }
   },
   {
    "id": "normativa",
@@ -950,7 +1009,12 @@
      "tipo": "boolean",
      "descripcion": "Vigente"
     }
-   ]
+   ],
+   "responsable": {
+    "es": "Secretaría General",
+    "va": "Secretaria General",
+    "en": "General Secretariat"
+   }
   },
   {
    "id": "solicitudes-acceso",
@@ -1031,7 +1095,12 @@
      "tipo": "boolean",
      "descripcion": "Reclamación ante el Consejo de Transparencia"
     }
-   ]
+   ],
+   "responsable": {
+    "es": "Unidad de Transparencia",
+    "va": "Unitat de Transparència",
+    "en": "Transparency Unit"
+   }
   },
   {
    "id": "obligaciones",
@@ -1117,7 +1186,12 @@
      "tipo": "date",
      "descripcion": "Última actualización"
     }
-   ]
+   ],
+   "responsable": {
+    "es": "Unidad de Transparencia",
+    "va": "Unitat de Transparència",
+    "en": "Transparency Unit"
+   }
   }
  ]
 }

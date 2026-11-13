@@ -47,6 +47,14 @@ El editor está en `/admin/` del portal (por ejemplo, `https://…/Portal-transp
 
 Nombre en los tres idiomas, NIF, DIR3, dirección, sede electrónica, escudo y **colores corporativos** (se aplican a todo el portal). También los identificadores del órgano para la Plataforma de Contratación y la BDNS.
 
+## Portada y categorías
+
+- **Portada** (botón «Portada» bajo el árbol): título, frase de bienvenida, *Lo más consultado* (preguntas en lenguaje ciudadano y la página que las responde), *Datos destacados* (se calculan solos y muestran fuente y fecha) y el menú principal.
+- **Categoría** (lápiz junto a su nombre): título, descripción breve, icono y **cifras clave** que aparecen en la página de la categoría.
+- **Página**: además del título y la entradilla, indica el **responsable** de la información. La fecha de actualización se pone sola al publicar; la fuente se toma de los conjuntos de datos que usan sus bloques.
+- **Documentos**: añade a cada documento su tipo (Acta, Informe…), fecha, formato y tamaño. Con «Agrupar por años», el último año queda visible y los anteriores en «Histórico».
+- **Buscador**: el vocabulario ciudadano («sueldos» → retribuciones) está en `content/sinonimos.json`.
+
 ## Publicar
 
 **Publicar** muestra los ficheros modificados y permite:

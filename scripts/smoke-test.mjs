@@ -18,7 +18,7 @@ const PORT = 8765;
 const server = spawn(process.execPath, [join(ROOT, 'scripts/serve.mjs'), String(PORT)], { stdio: 'ignore' });
 await new Promise((r) => setTimeout(r, 600));
 const portal = JSON.parse(readFileSync(join(ROOT, 'content/portal.json'), 'utf8'));
-const ROUTES = ['', ...portal.categorias.map((c) => `categoria/${c.id}`), ...portal.categorias.flatMap((c) => c.paginas), 'accesibilidad', 'datos/contratos', 'contratos?anio=2025&proc=9'];
+const ROUTES = ['', ...portal.categorias.map((c) => `categoria/${c.id}`), ...portal.categorias.flatMap((c) => c.paginas), 'accesibilidad', 'datos/contratos', 'contratos?anio=2025&proc=9', 'contratos?vista=estadisticas', 'contratos?vista=riesgo', 'presupuesto?area=1', 'agenda?cargo_id=C01', 'buscar?q=sueldos', 'buscar?q=zzzz', 'buscar', 'pagina-inexistente'];
 const browser = await chromium.launch();
 let fails = 0;
 const watch = (page, errors) => {
@@ -41,14 +41,17 @@ for (const lang of ['es', 'va', 'en']) {
   }
   await page.close();
 }
-const mob = await browser.newPage({ viewport: { width: 375, height: 800 } });
-for (const r of ['', 'categoria/contratacion', 'contratos', 'cargos', 'presupuesto', 'datos/cargos']) {
+for (const width of [320, 375, 768]) {
+const mob = await browser.newPage({ viewport: { width, height: 800 } });
+for (const r of ['', 'categoria/contratacion', 'contratos', 'cargos', 'presupuesto', 'datos/cargos', 'buscar?q=contratos', 'normativa', 'sobre-los-datos']) {
   await mob.goto(`http://localhost:${PORT}/#/${r}`);
   await mob.waitForSelector('#main .view h1');
   await mob.waitForTimeout(150);
   const o = await mob.evaluate(() => document.documentElement.scrollWidth > innerWidth + 1);
   if (o) fails++;
-  console.log(`${o ? '✗' : '✓'} [móvil] #/${r}${o ? ' DESBORDA' : ''}`);
+  console.log(`${o ? '✗' : '✓'} [${width}px] #/${r}${o ? ' DESBORDA' : ''}`);
+}
+await mob.close();
 }
 // Editor visual
 const ed = await browser.newPage({ viewport: { width: 1440, height: 900 } });

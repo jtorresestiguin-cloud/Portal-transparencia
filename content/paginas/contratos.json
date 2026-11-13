@@ -13,14 +13,16 @@
  },
  "bloques": [
   {
-   "tipo": "fuente",
-   "conjunto": "contratos"
-  },
-  {
    "tipo": "contratacion"
   },
   {
    "tipo": "indicadores"
   }
- ]
+ ],
+ "responsable": {
+  "es": "Servicio de Contratación",
+  "va": "Servei de Contractació",
+  "en": "Procurement Service"
+ },
+ "actualizado": "2026-11-10"
 }

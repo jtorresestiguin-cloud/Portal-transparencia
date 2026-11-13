@@ -2,7 +2,7 @@
  * Componentes avanzados: exploradores interactivos que se insertan como un bloque más.
  */
 import { tr, t, pick, label, codes, lang } from '../i18n.js';
-import { h, esc, icon, fmt, sum, groupBy, chartCard, dataTable, kpiRow, delta, meter, statusBadge, selectControl, modal, definitionList, download, toCSV, flushCharts } from '../ui.js';
+import { h, esc, icon, fmt, sum, groupBy, chartCard, dataTable, kpiRow, delta, meter, statusBadge, selectControl, modal, definitionList, download, toCSV, flushCharts, filterSummary, emptyState } from '../ui.js';
 import { sankey, treemap, columns, hBar, SERIES } from '../charts.js';
 import * as store from '../store.js';
 import { L } from './index.js';
@@ -19,63 +19,70 @@ const AREA_COLOR = { 0: SERIES[7], 1: SERIES[0], 2: SERIES[1], 3: SERIES[2], 4: 
 async function presupuesto(el, p, ctx) {
   const pres = await store.rows('presupuesto');
   const ds = pick((await store.dsMeta('presupuesto')).titulo);
+  const env = await store.dataset('presupuesto');
   const anios = [...new Set(pres.map((r) => r.anio))].sort();
-  let anio = Number(ctx?.query?.get('anio')) || anios.at(-1);
+  const q = ctx?.query || new URLSearchParams();
+  let anio = Number(q.get('anio')) || anios.at(-1);
+  let area = q.get('area') || '';
   el.innerHTML = '';
-  const filt = h(`<div class="filters">${selectControl('f-anio', tr('Ejercicio', 'Exercici', 'Fiscal year'), anios.slice().reverse().map((a) => [a, a]), anio)}</div>`);
-  const out = h('<div></div>');
+  const filt = h(`<div class="filter-bar">${selectControl('f-anio', tr('Ejercicio', 'Exercici', 'Fiscal year'), anios.slice().reverse().map((a) => [a, a]), anio)}</div>`);
+  const out = h('<div class="explorer"></div>');
   el.append(filt, out);
+  const I = (s_, k) => sum(s_.filter((r) => r.tipo === 'ingreso'), (r) => r[k]);
+  const G = (s_, k) => sum(s_.filter((r) => r.tipo === 'gasto'), (r) => r[k]);
   const draw = () => {
     out.innerHTML = '';
     const yr = pres.filter((r) => r.anio === anio), pv = pres.filter((r) => r.anio === anio - 1);
     const curso = yr[0]?.estado === 'en_ejecucion';
-    const I = (s, k) => sum(s.filter((r) => r.tipo === 'ingreso'), (r) => r[k]);
-    const G = (s, k) => sum(s.filter((r) => r.tipo === 'gasto'), (r) => r[k]);
-    if (curso) out.appendChild(h(`<div class="callout callout-info">${icon('info', 20)}<div><p>${tr(`Ejercicio en curso: ejecución acumulada a 30 de septiembre de ${anio}.`, `Exercici en curs: execució acumulada a 30 de setembre de ${anio}.`, `Current year: execution to 30 September ${anio}.`)}</p></div></div>`));
-    out.appendChild(kpiRow([
-      { label: tr('Presupuesto de ingresos', 'Pressupost d’ingressos', 'Revenue budget'), value: fmt.eurC(I(yr, 'definitivo')), ...delta(I(yr, 'definitivo'), I(pv, 'definitivo')), context: `${tr('definitivo', 'definitiu', 'final')} · vs. ${anio - 1}` },
-      { label: tr('Presupuesto de gastos', 'Pressupost de despeses', 'Spending budget'), value: fmt.eurC(G(yr, 'definitivo')), ...delta(G(yr, 'definitivo'), G(pv, 'definitivo')), context: `${tr('definitivo', 'definitiu', 'final')} · vs. ${anio - 1}` },
-      { label: tr('Ejecución del gasto', 'Execució de la despesa', 'Spending execution'), value: fmt.pct((G(yr, 'ejecutado') / G(yr, 'definitivo')) * 100), context: tr('obligaciones reconocidas / crédito definitivo', 'obligacions reconegudes / crèdit definitiu', 'obligations / final budget') },
-      { label: curso ? tr('Saldo a la fecha', 'Saldo a la data', 'Balance to date') : tr('Resultado presupuestario', 'Resultat pressupostari', 'Budget outturn'), value: fmt.eurC(I(yr, 'ejecutado') - G(yr, 'ejecutado')), context: tr('derechos – obligaciones', 'drets – obligacions', 'revenue – spending') },
-    ]));
-    const grid = h('<div class="chart-grid"></div>');
-    out.appendChild(grid);
     const base = curso ? 'definitivo' : 'ejecutado';
     const baseTxt = curso ? tr('presupuesto definitivo', 'pressupost definitiu', 'final budget') : tr('importe liquidado', 'import liquidat', 'outturn');
-    const ing = codes('capitulo_ingreso').map((c) => ({ name: label('capitulo_ingreso', c), value: sum(yr.filter((r) => r.tipo === 'ingreso' && r.capitulo === c), (r) => r[base]) })).filter((d) => d.value > 0).sort((a, b) => b.value - a.value).map((d, i) => ({ ...d, color: `var(--seq-${Math.max(2, 7 - i)})` }));
-    const areas = codes('area_gasto').map((a) => ({ key: a, name: label('area_gasto', a), value: sum(yr.filter((r) => r.tipo === 'gasto' && r.area_gasto === a), (r) => r[base]), color: AREA_COLOR[a], ink: a === '4' ? '#0b0b0b' : undefined })).filter((d) => d.value > 0);
-    grid.appendChild(chartCard({
-      title: tr(`De dónde vienen y a dónde van los fondos (${anio})`, `D’on vénen i on van els fons (${anio})`, `Where the money comes from and goes (${anio})`),
-      subtitle: `${tr('Ingresos por capítulo → gasto por área', 'Ingressos per capítol → despesa per àrea', 'Revenue by chapter → spending by area')} · ${baseTxt}`, full: true, file: `presupuesto-flujos-${anio}`, dataset: 'presupuesto', datasetTitle: ds,
-      draw: (b) => sankey(b, { left: ing, right: areas, format: fmt.eurC, centerLabel: fmt.eurC(sum(ing, (d) => d.value)), sideLabels: { L: tr('Ingreso', 'Ingrés', 'Revenue'), R: tr('Gasto', 'Despesa', 'Spending') } }),
-      table: { columns: [{ key: 't', label: tr('Tipo', 'Tipus', 'Type') }, { key: 'name', label: tr('Concepto', 'Concepte', 'Item') }, { key: 'value', label: 'EUR', align: 'right', format: fmt.eur }], rows: [...ing.map((d) => ({ ...d, t: tr('Ingreso', 'Ingrés', 'Revenue') })), ...areas.map((d) => ({ ...d, t: tr('Gasto', 'Despesa', 'Spending') }))] },
-    }));
-    grid.appendChild(chartCard({
-      title: tr('Gasto por área', 'Despesa per àrea', 'Spending by area'), subtitle: `${anio} · ${baseTxt}`, file: `gasto-areas-${anio}`, dataset: 'presupuesto', datasetTitle: ds,
-      draw: (b) => treemap(b, { data: areas, format: fmt.eurC }),
-      table: { columns: [{ key: 'name', label: tr('Área', 'Àrea', 'Area') }, { key: 'value', label: 'EUR', align: 'right', format: fmt.eur }], rows: areas },
-    }));
-    const caps = codes('capitulo_gasto').filter((c) => yr.some((r) => r.tipo === 'gasto' && r.capitulo === c));
-    const capRows = caps.map((c) => { const s = yr.filter((r) => r.tipo === 'gasto' && r.capitulo === c); return { c, name: `${c}. ${label('capitulo_gasto', c)}`, definitivo: sum(s, (r) => r.definitivo), ejecutado: sum(s, (r) => r.ejecutado) }; });
-    grid.appendChild(chartCard({
-      title: tr('Ejecución por capítulo de gasto', 'Execució per capítol de despesa', 'Execution by spending chapter'), subtitle: tr('Crédito definitivo y obligaciones reconocidas', 'Crèdit definitiu i obligacions reconegudes', 'Final budget and obligations'), file: `ejecucion-capitulos-${anio}`, dataset: 'presupuesto', datasetTitle: ds,
-      draw: (b) => columns(b, { categories: capRows.map((r) => `${tr('Cap.', 'Cap.', 'Ch.')} ${r.c}`), series: [{ name: tr('Definitivo', 'Definitiu', 'Final'), values: capRows.map((r) => r.definitivo), color: 'var(--seq-3)' }, { name: tr('Ejecutado', 'Executat', 'Executed'), values: capRows.map((r) => r.ejecutado), color: 'var(--seq-6)' }], format: fmt.eur, axisFormat: fmt.eurC }),
-      table: { columns: [{ key: 'name', label: tr('Capítulo', 'Capítol', 'Chapter') }, { key: 'definitivo', label: tr('Definitivo', 'Definitiu', 'Final'), align: 'right', format: fmt.eur }, { key: 'ejecutado', label: tr('Ejecutado', 'Executat', 'Executed'), align: 'right', format: fmt.eur }], rows: capRows },
-    }));
-    const evo = anios.map((a) => { const s = pres.filter((r) => r.anio === a); return { a, i: I(s, 'ejecutado'), g: G(s, 'ejecutado') }; });
-    grid.appendChild(chartCard({
-      title: tr('Evolución de ingresos y gastos liquidados', 'Evolució d’ingressos i despeses liquidats', 'Revenue and spending over time'), subtitle: `${anios[0]}–${anios.at(-1)}`, file: 'presupuesto-evolucion', dataset: 'presupuesto', datasetTitle: ds,
-      draw: (b) => columns(b, { categories: evo.map((e) => String(e.a)), series: [{ name: tr('Ingresos', 'Ingressos', 'Revenue'), values: evo.map((e) => e.i) }, { name: tr('Gastos', 'Despeses', 'Spending'), values: evo.map((e) => e.g) }], format: fmt.eur, axisFormat: fmt.eurC }),
-      table: { columns: [{ key: 'a', label: tr('Año', 'Any', 'Year') }, { key: 'i', label: tr('Ingresos', 'Ingressos', 'Revenue'), align: 'right', format: fmt.eur }, { key: 'g', label: tr('Gastos', 'Despeses', 'Spending'), align: 'right', format: fmt.eur }], rows: evo },
-    }));
-    const det = yr.map((r) => ({ ...r, concepto: r.tipo === 'ingreso' ? label('capitulo_ingreso', r.capitulo) : label('capitulo_gasto', r.capitulo), area: r.area_gasto ? label('area_gasto', r.area_gasto) : '—', pct: (r.ejecutado / r.definitivo) * 100 }));
-    const card = h(`<section class="card"><h2 class="block-title">${tr('Detalle', 'Detall', 'Detail')} ${anio}</h2></section>`);
-    card.appendChild(dataTable({ caption: tr('Detalle presupuestario', 'Detall pressupostari', 'Budget detail'), pageSize: 20, rows: det, columns: [
-      { key: 'tipo', label: tr('Tipo', 'Tipus', 'Type'), format: (v) => (v === 'ingreso' ? tr('Ingreso', 'Ingrés', 'Revenue') : tr('Gasto', 'Despesa', 'Spending')) },
-      { key: 'area', label: tr('Área', 'Àrea', 'Area') }, { key: 'capitulo', label: tr('Cap.', 'Cap.', 'Ch.') }, { key: 'concepto', label: tr('Concepto', 'Concepte', 'Item') },
-      { key: 'inicial', label: tr('Inicial', 'Inicial', 'Initial'), align: 'right', format: fmt.eur }, { key: 'definitivo', label: tr('Definitivo', 'Definitiu', 'Final'), align: 'right', format: fmt.eur },
-      { key: 'ejecutado', label: tr('Ejecutado', 'Executat', 'Executed'), align: 'right', format: fmt.eur }, { key: 'pct', label: '%', align: 'right', format: (v) => fmt.pct(v) }] }));
-    out.appendChild(card);
+    if (curso) out.appendChild(h(`<div class="callout callout-info">${icon('info', 20)}<div><p>${tr(`El ejercicio ${anio} está en curso: la ejecución es la acumulada a ${fmt.full(env.fecha_corte_en_ejecucion || '')}.`, `L’exercici ${anio} està en curs: l’execució és l’acumulada a ${fmt.full(env.fecha_corte_en_ejecucion || '')}.`, `${anio} is the current year: execution is cumulative to ${fmt.full(env.fecha_corte_en_ejecucion || '')}.`)}</p></div></div>`));
+    const crumbs = h(`<nav class="drill-crumbs" aria-label="${esc(tr('Nivel de detalle', 'Nivell de detall', 'Detail level'))}"><ol><li>${area ? `<button type="button" class="link-btn" data-area="">${tr('Presupuesto', 'Pressupost', 'Budget')} ${anio}</button>` : `<span aria-current="true">${tr('Presupuesto', 'Pressupost', 'Budget')} ${anio}</span>`}</li>${area ? `<li><span aria-current="true">${esc(label('area_gasto', area))}</span></li>` : ''}</ol></nav>`);
+    out.appendChild(crumbs);
+    if (!area) {
+      out.appendChild(kpiRow([
+        { label: tr('Presupuesto de gastos', 'Pressupost de despeses', 'Spending budget'), value: fmt.eurC(G(yr, 'definitivo')), ...delta(G(yr, 'definitivo'), G(pv, 'definitivo')), context: `vs. ${anio - 1}` },
+        { label: tr('Ejecutado', 'Executat', 'Executed'), value: fmt.pct((G(yr, 'ejecutado') / G(yr, 'definitivo')) * 100), context: `${fmt.eurC(G(yr, 'ejecutado'))} ${tr('de gasto reconocido', 'de despesa reconeguda', 'spent')}` },
+        { label: curso ? tr('Saldo a la fecha', 'Saldo a la data', 'Balance to date') : tr('Resultado (ingresos − gastos)', 'Resultat (ingressos − despeses)', 'Outturn (revenue − spending)'), value: fmt.eurC(I(yr, 'ejecutado') - G(yr, 'ejecutado')) },
+      ]));
+      const ing = codes('capitulo_ingreso').map((c) => ({ name: label('capitulo_ingreso', c), value: sum(yr.filter((r) => r.tipo === 'ingreso' && r.capitulo === c), (r) => r[base]) })).filter((d) => d.value > 0).sort((a, b) => b.value - a.value);
+      const areas = codes('area_gasto').map((a) => ({ key: a, name: label('area_gasto', a), value: sum(yr.filter((r) => r.tipo === 'gasto' && r.area_gasto === a), (r) => r[base]), color: AREA_COLOR[a], ink: a === '4' ? '#0b0b0b' : undefined })).filter((d) => d.value > 0).sort((a, b) => b.value - a.value);
+      out.appendChild(h(`<h2 class="section-title">${tr('¿De dónde viene el dinero?', 'D’on ve els diners?', 'Where does the money come from?')}</h2>`));
+      const g1 = h('<div class="chart-grid"></div>'); out.appendChild(g1);
+      const totI = sum(ing, (d) => d.value);
+      g1.appendChild(chartCard({ title: tr(`Ingresos por tipo (${anio})`, `Ingressos per tipus (${anio})`, `Revenue by type (${anio})`), subtitle: `${baseTxt} · ${tr('euros', 'euros', 'EUR')}`, file: `ingresos-${anio}`, dataset: 'presupuesto', datasetTitle: ds, wide: true, level: 3,
+        draw: (b) => hBar(b, { data: ing.map((d) => ({ label: d.name, value: d.value, note: fmt.pct((d.value / totI) * 100) })), format: fmt.eurC, color: 'var(--s1)', valueName: tr('Ingresos', 'Ingressos', 'Revenue') }),
+        table: { columns: [{ key: 'name', label: tr('Tipo de ingreso', 'Tipus d’ingrés', 'Revenue type') }, { key: 'value', label: 'EUR', align: 'right', format: fmt.eur }], rows: ing } }));
+      out.appendChild(h(`<h2 class="section-title">${tr('¿En qué se gasta?', 'En què es gasta?', 'What is it spent on?')}</h2><p class="muted">${tr('Pulsa un área para ver su detalle.', 'Prem una àrea per a veure’n el detall.', 'Select an area to see its detail.')}</p>`));
+      const g2 = h('<div class="chart-grid"></div>'); out.appendChild(g2);
+      g2.appendChild(chartCard({ title: tr(`Gasto por área (${anio})`, `Despesa per àrea (${anio})`, `Spending by area (${anio})`), subtitle: baseTxt, file: `gasto-areas-${anio}`, dataset: 'presupuesto', datasetTitle: ds, wide: true, level: 3,
+        draw: (b) => treemap(b, { data: areas, format: fmt.eurC, onClick: (d) => { area = d.key; setQ({ area }); draw(); flushCharts(); } }),
+        table: { columns: [{ key: 'name', label: tr('Área', 'Àrea', 'Area') }, { key: 'value', label: 'EUR', align: 'right', format: fmt.eur }], rows: areas } }));
+      const list = h(`<ul class="drill-list">${areas.map((a) => `<li><button type="button" data-area="${a.key}"><span class="drill-swatch" style="background:${a.color}"></span><span class="drill-name">${esc(a.name)}</span><span class="drill-value">${fmt.eurC(a.value)}</span>${icon('chevron', 16)}</button></li>`).join('')}</ul>`);
+      out.appendChild(list);
+      out.appendChild(h(`<h2 class="section-title">${tr('¿Cuánto se ha ejecutado?', 'Quant s’ha executat?', 'How much has been executed?')}</h2>`));
+      const g3 = h('<div class="chart-grid"></div>'); out.appendChild(g3);
+      const evo = anios.map((a) => { const s_ = pres.filter((r) => r.anio === a); return { a, def: G(s_, 'definitivo'), eje: G(s_, 'ejecutado') }; });
+      g3.appendChild(chartCard({ title: tr('Gasto previsto y ejecutado por año', 'Despesa prevista i executada per any', 'Planned and executed spending by year'), subtitle: `${anios[0]}–${anios.at(-1)} · ${tr('euros', 'euros', 'EUR')}`, file: 'presupuesto-ejecucion', dataset: 'presupuesto', datasetTitle: ds, wide: true, level: 3,
+        draw: (b) => columns(b, { categories: evo.map((e) => String(e.a)), series: [{ name: tr('Previsto (definitivo)', 'Previst (definitiu)', 'Planned (final)'), values: evo.map((e) => e.def), color: 'var(--seq-3)' }, { name: tr('Ejecutado', 'Executat', 'Executed'), values: evo.map((e) => e.eje), color: 'var(--seq-6)' }], format: fmt.eur, axisFormat: fmt.eurC }),
+        table: { columns: [{ key: 'a', label: tr('Año', 'Any', 'Year') }, { key: 'def', label: tr('Previsto', 'Previst', 'Planned'), align: 'right', format: fmt.eur }, { key: 'eje', label: tr('Ejecutado', 'Executat', 'Executed'), align: 'right', format: fmt.eur }, { key: 'p', label: '%', align: 'right', format: (v, r) => fmt.pct((r.eje / r.def) * 100) }], rows: evo } }));
+    } else {
+      const ar = yr.filter((r) => r.tipo === 'gasto' && r.area_gasto === area);
+      const arPv = pv.filter((r) => r.tipo === 'gasto' && r.area_gasto === area);
+      out.appendChild(h(`<h2 class="section-title">${esc(label('area_gasto', area))}</h2>`));
+      out.appendChild(kpiRow([
+        { label: tr('Presupuesto del área', 'Pressupost de l’àrea', 'Area budget'), value: fmt.eurC(sum(ar, (r) => r.definitivo)), ...delta(sum(ar, (r) => r.definitivo), sum(arPv, (r) => r.definitivo)), context: `vs. ${anio - 1}` },
+        { label: tr('Peso sobre el total', 'Pes sobre el total', 'Share of total'), value: fmt.pct((sum(ar, (r) => r.definitivo) / G(yr, 'definitivo')) * 100) },
+        { label: tr('Ejecutado', 'Executat', 'Executed'), value: fmt.pct((sum(ar, (r) => r.ejecutado) / sum(ar, (r) => r.definitivo)) * 100) },
+      ]));
+      const caps = ar.map((r) => ({ name: `${r.capitulo}. ${label('capitulo_gasto', r.capitulo)}`, inicial: r.inicial, definitivo: r.definitivo, ejecutado: r.ejecutado, pct: (r.ejecutado / r.definitivo) * 100 }));
+      const g = h('<div class="chart-grid"></div>'); out.appendChild(g);
+      g.appendChild(chartCard({ title: tr('Previsto y ejecutado por tipo de gasto', 'Previst i executat per tipus de despesa', 'Planned and executed by spending type'), subtitle: `${anio} · ${tr('euros', 'euros', 'EUR')}`, file: `area-${area}-${anio}`, dataset: 'presupuesto', datasetTitle: ds, wide: true, level: 3,
+        draw: (b) => columns(b, { categories: caps.map((c) => c.name), series: [{ name: tr('Previsto', 'Previst', 'Planned'), values: caps.map((c) => c.definitivo), color: 'var(--seq-3)' }, { name: tr('Ejecutado', 'Executat', 'Executed'), values: caps.map((c) => c.ejecutado), color: 'var(--seq-6)' }], format: fmt.eur, axisFormat: fmt.eurC }),
+        table: { columns: [{ key: 'name', label: tr('Tipo de gasto (capítulo)', 'Tipus de despesa (capítol)', 'Spending type (chapter)') }, { key: 'inicial', label: tr('Inicial', 'Inicial', 'Initial'), align: 'right', format: fmt.eur }, { key: 'definitivo', label: tr('Definitivo', 'Definitiu', 'Final'), align: 'right', format: fmt.eur }, { key: 'ejecutado', label: tr('Ejecutado', 'Executat', 'Executed'), align: 'right', format: fmt.eur }, { key: 'pct', label: '%', align: 'right', format: (v) => fmt.pct(v) }], rows: caps } }));
+      out.appendChild(h(`<p class="callout callout-info">${icon('info', 20)}<span>${tr('El siguiente nivel de detalle (programas y partidas) estará disponible cuando la contabilidad municipal publique el presupuesto con clasificación por programas.', 'El següent nivell de detall (programes i partides) estarà disponible quan la comptabilitat municipal publique el pressupost amb classificació per programes.', 'The next level (programmes and line items) will be available once the accounts are published by programme.')}</span></p>`));
+    }
+    out.querySelectorAll('[data-area]').forEach((b) => b.addEventListener('click', () => { area = b.dataset.area; setQ({ area }); draw(); flushCharts(); out.querySelector('.drill-crumbs')?.scrollIntoView({ block: 'start' }); }));
   };
   draw();
   filt.querySelector('select').addEventListener('change', (e) => { anio = Number(e.target.value); setQ({ anio }); draw(); flushCharts(); });
@@ -102,123 +109,158 @@ async function contratacion(el, p, ctx) {
   const ds = pick((await store.dsMeta('contratos')).titulo);
   const q = ctx?.query || new URLSearchParams();
   const anios = [...new Set(all.map((c) => (c.fecha_adjudicacion || '').slice(0, 4)).filter(Boolean))].sort().reverse();
-  const st = { anio: q.get('anio') || 'all', tipo: q.get('tipo') || 'all', proc: q.get('proc') || 'all', q: q.get('q') || '' };
-  const A = [['all', t('all')]];
+  const st = { anio: q.get('anio') || '', tipo: q.get('tipo') || '', proc: q.get('proc') || '', q: q.get('q') || '', vista: q.get('vista') || 'lista' };
+  const A = [['', t('all')]];
   const usedTipos = [...new Set(all.map((c) => c.tipo))], usedProcs = [...new Set(all.map((c) => c.procedimiento))];
   el.innerHTML = '';
-  const form = h(`<form class="filters" onsubmit="return false" aria-label="${t('filters')}">
+  const form = h(`<form class="filter-bar" onsubmit="return false" aria-label="${t('filters')}">
+    <label class="control grow"><span>${tr('Buscar contratos', 'Cercar contractes', 'Search contracts')}</span><input id="fc-q" type="search" value="${esc(st.q)}" placeholder="${esc(tr('Objeto, empresa, NIF o expediente', 'Objecte, empresa, NIF o expedient', 'Subject, company, tax ID or file'))}"></label>
+    <details class="more-filters"><summary class="btn-ghost btn-sm">${icon('layout', 16)}${tr('Filtros', 'Filtres', 'Filters')}<span class="count" data-nf></span></summary><div class="more-filters-body">
     ${selectControl('fc-anio', tr('Año', 'Any', 'Year'), [...A, ...anios.map((a) => [a, a])], st.anio)}
     ${selectControl('fc-tipo', tr('Tipo', 'Tipus', 'Type'), [...A, ...codes('tipo_contrato').filter((k) => usedTipos.includes(k)).map((k) => [k, label('tipo_contrato', k)])], st.tipo)}
-    ${selectControl('fc-proc', tr('Procedimiento', 'Procediment', 'Procedure'), [...A, ...codes('procedimiento').filter((k) => usedProcs.includes(k)).map((k) => [k, label('procedimiento', k)])], st.proc)}
-    <label class="control grow"><span>${t('search')}</span><input id="fc-q" type="search" value="${esc(st.q)}" placeholder="${esc(tr('Objeto, empresa, NIF o expediente', 'Objecte, empresa, NIF o expedient', 'Subject, company, tax ID or file'))}"></label>
-    <button type="button" class="btn-ghost" id="fc-reset">${tr('Limpiar', 'Netejar', 'Reset')}</button></form>`);
-  const out = h('<div aria-live="polite"></div>');
-  el.append(form, out);
-  const norm = (s) => String(s ?? '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
-  const filtered = () => all.filter((c) => (st.anio === 'all' || (c.fecha_adjudicacion || '').startsWith(st.anio)) && (st.tipo === 'all' || c.tipo === st.tipo) && (st.proc === 'all' || c.procedimiento === st.proc) && (!st.q || norm(`${c.objeto} ${c.adjudicatario} ${c.adjudicatario_nif} ${c.id} ${c.expediente}`).includes(norm(st.q))));
+    ${selectControl('fc-proc', tr('Procedimiento', 'Procediment', 'Procedure'), [...A, ...codes('procedimiento').filter((k) => usedProcs.includes(k)).map((k) => [k, label('procedimiento', k)])], st.proc)}</div></details></form>`);
+  form.querySelector('.more-filters').open = matchMedia('(min-width: 768px)').matches;
+  const tabs = h(`<div class="tabs" role="tablist" aria-label="${esc(tr('Vistas de la contratación', 'Vistes de la contractació', 'Procurement views'))}">
+    ${[['lista', tr('Contratos', 'Contractes', 'Contracts')], ['estadisticas', tr('Estadísticas', 'Estadístiques', 'Statistics')], ['riesgo', tr('Indicadores de riesgo', 'Indicadors de risc', 'Risk indicators')]].map(([k, l]) => `<button type="button" role="tab" id="tab-${k}" aria-controls="panel-c" aria-selected="${st.vista === k}" tabindex="${st.vista === k ? 0 : -1}" data-vista="${k}">${l}</button>`).join('')}</div>`);
+  const summary = h('<div></div>');
+  const panel = h('<div id="panel-c" role="tabpanel" class="tab-panel" tabindex="0"></div>');
+  el.append(form, summary, tabs, panel);
+  const norm = (s_) => String(s_ ?? '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+  const filtered = () => all.filter((c) => (!st.anio || (c.fecha_adjudicacion || '').startsWith(st.anio)) && (!st.tipo || c.tipo === st.tipo) && (!st.proc || c.procedimiento === st.proc) && (!st.q || norm(`${c.objeto} ${c.adjudicatario} ${c.adjudicatario_nif} ${c.id} ${c.expediente}`).includes(norm(st.q))));
   const showDetail = (c) => {
-    const dlg = modal(esc(c.objeto), `${definitionList([
-      [tr('Expediente', 'Expedient', 'File'), esc(c.expediente)], [tr('Tipo', 'Tipus', 'Type'), label('tipo_contrato', c.tipo)], [tr('Procedimiento', 'Procediment', 'Procedure'), label('procedimiento', c.procedimiento)],
-      [tr('Estado', 'Estat', 'Status'), label('estado_contrato', c.estado)], ['CPV', c.cpv ? `${c.cpv} · ${label('cpv', c.cpv)}` : '—'], [tr('Órgano', 'Òrgan', 'Body'), esc(c.organo || '—')],
-      [tr('Adjudicación', 'Adjudicació', 'Award'), fmt.date(c.fecha_adjudicacion)], [tr('Formalización', 'Formalització', 'Signature'), fmt.date(c.fecha_formalizacion)],
-      [tr('Duración', 'Durada', 'Duration'), c.duracion_meses ? `${fmt.dec(c.duracion_meses, 0)} ${tr('meses', 'mesos', 'months')}` : '—'],
-      [tr('Presupuesto base (sin IVA)', 'Pressupost base (sense IVA)', 'Tender budget (ex VAT)'), c.presupuesto_base_sin_iva ? fmt.eur2(c.presupuesto_base_sin_iva) : '—'],
-      [tr('Importe de adjudicación', 'Import d’adjudicació', 'Award value'), c.importe_adjudicacion_sin_iva ? `<strong>${fmt.eur2(c.importe_adjudicacion_sin_iva)}</strong> ${tr('sin IVA', 'sense IVA', 'ex VAT')} · ${fmt.eur2(c.importe_adjudicacion_con_iva || 0)} ${tr('con IVA', 'amb IVA', 'inc VAT')}` : '—'],
-      [tr('Ofertas', 'Ofertes', 'Bids'), c.numero_ofertas ?? '—'], [tr('Adjudicatario', 'Adjudicatari', 'Supplier'), c.adjudicatario ? `${esc(c.adjudicatario)} · <code>${esc(c.adjudicatario_nif || '')}</code>${c.adjudicatario_pyme ? ' <span class="chip">PYME</span>' : ''}` : '—'],
-      [t('source'), label('fuente', c.fuente)]])}
+    const baja = c.presupuesto_base_sin_iva && c.importe_adjudicacion_sin_iva ? (1 - c.importe_adjudicacion_sin_iva / c.presupuesto_base_sin_iva) * 100 : null;
+    const fact = (k, v) => `<div><dt>${k}</dt><dd>${v ?? '—'}</dd></div>`;
+    const dlg = modal(tr('Contrato', 'Contracte', 'Contract'), `
+      <p class="contract-subject">${esc(c.objeto)}</p>
+      <div class="contract-headline"><div><span class="contract-amount">${c.importe_adjudicacion_sin_iva ? fmt.eur2(c.importe_adjudicacion_sin_iva) : '—'}</span><span class="muted small">${tr('importe de adjudicación sin IVA', 'import d’adjudicació sense IVA', 'award value excl. VAT')}${c.importe_adjudicacion_con_iva ? ` · ${fmt.eur2(c.importe_adjudicacion_con_iva)} ${tr('con IVA', 'amb IVA', 'incl. VAT')}` : ''}</span></div>
+        <span class="badge badge-neutral">${label('estado_contrato', c.estado)}</span></div>
+      <dl class="fact-grid">
+        ${fact(tr('Adjudicatario', 'Adjudicatari', 'Supplier'), c.adjudicatario ? `${esc(c.adjudicatario)}<br><span class="muted small">NIF ${esc(c.adjudicatario_nif || '—')}${c.adjudicatario_pyme ? ' · PYME' : ''}</span>` : '—')}
+        ${fact(tr('Procedimiento', 'Procediment', 'Procedure'), `${label('procedimiento', c.procedimiento)}${c.numero_ofertas ? `<br><span class="muted small">${c.numero_ofertas} ${c.numero_ofertas === 1 ? tr('oferta recibida', 'oferta rebuda', 'bid received') : tr('ofertas recibidas', 'ofertes rebudes', 'bids received')}</span>` : ''}`)}
+        ${fact(tr('Tipo de contrato', 'Tipus de contracte', 'Contract type'), label('tipo_contrato', c.tipo))}
+        ${fact(tr('Órgano que contrata', 'Òrgan que contracta', 'Contracting body'), esc(c.organo || '—'))}
+        ${fact(tr('Fecha de adjudicación', 'Data d’adjudicació', 'Award date'), fmt.full(c.fecha_adjudicacion))}
+        ${fact(tr('Fecha de formalización', 'Data de formalització', 'Signature date'), c.fecha_formalizacion ? fmt.full(c.fecha_formalizacion) : '—')}
+        ${fact(tr('Duración', 'Durada', 'Duration'), c.duracion_meses ? `${fmt.dec(c.duracion_meses, 0)} ${tr('meses', 'mesos', 'months')}` : '—')}
+        ${fact(tr('Presupuesto de licitación', 'Pressupost de licitació', 'Tender budget'), c.presupuesto_base_sin_iva ? `${fmt.eur(c.presupuesto_base_sin_iva)}${baja !== null ? `<br><span class="muted small">${tr('Rebaja', 'Rebaixa', 'Discount')}: ${fmt.pct(baja)}</span>` : ''}` : '—')}
+        ${fact(tr('Qué se contrata (CPV)', 'Què es contracta (CPV)', 'What (CPV)'), c.cpv ? `${label('cpv', c.cpv)}<br><span class="muted small">${esc(c.cpv)}</span>` : '—')}
+        ${fact(tr('Expediente', 'Expedient', 'File'), esc(c.expediente || '—'))}
+      </dl>
+      <h3 class="fact-h">${tr('Fuente y datos', 'Font i dades', 'Source and data')}</h3>
+      <p class="muted small">${t('source')}: ${label('fuente', c.fuente)}</p>
       <div class="modal-actions">${c.url ? `<a class="btn" href="${esc(c.url)}" rel="noopener">${tr('Ver en la Plataforma de Contratación', 'Veure en la Plataforma de Contractació', 'View on the Procurement Platform')} ${icon('external', 16)}</a>` : ''}
-      <button type="button" class="btn-ghost" data-ocds>${icon('code', 16)} OCDS (JSON)</button></div>`);
+        <button type="button" class="btn-ghost" data-ocds>${icon('code', 16)} OCDS (JSON)</button><button type="button" class="btn-ghost" data-link>${icon('link', 16)} ${tr('Copiar enlace', 'Copiar enllaç', 'Copy link')}</button></div>`);
     dlg.querySelector('[data-ocds]').addEventListener('click', () => download(`${c.id}.ocds.json`, JSON.stringify(toOCDS(c, ent), null, 2), 'application/json'));
+    dlg.querySelector('[data-link]').addEventListener('click', async (e) => { try { await navigator.clipboard.writeText(`${location.href.split('#')[0]}#/contratos?q=${encodeURIComponent(c.id)}`); e.currentTarget.textContent = tr('Enlace copiado', 'Enllaç copiat', 'Link copied'); } catch { /* */ } });
   };
+  const sync = () => { setQ({ anio: st.anio, tipo: st.tipo, proc: st.proc, q: st.q, vista: st.vista === 'lista' ? '' : st.vista }); };
+  const update = () => { sync(); draw(); flushCharts(); };
   const draw = () => {
-    out.innerHTML = '';
     const f = filtered();
-    if (!f.length) { out.appendChild(h(`<p class="callout callout-info">${t('no_results')}</p>`)); return; }
     const adj = f.filter((c) => c.importe_adjudicacion_sin_iva);
-    const groupBySafe = groupBy;
     const imp = sum(adj, (c) => c.importe_adjudicacion_sin_iva);
-    const noMen = adj.filter((c) => c.procedimiento !== '6');
-    out.appendChild(kpiRow([
-      { label: tr('Contratos', 'Contractes', 'Contracts'), value: fmt.int(f.length), context: `${fmt.int(f.filter((c) => c.procedimiento === '6').length)} ${tr('menores', 'menors', 'minor')}` },
-      { label: tr('Importe adjudicado', 'Import adjudicat', 'Awarded value'), value: fmt.eurC(imp), context: tr('sin IVA', 'sense IVA', 'ex VAT') },
-      { label: tr('Importe con concurrencia', 'Import amb concurrència', 'Competitively tendered'), value: imp ? fmt.pct((sum(adj.filter((c) => CONCURRENCIA.includes(c.procedimiento)), (c) => c.importe_adjudicacion_sin_iva) / imp) * 100) : '—', context: tr('procedimientos con publicidad', 'procediments amb publicitat', 'advertised procedures') },
-      { label: tr('Ofertas por licitación', 'Ofertes per licitació', 'Bids per tender'), value: noMen.length ? fmt.dec(sum(noMen, (c) => c.numero_ofertas || 0) / noMen.length) : '—', context: tr('media, sin menores', 'mitjana, sense menors', 'average, excl. minor') },
-      { label: tr('Adjudicado a pymes', 'Adjudicat a pimes', 'Awarded to SMEs'), value: imp ? fmt.pct((sum(adj.filter((c) => c.adjudicatario_pyme), (c) => c.importe_adjudicacion_sin_iva) / imp) * 100) : '—', context: tr('del importe', 'de l’import', 'of value') },
-    ]));
-    const grid = h('<div class="chart-grid"></div>');
-    out.appendChild(grid);
-    const byProc = [...groupBy(adj, (c) => c.procedimiento)].map(([k, v]) => ({ key: k, label: label('procedimiento', k), value: sum(v, (c) => c.importe_adjudicacion_sin_iva), color: PROC_COLOR[k] || SERIES[7], note: `${v.length} ${tr('contratos', 'contractes', 'contracts')}` })).sort((a, b) => b.value - a.value);
-    grid.appendChild(chartCard({ title: tr('Importe por procedimiento', 'Import per procediment', 'Value by procedure'), subtitle: tr('Euros sin IVA · pulsa para filtrar', 'Euros sense IVA · prem per a filtrar', 'EUR ex VAT · click to filter'), file: 'contratos-procedimiento', dataset: 'contratos', datasetTitle: ds,
-      draw: (b) => hBar(b, { data: byProc, format: fmt.eurC, onClick: (d) => { st.proc = d.key; sync(); } }), table: { columns: [{ key: 'label', label: tr('Procedimiento', 'Procediment', 'Procedure') }, { key: 'value', label: 'EUR', align: 'right', format: fmt.eur }], rows: byProc } }));
-    const years = anios.slice().reverse();
-    const tipos = [...new Set(adj.map((c) => c.tipo))];
-    const series = tipos.map((tp, i) => ({ name: label('tipo_contrato', tp), color: SERIES[i], values: years.map((y) => sum(adj.filter((c) => c.tipo === tp && (c.fecha_adjudicacion || '').startsWith(y)), (c) => c.importe_adjudicacion_sin_iva)) }));
-    grid.appendChild(chartCard({ title: tr('Importe adjudicado por año', 'Import adjudicat per any', 'Value awarded by year'), subtitle: tr('Apilado por tipo de contrato', 'Apilat per tipus de contracte', 'Stacked by contract type'), file: 'contratos-anual', dataset: 'contratos', datasetTitle: ds,
-      draw: (b) => columns(b, { categories: years, series, stacked: true, format: fmt.eur, axisFormat: fmt.eurC }), table: { columns: [{ key: 'y', label: tr('Año', 'Any', 'Year') }, ...series.map((s, i) => ({ key: 's' + i, label: s.name, align: 'right', format: fmt.eur }))], rows: years.map((y, yi) => Object.fromEntries([['y', y], ...series.map((s, i) => ['s' + i, s.values[yi]])])) } }));
-    const byEmp = [...groupBy(adj, (c) => c.adjudicatario || '—')].map(([k, v]) => ({ label: k, value: sum(v, (c) => c.importe_adjudicacion_sin_iva), note: `${v.length} ${tr('contratos', 'contractes', 'contracts')}` })).sort((a, b) => b.value - a.value);
-    grid.appendChild(chartCard({ title: tr('Principales adjudicatarios', 'Principals adjudicataris', 'Top suppliers'), subtitle: `${fmt.int(byEmp.length)} ${tr('empresas', 'empreses', 'companies')}`, file: 'contratos-adjudicatarios', dataset: 'contratos', datasetTitle: ds,
-      draw: (b) => hBar(b, { data: byEmp.slice(0, 10), format: fmt.eurC, maxLabel: 240, onClick: (d) => { st.q = d.label; sync(); } }), table: { columns: [{ key: 'label', label: tr('Empresa', 'Empresa', 'Company') }, { key: 'value', label: 'EUR', align: 'right', format: fmt.eur }], rows: byEmp } }));
-    const bins = ['1', '2', '3', '4', '5', '6+'];
-    const dist = bins.map((b) => noMen.filter((c) => (c.numero_ofertas >= 6 ? '6+' : String(c.numero_ofertas)) === b).length);
-    grid.appendChild(chartCard({ title: tr('Competencia: ofertas recibidas', 'Competència: ofertes rebudes', 'Competition: bids received'), subtitle: tr('Contratos no menores', 'Contractes no menors', 'Non-minor contracts'), file: 'contratos-ofertas', dataset: 'contratos', datasetTitle: ds,
-      draw: (b) => columns(b, { categories: bins, series: [{ name: tr('Contratos', 'Contractes', 'Contracts'), values: dist, color: SERIES[6] }], format: fmt.int }), table: { columns: [{ key: 'b', label: tr('Ofertas', 'Ofertes', 'Bids') }, { key: 'n', label: 'N', align: 'right' }], rows: bins.map((b, i) => ({ b, n: dist[i] })) } }));
-    // Indicadores de riesgo
-    const unica = adj.filter((c) => ['1', '9'].includes(c.procedimiento) && c.numero_ofertas === 1);
-    const fracc = [...groupBy(adj.filter((c) => c.procedimiento === '6'), (c) => `${c.adjudicatario_nif}|${c.cpv}|${(c.fecha_adjudicacion || '').slice(0, 4)}`)].map(([k, v]) => ({ k, v, total: sum(v, (c) => c.importe_adjudicacion_sin_iva) })).filter((g) => g.v.length > 1 && g.total > (UMBRAL_MENOR[g.v[0].tipo] || UMBRAL_MENOR.default));
-    const conc = byEmp.filter((d) => d.value / imp > 0.1);
-    const alertLi = (n, ti, de, lvl, key) => `<li class="alert alert-${n ? lvl : 'good'}"><span class="alert-n">${n}</span><div><strong>${ti}</strong><p>${de}</p>${n && key ? `<button type="button" class="link-btn" data-alert="${key}">${tr('Ver en la tabla', 'Veure en la taula', 'Show in table')} ↓</button>` : ''}</div></li>`;
-    out.appendChild(h(`<section class="card"><h2 class="block-title">${icon('flag', 20)} ${tr('Indicadores de riesgo e integridad', 'Indicadors de risc i integritat', 'Risk & integrity indicators')}</h2>
-      <p class="muted small">${tr('Señales calculadas automáticamente para facilitar el control ciudadano. No implican irregularidad.', 'Senyals calculats automàticament per a facilitar el control ciutadà. No impliquen irregularitat.', 'Automatic signals to support public scrutiny. They do not imply wrongdoing.')}</p>
-      <ul class="alert-grid">${alertLi(unica.length, tr('Procedimientos abiertos con una sola oferta', 'Procediments oberts amb una sola oferta', 'Open procedures with a single bid'), tr('Puede indicar baja competencia.', 'Pot indicar baixa competència.', 'May signal low competition.'), 'warning', 'unica')}
-      ${alertLi(fracc.length, tr('Posible fraccionamiento de menores', 'Possible fraccionament de menors', 'Possible split minor contracts'), tr('Mismo adjudicatario y CPV en un año por encima del umbral legal.', 'Mateix adjudicatari i CPV en un any per damunt del llindar legal.', 'Same supplier and CPV in a year above the legal threshold.'), 'serious', 'fracc')}
-      ${alertLi(conc.length, tr('Empresas con más del 10 % del importe', 'Empreses amb més del 10 % de l’import', 'Suppliers above 10% of value'), tr('Concentración en un solo proveedor.', 'Concentració en un sol proveïdor.', 'Concentration on a single supplier.'), 'warning', null)}</ul></section>`));
-    const tableHost = h('<section class="card"></section>');
-    out.appendChild(tableHost);
-    const drawTable = (subset, extra = '') => {
-      tableHost.innerHTML = `<div class="card-head"><h2 class="block-title">${tr('Relación de contratos', 'Relació de contractes', 'Contract list')}${extra}</h2><button type="button" class="btn-ghost" data-export>${icon('download', 16)} CSV</button></div>`;
-      tableHost.appendChild(dataTable({ caption: tr('Contratos', 'Contractes', 'Contracts'), rows: subset, pageSize: 15, onRow: showDetail, sortKey: 'fecha_adjudicacion', sortDir: -1, columns: [
-        { key: 'fecha_adjudicacion', label: tr('Fecha', 'Data', 'Date'), format: fmt.date }, { key: 'objeto', label: tr('Objeto', 'Objecte', 'Subject'), width: '36%' },
-        { key: 'procedimiento', label: tr('Procedimiento', 'Procediment', 'Procedure'), format: (v) => label('procedimiento', v) }, { key: 'adjudicatario', label: tr('Adjudicatario', 'Adjudicatari', 'Supplier') },
-        { key: 'numero_ofertas', label: tr('Ofertas', 'Ofertes', 'Bids'), align: 'right' }, { key: 'importe_adjudicacion_sin_iva', label: tr('Importe sin IVA', 'Import sense IVA', 'Value ex VAT'), align: 'right', format: (v) => (v ? fmt.eur(v) : '—') }] }));
-      tableHost.querySelector('[data-export]').addEventListener('click', () => download('contratos-seleccion.csv', '﻿' + toCSV(Object.keys(subset[0] || {}).map((k) => ({ key: k, label: k })), subset), 'text/csv;charset=utf-8'));
-    };
-    drawTable(f);
-    out.querySelectorAll('[data-alert]').forEach((b) => b.addEventListener('click', () => { const k = b.dataset.alert; drawTable(k === 'unica' ? unica : fracc.flatMap((g) => g.v), ` · ${b.closest('li').querySelector('strong').textContent}`); tableHost.scrollIntoView({ behavior: 'smooth' }); }));
+    // Resumen con chips de filtros activos
+    const chips = [
+      ...(st.q ? [{ label: `«${st.q}»`, onRemove: () => { st.q = ''; form.querySelector('#fc-q').value = ''; update(); } }] : []),
+      ...(st.anio ? [{ label: st.anio, onRemove: () => { st.anio = ''; form.querySelector('#fc-anio').value = ''; update(); } }] : []),
+      ...(st.tipo ? [{ label: label('tipo_contrato', st.tipo), onRemove: () => { st.tipo = ''; form.querySelector('#fc-tipo').value = ''; update(); } }] : []),
+      ...(st.proc ? [{ label: label('procedimiento', st.proc), onRemove: () => { st.proc = ''; form.querySelector('#fc-proc').value = ''; update(); } }] : []),
+    ];
+    const clear = () => { Object.assign(st, { anio: '', tipo: '', proc: '', q: '' }); form.querySelectorAll('select').forEach((x) => (x.value = '')); form.querySelector('#fc-q').value = ''; update(); };
+    const nf = [st.anio, st.tipo, st.proc].filter(Boolean).length; form.querySelector('[data-nf]').textContent = nf || ''; form.querySelector('[data-nf]').hidden = !nf;
+    summary.replaceChildren(filterSummary({ count: f.length, noun: f.length === 1 ? tr('contrato', 'contracte', 'contract') : tr('contratos', 'contractes', 'contracts'), chips, onClear: clear, clearAlways: true,
+      extra: h(`<p class="summary-figures"><span><strong>${fmt.eurC(imp)}</strong> ${tr('adjudicados sin IVA', 'adjudicats sense IVA', 'awarded excl. VAT')}</span><span><strong>${fmt.int(new Set(adj.map((c) => c.adjudicatario_nif)).size)}</strong> ${tr('empresas', 'empreses', 'companies')}</span><span><strong>${fmt.int(f.filter((c) => c.procedimiento === '6').length)}</strong> ${tr('contratos menores', 'contractes menors', 'minor contracts')}</span></p>`) }));
+    tabs.querySelectorAll('[role="tab"]').forEach((b) => { const on = b.dataset.vista === st.vista; b.setAttribute('aria-selected', String(on)); b.tabIndex = on ? 0 : -1; });
+    panel.setAttribute('aria-labelledby', `tab-${st.vista}`);
+    panel.innerHTML = '';
+    if (!f.length) { panel.appendChild(emptyState(tr('No hemos encontrado contratos con estos filtros.', 'No hem trobat contractes amb aquests filtres.', 'No contracts match these filters.'), '', [{ label: tr('Limpiar filtros', 'Netejar filtres', 'Clear filters'), onClick: clear, primary: true }])); return; }
+    if (st.vista === 'lista') {
+      const tbl = dataTable({ caption: tr('Contratos', 'Contractes', 'Contracts'), rows: f, pageSize: 20, onRow: showDetail, sortKey: 'fecha_adjudicacion', sortDir: -1, columns: [
+        { key: 'objeto', label: tr('Contrato', 'Contracte', 'Contract'), width: '40%', html: true, format: (v, c) => `<span class="cell-strong">${esc(v)}</span><span class="cell-sub">${label('procedimiento', c.procedimiento)}</span>` },
+        { key: 'adjudicatario', label: tr('Adjudicatario', 'Adjudicatari', 'Supplier') },
+        { key: 'fecha_adjudicacion', label: tr('Fecha', 'Data', 'Date'), format: fmt.date },
+        { key: 'importe_adjudicacion_sin_iva', label: tr('Importe sin IVA', 'Import sense IVA', 'Value ex VAT'), align: 'right', format: (v) => (v ? fmt.eur(v) : '—') }] });
+      panel.appendChild(tbl);
+      panel.appendChild(h(`<p class="table-foot">${tr('Pulsa un contrato para ver su ficha.', 'Prem un contracte per a veure’n la fitxa.', 'Select a contract to see its details.')} · <button type="button" class="link-btn" data-export>${icon('download', 14)} ${tr('Descargar esta selección (CSV)', 'Descarregar aquesta selecció (CSV)', 'Download this selection (CSV)')}</button></p>`));
+      panel.querySelector('[data-export]').addEventListener('click', () => download('contratos-seleccion.csv', '﻿' + toCSV(Object.keys(f[0] || {}).map((k) => ({ key: k, label: k })), f), 'text/csv;charset=utf-8'));
+    } else if (st.vista === 'estadisticas') {
+      const grid = h('<div class="chart-grid"></div>');
+      panel.appendChild(grid);
+      const years = anios.slice().reverse();
+      const tipos = [...new Set(adj.map((c) => c.tipo))];
+      const series = tipos.map((tp, i) => ({ name: label('tipo_contrato', tp), color: SERIES[i], values: years.map((y) => sum(adj.filter((c) => c.tipo === tp && (c.fecha_adjudicacion || '').startsWith(y)), (c) => c.importe_adjudicacion_sin_iva)) }));
+      grid.appendChild(chartCard({ title: tr('¿Cuánto se contrata cada año?', 'Quant es contracta cada any?', 'How much is contracted each year?'), subtitle: tr('Importe adjudicado sin IVA, por tipo de contrato', 'Import adjudicat sense IVA, per tipus de contracte', 'Value awarded excl. VAT, by contract type'), file: 'contratos-anual', dataset: 'contratos', datasetTitle: ds, wide: true, level: 2,
+        draw: (b) => columns(b, { categories: years, series, stacked: true, format: fmt.eur, axisFormat: fmt.eurC }), table: { columns: [{ key: 'y', label: tr('Año', 'Any', 'Year') }, ...series.map((s_, i) => ({ key: 's' + i, label: s_.name, align: 'right', format: fmt.eur }))], rows: years.map((y, yi) => Object.fromEntries([['y', y], ...series.map((s_, i) => ['s' + i, s_.values[yi]])])) } }));
+      const byProc = [...groupBy(adj, (c) => c.procedimiento)].map(([k, v]) => ({ key: k, label: label('procedimiento', k), value: sum(v, (c) => c.importe_adjudicacion_sin_iva), color: PROC_COLOR[k] || SERIES[7], note: `${v.length} ${tr('contratos', 'contractes', 'contracts')}` })).sort((a, b) => b.value - a.value);
+      grid.appendChild(chartCard({ title: tr('¿Cómo se adjudica?', 'Com s’adjudica?', 'How is it awarded?'), subtitle: tr('Importe por procedimiento · pulsa para filtrar', 'Import per procediment · prem per a filtrar', 'Value by procedure · click to filter'), file: 'contratos-procedimiento', dataset: 'contratos', datasetTitle: ds, level: 2,
+        draw: (b) => hBar(b, { data: byProc, format: fmt.eurC, onClick: (d) => { st.proc = d.key; form.querySelector('#fc-proc').value = d.key; st.vista = 'lista'; update(); } }), table: { columns: [{ key: 'label', label: tr('Procedimiento', 'Procediment', 'Procedure') }, { key: 'value', label: 'EUR', align: 'right', format: fmt.eur }], rows: byProc } }));
+      const byEmp = [...groupBy(adj, (c) => c.adjudicatario || '—')].map(([k, v]) => ({ label: k, value: sum(v, (c) => c.importe_adjudicacion_sin_iva), note: `${v.length} ${tr('contratos', 'contractes', 'contracts')}` })).sort((a, b) => b.value - a.value);
+      grid.appendChild(chartCard({ title: tr('¿A quién se adjudica?', 'A qui s’adjudica?', 'Who wins contracts?'), subtitle: tr('Las 10 empresas con más importe', 'Les 10 empreses amb més import', 'Top 10 companies by value'), file: 'contratos-adjudicatarios', dataset: 'contratos', datasetTitle: ds, level: 2,
+        draw: (b) => hBar(b, { data: byEmp.slice(0, 10), format: fmt.eurC, maxLabel: 240, onClick: (d) => { st.q = d.label; form.querySelector('#fc-q').value = d.label; st.vista = 'lista'; update(); } }), table: { columns: [{ key: 'label', label: tr('Empresa', 'Empresa', 'Company') }, { key: 'value', label: 'EUR', align: 'right', format: fmt.eur }], rows: byEmp } }));
+      const byCpv = [...groupBy(adj.filter((c) => c.cpv), (c) => c.cpv)].map(([k, v]) => ({ label: label('cpv', k), value: sum(v, (c) => c.importe_adjudicacion_sin_iva) })).sort((a, b) => b.value - a.value);
+      grid.appendChild(chartCard({ title: tr('¿Qué se contrata?', 'Què es contracta?', 'What is contracted?'), subtitle: tr('Importe por tipo de bien o servicio (CPV), 10 principales', 'Import per tipus de bé o servei (CPV), 10 principals', 'Value by goods/service type (CPV), top 10'), file: 'contratos-cpv', dataset: 'contratos', datasetTitle: ds, level: 2,
+        draw: (b) => hBar(b, { data: byCpv.slice(0, 10), format: fmt.eurC, color: SERIES[2] }), table: { columns: [{ key: 'label', label: 'CPV' }, { key: 'value', label: 'EUR', align: 'right', format: fmt.eur }], rows: byCpv } }));
+    } else {
+      const noMen = adj.filter((c) => c.procedimiento !== '6');
+      const unica = adj.filter((c) => ['1', '9'].includes(c.procedimiento) && c.numero_ofertas === 1);
+      const fracc = [...groupBy(adj.filter((c) => c.procedimiento === '6'), (c) => `${c.adjudicatario_nif}|${c.cpv}|${(c.fecha_adjudicacion || '').slice(0, 4)}`)].map(([k, v]) => ({ k, v, total: sum(v, (c) => c.importe_adjudicacion_sin_iva) })).filter((g) => g.v.length > 1 && g.total > (UMBRAL_MENOR[g.v[0].tipo] || UMBRAL_MENOR.default));
+      const byEmp = [...groupBy(adj, (c) => c.adjudicatario || '—')].map(([k, v]) => ({ k, value: sum(v, (c) => c.importe_adjudicacion_sin_iva) }));
+      const conc = byEmp.filter((d) => d.value / imp > 0.1);
+      panel.appendChild(h(`<div class="callout callout-info">${icon('info', 20)}<div><p>${tr('Son señales calculadas automáticamente para facilitar el control ciudadano. <strong>No implican ninguna irregularidad</strong>: indican dónde conviene mirar con más detalle.', 'Són senyals calculats automàticament per a facilitar el control ciutadà. <strong>No impliquen cap irregularitat</strong>: indiquen on convé mirar amb més detall.', 'These are automatic signals to support public scrutiny. <strong>They do not imply wrongdoing</strong>: they show where to look more closely.')}</p></div></div>`));
+      const li = (n, ti, de, lvl, key) => `<li class="alert alert-${n ? lvl : 'good'}"><span class="alert-n">${n}</span><div><strong>${ti}</strong><p>${de}</p>${n && key ? `<button type="button" class="link-btn" data-alert="${key}">${tr('Ver los contratos', 'Veure els contractes', 'See the contracts')} ↓</button>` : ''}</div></li>`;
+      panel.appendChild(h(`<ul class="alert-grid">
+        ${li(unica.length, tr('Procedimientos abiertos con una sola oferta', 'Procediments oberts amb una sola oferta', 'Open procedures with a single bid'), tr('Puede indicar poca competencia.', 'Pot indicar poca competència.', 'May signal low competition.'), 'warning', 'unica')}
+        ${li(fracc.length, tr('Posible fraccionamiento de contratos menores', 'Possible fraccionament de contractes menors', 'Possible split minor contracts'), tr('Misma empresa y objeto en un año por encima del límite legal.', 'Mateixa empresa i objecte en un any per damunt del límit legal.', 'Same company and object in a year above the legal limit.'), 'serious', 'fracc')}
+        ${li(conc.length, tr('Empresas con más del 10 % del importe', 'Empreses amb més del 10 % de l’import', 'Companies above 10% of value'), tr('Concentración en pocos proveedores.', 'Concentració en pocs proveïdors.', 'Concentration on few suppliers.'), 'warning', null)}
+        ${li(noMen.length ? Math.round((sum(noMen, (c) => c.numero_ofertas || 0) / noMen.length) * 10) / 10 : 0, tr('Ofertas por licitación (media)', 'Ofertes per licitació (mitjana)', 'Average bids per tender'), tr('Excluye contratos menores. Más ofertas suele indicar más competencia.', 'Exclou contractes menors. Més ofertes sol indicar més competència.', 'Excludes minor contracts. More bids usually means more competition.'), 'good', null)}</ul><div data-alert-table></div>`));
+      panel.querySelectorAll('[data-alert]').forEach((b) => b.addEventListener('click', () => {
+        const rows_ = b.dataset.alert === 'unica' ? unica : fracc.flatMap((g) => g.v);
+        panel.querySelector('[data-alert-table]').replaceChildren(dataTable({ caption: b.closest('li').querySelector('strong').textContent, rows: rows_, pageSize: 20, onRow: showDetail, columns: [{ key: 'objeto', label: tr('Contrato', 'Contracte', 'Contract') }, { key: 'adjudicatario', label: tr('Adjudicatario', 'Adjudicatari', 'Supplier') }, { key: 'fecha_adjudicacion', label: tr('Fecha', 'Data', 'Date'), format: fmt.date }, { key: 'importe_adjudicacion_sin_iva', label: tr('Importe', 'Import', 'Value'), align: 'right', format: fmt.eur }] }));
+      }));
+    }
     const exact = all.find((c) => c.id === st.q);
     if (exact && !draw.opened) { draw.opened = true; setTimeout(() => showDetail(exact), 200); }
   };
-  const sync = () => { setQ(st); ['anio', 'tipo', 'proc'].forEach((k) => (form.querySelector(`#fc-${k}`).value = st[k])); form.querySelector('#fc-q').value = st.q; draw(); flushCharts(); };
+  tabs.addEventListener('click', (e) => { const b = e.target.closest('[data-vista]'); if (b) { st.vista = b.dataset.vista; update(); b.focus(); } });
+  tabs.addEventListener('keydown', (e) => {
+    const ks = ['lista', 'estadisticas', 'riesgo']; const i = ks.indexOf(st.vista);
+    if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') { st.vista = ks[(i + (e.key === 'ArrowRight' ? 1 : 2)) % 3]; update(); tabs.querySelector(`[data-vista="${st.vista}"]`).focus(); }
+  });
+  ['anio', 'tipo', 'proc'].forEach((k) => form.querySelector(`#fc-${k}`).addEventListener('change', (e) => { st[k] = e.target.value; update(); }));
+  let deb; form.querySelector('#fc-q').addEventListener('input', (e) => { clearTimeout(deb); deb = setTimeout(() => { st.q = e.target.value.trim(); update(); }, 250); });
   draw();
-  ['anio', 'tipo', 'proc'].forEach((k) => form.querySelector(`#fc-${k}`).addEventListener('change', (e) => { st[k] = e.target.value; sync(); }));
-  let deb; form.querySelector('#fc-q').addEventListener('input', (e) => { clearTimeout(deb); deb = setTimeout(() => { st.q = e.target.value.trim(); sync(); }, 250); });
-  form.querySelector('#fc-reset').addEventListener('click', () => { Object.assign(st, { anio: 'all', tipo: 'all', proc: 'all', q: '' }); sync(); });
 }
 
 // ============================================================================ ÍNDICE
 const PESO = { publicado: 1, parcial: 0.5, pendiente: 0 };
 const MAX_DIAS = { continua: 15, semanal: 10, mensual: 45, trimestral: 105, semestral: 200, anual: 380, cuando_cambie: 400 };
-export const isStale = (o, hoy = new Date()) => o.ultima_actualizacion && (hoy - new Date(o.ultima_actualizacion + 'T00:00:00Z')) / 864e5 > MAX_DIAS[o.periodicidad];
+export const isStale = (o, hoy = new Date()) => o.estado === 'publicado' && o.ultima_actualizacion && (hoy - new Date(o.ultima_actualizacion + 'T00:00:00Z')) / 864e5 > MAX_DIAS[o.periodicidad];
 export function score(obl) {
-  const s = (set) => (set.reduce((a, o) => a + PESO[o.estado], 0) / (set.length || 1)) * 100;
+  const ap = obl.filter((o) => o.estado !== 'no_aplica');
+  const s_ = (set) => (set.reduce((a, o) => a + PESO[o.estado], 0) / (set.length || 1)) * 100;
   const counts = { publicado: 0, parcial: 0, pendiente: 0 };
-  obl.forEach((o) => counts[o.estado]++);
-  return { total: s(obl), counts, byBloque: [...new Set(obl.map((o) => o.bloque))].map((b) => ({ bloque: b, score: s(obl.filter((o) => o.bloque === b)), n: obl.filter((o) => o.bloque === b).length })), stale: obl.filter((o) => isStale(o)).length };
+  ap.forEach((o) => counts[o.estado]++);
+  return { total: s_(ap), counts, byBloque: [...new Set(ap.map((o) => o.bloque))].map((b) => ({ bloque: b, score: s_(ap.filter((o) => o.bloque === b)), n: ap.filter((o) => o.bloque === b).length })), stale: ap.filter((o) => isStale(o)).length };
 }
 async function indice(el) {
   const obl = await store.rows('obligaciones');
+  const ap = obl.filter((o) => o.estado !== 'no_aplica');
   const sc = score(obl);
-  el.innerHTML = `<div class="card compliance-hero">
-    <div class="score-ring big" style="--p:${sc.total}" role="img" aria-label="${fmt.dec(sc.total, 0)} %"><span>${fmt.dec(sc.total, 0)}<small>%</small></span></div>
-    <div><h2 class="block-title">${tr('Índice de cumplimiento', 'Índex de compliment', 'Compliance index')}</h2>
-    <p>${tr(`Se evalúan ${obl.length} obligaciones de publicidad activa. Publicada = 1 punto, parcial = 0,5, pendiente = 0.`, `S’avaluen ${obl.length} obligacions de publicitat activa. Publicada = 1 punt, parcial = 0,5, pendent = 0.`, `${obl.length} disclosure obligations assessed. Published = 1, partial = 0.5, pending = 0.`)}</p>
-    <div class="status-legend">${statusBadge('publicado')} ${sc.counts.publicado} ${statusBadge('parcial')} ${sc.counts.parcial} ${statusBadge('pendiente')} ${sc.counts.pendiente} <span class="badge badge-serious">${icon('warn', 12)}${tr('Desactualizadas', 'Desactualitzades', 'Out of date')}</span> ${sc.stale}</div></div></div>
-    <section class="card"><h2 class="block-title">${tr('Por bloques', 'Per blocs', 'By block')}</h2><ul class="meter-list">${sc.byBloque.map((b) => `<li><span class="ml-label">${label('bloque_obligacion', b.bloque)}</span><span class="ml-val">${fmt.dec(b.score, 0)} %</span>${meter(b.score)}</li>`).join('')}</ul></section>`;
-  const card = h(`<section class="card"><h2 class="block-title">${tr('Obligaciones una a una', 'Obligacions una a una', 'Obligations one by one')}</h2></section>`);
-  card.appendChild(dataTable({ caption: tr('Obligaciones', 'Obligacions', 'Obligations'), rows: obl, pageSize: 50, columns: [
-    { key: 'titulo', label: tr('Obligación', 'Obligació', 'Obligation'), html: true, format: (v, o) => `<a href="#/${o.pagina}">${esc(v)}</a>` },
-    { key: 'norma', label: tr('Norma', 'Norma', 'Law'), format: (v, o) => `${v}, ${o.articulo}` }, { key: 'estado', label: tr('Estado', 'Estat', 'Status'), html: true, format: (v) => statusBadge(v), sortValue: (o) => PESO[o.estado] },
-    { key: 'periodicidad', label: tr('Periodicidad', 'Periodicitat', 'Frequency'), format: (v) => label('periodicidad', v) },
-    { key: 'ultima_actualizacion', label: t('updated'), html: true, format: (v, o) => (v ? `${fmt.date(v)}${isStale(o) ? ` <span class="badge badge-serious" title="${esc(tr('Supera la periodicidad prevista', 'Supera la periodicitat prevista', 'Exceeds expected frequency'))}">${icon('warn', 12)}</span>` : ''}` : '—') }] }));
+  const stale = ap.filter((o) => isStale(o));
+  const fresh = sc.counts.publicado - stale.length;
+  const stat = (n, txt, cls, ic) => `<div class="status-stat status-${cls}">${icon(ic, 22)}<span class="status-n">${n}</span><span>${txt}</span></div>`;
+  el.innerHTML = `<div class="callout callout-info">${icon('info', 20)}<div><p>${tr('Esta página explica qué información obliga a publicar la normativa de transparencia y si el Ayuntamiento la tiene publicada y al día. Es información de control: <strong>si buscas un dato concreto, usa el buscador o los temas</strong>.', 'Aquesta pàgina explica quina informació obliga a publicar la normativa de transparència i si l’Ajuntament la té publicada i al dia. És informació de control: <strong>si busques una dada concreta, usa el cercador o els temes</strong>.', 'This page explains what transparency law requires to be published and whether it is published and up to date. It is a control tool: <strong>to find specific information, use search or topics</strong>.')}</p></div></div>
+    <section><h2 class="section-title">${tr('¿Está publicada la información?', 'Està publicada la informació?', 'Is the information published?')}</h2>
+      <div class="status-stats">${stat(fresh, tr('Disponibles y al día', 'Disponibles i al dia', 'Available and up to date'), 'good', 'ok')}${stat(stale.length, tr('Disponibles, pendientes de actualizar', 'Disponibles, pendents d’actualitzar', 'Available, need updating'), 'serious', 'clock')}${stat(sc.counts.parcial, tr('Incompletas', 'Incompletes', 'Incomplete'), 'warning', 'alert')}${stat(sc.counts.pendiente, tr('Pendientes de publicar', 'Pendents de publicar', 'Not yet published'), 'critical', 'alert')}</div>
+      <p class="muted small">${tr(`Índice de cumplimiento: <strong>${fmt.dec(sc.total, 0)} %</strong> (publicada = 1 punto, incompleta = 0,5, pendiente = 0; ${ap.length} obligaciones evaluadas).`, `Índex de compliment: <strong>${fmt.dec(sc.total, 0)} %</strong> (publicada = 1 punt, incompleta = 0,5, pendent = 0; ${ap.length} obligacions avaluades).`, `Compliance index: <strong>${fmt.dec(sc.total, 0)}%</strong> (published = 1, incomplete = 0.5, pending = 0; ${ap.length} obligations assessed).`)}</p></section>
+    <section><h2 class="section-title">${tr('Por temas', 'Per temes', 'By topic')}</h2><ul class="meter-list">${sc.byBloque.map((b) => `<li><span class="ml-label">${label('bloque_obligacion', b.bloque)}</span><span class="ml-val">${fmt.dec(b.score, 0)} %</span>${meter(b.score, { labelText: `${label('bloque_obligacion', b.bloque)}: ${fmt.dec(b.score, 0)} %` })}</li>`).join('')}</ul></section>`;
+  const card = h(`<section><h2 class="section-title">${tr('Detalle técnico: obligación, fundamento, estado y evidencia', 'Detall tècnic: obligació, fonament, estat i evidència', 'Technical detail: obligation, legal basis, status and evidence')}</h2></section>`);
+  card.appendChild(dataTable({ caption: tr('Obligaciones', 'Obligacions', 'Obligations'), rows: obl, pageSize: 60, columns: [
+    { key: 'titulo', label: tr('Obligación', 'Obligació', 'Obligation') },
+    { key: 'norma', label: tr('Fundamento', 'Fonament', 'Legal basis'), format: (v, o) => `${v}, ${o.articulo}` },
+    { key: 'estado', label: tr('Estado', 'Estat', 'Status'), html: true, format: (v, o) => statusBadge(isStale(o) ? 'desactualizada' : v), sortValue: (o) => (o.estado === 'no_aplica' ? -1 : PESO[o.estado] - (isStale(o) ? 0.25 : 0)) },
+    { key: 'ultima_actualizacion', label: t('updated'), format: (v, o) => (v ? `${fmt.date(v)} · ${label('periodicidad', o.periodicidad)}` : label('periodicidad', o.periodicidad)) },
+    { key: 'pagina', label: tr('Evidencia', 'Evidència', 'Evidence'), html: true, format: (v) => `<a href="#/${v}">${tr('Ver dónde se publica', 'Veure on es publica', 'See where it is published')}</a>` }] }));
   el.appendChild(card);
 }
 
@@ -246,7 +288,7 @@ export async function datasetDetail(el, id) {
   const env = await store.dataset(id);
   const base = store.url('');
   const j = `${base}data/${id}.json`, c = `${base}data/csv/${id}.csv`;
-  el.innerHTML = `<header class="page-head-inline"><nav class="breadcrumb"><a href="#/">${t('home')}</a> › <a href="#/datos-abiertos">${tr('Datos abiertos', 'Dades obertes', 'Open data')}</a> › ${esc(id)}</nav>
+  el.innerHTML = `<header class="page-header"><nav class="breadcrumb" aria-label="${esc(tr('Estás aquí', 'Estàs ací', 'You are here'))}"><ol><li><a href="#/">${t('home')}</a></li><li><a href="#/datos-abiertos">${tr('Datos abiertos', 'Dades obertes', 'Open data')}</a></li><li><span aria-current="page">${esc(pick(d.titulo))}</span></li></ol></nav>
     <h1 id="page-title" tabindex="-1">${esc(pick(d.titulo))}</h1><p class="lead">${esc(pick(d.descripcion))}</p></header>
     <div class="two-col"><section class="card"><h2 class="block-title">${tr('Descarga y API', 'Descàrrega i API', 'Download & API')}</h2>
       <p><a class="btn" href="data/csv/${id}.csv" download>${icon('download', 16)} CSV</a> <a class="btn" href="data/${id}.json">${icon('download', 16)} JSON</a> <a class="btn-ghost" href="#/${d.pagina}">${icon('chart', 16)} ${tr('Ver en el portal', 'Veure en el portal', 'See on the portal')}</a></p>
@@ -254,7 +296,7 @@ export async function datasetDetail(el, id) {
       <p class="label-sm">Python</p><pre><code>import pandas as pd
 df = pd.read_csv("${esc(c)}")</code></pre></section>
     <section class="card"><h2 class="block-title">${tr('Metadatos', 'Metadades', 'Metadata')}</h2>${definitionList([
-      [tr('Identificador', 'Identificador', 'Identifier'), `<code>${id}</code>`], [t('records'), fmt.int((env.datos || []).length)], [t('source'), d.fuente.url ? `<a href="${esc(d.fuente.url)}">${esc(d.fuente.nombre)}</a>` : esc(d.fuente.nombre)],
+      [tr('Identificador', 'Identificador', 'Identifier'), `<code>${id}</code>`], [t('records'), fmt.int((env.datos || []).length)], [t('source'), d.fuente.url ? `<a href="${esc(d.fuente.url)}">${esc(d.fuente.nombre)}</a>` : esc(d.fuente.nombre)], [tr('Responsable', 'Responsable', 'Owner'), esc(pick(d.responsable) || '—')],
       [t('updated'), fmt.date(String(env.actualizado || env.generado).slice(0, 10))], [tr('Cobertura temporal', 'Cobertura temporal', 'Temporal coverage'), `${d.temporal[0].slice(0, 4)}–${d.temporal[1].slice(0, 4)}`],
       [tr('Licencia', 'Llicència', 'Licence'), '<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>'], [tr('Temas', 'Temes', 'Themes'), `EU: ${d.tema_eu} · NTI: ${d.tema_nti}`]])}</section></div>`;
   const sch = h(`<section class="card"><h2 class="block-title">${tr('Diccionario de datos', 'Diccionari de dades', 'Data dictionary')}</h2></section>`);

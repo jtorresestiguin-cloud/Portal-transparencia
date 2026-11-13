@@ -1,7 +1,7 @@
 /**
  * ui.js — Components d'interfície reutilitzables i formatadors.
  */
-import { t, lang, label } from './i18n.js';
+import { t, tr, lang, label } from './i18n.js';
 import { exportSVG, sparkline, hideTip } from './charts.js';
 
 // ---------------------------------------------------------------------------
@@ -20,6 +20,7 @@ export const fmt = {
   dias: (n) => `${nf({ maximumFractionDigits: 1 }).format(n)} ${lang() === 'en' ? 'days' : lang() === 'va' ? 'dies' : 'días'}`,
   m2: (n) => `${nf({ maximumFractionDigits: 0 }).format(n)} m²`,
   date: (s) => s ? new Intl.DateTimeFormat(LOCALE[lang()], { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' }).format(new Date(s + 'T00:00:00Z')) : '—',
+  full: (s) => (s ? new Intl.DateTimeFormat(LOCALE[lang()], { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(new Date(String(s).slice(0, 10) + 'T00:00:00Z')) : '—'),
   dateLong: (s) => new Intl.DateTimeFormat(LOCALE[lang()], { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(new Date(s + 'T00:00:00Z')),
   month: (ym, long = false) => {
     const [y, m] = ym.split('-').map(Number);
@@ -90,6 +91,12 @@ export const ICONS = {
   layout: '<rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/>',
   mail: '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/>',
   settings: '<circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/>',
+  clock: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+  minus: '<path d="M6 12h12"/>',
+  alert: '<circle cx="12" cy="12" r="9"/><path d="M12 7v6M12 16.5h.01"/>',
+  question: '<circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6V14M12 17h.01"/>',
+  arrow: '<path d="M5 12h14M13 6l6 6-6 6"/>',
+  menu: '<path d="M4 6h16M4 12h16M4 18h16"/>',
   plane: '<path d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/>',
 };
 export const icon = (name, size = 20) => `<svg class="icon" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[name] || ''}</svg>`;
@@ -129,7 +136,7 @@ export function chartCard(o) {
     <figure class="card chart-card${o.wide ? ' wide' : ''}${o.full ? ' full' : ''}" id="${id}">
       <figcaption class="chart-head">
         <div>
-          <h3 class="chart-title">${o.title}</h3>
+          <h${o.level || 2} class="chart-title">${o.title}</h${o.level || 2}>
           ${o.subtitle ? `<p class="chart-sub">${o.subtitle}</p>` : ''}
         </div>
         <div class="chart-actions" role="group" aria-label="${esc(t('chart_actions'))}">
@@ -138,7 +145,7 @@ export function chartCard(o) {
           <button type="button" class="icon-btn" data-act="svg" title="${esc(t('download_svg'))}"><span class="btn-text">SVG</span></button>
         </div>
       </figcaption>
-      <div class="chart-body"></div>
+      <div class="chart-body" data-chart-label="${esc(String(o.title).replace(/<[^>]+>/g, ''))}"></div>
       <div class="chart-table" hidden></div>
       <p class="chart-source">${o.note ? `${o.note} · ` : ''}${o.dataset ? `${t('source')}: <a href="#/datos/${o.dataset}">${t('dataset')} «${esc(o.datasetTitle || o.dataset)}»</a>` : ''}</p>
     </figure>`);
@@ -174,13 +181,14 @@ export function flushCharts() {
 // ---------------------------------------------------------------------------
 // KPI / xifres destacades
 // ---------------------------------------------------------------------------
-export function kpi({ label: lbl, value, delta, deltaGood, context, spark, href }) {
+export function kpi({ label: lbl, value, delta, deltaGood, context, spark, href, source }) {
   const tag = href ? 'a' : 'div';
   const el = h(`<${tag} class="kpi"${href ? ` href="${href}"` : ''}>
       <span class="kpi-label">${lbl}</span>
       <span class="kpi-value">${value}</span>
       ${delta !== undefined && delta !== null ? `<span class="kpi-delta ${deltaGood === undefined ? '' : deltaGood ? 'good' : 'bad'}">${delta}</span>` : ''}
       ${context ? `<span class="kpi-context">${context}</span>` : ''}
+      ${source ? `<span class="kpi-source">${source}</span>` : ''}
     </${tag}>`);
   if (spark) el.appendChild(sparkline(spark));
   return el;
@@ -204,13 +212,14 @@ export function delta(cur, prev, { invert = false, pp = false } = {}) {
 export function meter(pct, { labelText, status } = {}) {
   const p = Math.max(0, Math.min(100, pct));
   const s = status || (p >= 85 ? 'good' : p >= 60 ? 'warning' : 'critical');
-  return `<div class="meter meter-${s}" role="meter" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${Math.round(p)}"${labelText ? ` aria-label="${esc(labelText)}"` : ''}><span style="width:${p}%"></span></div>`;
+  return `<div class="meter meter-${s}" role="meter" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${Math.round(p)}" aria-valuetext="${Math.round(p)} %" aria-label="${esc(labelText || `${Math.round(p)} %`)}"><span style="width:${p}%"></span></div>`;
 }
 
 export function statusBadge(code) {
-  const map = { publicado: ['ok', 'good'], parcial: ['warn', 'warning'], pendiente: ['x', 'critical'] };
+  const map = { publicado: ['ok', 'good'], parcial: ['alert', 'warning'], pendiente: ['alert', 'critical'], no_aplica: ['minus', 'neutral'], desactualizada: ['clock', 'serious'] };
   const [ic, cls] = map[code] || ['info', 'neutral'];
-  return `<span class="badge badge-${cls}">${icon(ic, 14)}${label('estado_obligacion', code)}</span>`;
+  const txt = code === 'desactualizada' ? tr('Pendiente de actualizar', 'Pendent d’actualitzar', 'Needs updating') : label('estado_obligacion', code);
+  return `<span class="badge badge-${cls}">${icon(ic, 14)}${txt}</span>`;
 }
 
 // ---------------------------------------------------------------------------
@@ -222,7 +231,7 @@ export function statusBadge(code) {
 export function dataTable(o) {
   let sortKey = o.sortKey || null, sortDir = o.sortDir || 1, page = 0;
   const ps = o.pageSize || 15;
-  const wrap = h(`<div class="table-wrap${o.compact ? ' compact' : ''}"></div>`);
+  const wrap = h(`<div class="table-wrap${o.compact ? ' compact' : ''}${o.cards === false ? '' : ' cards-mobile'}"></div>`);
   const render = () => {
     let rows = o.rows.slice();
     if (sortKey) {
@@ -244,8 +253,8 @@ export function dataTable(o) {
         <thead><tr>${o.columns.map((c) => `<th scope="col" class="${c.align === 'right' ? 'num' : ''}"${c.width ? ` style="width:${c.width}"` : ''} aria-sort="${sortKey === c.key ? (sortDir > 0 ? 'ascending' : 'descending') : 'none'}"><button type="button" data-sort="${c.key}">${c.label}<span class="sort-ind" aria-hidden="true">${sortKey === c.key ? (sortDir > 0 ? '↑' : '↓') : '↕'}</span></button></th>`).join('')}</tr></thead>
         <tbody>${slice.length ? slice.map((r, i) => `<tr${o.onRow ? ` class="clickable" tabindex="0" data-i="${page * ps + i}"` : ''}>${o.columns.map((c) => {
           const v = c.format ? c.format(r[c.key], r) : r[c.key];
-          return `<td class="${c.align === 'right' ? 'num' : ''}">${c.html ? (v ?? '') : esc(v ?? '—')}</td>`;
-        }).join('')}</tr>`).join('') : `<tr><td colspan="${o.columns.length}" class="empty">${o.emptyText || t('no_results')}</td></tr>`}</tbody>
+          return `<td class="${c.align === 'right' ? 'num' : ''}" data-label="${esc(String(c.label).replace(/<[^>]+>/g, ''))}">${c.html ? (v ?? '') : esc(v ?? '—')}</td>`;
+        }).join('')}</tr>`).join('') : `<tr class="empty-row"><td colspan="${o.columns.length}" class="empty">${o.emptyHtml || esc(o.emptyText || t('no_results'))}</td></tr>`}</tbody>
       </table></div>
       ${pages > 1 ? `<nav class="pager" aria-label="${esc(t('pagination'))}">
         <button type="button" data-page="prev" ${page === 0 ? 'disabled' : ''}>‹ ${t('prev')}</button>
@@ -302,4 +311,39 @@ export function sectionHeader({ kicker, title, intro, iconName }) {
       ${intro ? `<p class="lead">${intro}</p>` : ''}
     </div>
   </header>`;
+}
+
+// ---------------------------------------------------------------------------
+// Estados vacíos y barra de filtros activos
+// ---------------------------------------------------------------------------
+/** Estado vacío humano y accionable. actions: [{label, href?, onClick?, primary?}] */
+export function emptyState(title, text, actions = []) {
+  const el = h(`<div class="empty-state" role="status">${icon('search', 28)}<p class="empty-title">${esc(title)}</p>${text ? `<p class="muted">${esc(text)}</p>` : ''}<div class="empty-actions"></div></div>`);
+  actions.forEach((a) => {
+    const b = a.href ? h(`<a class="${a.primary ? 'btn' : 'btn-ghost'}" href="${a.href}">${esc(a.label)}</a>`) : h(`<button type="button" class="${a.primary ? 'btn' : 'btn-ghost'}">${esc(a.label)}</button>`);
+    if (a.onClick) b.addEventListener('click', a.onClick);
+    el.querySelector('.empty-actions').appendChild(b);
+  });
+  return el;
+}
+/**
+ * Resumen de resultados con filtros activos en forma de chips.
+ * @param {{count:number, noun:string, chips:{label:string, onRemove:()=>void}[], onClear:()=>void, extra?:HTMLElement}} o
+ */
+export function filterSummary(o) {
+  const el = h(`<div class="filter-summary" aria-live="polite"><p class="result-count"><strong>${fmt.int(o.count)}</strong> ${esc(o.noun)}</p><ul class="chips-active" aria-label="${esc(tr('Filtros aplicados', 'Filtres aplicats', 'Active filters'))}"></ul></div>`);
+  const ul = el.querySelector('ul');
+  o.chips.forEach((c) => {
+    const li = h(`<li><button type="button" class="chip-active" aria-label="${esc(tr('Quitar filtro', 'Llevar filtre', 'Remove filter'))}: ${esc(c.label)}"><span>${esc(c.label)}</span>${icon('x', 14)}</button></li>`);
+    li.querySelector('button').addEventListener('click', c.onRemove);
+    ul.appendChild(li);
+  });
+  if (o.chips.length > 1 || (o.chips.length && o.clearAlways)) {
+    const li = h(`<li><button type="button" class="link-btn">${esc(tr('Limpiar filtros', 'Netejar filtres', 'Clear filters'))}</button></li>`);
+    li.querySelector('button').addEventListener('click', o.onClear);
+    ul.appendChild(li);
+  }
+  if (!o.chips.length) ul.hidden = true;
+  if (o.extra) el.appendChild(o.extra);
+  return el;
 }

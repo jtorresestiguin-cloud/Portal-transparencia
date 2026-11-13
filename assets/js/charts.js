@@ -118,7 +118,8 @@ function mount(container, draw, ariaLabel) {
     const width = Math.max(260, container.clientWidth || 600);
     const svg = draw(width);
     svg.setAttribute('role', 'img');
-    if (ariaLabel) svg.setAttribute('aria-label', ariaLabel);
+    const name = ariaLabel || container.closest('[data-chart-label]')?.dataset.chartLabel;
+    if (name) svg.setAttribute('aria-label', name);
     plot.replaceChildren(svg);
   };
   render();
@@ -466,6 +467,7 @@ export function treemap(container, o) {
         svgEl('text', { x: c.x + 9, y: c.y + 37, class: 'cell-value', style: `fill:${ink}`, text: `${fmt(c.value)} · ${pct}` }, g);
       }
       bindTip(g, () => `<strong>${c.name}</strong>${tipRow(c.color, '', fmt(c.value))}<div class="tt-note">${pct}</div>`);
+      if (o.onClick) { g.classList.add('clickable'); g.addEventListener('click', () => o.onClick(c)); } // la alternativa de teclado es la lista de áreas bajo el gráfico
     }
     return svg;
   }, o.ariaLabel);

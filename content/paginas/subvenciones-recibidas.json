@@ -58,5 +58,11 @@
   {
    "tipo": "indicadores"
   }
- ]
+ ],
+ "responsable": {
+  "es": "Intervención",
+  "va": "Intervenció",
+  "en": "Comptroller"
+ },
+ "actualizado": "2026-11-10"
 }

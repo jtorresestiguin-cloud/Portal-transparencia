@@ -34,5 +34,11 @@
     "en": "This portal is designed to meet WCAG 2.1 AA and EN 301 549, in line with **Royal Decree 1112/2018**.\n\n- Every chart has a table alternative and CSV download.\n- The colour palette is validated for colour-vision deficiencies and has a dark-mode version.\n- Full keyboard navigation and skip link.\n- Statuses use icon and text, never colour alone.\n- Available in Spanish, Valencian and English."
    }
   }
- ]
+ ],
+ "responsable": {
+  "es": "Unidad de Transparencia",
+  "va": "Unitat de Transparència",
+  "en": "Transparency Unit"
+ },
+ "actualizado": "2026-11-10"
 }

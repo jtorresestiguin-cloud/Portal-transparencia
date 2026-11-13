@@ -65,5 +65,11 @@
   {
    "tipo": "indicadores"
   }
- ]
+ ],
+ "responsable": {
+  "es": "Urbanismo",
+  "va": "Urbanisme",
+  "en": "Planning"
+ },
+ "actualizado": "2026-11-10"
 }

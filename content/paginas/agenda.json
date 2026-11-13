@@ -62,5 +62,11 @@
   {
    "tipo": "indicadores"
   }
- ]
+ ],
+ "responsable": {
+  "es": "Gabinete de Alcaldía",
+  "va": "Gabinet d’Alcaldia",
+  "en": "Mayor’s Office"
+ },
+ "actualizado": "2026-11-10"
 }

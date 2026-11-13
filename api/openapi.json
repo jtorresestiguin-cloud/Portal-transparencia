@@ -1027,7 +1027,7 @@
           },
           "cargo_id": {
             "type": "string",
-            "description": "Cargo (identificador del conjunto «cargos»)"
+            "description": "Cargo"
           },
           "tipo": {
             "type": "string",

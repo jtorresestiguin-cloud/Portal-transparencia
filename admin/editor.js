@@ -46,6 +46,7 @@ function change(path, fn, { silent = false } = {}) {
   else last.t = now;
   if (S.hist.length > 80) S.hist.shift();
   fn(data);
+  if (path.startsWith('content/paginas/')) data.actualizado = today();
   if (path.startsWith('data/') && path !== 'data/sync/estado.json' && data && 'datos' in data) { data.actualizado = today(); delete data.ejemplo; data.fuente = data.fuente === 'ejemplo' ? 'manual' : data.fuente; }
   S.snap.set(path, JSON.stringify(data));
   markDirty(path);
@@ -108,6 +109,13 @@ async function buildForm(host, props, obj, onChange) {
       }
       case 'bool': wrap.classList.add('ed-check'); input = h(`<input type="checkbox"${v ? ' checked' : ''}>`); input.addEventListener('change', () => { obj[p.clave] = input.checked; onChange(p.clave); }); wrap.prepend(input); input = null; break;
       case 'select': input = h(`<select><option value="">—</option>${p.opciones.map(([k, l]) => `<option value="${esc(k)}"${String(v) === String(k) ? ' selected' : ''}>${esc(pick(l))}</option>`).join('')}</select>`); input.addEventListener('change', () => { obj[p.clave] = input.value || undefined; onChange(p.clave); }); break;
+      case 'pagina': {
+        const portal = W('content/portal.json') || await store.portal();
+        const ids = [...new Set([...portal.categorias.flatMap((c) => c.paginas), 'accesibilidad', 'sobre-los-datos'])];
+        input = h(`<select><option value="">—</option>${ids.map((id) => `<option value="${id}"${id === v ? ' selected' : ''}>${id}</option>`).join('')}</select>`);
+        input.addEventListener('change', () => { obj[p.clave] = input.value || undefined; onChange(p.clave); });
+        break;
+      }
       case 'icono': input = h(`<select>${Object.keys(ICONS).map((k) => `<option${k === v ? ' selected' : ''}>${k}</option>`).join('')}</select>`); input.addEventListener('change', () => { obj[p.clave] = input.value; onChange(p.clave); }); break;
       case 'conjunto': input = h(`<select><option value="">—</option>${m.conjuntos.map((d) => `<option value="${d.id}"${d.id === v ? ' selected' : ''}>${esc(pick(d.titulo))}</option>`).join('')}</select>`); input.addEventListener('change', () => { obj[p.clave] = input.value; onChange(p.clave, true); }); break;
       case 'campo': {
@@ -139,7 +147,7 @@ async function buildForm(host, props, obj, onChange) {
         const draw = () => {
           list.innerHTML = '';
           items.forEach((it, i) => {
-            const det = h(`<details class="ed-list-item"${i === items.length - 1 && draw.added ? ' open' : ''}><summary>${esc(i18nVal(it.titulo || it.etiqueta) || `Elemento ${i + 1}`)}<span class="ed-bactions">
+            const det = h(`<details class="ed-list-item"${i === items.length - 1 && draw.added ? ' open' : ''}><summary>${esc(i18nVal(it.titulo || it.etiqueta || it.texto) || `Elemento ${i + 1}`)}<span class="ed-bactions">
               <button type="button" class="ed-mini" data-a="up" title="Subir">${icon('up', 14)}</button><button type="button" class="ed-mini" data-a="down" title="Bajar">${icon('down', 14)}</button><button type="button" class="ed-mini" data-a="del" title="Eliminar">${icon('trash', 14)}</button></span></summary><div></div></details>`);
             det.querySelector('summary').addEventListener('click', (e) => {
               const a = e.target.closest('[data-a]')?.dataset.a; if (!a) return; e.preventDefault();
@@ -215,10 +223,12 @@ async function renderPage() {
   main.innerHTML = '';
   const head = h(`<section class="ed-pagehead"><div class="ed-row"><label class="ed-field"><span>Título de la página ${missingTag(pg.titulo)}</span><input type="text" id="pg-t" value="${esc(i18nVal(pg.titulo))}"></label>
     <label class="ed-field"><span>Icono</span><select id="pg-i">${Object.keys(ICONS).map((k) => `<option${k === pg.icono ? ' selected' : ''}>${k}</option>`).join('')}</select></label></div>
-    <label class="ed-field"><span>Entradilla ${missingTag(pg.intro)}</span><input type="text" id="pg-d" value="${esc(i18nVal(pg.intro))}"></label>
-    <p class="ed-hint">Dirección pública: <a href="../#/${pg.id}" target="_blank" rel="noopener">#/${pg.id}</a> · Arrastra componentes desde el panel derecho o pulsa <strong>+</strong> entre bloques.</p></section>`);
+    <label class="ed-field"><span>Entradilla (explicación breve, en lenguaje claro) ${missingTag(pg.intro)}</span><input type="text" id="pg-d" value="${esc(i18nVal(pg.intro))}"></label>
+    <label class="ed-field"><span>Responsable de la información ${missingTag(pg.responsable)}</span><input type="text" id="pg-r" value="${esc(i18nVal(pg.responsable))}" placeholder="p. ej. Secretaría General"></label>
+    <p class="ed-hint">La fecha de actualización se pone sola al publicar cambios${pg.actualizado ? ` (ahora: ${esc(pg.actualizado)})` : ''}; la fuente se toma de los conjuntos de datos que usan los bloques. Dirección pública: <a href="../#/${pg.id}" target="_blank" rel="noopener">#/${pg.id}</a> · Arrastra componentes desde el panel derecho o pulsa <strong>+</strong> entre bloques.</p></section>`);
   head.querySelector('#pg-t').addEventListener('input', (e) => change(PATH(), (p) => setI18n(p, 'titulo', e.target.value)));
   head.querySelector('#pg-d').addEventListener('input', (e) => change(PATH(), (p) => setI18n(p, 'intro', e.target.value)));
+  head.querySelector('#pg-r').addEventListener('input', (e) => change(PATH(), (p) => setI18n(p, 'responsable', e.target.value)));
   head.querySelector('#pg-i').addEventListener('change', (e) => change(PATH(), (p) => (p.icono = e.target.value)));
   main.appendChild(head);
   const canvas = h('<div class="ed-canvas portal-preview"></div>');
@@ -345,7 +355,11 @@ function openCategory(ci) {
       <button type="button" class="btn-ghost" data-a="del">${icon('trash', 14)} Eliminar</button></div>
     <p class="ed-hint">Las categorías son las «cajitas» de la portada y el menú lateral. Para cambiar el orden de sus páginas, usa las flechas.</p><ul class="ed-files">${c.paginas.map((p, i) => `<li><code>${p}</code><button class="ed-mini" data-pu="${i}" title="Subir">${icon('up', 14)}</button><button class="ed-mini" data-pr="${i}" title="Quitar de la categoría">${icon('trash', 14)}</button></li>`).join('')}</ul>`;
   buildForm(panel.querySelector('.ed-form'), [
-    { clave: 'titulo', tipo: 'texto', etiqueta: { es: 'Título' } }, { clave: 'descripcion', tipo: 'texto', etiqueta: { es: 'Descripción' } }, { clave: 'icono', tipo: 'icono', etiqueta: { es: 'Icono' } }],
+    { clave: 'titulo', tipo: 'texto', etiqueta: { es: 'Título' } }, { clave: 'descripcion', tipo: 'texto', etiqueta: { es: 'Descripción breve (qué encontrará el ciudadano)' } }, { clave: 'icono', tipo: 'icono', etiqueta: { es: 'Icono' } },
+    { clave: 'cifras', tipo: 'lista', etiqueta: { es: 'Cifras clave de la categoría' }, campos: [{ clave: 'etiqueta', tipo: 'texto', etiqueta: { es: 'Etiqueta' } }, { clave: 'conjunto', tipo: 'conjunto', etiqueta: { es: 'Conjunto de datos' } },
+      { clave: 'operacion', tipo: 'select', etiqueta: { es: 'Cálculo' }, opciones: [['contar', { es: 'Contar registros' }], ['sumar', { es: 'Sumar' }], ['media', { es: 'Media' }], ['max', { es: 'Máximo' }], ['ultimo', { es: 'Último valor' }]] },
+      { clave: 'campo', tipo: 'campo', etiqueta: { es: 'Campo' } }, { clave: 'filtro', tipo: 'filtro', etiqueta: { es: 'Filtro' } },
+      { clave: 'formato', tipo: 'select', etiqueta: { es: 'Formato' }, opciones: [['entero', { es: 'Número' }], ['euros', { es: 'Euros' }], ['euros_compacto', { es: 'Euros (abreviado)' }], ['porcentaje', { es: 'Porcentaje' }], ['dias', { es: 'Días' }], ['m2', { es: 'm²' }], ['decimal', { es: 'Decimal' }]] }] }],
   c, () => { change('content/portal.json', () => {}); renderSide(); });
   panel.addEventListener('click', (e) => {
     const a = e.target.closest('[data-a]')?.dataset.a, pu = e.target.closest('[data-pu]')?.dataset.pu, pr = e.target.closest('[data-pr]')?.dataset.pr;
@@ -366,9 +380,18 @@ function openHome() {
   S.view = { kind: 'home' };
   const portal = W('content/portal.json');
   $('#ed-main').innerHTML = `<section class="ed-card"><h2>Portada</h2><div class="ed-form"></div></section>`;
-  buildForm($('#ed-main .ed-form'), [{ clave: 'titulo', tipo: 'texto', etiqueta: { es: 'Título' } }, { clave: 'intro', tipo: 'texto_largo', etiqueta: { es: 'Texto de bienvenida' } }], portal.portada, () => change('content/portal.json', () => {}));
+  buildForm($('#ed-main .ed-form'), [{ clave: 'titulo', tipo: 'texto', etiqueta: { es: 'Título' } }, { clave: 'intro', tipo: 'texto', etiqueta: { es: 'Frase de bienvenida (una línea)' } },
+    { clave: 'preguntas', tipo: 'lista', etiqueta: { es: 'Lo más consultado (preguntas en lenguaje ciudadano)' }, campos: [{ clave: 'texto', tipo: 'texto', etiqueta: { es: 'Pregunta' } }, { clave: 'pagina', tipo: 'pagina', etiqueta: { es: 'Página que la responde' } }] },
+    { clave: 'datos_destacados', tipo: 'lista', etiqueta: { es: 'Datos destacados (se calculan solos y muestran fuente y fecha)' }, campos: [...[{ clave: 'etiqueta', tipo: 'texto', etiqueta: { es: 'Etiqueta' } }, { clave: 'conjunto', tipo: 'conjunto', etiqueta: { es: 'Conjunto de datos' } },
+      { clave: 'operacion', tipo: 'select', etiqueta: { es: 'Cálculo' }, opciones: [['contar', { es: 'Contar registros' }], ['sumar', { es: 'Sumar' }], ['media', { es: 'Media' }], ['max', { es: 'Máximo' }], ['ultimo', { es: 'Último valor' }]] },
+      { clave: 'campo', tipo: 'campo', etiqueta: { es: 'Campo' } }, { clave: 'filtro', tipo: 'filtro', etiqueta: { es: 'Filtro' } },
+      { clave: 'formato', tipo: 'select', etiqueta: { es: 'Formato' }, opciones: [['entero', { es: 'Número' }], ['euros', { es: 'Euros' }], ['euros_compacto', { es: 'Euros (abreviado)' }], ['porcentaje', { es: 'Porcentaje' }], ['dias', { es: 'Días' }], ['m2', { es: 'm²' }], ['decimal', { es: 'Decimal' }]] }], { clave: 'pagina', tipo: 'pagina', etiqueta: { es: 'Página de detalle' } }] }],
+    portal.portada, () => change('content/portal.json', () => {}));
+  const menuBox = h('<section class="ed-card"><h2>Menú principal y accesos rápidos</h2><div class="ed-form"></div></section>');
+  $('#ed-main').appendChild(menuBox);
+  buildForm(menuBox.querySelector('.ed-form'), [{ clave: 'menu', tipo: 'lista', etiqueta: { es: 'Enlaces (texto corto)' }, campos: [{ clave: 'texto', tipo: 'texto', etiqueta: { es: 'Texto' } }, { clave: 'pagina', tipo: 'pagina', etiqueta: { es: 'Página' } }] }], portal, () => change('content/portal.json', () => {}));
   const all = portal.categorias.flatMap((c) => c.paginas);
-  const box = h(`<section class="ed-card"><h2>Accesos destacados</h2><div class="ed-checks">${all.map((p) => `<label><input type="checkbox" value="${p}"${portal.portada.destacados.includes(p) ? ' checked' : ''}> ${p}</label>`).join('')}</div></section>`);
+  const box = h(`<section class="ed-card"><h2>Accesos destacados (compatibilidad)</h2><div class="ed-checks">${all.map((p) => `<label><input type="checkbox" value="${p}"${portal.portada.destacados.includes(p) ? ' checked' : ''}> ${p}</label>`).join('')}</div></section>`);
   box.addEventListener('change', (e) => change('content/portal.json', (p) => { p.portada.destacados = e.target.checked ? [...p.portada.destacados, e.target.value] : p.portada.destacados.filter((x) => x !== e.target.value); }));
   $('#ed-main').appendChild(box);
   showPalette();

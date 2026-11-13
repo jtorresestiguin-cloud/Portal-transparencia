@@ -694,7 +694,7 @@
           {
             "name": "cargo_id",
             "type": "string",
-            "description": "Cargo (identificador del conjunto «cargos»)"
+            "description": "Cargo"
           },
           {
             "name": "tipo",
@@ -1227,7 +1227,8 @@
               "enum": [
                 "publicado",
                 "parcial",
-                "pendiente"
+                "pendiente",
+                "no_aplica"
               ]
             }
           },

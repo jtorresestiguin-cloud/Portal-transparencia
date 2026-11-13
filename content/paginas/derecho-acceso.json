@@ -68,5 +68,11 @@
   {
    "tipo": "indicadores"
   }
- ]
+ ],
+ "responsable": {
+  "es": "Unidad de Transparencia",
+  "va": "Unitat de Transparència",
+  "en": "Transparency Unit"
+ },
+ "actualizado": "2026-11-10"
 }

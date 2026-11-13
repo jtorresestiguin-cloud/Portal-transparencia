@@ -128,5 +128,11 @@
   {
    "tipo": "indicadores"
   }
- ]
+ ],
+ "responsable": {
+  "es": "Intervención y Tesorería",
+  "va": "Intervenció i Tresoreria",
+  "en": "Comptroller & Treasury"
+ },
+ "actualizado": "2026-11-10"
 }

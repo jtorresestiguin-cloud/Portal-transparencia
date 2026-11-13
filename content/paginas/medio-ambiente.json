@@ -58,5 +58,11 @@
   {
    "tipo": "indicadores"
   }
- ]
+ ],
+ "responsable": {
+  "es": "Medio Ambiente",
+  "va": "Medi Ambient",
+  "en": "Environment"
+ },
+ "actualizado": "2026-11-10"
 }

@@ -7,16 +7,133 @@
    "en": "Transparency Portal"
   },
   "intro": {
-   "es": "Consulta cómo se gestionan los recursos públicos: presupuesto, contratos, subvenciones, cargos públicos y mucho más. Toda la información se puede descargar en formatos abiertos.",
-   "va": "Consulta com es gestionen els recursos públics: pressupost, contractes, subvencions, càrrecs públics i molt més. Tota la informació es pot descarregar en formats oberts.",
-   "en": "See how public resources are managed: budget, contracts, grants, public officials and more. Everything can be downloaded in open formats."
+   "es": "Toda la información pública del Ayuntamiento, clara y accesible.",
+   "va": "Tota la informació pública de l’Ajuntament, clara i accessible.",
+   "en": "All the council’s public information, clear and accessible."
   },
   "destacados": [
    "contratos",
-   "cargos",
    "presupuesto",
-   "subvenciones",
-   "derecho-acceso"
+   "cargos",
+   "subvenciones"
+  ],
+  "preguntas": [
+   {
+    "texto": {
+     "es": "¿Cuánto cobran el alcalde y los concejales?",
+     "va": "Quant cobren l’alcalde i els regidors?",
+     "en": "How much are the mayor and councillors paid?"
+    },
+    "pagina": "cargos"
+   },
+   {
+    "texto": {
+     "es": "¿Qué contratos se han adjudicado?",
+     "va": "Quins contractes s’han adjudicat?",
+     "en": "Which contracts have been awarded?"
+    },
+    "pagina": "contratos"
+   },
+   {
+    "texto": {
+     "es": "¿En qué se gasta el presupuesto?",
+     "va": "En què es gasta el pressupost?",
+     "en": "What is the budget spent on?"
+    },
+    "pagina": "presupuesto"
+   },
+   {
+    "texto": {
+     "es": "¿Cuánto debe el Ayuntamiento?",
+     "va": "Quant deu l’Ajuntament?",
+     "en": "How much does the council owe?"
+    },
+    "pagina": "economia"
+   },
+   {
+    "texto": {
+     "es": "¿A quién se conceden subvenciones?",
+     "va": "A qui es concedeixen subvencions?",
+     "en": "Who receives grants?"
+    },
+    "pagina": "subvenciones"
+   },
+   {
+    "texto": {
+     "es": "¿Con quién se reúne el gobierno municipal?",
+     "va": "Amb qui es reuneix el govern municipal?",
+     "en": "Who does the local government meet with?"
+    },
+    "pagina": "agenda"
+   },
+   {
+    "texto": {
+     "es": "¿Hay oposiciones o bolsas de empleo abiertas?",
+     "va": "Hi ha oposicions o borses d’ocupació obertes?",
+     "en": "Are there open job vacancies?"
+    },
+    "pagina": "procesos-selectivos"
+   },
+   {
+    "texto": {
+     "es": "¿Qué ordenanzas están en vigor?",
+     "va": "Quines ordenances estan en vigor?",
+     "en": "Which by-laws are in force?"
+    },
+    "pagina": "normativa"
+   }
+  ],
+  "datos_destacados": [
+   {
+    "etiqueta": {
+     "es": "Presupuesto de gastos 2026",
+     "va": "Pressupost de despeses 2026",
+     "en": "2026 spending budget"
+    },
+    "conjunto": "presupuesto",
+    "operacion": "sumar",
+    "campo": "definitivo",
+    "filtro": "anio=2026;tipo=gasto",
+    "formato": "euros_compacto",
+    "pagina": "presupuesto"
+   },
+   {
+    "etiqueta": {
+     "es": "Contratos adjudicados en 2026",
+     "va": "Contractes adjudicats en 2026",
+     "en": "Contracts awarded in 2026"
+    },
+    "conjunto": "contratos",
+    "operacion": "contar",
+    "filtro": "fecha_adjudicacion>=2026-01-01",
+    "formato": "entero",
+    "pagina": "contratos"
+   },
+   {
+    "etiqueta": {
+     "es": "Subvenciones concedidas en 2026",
+     "va": "Subvencions concedides en 2026",
+     "en": "Grants awarded in 2026"
+    },
+    "conjunto": "subvenciones",
+    "operacion": "sumar",
+    "campo": "importe",
+    "filtro": "fecha_concesion>=2026-01-01",
+    "formato": "euros_compacto",
+    "pagina": "subvenciones"
+   },
+   {
+    "etiqueta": {
+     "es": "Deuda viva a final de 2025",
+     "va": "Deute viu a final de 2025",
+     "en": "Debt at end of 2025"
+    },
+    "conjunto": "deuda",
+    "operacion": "ultimo",
+    "campo": "deuda_viva",
+    "formato": "euros_compacto",
+    "pagina": "economia"
+   }
   ]
  },
  "categorias": [
@@ -37,6 +154,29 @@
     "organizacion",
     "cargos",
     "agenda"
+   ],
+   "cifras": [
+    {
+     "etiqueta": {
+      "es": "Miembros de la corporación",
+      "va": "Membres de la corporació",
+      "en": "Council members"
+     },
+     "conjunto": "cargos",
+     "operacion": "contar",
+     "filtro": "tipo_cargo!=eventual",
+     "formato": "entero"
+    },
+    {
+     "etiqueta": {
+      "es": "Actividades en la agenda",
+      "va": "Activitats en l’agenda",
+      "en": "Diary entries"
+     },
+     "conjunto": "agenda",
+     "operacion": "contar",
+     "formato": "entero"
+    }
    ]
   },
   {
@@ -56,6 +196,20 @@
     "personal",
     "procesos-selectivos",
     "compatibilidades"
+   ],
+   "cifras": [
+    {
+     "etiqueta": {
+      "es": "Personas en plantilla (2025)",
+      "va": "Persones en plantilla (2025)",
+      "en": "Headcount (2025)"
+     },
+     "conjunto": "plantilla",
+     "operacion": "sumar",
+     "campo": "efectivos",
+     "filtro": "anio=2025",
+     "formato": "entero"
+    }
    ]
   },
   {
@@ -92,6 +246,29 @@
    },
    "paginas": [
     "patrimonio"
+   ],
+   "cifras": [
+    {
+     "etiqueta": {
+      "es": "Inmuebles",
+      "va": "Immobles",
+      "en": "Properties"
+     },
+     "conjunto": "inmuebles",
+     "operacion": "contar",
+     "formato": "entero"
+    },
+    {
+     "etiqueta": {
+      "es": "Superficie",
+      "va": "Superfície",
+      "en": "Area"
+     },
+     "conjunto": "inmuebles",
+     "operacion": "sumar",
+     "campo": "superficie_m2",
+     "formato": "m2"
+    }
    ]
   },
   {
@@ -110,6 +287,42 @@
    "paginas": [
     "presupuesto",
     "economia"
+   ],
+   "cifras": [
+    {
+     "etiqueta": {
+      "es": "Presupuesto de gastos 2026",
+      "va": "Pressupost de despeses 2026",
+      "en": "2026 spending budget"
+     },
+     "conjunto": "presupuesto",
+     "operacion": "sumar",
+     "campo": "definitivo",
+     "filtro": "anio=2026;tipo=gasto",
+     "formato": "euros_compacto"
+    },
+    {
+     "etiqueta": {
+      "es": "Periodo medio de pago (último mes)",
+      "va": "Període mitjà de pagament (últim mes)",
+      "en": "Payment period (latest)"
+     },
+     "conjunto": "pmp",
+     "operacion": "ultimo",
+     "campo": "pmp_dias",
+     "formato": "dias"
+    },
+    {
+     "etiqueta": {
+      "es": "Deuda viva",
+      "va": "Deute viu",
+      "en": "Debt"
+     },
+     "conjunto": "deuda",
+     "operacion": "ultimo",
+     "campo": "deuda_viva",
+     "formato": "euros_compacto"
+    }
    ]
   },
   {
@@ -129,6 +342,29 @@
     "subvenciones",
     "subvenciones-recibidas",
     "plan-estrategico-subvenciones"
+   ],
+   "cifras": [
+    {
+     "etiqueta": {
+      "es": "Importe concedido",
+      "va": "Import concedit",
+      "en": "Amount awarded"
+     },
+     "conjunto": "subvenciones",
+     "operacion": "sumar",
+     "campo": "importe",
+     "formato": "euros_compacto"
+    },
+    {
+     "etiqueta": {
+      "es": "Concesiones",
+      "va": "Concessions",
+      "en": "Awards"
+     },
+     "conjunto": "subvenciones",
+     "operacion": "contar",
+     "formato": "entero"
+    }
    ]
   },
   {
@@ -147,6 +383,39 @@
    "paginas": [
     "contratos",
     "encargos"
+   ],
+   "cifras": [
+    {
+     "etiqueta": {
+      "es": "Contratos",
+      "va": "Contractes",
+      "en": "Contracts"
+     },
+     "conjunto": "contratos",
+     "operacion": "contar",
+     "formato": "entero"
+    },
+    {
+     "etiqueta": {
+      "es": "Importe adjudicado",
+      "va": "Import adjudicat",
+      "en": "Value awarded"
+     },
+     "conjunto": "contratos",
+     "operacion": "sumar",
+     "campo": "importe_adjudicacion_sin_iva",
+     "formato": "euros_compacto"
+    },
+    {
+     "etiqueta": {
+      "es": "Encargos a medios propios",
+      "va": "Encàrrecs a mitjans propis",
+      "en": "In-house assignments"
+     },
+     "conjunto": "encargos",
+     "operacion": "contar",
+     "formato": "entero"
+    }
    ]
   },
   {
@@ -266,8 +535,43 @@
     "en": "Reusable data catalogue, API and standards."
    },
    "paginas": [
-    "datos-abiertos"
+    "datos-abiertos",
+    "sobre-los-datos"
    ]
+  }
+ ],
+ "menu": [
+  {
+   "pagina": "contratos",
+   "texto": {
+    "es": "Contratos",
+    "va": "Contractes",
+    "en": "Contracts"
+   }
+  },
+  {
+   "pagina": "presupuesto",
+   "texto": {
+    "es": "Presupuesto",
+    "va": "Pressupost",
+    "en": "Budget"
+   }
+  },
+  {
+   "pagina": "cargos",
+   "texto": {
+    "es": "Cargos y sueldos",
+    "va": "Càrrecs i sous",
+    "en": "Officials & pay"
+   }
+  },
+  {
+   "pagina": "subvenciones",
+   "texto": {
+    "es": "Subvenciones",
+    "va": "Subvencions",
+    "en": "Grants"
+   }
   }
  ]
 }

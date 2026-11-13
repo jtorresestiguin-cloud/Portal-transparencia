@@ -57,5 +57,11 @@
   {
    "tipo": "indicadores"
   }
- ]
+ ],
+ "responsable": {
+  "es": "Participación Ciudadana",
+  "va": "Participació Ciutadana",
+  "en": "Citizen Participation"
+ },
+ "actualizado": "2026-11-10"
 }

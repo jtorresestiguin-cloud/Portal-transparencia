@@ -13,10 +13,6 @@
  },
  "bloques": [
   {
-   "tipo": "fuente",
-   "conjunto": "encargos"
-  },
-  {
    "tipo": "cifras",
    "items": [
     {
@@ -73,5 +69,11 @@
   {
    "tipo": "indicadores"
   }
- ]
+ ],
+ "responsable": {
+  "es": "Servicio de Contratación",
+  "va": "Servei de Contractació",
+  "en": "Procurement Service"
+ },
+ "actualizado": "2026-11-10"
 }

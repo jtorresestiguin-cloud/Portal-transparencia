@@ -64,5 +64,11 @@
   {
    "tipo": "indicadores"
   }
- ]
+ ],
+ "responsable": {
+  "es": "Secretaría General",
+  "va": "Secretaria General",
+  "en": "General Secretariat"
+ },
+ "actualizado": "2026-11-10"
 }

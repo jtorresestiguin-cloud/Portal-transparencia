@@ -810,19 +810,24 @@
  },
  "estado_obligacion": {
   "publicado": {
-   "es": "Publicado",
-   "va": "Publicat",
-   "en": "Published"
+   "es": "Disponible",
+   "va": "Disponible",
+   "en": "Available"
   },
   "parcial": {
-   "es": "Parcial",
-   "va": "Parcial",
-   "en": "Partial"
+   "es": "Incompleta",
+   "va": "Incompleta",
+   "en": "Incomplete"
   },
   "pendiente": {
-   "es": "Pendiente",
-   "va": "Pendent",
-   "en": "Pending"
+   "es": "Pendiente de publicar",
+   "va": "Pendent de publicar",
+   "en": "Not yet published"
+  },
+  "no_aplica": {
+   "es": "No aplica",
+   "va": "No s’aplica",
+   "en": "Not applicable"
   }
  },
  "bloque_obligacion": {
