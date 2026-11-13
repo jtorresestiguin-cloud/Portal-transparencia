@@ -168,3 +168,15 @@ dialog.ed-prev-dlg .modal-body { display: flex; flex-direction: column; height: 
 .ed-up-thumb { width: 56px; height: 56px; border-radius: 8px; object-fit: cover; border: 1px solid var(--line); }
 .ed-up-thumb[hidden], .ed-up-view[hidden] { display: none; }
 .ed-up-info { flex-basis: 100%; }
+
+/* Inicio de sesión */
+body.ed-locked > :not(.ed-login):not(.ed-toast) { visibility: hidden; }
+.ed-login { position: fixed; inset: 0; z-index: 3000; display: grid; place-items: center; padding: 16px; background: var(--bg, #f6f6f4); overflow: auto; }
+.ed-login-card { width: min(460px, 100%); background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 28px; box-shadow: 0 10px 30px rgba(0,0,0,.08); display: grid; gap: 10px; }
+.ed-login-card h1 { font-size: 1.3rem; margin: 6px 0 0; }
+.ed-login-card form { display: grid; gap: 10px; margin-top: 6px; }
+.ed-login-card .btn, .ed-login-card .btn-ghost { justify-content: center; width: 100%; }
+.ed-check-line { display: flex; gap: 8px; align-items: flex-start; font-size: .85rem; }
+.ed-login-help { font-size: .85rem; border-top: 1px solid var(--line); padding-top: 10px; } .ed-login-help summary { cursor: pointer; font-weight: 650; } .ed-login-help ol { padding-left: 18px; display: grid; gap: 4px; }
+.ed-user { display: flex; align-items: center; gap: 8px; padding-left: 8px; border-left: 1px solid rgba(255,255,255,.25); }
+.ed-user img { border-radius: 50%; } .ed-user span { display: flex; flex-direction: column; line-height: 1.15; font-size: .8rem; } .ed-user small { opacity: .75; }

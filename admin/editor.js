@@ -26,6 +26,7 @@ import * as store from '../assets/js/store.js';
 import { BLOCKS, loadAdvanced, renderBlock } from '../assets/js/blocks/index.js';
 import * as G from './gestion.js';
 import * as A from './archivos.js';
+import * as Z from './sesion.js';
 
 const S = { snap: new Map(), work: new Map(), orig: new Map(), dirty: new Set(), hist: [], lang: 'es', tab: 'inicio', view: null, sel: null, insertAt: null, rec: null, mode: 'simple', pick: new Set(), ds: null, uploads: new Map() };
 try { S.mode = localStorage.getItem('ed-mode') || 'simple'; } catch { /* */ }
@@ -625,7 +626,7 @@ async function openEntity() {
   main.innerHTML = `<section class="ed-card"><h2>Datos de la entidad</h2><div id="ent-a"></div></section>
     <section class="ed-card"><h2>Colores corporativos</h2><div id="ent-c"></div></section>
     <section class="ed-card"><h2>Plataforma de Contratación del Sector Público</h2><p class="ed-hint">Identificadores del órgano de contratación tal como aparecen en PLACSP (NIF o DIR3, separados por comas) y nombres alternativos.</p><div id="ent-p"></div></section>
-    <section class="ed-card"><h2>Publicación</h2><p class="ed-hint">Con «Enviar a revisión», cada publicación crea una propuesta en GitHub que una persona responsable aprueba. Combínalo con la protección de la rama publicada para separar quien edita de quien publica.</p><div id="ent-g"></div></section>
+    <section class="ed-card"><h2>Acceso y publicación</h2><p class="ed-hint">Solo pueden entrar en este panel las cuentas de GitHub con permiso de escritura en el repositorio (y, si se rellena la lista, solo esas personas). Con «Enviar a revisión», cada publicación crea una propuesta en GitHub que una persona responsable aprueba. Combínalo con la protección de la rama publicada para separar quien edita de quien publica.</p><div id="ent-g"></div></section>
     <section class="ed-card"><h2>Base de Datos Nacional de Subvenciones</h2><p class="ed-hint">Identificadores del órgano concedente en la BDNS (separados por comas) o, si se desconocen, el nombre exacto del órgano.</p><div id="ent-b"></div></section>`;
   const save = () => { change('config/entidad.json', () => {}); applyColors(); };
   buildForm($('#ent-a'), ENTITY_FORM, cfg, save);
@@ -634,7 +635,7 @@ async function openEntity() {
   const csv = (obj, key) => ({ get: () => (obj[key] || []).join(', '), set: (v) => (obj[key] = v.split(',').map((x) => x.trim()).filter(Boolean)) });
   const listField = (host, label_, acc) => { const w = h(`<label class="ed-field"><span>${label_}</span><input type="text" value="${esc(acc.get())}"></label>`); w.querySelector('input').addEventListener('input', (e) => { acc.set(e.target.value); save(); }); host.appendChild(w); };
   cfg.github = cfg.github || {};
-  buildForm($('#ent-g'), [{ clave: 'publicacion', tipo: 'select', etiqueta: { es: 'Modo de publicación por defecto' }, opciones: [['revision', { es: 'Enviar a revisión (recomendado)' }], ['directo', { es: 'Publicar directamente' }]] }, { clave: 'repositorio', tipo: 'texto_simple', etiqueta: { es: 'Repositorio (organización/nombre)' } }, { clave: 'rama', tipo: 'texto_simple', etiqueta: { es: 'Rama publicada' } }], cfg.github, save);
+  buildForm($('#ent-g'), [{ clave: 'publicacion', tipo: 'select', etiqueta: { es: 'Modo de publicación por defecto' }, opciones: [['revision', { es: 'Enviar a revisión (recomendado)' }], ['directo', { es: 'Publicar directamente' }]] }, { clave: 'repositorio', tipo: 'texto_simple', etiqueta: { es: 'Repositorio (organización/nombre)' } }, { clave: 'rama', tipo: 'texto_simple', etiqueta: { es: 'Rama publicada' } }], cfg.github, save).then(() => listField($('#ent-g'), 'Personas autorizadas a entrar en el panel (usuarios de GitHub separados por comas; vacío = cualquier colaborador con permiso de escritura)', csv(cfg.github, 'usuarios_autorizados')));
   const P = cfg.fuentes.placsp, B = cfg.fuentes.bdns;
   buildForm($('#ent-p'), [{ clave: 'activo', tipo: 'bool', etiqueta: { es: 'Sincronización activa' } }, { clave: 'desde', tipo: 'fecha', etiqueta: { es: 'Importar desde' } }], P, save).then(() => {
     listField($('#ent-p'), 'Identificadores del órgano (NIF, DIR3)', csv(P, 'identificadores_organo'));
@@ -710,21 +711,21 @@ async function openPublish() {
       ${total ? `<fieldset class="ed-modes"><legend class="sr-only">Modo de publicación</legend>
         <label><input type="radio" name="pub-mode" value="revision"${modo === 'revision' ? ' checked' : ''}> <span><strong>Enviar a revisión</strong> (recomendado): crea una propuesta de cambios en GitHub; una persona responsable la revisa y la aprueba, y entonces se publica. El token necesita además el permiso <em>Pull requests: Read and write</em>.</span></label>
         <label><input type="radio" name="pub-mode" value="directo"${modo !== 'revision' ? ' checked' : ''}> <span><strong>Publicar directamente</strong>: los cambios se publican en 1–2 minutos.</span></label></fieldset>` : ''}
-      <details class="ed-conn"${gh.token ? '' : ' open'}><summary>Conexión con GitHub ${gh.token ? '· <span class="ed-count-ok">conectado</span>' : '· sin conectar'}</summary>
+      <details class="ed-conn"${gh.token ? '' : ' open'}><summary>Conexión con GitHub ${gh.token ? `· <span class="ed-count-ok">sesión de ${esc(S.session?.user?.name || 'usuario')} (${esc(S.session?.rol || '')})</span>` : '· sin conectar (modo de prueba)'}</summary>
         <p class="muted small">Necesitas un <a href="https://github.com/settings/personal-access-tokens/new" rel="noopener" target="_blank">token de acceso de grano fino</a> limitado a este repositorio, con <em>Contents: Read and write</em> (y <em>Actions: Read and write</em> para lanzar la sincronización). Por seguridad, el token se guarda solo durante esta sesión salvo que marques «Recordar».</p>
         <div class="ed-field"><span>Repositorio</span><input type="text" id="gh-repo" value="${esc(gh.repo)}" placeholder="organizacion/repositorio"></div>
         <div class="ed-field"><span>Rama publicada</span><input type="text" id="gh-branch" value="${esc(gh.branch)}"></div>
         <div class="ed-field"><span>Token</span><input type="password" id="gh-token" value="${esc(gh.token)}" autocomplete="off"></div>
         <label class="ed-field" style="display:flex;gap:6px;align-items:center"><input type="checkbox" id="gh-remember"${gh.remembered ? ' checked' : ''}> Recordar en este navegador (no recomendado en equipos compartidos)</label>
-        ${gh.token ? '<button type="button" class="link-btn" id="gh-forget">Olvidar el token en este navegador</button>' : ''}
+        ${gh.token ? '<button type="button" class="link-btn" id="gh-forget">Cerrar sesión y olvidar el token en este navegador</button>' : ''}
         <details class="ed-hint"><summary>Para un uso en producción</summary><p>El token personal es adecuado para entidades pequeñas. En producción se recomienda una GitHub App u OAuth con un pequeño servicio intermedio, de modo que nadie maneje tokens, y proteger la rama publicada para que solo se publique mediante revisión. Ver docs/GUIA-EDITOR.md.</p></details></details>
       ${total ? `<div class="ed-field"><span>Descripción del cambio</span><input type="text" id="gh-msg" value="Actualización de contenidos del portal de transparencia"></div>` : ''}
       <div class="modal-actions">${total ? '<button type="button" class="btn" id="gh-go" disabled>Comprobando…</button><button type="button" class="btn-ghost" id="dl-go">Descargar ficheros</button><button type="button" class="btn-ghost" id="discard">Descartar todo</button>' : '<button type="button" class="btn" id="gh-save">Guardar conexión</button>'}</div>
       <p id="gh-status" class="muted small" role="status"></p></section>`);
   dlg.classList.add('ed-pub-dlg');
   const creds = () => ({ repo: dlg.querySelector('#gh-repo').value.trim(), branch: dlg.querySelector('#gh-branch').value.trim() || 'main', token: dlg.querySelector('#gh-token').value.trim(), modo: dlg.querySelector('[name="pub-mode"]:checked')?.value || modo });
-  const store_ = (s) => { try { const rem = dlg.querySelector('#gh-remember').checked; (rem ? localStorage : sessionStorage).setItem('ed-gh', JSON.stringify(s)); if (!rem) localStorage.removeItem('ed-gh'); } catch { /* */ } };
-  dlg.querySelector('#gh-forget')?.addEventListener('click', () => { try { localStorage.removeItem('ed-gh'); sessionStorage.removeItem('ed-gh'); } catch { /* */ } dlg.close(); toast('Token olvidado'); });
+  const store_ = (s) => { try { const rem = dlg.querySelector('#gh-remember').checked; const cur = Z.current() || {}; (rem ? localStorage : sessionStorage).setItem('ed-gh', JSON.stringify({ ...cur, ...s, last: Date.now() })); if (!rem) localStorage.removeItem('ed-gh'); } catch { /* */ } };
+  dlg.querySelector('#gh-forget')?.addEventListener('click', () => { dlg.close(); Z.logout(); });
   dlg.querySelector('#gh-save')?.addEventListener('click', () => { store_(creds()); dlg.close(); toast('Conexión guardada'); });
   if (!total) return;
   // 1. resumen de cambios
@@ -837,6 +838,9 @@ async function init() {
   await Promise.all(['config/entidad.json', 'content/portal.json'].map(load));
   applyColors();
   $('#ed-entity').textContent = pick(W('config/entidad.json').nombre);
+  // Inicio de sesión: la identidad y los permisos los valida GitHub (ver sesion.js)
+  S.session = await Z.gate(W('config/entidad.json'));
+  Z.userBadge($('.ed-top-tools'), S.session, () => S.dirty.size + S.uploads.size > 0);
   setLang('es');
   // Borrador pendiente
   try {

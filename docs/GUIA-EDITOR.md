@@ -16,6 +16,18 @@ El editor está en `/admin/` del portal (por ejemplo, `https://…/Portal-transp
 └──────────────┴──────────────────────────────────────────┴────────────────┘
 ```
 
+## Inicio de sesión
+
+Al abrir `/admin/` se pide **iniciar sesión con un token de acceso de GitHub**. Como el portal es estático, no guarda contraseñas: es GitHub quien comprueba la identidad y los permisos.
+
+- Solo entran las cuentas con **permiso de escritura** en el repositorio del portal. Si en *Entidad → Acceso y publicación* se rellena la lista de **personas autorizadas**, solo esas cuentas.
+- El rol se toma del permiso en GitHub: *Administración* (admin), *Publicación* (maintain) o *Edición* (write; se le propone «Enviar a revisión»).
+- La sesión se cierra tras **8 horas sin actividad** o con **Cerrar sesión**. «Mantener la sesión» la recuerda en ese navegador; si no, se borra al cerrar la pestaña. Si se revoca el token o se retira el permiso, la sesión se cierra en el siguiente acceso.
+- Para dar acceso a una persona: *Settings → Collaborators* del repositorio → *Add people*; ella crea su propio token (ver «¿Cómo obtengo el token?» en la pantalla de acceso).
+- En un servidor local (`npm start`) aparece además «Entrar en modo de prueba», sin publicar.
+
+Los ficheros del editor son públicos (como todo el portal), pero sin sesión no se puede usar ni publicar nada, y los datos que muestra son los mismos que el portal público.
+
 ## Inicio de gestión
 
 Es la pantalla de entrada. Resume:

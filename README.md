@@ -37,6 +37,7 @@ Al estilo de Adobe Experience Manager: las páginas se componen con **bloques** 
 - **Archivos:** subida de PDF, fotos de cargos y documentos desde el propio editor, con vista previa antes de publicar.
 - **Datos:** formularios generados desde el esquema para dar de alta y modificar **altos cargos**, agenda, normativa, convenios, inmuebles, etc. (con listas desplegables de códigos y validación de tipos).
 - **Entidad:** nombre, NIF, DIR3, colores corporativos, escudo y configuración de fuentes automáticas.
+- **Inicio de sesión** validado por GitHub (solo cuentas con permiso de escritura en el repositorio o una lista de personas autorizadas), con roles, caducidad por inactividad y cierre de sesión.
 - **Inicio de gestión:** estado del portal, obligaciones con estado **calculado automáticamente** (obligación → fuente → periodicidad → última actualización), fuentes automáticas, avisos que necesitan atención, primeros pasos e historial de publicaciones con recuperación de versiones anteriores.
 - **Modo sencillo / avanzado:** el sencillo usa solo lenguaje funcional, resume en una frase lo que muestra cada componente y construye los filtros con desplegables.
 - **Revisar y publicar:** resumen de cambios con antes/después, comprobaciones previas (esquemas, enlaces, traducciones, documentos, componentes, contraste WCAG, fuentes), vista previa en escritorio/tableta/móvil y publicación directa o **como propuesta de revisión** (pull request) para separar edición y publicación. Importación CSV con validación, borrador automático y deshacer.

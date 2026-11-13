@@ -78,6 +78,10 @@ const ed = await browser.newPage({ viewport: { width: 1440, height: 900 } });
 const edErr = []; watch(ed, edErr);
 ed.on('dialog', (d) => d.dismiss());
 await ed.goto(`http://localhost:${PORT}/admin/`);
+// Inicio de sesión (en local: modo de prueba)
+await ed.waitForSelector('.ed-login #lg-tok', { timeout: 15000 }).catch(() => edErr.push('no se muestra la pantalla de inicio de sesión'));
+await ed.click('#lg-go'); if (!(await ed.locator('#lg-err', { hasText: 'token' }).count())) edErr.push('el inicio de sesión no valida el campo vacío');
+await ed.click('#lg-local');
 // Inicio de gestión
 await ed.waitForSelector('.ed-dash', { timeout: 15000 }).catch(() => edErr.push('el editor no muestra el inicio de gestión'));
 if (!(await ed.locator('.ed-attention li, .ed-dash p').count())) edErr.push('el inicio no muestra avisos');

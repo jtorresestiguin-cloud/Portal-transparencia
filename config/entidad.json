@@ -80,6 +80,7 @@
   "github": {
     "repositorio": "jtorresestiguin-cloud/Portal-transparencia",
     "rama": "main",
-    "publicacion": "directo"
+    "publicacion": "directo",
+    "usuarios_autorizados": []
   }
 }
