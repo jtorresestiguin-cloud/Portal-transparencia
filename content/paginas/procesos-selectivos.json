@@ -39,6 +39,18 @@
      "fecha": "2025-03-20",
      "url": "#",
      "formato": "PDF"
+    },
+    {
+     "titulo": {
+      "es": "",
+      "va": "",
+      "en": ""
+     },
+     "tipo": {
+      "es": "",
+      "va": "",
+      "en": ""
+     }
     }
    ]
   },
@@ -105,5 +117,5 @@
   "va": "Recursos Humans",
   "en": "Human Resources"
  },
- "actualizado": "2026-11-10"
+ "actualizado": "2026-11-13"
 }

@@ -4,16 +4,6 @@
  "aviso": "Datos de ejemplo generados sintéticamente. No son cifras oficiales.",
  "datos": [
   {
-   "id": "NOR-mwerlsqb",
-   "titulo": null,
-   "tipo": null,
-   "fecha_aprobacion": null,
-   "fecha_publicacion": null,
-   "boletin": null,
-   "url": null,
-   "vigente": false
-  },
-  {
    "id": "NOR-001",
    "titulo": "Ordenanza fiscal reguladora del Impuesto sobre Bienes Inmuebles",
    "tipo": "ordenanza_fiscal",
@@ -100,7 +90,7 @@
    "fecha_aprobacion": "2023-02-23",
    "fecha_publicacion": "2023-03-05",
    "boletin": "BOP n.º 67",
-   "url": "#",
+   "url": "https://www.alzira.es/wp-content/uploads/2021/12/20211028_Reglamento_Transparencia_Datos_Abiertos.pdf",
    "vigente": true
   },
   {
