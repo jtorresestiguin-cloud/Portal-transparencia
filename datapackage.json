@@ -3,7 +3,7 @@
   "name": "portal-transparencia",
   "title": "Catálogo de datos abiertos del portal de transparencia",
   "homepage": "https://jtorresestiguin-cloud.github.io/Portal-transparencia/",
-  "version": "2026.11.13",
+  "version": "2026.11.14",
   "licenses": [
     {
       "name": "CC-BY-4.0",
@@ -559,7 +559,7 @@
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "bytes": 1998,
+      "bytes": 2055,
       "sources": [
         {
           "title": "Secretaría General"

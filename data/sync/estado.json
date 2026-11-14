@@ -1,8 +1,17 @@
 {
  "_comentario": "Lo actualiza automáticamente la sincronización (scripts/sync/run.mjs). No editar a mano.",
- "fecha": null,
+ "fecha": "2026-11-14T12:10:29.297Z",
  "fuentes": {
-  "placsp": { "estado": "pendiente", "fecha": null, "mensaje": "Aún no se ha ejecutado la sincronización. Los contratos mostrados son de ejemplo." },
-  "bdns": { "estado": "pendiente", "fecha": null, "mensaje": "Aún no se ha ejecutado la sincronización. Las subvenciones mostradas son de ejemplo." }
+  "placsp": {
+   "estado": "sin_resultados",
+   "fecha": "2026-11-14T12:10:29.297Z",
+   "mensaje": "Se han leído 800 páginas, pero ninguna entrada corresponde a los identificadores configurados (P0000000X, L00000000). Revisa el NIF/DIR3 del órgano de contratación en la pestaña «Entidad».",
+   "paginas": 800
+  },
+  "bdns": {
+   "estado": "error",
+   "fecha": "2026-11-14T12:10:29.297Z",
+   "mensaje": "Falta configurar el identificador del órgano concedente en la BDNS (config/entidad.json → fuentes.bdns.organos)."
+  }
  }
 }

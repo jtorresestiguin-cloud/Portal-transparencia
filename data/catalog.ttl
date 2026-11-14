@@ -10,7 +10,7 @@
   dct:publisher <http://datos.gob.es/recurso/sector-publico/org/Organismo/L00000000> ;
   dct:license <https://creativecommons.org/licenses/by/4.0/> ;
   dct:language <http://publications.europa.eu/resource/authority/language/SPA>, <http://publications.europa.eu/resource/authority/language/CAT>, <http://publications.europa.eu/resource/authority/language/ENG> ;
-  dct:modified "2026-11-13"^^xsd:date ;
+  dct:modified "2026-11-14"^^xsd:date ;
   foaf:homepage <https://jtorresestiguin-cloud.github.io/Portal-transparencia/> ;
   dcat:dataset <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/datos/presupuesto>,
     <https://jtorresestiguin-cloud.github.io/Portal-transparencia/#/datos/contratos>,

@@ -12,7 +12,7 @@
     <dct:language>es</dct:language>
     <dct:language>ca-valencia</dct:language>
     <dct:language>en</dct:language>
-    <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-11-13</dct:modified>
+    <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-11-14</dct:modified>
     <foaf:homepage rdf:resource="https://jtorresestiguin-cloud.github.io/Portal-transparencia/"/>
     <dcat:themeTaxonomy rdf:resource="http://datos.gob.es/kos/sector-publico/sector/"/>
     <dcat:dataset>

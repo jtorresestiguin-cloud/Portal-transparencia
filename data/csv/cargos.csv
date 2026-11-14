@@ -1,5 +1,5 @@
 id,nombre,tipo_cargo,cargo,areas,grupo_municipal,junta_gobierno,dedicacion,retribucion_anual,indemnizaciones_anuales,fecha_nombramiento,foto,email,cv_url,declaracion_bienes_url,declaracion_actividades_url
-C01,Benito Pérez,alcaldia,Alcalde,"Presidencia, Hacienda, Personal y Policía Local",EPL,true,exclusiva,31500,0,2023-06-23,assets/img/cargos/C01.svg,c01@example.org,,#,#
+C01,Benito Pérez,alcaldia,Alcalde,"Presidencia, Hacienda, Personal y Policía Local",EPL,true,exclusiva,31500,0,2023-06-23,archivos/cargos/2026/generated-photo-bb60da0b-7164-423e-9301-5a102c516048-d43j.jpg,c01@example.org,,#,#
 C02,Laura Ejemplo Ferrer,teniente_alcaldia,1.ª Teniente de Alcalde,"Urbanismo, Obras y Servicios",EPL,true,parcial,12600,0,2023-06-23,assets/img/cargos/C02.svg,c02@example.org,,#,#
 C03,Vicent Ejemplo Sanchis,teniente_alcaldia,2.º Teniente de Alcalde,"Agricultura, Medio Ambiente y Participación",AV,true,ninguna,0,1980,2023-06-23,assets/img/cargos/C03.svg,c03@example.org,,#,#
 C04,Marta Ejemplo Gil,teniente_alcaldia,3.ª Teniente de Alcalde,"Bienestar Social, Igualdad y Educación",EPL,true,ninguna,0,1980,2023-06-23,assets/img/cargos/C04.svg,c04@example.org,,#,#
