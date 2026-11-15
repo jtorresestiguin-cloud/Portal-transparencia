@@ -1,16 +1,16 @@
 {
  "_comentario": "Lo actualiza automáticamente la sincronización (scripts/sync/run.mjs). No editar a mano.",
- "fecha": "2026-11-14T12:10:29.297Z",
+ "fecha": "2026-11-15T12:43:32.133Z",
  "fuentes": {
   "placsp": {
    "estado": "sin_resultados",
-   "fecha": "2026-11-14T12:10:29.297Z",
+   "fecha": "2026-11-15T12:43:32.133Z",
    "mensaje": "Se han leído 800 páginas, pero ninguna entrada corresponde a los identificadores configurados (P0000000X, L00000000). Revisa el NIF/DIR3 del órgano de contratación en la pestaña «Entidad».",
    "paginas": 800
   },
   "bdns": {
    "estado": "error",
-   "fecha": "2026-11-14T12:10:29.297Z",
+   "fecha": "2026-11-15T12:43:32.133Z",
    "mensaje": "Falta configurar el identificador del órgano concedente en la BDNS (config/entidad.json → fuentes.bdns.organos)."
   }
  }
