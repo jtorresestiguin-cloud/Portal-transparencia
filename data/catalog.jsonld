@@ -57,7 +57,7 @@
     "@id": "https://creativecommons.org/licenses/by/4.0/"
   },
   "dct:modified": {
-    "@value": "2026-11-22",
+    "@value": "2026-11-24",
     "@type": "xsd:date"
   },
   "foaf:homepage": {
